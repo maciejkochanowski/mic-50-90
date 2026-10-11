@@ -1,0 +1,58 @@
+{
+  "cohort_id": "ampicillin-227",
+  "n": 227,
+  "unit": "mg/L",
+  "panel": {
+    "categories": [
+      {
+        "label": "< 2",
+        "lower_bound": null,
+        "upper_bound": 2,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 1.0
+      },
+      {
+        "label": ">= 2",
+        "lower_bound": 2,
+        "upper_bound": null,
+        "lower_closed": true,
+        "upper_closed": false,
+        "panel_value": 2
+      }
+    ]
+  },
+  "organism": "C. perfringens from diarrheic cats",
+  "antimicrobial": "ampicillin",
+  "source_doi": "10.1016/j.onehlt.2026.101453",
+  "source_location": "Table 1",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13223523/",
+  "panel_basis": "Two broad groups defined by the printed count inequality; not the complete measured MIC panel.",
+  "rank_basis": "Analyst-declared ceiling ranks; original MIC50/MIC90 mapped to these two broad groups. Conditional comparison only.",
+  "iid": false,
+  "question_note": "These are the original assayed isolates. No clinical decision or iid population claim is made.",
+  "summaries": {
+    "quantiles": [
+      {
+        "probability": 0.5,
+        "category": "< 2",
+        "convention": "ceiling"
+      },
+      {
+        "probability": 0.9,
+        "category": "< 2",
+        "convention": "ceiling"
+      }
+    ]
+  },
+  "additional_counts": [
+    {
+      "threshold": 2,
+      "relation": ">=",
+      "count": 18,
+      "n": 227,
+      "unit": "mg/L",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13223523/; Table 1"
+    }
+  ]
+}

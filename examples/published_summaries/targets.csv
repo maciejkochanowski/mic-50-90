@@ -1,0 +1,5 @@
+cohort_id,threshold,unit,decision_operator,decision_fraction
+extension-06,4.0,mg/L,<=,.1
+extension-06,2,mg/L,,
+extension-11,1.562,mg/L,<=,.1
+extension-13,0.625,mg/L,<=,.1

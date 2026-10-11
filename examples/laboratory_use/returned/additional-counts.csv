@@ -1,0 +1,5 @@
+cohort_id,threshold,unit,count,n,count_min,count_max,percentage,decimal_places,rounding_rule,source
+exact,1,mg/L,24,200,,,,,,Constructed teaching answer
+range,1,mg/L,,200,23,24,,,,Constructed teaching answer
+rounded,1,mg/L,,200,,,12,0,half_up,Constructed teaching answer
+conflict,1,mg/L,0,200,,,,,,Constructed teaching answer

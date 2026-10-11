@@ -1,0 +1,60 @@
+{
+  "cohort_id": "amikacin-14-conflict",
+  "n": 14,
+  "unit": "mg/L",
+  "panel": {
+    "categories": [
+      {
+        "label": "<=4",
+        "lower_bound": null,
+        "upper_bound": 4,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4
+      },
+      {
+        "label": "(4,16)",
+        "lower_bound": 4,
+        "upper_bound": 16,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 8
+      },
+      {
+        "label": ">=16",
+        "lower_bound": 16,
+        "upper_bound": null,
+        "lower_closed": true,
+        "upper_closed": false,
+        "panel_value": 16
+      }
+    ]
+  },
+  "summaries": {
+    "quantiles": [
+      {
+        "probability": 0.5,
+        "category": "<=4",
+        "convention": "ceiling"
+      },
+      {
+        "probability": 0.9,
+        "category": "<=4",
+        "convention": "ceiling"
+      }
+    ]
+  },
+  "additional_counts": [
+    {
+      "threshold": 16,
+      "relation": ">=",
+      "count": 2,
+      "n": 14,
+      "unit": "mg/L",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12619490/"
+    }
+  ],
+  "iid": false,
+  "source_doi": "10.1186/s12917-025-05102-2",
+  "rank_basis": "Conditional ceiling-rank consistency check; not a source-established convention."
+}

@@ -1,0 +1,188 @@
+name: Build and publish software
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Version 1.0.0 tag (optionally with a release label)
+        required: true
+        type: string
+        default: v1.0.0
+      publish_pypi:
+        description: Publish to PyPI using an already configured trusted publisher
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: software-release-1.0.0
+  cancel-in-progress: false
+
+env:
+  RELEASE_TAG: ${{ inputs.release_tag }}
+
+jobs:
+  test:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install '.[test]' build
+      - name: Test Python behaviour
+        run: python -m pytest --junitxml=test-results.xml
+      - name: Test form behaviour
+        run: node --test "tests/*.cjs"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-${{ matrix.os }}-${{ matrix.python }}
+          overwrite: true
+          path: test-results.xml
+          if-no-files-found: error
+
+  packages:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install build twine
+      - name: Build and inspect distributions
+        run: |
+          python -c 'import os, sys; sys.path.insert(0, "tools"); from publish_software_release import validate_tag; validate_tag(os.environ["RELEASE_TAG"])'
+          python -m build --outdir release
+          python -m twine check --strict release/*
+          python tools/software_release.py source --output release/MIC-50-90-1.0.0-software-source.zip
+          python tools/software_release.py check release/*
+      - name: Install both distributions outside the checkout
+        run: python scripts/check_release_archives.py release --receipt release/CLI-install-check.json
+      - name: Build and smoke-test the optional Docker environment
+        run: |
+          docker build -t mic-50-90:1.0.0 .
+          docker run --rm mic-50-90:1.0.0 bash -euo pipefail -c 'node --version; uv pip check; python reproducibility/self_test.py; python scripts/refresh_package_manifest.py --check'
+          python -c 'import json, os; from pathlib import Path; Path("release/Docker-runtime-check.json").write_text(json.dumps({"status": "passed", "source_commit": os.environ["GITHUB_SHA"], "image": "mic-50-90:1.0.0", "checks": ["node", "dependencies", "offline_self_test", "source_manifest"]}, indent=2) + "\n", encoding="utf-8")'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: software-packages
+          overwrite: true
+          path: release/*
+          if-no-files-found: error
+
+  windows:
+    if: github.ref == 'refs/heads/main'
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install . pyinstaller
+      - name: Build Windows application
+        run: python tools/build_windows.py --output windows-build
+      - name: Run the packaged application and compare it with CLI
+        run: python tools/check_windows_release.py --application windows-build/application/MIC-50-90/MIC-50-90.exe --receipt release/Windows-runtime-check.json
+      - run: npm install --no-save playwright
+      - run: npx playwright install chromium
+      - name: Test the packaged form in Chromium
+        run: python tools/check_browser.py --application windows-build/application/MIC-50-90/MIC-50-90.exe --output browser-check
+      - name: Package the tested Windows application
+        run: python tools/software_release.py windows --application windows-build/application/MIC-50-90 --output release/MIC-50-90-1.0.0-Windows-x64.zip
+      - name: Include Windows verification receipts
+        run: |
+          Copy-Item -LiteralPath windows-build/BUILD_RECEIPT.json -Destination release/Windows-build-receipt.json
+          Copy-Item -LiteralPath browser-check/REOPENED_OPTIONS.json -Destination release/Windows-browser-check.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: software-windows
+          overwrite: true
+          path: release/*
+          if-no-files-found: error
+
+  publish:
+    needs: [test, packages, windows]
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: software-*
+          path: release
+          merge-multiple: true
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: verification-*
+          path: verification
+      - name: Record tests and inspect the complete release
+        run: |
+          python tools/check_release_tests.py verification --receipt release/TEST_MATRIX_VERIFICATION.json
+          python -c 'import sys; from pathlib import Path; sys.path.insert(0, "tools"); from publish_software_release import pack_test_evidence; pack_test_evidence(Path("verification"), Path("release/Software-test-results.zip"))'
+          python tools/software_release.py manifest --directory release --commit "$GITHUB_SHA" --run-url "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+      - name: Publish verified assets using the Actions token
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python tools/publish_software_release.py --directory release --tag "$RELEASE_TAG"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: release-verification
+          overwrite: true
+          path: |
+            release/SOFTWARE_MANIFEST.json
+            release/SHA256SUMS.txt
+            RELEASE_PUBLICATION.json
+
+  pypi:
+    needs: publish
+    if: inputs.publish_pypi && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: software-packages
+          path: packages
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Select Python distributions
+        # PyPI keeps the file names of the first 1.0.0 upload reserved. The corrected 1.0.0
+        # wheel is therefore published with build number 1, which installers prefer.
+        run: |
+          mkdir dist
+          python -m pip install wheel==0.45.1
+          python -m wheel tags --build 1 packages/mic_50_90-1.0.0-py3-none-any.whl
+          cp packages/mic_50_90-1.0.0-1-py3-none-any.whl dist/
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,0 +1,5 @@
+unit_id,cohort_id,target_id,status,truth,lower,upper,reason,baseline_lower,baseline_upper,truth_count,original_n
+site-A,A-drug-1,cut-1,ok,0.2,0.1,0.3,,0,0.5,2,10
+site-A,A-drug-1,cut-2,ok,0,0,0.1,,0,0.1,0,10
+site-B,B-drug-1,cut-1,ok,0.3,0.1,0.25,,0,0.5,3,10
+site-C,C-drug-1,cut-1,unavailable,,,,Training reference unavailable,,,,

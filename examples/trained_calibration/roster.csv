@@ -1,0 +1,13 @@
+unit_id,cohort_id,panel_id,role
+C1,C1-P1,P1,calibration
+C1,C1-P2,P2,calibration
+C2,C2-P1,P1,calibration
+C2,C2-P2,P2,calibration
+C3,C3-P1,P1,calibration
+C3,C3-P2,P2,calibration
+T1,T1-P1,P1,target
+T1,T1-P2,P2,target
+R1,R1-P1,P1,training
+R1,R1-P2,P2,training
+R2,R2-P1,P1,training
+R2,R2-P2,P2,training

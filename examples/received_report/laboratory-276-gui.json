@@ -1,0 +1,80 @@
+{
+  "format": "mic-50-90-guided-input",
+  "version": "1.0.0",
+  "payload": {
+    "mode": "reporting-audit",
+    "config": {
+      "cohort_id": "FDA-NAHLN-2024-dogs-amikacin-276",
+      "n": 276,
+      "unit": "mg/L",
+      "panel": {
+        "levels": [
+          4,
+          8,
+          16,
+          32
+        ]
+      },
+      "iid": false,
+      "confidence_level": 0.95,
+      "organism": "Escherichia coli",
+      "antimicrobial": "Amikacin",
+      "source": "FDA animal-pathogen AMR data, NAHLN 2024; dogs, other tissues/body sites",
+      "source_location": "https://www.fda.gov/animal-veterinary/national-antimicrobial-resistance-monitoring-system/2017-2024-animal-pathogen-amr-data",
+      "rank_basis": "Ceiling-rank summaries generated from the published category counts for this reporting demonstration"
+    },
+    "rank_convention": "ceiling",
+    "histogram": [
+      {
+        "category": "<=4",
+        "count": 268
+      },
+      {
+        "category": "8",
+        "count": 7
+      },
+      {
+        "category": "16",
+        "count": 0
+      },
+      {
+        "category": "32",
+        "count": 0
+      },
+      {
+        "category": ">32",
+        "count": 1
+      }
+    ],
+    "targets": [
+      {
+        "threshold": 4,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction": "0.05"
+      },
+      {
+        "threshold": 8,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction": "0.05"
+      },
+      {
+        "threshold": 16,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction": "0.05"
+      },
+      {
+        "threshold": 32,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction": "0.05"
+      }
+    ],
+    "options": {
+      "reporting_plan": true
+    }
+  }
+}
+

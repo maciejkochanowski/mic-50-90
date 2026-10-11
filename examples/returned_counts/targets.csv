@@ -1,0 +1,2 @@
+cohort_id,threshold,unit,decision_operator,decision_fraction
+Delma2024-T1-C-albicans,0.5,mg/L,<,0.05

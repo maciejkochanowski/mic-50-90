@@ -1,0 +1,130 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mic-50-90"
+version = "1.0.0"
+description = "Distribution bounds and reporting tools for incomplete MIC data"
+readme = "README.md"
+requires-python = ">=3.11"
+# SPDX licence metadata; the full licence is included below.
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  {name = "Maciej Kochanowski", email = "maciej.kochanowski@piwet.pulawy.pl"}
+]
+keywords = ["AMR", "MIC", "partial identification", "order statistics", "Wasserstein"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Typing :: Typed"
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.13"
+]
+
+[project.optional-dependencies]
+benchmark = [
+  "openpyxl>=3.1",
+  "pandas>=2.2",
+  "matplotlib>=3.8",
+  "nbformat>=5.10",
+  "nbclient>=0.10",
+  "ipykernel>=6.29",
+  "duckdb>=1.1",
+  "pyarrow>=17",
+  "curl-cffi>=0.7",
+  "lxml>=5.3",
+  "python-docx>=1.1"
+]
+test = [
+  "pytest>=8.2",
+  "pytest-cov>=5.0",
+  "hypothesis>=6.110",
+  "jsonschema>=4.22",
+  # External-data loader tests import these dependencies.
+  "duckdb>=1.1",
+  "pandas>=2.2"
+]
+all = [
+  "mic-50-90[benchmark,test]"
+]
+
+[project.urls]
+Documentation = "https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/GUI_GUIDE.md"
+Download = "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0"
+Homepage = "https://github.com/maciejkochanowski/mic-50-90"
+Repository = "https://github.com/maciejkochanowski/mic-50-90"
+Issues = "https://github.com/maciejkochanowski/mic-50-90/issues"
+
+[project.scripts]
+mic-50-90 = "mic_50_90.cli:main"
+
+[project.gui-scripts]
+mic-50-90-gui = "mic_50_90.gui:main"
+
+[tool.hatch.build]
+exclude = [
+  "/manuscript", "/Article", "/Supplementary-Appendices", "/Technical-Archive",
+  "/tools/publication", "/docs/superpowers", "/docs/project-history",
+  "**/MIC-50-90-main-*", "**/MIC-50-90-*-Appendix-*", "**/appendix_*_claims_*.json",
+  "**/manuscript_claims_*.json", "**/__pycache__", "**/*.pyc"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mic_50_90"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src",
+  "/tests",
+  "/formal",
+  "/schemas",
+  "/examples",
+  "/docs",
+  "/data/LICENSES.md",
+  "/data/SOURCES.md",
+  "/README.md",
+  "/LICENSE",
+  "/CITATION.cff",
+  "/CHANGELOG.md",
+  "/README_REVIEWER.md",
+  "/NOTICE.md",
+  "/codemeta.json",
+  "/.zenodo.json",
+  "/scripts",
+  "/tools",
+  "/.github/workflows",
+  "/reproducibility/v1.0.0/joint-distribution-20260930/oracle.py",
+  "/reproducibility/self_test.py",
+  "/reproducibility/v1.0.0/joint-distribution-20260930/production_adapter.py",
+  "/pyproject.toml",
+]
+exclude = [
+  "/manuscript", "/Article", "/Supplementary-Appendices", "/Technical-Archive",
+  "/tools/publication", "/docs/superpowers", "/docs/project-history",
+  "**/MIC-50-90-main-*", "**/MIC-50-90-*-Appendix-*", "**/appendix_*_claims_*.json",
+  "**/manuscript_claims_*.json", "**/__pycache__", "**/*.pyc", "/docs/ENGINEERING_REVIEW.md"
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+# Tests import the installed package without a source-path override.
+
+[tool.coverage.run]
+branch = true
+source = ["mic_50_90"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

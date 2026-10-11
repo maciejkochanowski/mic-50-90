@@ -1,0 +1,2 @@
+cohort_id,panel_id,variant_id,n,mic50,mic90,rank_convention,rank50,rank90,minimum,maximum,iid,confidence_level
+example,P1,primary,20,2,16,ceiling,,,,,true,.95

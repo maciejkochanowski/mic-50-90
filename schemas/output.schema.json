@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:mic-50-90:schema:output:1.0",
+  "title": "MIC-50-90 v1 output",
+  "type": "object",
+  "required": [
+    "software",
+    "version",
+    "contract_version",
+    "mode",
+    "sample_size",
+    "panel",
+    "reported_summaries",
+    "thresholds",
+    "estimand",
+    "guarantee_class",
+    "reporting_uncertainty_envelope",
+    "warnings"
+  ],
+  "properties": {
+    "software": {
+      "const": "MIC-50-90"
+    },
+    "version": {
+      "const": "1.0.0"
+    },
+    "contract_version": {
+      "const": "1.0"
+    },
+    "input_contract_version": {
+      "enum": [
+        "4.0",
+        "1.0"
+      ]
+    },
+    "input_adapter": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "empirical",
+        "population"
+      ]
+    },
+    "sample_size": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "panel": {
+      "type": "object"
+    },
+    "reported_summaries": {
+      "type": "object"
+    },
+    "thresholds": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "estimand": {
+      "type": "string"
+    },
+    "guarantee_class": {
+      "enum": [
+        "sharp_finite_sample",
+        "exact_iid_population",
+        "conformal_new_cohort",
+        "assumption_scenario"
+      ]
+    },
+    "guarantee_classes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "identification": {
+      "type": "array"
+    },
+    "reporting_uncertainty_envelope": {
+      "type": "object",
+      "required": [
+        "guarantee_class",
+        "per_variant",
+        "envelope",
+        "rejected_variants",
+        "variant_probabilities_assigned"
+      ],
+      "properties": {
+        "guarantee_class": {
+          "const": "sharp_finite_sample"
+        },
+        "per_variant": {
+          "type": "array"
+        },
+        "envelope": {
+          "type": "array"
+        },
+        "rejected_variants": {
+          "type": "array"
+        },
+        "variant_probabilities_assigned": {
+          "const": false
+        }
+      }
+    },
+    "assumption_dependent_scenarios": {
+      "type": "object"
+    },
+    "one_question_recovery": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "population_mle": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "threshold_results": {
+      "type": "array"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "interpretation_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "prohibited_interpretations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

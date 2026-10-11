@@ -1,0 +1,74 @@
+{
+  "cohort_id": "penicillin-21",
+  "n": 21,
+  "unit": "mg/L",
+  "panel": {
+    "categories": [
+      {
+        "label": "<=0.5",
+        "lower_bound": null,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "(0.5,2)",
+        "lower_bound": 0.5,
+        "upper_bound": 2,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 1
+      },
+      {
+        "label": ">=2",
+        "lower_bound": 2,
+        "upper_bound": null,
+        "lower_closed": true,
+        "upper_closed": false,
+        "panel_value": 2
+      }
+    ]
+  },
+  "organism": "C. perfringens from dairy cows with pathological puerperium",
+  "antimicrobial": "penicillin G",
+  "source_doi": "10.3390/vetsci9040173",
+  "source_location": "Tables 4, 5 and 6",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9030417/",
+  "panel_basis": "Three broad groups defined by printed count inequalities; not the complete measured MIC panel.",
+  "rank_basis": "Analyst-declared ceiling ranks; original MIC50/MIC90 mapped to these two broad groups. Conditional comparison only.",
+  "iid": false,
+  "question_note": "These are the original assayed isolates. No clinical decision or iid population claim is made.",
+  "summaries": {
+    "quantiles": [
+      {
+        "probability": 0.5,
+        "category": "<=0.5",
+        "convention": "ceiling"
+      },
+      {
+        "probability": 0.9,
+        "category": "<=0.5",
+        "convention": "ceiling"
+      }
+    ]
+  },
+  "additional_counts": [
+    {
+      "threshold": 2,
+      "relation": ">=",
+      "count": 2,
+      "n": 21,
+      "unit": "mg/L",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9030417/; Tables 4, 5 and 6"
+    },
+    {
+      "threshold": 0.5,
+      "relation": "<=",
+      "count": 19,
+      "n": 21,
+      "unit": "mg/L",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9030417/; Table 6 and Table 5 susceptible inequality"
+    }
+  ]
+}

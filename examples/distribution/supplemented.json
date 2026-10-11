@@ -1,0 +1,18 @@
+{
+  "cohort_id": "controlled-20",
+  "unit": "mg/L",
+  "n": 20,
+  "panel": {"levels": [1, 2]},
+  "summaries": {
+    "quantiles": [
+      {"probability": 0.5, "category": "<=1", "convention": "ceiling"},
+      {"probability": 0.9, "category": "2", "convention": "ceiling"}
+    ]
+  },
+  "additional_counts": [
+    {"threshold": 1, "count": 8, "n": 20, "unit": "mg/L", "source": "Controlled example; same 20 isolates"},
+    {"threshold": 2, "count": 2, "n": 20, "unit": "mg/L", "source": "Controlled example; same 20 isolates"}
+  ],
+  "iid": true,
+  "confidence_level": 0.95
+}

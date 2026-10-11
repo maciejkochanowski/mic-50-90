@@ -1,0 +1,102 @@
+{
+  "cmunrm.woff": {
+    "family": "CMU Serif",
+    "weight": 400,
+    "style": "normal",
+    "sha256": "5fc15da570bbf5bf78bbd68bd29acd61df1f3de08095aff3c702dc0f2fda1b65",
+    "bytes": 324000,
+    "source": "cmunrm.ttf",
+    "source_sha256": "cf2b28d1f36b680bc5851196c0da97d32ed564d8a703a9636f094092934babe6",
+    "glyphs_and_metrics_preserved": true
+  },
+  "cmunbx.woff": {
+    "family": "CMU Serif",
+    "weight": 700,
+    "style": "normal",
+    "sha256": "74a979bf88f78b08fb7a6bf5ca3c5cf1a8b5c402a2629a88be7c27311be89123",
+    "bytes": 306660,
+    "source": "cmunbx.ttf",
+    "source_sha256": "82d500c7092f44de9de332b8ffdc16a6e7ce5b042832b7aa0203a6cea8f4f263",
+    "glyphs_and_metrics_preserved": true
+  },
+  "cmunti.woff": {
+    "family": "CMU Serif",
+    "weight": 400,
+    "style": "italic",
+    "sha256": "31478c2086bdf31e55a1f242ec70b0f74a1ef0081da19b22c15e0d0e7763da3b",
+    "bytes": 240652,
+    "source": "cmunti.ttf",
+    "source_sha256": "0473b87393141b7ba311e8a590c568e8a82e29dc417574eb748c0093cce0911d",
+    "glyphs_and_metrics_preserved": true
+  },
+  "cmunbi.woff": {
+    "family": "CMU Serif",
+    "weight": 700,
+    "style": "italic",
+    "sha256": "4d187d3fbc9795a5342c077dc74fd9ea0effc18cf25c550dc94c1fc443a607da",
+    "bytes": 233072,
+    "source": "cmunbi.ttf",
+    "source_sha256": "fd4e94d71d778bbd334d7203227f20a9bf3c0ca98e3e58c0b2a0662cb4930972",
+    "glyphs_and_metrics_preserved": true
+  },
+  "cmuntt.woff": {
+    "family": "CMU Typewriter",
+    "weight": 400,
+    "style": "normal",
+    "sha256": "ffd665c18e165bc5315d6cea358df96e4d7860cb6f00ae4dd657b38577d55416",
+    "bytes": 282356,
+    "source": "cmuntt.ttf",
+    "source_sha256": "408c037330446e5f3225add1fcca336e2072c459deb39f5318390004a780de82",
+    "glyphs_and_metrics_preserved": true
+  },
+  "latinmodern-math.woff": {
+    "family": "Latin Modern Math",
+    "weight": 400,
+    "style": "normal",
+    "sha256": "789ec57cf5c7e5a62976a0a17ab290d887380d97cafbde867d22a236a21345ea",
+    "bytes": 483820,
+    "source": "latinmodern-math.otf",
+    "source_sha256": "6075562b771f8b82f0c179e363389684f2dd09de30038269e2628e504bd7be0f",
+    "glyphs_and_metrics_preserved": true
+  },
+  "DejaVuSans.woff": {
+    "family": "DejaVu Sans",
+    "weight": 400,
+    "style": "normal",
+    "sha256": "bb6fa0f6ef09849ea83335692ec7d851577f85f5475a18dd676025f33bef5700",
+    "bytes": 376888,
+    "source": "DejaVuSans.ttf",
+    "source_sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+    "glyphs_and_metrics_preserved": true
+  },
+  "DejaVuSans-Bold.woff": {
+    "family": "DejaVu Sans",
+    "weight": 700,
+    "style": "normal",
+    "sha256": "c6726813cd65f4547ecc51c0ef87e3269d5adb9d3de7416a26661b349dc933df",
+    "bytes": 347768,
+    "source": "DejaVuSans-Bold.ttf",
+    "source_sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+    "glyphs_and_metrics_preserved": true
+  },
+  "DejaVuSans-Oblique.woff": {
+    "family": "DejaVu Sans",
+    "weight": 400,
+    "style": "italic",
+    "sha256": "cdf276ed4a0c514f540bf174f03c773e6d949bce79415ff151168e24e9f663fc",
+    "bytes": 323772,
+    "source": "DejaVuSans-Oblique.ttf",
+    "source_sha256": "ccdf74b350f11fd3dd5774de50e5e6346a1a5da1f5b7d5fb83590665e97a5213",
+    "glyphs_and_metrics_preserved": true
+  },
+  "DejaVuSans-BoldOblique.woff": {
+    "family": "DejaVu Sans",
+    "weight": 700,
+    "style": "italic",
+    "sha256": "694c9d31208da1e97b0c8e2eb711e5efbfb9bbca65d3f9a6cc42f0b340995f6c",
+    "bytes": 326392,
+    "source": "DejaVuSans-BoldOblique.ttf",
+    "source_sha256": "6edf0283160186af451cbee71e7b845f2e4cabf264bb992ce668c83c25465e6f",
+    "glyphs_and_metrics_preserved": true
+  }
+}

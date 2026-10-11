@@ -1,0 +1,248 @@
+{
+  "description": "Historical 1.1 records for diagnostic-reader compatibility only; no coverage claim is endorsed.",
+  "source_sha256": "3e59bbea0f55aed7814fa69e28ef1f4815329de9f19c96d7553e39d3fc9f53ab",
+  "fixtures": {
+    "small_group_global": {
+      "manifest_version": "1.1",
+      "guarantee_class": "conformal_new_cohort",
+      "confidence_level": 0.95,
+      "requested_level": 0.95,
+      "requested_level_supported": true,
+      "alpha": 0.05,
+      "rank": 39,
+      "calibration_size": 40,
+      "minimum_group_calibration_size": 19,
+      "radius": 0.9769230769230769,
+      "grouping": {
+        "scope": "global"
+      },
+      "source": "prespecified development calibration",
+      "data_hashes": {
+        "calibration": "abc"
+      },
+      "guarantee_scope": "global_marginal",
+      "fallback_used": true,
+      "calibration_scores_sha256": "5df3697e1a37824e26bdd2387ea5c7ca7b955b99519d94a3a3913459fbed3128",
+      "coverage_statement": "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. Marginal finite-sample coverage for a new exchangeable cohort at the manifest scope; one accepted Wasserstein set yields simultaneous bounds for every threshold evaluated from that set."
+    },
+    "declared_group": {
+      "manifest_version": "1.1",
+      "guarantee_class": "conformal_new_cohort",
+      "confidence_level": 0.95,
+      "requested_level": 0.95,
+      "requested_level_supported": true,
+      "alpha": 0.05,
+      "rank": 39,
+      "calibration_size": 40,
+      "minimum_group_calibration_size": 19,
+      "radius": 0.9769230769230769,
+      "grouping": {
+        "species": "A",
+        "drug": "B"
+      },
+      "source": "prespecified calibration",
+      "data_hashes": {
+        "calibration": "abc"
+      },
+      "guarantee_scope": "declared_group_marginal",
+      "fallback_used": false,
+      "calibration_scores_sha256": "5df3697e1a37824e26bdd2387ea5c7ca7b955b99519d94a3a3913459fbed3128",
+      "coverage_statement": "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. Marginal finite-sample coverage for a new exchangeable cohort at the manifest scope; one accepted Wasserstein set yields simultaneous bounds for every threshold evaluated from that set."
+    },
+    "clustered_global": {
+      "exchangeable_units": 4,
+      "exchangeable_unit_definition": "source|study",
+      "exchangeable_unit_labels": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "unit_score_aggregation": "max",
+      "conformal_rank_counts": "cohorts",
+      "unit_scores": [
+        1.0,
+        1.9,
+        2.9,
+        10.0
+      ],
+      "unit_scores_median": [
+        0.55,
+        1.45,
+        2.45,
+        3.45
+      ],
+      "attained_level_all_cohorts": 0.6,
+      "attained_level_median_cohort": 0.8,
+      "maximum_supported_level": 0.8,
+      "attained_level": 0.6,
+      "manifest_version": "1.1",
+      "guarantee_class": "conformal_new_cohort",
+      "confidence_level": 0.6,
+      "requested_level": 0.95,
+      "requested_level_supported": false,
+      "alpha": 0.05,
+      "rank": 39,
+      "calibration_size": 40,
+      "minimum_group_calibration_size": 19,
+      "radius": 3.8,
+      "grouping": {
+        "scope": "global"
+      },
+      "source": "unit test",
+      "data_hashes": {
+        "x": "y"
+      },
+      "guarantee_scope": "global_marginal",
+      "fallback_used": true,
+      "calibration_scores_sha256": "069460c597e39ccb3ddc2d144b49ac12a4cc95948d7119f62c28bb1463c2d530",
+      "coverage_statement": "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. Marginal finite-sample coverage for a new exchangeable cohort at the manifest scope; one accepted Wasserstein set yields simultaneous bounds for every threshold evaluated from that set."
+    },
+    "without_units": {
+      "manifest_version": "1.1",
+      "guarantee_class": "conformal_new_cohort",
+      "confidence_level": 0.95,
+      "requested_level": 0.95,
+      "requested_level_supported": true,
+      "alpha": 0.05,
+      "rank": 20,
+      "calibration_size": 20,
+      "minimum_group_calibration_size": 19,
+      "radius": 2.0,
+      "grouping": {
+        "scope": "global"
+      },
+      "source": "unit test",
+      "data_hashes": {
+        "x": "y"
+      },
+      "guarantee_scope": "global_marginal",
+      "fallback_used": true,
+      "calibration_scores_sha256": "e38ccbe4ca717eb603d9a2e1775d4b38f2f733db2ba9a6b4526b1dbdd6d817b1",
+      "coverage_statement": "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. Marginal finite-sample coverage for a new exchangeable cohort at the manifest scope; one accepted Wasserstein set yields simultaneous bounds for every threshold evaluated from that set."
+    },
+    "legacy_application": {
+      "manifest_version": "1.1",
+      "guarantee_class": "conformal_new_cohort",
+      "confidence_level": 0.9,
+      "requested_level": 0.9,
+      "requested_level_supported": true,
+      "alpha": 0.1,
+      "rank": 19,
+      "calibration_size": 20,
+      "minimum_group_calibration_size": 9,
+      "radius": 18.0,
+      "grouping": {
+        "species": "test"
+      },
+      "source": "legacy",
+      "data_hashes": {
+        "fixture": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      },
+      "guarantee_scope": "declared_group_marginal",
+      "fallback_used": false,
+      "calibration_scores_sha256": "5b1b15a525e79cd6cfa0bb0e10a02e97cd1caf5e85161d46fc37e3f70d56a298",
+      "coverage_statement": "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. Marginal finite-sample coverage for a new exchangeable cohort at the manifest scope; one accepted Wasserstein set yields simultaneous bounds for every threshold evaluated from that set."
+    },
+    "unequal_cohort_ranking": {
+      "exchangeable_units": 5,
+      "exchangeable_unit_definition": "source|study",
+      "exchangeable_unit_labels": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "unit_score_aggregation": "max",
+      "conformal_rank_counts": "cohorts",
+      "unit_scores": [
+        5.0,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "unit_scores_median": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "attained_level_all_cohorts": 0.3333333333333333,
+      "attained_level_median_cohort": 0.5,
+      "maximum_supported_level": 0.8333333333333334,
+      "attained_level": 0.3333333333333333,
+      "manifest_version": "1.1",
+      "guarantee_class": "conformal_new_cohort",
+      "confidence_level": 0.3333333333333333,
+      "requested_level": 0.5,
+      "requested_level_supported": false,
+      "alpha": 0.5,
+      "rank": 4,
+      "calibration_size": 7,
+      "minimum_group_calibration_size": 1,
+      "radius": 0.4,
+      "grouping": {
+        "scope": "test"
+      },
+      "source": "test",
+      "data_hashes": {},
+      "guarantee_scope": "declared_group_marginal",
+      "fallback_used": false,
+      "calibration_scores_sha256": "783e83e4bfa5c526597f2e9e46a949930e0517d0846fa8d3aac739b2c42a8636",
+      "coverage_statement": "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. Marginal finite-sample coverage for a new exchangeable cohort at the manifest scope; one accepted Wasserstein set yields simultaneous bounds for every threshold evaluated from that set."
+    },
+    "unequal_unit_ranking": {
+      "exchangeable_units": 5,
+      "exchangeable_unit_definition": "source|study",
+      "exchangeable_unit_labels": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "unit_score_aggregation": "max",
+      "conformal_rank_counts": "units",
+      "unit_scores": [
+        5.0,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "unit_scores_median": [
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6
+      ],
+      "attained_level_all_cohorts": 0.5,
+      "attained_level_median_cohort": 0.6666666666666666,
+      "maximum_supported_level": 0.8333333333333334,
+      "attained_level": 0.5,
+      "manifest_version": "1.1",
+      "guarantee_class": "conformal_new_cohort",
+      "confidence_level": 0.5,
+      "requested_level": 0.5,
+      "requested_level_supported": true,
+      "alpha": 0.5,
+      "rank": 3,
+      "calibration_size": 5,
+      "minimum_group_calibration_size": 1,
+      "radius": 0.5,
+      "grouping": {
+        "scope": "test"
+      },
+      "source": "test",
+      "data_hashes": {},
+      "guarantee_scope": "declared_group_marginal",
+      "fallback_used": false,
+      "calibration_scores_sha256": "783e83e4bfa5c526597f2e9e46a949930e0517d0846fa8d3aac739b2c42a8636",
+      "coverage_statement": "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. Marginal finite-sample coverage for a new exchangeable cohort at the manifest scope; one accepted Wasserstein set yields simultaneous bounds for every threshold evaluated from that set."
+    }
+  }
+}

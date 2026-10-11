@@ -1,0 +1,24 @@
+{
+  "software": "MIC-50-90",
+  "version": "1.0.0",
+  "distribution_scope": "software_only",
+  "release_url": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0",
+  "publication_channel": "GitHub Actions release workflow",
+  "documentation": [
+    "docs/GUI_GUIDE.md",
+    "docs/CLI_REFERENCE.md",
+    "docs/distribution-user-guide.md",
+    "docs/PUBLIC_FUNCTIONS.md",
+    "docs/REPORT_CONTENTS.md"
+  ],
+  "excluded_materials": [
+    "manuscript",
+    "supplementary appendices",
+    "editorial figures",
+    "article source documents",
+    "journal submission materials"
+  ],
+  "verification_policy": "Use the completed Actions run, checksums and asset manifest for the exact release. A version string alone is not a verification record.",
+  "current_delivery": "dist",
+  "source_manifest": "PACKAGE_MANIFEST.sha256"
+}

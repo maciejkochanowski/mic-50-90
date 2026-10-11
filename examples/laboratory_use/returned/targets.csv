@@ -1,0 +1,5 @@
+cohort_id,threshold,unit,decision_operator,decision_fraction
+exact,1,mg/L,<,.125
+range,1,mg/L,<,.125
+rounded,1,mg/L,<,.125
+conflict,1,mg/L,<,.125

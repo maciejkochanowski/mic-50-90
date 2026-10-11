@@ -1,0 +1,36 @@
+panel_id,category,unit,lower,upper,lower_closed,upper_closed,panel_value
+human-fluconazole,<= 0.063,mg/L,,0.063,false,true,0.063
+human-fluconazole,0.125,mg/L,0.063,0.125,false,true,0.125
+human-fluconazole,0.25,mg/L,0.125,0.25,false,true,0.25
+human-fluconazole,0.5,mg/L,0.25,0.5,false,true,0.5
+human-fluconazole,1,mg/L,0.5,1,false,true,1
+human-fluconazole,2,mg/L,1,2,false,true,2
+human-fluconazole,4,mg/L,2,4,false,true,4
+human-fluconazole,8,mg/L,4,8,false,true,8
+human-fluconazole,16,mg/L,8,16,false,true,16
+human-fluconazole,32,mg/L,16,32,false,true,32
+human-fluconazole,64,mg/L,32,64,false,true,64
+human-fluconazole,>64,mg/L,64,,false,false,128
+canine-chlorhexidine,<= 0.048,mg/L,,0.048,false,true,0.048
+canine-chlorhexidine,0.097,mg/L,0.048,0.097,false,true,0.097
+canine-chlorhexidine,0.195,mg/L,0.097,0.195,false,true,0.195
+canine-chlorhexidine,0.39,mg/L,0.195,0.39,false,true,0.39
+canine-chlorhexidine,0.781,mg/L,0.39,0.781,false,true,0.781
+canine-chlorhexidine,1.562,mg/L,0.781,1.562,false,true,1.562
+canine-chlorhexidine,3.125,mg/L,1.562,3.125,false,true,3.125
+canine-chlorhexidine,6.25,mg/L,3.125,6.25,false,true,6.25
+canine-chlorhexidine,12.5,mg/L,6.25,12.5,false,true,12.5
+canine-chlorhexidine,25,mg/L,12.5,25,false,true,25
+canine-chlorhexidine,50,mg/L,25,50,false,true,50
+canine-chlorhexidine,100,mg/L,50,100,false,true,100
+canine-chlorhexidine,200,mg/L,100,200,false,true,200
+canine-chlorhexidine,2000,mg/L,200,2000,false,true,2000
+canine-chlorhexidine,20000,mg/L,2000,20000,false,true,20000
+canine-chlorhexidine,>20000,mg/L,20000,,false,false,40000
+canine-shampoo,<= 0.078125,mg/L,,0.078125,false,true,0.078125
+canine-shampoo,0.15625,mg/L,0.078125,0.15625,false,true,0.15625
+canine-shampoo,0.3125,mg/L,0.15625,0.3125,false,true,0.3125
+canine-shampoo,0.625,mg/L,0.3125,0.625,false,true,0.625
+canine-shampoo,1.25,mg/L,0.625,1.25,false,true,1.25
+canine-shampoo,2.5,mg/L,1.25,2.5,false,true,2.5
+canine-shampoo,>2.5,mg/L,2.5,,false,false,5.0

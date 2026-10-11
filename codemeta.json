@@ -1,0 +1,45 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "mic-50-90",
+  "description": "Distribution bounds and reporting tools for incomplete MIC data",
+  "version": "1.0.0",
+  "license": "https://spdx.org/licenses/MIT",
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Maciej",
+      "familyName": "Kochanowski",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Department of Bacteriology and Bacterial Diseases, National Veterinary Research Institute, 57 Partyzantów Avenue, 24-100 Puławy, Poland"
+      },
+      "@id": "https://orcid.org/0000-0002-9982-3028",
+      "email": "maciej.kochanowski@piwet.pulawy.pl"
+    }
+  ],
+  "codeRepository": "https://github.com/maciejkochanowski/mic-50-90",
+  "dateModified": "2026-10-07",
+  "programmingLanguage": [
+    {
+      "@type": "ComputerLanguage",
+      "name": "Python"
+    }
+  ],
+  "runtimePlatform": "Python >=3.11",
+  "softwareRequirements": [
+    "numpy>=1.26",
+    "scipy>=1.13"
+  ],
+  "keywords": [
+    "antimicrobial resistance",
+    "minimum inhibitory concentration",
+    "partial identification",
+    "order statistics"
+  ],
+  "developmentStatus": "active",
+  "applicationCategory": "Antimicrobial resistance",
+  "readme": "README.md",
+  "issueTracker": "https://github.com/maciejkochanowski/mic-50-90/issues",
+  "downloadUrl": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0"
+}

@@ -1,0 +1,6 @@
+cohort_id,panel_id,category,count,rank_convention
+C,P,1,5,ceiling
+C,P,2,4,ceiling
+C,P,4,1,ceiling
+C,P,8,0,ceiling
+C,P,16,0,ceiling
