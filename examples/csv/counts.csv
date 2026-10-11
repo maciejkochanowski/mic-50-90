@@ -1,0 +1,7 @@
+cohort_id,panel_id,category,count,rank_convention,iid,confidence_level
+example,P1,<=1,2,ceiling,false,.95
+example,P1,2,8,ceiling,false,.95
+example,P1,4,3,ceiling,false,.95
+example,P1,8,3,ceiling,false,.95
+example,P1,16,3,ceiling,false,.95
+example,P1,>16,1,ceiling,false,.95

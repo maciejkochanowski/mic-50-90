@@ -1,0 +1,132 @@
+{
+  "panels": {
+    "PMC13609237": {
+      "levels": [
+        0.03,
+        0.06,
+        0.125,
+        0.25,
+        0.5,
+        1,
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "basis": "UMIC Cefiderocol, source Methods; manufacturer flyer p.2, 11 tested concentrations plus growth control",
+      "url": "https://www.bruker.com/es/products-and-solutions/microbiology-and-diagnostics/antimicrobial-susceptibility-testing/umic/_jcr_content/root/sections/more_information/sectionpar/linklist/contentpar-1/calltoaction.download-asset.pdf/links/item1/1812824-flyer-umic-cefiderocol-ivd-bmid-02-2023.pdf",
+      "ranks": [
+        [
+          61,
+          109
+        ]
+      ],
+      "rank_basis": "Source names higher-value interpolation. One-based ranks ceil((n-1)*p)+1 are 61 and 109; ceiling ranks coincide for n=121.",
+      "status": "source_named_convention"
+    },
+    "PMC13608856": {
+      "levels": [
+        0.12,
+        0.25,
+        0.5,
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "basis": "YO10, source Methods; manufacturer European plate guide PDF p.33 (printed31), fluconazole row",
+      "url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-Plate-Guide-Europe.pdf",
+      "ranks": [
+        [
+          12,
+          21
+        ]
+      ],
+      "rank_basis": "Analyst assumptions: ceil(p*n) and floor(p*n+0.5), which coincide for n=23; source does not specify ranks. Not exhaustive.",
+      "status": "conditional_ranks"
+    },
+    "PMC13436408": {
+      "levels": [
+        0.12,
+        0.25,
+        0.5,
+        1,
+        2,
+        4,
+        8
+      ],
+      "basis": "CMV1AMAF, source Methods and manufacturer plate layout, ampicillin column",
+      "url": "https://documents.thermofisher.com/TFS-Assets/MBD/Specification-Sheets/Sensititre-Plate-Layout-CMV1AMAF.pdf",
+      "ranks": [
+        [
+          56,
+          101
+        ]
+      ],
+      "rank_basis": "Analyst assumptions: ceil(p*n) and floor(p*n+0.5), which coincide for n=112; source does not specify ranks. Not exhaustive.",
+      "status": "conditional_ranks"
+    }
+  },
+  "registered": [
+    {
+      "id": "new-02",
+      "stratum": "human",
+      "pmcid": "PMC13609237",
+      "doi": "10.3390/microorganisms14092071",
+      "title": "Paired In Vitro Susceptibility of Cefiderocol and Colistin in Colistin-Resistant, Extensively Drug-Resistant Gram-Negative Bacilli: A Single-Centre, MIC-Based Analysis of 236 Clinical Isolates.",
+      "search_rank": 8,
+      "source_location": "Table 9",
+      "n": 121,
+      "organism": "Klebsiella pneumoniae",
+      "antimicrobial": "cefiderocol",
+      "mic50": "1",
+      "mic90": "8",
+      "unit": "mg/L",
+      "refusal": "",
+      "source_sha256": "a24ee2ecbabdddd85a3da1f46ea0adb8673389981332344761293c744b5e568b",
+      "status": "source_named_convention"
+    },
+    {
+      "id": "new-08",
+      "stratum": "human",
+      "pmcid": "PMC13608856",
+      "doi": "10.3390/jof12090664",
+      "title": "Persistent Non-&lt;i&gt;albicans&lt;/i&gt; Predominance, High Mortality, and Azole-Non-Susceptible &lt;i&gt;Candida tropicalis&lt;/i&gt;: A 15-Year Pediatric Invasive Candidiasis Cohort in Southern Thailand.",
+      "search_rank": 25,
+      "source_location": "Results; contemporary susceptibility series",
+      "n": 23,
+      "organism": "Candida tropicalis",
+      "antimicrobial": "fluconazole",
+      "mic50": "4",
+      "mic90": "64",
+      "unit": "mg/L",
+      "refusal": "",
+      "source_sha256": "6c3077f8c94adae021111757ce0bc9d5b20641bb59bc0730fb1cb5f5282d0784",
+      "status": "conditional_ranks"
+    },
+    {
+      "id": "new-17",
+      "stratum": "veterinary",
+      "pmcid": "PMC13436408",
+      "doi": "10.1128/spectrum.00772-26",
+      "title": "Molecular and phenotypic characterization of &lt;i&gt;Streptococcus uberis&lt;/i&gt; isolates from bovine mastitis milk in South Korea.",
+      "search_rank": 47,
+      "source_location": "Table 1",
+      "n": 112,
+      "organism": "Streptococcus uberis",
+      "antimicrobial": "ampicillin",
+      "mic50": ".25",
+      "mic90": ".5",
+      "unit": "mg/L",
+      "refusal": "",
+      "source_sha256": "4136c7fe0edea2ec639d587cf1c2d1025cc34b57c5bc7be6476ef6bba1708158",
+      "status": "conditional_ranks"
+    }
+  ]
+}

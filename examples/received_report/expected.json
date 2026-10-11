@@ -1,0 +1,110 @@
+{
+  "initial": {
+    "sufficient": false,
+    "decisions": [
+      "undetermined",
+      "undetermined",
+      "undetermined",
+      "undetermined"
+    ],
+    "bounds": [
+      {
+        "threshold": 4.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 0,
+        "count_max": 27,
+        "n": 276,
+        "status": "undetermined"
+      },
+      {
+        "threshold": 8.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 0,
+        "count_max": 27,
+        "n": 276,
+        "status": "undetermined"
+      },
+      {
+        "threshold": 16.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 0,
+        "count_max": 27,
+        "n": 276,
+        "status": "undetermined"
+      },
+      {
+        "threshold": 32.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 0,
+        "count_max": 27,
+        "n": 276,
+        "status": "undetermined"
+      }
+    ],
+    "sample_size": 276,
+    "scope": "recorded_sample_decisions",
+    "guarantee": "Logical implication of the declared summaries and truthful counts; no new population or calibration guarantee"
+  },
+  "recipient": {
+    "sufficient": true,
+    "decisions": [
+      "supported",
+      "supported",
+      "supported",
+      "supported"
+    ],
+    "bounds": [
+      {
+        "threshold": 4.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 8,
+        "count_max": 8,
+        "n": 276,
+        "status": "supported"
+      },
+      {
+        "threshold": 8.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 0,
+        "count_max": 8,
+        "n": 276,
+        "status": "supported"
+      },
+      {
+        "threshold": 16.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 0,
+        "count_max": 8,
+        "n": 276,
+        "status": "supported"
+      },
+      {
+        "threshold": 32.0,
+        "unit": "mg/L",
+        "decision_operator": "<",
+        "decision_fraction_text": "0.05",
+        "count_min": 0,
+        "count_max": 8,
+        "n": 276,
+        "status": "supported"
+      }
+    ],
+    "sample_size": 276,
+    "scope": "recorded_sample_decisions",
+    "guarantee": "Logical implication of the declared summaries and truthful counts; no new population or calibration guarantee"
+  }
+}

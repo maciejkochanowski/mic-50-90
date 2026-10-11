@@ -1,0 +1,21 @@
+:root{--mic-body:"CMU Serif","Latin Modern Math",serif;--mic-code:"CMU Typewriter","Latin Modern Math",monospace;--mic-chart:"DejaVu Sans",sans-serif}
+body,button,input,select,textarea,label,.choice-number,.tag,.histogram-row label{font-family:var(--mic-body)}
+body{font-size:17px;line-height:1.5;font-synthesis:none}
+pre,code,.mono,#certificate-text{font-family:var(--mic-code)}
+svg,svg text{font-family:var(--mic-chart)}
+@media print{
+ @page{size:A4;margin:14mm}
+ body{font-size:10.5pt;line-height:1.35;color:#162e3c;background:white}
+ main{max-width:none;padding:0;margin:0}
+ main>article{break-before:auto;break-inside:auto;margin:0;padding:0;border:0}
+ main>article+article{break-before:page}
+ .result-overview,.result-layers,.layer,table{break-inside:auto}
+ h1,h2,h3,h4,caption{break-after:avoid}
+ thead{display:table-header-group}
+ tr{break-inside:avoid}
+ th,td{font-size:9.5pt}
+ .result-chart-block,svg{break-inside:avoid}
+ details{display:block}
+ details::details-content{content-visibility:visible!important}
+ pre{white-space:pre-wrap;overflow-wrap:anywhere;max-height:none;overflow:visible}
+}

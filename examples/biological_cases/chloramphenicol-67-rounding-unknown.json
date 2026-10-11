@@ -1,0 +1,56 @@
+{
+  "cohort_id": "Brookshire-67-chloramphenicol",
+  "n": 67,
+  "unit": "mg/L",
+  "iid": false,
+  "organism": "Canine pathogenic staphylococci (62 S. pseudintermedius and 5 S. schleiferi)",
+  "antimicrobial": "Chloramphenicol",
+  "source_doi": "10.3389/fvets.2024.1512582",
+  "source": "https://doi.org/10.3389/fvets.2024.1512582",
+  "source_location": "Tables 1 and 2, chloramphenicol rows",
+  "panel": {
+    "levels": [
+      4,
+      8,
+      16
+    ]
+  },
+  "panel_basis": "Source test range 4–16; declared ordered categories <=4, 8, 16, >16 mg/L",
+  "rank_basis": "Analyst-declared ceiling ranks; not attributed to the publication",
+  "summaries": {
+    "minimum": "<=4",
+    "maximum": "8",
+    "quantiles": [
+      {
+        "probability": ".5",
+        "category": "8",
+        "convention": "ceiling"
+      },
+      {
+        "probability": ".9",
+        "category": "8",
+        "convention": "ceiling"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "threshold": 2,
+      "target_scale": "interval",
+      "unit": "mg/L",
+      "decision_operator": "<",
+      "decision_fraction": ".75"
+    }
+  ],
+  "question_note": "Threshold 2 comes from the source. The 75% criterion is illustrative; no current clinical classification is assigned.",
+  "additional_counts": [
+    {
+      "threshold": 4,
+      "relation": "<=",
+      "percentage": "49",
+      "n": 67,
+      "unit": "mg/L",
+      "source": "Table 2: 49% non-interpreted at the source threshold 2; allocated to the lowest measured category <=4"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+cohort_id,panel_id,variant_id,n,mic50,mic90,rank_convention,iid,organism,antimicrobial,metadata_basis
+exact,teaching,primary,200,1,4,ceiling,false,constructed example,unspecified,Teaching inputs; not a biological collection
+range,teaching,primary,200,1,4,ceiling,false,constructed example,unspecified,Teaching inputs; not a biological collection
+rounded,teaching,primary,200,1,4,ceiling,false,constructed example,unspecified,Teaching inputs; not a biological collection
+conflict,teaching,primary,200,1,4,ceiling,false,constructed example,unspecified,Teaching inputs; not a biological collection

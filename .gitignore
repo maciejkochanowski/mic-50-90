@@ -1,0 +1,40 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+# The directory, not its contents: git cannot re-include a file inside an excluded
+# directory, and the repository root deliberately keeps the two release artefacts that
+# scripts/build_release_bundle.py requires. Without these negations the root's decision
+# has no effect and a fresh clone cannot build the bundle.
+dist/*
+!dist/mic_50_90-1.0.0-py3-none-any.whl
+!dist/mic_50_90-1.0.0.tar.gz
+*.egg-info/
+data/raw/*.xlsx
+data/processed/*.parquet
+data/processed/*.tmp
+results/qa/
+manuscript/rendered/
+.v/
+.hypothesis/
+coverage.xml
+.superpowers/
+.ruff_cache/
+.playwright-cli/
+
+# Obtained directly from the publisher; verified by the fetch helper.
+/tools/publication/template/softwarex-osp-template-v6.docx
+
+# Editorial documents are maintained outside the public software repository.
+/manuscript/
+/Article/
+/Supplementary-Appendices/
+/Technical-Archive/
+/tools/publication/
+**/MIC-50-90-main-*
+**/MIC-50-90-*-Appendix-*
+**/appendix_*_claims_*.json
+**/manuscript_claims_*.json

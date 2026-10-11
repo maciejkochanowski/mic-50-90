@@ -1,0 +1,6 @@
+panel_id,unit,category,lower,upper,lower_closed,upper_closed,panel_value
+P,mg/L,1,1,1,true,true,1
+P,mg/L,2,2,2,true,true,2
+P,mg/L,4,4,4,true,true,4
+P,mg/L,8,8,8,true,true,8
+P,mg/L,16,16,16,true,true,16

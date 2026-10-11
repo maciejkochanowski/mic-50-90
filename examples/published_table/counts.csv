@@ -1,0 +1,14 @@
+cohort_id,panel_id,category,count,rank_convention,iid
+Delma2024-T1-C-albicans,delma-local,<=0.03,627,ceiling,false
+Delma2024-T1-C-albicans,delma-local,0.06,817,ceiling,false
+Delma2024-T1-C-albicans,delma-local,0.125,969,ceiling,false
+Delma2024-T1-C-albicans,delma-local,0.25,241,ceiling,false
+Delma2024-T1-C-albicans,delma-local,0.5,163,ceiling,false
+Delma2024-T1-C-albicans,delma-local,1,38,ceiling,false
+Delma2024-T1-C-albicans,delma-local,2,9,ceiling,false
+Delma2024-T1-C-albicans,delma-local,4,18,ceiling,false
+Delma2024-T1-C-albicans,delma-local,8,9,ceiling,false
+Delma2024-T1-C-albicans,delma-local,16,1,ceiling,false
+Delma2024-T1-C-albicans,delma-local,32,1,ceiling,false
+Delma2024-T1-C-albicans,delma-local,64,4,ceiling,false
+Delma2024-T1-C-albicans,delma-local,>64,5,ceiling,false

@@ -1,0 +1,24 @@
+{
+  "upload_type": "software",
+  "title": "MIC-50-90: Software for incomplete MIC distributions and laboratory reporting",
+  "description": "<p><strong>MIC-50-90 1.0.0</strong> combines MIC50/MIC90, observed extremes, exact or bounded counts and explicitly rounded percentages to describe MIC distributions compatible with incomplete laboratory reports. The Windows application and command line produce graphical HTML reports, CSV/JSON results and reusable settings.</p><p>Users can distinguish missing counts from measurement censoring, update the same collection with additional counts, select concentration groups at a requested precision, and prepare a sufficient laboratory report for independent checking. Sample identification, population confidence under independent observations from the same distribution, and calibration for exchangeable study units have separate assumptions.</p><p>This deposit contains software, tests, formal algebra, example inputs, user documentation, build instructions and checksums. It excludes the manuscript, supplementary appendices and editorial figures. MIT applies to the software; example data and bundled fonts retain their own attributed terms.</p>",
+  "creators": [
+    {
+      "name": "Kochanowski, Maciej",
+      "orcid": "0000-0002-9982-3028",
+      "affiliation": "Department of Bacteriology and Bacterial Diseases, National Veterinary Research Institute, 57 Partyzantów Avenue, 24-100 Puławy, Poland"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "version": "1.0.0",
+  "keywords": [
+    "antimicrobial resistance",
+    "minimum inhibitory concentration",
+    "incomplete reporting",
+    "partial identification",
+    "simultaneous confidence",
+    "research software"
+  ],
+  "language": "eng"
+}

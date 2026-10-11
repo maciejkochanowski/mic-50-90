@@ -1,0 +1,48 @@
+{
+  "cohort_id": "cefiderocol-25",
+  "n": 25,
+  "unit": "mg/L",
+  "panel": {
+    "categories": [
+      {
+        "label": "<= 4",
+        "lower_bound": null,
+        "upper_bound": 4,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4
+      },
+      {
+        "label": "> 4",
+        "lower_bound": 4,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 8
+      }
+    ]
+  },
+  "organism": "K. pneumoniae, OXA-232 subgroup",
+  "antimicrobial": "cefiderocol",
+  "source_doi": "10.3390/antibiotics15090844",
+  "source_location": "Tables 2 and 3",
+  "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13603273/",
+  "panel_basis": "Two broad groups defined by the printed count inequality; not the complete measured MIC panel.",
+  "rank_basis": "Analyst-declared ceiling ranks; original MIC50/MIC90 mapped to these two broad groups. Conditional comparison only.",
+  "iid": false,
+  "question_note": "These are the original assayed isolates. No clinical decision or iid population claim is made.",
+  "summaries": {
+    "quantiles": [
+      {
+        "probability": 0.5,
+        "category": "<= 4",
+        "convention": "ceiling"
+      },
+      {
+        "probability": 0.9,
+        "category": "<= 4",
+        "convention": "ceiling"
+      }
+    ]
+  }
+}

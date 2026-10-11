@@ -1,0 +1,5 @@
+unit_id,cohort_id,target_id
+site-A,A-drug-1,cut-1
+site-A,A-drug-1,cut-2
+site-B,B-drug-1,cut-1
+site-C,C-drug-1,cut-1

@@ -1,0 +1,34 @@
+panel_id,category,unit,lower,upper,lower_closed,upper_closed,panel_value
+PMC13609237-panel,<= 0.03,mg/L,,0.03,false,true,0.03
+PMC13609237-panel,0.06,mg/L,0.03,0.06,false,true,0.06
+PMC13609237-panel,0.125,mg/L,0.06,0.125,false,true,0.125
+PMC13609237-panel,0.25,mg/L,0.125,0.25,false,true,0.25
+PMC13609237-panel,0.5,mg/L,0.25,0.5,false,true,0.5
+PMC13609237-panel,1,mg/L,0.5,1,false,true,1
+PMC13609237-panel,2,mg/L,1,2,false,true,2
+PMC13609237-panel,4,mg/L,2,4,false,true,4
+PMC13609237-panel,8,mg/L,4,8,false,true,8
+PMC13609237-panel,16,mg/L,8,16,false,true,16
+PMC13609237-panel,32,mg/L,16,32,false,true,32
+PMC13609237-panel,> 32,mg/L,32,,false,false,64.0
+PMC13608856-panel,<= 0.12,mg/L,,0.12,false,true,0.12
+PMC13608856-panel,0.25,mg/L,0.12,0.25,false,true,0.25
+PMC13608856-panel,0.5,mg/L,0.25,0.5,false,true,0.5
+PMC13608856-panel,1,mg/L,0.5,1,false,true,1
+PMC13608856-panel,2,mg/L,1,2,false,true,2
+PMC13608856-panel,4,mg/L,2,4,false,true,4
+PMC13608856-panel,8,mg/L,4,8,false,true,8
+PMC13608856-panel,16,mg/L,8,16,false,true,16
+PMC13608856-panel,32,mg/L,16,32,false,true,32
+PMC13608856-panel,64,mg/L,32,64,false,true,64
+PMC13608856-panel,128,mg/L,64,128,false,true,128
+PMC13608856-panel,256,mg/L,128,256,false,true,256
+PMC13608856-panel,> 256,mg/L,256,,false,false,512.0
+PMC13436408-panel,<= 0.12,mg/L,,0.12,false,true,0.12
+PMC13436408-panel,0.25,mg/L,0.12,0.25,false,true,0.25
+PMC13436408-panel,0.5,mg/L,0.25,0.5,false,true,0.5
+PMC13436408-panel,1,mg/L,0.5,1,false,true,1
+PMC13436408-panel,2,mg/L,1,2,false,true,2
+PMC13436408-panel,4,mg/L,2,4,false,true,4
+PMC13436408-panel,8,mg/L,4,8,false,true,8
+PMC13436408-panel,> 8,mg/L,8,,false,false,16.0

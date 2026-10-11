@@ -1,0 +1,4 @@
+cohort_id,threshold,unit,count,n
+decision-demo,2,mg/L,1,10
+decision-demo,4,mg/L,0,10
+decision-demo,8,mg/L,0,10

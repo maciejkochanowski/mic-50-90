@@ -1,0 +1,2 @@
+cohort_id,panel_id,variant_id,n,mic50,mic90,rank_convention,iid,confidence_level
+Delma2024-T1-C-albicans,delma-local,primary,2902,0.125,0.25,ceiling,false,0.95

@@ -1,0 +1,14 @@
+panel_id,unit,category,lower,upper,lower_closed,upper_closed,panel_value
+delma-local,mg/L,<=0.03,,0.03,false,true,0.03
+delma-local,mg/L,0.06,0.06,0.06,true,true,0.06
+delma-local,mg/L,0.125,0.125,0.125,true,true,0.125
+delma-local,mg/L,0.25,0.25,0.25,true,true,0.25
+delma-local,mg/L,0.5,0.5,0.5,true,true,0.5
+delma-local,mg/L,1,1,1,true,true,1
+delma-local,mg/L,2,2,2,true,true,2
+delma-local,mg/L,4,4,4,true,true,4
+delma-local,mg/L,8,8,8,true,true,8
+delma-local,mg/L,16,16,16,true,true,16
+delma-local,mg/L,32,32,32,true,true,32
+delma-local,mg/L,64,64,64,true,true,64
+delma-local,mg/L,>64,64,,false,false,128

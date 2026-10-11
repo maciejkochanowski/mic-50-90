@@ -1,0 +1,8 @@
+panel_id,unit,category,lower,upper,lower_closed,upper_closed,panel_value
+panel-CDC-c51d6506b738a1297240,mg/L,<=1,,1.0,false,true,1.0
+panel-CDC-c51d6506b738a1297240,mg/L,2,2.0,2.0,true,true,2.0
+panel-CDC-c51d6506b738a1297240,mg/L,4,4.0,4.0,true,true,4.0
+panel-CDC-c51d6506b738a1297240,mg/L,8,8.0,8.0,true,true,8.0
+panel-CDC-c51d6506b738a1297240,mg/L,16,16.0,16.0,true,true,16.0
+panel-CDC-c51d6506b738a1297240,mg/L,32,32.0,32.0,true,true,32.0
+panel-CDC-c51d6506b738a1297240,mg/L,>=64,64.0,,true,true,128.0

@@ -1,0 +1,4 @@
+panel_id,category,unit,lower,upper,lower_closed,upper_closed,panel_value
+teaching,1,mg/L,1,1,true,true,1
+teaching,2,mg/L,2,2,true,true,2
+teaching,4,mg/L,4,4,true,true,4

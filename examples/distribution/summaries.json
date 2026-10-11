@@ -1,0 +1,14 @@
+{
+  "cohort_id": "controlled-20",
+  "unit": "mg/L",
+  "n": 20,
+  "panel": {"levels": [1, 2]},
+  "summaries": {
+    "quantiles": [
+      {"probability": 0.5, "category": "<=1", "convention": "ceiling"},
+      {"probability": 0.9, "category": "2", "convention": "ceiling"}
+    ]
+  },
+  "iid": true,
+  "confidence_level": 0.95
+}
