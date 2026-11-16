@@ -1,0 +1,49 @@
+{
+ "comparison": "population_controls",
+ "created_utc": "2026-11-02T05:34:09+00:00",
+ "status": "complete",
+ "full_design": true,
+ "elapsed_seconds": 23.63065883901436,
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c6s1b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 192
+ },
+ "counts": {
+  "projection_pairs": 2832,
+  "zero_budget_projection_pairs": 1416,
+  "probability_witness_queries": 267,
+  "accepted_probability_range_checks": 747,
+  "probability_witnesses_returned": 222,
+  "report_method_cases": 444,
+  "exact_count_union_projections": 447,
+  "complete_table_regions": 1200,
+  "oracle_linear_programs": 19680
+ },
+ "statuses": {
+  "range-calibrated:complete": 222,
+  "bonferroni:complete": 222
+ },
+ "maximum_absolute_difference": 2.0000806566500273e-12,
+ "maximum_absolute_difference_e12_rounded_up": 2.001,
+ "checks": 8943,
+ "failed_checks": 0,
+ "all_agree": true,
+ "failures": []
+}

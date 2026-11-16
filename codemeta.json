@@ -2,8 +2,8 @@
   "@context": "https://w3id.org/codemeta/3.0",
   "@type": "SoftwareSourceCode",
   "name": "mic-50-90",
-  "description": "Distribution bounds and reporting tools for incomplete MIC data",
-  "version": "1.0.0",
+  "description": "A Python package for bounding MIC distributions from incomplete susceptibility reports",
+  "version": "1.0.2",
   "license": "https://spdx.org/licenses/MIT",
   "author": [
     {
@@ -19,7 +19,7 @@
     }
   ],
   "codeRepository": "https://github.com/maciejkochanowski/mic-50-90",
-  "dateModified": "2026-10-11",
+  "dateModified": "2026-11-18",
   "programmingLanguage": [
     {
       "@type": "ComputerLanguage",
@@ -44,15 +44,15 @@
     "scipy>=1.13"
   ],
   "keywords": [
-    "antimicrobial resistance",
     "minimum inhibitory concentration",
+    "MIC50/MIC90",
+    "antimicrobial susceptibility reporting",
     "partial identification",
-    "order statistics"
+    "surveillance",
+    "antimicrobial resistance"
   ],
   "developmentStatus": "active",
   "applicationCategory": "Antimicrobial resistance",
   "readme": "README.md",
-  "issueTracker": "https://github.com/maciejkochanowski/mic-50-90/issues",
-  "downloadUrl": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0",
-  "identifier": "https://doi.org/10.5281/zenodo.23297915"
+  "issueTracker": "https://github.com/maciejkochanowski/mic-50-90/issues"
 }

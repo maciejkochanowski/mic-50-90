@@ -194,7 +194,7 @@ def test_invalid_page_sizes_fail_before_writing(tmp_path, records, page_size):
 
 @pytest.mark.parametrize("record_count", [0, 1, 50])
 def test_small_batches_are_identical_to_explicit_single_file(tmp_path, records, record_count):
-    # The default must not add an index/manifest or change the legacy document
+    # The default must not add an index/manifest or change the single-file document
     # when the whole batch already fits on one detail page.
     subset = records[:record_count]
     default = render_batch_html(subset, {"version": "1.0.0"}, tmp_path / "default.html")
@@ -204,19 +204,46 @@ def test_small_batches_are_identical_to_explicit_single_file(tmp_path, records, 
     assert "report-pagination-manifest" not in default.read_text(encoding="utf-8")
 
 
+def _assert_full_articles_equal(single, pages):
+    """Compare every complete article without retaining multiple 444 MB copies.
+
+    The former test compared two complete lists after normalizing each opening
+    article tag. This performs the same ordered, full-content comparison one
+    article at a time. Missing, extra, reordered or altered articles still fail.
+    """
+    from contextlib import closing
+    from itertools import zip_longest
+    import mmap
+
+    pattern = re.compile(rb"<article\b[^>]*>.*?</article>", re.DOTALL)
+    opening = re.compile(rb"<article\b[^>]*>")
+
+    def articles(paths):
+        for path in paths:
+            with path.open("rb") as stream:
+                if path.stat().st_size == 0:
+                    continue
+                with mmap.mmap(stream.fileno(), 0, access=mmap.ACCESS_READ) as view:
+                    for match in pattern.finditer(view):
+                        yield opening.sub(b"<article>", match.group(), count=1)
+
+    missing = object()
+    count = 0
+    with closing(articles([single])) as expected, closing(articles(pages)) as actual:
+        for left, right in zip_longest(expected, actual, fillvalue=missing):
+            assert left is not missing and right is not missing, "Different article counts"
+            assert left == right, f"Different complete article at position {count + 1}"
+            count += 1
+    return count
+
+
 def test_paginated_details_retain_full_single_file_content(tmp_path, records):
     # Omitting any diagnostic, scientific layer, audit or refusal from the
     # paginated callback must change at least one complete article comparison.
     single = render_batch_html(records, {"version": "1.0.0"}, tmp_path / "single.html", page_size=0)
     index = render_batch_html(records, {"version": "1.0.0"}, tmp_path / "report.html", page_size=50)
-    expected = re.findall(r"<article\b[^>]*>.*?</article>", single.read_text(encoding="utf-8"), re.DOTALL)
-    actual = []
-    for page in pagination_manifest(index)["pages"]:
-        content = (tmp_path / unquote(page["href"])).read_text(encoding="utf-8")
-        actual.extend(re.findall(r"<article\b[^>]*>.*?</article>", content, re.DOTALL))
-    normalize = lambda article: re.sub(r"<article\b[^>]*>", "<article>", article, count=1)
-    assert [normalize(article) for article in actual] == [normalize(article) for article in expected]
-    assert len(actual) == 257
+    pages = [tmp_path / unquote(page["href"]) for page in pagination_manifest(index)["pages"]]
+    assert _assert_full_articles_equal(single, pages) == 257
 
 
 def test_repeated_labels_remain_distinct_records(tmp_path, records):
@@ -262,3 +289,30 @@ def test_rerender_keeps_old_files_and_failure_preserves_working_index(tmp_path, 
     render_batch_html(records[:1], {"version": "1.0.0"}, output, page_size=0)
     for path, content in old_files.items():
         assert path.read_bytes() == content
+
+
+@pytest.mark.parametrize("change", ["none", "diagnostic", "missing", "extra", "reordered"])
+def test_streaming_full_article_comparison_detects_content_and_membership_changes(tmp_path, change):
+    first = '<article id="original-a"><h2>Cohort α</h2><p>diagnostic 123</p></article>'
+    second = '<article id="original-b"><h2>Cohort B</h2><p>refusal retained</p></article>'
+    expected = tmp_path / "expected.html"
+    expected.write_text(first + second, encoding="utf-8")
+    rows = [first.replace('original-a', 'page-a'), second.replace('original-b', 'page-b')]
+    if change == "diagnostic":
+        rows[0] = rows[0].replace('123', '124')
+    elif change == "missing":
+        rows.pop()
+    elif change == "extra":
+        rows.append(rows[-1])
+    elif change == "reordered":
+        rows.reverse()
+    paths = []
+    for index, row in enumerate(rows):
+        path = tmp_path / f"page-{index}.html"
+        path.write_text(row, encoding="utf-8")
+        paths.append(path)
+    if change == "none":
+        assert _assert_full_articles_equal(expected, paths) == 2
+    else:
+        with pytest.raises(AssertionError):
+            _assert_full_articles_equal(expected, paths)

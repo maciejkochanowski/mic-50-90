@@ -11,6 +11,9 @@ import sys
 import tempfile
 import time
 from urllib.request import Request, urlopen
+from runpy import run_path
+
+read_version = run_path(str(Path(__file__).with_name("release_version.py")))["read_version"]
 
 
 def main() -> None:
@@ -61,7 +64,7 @@ def main() -> None:
                     return response.read()
 
             info = json.loads(request("/api/session"))
-            if info["version"] != "1.0.0":
+            if info["version"] != read_version():
                 raise AssertionError("Unexpected application version")
             page = request("/").decode("utf-8")
             if "MIC-50-90" not in page:

@@ -1,0 +1,240 @@
+{
+ "case": "case-08",
+ "method": "joint-exact",
+ "cohort_id": "FDA|Vet-LIRN|2021|E. coli|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+ "source": "FDA animal pathogens",
+ "n": 719,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.137621290050447,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "ab8cdaaff686b5f8e17d3b63ab3cd907c177a9931bf45e4b09d84e806b12579c",
+  "family_size": 4,
+  "sample_size": 719,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.8531915055043126,
+    0.9259326990914033
+   ],
+   [
+    0.8701949317466652,
+    0.9391355235938255
+   ],
+   [
+    0.8701949317466652,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.0,
+    0.47239010398797815
+   ],
+   [
+    0.0,
+    0.07395042746942516
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.8531915055043126,
+    0.9259326990914033
+   ],
+   [
+    0.8701949317466652,
+    0.9391355235938255
+   ],
+   [
+    0.8701949317466652,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.0,
+    0.47239010398797815
+   ],
+   [
+    0.0,
+    0.07395042746942516
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 2785,
+  "excluded_boxes": 504,
+  "elapsed_seconds": 115.14779339905363,
+  "baseline_seconds": 0.0036096690455451608,
+  "refinement_seconds": 115.14409814495593,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.45354259510342504,
+    "upper": 0.9259326990914033,
+    "inner_lower": 0.4572331427908312,
+    "inner_upper": 0.918551603716591
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8531915055043126,
+    "upper": 0.9259326990914033,
+    "inner_lower": 0.8577378301035058,
+    "inner_upper": 0.9213863744922101
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8701949317466652,
+    "upper": 0.9391355235938255,
+    "inner_lower": 0.8745037187371129,
+    "inner_upper": 0.9348267366033779
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8701949317466652,
+    "upper": 1.0,
+    "inner_lower": 0.8783077485124987,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.47239010398797815,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.46415323170137895
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.4855929284904003,
+    "inner_lower": 0.0016554978268796818,
+    "inner_upper": 0.4757057031409983
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.546457404896575,
+    "inner_lower": 0.0016554978268796818,
+    "inner_upper": 0.5387104488262521
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.0740673009085968,
+    "upper": 0.546457404896575,
+    "inner_lower": 0.08144839628340896,
+    "inner_upper": 0.5427668572091687
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.07395042746942516,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.06847133251897718
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14680849449568736,
+    "inner_lower": 0.0016554978268796818,
+    "inner_upper": 0.13820576151357764
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.0740673009085968,
+    "upper": 0.14680849449568736,
+    "inner_lower": 0.07861362550778984,
+    "inner_upper": 0.1422621698964943
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.12980506825333474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12143987287997059
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.06086447640617464,
+    "upper": 0.12980506825333474,
+    "inner_lower": 0.06517326339662201,
+    "inner_upper": 0.12549628126288723
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.12980506825333474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12169225148750139
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 0,
+  "endpoint_gap_pp": 0.988722534940201
+ },
+ "refinement_budget_seconds": 114.86069330992177,
+ "seconds": 115.28814506507479,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

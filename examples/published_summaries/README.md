@@ -20,4 +20,4 @@ The first two cases use analyst-declared ceiling and adjacent ranks because the 
 
 Sources: https://doi.org/10.1186/s12879-026-12598-y (Table 4); https://doi.org/10.1002/vms3.71162 (Table 4, Total n=16); https://doi.org/10.3390/microorganisms14081660 (Table 1 and statistical definition).
 
-These are three of the five numerical outcomes in the frozen twenty-paper extension. The complete register retains all 15 refusals and does not replace the original pilot's ten refusals. Search metadata and the frozen protocol accompany the scientific reproduction package.
+These are three of the five numerical outcomes of a fixed search of twenty papers; the remaining fifteen papers ended in refusals.

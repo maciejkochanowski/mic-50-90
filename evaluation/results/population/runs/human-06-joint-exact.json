@@ -1,0 +1,240 @@
+{
+ "case": "human-06",
+ "method": "joint-exact",
+ "cohort_id": "NORM2024|T88|Tetracycline",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.4073004350066185,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "31b39bb4c25e443a2b2f7e920074e02859ae567c59ebbdaee7c187debd91d9c6",
+  "family_size": 4,
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.7913707707718757,
+    0.9263217941706288
+   ],
+   [
+    0.8664239879554598,
+    0.9819345767725497
+   ],
+   [
+    0.8664239879554598,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.24254589352857367,
+    0.9263217941706288
+   ],
+   [
+    0.0,
+    0.13631826605341027
+   ],
+   [
+    0.0,
+    0.1335760120445401
+   ],
+   [
+    0.0,
+    0.1335760120445401
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.7913707707718757,
+    0.9263217941706288
+   ],
+   [
+    0.8664239879554598,
+    0.9819345767725497
+   ],
+   [
+    0.8664239879554598,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.24254589352857367,
+    0.9263217941706288
+   ],
+   [
+    0.0,
+    0.13631826605341027
+   ],
+   [
+    0.0,
+    0.1335760120445401
+   ],
+   [
+    0.0,
+    0.1335760120445401
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 3276,
+  "excluded_boxes": 608,
+  "elapsed_seconds": 115.29960775503423,
+  "baseline_seconds": 0.36494694207794964,
+  "refinement_seconds": 114.93453761795536,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5488248772433022,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5402494885363754
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.7913707707718757,
+    "upper": 0.9263217941706288,
+    "inner_lower": 0.7998052097342979,
+    "inner_upper": 0.9178873552082066
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8664239879554598,
+    "upper": 0.9819345767725497,
+    "inner_lower": 0.873643399756528,
+    "inner_upper": 0.9674957531704133
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8664239879554598,
+    "upper": 1.0,
+    "inner_lower": 0.8747724887082436,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.24254589352857367,
+    "upper": 0.9263217941706288,
+    "inner_lower": 0.2595557211979223,
+    "inner_upper": 0.90931196650128
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.3175991107121578,
+    "upper": 0.9819345767725497,
+    "inner_lower": 0.33339391122015244,
+    "inner_upper": 0.9666666666666666
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.3175991107121578,
+    "upper": 1.0,
+    "inner_lower": 0.33452300017186803,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.45117512275669786,
+    "upper": 1.0,
+    "inner_lower": 0.4597505114636245,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.13631826605341027,
+    "inner_lower": 0.01584026802735317,
+    "inner_upper": 0.13159348443077498
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.20862922922812424,
+    "inner_lower": 0.01584026802735317,
+    "inner_upper": 0.19184628951291846
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.07367820582937133,
+    "upper": 0.20862922922812424,
+    "inner_lower": 0.08211264479179327,
+    "inner_upper": 0.20019479026570217
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.1335760120445401,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.11800809949068834
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.018065423227450413,
+    "upper": 0.1335760120445401,
+    "inner_lower": 0.03250424682958664,
+    "inner_upper": 0.12635660024347203
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.1335760120445401,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12522751129175644
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 0,
+  "endpoint_gap_pp": 1.7009827669348783
+ },
+ "refinement_budget_seconds": 114.59122190403286,
+ "seconds": 115.71056074695662,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:31+00:00"
+}

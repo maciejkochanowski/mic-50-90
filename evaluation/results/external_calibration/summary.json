@@ -1,0 +1,731 @@
+{
+ "comparison": "external_calibration",
+ "created_utc": "2026-11-02T06:39:34+00:00",
+ "status": "complete",
+ "full_design": true,
+ "real": [
+  {
+   "dataset": "dogs-ecoli",
+   "reference": "uniform",
+   "source": "FDA animal pathogens",
+   "genus": "E. coli",
+   "agency": "NAHLN",
+   "years": {
+    "training": 2022,
+    "calibration": 2023,
+    "test": 2024
+   },
+   "drugs": [
+    "Amikacin",
+    "Cefazolin",
+    "Cefovecin",
+    "Cefpodoxime",
+    "Ceftazidime",
+    "Chloramphenicol",
+    "Doxycycline",
+    "Enrofloxacin",
+    "Gentamicin",
+    "Marbofloxacin",
+    "Piperacillin/Tazobactam",
+    "Pradofloxacin",
+    "Tetracycline",
+    "Trimethoprim/Sulfamethoxazole"
+   ],
+   "nominal_level": 0.9523809523809523,
+   "calibration_rank": 20,
+   "calibration_units": 20,
+   "radius": 1.6071429252624512,
+   "test_units": 20,
+   "test_units_covered": 20,
+   "audit_successful_units": 20,
+   "test_tails": 1340,
+   "test_tails_covered": 1340,
+   "mean_width_pp": 27.197340586074244,
+   "mean_sample_width_pp": 27.245729883686725,
+   "maximum_independent_endpoint_difference": 1.1102230246251565e-15,
+   "seconds": 189.15495267300867,
+   "created_utc": "2026-11-02T05:29:36+00:00"
+  },
+  {
+   "dataset": "dogs-ecoli",
+   "reference": "trained",
+   "source": "FDA animal pathogens",
+   "genus": "E. coli",
+   "agency": "NAHLN",
+   "years": {
+    "training": 2022,
+    "calibration": 2023,
+    "test": 2024
+   },
+   "drugs": [
+    "Amikacin",
+    "Cefazolin",
+    "Cefovecin",
+    "Cefpodoxime",
+    "Ceftazidime",
+    "Chloramphenicol",
+    "Doxycycline",
+    "Enrofloxacin",
+    "Gentamicin",
+    "Marbofloxacin",
+    "Piperacillin/Tazobactam",
+    "Pradofloxacin",
+    "Tetracycline",
+    "Trimethoprim/Sulfamethoxazole"
+   ],
+   "nominal_level": 0.9523809523809523,
+   "calibration_rank": 20,
+   "calibration_units": 20,
+   "radius": 2.4331430125333924,
+   "test_units": 20,
+   "test_units_covered": 19,
+   "audit_successful_units": 19,
+   "test_tails": 1340,
+   "test_tails_covered": 1337,
+   "mean_width_pp": 25.068276792168426,
+   "mean_sample_width_pp": 27.245729883686725,
+   "maximum_independent_endpoint_difference": 1.6653345369377348e-15,
+   "seconds": 284.1085299500264,
+   "created_utc": "2026-11-02T05:31:11+00:00"
+  },
+  {
+   "dataset": "dogs-spseud",
+   "reference": "uniform",
+   "source": "FDA animal pathogens",
+   "genus": "S. pseudintermedius",
+   "agency": "NAHLN",
+   "years": {
+    "training": 2022,
+    "calibration": 2023,
+    "test": 2024
+   },
+   "drugs": [
+    "Amikacin",
+    "Amoxicillin/Clavulanic Acid",
+    "Ampicillin",
+    "Cefazolin",
+    "Cefovecin",
+    "Cefpodoxime",
+    "Cephalothin",
+    "Chloramphenicol",
+    "Clindamycin",
+    "Doxycycline",
+    "Enrofloxacin",
+    "Erythromycin",
+    "Marbofloxacin",
+    "Minocycline",
+    "Oxacillin",
+    "Penicillin",
+    "Pradofloxacin",
+    "Rifampin",
+    "Trimethoprim/Sulfamethoxazole"
+   ],
+   "nominal_level": 0.9545454545454546,
+   "calibration_rank": 21,
+   "calibration_units": 21,
+   "radius": 1.5714287757873535,
+   "test_units": 20,
+   "test_units_covered": 18,
+   "audit_successful_units": 18,
+   "test_tails": 1500,
+   "test_tails_covered": 1493,
+   "mean_width_pp": 36.616576540394284,
+   "mean_sample_width_pp": 37.11299426495576,
+   "maximum_independent_endpoint_difference": 2.9194111850205928e-08,
+   "seconds": 232.99898184894118,
+   "created_utc": "2026-11-02T05:30:20+00:00"
+  },
+  {
+   "dataset": "dogs-spseud",
+   "reference": "trained",
+   "source": "FDA animal pathogens",
+   "genus": "S. pseudintermedius",
+   "agency": "NAHLN",
+   "years": {
+    "training": 2022,
+    "calibration": 2023,
+    "test": 2024
+   },
+   "drugs": [
+    "Amikacin",
+    "Amoxicillin/Clavulanic Acid",
+    "Ampicillin",
+    "Cefazolin",
+    "Cefovecin",
+    "Cefpodoxime",
+    "Cephalothin",
+    "Chloramphenicol",
+    "Clindamycin",
+    "Doxycycline",
+    "Enrofloxacin",
+    "Erythromycin",
+    "Marbofloxacin",
+    "Minocycline",
+    "Oxacillin",
+    "Penicillin",
+    "Pradofloxacin",
+    "Rifampin",
+    "Trimethoprim/Sulfamethoxazole"
+   ],
+   "nominal_level": 0.9545454545454546,
+   "calibration_rank": 21,
+   "calibration_units": 21,
+   "radius": 1.3665988906870272,
+   "test_units": 20,
+   "test_units_covered": 18,
+   "audit_successful_units": 18,
+   "test_tails": 1500,
+   "test_tails_covered": 1480,
+   "mean_width_pp": 34.68351740799304,
+   "mean_sample_width_pp": 37.11299426495576,
+   "maximum_independent_endpoint_difference": 1.887379141862766e-15,
+   "seconds": 352.55271649803035,
+   "created_utc": "2026-11-02T05:32:20+00:00"
+  },
+  {
+   "dataset": "retail-salmonella",
+   "reference": "uniform",
+   "source": "NARMS retail meats",
+   "genus": "Salmonella",
+   "agency": "FDA",
+   "years": {
+    "training": 2019,
+    "calibration": 2020,
+    "test": 2021
+   },
+   "drugs": [
+    "AMC",
+    "AMP",
+    "AXO",
+    "CHL",
+    "COT",
+    "FIS",
+    "GEN",
+    "SUF",
+    "TET"
+   ],
+   "nominal_level": 0.9545454545454546,
+   "calibration_rank": 21,
+   "calibration_units": 21,
+   "radius": 2.3117648363113403,
+   "test_units": 21,
+   "test_units_covered": 19,
+   "audit_successful_units": 19,
+   "test_tails": 1113,
+   "test_tails_covered": 1111,
+   "mean_width_pp": 29.196514281055848,
+   "mean_sample_width_pp": 29.217055233589356,
+   "maximum_independent_endpoint_difference": 1.1934897514720433e-15,
+   "seconds": 152.87069243495353,
+   "created_utc": "2026-11-02T05:29:00+00:00"
+  },
+  {
+   "dataset": "retail-salmonella",
+   "reference": "trained",
+   "source": "NARMS retail meats",
+   "genus": "Salmonella",
+   "agency": "FDA",
+   "years": {
+    "training": 2019,
+    "calibration": 2020,
+    "test": 2021
+   },
+   "drugs": [
+    "AMC",
+    "AMP",
+    "AXO",
+    "CHL",
+    "COT",
+    "FIS",
+    "GEN",
+    "SUF",
+    "TET"
+   ],
+   "nominal_level": 0.9545454545454546,
+   "calibration_rank": 21,
+   "calibration_units": 21,
+   "radius": 4.399993705760016,
+   "test_units": 21,
+   "test_units_covered": 21,
+   "audit_successful_units": 21,
+   "test_tails": 1113,
+   "test_tails_covered": 1113,
+   "mean_width_pp": 28.89795095050524,
+   "mean_sample_width_pp": 29.217055233589356,
+   "maximum_independent_endpoint_difference": 1.4432899320127035e-15,
+   "seconds": 230.03170764492825,
+   "created_utc": "2026-11-02T05:30:17+00:00"
+  },
+  {
+   "dataset": "retail-campylobacter",
+   "reference": "uniform",
+   "source": "NARMS retail meats",
+   "genus": "Campylobacter",
+   "agency": "FDA",
+   "years": {
+    "training": 2017,
+    "calibration": 2018,
+    "test": 2019
+   },
+   "drugs": [
+    "GEN",
+    "NAL",
+    "TET"
+   ],
+   "nominal_level": 0.95,
+   "calibration_rank": 19,
+   "calibration_units": 19,
+   "radius": 1.4230769276618958,
+   "test_units": 18,
+   "test_units_covered": 18,
+   "audit_successful_units": 18,
+   "test_tails": 450,
+   "test_tails_covered": 450,
+   "mean_width_pp": 31.78028391554935,
+   "mean_sample_width_pp": 33.11918538130049,
+   "maximum_independent_endpoint_difference": 1.5543122344752192e-15,
+   "seconds": 68.32933046098333,
+   "created_utc": "2026-11-02T05:27:36+00:00"
+  },
+  {
+   "dataset": "retail-campylobacter",
+   "reference": "trained",
+   "source": "NARMS retail meats",
+   "genus": "Campylobacter",
+   "agency": "FDA",
+   "years": {
+    "training": 2017,
+    "calibration": 2018,
+    "test": 2019
+   },
+   "drugs": [
+    "GEN",
+    "NAL",
+    "TET"
+   ],
+   "nominal_level": 0.95,
+   "calibration_rank": 19,
+   "calibration_units": 19,
+   "radius": 1.2200002316767393,
+   "test_units": 18,
+   "test_units_covered": 18,
+   "audit_successful_units": 18,
+   "test_tails": 450,
+   "test_tails_covered": 450,
+   "mean_width_pp": 29.959515773569745,
+   "mean_sample_width_pp": 33.11918538130049,
+   "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
+   "seconds": 110.26598542800639,
+   "created_utc": "2026-11-02T05:28:18+00:00"
+  },
+  {
+   "dataset": "retail-ecoli",
+   "reference": "uniform",
+   "source": "NARMS retail meats",
+   "genus": "E. coli",
+   "agency": "FDA",
+   "years": {
+    "training": 2017,
+    "calibration": 2018,
+    "test": 2019
+   },
+   "drugs": [
+    "AMC",
+    "AMP",
+    "AXO",
+    "AZI",
+    "CHL",
+    "CIP",
+    "CIP2",
+    "COT",
+    "FIS",
+    "GEN",
+    "NAL",
+    "SUF",
+    "TET"
+   ],
+   "nominal_level": 0.9285714285714286,
+   "calibration_rank": 13,
+   "calibration_units": 13,
+   "radius": 1.04722261428833,
+   "test_units": 13,
+   "test_units_covered": 11,
+   "audit_successful_units": 11,
+   "test_tails": 1105,
+   "test_tails_covered": 1101,
+   "mean_width_pp": 24.073198058226534,
+   "mean_sample_width_pp": 24.379266141942573,
+   "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
+   "seconds": 151.3432509379927,
+   "created_utc": "2026-11-02T05:28:59+00:00"
+  },
+  {
+   "dataset": "retail-ecoli",
+   "reference": "trained",
+   "source": "NARMS retail meats",
+   "genus": "E. coli",
+   "agency": "FDA",
+   "years": {
+    "training": 2017,
+    "calibration": 2018,
+    "test": 2019
+   },
+   "drugs": [
+    "AMC",
+    "AMP",
+    "AXO",
+    "AZI",
+    "CHL",
+    "CIP",
+    "CIP2",
+    "COT",
+    "FIS",
+    "GEN",
+    "NAL",
+    "SUF",
+    "TET"
+   ],
+   "nominal_level": 0.9285714285714286,
+   "calibration_rank": 13,
+   "calibration_units": 13,
+   "radius": 1.7008187293290644,
+   "test_units": 13,
+   "test_units_covered": 8,
+   "audit_successful_units": 8,
+   "test_tails": 1105,
+   "test_tails_covered": 1099,
+   "mean_width_pp": 18.12320815546912,
+   "mean_sample_width_pp": 24.379266141942573,
+   "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
+   "seconds": 231.08725729596335,
+   "created_utc": "2026-11-02T05:30:18+00:00"
+  },
+  {
+   "dataset": "retail-enterococcus",
+   "reference": "uniform",
+   "source": "NARMS retail meats",
+   "genus": "Enterococcus",
+   "agency": "FDA",
+   "years": {
+    "training": 2019,
+    "calibration": 2020,
+    "test": 2021
+   },
+   "drugs": [
+    "AMP",
+    "CHL",
+    "ERY",
+    "QDA",
+    "TET"
+   ],
+   "nominal_level": 0.9333333333333333,
+   "calibration_rank": 14,
+   "calibration_units": 14,
+   "radius": 1.0833334922790527,
+   "test_units": 17,
+   "test_units_covered": 17,
+   "audit_successful_units": 17,
+   "test_tails": 561,
+   "test_tails_covered": 561,
+   "mean_width_pp": 32.401670939880255,
+   "mean_sample_width_pp": 32.870506584835226,
+   "maximum_independent_endpoint_difference": 1.6653345369377348e-15,
+   "seconds": 72.01206079195254,
+   "created_utc": "2026-11-02T05:27:39+00:00"
+  },
+  {
+   "dataset": "retail-enterococcus",
+   "reference": "trained",
+   "source": "NARMS retail meats",
+   "genus": "Enterococcus",
+   "agency": "FDA",
+   "years": {
+    "training": 2019,
+    "calibration": 2020,
+    "test": 2021
+   },
+   "drugs": [
+    "AMP",
+    "CHL",
+    "ERY",
+    "QDA",
+    "TET"
+   ],
+   "nominal_level": 0.9333333333333333,
+   "calibration_rank": 14,
+   "calibration_units": 14,
+   "radius": 3.8349608974546734,
+   "test_units": 17,
+   "test_units_covered": 17,
+   "audit_successful_units": 17,
+   "test_tails": 561,
+   "test_tails_covered": 561,
+   "mean_width_pp": 31.05616680477044,
+   "mean_sample_width_pp": 32.870506584835226,
+   "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
+   "seconds": 100.23440892098006,
+   "created_utc": "2026-11-02T05:28:08+00:00"
+  }
+ ],
+ "not_evaluable": [],
+ "synthetic": {
+  "settings": [
+   {
+    "setting": "c=20|M=19",
+    "concentration": 20,
+    "calibration_units": 19,
+    "nominal_level": 0.95,
+    "repetitions": 200,
+    "rank": 19,
+    "mean_radius": 0.6583169531822205,
+    "tests": {
+     "SU1": {
+      "test_units": 20000,
+      "covered": 19131,
+      "coverage": 0.95655,
+      "lowest_repetition": 0.76,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.05": {
+      "test_units": 20000,
+      "covered": 19335,
+      "coverage": 0.96675,
+      "lowest_repetition": 0.81,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.1": {
+      "test_units": 20000,
+      "covered": 19533,
+      "coverage": 0.97665,
+      "lowest_repetition": 0.83,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.2": {
+      "test_units": 20000,
+      "covered": 19808,
+      "coverage": 0.9904,
+      "lowest_repetition": 0.92,
+      "highest_repetition": 1.0
+     },
+     "SU2|shift_all=1": {
+      "test_units": 20000,
+      "covered": 19967,
+      "coverage": 0.99835,
+      "lowest_repetition": 0.91,
+      "highest_repetition": 1.0
+     },
+     "SU3": {
+      "test_units": 20000,
+      "covered": 18582,
+      "coverage": 0.9291,
+      "lowest_repetition": 0.71,
+      "highest_repetition": 1.0
+     }
+    }
+   },
+   {
+    "setting": "c=20|M=39",
+    "concentration": 20,
+    "calibration_units": 39,
+    "nominal_level": 0.95,
+    "repetitions": 200,
+    "rank": 38,
+    "mean_radius": 0.633116958141327,
+    "tests": {
+     "SU1": {
+      "test_units": 20000,
+      "covered": 19147,
+      "coverage": 0.95735,
+      "lowest_repetition": 0.77,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.05": {
+      "test_units": 20000,
+      "covered": 19333,
+      "coverage": 0.96665,
+      "lowest_repetition": 0.87,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.1": {
+      "test_units": 20000,
+      "covered": 19578,
+      "coverage": 0.9789,
+      "lowest_repetition": 0.89,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.2": {
+      "test_units": 20000,
+      "covered": 19825,
+      "coverage": 0.99125,
+      "lowest_repetition": 0.96,
+      "highest_repetition": 1.0
+     },
+     "SU2|shift_all=1": {
+      "test_units": 20000,
+      "covered": 19986,
+      "coverage": 0.9993,
+      "lowest_repetition": 0.99,
+      "highest_repetition": 1.0
+     },
+     "SU3": {
+      "test_units": 20000,
+      "covered": 18470,
+      "coverage": 0.9235,
+      "lowest_repetition": 0.79,
+      "highest_repetition": 1.0
+     }
+    }
+   },
+   {
+    "setting": "c=100|M=19",
+    "concentration": 100,
+    "calibration_units": 19,
+    "nominal_level": 0.95,
+    "repetitions": 200,
+    "rank": 19,
+    "mean_radius": 0.6020169687271119,
+    "tests": {
+     "SU1": {
+      "test_units": 20000,
+      "covered": 19197,
+      "coverage": 0.95985,
+      "lowest_repetition": 0.71,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.05": {
+      "test_units": 20000,
+      "covered": 19605,
+      "coverage": 0.98025,
+      "lowest_repetition": 0.87,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.1": {
+      "test_units": 20000,
+      "covered": 19795,
+      "coverage": 0.98975,
+      "lowest_repetition": 0.91,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.2": {
+      "test_units": 20000,
+      "covered": 19958,
+      "coverage": 0.9979,
+      "lowest_repetition": 0.97,
+      "highest_repetition": 1.0
+     },
+     "SU2|shift_all=1": {
+      "test_units": 20000,
+      "covered": 19997,
+      "coverage": 0.99985,
+      "lowest_repetition": 0.99,
+      "highest_repetition": 1.0
+     },
+     "SU3": {
+      "test_units": 20000,
+      "covered": 17956,
+      "coverage": 0.8978,
+      "lowest_repetition": 0.72,
+      "highest_repetition": 1.0
+     }
+    }
+   },
+   {
+    "setting": "c=100|M=39",
+    "concentration": 100,
+    "calibration_units": 39,
+    "nominal_level": 0.95,
+    "repetitions": 200,
+    "rank": 38,
+    "mean_radius": 0.5774836540222168,
+    "tests": {
+     "SU1": {
+      "test_units": 20000,
+      "covered": 19095,
+      "coverage": 0.95475,
+      "lowest_repetition": 0.78,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.05": {
+      "test_units": 20000,
+      "covered": 19552,
+      "coverage": 0.9776,
+      "lowest_repetition": 0.9,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.1": {
+      "test_units": 20000,
+      "covered": 19784,
+      "coverage": 0.9892,
+      "lowest_repetition": 0.93,
+      "highest_repetition": 1.0
+     },
+     "SU2|weight=0.2": {
+      "test_units": 20000,
+      "covered": 19954,
+      "coverage": 0.9977,
+      "lowest_repetition": 0.97,
+      "highest_repetition": 1.0
+     },
+     "SU2|shift_all=1": {
+      "test_units": 20000,
+      "covered": 19997,
+      "coverage": 0.99985,
+      "lowest_repetition": 0.98,
+      "highest_repetition": 1.0
+     },
+     "SU3": {
+      "test_units": 20000,
+      "covered": 17690,
+      "coverage": 0.8845,
+      "lowest_repetition": 0.72,
+      "highest_repetition": 0.99
+     }
+    }
+   }
+  ],
+  "repetitions": 200,
+  "created_utc": "2026-11-02T06:39:34+00:00",
+  "environment": {
+   "package": "mic-50-90",
+   "package_version": "1.0.1",
+   "python": "3.11.5",
+   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+   "machine": "x86_64",
+   "node": "x1001c2s5b0n3",
+   "logical_cpus": 192,
+   "versions": {
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+   },
+   "thread_limits": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+   },
+   "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+   "processor": "AMD EPYC 9654 96-Core Processor",
+   "available_cpus": 8
+  }
+ },
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c2s5b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 8
+ }
+}

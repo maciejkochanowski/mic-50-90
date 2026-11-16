@@ -1,0 +1,888 @@
+{
+ "comparison": "examples",
+ "created_utc": "2026-11-02T05:39:13+00:00",
+ "status": "complete",
+ "full_design": true,
+ "statuses": {
+  "match": 122,
+  "differs": 0,
+  "not run": 0
+ },
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c6s1b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 192
+ },
+ "numbers": [
+  {
+   "document": "Article 3.2",
+   "quantity": "ampicillin 0.5 mg/L, summaries: lowest count",
+   "printed": "1",
+   "reproduced": "1",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.2",
+   "quantity": "ampicillin 0.5 mg/L, summaries: highest count",
+   "printed": "32",
+   "reproduced": "32",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.2",
+   "quantity": "ampicillin 0.5 mg/L, with 59 at <=0.25: lowest count",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.2",
+   "quantity": "ampicillin 0.5 mg/L, with 59 at <=0.25: highest count",
+   "printed": "7",
+   "reproduced": "7",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.5/B.7",
+   "quantity": "ampicillin 0.5 mg/L, summaries: lowest count",
+   "printed": "1",
+   "reproduced": "1",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.5/B.7",
+   "quantity": "ampicillin 0.5 mg/L, summaries: highest count",
+   "printed": "32",
+   "reproduced": "32",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.5/B.7",
+   "quantity": "ampicillin 0.5 mg/L, with 59 at <=0.25: lowest count",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.5/B.7",
+   "quantity": "ampicillin 0.5 mg/L, with 59 at <=0.25: highest count",
+   "printed": "7",
+   "reproduced": "7",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.3",
+   "quantity": "ampicillin 0.5 mg/L, summaries: lowest count",
+   "printed": "1",
+   "reproduced": "1",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.3",
+   "quantity": "ampicillin 0.5 mg/L, summaries: highest count",
+   "printed": "32",
+   "reproduced": "32",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.3",
+   "quantity": "ampicillin 0.5 mg/L, with 59 at <=0.25: lowest count",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.3",
+   "quantity": "ampicillin 0.5 mg/L, with 59 at <=0.25: highest count",
+   "printed": "7",
+   "reproduced": "7",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.3",
+   "quantity": "ampicillin 0.5 mg/L, MIC90 rank 60: lowest count",
+   "printed": "1",
+   "reproduced": "1",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.3",
+   "quantity": "ampicillin 0.5 mg/L, MIC90 rank 60: highest count",
+   "printed": "7",
+   "reproduced": "7",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.2",
+   "quantity": "ampicillin 0.5 mg/L share, lower (%)",
+   "printed": "2.99",
+   "reproduced": "2.99",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.2",
+   "quantity": "ampicillin 0.5 mg/L share, upper (%)",
+   "printed": "10.45",
+   "reproduced": "10.45",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.5",
+   "quantity": "ampicillin 0.5 mg/L share before the count, lower (%)",
+   "printed": "1.49",
+   "reproduced": "1.49",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.5",
+   "quantity": "ampicillin 0.5 mg/L share before the count, upper (%)",
+   "printed": "47.76",
+   "reproduced": "47.76",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.3",
+   "quantity": "population interval, category 0.5, summaries: lower (%)",
+   "printed": "0.004",
+   "reproduced": "0.004",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.3",
+   "quantity": "population interval, category 0.5, summaries: upper (%)",
+   "printed": "65.22",
+   "reproduced": "65.22",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.3",
+   "quantity": "population interval, category 0.5, with count: lower (%)",
+   "printed": "0.109",
+   "reproduced": "0.109",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.3",
+   "quantity": "population interval, category 0.5, with count: upper (%)",
+   "printed": "25.00",
+   "reproduced": "25.00",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.6/B.7",
+   "quantity": "population interval, category 0.5, summaries: lower (%)",
+   "printed": "0.004",
+   "reproduced": "0.004",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.6/B.7",
+   "quantity": "population interval, category 0.5, summaries: upper (%)",
+   "printed": "65.22",
+   "reproduced": "65.22",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.6/B.7",
+   "quantity": "population interval, category 0.5, with count: lower (%)",
+   "printed": "0.109",
+   "reproduced": "0.109",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.6/B.7",
+   "quantity": "population interval, category 0.5, with count: upper (%)",
+   "printed": "25.00",
+   "reproduced": "25.00",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.4",
+   "quantity": "population interval, category 0.5, summaries: lower (%)",
+   "printed": "0.004",
+   "reproduced": "0.004",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.4",
+   "quantity": "population interval, category 0.5, summaries: upper (%)",
+   "printed": "65.22",
+   "reproduced": "65.22",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.4",
+   "quantity": "population interval, category 0.5, with count: lower (%)",
+   "printed": "0.109",
+   "reproduced": "0.109",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.4",
+   "quantity": "population interval, category 0.5, with count: upper (%)",
+   "printed": "25.00",
+   "reproduced": "25.00",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.6",
+   "quantity": "compatible tables evaluated, summaries",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.6",
+   "quantity": "compatible tables evaluated, with count",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.4",
+   "quantity": "chloramphenicol above 2 mg/L: lowest count",
+   "printed": "34",
+   "reproduced": "34",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.4",
+   "quantity": "chloramphenicol above 2 mg/L: highest count",
+   "printed": "67",
+   "reproduced": "67",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.5",
+   "quantity": "chloramphenicol above 2 mg/L: lowest count",
+   "printed": "34",
+   "reproduced": "34",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.5",
+   "quantity": "chloramphenicol above 2 mg/L: highest count",
+   "printed": "67",
+   "reproduced": "67",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.4",
+   "quantity": "chloramphenicol above 2 mg/L: lowest share (%)",
+   "printed": "50.75",
+   "reproduced": "50.75",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.5",
+   "quantity": "chloramphenicol: results recorded <=4",
+   "printed": "33",
+   "reproduced": "33",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2007: isolates >0.06 to 2 mg/L",
+   "printed": "123",
+   "reproduced": "123",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2007: isolates",
+   "printed": "539",
+   "reproduced": "539",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2007: share >0.06 to 2 mg/L (%)",
+   "printed": "22.8",
+   "reproduced": "22.8",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2008: isolates >0.06 to 2 mg/L",
+   "printed": "167",
+   "reproduced": "167",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2008: isolates",
+   "printed": "710",
+   "reproduced": "710",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2008: share >0.06 to 2 mg/L (%)",
+   "printed": "23.5",
+   "reproduced": "23.5",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2009: isolates >0.06 to 2 mg/L",
+   "printed": "169",
+   "reproduced": "169",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2009: isolates",
+   "printed": "730",
+   "reproduced": "730",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2009: share >0.06 to 2 mg/L (%)",
+   "printed": "23.2",
+   "reproduced": "23.2",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2010: isolates >0.06 to 2 mg/L",
+   "printed": "132",
+   "reproduced": "132",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2010: isolates",
+   "printed": "482",
+   "reproduced": "482",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2010: share >0.06 to 2 mg/L (%)",
+   "printed": "27.4",
+   "reproduced": "27.4",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2011: isolates >0.06 to 2 mg/L",
+   "printed": "122",
+   "reproduced": "122",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2011: isolates",
+   "printed": "466",
+   "reproduced": "466",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2011: share >0.06 to 2 mg/L (%)",
+   "printed": "26.2",
+   "reproduced": "26.2",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2012: isolates >0.06 to 2 mg/L",
+   "printed": "92",
+   "reproduced": "92",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2012: isolates",
+   "printed": "366",
+   "reproduced": "366",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2012: share >0.06 to 2 mg/L (%)",
+   "printed": "25.1",
+   "reproduced": "25.1",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2013: isolates >0.06 to 2 mg/L",
+   "printed": "97",
+   "reproduced": "97",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2013: isolates",
+   "printed": "331",
+   "reproduced": "331",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2013: share >0.06 to 2 mg/L (%)",
+   "printed": "29.3",
+   "reproduced": "29.3",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2014: isolates >0.06 to 2 mg/L",
+   "printed": "84",
+   "reproduced": "84",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2014: isolates",
+   "printed": "394",
+   "reproduced": "394",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2014: share >0.06 to 2 mg/L (%)",
+   "printed": "21.3",
+   "reproduced": "21.3",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2015: isolates >0.06 to 2 mg/L",
+   "printed": "107",
+   "reproduced": "107",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2015: isolates",
+   "printed": "468",
+   "reproduced": "468",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2015: share >0.06 to 2 mg/L (%)",
+   "printed": "22.9",
+   "reproduced": "22.9",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2016: isolates >0.06 to 2 mg/L",
+   "printed": "99",
+   "reproduced": "99",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2016: isolates",
+   "printed": "504",
+   "reproduced": "504",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2016: share >0.06 to 2 mg/L (%)",
+   "printed": "19.6",
+   "reproduced": "19.6",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2017: isolates >0.06 to 2 mg/L",
+   "printed": "78",
+   "reproduced": "78",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2017: isolates",
+   "printed": "548",
+   "reproduced": "548",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2017: share >0.06 to 2 mg/L (%)",
+   "printed": "14.2",
+   "reproduced": "14.2",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2018: isolates >0.06 to 2 mg/L",
+   "printed": "107",
+   "reproduced": "107",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2018: isolates",
+   "printed": "591",
+   "reproduced": "591",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2018: share >0.06 to 2 mg/L (%)",
+   "printed": "18.1",
+   "reproduced": "18.1",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2019: isolates >0.06 to 2 mg/L",
+   "printed": "118",
+   "reproduced": "118",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2019: isolates",
+   "printed": "633",
+   "reproduced": "633",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2019: share >0.06 to 2 mg/L (%)",
+   "printed": "18.6",
+   "reproduced": "18.6",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2020: isolates >0.06 to 2 mg/L",
+   "printed": "41",
+   "reproduced": "41",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2020: isolates",
+   "printed": "210",
+   "reproduced": "210",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2020: share >0.06 to 2 mg/L (%)",
+   "printed": "19.5",
+   "reproduced": "19.5",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2021: isolates >0.06 to 2 mg/L",
+   "printed": "47",
+   "reproduced": "47",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2021: isolates",
+   "printed": "161",
+   "reproduced": "161",
+   "status": "match"
+  },
+  {
+   "document": "Article Figure 3",
+   "quantity": "penicillin 2021: share >0.06 to 2 mg/L (%)",
+   "printed": "29.2",
+   "reproduced": "29.2",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.1 / Appendix C.2",
+   "quantity": "penicillin 2016: share >0.06 to 2 mg/L (%)",
+   "printed": "19.64",
+   "reproduced": "19.64",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.1 / Appendix C.2",
+   "quantity": "penicillin 2018: share >0.06 to 2 mg/L (%)",
+   "printed": "18.10",
+   "reproduced": "18.10",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.1 / Appendix C.2",
+   "quantity": "penicillin 2021: share >0.06 to 2 mg/L (%)",
+   "printed": "29.19",
+   "reproduced": "29.19",
+   "status": "match"
+  },
+  {
+   "document": "Article 3.1",
+   "quantity": "isolates 2007-2021",
+   "printed": "7133",
+   "reproduced": "7133",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-before: <=0.06, lower (%)",
+   "printed": "75.62",
+   "reproduced": "75.62",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-before: <=0.06, upper (%)",
+   "printed": "83.67",
+   "reproduced": "83.67",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-before: >0.06 to 2, lower (%)",
+   "printed": "0.00",
+   "reproduced": "0.00",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-before: >0.06 to 2, upper (%)",
+   "printed": "24.38",
+   "reproduced": "24.38",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-before: >2, lower (%)",
+   "printed": "0.00",
+   "reproduced": "0.00",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-before: >2, upper (%)",
+   "printed": "24.38",
+   "reproduced": "24.38",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-before: confirmed groups",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-after: <=0.06, lower (%)",
+   "printed": "75.62",
+   "reproduced": "75.62",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-after: <=0.06, upper (%)",
+   "printed": "83.67",
+   "reproduced": "83.67",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-after: >0.06 to 2, lower (%)",
+   "printed": "14.47",
+   "reproduced": "14.47",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-after: >0.06 to 2, upper (%)",
+   "printed": "22.20",
+   "reproduced": "22.20",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-after: >2, lower (%)",
+   "printed": "0.90",
+   "reproduced": "0.90",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-after: >2, upper (%)",
+   "printed": "3.88",
+   "reproduced": "3.88",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.6",
+   "quantity": "precision-after: confirmed groups",
+   "printed": "3",
+   "reproduced": "3",
+   "status": "match"
+  },
+  {
+   "document": "Appendix A.7",
+   "quantity": "teaching request, no round cost: worst-case cost",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Appendix A.7",
+   "quantity": "teaching request, round cost 2: worst-case cost",
+   "printed": "5",
+   "reproduced": "5",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.7",
+   "quantity": "teaching request, no round cost: worst-case cost",
+   "printed": "2",
+   "reproduced": "2",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.7",
+   "quantity": "teaching request, round cost 2: worst-case cost",
+   "printed": "5",
+   "reproduced": "5",
+   "status": "match"
+  },
+  {
+   "document": "Appendix A.7 / C.7",
+   "quantity": "laboratory cohort: counts requested (worst case)",
+   "printed": "0",
+   "reproduced": "0",
+   "status": "match"
+  },
+  {
+   "document": "Appendix A.7 / C.7",
+   "quantity": "laboratory cohort: observations",
+   "printed": "266",
+   "reproduced": "266",
+   "status": "match"
+  },
+  {
+   "document": "Appendix A (at a glance)",
+   "quantity": "maximum entropy, share above 0.25 mg/L (%)",
+   "printed": "29.10",
+   "reproduced": "29.10",
+   "status": "match"
+  },
+  {
+   "document": "Appendix A (at a glance)",
+   "quantity": "multinomial likelihood, share above 0.25 mg/L (%)",
+   "printed": "28.21",
+   "reproduced": "28.21",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "maximum entropy, share above 0.25 mg/L (%)",
+   "printed": "29.10",
+   "reproduced": "29.10",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "multinomial likelihood, share above 0.25 mg/L (%)",
+   "printed": "28.21",
+   "reproduced": "28.21",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "KL projection to a uniform reference (%)",
+   "printed": "29.10",
+   "reproduced": "29.10",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "transport radius 1: lower (%)",
+   "printed": "34.65",
+   "reproduced": "34.65",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "transport radius 1: upper (%)",
+   "printed": "49.25",
+   "reproduced": "49.25",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "profile likelihood: lower (%)",
+   "printed": "6.448",
+   "reproduced": "6.448",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "profile likelihood: upper (%)",
+   "printed": "56.400",
+   "reproduced": "56.400",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "Dirichlet posterior mean (%)",
+   "printed": "25.62",
+   "reproduced": "25.62",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "Dirichlet posterior interval: lower (%)",
+   "printed": "9.89",
+   "reproduced": "9.89",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "Dirichlet posterior interval: upper (%)",
+   "printed": "47.95",
+   "reproduced": "47.95",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "Dirichlet effective sample size",
+   "printed": "2168",
+   "reproduced": "2168",
+   "status": "match"
+  },
+  {
+   "document": "Appendix C.10",
+   "quantity": "Dirichlet posterior mean, Monte Carlo standard error (pp)",
+   "printed": "0.197",
+   "reproduced": "0.197",
+   "status": "match"
+  },
+  {
+   "document": "Appendix B.9 / C.8",
+   "quantity": "recipient check of the amikacin certificate (exit status)",
+   "printed": "0",
+   "reproduced": "0",
+   "status": "match"
+  }
+ ]
+}

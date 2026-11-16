@@ -100,7 +100,7 @@ def test_cli_json_exports_useful_html_csv_and_saved_configuration(tmp_path):
     output = tmp_path / "report"
     assert main(["distribution", str(source), "--output-dir", str(output)]) == 0
     result = json.loads((output / "results.json").read_text(encoding="utf-8"))
-    assert result["software_version"] == "1.0.0"
+    assert result["software_version"] == __import__("mic_50_90").__version__
     assert len(result["cohorts"]) == 1
     assert (output / "distribution.csv").exists()
     assert (output / "configuration.json").exists()

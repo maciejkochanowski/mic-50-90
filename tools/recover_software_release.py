@@ -67,7 +67,8 @@ def prepare(directory, prior, verification, origin_path):
     if (old["version"] != VERSION or old["source_commit"] != origin["source_commit"]
             or old["actions_run"] != origin["build_actions_run"]):
         raise ValueError("The original asset manifest is not bound to the verified build")
-    matrix = verify_matrix(verification)
+    matrix = verify_matrix(verification, manifest=directory / "expected-tests.json",
+                           expected_commit=origin["source_commit"])
     old_files = {row["file"]: row for row in old["files"]}
     expected = set(old_files) - {"Software-test-results.zip"}
     files = {path.name: path for path in directory.iterdir() if path.is_file()}

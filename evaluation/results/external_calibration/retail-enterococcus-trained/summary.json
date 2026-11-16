@@ -1,0 +1,55 @@
+{
+ "dataset": "retail-enterococcus",
+ "reference": "trained",
+ "source": "NARMS retail meats",
+ "genus": "Enterococcus",
+ "agency": "FDA",
+ "years": {
+  "training": 2019,
+  "calibration": 2020,
+  "test": 2021
+ },
+ "drugs": [
+  "AMP",
+  "CHL",
+  "ERY",
+  "QDA",
+  "TET"
+ ],
+ "nominal_level": 0.9333333333333333,
+ "calibration_rank": 14,
+ "calibration_units": 14,
+ "radius": 3.8349608974546734,
+ "test_units": 17,
+ "test_units_covered": 17,
+ "audit_successful_units": 17,
+ "test_tails": 561,
+ "test_tails_covered": 561,
+ "mean_width_pp": 31.05616680477044,
+ "mean_sample_width_pp": 32.870506584835226,
+ "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
+ "seconds": 100.23440892098006,
+ "missed": [],
+ "created_utc": "2026-11-02T05:28:08+00:00",
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c7s2b0n2",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 48
+ }
+}

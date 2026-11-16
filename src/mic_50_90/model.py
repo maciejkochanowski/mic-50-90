@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 from math import isfinite
-from typing import Any, Iterable, Literal
+from typing import Any, Iterable, Literal, cast
 
 import numpy as np
 from .validation import boolean, ceiling_rank, decimal_probability, exact_integer, identifier, normalized_mass, positive_concentration
@@ -83,7 +83,7 @@ class MICPanel:
         labels = [item.label for item in self.bins]
         if len(labels) != len(set(labels)):
             raise ValueError("MIC panel labels must be unique")
-        for previous, current in zip(self.bins, self.bins[1:]):
+        for previous, current in zip(self.bins, self.bins[1:], strict=False):
             if previous.upper is None:
                 raise ValueError("Only the last MIC category may be right-unbounded")
             if current.lower is None:
@@ -139,7 +139,7 @@ class MICPanel:
                     panel_value=float(values[0]),
                 )
             )
-        for lower, upper in zip(values[:-1], values[1:]):
+        for lower, upper in zip(values[:-1], values[1:], strict=True):
             bins.append(
                 MICBin(
                     label=format_mic(upper),
@@ -212,7 +212,7 @@ class MICPanel:
 
     def panel_tail(self, threshold: float) -> np.ndarray:
         return np.asarray(
-            [float(item.panel_value > float(threshold)) for item in self.bins], dtype=float
+            [float(cast(float, item.panel_value) > float(threshold)) for item in self.bins], dtype=float
         )
 
     def latent_tail(self, threshold: float, *, upper: bool) -> np.ndarray:
@@ -228,7 +228,7 @@ class MICPanel:
 
     @property
     def panel_values(self) -> np.ndarray:
-        return np.asarray([float(item.panel_value) for item in self.bins], dtype=float)
+        return np.asarray([float(cast(float, item.panel_value)) for item in self.bins], dtype=float)
 
     def as_dict(self) -> dict[str, Any]:
         return {"categories": [item.as_dict() for item in self.bins]}
@@ -350,7 +350,7 @@ class ParsedSpec:
         return (primary, *self.reporting_variants)
 
 
-def _legacy_to_v4(spec: dict[str, Any]) -> dict[str, Any]:
+def _levels_input_to_panel(spec: dict[str, Any]) -> dict[str, Any]:
     if "panel" in spec:
         return spec
     if "levels" not in spec:
@@ -402,7 +402,7 @@ def _parse_reporting_variant(
     )
     if len(quantiles) > 2 and mode == "population":
         raise ValueError("population exact likelihood currently supports at most two quantiles")
-    for left, right in zip(quantiles, quantiles[1:]):
+    for left, right in zip(quantiles, quantiles[1:], strict=False):
         if left.rank >= right.rank:
             raise ValueError("reported quantile ranks must be strictly increasing")
         if left.category_index > right.category_index:
@@ -427,7 +427,7 @@ def _parse_reporting_variant(
 
 def parse_spec(raw_spec: dict[str, Any]) -> ParsedSpec:
     """Parse and validate a MIC-50-90 input mapping."""
-    spec = _legacy_to_v4(raw_spec)
+    spec = _levels_input_to_panel(raw_spec)
     declared_contract = str(spec.get("contract_version", "")).strip()
     if declared_contract and declared_contract not in {"4.0", "1.0"}:
         raise ValueError("contract_version must be '4.0' or '1.0'")
@@ -533,7 +533,7 @@ def parse_spec(raw_spec: dict[str, Any]) -> ParsedSpec:
             raise ValueError("wasserstein calibration manifest requires a finite nonnegative radius")
         validate_calibration_manifest(manifest)
         if manifest["manifest_version"] not in {"1.2", "1.3"}:
-            raise ValueError("legacy calibration manifest requires migration from original scores to version 1.2 before a coverage guarantee")
+            raise ValueError("a calibration manifest without a calibration contract requires migration from original scores to version 1.2 before a coverage guarantee")
         if reference is None:
             raise ValueError("calibration requires reference_distribution from the declared training protocol")
         contract = manifest["calibration_contract"]
@@ -563,7 +563,7 @@ def parse_spec(raw_spec: dict[str, Any]) -> ParsedSpec:
         radius = effective_radius
 
     return ParsedSpec(
-        mode=mode,  # type: ignore[arg-type]
+        mode=cast(Literal["empirical", "population"], mode),
         n=n,
         panel=panel,
         quantiles=quantiles,

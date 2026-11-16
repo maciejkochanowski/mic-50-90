@@ -1,0 +1,3 @@
+cohort_id,panel_id,variant_id,n,mic50,mic90,rank_convention,iid
+T1-P1,P1,primary,10,<=1,2,ceiling,false
+T1-P2,P2,primary,10,<=2,4,ceiling,false

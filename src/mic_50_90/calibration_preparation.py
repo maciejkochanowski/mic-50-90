@@ -16,7 +16,7 @@ from math import isfinite
 from pathlib import Path
 
 import numpy as np
-from scipy.optimize import linprog
+from ._solver_resources import linprog
 
 from ._version import __version__
 from . import dro
@@ -150,7 +150,7 @@ def _direct_tail_scores(spec, projected, counts):
     rows = []
     for threshold in spec.thresholds:
         objective = spec.panel.panel_tail(threshold)
-        numerator = sum(int(count) for count, selected in zip(counts, objective) if selected)
+        numerator = sum(int(count) for count, selected in zip(counts, objective, strict=True) if selected)
         truth = numerator/spec.n
         fitted = linprog(costs, A_ub=np.asarray(upper_rows), b_ub=np.asarray(upper_values),
                          A_eq=np.vstack([source_margins, np.tile(objective, k)]),
@@ -229,7 +229,7 @@ def _learn_reference(roster, groups, panels, *, scaling):
         per_unit = []
         for row in selected:
             counts = validated[row["cohort_id"]][1]
-            other = [value-count for value, count in zip(total, counts)]
+            other = [value-count for value, count in zip(total, counts, strict=True)]
             other_n = sum(other)
             reference = [value/other_n for value in other]
             check = _score_cohort(row, groups[row["cohort_id"]], panels[pid], reference)

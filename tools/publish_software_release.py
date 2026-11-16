@@ -117,6 +117,8 @@ def main():
     if (os.environ.get("GITHUB_ACTIONS") != "true" or os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch"
             or os.environ.get("GITHUB_REF") != "refs/heads/main"):
         parser.error("Release upload is permitted only by a manual GitHub Actions run on main")
+    if os.environ.get("MIC50_90_PUBLISH_APPROVED") != "true":
+        parser.error("Publication requires explicit approval (MIC50_90_PUBLISH_APPROVED=true)")
     try:
         validate_tag(args.tag)
     except ValueError as error:
@@ -167,7 +169,7 @@ MIC-50-90 combines MIC summaries and additional counts to describe compatible MI
 ### Downloads
 - **Windows:** extract `MIC-50-90-{VERSION}-Windows-x64.zip` and run `MIC-50-90.exe`.
 - **CLI:** install the wheel with `python -m pip install mic_50_90-{VERSION}-py3-none-any.whl`.
-- **PyPI:** `python -m pip install mic-50-90=={VERSION}` installs the same wheel, published with build number 4.
+- **PyPI:** after separate approval and successful PyPI publication, `python -m pip install mic-50-90=={VERSION}` installs this version. Until then use the verified wheel above.
 - **Source:** `MIC-50-90-{VERSION}-software-source.zip` contains the code, tests, usage documentation, example inputs and build scripts.
 
 The wheel, source distribution and Windows application were built by GitHub Actions from `{commit}`. Release checks include Windows/Linux Python tests, JavaScript form tests, isolated package installation, a packaged Windows analysis compared with CLI, and a real browser form check. The manifests and verification receipts accompany the downloads.

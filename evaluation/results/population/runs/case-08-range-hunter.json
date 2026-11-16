@@ -1,0 +1,247 @@
+{
+ "case": "case-08",
+ "method": "range-hunter",
+ "cohort_id": "FDA|Vet-LIRN|2021|E. coli|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+ "source": "FDA animal pathogens",
+ "n": 719,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.17083028401248157,
+ "result": {
+  "requested_method": "range-hunter",
+  "method": "range-hunter",
+  "statistical_target": "pairwise-range-monotone-majorant",
+  "confidence_level": 0.95,
+  "constraint_signature": "ab8cdaaff686b5f8e17d3b63ab3cd907c177a9931bf45e4b09d84e806b12579c",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "sample_size": 719,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "endpoint_gap_pp": 5.287661715645637,
+  "cdf_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.848942591527448,
+    0.9287763587431259
+   ],
+   [
+    0.8661429424129277,
+    0.9417121050589025
+   ],
+   [
+    0.8661429424129277,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.0,
+    0.4517630683734793
+   ],
+   [
+    0.005492584498687971,
+    0.03310147732496115
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ]
+  ],
+  "baseline_cdf_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.848942591527448,
+    0.9287763587431259
+   ],
+   [
+    0.8661429424129277,
+    0.9417121050589025
+   ],
+   [
+    0.8661429424129277,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.0,
+    0.4517630683734793
+   ],
+   [
+    0.005492584498687971,
+    0.03310147732496115
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
+  "elapsed_seconds": 114.89758321200497,
+  "baseline_seconds": 0.004517658031545579,
+  "refinement_seconds": 114.89306598494295,
+  "time_limit_scope": "optional_original_region_refinement",
+  "requested_time_limit_seconds": 114.81631578097586,
+  "effective_time_limit_seconds": 114.81631578097586,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "retained_nodes": 1,
+  "question_certificates": [],
+  "accepted_witness_count": 5,
+  "algebraic_witness_count": 0,
+  "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
+  "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.44781879313561607,
+    "upper": 0.9287763587431259,
+    "inner_lower": 0.5006954102920724,
+    "inner_upper": 0.8998609179415855
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.848942591527448,
+    "upper": 0.9287763587431259,
+    "inner_lower": 0.8859527121001392,
+    "inner_upper": 0.8998609179415855
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8661429424129277,
+    "upper": 0.9417121050589025,
+    "inner_lower": 0.9012517385257303,
+    "inner_upper": 0.9151599443671766
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8661429424129277,
+    "upper": 1.0,
+    "inner_lower": 0.9012517385257303,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.4517630683734793,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3991655076495132
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.005492584498687971,
+    "upper": 0.46724334379027505,
+    "inner_lower": 0.015299026425591099,
+    "inner_upper": 0.4144645340751043
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.005492584498687971,
+    "upper": 0.552181206864384,
+    "inner_lower": 0.015299026425591099,
+    "inner_upper": 0.4993045897079276
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.07122364125687412,
+    "upper": 0.552181206864384,
+    "inner_lower": 0.10013908205841447,
+    "inner_upper": 0.4993045897079276
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.005492584498687971,
+    "upper": 0.03310147732496115,
+    "inner_lower": 0.015299026425591099,
+    "inner_upper": 0.015299026425591097
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.005492584498687971,
+    "upper": 0.151057408472552,
+    "inner_lower": 0.015299026425591099,
+    "inner_upper": 0.1140472878998609
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.07122364125687412,
+    "upper": 0.151057408472552,
+    "inner_lower": 0.10013908205841447,
+    "inner_upper": 0.1140472878998609
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.13385705758707234,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09874826147426981
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.058287894941097596,
+    "upper": 0.13385705758707234,
+    "inner_lower": 0.08484005563282337,
+    "inner_upper": 0.09874826147426981
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13385705758707234,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09874826147426981
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.81631578097586,
+ "seconds": 115.08137329795863,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

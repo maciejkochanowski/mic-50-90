@@ -1,0 +1,238 @@
+{
+ "case": "case-08",
+ "method": "bonferroni",
+ "cohort_id": "FDA|Vet-LIRN|2021|E. coli|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+ "source": "FDA animal pathogens",
+ "n": 719,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.33270125393755734,
+ "result": {
+  "requested_method": "bonferroni",
+  "method": "bonferroni",
+  "confidence_level": 0.95,
+  "constraint_signature": "ab8cdaaff686b5f8e17d3b63ab3cd907c177a9931bf45e4b09d84e806b12579c",
+  "family_size": 4,
+  "sample_size": 719,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "baseline_cdf_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.8531915055043126,
+    0.9259326990914033
+   ],
+   [
+    0.8701949317466652,
+    0.9391355235938255
+   ],
+   [
+    0.8701949317466652,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.0,
+    0.47239010398797815
+   ],
+   [
+    0.0,
+    0.07395042746942516
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.8531915055043126,
+    0.9259326990914033
+   ],
+   [
+    0.8701949317466652,
+    0.9391355235938255
+   ],
+   [
+    0.8701949317466652,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.45354259510342504,
+    0.9259326990914033
+   ],
+   [
+    0.0,
+    0.47239010398797815
+   ],
+   [
+    0.0,
+    0.07395042746942516
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ],
+   [
+    0.0,
+    0.12980506825333474
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "elapsed_seconds": 0.2527865309966728,
+  "baseline_seconds": 0.2527865309966728,
+  "refinement_seconds": 0.0,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.45354259510342504,
+    "upper": 0.9259326990914033,
+    "inner_lower": 0.4535425951054251,
+    "inner_upper": 0.9259326990894031
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8531915055043126,
+    "upper": 0.9259326990914033,
+    "inner_lower": 0.8531915055063127,
+    "inner_upper": 0.9259326990894031
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8701949317466652,
+    "upper": 0.9391355235938255,
+    "inner_lower": 0.8701949317486654,
+    "inner_upper": 0.9391355235918253
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8701949317466652,
+    "upper": 1.0,
+    "inner_lower": 0.8701949317486654,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.47239010398797815,
+    "inner_lower": 0.0,
+    "inner_upper": 0.4723901039839781
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.4855929284904003,
+    "inner_lower": 0.0,
+    "inner_upper": 0.4855929284864003
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.546457404896575,
+    "inner_lower": 0.0,
+    "inner_upper": 0.5464574048945748
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.0740673009085968,
+    "upper": 0.546457404896575,
+    "inner_lower": 0.07406730091059678,
+    "inner_upper": 0.5464574048945748
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.07395042746942516,
+    "inner_lower": 0.0,
+    "inner_upper": 0.07395042746542523
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14680849449568736,
+    "inner_lower": 0.0,
+    "inner_upper": 0.14680849449368735
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.0740673009085968,
+    "upper": 0.14680849449568736,
+    "inner_lower": 0.07406730091059678,
+    "inner_upper": 0.14680849449368735
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.12980506825333474,
+    "inner_lower": 0.0,
+    "inner_upper": 0.12980506825133473
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.06086447640617464,
+    "upper": 0.12980506825333474,
+    "inner_lower": 0.06086447640817461,
+    "inner_upper": 0.12980506825133473
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.12980506825333474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12980506825133473
+   }
+  ],
+  "endpoint_gap_pp": 4.000022535421978e-10
+ },
+ "refinement_budget_seconds": 0,
+ "seconds": 0.33440571394748986,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

@@ -1,0 +1,64 @@
+{
+  "group_scores": [
+    0.02,
+    0.04,
+    0.06,
+    0.08,
+    0.1,
+    0.12,
+    0.14,
+    0.16,
+    0.18,
+    0.2,
+    0.22,
+    0.24,
+    0.26,
+    0.28,
+    0.3,
+    0.32,
+    0.34,
+    0.36,
+    0.38,
+    0.4
+  ],
+  "group_units": [
+    "synthetic-0",
+    "synthetic-1",
+    "synthetic-2",
+    "synthetic-3",
+    "synthetic-4",
+    "synthetic-5",
+    "synthetic-6",
+    "synthetic-7",
+    "synthetic-8",
+    "synthetic-9",
+    "synthetic-10",
+    "synthetic-11",
+    "synthetic-12",
+    "synthetic-13",
+    "synthetic-14",
+    "synthetic-15",
+    "synthetic-16",
+    "synthetic-17",
+    "synthetic-18",
+    "synthetic-19"
+  ],
+  "alpha": 0.1,
+  "grouping": {
+    "example": "synthetic"
+  },
+  "source": "synthetic tutorial only",
+  "data_hashes": {
+    "synthetic_scores": "e0d5f3ea271aa8bda5b6ef2eec5d8e889ff03abe5697afc76337d1e224744f92"
+  },
+  "calibrate_on": "units",
+  "calibration_contract": {
+    "score_kind": "simultaneous_tail_intervals",
+    "reference_rule": "projected",
+    "functional_scope": "all_panel_tails",
+    "transport_unit": "log2_mg_L",
+    "summary_policy": "ceiling_50_90_no_range",
+    "reference_protocol": "synthetic-tutorial-fixed-pool",
+    "unit_definition": "independent synthetic study"
+  }
+}

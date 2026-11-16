@@ -4,7 +4,7 @@ from fractions import Fraction as F
 from functools import lru_cache
 
 from .endpoint import (as_region, close, count_cells, _score_envelopes,
-    _cp_outer, _check_deadline, range_family)
+    _cp_outer, _check_deadline)
 from .pairwise import HistRegion
 
 

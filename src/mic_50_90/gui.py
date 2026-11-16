@@ -1,4 +1,4 @@
-"""Loopback-only desktop service and launcher for MIC-50-90 1.0.0."""
+"""Loopback-only desktop service and launcher for MIC-50-90."""
 from __future__ import annotations
 
 import argparse
@@ -91,7 +91,12 @@ class DesktopServer(ThreadingHTTPServer):
         output = self.jobs[job_id]["directory"] / "output"
         allowed = {}
         for file in sorted(output.rglob("*")):
-            if file.is_file() and not file.is_symlink() and file.suffix in {".html", ".json", ".csv"}:
+            relative = file.relative_to(output)
+            generated_checksums = (relative.name == "checksums.sha256" and
+                (len(relative.parts) == 1 or
+                 (len(relative.parts) == 2 and relative.parts[0].startswith("report-pages-"))))
+            if (file.is_file() and not file.is_symlink()
+                    and (file.suffix in {".html", ".json", ".csv"} or generated_checksums)):
                 resolved = file.resolve()
                 if resolved.is_relative_to(output.resolve()):
                     allowed[file.relative_to(output).as_posix()] = file
@@ -118,7 +123,7 @@ class DesktopServer(ThreadingHTTPServer):
 class DesktopHandler(BaseHTTPRequestHandler):
     """Strict routes: no directory listing, arbitrary input paths or CORS."""
 
-    server_version = "MIC-50-90/1.0.0"
+    server_version = "MIC-50-90/" + __version__
 
     def log_message(self, *_args):
         # Download URLs carry a session token; never copy it to access logs.

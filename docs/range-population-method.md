@@ -1,6 +1,6 @@
 # Simultaneous population bounds for MIC ranges
 
-MIC-50-90 1.0.0 offers `range-calibrated` as an explicit choice for population
+MIC-50-90 1.0.1 offers `range-calibrated` as an explicit choice for population
 inference. It uses counts in all contiguous ranges of a fixed ordered panel.
 The default remains `bonferroni`. The method must be chosen independently of
 which result happens to be narrower. It is not an automatic selection among

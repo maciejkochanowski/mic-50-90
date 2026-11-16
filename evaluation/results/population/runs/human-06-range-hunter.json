@@ -1,0 +1,247 @@
+{
+ "case": "human-06",
+ "method": "range-hunter",
+ "cohort_id": "NORM2024|T88|Tetracycline",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.14292104600463063,
+ "result": {
+  "requested_method": "range-hunter",
+  "method": "range-hunter",
+  "statistical_target": "pairwise-range-monotone-majorant",
+  "confidence_level": 0.95,
+  "constraint_signature": "31b39bb4c25e443a2b2f7e920074e02859ae567c59ebbdaee7c187debd91d9c6",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "endpoint_gap_pp": 5.652165080531696,
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5549343492180153
+   ],
+   [
+    0.7862078940743803,
+    0.9293397127990327
+   ],
+   [
+    0.8620333187990851,
+    0.9833650076542646
+   ],
+   [
+    0.8620333187990851,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5549343492180153
+   ],
+   [
+    0.28150317542053654,
+    0.9293397127990327
+   ],
+   [
+    0.043174362486806166,
+    0.10124167913233036
+   ],
+   [
+    0.0,
+    0.13796668120091493
+   ],
+   [
+    0.0,
+    0.13796668120091493
+   ]
+  ],
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5549343492180153
+   ],
+   [
+    0.7862078940743803,
+    0.9293397127990327
+   ],
+   [
+    0.8620333187990851,
+    0.9833650076542646
+   ],
+   [
+    0.8620333187990851,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5549343492180153
+   ],
+   [
+    0.28150317542053654,
+    0.9293397127990327
+   ],
+   [
+    0.043174362486806166,
+    0.10124167913233036
+   ],
+   [
+    0.0,
+    0.13796668120091493
+   ],
+   [
+    0.0,
+    0.13796668120091493
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
+  "elapsed_seconds": 114.92704638210125,
+  "baseline_seconds": 0.004250444006174803,
+  "refinement_seconds": 114.92279609700199,
+  "time_limit_scope": "optional_original_region_refinement",
+  "requested_time_limit_seconds": 114.83855347300414,
+  "effective_time_limit_seconds": 114.83855347300414,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "retained_nodes": 1,
+  "question_certificates": [],
+  "accepted_witness_count": 5,
+  "algebraic_witness_count": 0,
+  "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
+  "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5549343492180153,
+    "inner_lower": 0.0,
+    "inner_upper": 0.49841269841269836
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.7862078940743803,
+    "upper": 0.9293397127990327,
+    "inner_lower": 0.8317460317460318,
+    "inner_upper": 0.8984126984126983
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8620333187990851,
+    "upper": 0.9833650076542646,
+    "inner_lower": 0.9,
+    "inner_upper": 0.9666666666666666
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8620333187990851,
+    "upper": 1.0,
+    "inner_lower": 0.9,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.28150317542053654,
+    "upper": 0.9293397127990327,
+    "inner_lower": 0.33333333333333337,
+    "inner_upper": 0.8984126984126983
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.34705215593347927,
+    "upper": 0.9833650076542646,
+    "inner_lower": 0.4015873015873016,
+    "inner_upper": 0.9666666666666666
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.34705215593347927,
+    "upper": 1.0,
+    "inner_lower": 0.4015873015873016,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.44506565078198473,
+    "upper": 1.0,
+    "inner_lower": 0.5015873015873017,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.043174362486806166,
+    "upper": 0.10124167913233036,
+    "inner_lower": 0.06825396825396826,
+    "inner_upper": 0.06825396825396825
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.043174362486806166,
+    "upper": 0.2137921059256197,
+    "inner_lower": 0.06825396825396826,
+    "inner_upper": 0.16825396825396824
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.07066028720096734,
+    "upper": 0.2137921059256197,
+    "inner_lower": 0.1015873015873016,
+    "inner_upper": 0.16825396825396824
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09999999999999999
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0166349923457354,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.03333333333333334,
+    "inner_upper": 0.09999999999999999
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09999999999999999
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.83855347300414,
+ "seconds": 115.088560835924,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

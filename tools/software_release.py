@@ -12,7 +12,10 @@ import tarfile
 import tomllib
 import zipfile
 
-VERSION = "1.0.0"
+from runpy import run_path
+
+# Also works when this inspection module is loaded directly by importlib.
+VERSION = run_path(str(Path(__file__).with_name("release_version.py")))["read_version"]()
 FORBIDDEN_DIRS = {".git", "hpc", "manuscript", "manuscripts", "supplement", "supplements", "appendices"}
 FORBIDDEN_SUFFIXES = {".pdf", ".doc", ".docx", ".tex", ".bib"}
 FORBIDDEN_FILES = {"build_validation_notebook.py"}

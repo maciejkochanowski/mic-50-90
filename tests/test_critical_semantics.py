@@ -8,7 +8,10 @@ from mic_50_90 import joint_population, range_certificates
 from mic_50_90.count_updates import counts_from_percentage
 from mic_50_90.decisions import classify_intervals, assess_population_question
 from mic_50_90.model import MICBin
-from mic_50_90.range_certificates import binomial_shape_certificate, close_counts, split_count_cell
+from mic_50_90.range_certificates import (
+    binomial_shape_certificate, _legacy_binomial_shape_certificate,
+    close_counts, split_count_cell,
+)
 from mic_50_90.range_population import _rounded
 
 
@@ -69,7 +72,8 @@ def test_unresolved_shape_comparison_is_not_a_false_certificate(monkeypatch):
     hi = [F(3,8),F(3,4),F(1)]
     monkeypatch.setattr(joint_population,'_cp_inner',lambda x,n,c:(0,lo[x]))
     monkeypatch.setattr(joint_population,'_cp_outer',lambda x,n,c:(0,hi[x]))
-    result=binomial_shape_certificate(2,F(1,20),monotonic()+10)
+    # Injected endpoint brackets exercise the retained endpoint-based fallback.
+    result=_legacy_binomial_shape_certificate(2,F(1,20),monotonic()+10)
     assert result['status']=='unresolved'
     assert isinstance(result.get('reason'), str) and result['reason'].strip()
 
@@ -77,7 +81,7 @@ def test_unresolved_shape_comparison_is_not_a_false_certificate(monkeypatch):
 def test_exact_shape_equality_is_a_valid_certificate(monkeypatch):
     monkeypatch.setattr(joint_population,'_cp_inner',lambda x,n,c:(0,F(x+1,4)))
     monkeypatch.setattr(joint_population,'_cp_outer',lambda x,n,c:(0,F(x+1,4)))
-    result=binomial_shape_certificate(3,F(1,20),monotonic()+10)
+    result=_legacy_binomial_shape_certificate(3,F(1,20),monotonic()+10)
     assert result['status']=='certified'
     assert result['minimum_concavity_margin']=='0'
 
@@ -87,7 +91,7 @@ def test_expired_or_missing_shape_certificate_remains_unresolved(monkeypatch):
     assert result['status']=='unresolved'
     assert isinstance(result.get('reason'), str) and result['reason'].strip()
     monkeypatch.setattr(joint_population,'_cp_inner',lambda *args:None)
-    result = binomial_shape_certificate(2,F(1,20),monotonic()+10)
+    result = _legacy_binomial_shape_certificate(2,F(1,20),monotonic()+10)
     assert result['status']=='unresolved'
     assert isinstance(result.get('reason'), str) and result['reason'].strip()
 

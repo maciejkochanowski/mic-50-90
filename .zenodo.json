@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
-  "title": "MIC-50-90: Software for incomplete MIC distributions and laboratory reporting",
-  "description": "<p><strong>MIC-50-90 1.0.0</strong> combines MIC50/MIC90, observed extremes, exact or bounded counts and explicitly rounded percentages to describe MIC distributions compatible with incomplete laboratory reports. The Windows application and command line produce graphical HTML reports, CSV/JSON results and reusable settings.</p><p>Users can distinguish missing counts from measurement censoring, update the same collection with additional counts, select concentration groups at a requested precision, and prepare a sufficient laboratory report for independent checking. Sample identification, population confidence under independent observations from the same distribution, and calibration for exchangeable study units have separate assumptions.</p><p>This deposit contains software, tests, formal algebra, example inputs, user documentation, build instructions and checksums. It excludes the manuscript, supplementary appendices and editorial figures. MIT applies to the software; example data and bundled fonts retain their own attributed terms.</p>",
+  "title": "MIC-50-90: A Python package for bounding MIC distributions from incomplete susceptibility reports",
+  "description": "<p><strong>MIC-50-90 1.0.2</strong> is a Python package for bounding MIC distributions from incomplete susceptibility reports. Published antimicrobial susceptibility results often give only MIC50, MIC90, a range and a few percentages. From these, and from exact or rounded counts, MIC-50-90 computes the smallest and largest count the report allows in every MIC category and range, names the count that would narrow an open question most, selects counts a laboratory can publish so that readers can check its conclusions, and gives optional population bounds under stated sampling assumptions. A local browser form, the command line and the Python interface produce graphical HTML reports, CSV/JSON results and reusable settings.</p><p>Users can distinguish missing counts from measurement censoring, update the same collection with additional counts, select concentration groups at a requested precision, and prepare a sufficient laboratory report for independent checking. Sample identification, population confidence under independent observations from the same distribution, and calibration for exchangeable study units have separate assumptions.</p><p>This release contains software, tests, formal algebra, example inputs, user documentation, build instructions and checksums. It excludes the manuscript, supplementary appendices and editorial figures. MIT applies to the software; example data and bundled fonts retain their own attributed terms.</p>",
   "creators": [
     {
       "name": "Kochanowski, Maciej",
@@ -11,14 +11,14 @@
   ],
   "license": "MIT",
   "access_right": "open",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "keywords": [
-    "antimicrobial resistance",
     "minimum inhibitory concentration",
-    "incomplete reporting",
+    "MIC50/MIC90",
+    "antimicrobial susceptibility reporting",
     "partial identification",
-    "simultaneous confidence",
-    "research software"
+    "surveillance",
+    "antimicrobial resistance"
   ],
   "language": "eng"
 }

@@ -7,7 +7,7 @@ from hashlib import sha256
 import json
 from math import ceil, ulp
 import re
-from typing import Iterable
+from typing import Any, Callable, Iterable, cast
 
 import numpy as np
 
@@ -19,8 +19,8 @@ _MANIFEST_KEYS = frozenset({
     "fallback_used", "calibration_scores_sha256", "coverage_statement",
 })
 
-# Optional because manifests written before the exchangeable-unit accounting do not
-# carry them. Present or absent, never partly present: the validator checks that.
+# Optional: a manifest may omit the exchangeable-unit accounting. Present or absent, never
+# partly present: the validator checks that.
 _MANIFEST_UNIT_KEYS = frozenset({
     "exchangeable_units", "exchangeable_unit_definition", "exchangeable_unit_labels",
     "unit_score_aggregation", "maximum_supported_level", "attained_level",
@@ -30,17 +30,15 @@ _MANIFEST_UNIT_KEYS = frozenset({
 #: Diagnostic, not accounting. `unit_scores` lets a reader see how far the radius sits
 #: from the next unit, which is the difference between "one more study would raise the
 #: level" and "reaching it would mean admitting the mismatched reference". It is allowed
-#: but never required, so a manifest written before it existed stays valid.
+#: but never required.
 _MANIFEST_DIAGNOSTIC_KEYS = frozenset({
     "unit_scores", "unit_scores_median",
     "attained_level_all_cohorts", "attained_level_median_cohort",
 })
 
-#: Written from manifest version 1.1 onward. In 1.0 `confidence_level` carried the level
-#: the caller asked for, so a manifest could declare 0.95 while its units certified 0.667
-#: and nothing in the artefact contradicted it. From 1.1 `confidence_level` carries what
-#: the exchangeable units certify, which means the requested level has to be recorded
-#: separately or it would be lost. `requested_level_supported` answers the only question
+#: Present from manifest version 1.1. In version 1.0 `confidence_level` is the level the
+#: caller asked for; from 1.1 it is the level the exchangeable units certify, so the
+#: requested level is recorded separately. `requested_level_supported` answers the only question
 #: a reader of the artefact needs answered: did the declared level meet the request.
 _MANIFEST_LEVEL_KEYS = frozenset({"requested_level", "requested_level_supported"})
 
@@ -53,17 +51,16 @@ def split_unit(source: str, study: str) -> str:
 
     This is a label, not the exchangeable unit. The `study` field is a semicolon-joined
     list whenever a cohort cites more than one publication, so two cohorts that share a
-    publication can carry different labels; hashing the label as if it were atomic sent
-    the same study into two partitions. Use :func:`canonical_split_units` to obtain the
+    publication can carry different labels; hashing the label as if it were atomic would
+    send the same study into two partitions. Use :func:`canonical_split_units` to obtain the
     unit an assignment may safely be made on.
     """
     return f"{source}|{study}"
 
 
 #: What counts as naming a study: a publication accession, which is all digits, or a
-#: BioProject accession. The Stage 0 preregistration of 2026-08-23 puts the two on equal
-#: footing, and admitting only the first left every isolate deposited without a paper --
-#: thirty percent of the eligible cohorts -- with no identifiable study at all.
+#: BioProject accession. The two are on equal footing; admitting only the first would
+#: leave every isolate deposited without a paper with no identifiable study at all.
 _STUDY_ACCESSION = re.compile(r"^(?:[0-9]+|PRJ[A-Z]{2}[0-9]+)$")
 
 
@@ -78,9 +75,9 @@ def atomic_studies(study: str) -> tuple[str, ...]:
     with no accession has no exchangeable unit and :func:`canonical_split_units` returns
     none for it.
 
-    A cohort repaired from its BioProject carries both the project accession and whatever
-    publications NCBI records for that project, so a study that reached the corpus twice --
-    once with its paper and once only as a deposit -- is merged by the closure below
+    A cohort whose study field was completed from its BioProject carries both the project
+    accession and whatever publications NCBI records for that project, so a study that
+    appears twice -- once with its paper and once only as a deposit -- is merged by the closure below
     instead of being counted as two independent units.
 
     Returns an empty tuple when the field carries no accession.
@@ -95,9 +92,9 @@ def canonical_split_units(labels: Iterable[str]) -> dict[str, str | None]:
     Two labels belong to one unit when they cite a publication in common, directly or
     through a chain of other labels: study A published with B, and B published with C,
     makes one unit of all three, because a partition boundary anywhere inside that chain
-    puts dependent cohorts on both sides of it. This transitive closure is what the earlier
-    label hash skipped: a cohort citing "A;B" and a cohort citing "B" hashed to two
-    different strings and could land in two different partitions.
+    puts dependent cohorts on both sides of it. Without this transitive closure a cohort
+    citing "A;B" and a cohort citing "B" would hash to two different strings and could
+    land in two different partitions.
 
     A label with no publication accession maps to ``None``: it has no identifiable study,
     so it cannot carry a unit, and a design that rests on exchangeability between studies
@@ -164,10 +161,8 @@ def balanced_partition(unit_sizes: dict[str, int],
 def straddling_studies(unit_partition: dict[str, str]) -> list[str]:
     """Studies that appear in more than one partition. Zero is a measurement, not a promise.
 
-    The release used to record this count as the literal 0 and assert that literal in its
-    own gate, so the check could not fail and the manuscript's claim of a leak-free split
-    rested on nothing. Computing it from the assignment that was actually made turns the
-    claim into evidence.
+    The count is computed from the assignment that was actually made, so a claim of a
+    leak-free split can be checked rather than asserted.
     """
     seen: dict[str, set[str]] = {}
     for unit, partition in unit_partition.items():
@@ -243,7 +238,11 @@ def aggregate_unit_scores(
         raise ValueError("calibration scores must be one-dimensional, finite and nonnegative before aggregation")
     if aggregate not in {"max", "median"}:
         raise ValueError("aggregate must be 'max' or 'median'")
-    reducer = np.max if aggregate == "max" else np.median
+    reducer: Callable[[np.ndarray], Any]
+    if aggregate == "max":
+        reducer = np.max
+    else:
+        reducer = np.median
     ordered = sorted(set(labels))
     collapsed = np.asarray(
         [reducer(values[[i for i, u in enumerate(labels) if u == unit]]) for unit in ordered],
@@ -356,13 +355,13 @@ class WassersteinCalibrationManifest:
                 "unit_scores_median": [float(x) for x in (self.unit_scores_median or ())],
                 # New manifests use the fixed rank for the simultaneous unit event.
                 # Median scores are diagnostic only; no median coverage is declared.
-                "attained_level_all_cohorts": float(self.attained_level_value),
+                "attained_level_all_cohorts": float(cast(float, self.attained_level_value)),
                 "attained_level_median_cohort": (
                     None if self.attained_level_median is None
                     else float(self.attained_level_median)
                 ),
                 "maximum_supported_level": supported_level(int(self.exchangeable_units)),
-                "attained_level": float(self.attained_level_value),
+                "attained_level": float(cast(float, self.attained_level_value)),
             }
         return {
             **({"calibration_contract": self.calibration_contract} if self.calibration_contract else {}),
@@ -384,7 +383,7 @@ class WassersteinCalibrationManifest:
             "fallback_used": self.fallback_used,
             "calibration_scores_sha256": self.calibration_scores_sha256,
             "coverage_statement": (coverage_statement(self.calibration_contract) if self.calibration_contract else (
-                "LEGACY MANIFEST: migrate from original scores and declare calibration semantics before claiming coverage. "
+                "MANIFEST WITHOUT A CALIBRATION CONTRACT: migrate from original scores and declare calibration semantics before claiming coverage. "
                 "Marginal finite-sample coverage for a new exchangeable cohort at the "
                 "manifest scope; one accepted Wasserstein set yields simultaneous bounds "
                 "for every threshold evaluated from that set."
@@ -413,9 +412,9 @@ def calibrate_wasserstein_manifest(
     ``calibrate_on='units'`` and maximum aggregation within units. The declared
     level is the prespecified rank divided by the number of units plus one;
     observed ties do not raise it. A small group may use the declared global
-    fallback. Historical manifests remain readable by
-    :func:`validate_calibration_manifest`, but cannot be recreated as new
-    coverage claims without recovering their original scores and semantics.
+    fallback. Manifests of versions 1.0 and 1.1, which have no calibration
+    contract, remain readable by :func:`validate_calibration_manifest`, but cannot
+    be recreated as new coverage claims without their original scores and semantics.
     ``unit_definition`` is retained for call compatibility; the explicit
     contract supplies the authoritative unit definition.
     """
@@ -495,7 +494,7 @@ def calibrate_wasserstein_manifest(
     )
 
 
-def validate_calibration_manifest(manifest: dict[str, object]) -> None:
+def validate_calibration_manifest(manifest: dict[str, Any]) -> None:
     """Reject internally inconsistent or over-claimed calibration manifests."""
     if not isinstance(manifest, dict):
         raise ValueError("calibration manifest must be an object")

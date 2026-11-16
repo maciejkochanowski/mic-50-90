@@ -1,0 +1,7 @@
+cohort_id,threshold,unit,decision_operator,decision_fraction
+CDC-c51d6506b738a1297240,1.0,mg/L,<,.05
+CDC-c51d6506b738a1297240,2.0,mg/L,<,.05
+CDC-c51d6506b738a1297240,4.0,mg/L,<,.05
+CDC-c51d6506b738a1297240,8.0,mg/L,<,.05
+CDC-c51d6506b738a1297240,16.0,mg/L,<,.05
+CDC-c51d6506b738a1297240,32.0,mg/L,<,.05

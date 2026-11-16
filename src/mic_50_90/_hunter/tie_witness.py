@@ -75,8 +75,8 @@ def tied_witness(histogram,group_e,group_f,u,alpha=F(1,20),*,root_bits=48,deadli
         if cf<=n-i:intersection+=masses[i]*_tail(n-i,cf,v/(1-u),True)
     union_lower=2*tau-intersection
     if union_lower<alpha:return None
-    lower=tuple(min(A+B*l,A+B*v) for A,B in zip(intercept,coefficient))
-    upper=tuple(max(A+B*l,A+B*v) for A,B in zip(intercept,coefficient))
+    lower=tuple(min(A+B*l,A+B*v) for A,B in zip(intercept,coefficient, strict=True))
+    upper=tuple(max(A+B*l,A+B*v) for A,B in zip(intercept,coefficient, strict=True))
     assert min(lower)>=0 and sum(lower)<=1<=sum(upper)
     return dict(histogram=h,group_e=tuple(sorted(e)),group_f=tuple(sorted(f)),u=u,
         root_lower=l,root_upper=v,tail_probability=tau,union_lower=union_lower,

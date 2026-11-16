@@ -45,7 +45,7 @@ actual information, including interior interval-count constraints.
         return min(lo for lo, _ in ranges.values()), max(hi for _, hi in ranges.values()), ranges
 
     cumulative = [interval(0, cut) for cut in range(first.k + 1)]
-    best = {0: (0,)}
+    best: dict[int, tuple[int, ...]] = {0: (0,)}
     interval_bounds = {}
     admitted_edges = 0
     for b in range(1, first.k + 1):
@@ -64,7 +64,7 @@ actual information, including interior interval-count constraints.
     # [0,K] always has exactly n observations and zero cumulative uncertainty.
     cuts = best[first.k]
     rows = []
-    for a, b in zip(cuts, cuts[1:]):
+    for a, b in zip(cuts, cuts[1:], strict=False):
         lower, upper, variants = interval_bounds[a, b]
         components = _merge_integer_ranges(list(variants.values()))
         label = first.panel.labels[a] if b == a + 1 else f"{first.panel.labels[a]} through {first.panel.labels[b - 1]}"

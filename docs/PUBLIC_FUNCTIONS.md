@@ -57,7 +57,7 @@ The form is described in [the guided application manual](GUI_GUIDE.md).
 | `MICPanel` | Declare ordered categories and units | Configuration and report | Category order and twofold-panel tests |
 | `QuantileSummary` | Bind a percentile to an order-statistic rank | Declared ranks | Integer/rank validation and independent order inequalities |
 | `ReportingVariant` | Declare a complete alternative reporting convention | Per-variant bounds and union | Distinct-rank union tests |
-| `parse_spec` | Validate JSON and compatible legacy inputs | Normalized specification or refusal | Schema and malformed-input checks |
+| `parse_spec` | Validate JSON inputs, including the flat `levels`/`mic50`/`mic90` form | Normalized specification or refusal | Schema and malformed-input checks |
 | `EmpiricalIdentification` | Store a sharp interval and its witnesses | Counts, fractions and certificates | Integer enumeration and objective checks |
 | `empirical_bounds` | Find sharp sample extrema | Sample layer | Independent compositions and analytic extrema |
 | `analyse_spec` | Run requested JSON analyses | Full result and optional HTML | End-to-end examples, solver and failure oracles |
@@ -84,7 +84,7 @@ Internal families have specific roles: `utility` ranks additional counts; `scena
 
 Decision planning and width reduction answer different questions. The former stops once all requested sample criteria are definite; the latter ranks one count by guaranteed interval narrowing. The planner's fixed-plan comparison is a sufficient baseline unless `fixed_plan_optimality_verified` is true. Its exact common-boundary reduction applies to one coherent prefix box, not arbitrary variant unions. See [decision planning](DECISION_PLANNING.md) for permitted queries, resource limits and same-cohort returned counts.
 
-The legacy `conformal.assign_partition` helper is retained for API compatibility and tested. It is not the current study-unit calibration design. A static unused-code heuristic and observed execution coverage are complementary checks, not proofs that all branches or assumptions are correct.
+The `conformal.assign_partition` helper is a tested hash-based partition interface. It is not the study-unit calibration design. A static unused-code heuristic and observed execution coverage are complementary checks, not proofs that all branches or assumptions are correct.
 
 The CLI also exposes --version, python -m mic_50_90, explicit comma/semicolon/tab input selection, and optional --fail-on-refusal after saving reports. PYTHON_INTERFACE.md documents optional numerical methods and REPORT_CONTENTS.md maps calculations to report/export fields. HTML, JSON and CSV retain disconnected confidence components. Existing CSV endpoint columns describe the outer hull; explicit component columns preserve the gaps.
 
@@ -151,11 +151,11 @@ A callable used by a validation script, external Python caller or structural typ
 | `joint_population.joint_report_pvalue`, `joint_minp_probability`, `max_compatible_statistic` | Floating point evaluation of the finite model for diagnostics and independent comparisons; not certified exclusion bounds. |
 | `joint_population.rectangle_probability_bounds`, `box_pvalue_upper` | Directed probability enclosures supporting parameter-box exclusion. A surviving box need not contain an accepted point; endpoint precision also requires accepted witnesses. |
 | `dro.wasserstein_1d` | Direct one-dimensional transport distance used by comparisons and numerical checks; does not supply calibration validity by itself. |
-| `comparability.comparability_graph`, `matched_reference` | Helpers for historical external-data eligibility/reference scripts. They inspect retained histogram/range information; their output is not evidence that target-independent eligibility or exchangeability has been established. Current strict workflows require independently documented panels. |
+| `comparability.comparability_graph`, `matched_reference` | Helpers for external-data eligibility and reference selection. They inspect the supplied histogram/range information; their output is not evidence that target-independent eligibility or exchangeability has been established. Current strict workflows require independently documented panels. |
 | `comparability.TestedRange.fully_known` | Reports whether both bounds were marked as arising from censoring operators. This tested convenience property does not authenticate the original tested panel. |
-| `conformal.split_unit`, `balanced_partition`, `straddling_studies` | Study-label normalization, deterministic allocation and overlap diagnostics in evaluation scripts. They cannot detect biological dependence hidden behind different labels or establish exchangeability. |
-| `conformal.assign_partition` | Tested legacy deterministic partition interface; not the current connected-study allocation. |
+| `conformal.split_unit`, `balanced_partition`, `straddling_studies` | Study-label normalization, deterministic allocation and overlap diagnostics for external calibration data. They cannot detect biological dependence hidden behind different labels or establish exchangeability. |
+| `conformal.assign_partition` | Tested hash-based deterministic partition interface; not the connected-study allocation. |
 | `utility.rank_tail_count_questions` | Single-interpretation count-width planning and validation helper; the robust variant combines declared interpretations. |
 | `report_pages.DetailRenderer.__call__` | Structural callback signature for paginated report renderers. The protocol declaration is not an unexecuted analysis algorithm. |
 
-The retained calibration adapter, its unit-allocation helper and `verify_width_identity.py` contain relevant helper calls. A production-only reference scan is therefore insufficient to declare these functions dead. None of these supporting roles creates a new statistical guarantee.
+A production-only reference scan is therefore insufficient to declare these functions dead. None of these supporting roles creates a new statistical guarantee.

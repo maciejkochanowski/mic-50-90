@@ -6,8 +6,8 @@ from .model import parse_spec
 def validate_prepared_calibration(raw, calibration, *, cohort_id=None, panel_id=None):
     """Reject accidental remapping without claiming to authenticate provenance.
 
-Legacy manually constructed manifests have no preparation binding and continue
-through the existing manifest validator. A prepared manifest may not silently
+Manually constructed manifests have no preparation binding and are checked by
+the manifest validator alone. A prepared manifest may not silently
 lose its binding.
 """
     if not isinstance(calibration, dict):

@@ -1,0 +1,201 @@
+{
+ "comparison": "controlled_reports",
+ "created_utc": "2026-11-02T05:24:26+00:00",
+ "status": "complete",
+ "full_design": true,
+ "elapsed_seconds": 4.03501246497035,
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c6s1b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 192
+ },
+ "cutoff_comparison": {
+  "reports": 144,
+  "proper_range_projections": 3528,
+  "aggregate_relative_reduction_percent": 0.4160192241293607,
+  "narrower": 90,
+  "equal": 54,
+  "shape_certificates_checked": 13,
+  "groups": [
+   {
+    "k": 5,
+    "n": 10,
+    "reports": 18,
+    "narrower": 18,
+    "equal": 0,
+    "relative_reduction_percent": 1.0663420915534092
+   },
+   {
+    "k": 5,
+    "n": 20,
+    "reports": 18,
+    "narrower": 18,
+    "equal": 0,
+    "relative_reduction_percent": 0.5439411311301416
+   },
+   {
+    "k": 5,
+    "n": 50,
+    "reports": 18,
+    "narrower": 0,
+    "equal": 18,
+    "relative_reduction_percent": 0.0
+   },
+   {
+    "k": 5,
+    "n": 100,
+    "reports": 18,
+    "narrower": 0,
+    "equal": 18,
+    "relative_reduction_percent": 0.0
+   },
+   {
+    "k": 8,
+    "n": 10,
+    "reports": 18,
+    "narrower": 18,
+    "equal": 0,
+    "relative_reduction_percent": 0.8389186322256209
+   },
+   {
+    "k": 8,
+    "n": 20,
+    "reports": 18,
+    "narrower": 18,
+    "equal": 0,
+    "relative_reduction_percent": 0.4787932717885726
+   },
+   {
+    "k": 8,
+    "n": 50,
+    "reports": 18,
+    "narrower": 18,
+    "equal": 0,
+    "relative_reduction_percent": 0.060906292551271786
+   },
+   {
+    "k": 8,
+    "n": 100,
+    "reports": 18,
+    "narrower": 0,
+    "equal": 18,
+    "relative_reduction_percent": 0.0
+   }
+  ]
+ },
+ "endpoint_checks": {
+  "reports": 144,
+  "confirmed": 144,
+  "shape_condition": 142,
+  "direct_witness": 2,
+  "maximum_endpoint_gap_pp": 2.000621890374532e-10,
+  "maximum_independent_difference_pp": 1.0006440120946536e-10,
+  "independent_lp_solves_requested": 44364,
+  "groups": [
+   {
+    "k": 5,
+    "n": 10,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 18,
+    "direct_witness": 0,
+    "median_seconds": 0.012064281036145985,
+    "maximum_seconds": 0.012438519042916596
+   },
+   {
+    "k": 5,
+    "n": 20,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 17,
+    "direct_witness": 1,
+    "median_seconds": 0.0336410750169307,
+    "maximum_seconds": 0.05656585993710905
+   },
+   {
+    "k": 5,
+    "n": 50,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 17,
+    "direct_witness": 1,
+    "median_seconds": 0.14309631002834067,
+    "maximum_seconds": 0.1964533959981054
+   },
+   {
+    "k": 5,
+    "n": 100,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 18,
+    "direct_witness": 0,
+    "median_seconds": 0.18916980997892097,
+    "maximum_seconds": 0.30884091602638364
+   },
+   {
+    "k": 8,
+    "n": 10,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 18,
+    "direct_witness": 0,
+    "median_seconds": 0.05356757453409955,
+    "maximum_seconds": 0.10928581701591611
+   },
+   {
+    "k": 8,
+    "n": 20,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 18,
+    "direct_witness": 0,
+    "median_seconds": 0.02659527602372691,
+    "maximum_seconds": 0.09006895695347339
+   },
+   {
+    "k": 8,
+    "n": 50,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 18,
+    "direct_witness": 0,
+    "median_seconds": 0.08912887750193477,
+    "maximum_seconds": 0.1357071219244972
+   },
+   {
+    "k": 8,
+    "n": 100,
+    "reports": 18,
+    "confirmed": 18,
+    "shape": 18,
+    "direct_witness": 0,
+    "median_seconds": 0.2313932284596376,
+    "maximum_seconds": 0.2876659140456468
+   }
+  ]
+ },
+ "scaling_probes": {
+  "probes": 15,
+  "confirmed": 15,
+  "maximum_n": 1000,
+  "maximum_k": 16,
+  "minimum_seconds": 0.034197387052699924,
+  "maximum_seconds": 0.28348886605817825
+ }
+}

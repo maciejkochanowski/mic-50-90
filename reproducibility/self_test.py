@@ -6,13 +6,12 @@ so every step reports what it looked at rather than only whether it passed.
 
     PYTHONPATH=src python3 reproducibility/self_test.py
 
-Five steps. The manifest step tolerates its own absence, because the source tree and a
-built bundle carry different manifests, and reports which one it used.
+Five steps. A source tree and a built distribution carry different manifests.
+The manifest step reports which one it used and fails if no manifest is available.
 """
 
 from __future__ import annotations
 
-import hashlib
 import json
 import subprocess
 import sys
@@ -35,14 +34,6 @@ def ok(message: str) -> None:
 def bad(message: str) -> None:
     print(f"      FAILED: {message}")
     FAILURES.append(message)
-
-
-def sha(path: Path) -> str:
-    digest = hashlib.sha256()
-    with open(path, "rb") as handle:
-        for block in iter(lambda: handle.read(1 << 20), b""):
-            digest.update(block)
-    return digest.hexdigest()
 
 
 def check_import() -> None:
@@ -156,7 +147,8 @@ def check_bound_numbers() -> None:
         return
     with tempfile.TemporaryDirectory(prefix="mic-software-self-test-") as directory:
         destination = Path(directory) / "report.html"
-        render_distribution_html({"software_version": "1.0.0", "cohorts": [result]}, destination)
+        from mic_50_90 import __version__
+        render_distribution_html({"software_version": __version__, "cohorts": [result]}, destination)
         text = destination.read_text(encoding="utf-8")
         if "recorded MIC category 2 mg/L" not in text:
             bad("known category question missing from the generated report")
@@ -166,31 +158,26 @@ def check_bound_numbers() -> None:
 
 def check_manifest() -> None:
     step(5, "shipped artefacts match their recorded digests")
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from manifest_tools import check_manifest as verify_manifest
+    from package_files import source_files
     candidates = [
         ROOT / "MANIFEST.sha256",              # written into a built bundle
         ROOT / "PACKAGE_MANIFEST.sha256",      # the source tree
-
     ]
     used = [path for path in candidates if path.is_file()]
     if not used:
         bad("no manifest of any kind is present")
         return
+    expected = source_files(ROOT)
+    if (ROOT / "PKG-INFO").is_file():
+        expected.append(ROOT / "PKG-INFO")
     for manifest in used:
-        checked = missing = changed = 0
-        for line in manifest.read_text(encoding="utf-8").splitlines():
-            if not line.strip():
-                continue
-            digest, relative = line.split("  ", 1)
-            target = ROOT / relative
-            checked += 1
-            if not target.is_file():
-                missing += 1
-            elif sha(target) != digest:
-                changed += 1
-        if missing or changed:
-            bad(f"{manifest.name}: {checked} entries, {missing} missing, {changed} changed")
+        report = verify_manifest(manifest, ROOT, expected)
+        if report["status"] != "passed":
+            bad(f"{manifest.name}: {report['entries']} entries; " + "; ".join(report["problems"]))
         else:
-            ok(f"{manifest.name}: {checked} entries, all match")
+            ok(f"{manifest.name}: {report['entries']} entries, all match")
 
 
 def main() -> int:

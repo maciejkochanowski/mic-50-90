@@ -79,7 +79,7 @@ def distribution_problems(raw):
                 raise ValueError("Every quantile requires an explicit convention or rank; neither is guessed")
             quantiles.append(QuantileSummary.from_dict(quantile, n=n, panel=panel))
         quantiles.sort(key=lambda item: item.rank)
-        if any(a.rank >= b.rank for a, b in zip(quantiles, quantiles[1:])):
+        if any(a.rank >= b.rank for a, b in zip(quantiles, quantiles[1:], strict=False)):
             raise ValueError("Reported quantile ranks must be strictly increasing")
         indices = {name + "_index": None if summaries.get(name) is None else panel.index(summaries[name])
                    for name in ("minimum", "maximum")}
@@ -229,13 +229,24 @@ def _calibration(raw, panel, observations):
 def analyse_distribution(raw, *, population_method="bonferroni", population_time_limit=30.,
                          population_tolerance_pp=.01, precision_pp=None, previous_analysis=None,
                          population_precision_pp=None, population_count_plan=False,
-                         population_minimum_bins=None, population_planning_time_limit=10.):
+                         population_minimum_bins=None, population_planning_time_limit=10.,
+                         solver_execution="in-process", solver_timeout=300.):
     """Return sample, simultaneous iid population and optional calibration layers.
 
 Additional counts always concern the same original denominator and strict
 recorded-category tails. The returned ranges are projections of a constrained
 set; arbitrary choices of individual endpoints need not form one distribution.
 """
+    if solver_execution not in ('in-process', 'isolated'):
+        raise ValueError("solver_execution must be 'in-process' or 'isolated'")
+    if solver_execution == 'isolated':
+        from .isolated_distribution import analyse_isolated
+        return analyse_isolated(raw, dict(population_method=population_method,
+            population_time_limit=population_time_limit,
+            population_tolerance_pp=population_tolerance_pp, precision_pp=precision_pp,
+            previous_analysis=previous_analysis, population_precision_pp=population_precision_pp,
+            population_count_plan=population_count_plan, population_minimum_bins=population_minimum_bins,
+            population_planning_time_limit=population_planning_time_limit), solver_timeout)
     started = perf_counter()
     problems, observations, rejected = distribution_problems(raw)
     if previous_analysis is not None:
@@ -374,6 +385,8 @@ set; arbitrary choices of individual endpoints need not form one distribution.
             "inference_requested": {"population": iid, "calibration": any(raw.get(key) for key in (
                 "reference_distribution", "wasserstein_calibration_manifest", "calibration_context"))}}
     if previous_analysis is not None:
+        if "previous_evidence" in previous_analysis:
+            result["previous_evidence"] = deepcopy(previous_analysis["previous_evidence"])
         before, before_counts, _ = distribution_problems(previous_analysis["input"])
         previous_count = len(before_counts)
         result["sample_comparison"] = {"status": "complete", "before": _sample_rows(before),
@@ -412,6 +425,8 @@ def _csv_inputs(args, delimiter):
         raise ValueError("CSV distribution input requires --panels with the explicit category table")
     panels, errors = load_panels(args.panels, delimiter)
     grouped = _groups(read_csv(args.input, delimiter), "cohort_id")
+    if not grouped:
+        raise ValueError("CSV distribution input must contain at least one cohort; the table has no data rows")
     counts = _groups(read_csv(args.additional_counts, delimiter), "cohort_id") if args.additional_counts else {}
     targets = _groups(read_csv(args.targets, delimiter), "cohort_id") if getattr(args, "targets", None) else {}
     unknown = (set(counts) | set(targets)) - set(grouped)
@@ -452,7 +467,7 @@ def _csv_inputs(args, delimiter):
                    "reporting_envelope": {"variants": [{"id": key, "summaries": value} for key, value in summaries.items()]},
                    "iid": iid_values.pop(), "confidence_level": confidence_values.pop()}
             # Keep optional source context in the saved input as well as the report.
-            # Blank columns retain the legacy input shape and never imply iid.
+            # Blank columns leave the input without these fields and never imply iid.
             from .input_context import sample_context
             from .workflows import _consistent
             for name in ('organism', 'antimicrobial', 'source', 'source_doi', 'source_location',
@@ -473,12 +488,12 @@ def _csv_inputs(args, delimiter):
 
 def _load_previous_output(directory):
     previous = Path(directory)
-    configuration = json.loads((previous / "configuration.json").read_text(encoding="utf-8-sig"))
-    results = json.loads((previous / "results.json").read_text(encoding="utf-8-sig"))
+    from hashlib import sha256
+    content = {name: (previous / name).read_bytes() for name in ("configuration.json", "results.json")}
+    configuration = json.loads(content["configuration.json"].decode("utf-8-sig"))
+    results = json.loads(content["results.json"].decode("utf-8-sig"))
     if not isinstance(configuration, dict) or not isinstance(results, dict):
         raise ValueError("Previous configuration and results must be JSON objects")
-    if results.get("software") != "MIC-50-90" or results.get("software_version") != __version__:
-        raise ValueError("Previous output must be a MIC-50-90 1.0.0 distribution analysis")
     validate_distribution_schema(results)
 
     def keyed(rows):
@@ -497,8 +512,11 @@ def _load_previous_output(directory):
     inputs, records = keyed(configuration["inputs"]), keyed(results["cohorts"])
     if inputs.keys() != records.keys():
         raise ValueError("Previous configuration and results do not contain the same cohorts")
-    return {key: {"input": raw, "result": records[key], "population_method": configuration["population_method"]}
-            for key, raw in inputs.items()}
+    evidence = {"software_version": results["software_version"],
+                "result_schema": results.get("result_schema"),
+                "file_sha256": {name: sha256(data).hexdigest() for name, data in content.items()}}
+    return {key: {"input": raw, "result": records[key], "population_method": configuration["population_method"],
+                  "previous_evidence": deepcopy(evidence)} for key, raw in inputs.items()}
 
 
 def run_distribution(args):
@@ -536,8 +554,10 @@ def run_distribution(args):
                 population_precision_pp=getattr(args, 'population_precision_pp', None),
                 population_count_plan=getattr(args,'population_count_plan',False),
                 population_minimum_bins=getattr(args,'population_minimum_bins',None),
-                population_planning_time_limit=getattr(args,'population_planning_time_limit',10.)))
-        except (ValueError, RuntimeError, KeyError, TypeError) as exc:
+                population_planning_time_limit=getattr(args,'population_planning_time_limit',10.),
+                solver_execution=getattr(args,'solver_execution','in-process'),
+                solver_timeout=getattr(args,'solver_timeout',300.)))
+        except (ValueError, RuntimeError, KeyError, TypeError, TimeoutError, MemoryError) as exc:
             records.append({"cohort_id": raw.get("cohort_id", "cohort") if isinstance(raw, dict) else "cohort",
                             "status": "refused", "reason": str(exc), "provenance": _provenance(raw)})
     result = {"software": "MIC-50-90", "software_version": __version__, "result_schema": DISTRIBUTION_SCHEMA, "cohorts": records}
@@ -550,10 +570,14 @@ def run_distribution(args):
                      "population_planning_time_limit": getattr(args,'population_planning_time_limit',10.),
                      "previous_output": None if args.previous_output is None else str(Path(args.previous_output).resolve()),
                      "inputs": [raw for raw, _ in inputs]}
+    if getattr(args, 'solver_execution', 'in-process') == 'isolated':
+        configuration.update(solver_execution='isolated', solver_timeout=getattr(args,'solver_timeout',300.))
     # Invalid optional numeric settings are reported by the refinement layer.
     # Preserve their spelling without letting non-JSON numbers discard valid
     # sample and baseline results during export.
-    for key in ("population_time_limit", "population_tolerance_pp", "population_planning_time_limit"):
+    for key in ("population_time_limit", "population_tolerance_pp", "population_planning_time_limit", "solver_timeout"):
+        if key not in configuration:
+            continue
         value = configuration[key]
         if isinstance(value, float) and not isfinite(value):
             configuration[key] = str(value)

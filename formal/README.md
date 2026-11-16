@@ -1,16 +1,22 @@
 # Machine-checked algebra for the population endpoint construction
 
-This directory checks the algebraic core of P6 with Lean 4.29.1 and mathlib commit `5e932f97dd25535344f80f9dd8da3aab83df0fe6`. It is supporting evidence for MIC-50-90 1.0.0, not a new runtime dependency.
+This directory checks the algebraic core of P6 with Lean 4.29.1 and mathlib commit `5e932f97dd25535344f80f9dd8da3aab83df0fe6`. The same formal source is carried forward into MIC-50-90 1.0.2; it is not a runtime dependency. Its pinned Lean and mathlib versions are unchanged. Historical compilation evidence retains its original scope; a fresh compilation must be identified by its own receipt.
 
 From this directory, with Lean installed, run:
 
 ```text
 lake update
-lake exe cache get Mathlib/Tactic.lean Mathlib/Data/Real/Basic.lean
+lake exe cache get Mathlib.Tactic Mathlib.Data.Real.Basic
 lake env lean P6Core.lean
 ```
 
-The file contains 29 theorem declarations and prints the axiom dependencies of every theorem. None may depend on `sorryAx`. There are no additional axioms or admitted proof steps in this file. Standard Lean foundations (`propext`, `Classical.choice`, `Quot.sound`) remain part of the trusted proof system. The audit also rejects native-evaluation or custom-axiom dependencies outside this allowlist. This follows Lean's [proof-validation guidance](https://lean-lang.org/doc/reference/latest/ValidatingProofs/).
+Pass module names to `cache get` when running from this consumer project; paths inside
+the mathlib source tree are not project-local files. To separate dependency retrieval
+from the explicit cache step, `MATHLIB_NO_CACHE_ON_UPDATE=1 lake update` may replace
+`lake update`. TLS certificate configuration is environment-specific; use a trusted
+system CA bundle where required, without disabling certificate verification.
+
+The file contains 29 theorem declarations and prints the axiom dependencies of every theorem. None may depend on `sorryAx`. There are no additional axioms or admitted proof steps in this file. Standard Lean foundations (`propext`, `Classical.choice`, `Quot.sound`) remain part of the trusted proof system. The check also rejects native-evaluation or custom-axiom dependencies outside this allowlist. This follows Lean's [proof-validation guidance](https://lean-lang.org/doc/reference/latest/ValidatingProofs/).
 
 For a laboratory reader, the checked step has a direct meaning: the selected table of isolate counts can be converted into a probability distribution that satisfies every analysed MIC-range bound at the same time. The proof also checks how the required lower or upper endpoint is attained, including a range ending at the last category.
 
@@ -40,7 +46,5 @@ The file uses an abstract real-valued endpoint sequence U and explicit hypothese
 ## What is not checked by Lean
 
 Lean does not verify the Python program, the numerical enclosure implementation, the statistical coverage proof, source-data transcription, biological interpretation or user interface. Passing these algebraic proofs does not establish novelty. Property tests, direct enumeration, numerical certificates, example replay and the written statistical proofs address different parts of that evidence.
-
-MathForm 8B is not used. Such a model could help translate a proposed statement into Lean, but its output would still require checking that the formal statement matches the intended theorem and that the Lean kernel accepts the proof. The direct formalization here avoids an unnecessary model dependency.
 
 The portable commands above recompile the supplied formal source using its pinned dependencies. Inspect every printed axiom dependency: no theorem may depend on sorryAx or an added unproved axiom. A successful process alone is not sufficient evidence if such dependencies are present.

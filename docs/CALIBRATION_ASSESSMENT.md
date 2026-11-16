@@ -49,6 +49,26 @@ Comparison tolerance defaults to zero. If needed, specify a numerical tolerance 
 
 Endpoint arithmetic is handled separately. A public solver can serialize an upper bound as 1.0000000000000002, or reverse a point interval by a few floating-point units. Domain excursions of at most 1e-12 are clipped to [0,1]; reversed endpoints at most 1e-12 apart are sorted to their conservative hull, without using the truth. Larger errors are rejected. Truth values are never normalized. Every correction, its raw value and its target identifier are saved in `audit.json` and `numeric-corrections.csv`; input hashes retain the source file identity. The report displays the correction count and both numerical limits. Valid in-domain intervals are unchanged. Width reductions are expressed in percentage points, not relative percentages.
 
-Ranks within eight floating-point units of an integer use that integer. This handles literal levels and complements such as `1-level` consistently; it is an arithmetic boundary rule, not a change in requested statistical coverage. The 27 September empirical ranks are unchanged by this repair.
+Ranks within eight floating-point units of an integer use that integer. This handles literal levels and complements such as `1-level` consistently; it is an arithmetic boundary rule, not a change in requested statistical coverage.
 
-The audit checks supplied intervals against supplied truths; it does not create calibration scores or establish source-panel validity. Reference and score construction still require a documented independent procedure. Source-specific reproduction scripts illustrate that work.
+The audit checks supplied intervals against supplied truths; it does not create calibration scores or establish source-panel validity. Reference and score construction still require a documented independent procedure. The calibration scripts in `evaluation/` illustrate that work.
+
+## Recorded temporal assessment and its denominator
+
+The preserved NARMS retail *E. coli* assessment uses state-year units: training 2017,
+calibration 2018 and testing 2019, with the same 13 states in calibration and testing. It is
+a temporal holdout within NARMS. Exact unit labels differ across years, but that alone does
+not establish independent geographic units or exchangeability across years.
+
+At a manifest level of 13/14 (92.86%), the trained reference covers every declared target
+in 8/13 test units (61.54%); the uniform reference covers 11/13 (84.62%). Their individual
+target counts are 1099/1105 and 1101/1105. The manifest's 13/14 is the discrete rank
+level corresponding to a requested 90% level and 13 calibration units. The target denominator answers a different
+question and cannot replace the whole-unit denominator. The corresponding unchanged
+summaries, manifests and interval tables are under
+`evaluation/results/external_calibration/retail-ecoli-trained/` and `retail-ecoli-uniform/`.
+
+Training leave-one-out steps select scaling using training data; they are not the final
+test design. No reference is selected or retuned on the test-year outcome. A modified
+procedure requires a subsequent independent assessment. These descriptive holdout results
+do not establish a universal transfer guarantee; see [VALIDATION_SCOPE.md](VALIDATION_SCOPE.md).

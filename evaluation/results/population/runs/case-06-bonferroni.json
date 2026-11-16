@@ -1,0 +1,238 @@
+{
+ "case": "case-06",
+ "method": "bonferroni",
+ "cohort_id": "FDA|NAHLN|2019|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+ "source": "FDA animal pathogens",
+ "n": 301,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.12657581001985818,
+ "result": {
+  "requested_method": "bonferroni",
+  "method": "bonferroni",
+  "confidence_level": 0.95,
+  "constraint_signature": "487fc47e1c19d9f434f63da366f93123e717f2bd2d0fca9e066176d03755cd50",
+  "family_size": 4,
+  "sample_size": 301,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "baseline_cdf_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.0,
+    0.15024867180189397
+   ],
+   [
+    0.0,
+    0.09471953856828942
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.0,
+    0.15024867180189397
+   ],
+   [
+    0.0,
+    0.09471953856828942
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "elapsed_seconds": 0.10236866702325642,
+  "baseline_seconds": 0.10236866702325642,
+  "refinement_seconds": 0.0,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.8493647240145739,
+    "upper": 0.999613395816468,
+    "inner_lower": 0.849364724016574,
+    "inner_upper": 0.9996133958144678
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8493647240145739,
+    "upper": 0.999613395816468,
+    "inner_lower": 0.849364724016574,
+    "inner_upper": 0.9996133958144678
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8571828879872554,
+    "upper": 1.0,
+    "inner_lower": 0.8571828879892556,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8571828879872554,
+    "upper": 1.0,
+    "inner_lower": 0.8571828879892556,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.15024867180189397,
+    "inner_lower": 0.0,
+    "inner_upper": 0.150248671797894
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.0,
+    "inner_upper": 0.15063527598342605
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.0,
+    "inner_upper": 0.15063527598342605
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.000386604183532091,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.00038660418553204684,
+    "inner_upper": 0.15063527598342605
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.09471953856828942,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09471953856428948
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.0,
+    "inner_upper": 0.15063527598342605
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.000386604183532091,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.00038660418553204684,
+    "inner_upper": 0.15063527598342605
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14281711201274452,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1428171120107445
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14281711201274452,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.1428171120107445
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14281711201274452,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.1428171120107445
+   }
+  ],
+  "endpoint_gap_pp": 3.999967024270747e-10
+ },
+ "refinement_budget_seconds": 0,
+ "seconds": 0.13027717405930161,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

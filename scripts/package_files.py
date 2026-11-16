@@ -1,8 +1,8 @@
 """One explicit source-delivery file selection shared by manifest and bundle tools.
 
-Runtime resources are selected by directory, never by a Python-only glob. Historical
-campaigns and generated archives retain their own manifests; they are not recursively
-folded into the current source identity.
+Runtime resources are selected by directory, never by a Python-only glob. Generated
+archives carry their own manifests; they are not recursively folded into the current
+source identity.
 """
 from __future__ import annotations
 
@@ -10,14 +10,14 @@ from pathlib import Path
 
 ROOT_FILES = (
     "README.md", "README_REVIEWER.md", "DELIVERY.md", "PACKAGE_STATUS.json",
-    "pyproject.toml", "LICENSE", "NOTICE.md", "SECURITY.md",
+    "pyproject.toml", "hatch_build.py", "LICENSE.txt", "NOTICE.md", "SECURITY.md",
     "CONTRIBUTING.md", "CITATION.cff", "CHANGELOG.md", "codemeta.json",
     ".zenodo.json", ".gitignore", ".gitattributes", "uv.lock", "Dockerfile", ".dockerignore",
     "verify.sh", "reproducibility/self_test.py",
     "data/SOURCES.md", "data/LICENSES.md",
 )
 SOURCE_DIRECTORIES = (
-    "src", "tests", "schemas", "examples", "docs", "formal", "scripts", "reproducibility",
+    "src", "tests", "schemas", "examples", "evaluation", "docs", "formal", "scripts", "reproducibility",
     ".github/workflows", "tools",
 )
 EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".git", ".venv", "node_modules", ".lake"}

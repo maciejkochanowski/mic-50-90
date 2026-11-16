@@ -4,17 +4,17 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mic-50-90"
-version = "1.0.0"
-description = "Distribution bounds and reporting tools for incomplete MIC data"
+version = "1.0.2"
+description = "A Python package for bounding MIC distributions from incomplete susceptibility reports"
 readme = "README.md"
 requires-python = ">=3.11"
 # SPDX licence metadata; the full licence is included below.
 license = "MIT"
-license-files = ["LICENSE"]
+license-files = ["LICENSE.txt"]
 authors = [
   {name = "Maciej Kochanowski", email = "maciej.kochanowski@piwet.pulawy.pl"}
 ]
-keywords = ["AMR", "MIC", "partial identification", "order statistics", "Wasserstein"]
+keywords = ["minimum inhibitory concentration", "MIC50", "MIC90", "antimicrobial susceptibility reporting", "antimicrobial resistance", "partial identification", "surveillance"]
 classifiers = [
   "Development Status :: 5 - Production/Stable",
   "Intended Audience :: Science/Research",
@@ -47,6 +47,8 @@ benchmark = [
   "python-docx>=1.1"
 ]
 test = [
+  # Packaging regressions exercise the actual source-distribution backend.
+  "hatchling>=1.27",
   "pytest>=8.2",
   "pytest-cov>=5.0",
   "hypothesis>=6.110",
@@ -61,7 +63,6 @@ all = [
 
 [project.urls]
 Documentation = "https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/GUI_GUIDE.md"
-Download = "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0"
 Homepage = "https://github.com/maciejkochanowski/mic-50-90"
 Repository = "https://github.com/maciejkochanowski/mic-50-90"
 Issues = "https://github.com/maciejkochanowski/mic-50-90/issues"
@@ -73,28 +74,26 @@ mic-50-90 = "mic_50_90.cli:main"
 mic-50-90-gui = "mic_50_90.gui:main"
 
 [tool.hatch.build]
-exclude = [
-  "/manuscript", "/Article", "/Supplementary-Appendices", "/Technical-Archive",
-  "/tools/publication", "/docs/superpowers", "/docs/project-history",
-  "**/MIC-50-90-main-*", "**/MIC-50-90-*-Appendix-*", "**/appendix_*_claims_*.json",
-  "**/manuscript_claims_*.json", "**/__pycache__", "**/*.pyc"
-]
+exclude = ["**/__pycache__", "**/*.pyc"]
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/mic_50_90"]
 
 [tool.hatch.build.targets.sdist]
 include = [
+  "/hatch_build.py",
+  "/PACKAGE_STATUS.json",
   "/src",
   "/tests",
   "/formal",
   "/schemas",
   "/examples",
+  "/evaluation",
   "/docs",
   "/data/LICENSES.md",
   "/data/SOURCES.md",
   "/README.md",
-  "/LICENSE",
+  "/LICENSE.txt",
   "/CITATION.cff",
   "/CHANGELOG.md",
   "/README_REVIEWER.md",
@@ -104,22 +103,35 @@ include = [
   "/scripts",
   "/tools",
   "/.github/workflows",
-  "/reproducibility/v1.0.0/joint-distribution-20260930/oracle.py",
+  "/reproducibility/joint-distribution/oracle.py",
   "/reproducibility/self_test.py",
-  "/reproducibility/v1.0.0/joint-distribution-20260930/production_adapter.py",
+  "/reproducibility/joint-distribution/production_adapter.py",
   "/pyproject.toml",
 ]
-exclude = [
-  "/manuscript", "/Article", "/Supplementary-Appendices", "/Technical-Archive",
-  "/tools/publication", "/docs/superpowers", "/docs/project-history",
-  "**/MIC-50-90-main-*", "**/MIC-50-90-*-Appendix-*", "**/appendix_*_claims_*.json",
-  "**/manuscript_claims_*.json", "**/__pycache__", "**/*.pyc", "/docs/ENGINEERING_REVIEW.md"
-]
+exclude = ["**/__pycache__", "**/*.pyc", "/PACKAGE_MANIFEST.sha256", "/MANIFEST.sha256"]
+
+[tool.hatch.build.hooks.custom]
+path = "hatch_build.py"
 
 [tool.pytest.ini_options]
 addopts = "-ra --strict-markers"
 testpaths = ["tests"]
 # Tests import the installed package without a source-path override.
+
+[tool.ruff]
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["F", "E9", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src/mic_50_90"]
+
+# SciPy ships without type information.
+[[tool.mypy.overrides]]
+module = ["scipy", "scipy.*"]
+ignore_missing_imports = true
 
 [tool.coverage.run]
 branch = true
@@ -128,3 +140,12 @@ source = ["mic_50_90"]
 [tool.coverage.report]
 show_missing = true
 skip_covered = false
+
+# Targeted mutation testing of thirteen critical functions (evaluation/README.md, "Tests, coverage and mutations").
+[tool.mutmut]
+paths_to_mutate = ["src/mic_50_90/range_certificates.py", "src/mic_50_90/decisions.py", "src/mic_50_90/utility.py",
+  "src/mic_50_90/validation.py", "src/mic_50_90/count_updates.py", "src/mic_50_90/joint_population.py",
+  "src/mic_50_90/range_population.py", "src/mic_50_90/exact_population.py", "src/mic_50_90/sufficient_reporting.py",
+  "src/mic_50_90/conformal.py", "src/mic_50_90/dro.py"]
+tests_dir = ["tests/"]
+also_copy = [".github/", ".gitignore", ".gitattributes", ".dockerignore", "examples/", "schemas/", "reproducibility/", "docs/", "scripts/", "tools/", "src/", "evaluation/", "formal/", "data/", "README.md", "CITATION.cff", "codemeta.json", ".zenodo.json", "PACKAGE_STATUS.json", "PACKAGE_MANIFEST.sha256", "LICENSE.txt", "NOTICE.md", "CHANGELOG.md", "README_REVIEWER.md", "DELIVERY.md", "SECURITY.md", "CONTRIBUTING.md", "uv.lock", "Dockerfile", "verify.sh"]

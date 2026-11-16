@@ -154,8 +154,8 @@ def range_population(problems, *, confidence_level, time_limit_seconds,
     exhausted, failure = complete_histograms, None
 
     def gap():
-        return max(F(0), *(F(float(i))-F(float(o)) for i, o in zip(inner_lo, outer_lo)),
-                   *(F(float(o))-F(float(i)) for o, i in zip(outer_hi, inner_hi))) if np.all(np.isfinite(inner_lo)) and np.all(np.isfinite(inner_hi)) else None
+        return max(F(0), *(F(float(i))-F(float(o)) for i, o in zip(inner_lo, outer_lo, strict=True)),
+                   *(F(float(o))-F(float(i)) for o, i in zip(outer_hi, inner_hi, strict=True))) if np.all(np.isfinite(inner_lo)) and np.all(np.isfinite(inner_hi)) else None
 
     def precise():
         value = gap()
@@ -163,9 +163,8 @@ def range_population(problems, *, confidence_level, time_limit_seconds,
 
     range_witnesses_checked = 0
     shape_certificate = dict(status='not_checked', reason='Numerical witnesses or the general refinement suffice')
-    # The finite shape check is inexpensive for small samples. Larger samples
-    # retain the same fixed method and use pointwise endpoint certificates.
-    if not complete_histograms and not precise() and n <= 100 and monotonic() < deadline:
+    def certify_shape():
+        nonlocal shape_certificate
         from .range_certificates import binomial_shape_certificate
         shape_certificate = binomial_shape_certificate(n, cutoff, deadline)
         if shape_certificate['status'] == 'certified':
@@ -175,14 +174,21 @@ def range_population(problems, *, confidence_level, time_limit_seconds,
                     if a == 0 and b == k:
                         low = high = 1.
                     else:
-                        low = cp(int(-d[b,a]), True)[0]
-                        high = cp(int(d[a,b]), True)[1]
+                        lo, hi = cp(int(-d[b,a]), True), cp(int(d[a,b]), True)
+                        if lo is None or hi is None:
+                            break
+                        low, high = lo[0], hi[1]
                     lows.append(low); highs.append(high)
                 # The row-lift theorem identifies these exact endpoints; inward
                 # CP brackets certify their numerical locations without claiming
                 # that all marginal endpoint choices form one distribution.
-                np.minimum(inner_lo, lows, out=inner_lo)
-                np.maximum(inner_hi, highs, out=inner_hi)
+                else:
+                    np.minimum(inner_lo, lows, out=inner_lo)
+                    np.maximum(inner_hi, highs, out=inner_hi)
+    # Small shape checks precede witnesses; for large n, inexpensive pointwise
+    # witnesses are attempted first, avoiding unnecessary full endpoint tables.
+    if not complete_histograms and not precise() and n <= 100 and monotonic() < deadline:
+        certify_shape()
     if not complete_histograms and not precise() and monotonic() < deadline:
         # Each closed count matrix supplies K+1 feasible integer potentials.
         # Row a attains every upper count bound D[a,b]; row b attains the
@@ -229,6 +235,8 @@ def range_population(problems, *, confidence_level, time_limit_seconds,
             failure = str(exc) or type(exc).__name__
 
     partition_count = 0
+    if not complete_histograms and not precise() and 100 < n <= 10000 and monotonic() < deadline:
+        certify_shape()
     if not complete_histograms and not precise() and monotonic() < deadline:
         from .range_certificates import split_count_cell
 

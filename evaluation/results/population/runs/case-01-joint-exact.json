@@ -1,0 +1,240 @@
+{
+ "case": "case-01",
+ "method": "joint-exact",
+ "cohort_id": "FDA|Vet-LIRN|2020|Salmonella|Dogs|Other Tissues/ Body Sites|Imipenem",
+ "source": "FDA animal pathogens",
+ "n": 25,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.011391017003916204,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "478bf83c1e38a84211835c221f7dd11524f10d403828da13351f6f30694ebdf3",
+  "family_size": 4,
+  "sample_size": 25,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.686905867250912,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.0,
+    0.313094132749088
+   ],
+   [
+    0.0,
+    0.3083616116531986
+   ],
+   [
+    0.0,
+    0.313094132749088
+   ],
+   [
+    0.0,
+    0.313094132749088
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.726042633844548,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.686905867250912,
+    1.0
+   ],
+   [
+    0.0,
+    0.313094132749088
+   ],
+   [
+    0.0,
+    0.28114263189725247
+   ],
+   [
+    0.0,
+    0.2812955098917587
+   ],
+   [
+    0.0,
+    0.273957366155452
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 39977,
+  "excluded_boxes": 18743,
+  "elapsed_seconds": 115.39557007804979,
+  "baseline_seconds": 0.0009207989787682891,
+  "refinement_seconds": 115.39456986298319,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.686905867250912,
+    "upper": 1.0,
+    "inner_lower": 0.7651794004381841,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.686905867250912,
+    "upper": 1.0,
+    "inner_lower": 0.7651794004381841,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.686905867250912,
+    "upper": 1.0,
+    "inner_lower": 0.7651794004381841,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.726042633844548,
+    "upper": 1.0,
+    "inner_lower": 0.843452933625456,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.313094132749088,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.19568383296818
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.313094132749088,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.19568383296818
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.313094132749088,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.19568383296818
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.313094132749088,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.23482059956181597
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.2811426318972524,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.15654706637454394
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.313094132749088,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.19568383296818
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.313094132749088,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.23482059956181597
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.28129550989175867,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.15654706637454394
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.313094132749088,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.23482059956181597
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.27395736615545196,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.15654706637454405
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 0,
+  "endpoint_gap_pp": 12.474844351721481
+ },
+ "refinement_budget_seconds": 114.98689383501187,
+ "seconds": 115.40982626506593,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

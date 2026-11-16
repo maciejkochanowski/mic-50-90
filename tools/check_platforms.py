@@ -20,11 +20,11 @@ import time
 TESTS = [
     'tests/test_report_interface_consistency.py', 'tests/test_report_typography.py',
     'tests/test_result_explanations.py', 'tests/test_count_updates.py',
-    'tests/test_gui_input_repairs.py', 'tests/test_gui_backend.py',
+    'tests/test_gui_saved_input_validation.py', 'tests/test_gui_backend.py',
     'tests/test_distribution_calibration_reporting.py', 'tests/test_range_population.py',
     'tests/test_exact_population.py', 'tests/test_hunter_audit_safety.py',
     'tests/test_hunter_budget.py', 'tests/test_hunter_independent_boundaries.py',
-    'tests/test_verifier_repairs.py',
+    'tests/test_provenance_tools.py',
 ]
 
 
@@ -58,7 +58,7 @@ def main():
             command_log=[]; code=0
             if platform=='windows':
                 with tarfile.open(sdist) as archive: archive.extractall(work,filter='data')
-                source=work/'mic_50_90-1.0.0'; venv=work/'venv'
+                source=work/sdist.name.removesuffix('.tar.gz'); venv=work/'venv'
                 python=venv/'Scripts/python.exe'
                 commands=[
                     [args.uv,'venv','--allow-existing','--python',version,str(venv)],
@@ -72,7 +72,7 @@ def main():
                 shell+='tar -xzf '+shlex.quote(wsl_path(sdist))+'\n'
                 shell+='uv venv --allow-existing --python '+shlex.quote(version)+' venv\n'
                 shell+='uv pip install --reinstall-package mic-50-90 --python venv/bin/python '+shlex.quote(wsl_path(wheel)+'[test]')+'\n'
-                shell+='cd mic_50_90-1.0.0\n'
+                shell+='cd '+shlex.quote(sdist.name.removesuffix('.tar.gz'))+'\n'
                 shell+='../venv/bin/python -c '+shlex.quote('import sys,mic_50_90; print(sys.version); print(mic_50_90.__file__)')+'\n'
                 shell+='../venv/bin/python -B -m pytest -q -p no:cacheprovider --basetemp ../test-temporary -o tmp_path_retention_policy=failed '+shlex.join(TESTS)+'\n'
                 commands=[['wsl','-d','Ubuntu','--','bash','-lc',shell]]; source=output

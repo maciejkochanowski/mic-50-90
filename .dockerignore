@@ -5,8 +5,4 @@
 .v/
 build/
 *.egg-info/
-manuscript/rendered/
-results/qa/
-legacy_v3/
-superseded_v4/
 release/

@@ -27,18 +27,16 @@ from mic_50_90.empirical import EmpiricalProblem
 from mic_50_90.model import parse_spec
 
 
-def _legacy_manifest(name):
-    """Read a frozen diagnostic record; never recreate a legacy guarantee."""
-    path = Path(__file__).parent / 'fixtures/legacy-calibration-manifests.json'
+def _v11_manifest(name):
+    """Read a stored version 1.1 record; never recreate its guarantee."""
+    path = Path(__file__).parent / 'fixtures/calibration-manifests-v1.1.json'
     return deepcopy(json.loads(path.read_text(encoding='utf-8'))['fixtures'][name])
 
 
 def test_external_split_keeps_every_study_in_one_partition():
     # The property the design rests on, stated over study identifiers rather than over
-    # label strings. The previous version of this test compared two identical labels and
-    # asserted they hashed alike, which is true of any function; meanwhile a cohort citing
-    # "A;B" and a cohort citing "B" hashed to different labels and study B was assigned to
-    # two partitions at once, in 19 of the 47 labels of the released run.
+    # label strings: a cohort citing "A;B" and a cohort citing "B" share study B and must
+    # not be assigned to two partitions.
     labels = [
         split_unit("EMBL-EBI", "111;222"),
         split_unit("EMBL-EBI", "222"),
@@ -94,7 +92,7 @@ def test_95_percent_group_requires_19_calibration_cohorts():
 
 
 def test_small_group_forces_global_fallback_manifest():
-    manifest = _legacy_manifest('small_group_global')
+    manifest = _v11_manifest('small_group_global')
     assert manifest["fallback_used"] is True
     assert manifest["guarantee_scope"] == "global_marginal"
     assert manifest["calibration_size"] == 40
@@ -102,7 +100,7 @@ def test_small_group_forces_global_fallback_manifest():
 
 
 def test_manifest_validator_rejects_unknown_keys_and_false_scope_claims():
-    manifest = _legacy_manifest('declared_group')
+    manifest = _v11_manifest('declared_group')
 
     with pytest.raises(ValueError, match="unknown keys"):
         validate_calibration_manifest({**manifest, "undeclared_claim": True})
@@ -209,7 +207,7 @@ def test_counting_cohorts_as_units_inflates_the_level_a_radius_appears_to_carry(
 
 
 def test_manifest_reports_units_and_rejects_partial_or_overclaimed_unit_accounting():
-    manifest = _legacy_manifest('clustered_global')
+    manifest = _v11_manifest('clustered_global')
     validate_calibration_manifest(manifest)
     assert manifest["calibration_size"] == 40
     assert manifest["exchangeable_units"] == 4
@@ -217,7 +215,7 @@ def test_manifest_reports_units_and_rejects_partial_or_overclaimed_unit_accounti
     assert manifest["unit_score_aggregation"] == "max"
     assert manifest["maximum_supported_level"] == pytest.approx(0.8)
     assert manifest["attained_level"] == pytest.approx(0.6)
-    # These fields are checked for historical structural consistency only.
+    # These fields of a version 1.1 record are checked for structural consistency only.
     # Their post-hoc rank fractions do not establish a coverage guarantee.
     assert manifest["manifest_version"] == "1.1"
     assert manifest["confidence_level"] == pytest.approx(0.6)
@@ -261,7 +259,7 @@ def test_manifest_reports_units_and_rejects_partial_or_overclaimed_unit_accounti
         validate_calibration_manifest(mislabelled)
 
 
-def test_new_calibration_refuses_undeclared_legacy_score_semantics():
+def test_new_calibration_refuses_undeclared_score_semantics():
     """A radius and a post-hoc position cannot replace a calibration contract."""
     scores, units = _clustered_scores()
     with pytest.raises(ValueError, match="calibration_contract"):
@@ -278,22 +276,22 @@ def test_new_calibration_refuses_undeclared_legacy_score_semantics():
 
 
 def test_manifests_without_unit_accounting_still_validate():
-    manifest = _legacy_manifest('without_units')
+    manifest = _v11_manifest('without_units')
     validate_calibration_manifest(manifest)
     assert "exchangeable_units" not in manifest
 
 
 def test_bioproject_accession_identifies_a_study():
-    """A deposit without a paper still names a study, and the corpus is thirty percent
-    such deposits. Admitting only digits left every one of them with no unit at all."""
+    """A deposit without a paper still names a study; admitting only digits would leave
+    every such deposit with no unit at all."""
     assert atomic_studies("PRJNA292661") == ("PRJNA292661",)
     assert atomic_studies("PRJDB7087;NCBI_antibiogram") == ("PRJDB7087",)
     assert atomic_studies("NCBI_antibiogram;NDARO") == ()
 
 
-def test_repaired_and_published_cohorts_of_one_study_form_one_unit():
+def test_deposited_and_published_cohorts_of_one_study_form_one_unit():
     """The failure this guards against is silent and inflates the level: a study that
-    reached the corpus twice, once with its paper and once only as a deposit, would be
+    appears twice in the data, once with its paper and once only as a deposit, would be
     counted as two exchangeable units and m/(m+1) would rise on a study counted twice."""
     labels = [split_unit("EBI", "PRJNA1;77"), split_unit("EBI", "77"),
               split_unit("EBI", "PRJNA9")]
@@ -304,16 +302,15 @@ def test_repaired_and_published_cohorts_of_one_study_form_one_unit():
 
 
 def test_unit_calibration_declares_the_level_it_was_asked_for():
-    """Counting the rank over cohorts while claiming a per-study guarantee is what made
-    the declared level fall below the request; counting it over units removes the
-    mismatch instead of papering over it afterwards."""
+    """Counting the rank over cohorts while claiming a per-study guarantee makes the
+    declared level fall below the request; counting it over units removes the mismatch."""
     from test_release_contract import contract
     scores = [0.1, 0.2, 5.0, 0.3, 0.4, 0.5, 0.6]
     units = ["a", "a", "a", "b", "c", "d", "e"]
     grouping = {"scope": "test"}
     common = dict(alpha=0.5, grouping=grouping, source="test", data_hashes={'fixture':'fixed'},
                   group_units=units, global_units=units, global_scores=scores)
-    by_cohort = _legacy_manifest('unequal_cohort_ranking')
+    by_cohort = _v11_manifest('unequal_cohort_ranking')
     by_unit = calibrate_wasserstein_manifest(group_scores=scores,
         calibrate_on="units", calibration_contract=contract(), **common).as_dict()
     assert by_cohort["conformal_rank_counts"] == "cohorts"
@@ -335,7 +332,7 @@ def test_unit_calibration_refuses_without_units():
 def test_the_projection_lies_in_the_sharp_set_and_bounds_every_score_from_below():
     """The distance from the reference to the sharp set is an additive floor on the score.
 
-    Not an observation about this corpus: for any candidate P in the sharp identified set,
+    For any candidate P in the sharp identified set,
     W1(P, reference) >= dist(reference, sharp set) by the definition of the projection, so
     every unit score carries that distance before a question about the organisms is asked.
     Centring the ball on the projection removes it exactly.

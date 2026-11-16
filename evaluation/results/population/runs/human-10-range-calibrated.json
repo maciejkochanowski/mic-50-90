@@ -1,0 +1,251 @@
+{
+ "case": "human-10",
+ "method": "range-calibrated",
+ "cohort_id": "NORM2024|T90|Trimethoprim-sulfamethoxazole",
+ "source": "NORM Norway 2024",
+ "n": 354,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.075954839005135,
+ "result": {
+  "requested_method": "range-calibrated",
+  "method": "range-calibrated",
+  "confidence_level": 0.95,
+  "constraint_signature": "31c6539a3efe0cf3a229126f8486bad43ba3f4b3998c584c8baa354b7e6be7be",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "coverage_scope": "all contiguous recorded category ranges on the fixed panel",
+  "sample_size": 354,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "endpoint_gap_pp": 2.0000667788622195e-10,
+  "critical_score_fraction": "45035996273705/9007199254740992",
+  "compatible_histogram_search_complete": false,
+  "evaluated_histograms": 5,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "range_witnesses_checked": 4,
+  "population_row_lift_certificate": {
+   "status": "not_checked",
+   "reason": "Numerical witnesses or the general refinement suffice"
+  },
+  "probability_vertices_checked": 0,
+  "probability_certificates": [],
+  "count_partition_splits": 0,
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5727404032956912
+   ],
+   [
+    0.8486934115547172,
+    0.9999929290366827
+   ],
+   [
+    0.8520308254108917,
+    1.0
+   ],
+   [
+    0.8520308254108917,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5727404032956912
+   ],
+   [
+    0.33134972250947875,
+    0.9999929290366827
+   ],
+   [
+    7.0709633173329834e-06,
+    0.022962796290921426
+   ],
+   [
+    0.0,
+    0.1479691745891083
+   ],
+   [
+    0.0,
+    0.1479691745891083
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5727404032956912
+   ],
+   [
+    0.8486934115547172,
+    0.9999929290366827
+   ],
+   [
+    0.8520308254108917,
+    1.0
+   ],
+   [
+    0.8520308254108917,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5727404032956912
+   ],
+   [
+    0.33134972250947875,
+    0.9999929290366827
+   ],
+   [
+    7.0709633173329834e-06,
+    0.022962796290921426
+   ],
+   [
+    0.0,
+    0.1479691745891083
+   ],
+   [
+    0.0,
+    0.1479691745891083
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
+  "elapsed_seconds": 0.01861882791854441,
+  "baseline_seconds": 0.004492777981795371,
+  "refinement_seconds": 0.014223956037312746,
+  "time_limit_scope": "optional_compatible_histogram_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5727404032956912,
+    "inner_lower": 0.0,
+    "inner_upper": 0.5727404032936912
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8486934115547172,
+    "upper": 0.9999929290366827,
+    "inner_lower": 0.8486934115567172,
+    "inner_upper": 0.9999929290346826
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8520308254108917,
+    "upper": 1.0,
+    "inner_lower": 0.8520308254128917,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8520308254108917,
+    "upper": 1.0,
+    "inner_lower": 0.8520308254128917,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.33134972250947875,
+    "upper": 0.9999929290366827,
+    "inner_lower": 0.3313497225114787,
+    "inner_upper": 0.9999929290346826
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.33404890979155605,
+    "upper": 1.0,
+    "inner_lower": 0.334048909793556,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.33404890979155605,
+    "upper": 1.0,
+    "inner_lower": 0.334048909793556,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.4272595967043088,
+    "upper": 1.0,
+    "inner_lower": 0.42725959670630875,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 7.0709633173329834e-06,
+    "upper": 0.022962796290921426,
+    "inner_lower": 7.070965317332984e-06,
+    "inner_upper": 0.02296279628892143
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 7.0709633173329834e-06,
+    "upper": 0.15130658844528277,
+    "inner_lower": 7.070965317332984e-06,
+    "inner_upper": 0.15130658844328282
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 7.0709633173329834e-06,
+    "upper": 0.15130658844528277,
+    "inner_lower": 7.070965317332984e-06,
+    "inner_upper": 0.15130658844328282
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.1479691745891083,
+    "inner_lower": 0.0,
+    "inner_upper": 0.14796917458710834
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.1479691745891083,
+    "inner_lower": 0.0,
+    "inner_upper": 0.14796917458710834
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.1479691745891083,
+    "inner_lower": 0.0,
+    "inner_upper": 0.14796917458710834
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.91580654797144,
+ "seconds": 0.10298180906102061,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

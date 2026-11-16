@@ -1,0 +1,240 @@
+{
+ "case": "case-09",
+ "method": "joint-exact",
+ "cohort_id": "FDA|NAHLN|2020|E. coli|Dogs|Urinary Tract Infections (UTI)|Trimethoprim/Sulfamethoxazole",
+ "source": "FDA animal pathogens",
+ "n": 592,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.977158255991526,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "e6ac9f4021c49804f2d61b89845d04583a09bcc1260ed2cfcbcfdde10ebe36c9",
+  "family_size": 4,
+  "sample_size": 592,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.4479907763920878,
+    0.9258829762436869
+   ],
+   [
+    0.4479907763920878,
+    0.9258829762436869
+   ],
+   [
+    0.4496671983742239,
+    0.9273324417881811
+   ],
+   [
+    0.8656208568857822,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.4479907763920878,
+    0.9258829762436869
+   ],
+   [
+    0.0,
+    0.477892199851599
+   ],
+   [
+    0.0,
+    0.10569428696338891
+   ],
+   [
+    0.0,
+    0.5503328016257761
+   ],
+   [
+    0.0,
+    0.13437914311421775
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.4479907763920878,
+    0.9258829762436869
+   ],
+   [
+    0.4479907763920878,
+    0.9258829762436869
+   ],
+   [
+    0.4496671983742239,
+    0.9273324417881811
+   ],
+   [
+    0.8656208568857822,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.4479907763920878,
+    0.9258829762436869
+   ],
+   [
+    0.0,
+    0.477892199851599
+   ],
+   [
+    0.0,
+    0.10569428696338891
+   ],
+   [
+    0.0,
+    0.5503328016257761
+   ],
+   [
+    0.0,
+    0.13437914311421775
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 1954,
+  "excluded_boxes": 526,
+  "elapsed_seconds": 115.13472691096831,
+  "baseline_seconds": 0.964878982049413,
+  "refinement_seconds": 114.16969823196996,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.4479907763920878,
+    "upper": 0.9258829762436869,
+    "inner_lower": 0.46292490763745037,
+    "inner_upper": 0.8960147137529618
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.4479907763920878,
+    "upper": 0.9258829762436869,
+    "inner_lower": 0.5000000000000001,
+    "inner_upper": 0.8960147137529618
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.4496671983742239,
+    "upper": 0.9273324417881811,
+    "inner_lower": 0.5016891891891893,
+    "inner_upper": 0.9123077189462877
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8656208568857822,
+    "upper": 1.0,
+    "inner_lower": 0.8992156426643367,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.477892199851599,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.43308980611551157
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.4793416653960932,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.44938281130883745
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.5520092236079123,
+    "inner_lower": 0.004007275678787448,
+    "inner_upper": 0.5202776994732723
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.07411702375631322,
+    "upper": 0.5520092236079123,
+    "inner_lower": 0.10398528624703808,
+    "inner_upper": 0.5370750923625496
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.10569428696338891,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.09119610079019512
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.5520092236079123,
+    "inner_lower": 0.004007275678787448,
+    "inner_upper": 0.49999999999999994
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.07411702375631322,
+    "upper": 0.5520092236079123,
+    "inner_lower": 0.10398528624703808,
+    "inner_upper": 0.49999999999999994
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.5503328016257761,
+    "inner_lower": 0.0027389933273549443,
+    "inner_upper": 0.4983108108108108
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.07266755821181901,
+    "upper": 0.5503328016257761,
+    "inner_lower": 0.0876922810537122,
+    "inner_upper": 0.4983108108108108
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13437914311421775,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.10078435733566336
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 0,
+  "endpoint_gap_pp": 5.202199081496535
+ },
+ "refinement_budget_seconds": 114.02094982704148,
+ "seconds": 116.11446597601753,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:31+00:00"
+}

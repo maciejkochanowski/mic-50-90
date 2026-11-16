@@ -1,4 +1,4 @@
-# A calibration assessment with retained failures
+# A calibration assessment that reports its failures
 
 These four rows are synthetic. They illustrate unit accounting, not measured software effectiveness.
 

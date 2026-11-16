@@ -1,9 +1,9 @@
 {
   "software": "MIC-50-90",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "distribution_scope": "software_only",
-  "release_url": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0",
-  "publication_channel": "GitHub Actions release workflow",
+  "release_url": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.2",
+  "publication_channel": "public_release",
   "documentation": [
     "docs/GUI_GUIDE.md",
     "docs/CLI_REFERENCE.md",
@@ -18,7 +18,12 @@
     "article source documents",
     "journal submission materials"
   ],
-  "verification_policy": "Use the completed Actions run, checksums and asset manifest for the exact release. A version string alone is not a verification record.",
-  "current_delivery": "dist",
-  "source_manifest": "PACKAGE_MANIFEST.sha256"
+  "verification_policy": "Check each delivered archive against its external final delivery receipt. The source tree and sdist have separate member manifests. Current validation is documented by matching receipts; historical matrix, coverage and calibration evidence retains its original scope.",
+  "current_delivery": "dist/source",
+  "source_manifest": "PACKAGE_MANIFEST.sha256",
+  "public_release": true,
+  "source_runtime_changed": true,
+  "repaired_windows_executable_verified": false,
+  "sdist_manifest": "MANIFEST.sha256",
+  "archive_identity_policy": "external_delivery_receipt"
 }

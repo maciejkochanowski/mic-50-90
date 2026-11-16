@@ -1,0 +1,53 @@
+{
+ "dataset": "retail-campylobacter",
+ "reference": "uniform",
+ "source": "NARMS retail meats",
+ "genus": "Campylobacter",
+ "agency": "FDA",
+ "years": {
+  "training": 2017,
+  "calibration": 2018,
+  "test": 2019
+ },
+ "drugs": [
+  "GEN",
+  "NAL",
+  "TET"
+ ],
+ "nominal_level": 0.95,
+ "calibration_rank": 19,
+ "calibration_units": 19,
+ "radius": 1.4230769276618958,
+ "test_units": 18,
+ "test_units_covered": 18,
+ "audit_successful_units": 18,
+ "test_tails": 450,
+ "test_tails_covered": 450,
+ "mean_width_pp": 31.78028391554935,
+ "mean_sample_width_pp": 33.11918538130049,
+ "maximum_independent_endpoint_difference": 1.5543122344752192e-15,
+ "seconds": 68.32933046098333,
+ "missed": [],
+ "created_utc": "2026-11-02T05:27:36+00:00",
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c7s2b0n2",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 48
+ }
+}

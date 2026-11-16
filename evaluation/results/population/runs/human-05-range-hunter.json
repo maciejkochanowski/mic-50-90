@@ -1,0 +1,247 @@
+{
+ "case": "human-05",
+ "method": "range-hunter",
+ "cohort_id": "NORM2024|T88|Penicillin G",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.1542268079938367,
+ "result": {
+  "requested_method": "range-hunter",
+  "method": "range-hunter",
+  "statistical_target": "pairwise-range-monotone-majorant",
+  "confidence_level": 0.95,
+  "constraint_signature": "82ea5b630e21fdab267129991d961cad668e02201097581feae7888dfd95fd98",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "endpoint_gap_pp": 5.6678071619222115,
+  "cdf_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    0.8620333187990851,
+    0.9855710827248773
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    3.973213675203779e-06,
+    0.526519341460492
+   ],
+   [
+    0.014428917275122695,
+    0.054621704101473045
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ]
+  ],
+  "baseline_cdf_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    0.8620333187990851,
+    0.9855710827248773
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    3.973213675203779e-06,
+    0.526519341460492
+   ],
+   [
+    0.014428917275122695,
+    0.054621704101473045
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
+  "elapsed_seconds": 115.17983146500774,
+  "baseline_seconds": 0.004354418022558093,
+  "refinement_seconds": 115.1754773859866,
+  "time_limit_scope": "optional_original_region_refinement",
+  "requested_time_limit_seconds": 114.84337952989154,
+  "effective_time_limit_seconds": 114.84337952989154,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "retained_nodes": 1,
+  "question_certificates": [],
+  "accepted_witness_count": 5,
+  "algebraic_witness_count": 0,
+  "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
+  "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.4434923600890933,
+    "upper": 0.9293397127990327,
+    "inner_lower": 0.5,
+    "inner_upper": 0.8984126984126983
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8620333187990851,
+    "upper": 0.9855710827248773,
+    "inner_lower": 0.9,
+    "inner_upper": 0.9698412698412698
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8968887982300416,
+    "upper": 1.0,
+    "inner_lower": 0.9301587301587302,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8968887982300416,
+    "upper": 1.0,
+    "inner_lower": 0.9301587301587302,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 3.973213675203779e-06,
+    "upper": 0.526519341460492,
+    "inner_lower": 0.0015873015873015875,
+    "inner_upper": 0.46984126984126984
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.01552553718478998,
+    "upper": 0.5565076399109067,
+    "inner_lower": 0.03174603174603175,
+    "inner_upper": 0.5
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.01552553718478998,
+    "upper": 0.5565076399109067,
+    "inner_lower": 0.03174603174603175,
+    "inner_upper": 0.5
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.07066028720096734,
+    "upper": 0.5565076399109067,
+    "inner_lower": 0.1015873015873016,
+    "inner_upper": 0.5
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.014428917275122695,
+    "upper": 0.054621704101473045,
+    "inner_lower": 0.03015873015873016,
+    "inner_upper": 0.030158730158730156
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.014428917275122695,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.03015873015873016,
+    "inner_upper": 0.09999999999999999
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.014428917275122743,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.03015873015873016,
+    "inner_upper": 0.09999999999999999
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.10311120176995836,
+    "inner_lower": 0.0,
+    "inner_upper": 0.06984126984126983
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.10311120176995836,
+    "inner_lower": 0.0,
+    "inner_upper": 0.06984126984126983
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.10311120176995836,
+    "inner_lower": 0.0,
+    "inner_upper": 0.06984126984126983
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.84337952989154,
+ "seconds": 115.33652612310834,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

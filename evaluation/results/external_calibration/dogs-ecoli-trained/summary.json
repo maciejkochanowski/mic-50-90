@@ -1,0 +1,98 @@
+{
+ "dataset": "dogs-ecoli",
+ "reference": "trained",
+ "source": "FDA animal pathogens",
+ "genus": "E. coli",
+ "agency": "NAHLN",
+ "years": {
+  "training": 2022,
+  "calibration": 2023,
+  "test": 2024
+ },
+ "drugs": [
+  "Amikacin",
+  "Cefazolin",
+  "Cefovecin",
+  "Cefpodoxime",
+  "Ceftazidime",
+  "Chloramphenicol",
+  "Doxycycline",
+  "Enrofloxacin",
+  "Gentamicin",
+  "Marbofloxacin",
+  "Piperacillin/Tazobactam",
+  "Pradofloxacin",
+  "Tetracycline",
+  "Trimethoprim/Sulfamethoxazole"
+ ],
+ "nominal_level": 0.9523809523809523,
+ "calibration_rank": 20,
+ "calibration_units": 20,
+ "radius": 2.4331430125333924,
+ "test_units": 20,
+ "test_units_covered": 19,
+ "audit_successful_units": 19,
+ "test_tails": 1340,
+ "test_tails_covered": 1337,
+ "mean_width_pp": 25.068276792168426,
+ "mean_sample_width_pp": 27.245729883686725,
+ "maximum_independent_endpoint_difference": 1.6653345369377348e-15,
+ "seconds": 284.1085299500264,
+ "missed": [
+  {
+   "unit_id": "2024:Louisiana",
+   "cohort_id": "dogs-ecoli:2024:Louisiana:Gentamicin",
+   "target_id": "gt:2",
+   "truth": 0.4,
+   "status": "ok",
+   "lower": 0.19999999999999996,
+   "upper": 0.39156400226674704,
+   "baseline_lower": 0.2,
+   "baseline_upper": 0.5
+  },
+  {
+   "unit_id": "2024:Louisiana",
+   "cohort_id": "dogs-ecoli:2024:Louisiana:Gentamicin",
+   "target_id": "gt:4",
+   "truth": 0.4,
+   "status": "ok",
+   "lower": 0.19999999999999996,
+   "upper": 0.3436730017000603,
+   "baseline_lower": 0.2,
+   "baseline_upper": 0.5
+  },
+  {
+   "unit_id": "2024:Louisiana",
+   "cohort_id": "dogs-ecoli:2024:Louisiana:Gentamicin",
+   "target_id": "gt:8",
+   "truth": 0.4,
+   "status": "ok",
+   "lower": 0.19999999999999996,
+   "upper": 0.31493840136004814,
+   "baseline_lower": 0.2,
+   "baseline_upper": 0.5
+  }
+ ],
+ "created_utc": "2026-11-02T05:31:11+00:00",
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c7s2b0n2",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 48
+ }
+}

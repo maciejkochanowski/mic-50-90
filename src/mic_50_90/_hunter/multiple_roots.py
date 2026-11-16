@@ -48,7 +48,7 @@ def root(n, c, tau):
 
 def affine_bounds(intercept, coefficients, roots):
     lo = hi = F(intercept)
-    for weight, (a,b) in zip(coefficients, roots):
+    for weight, (a,b) in zip(coefficients, roots, strict=True):
         lo += weight*(a if weight>=0 else b)
         hi += weight*(b if weight>=0 else a)
     return lo, hi
@@ -65,7 +65,7 @@ def projection(record, a, b):
 def _group_masses(n, weights, limits):
     dp = [0]*(n+1)
     dp[0] = 1
-    for weight, limit in zip(weights,limits):
+    for weight, limit in zip(weights,limits, strict=True):
         _check_deadline(None)
         powers = []
         for j in range(min(n,limit)+1):
@@ -154,7 +154,7 @@ def certify(h, dominant, u, residual, assignments, alpha=F(1,20), *, group=None)
             index = labels.index(c)
             B[j][index] = 1
             B[dominant if j in group else residual][index] -= 1
-    bounds = [affine_bounds(a,b,roots) for a,b in zip(A,B)]
+    bounds = [affine_bounds(a,b,roots) for a,b in zip(A,B, strict=True)]
     if any(lo<0 or hi>1 for lo,hi in bounds):
         return None
     family, events, score_checks = range_family(k), [], []
@@ -188,9 +188,9 @@ def certify(h, dominant, u, residual, assignments, alpha=F(1,20), *, group=None)
     if lower<alpha and comb(n+k-1,k-1)<=3000:
         lower = F(0)
         for null_h in _histograms(n,k):
-            if any(sum(null_h[a:b]) in allowed for (a,b),allowed in zip(family,events)):
+            if any(sum(null_h[a:b]) in allowed for (a,b),allowed in zip(family,events, strict=True)):
                 coefficient = factorial(n)//prod(factorial(x) for x in null_h)
-                lower += coefficient*prod(lo**x for (lo,hi),x in zip(bounds,null_h))
+                lower += coefficient*prod(lo**x for (lo,hi),x in zip(bounds,null_h, strict=True))
         union_method = 'all_score_events_enumerated'
     if lower<alpha:
         return None

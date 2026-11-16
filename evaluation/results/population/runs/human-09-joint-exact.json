@@ -1,0 +1,240 @@
+{
+ "case": "human-09",
+ "method": "joint-exact",
+ "cohort_id": "NORM2024|T90|Penicillin G",
+ "source": "NORM Norway 2024",
+ "n": 354,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.1467517060227692,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "08cd6e6e71ec476ed01748affc2ea27bd8efb3ebe80acda436887a38b136ffa3",
+  "family_size": 4,
+  "sample_size": 354,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.8548320807813852,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.0,
+    0.14516791921861474
+   ],
+   [
+    0.0,
+    0.08200243813818599
+   ],
+   [
+    0.0,
+    0.14516791921861474
+   ],
+   [
+    0.0,
+    0.14516791921861474
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.8548320807813852,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.8548320807813852,
+    1.0
+   ],
+   [
+    0.0,
+    0.14516791921861474
+   ],
+   [
+    0.0,
+    0.08200243813818599
+   ],
+   [
+    0.0,
+    0.14516791921861474
+   ],
+   [
+    0.0,
+    0.14516791921861474
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 6051,
+  "excluded_boxes": 1408,
+  "elapsed_seconds": 115.18428094196133,
+  "baseline_seconds": 0.006041773012839258,
+  "refinement_seconds": 115.17815030901693,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.8548320807813852,
+    "upper": 1.0,
+    "inner_lower": 0.8639050757325487,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8548320807813852,
+    "upper": 1.0,
+    "inner_lower": 0.8639050757325487,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8548320807813852,
+    "upper": 1.0,
+    "inner_lower": 0.8639050757325487,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8548320807813852,
+    "upper": 1.0,
+    "inner_lower": 0.8729780706837121,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12702192931628795
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12702192931628795
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12702192931628795
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13609492426745137
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.08200243813818599,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.06351096465814397
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12702192931628795
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13609492426745137
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.11794893436512453
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13609492426745137
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12702192931628795
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 1179,
+  "endpoint_gap_pp": 2.721898485349022
+ },
+ "refinement_budget_seconds": 114.85131619300228,
+ "seconds": 115.33382967906073,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

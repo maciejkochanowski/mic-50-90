@@ -31,10 +31,9 @@ def main():
     parser.add_argument('--application',type=Path)
     parser.add_argument('--node',default=shutil.which('node') or 'node')
     parser.add_argument('--chrome')
-    parser.add_argument('--acceptance',action='store_true',help='Run saved-update, validation, font, export and print cases; requires --examples.')
+    parser.add_argument('--acceptance',action='store_true',help='Run saved-update, validation, font, export and print cases using generated shipped fixtures.')
     parser.add_argument('--examples',type=Path,help='Run the complete Appendix B before/after workflow with this examples directory.')
     args=parser.parse_args()
-    if args.acceptance and not args.examples:parser.error('--acceptance requires --examples')
     root=Path(__file__).resolve().parents[1]
     output=args.output.resolve();output.mkdir(parents=True,exist_ok=True)
     env=clean_environment()
@@ -54,12 +53,12 @@ def main():
                     raise RuntimeError('Application did not start; see application.log')
                 time.sleep(.1)
             session=json.loads(ready.read_text(encoding='utf-8'))
-            if args.examples:
-                cmd=[args.node,str(root/('tests/browser/check_acceptance.cjs' if args.acceptance else 'tests/browser/check_worked_example.cjs')),str(ready),str(args.examples.resolve()),str(output)]
+            if args.examples or args.acceptance:
+                cmd=[args.node,str(root/('tests/browser/check_acceptance.cjs' if args.acceptance else 'tests/browser/check_worked_example.cjs')),str(ready),str(args.examples.resolve() if args.examples else output),str(output)]
             else:
                 cmd=[args.node,str(root/'tests/browser/check_reopened_options.cjs'),str(ready),str(output)]
             if args.chrome:cmd.append(args.chrome)
-            subprocess.run(cmd,check=True,env=env,cwd=output,timeout=600 if args.examples else 180)
+            subprocess.run(cmd,check=True,env=env,cwd=output,timeout=600 if args.examples or args.acceptance else 180)
         finally:
             if session and app.poll() is None:
                 origin='http://127.0.0.1:'+str(session['port'])

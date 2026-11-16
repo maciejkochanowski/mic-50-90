@@ -1,0 +1,238 @@
+{
+ "case": "case-10",
+ "method": "bonferroni",
+ "cohort_id": "FDA|NAHLN|2019|S. pseudintermedius|Dogs|Other Tissues/ Body Sites|Ampicillin",
+ "source": "FDA animal pathogens",
+ "n": 773,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 2.72059302800335,
+ "result": {
+  "requested_method": "bonferroni",
+  "method": "bonferroni",
+  "confidence_level": 0.95,
+  "constraint_signature": "73ca871f660f5cc3e860215c62d1b38cb81dd8e309f3942fda45596590320b55",
+  "family_size": 4,
+  "sample_size": 773,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5448131877701159
+   ],
+   [
+    0.32558275191387,
+    0.5448131877701159
+   ],
+   [
+    0.45518681222988416,
+    0.6744172480861301
+   ],
+   [
+    0.45518681222988416,
+    0.924402247484893
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5448131877701159
+   ],
+   [
+    0.0,
+    0.5448131877701159
+   ],
+   [
+    0.04104296745780605,
+    0.22130407300318658
+   ],
+   [
+    0.0,
+    0.4692154352550087
+   ],
+   [
+    0.07559775251510713,
+    0.5448131877701159
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5448131877701159
+   ],
+   [
+    0.32558275191387,
+    0.5448131877701159
+   ],
+   [
+    0.45518681222988416,
+    0.6744172480861301
+   ],
+   [
+    0.45518681222988416,
+    0.924402247484893
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5448131877701159
+   ],
+   [
+    0.0,
+    0.5448131877701159
+   ],
+   [
+    0.04104296745780605,
+    0.22130407300318658
+   ],
+   [
+    0.0,
+    0.4692154352550087
+   ],
+   [
+    0.07559775251510713,
+    0.5448131877701159
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "elapsed_seconds": 2.7117297659860924,
+  "baseline_seconds": 2.7117297659860924,
+  "refinement_seconds": 0.0,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5448131877701159,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5448131877681157
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.32558275191387,
+    "upper": 0.5448131877701159,
+    "inner_lower": 0.32558275191587005,
+    "inner_upper": 0.5448131877681157
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.45518681222988416,
+    "upper": 0.6744172480861301,
+    "inner_lower": 0.45518681223188423,
+    "inner_upper": 0.67441724808413
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.45518681222988416,
+    "upper": 0.924402247484893,
+    "inner_lower": 0.45518681223188423,
+    "inner_upper": 0.9244022474828928
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.5448131877701159,
+    "inner_lower": 0.0,
+    "inner_upper": 0.5448131877681157
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.04104296745780605,
+    "upper": 0.6744172480861301,
+    "inner_lower": 0.041042967461805975,
+    "inner_upper": 0.67441724808413
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.04104296745780605,
+    "upper": 0.924402247484893,
+    "inner_lower": 0.041042967461805975,
+    "inner_upper": 0.9244022474828928
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.45518681222988416,
+    "upper": 1.0,
+    "inner_lower": 0.45518681223188423,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.04104296745780605,
+    "upper": 0.22130407300318658,
+    "inner_lower": 0.041042967461805975,
+    "inner_upper": 0.2213040729991866
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.04104296745780605,
+    "upper": 0.598819495571023,
+    "inner_lower": 0.041042967461805975,
+    "inner_upper": 0.5988194955670229
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.45518681222988416,
+    "upper": 0.67441724808613,
+    "inner_lower": 0.45518681223188423,
+    "inner_upper": 0.6744172480841298
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.4692154352550087,
+    "inner_lower": 0.0,
+    "inner_upper": 0.4692154352510087
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.3255827519138699,
+    "upper": 0.5448131877701159,
+    "inner_lower": 0.32558275191587,
+    "inner_upper": 0.5448131877681157
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.07559775251510713,
+    "upper": 0.5448131877701159,
+    "inner_lower": 0.07559775251710711,
+    "inner_upper": 0.5448131877681157
+   }
+  ],
+  "endpoint_gap_pp": 4.0001335577244406e-10
+ },
+ "refinement_budget_seconds": 0,
+ "seconds": 2.722561998059973,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:38+00:00"
+}

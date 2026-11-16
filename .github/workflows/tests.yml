@@ -3,46 +3,171 @@ name: tests
 on:
   push:
   pull_request:
+  workflow_dispatch:
+
+# This workflow has no publication token, environment or publishing command.
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
 
 jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install ruff==0.17.3 mypy==2.4.1 .
+      - run: ruff check src/mic_50_90 scripts tools
+      - run: mypy
+
+  packages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install build
+      - name: Build one candidate for the complete matrix
+        run: python -m build
+      - name: Independently collect the expected test identities
+        run: |
+          python -m pip install "$(find dist -name '*.whl' -print -quit)[test]"
+          python tools/run_test_evidence.py collect --wheel "$(find dist -name '*.whl' -print -quit)" --commit "$GITHUB_SHA" --output dist/expected-tests.json
+      - name: Install wheel and source archive in fresh environments
+        run: python scripts/check_release_archives.py dist --receipt dist/archive-check.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validation-packages
+          path: dist/*
+          if-no-files-found: error
+
   test:
+    needs: packages
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12", "3.13"]
+        python-version: ['3.11', '3.12', '3.13']
         os: [ubuntu-latest, windows-latest]
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: python -m pip install --upgrade pip
-      - run: python -m pip install build
-      - name: Build distributions
-        run: python -m build
-      - name: Install and exercise wheel and source archive outside checkout
-        run: python scripts/check_release_archives.py dist --receipt archive-check.json
-      - name: Test the installed wheel
-        shell: bash
-        run: |
-          python -m pip install "$(find dist -name '*.whl' -print -quit)[test]"
-          python -m pytest --cov=mic_50_90 --cov-report=term-missing --cov-report=xml
+      - uses: actions/download-artifact@v4
+        with:
+          name: validation-packages
+          path: dist
+      - name: Install the exact candidate wheel
+        run: python -m pip install "$(find dist -name '*.whl' -print -quit)[test]"
+      - name: Run the full identified suite against the installed wheel
+        run: python tools/run_test_evidence.py run --wheel "$(find dist -name '*.whl' -print -quit)" --commit "$GITHUB_SHA" --manifest dist/expected-tests.json --junit test-results.xml
       - name: Test form model
         run: node --test "tests/*.cjs"
-      - name: Exercise saved options in the real browser
+      - name: Exercise the full saved-form browser acceptance path
         if: matrix.python-version == '3.12'
         run: |
           npm install --no-save playwright
-          npx playwright install chromium
-          python tools/check_browser.py --output browser-check
+          npx playwright install --with-deps chromium
+          python tools/check_browser.py --output browser-check/reopened
+          python tools/check_browser.py --acceptance --output browser-check/acceptance
+          python tools/check_browser.py --examples examples/appendix --output browser-check/worked-example
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: checks-${{ matrix.os }}-${{ matrix.python-version }}
+          name: verification-${{ matrix.os }}-${{ matrix.python-version }}
           path: |
-            archive-check.json
-            coverage.xml
-            browser-check/REOPENED_OPTIONS.json
+            test-results.xml
+            test-results.runtime.json
+            browser-check/
+          if-no-files-found: error
+
+  windows:
+    needs: packages
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v4
+        with:
+          name: validation-packages
+          path: dist
+      - run: python -m pip install "$(find dist -name '*.whl' -print -quit)" pyinstaller
+      - run: python tools/build_windows.py --output windows-build
+      - run: python tools/check_windows_release.py --application windows-build/application/MIC-50-90/MIC-50-90.exe --receipt windows-runtime.json
+      - run: npm install --no-save playwright
+      - run: npx playwright install chromium
+      - name: Test the packaged application in Chromium
+        run: |
+          python tools/check_browser.py --application windows-build/application/MIC-50-90/MIC-50-90.exe --output windows-browser-check/reopened
+          python tools/check_browser.py --acceptance --application windows-build/application/MIC-50-90/MIC-50-90.exe --output windows-browser-check/acceptance
+          python tools/check_browser.py --examples examples/appendix --application windows-build/application/MIC-50-90/MIC-50-90.exe --output windows-browser-check/worked-example
+      - name: Retain the tested application without publication
+        run: python tools/software_release.py windows --application windows-build/application/MIC-50-90 --output "windows-candidate/MIC-50-90-$(python tools/release_version.py)-Windows-x64.zip"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-windows
+          path: |
+            windows-candidate/
+            windows-build/BUILD_RECEIPT.json
+            windows-build/build.log
+            windows-runtime.json
+            windows-browser-check/
+          if-no-files-found: error
+
+  verify:
+    needs: [packages, test, windows]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: validation-packages
+          path: packages
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: verification-*
+          path: verification
+      - run: python tools/check_release_tests.py verification --manifest packages/expected-tests.json --commit "$GITHUB_SHA" --receipt TEST_MATRIX_VERIFICATION.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: validation-matrix
+          path: TEST_MATRIX_VERIFICATION.json
+          if-no-files-found: error

@@ -14,7 +14,10 @@
     if (!raw || typeof raw !== 'object' || Array.isArray(raw)) throw new Error('Choose a JSON input object or saved form.');
     if (raw.format === 'mic-50-90-guided-input') return importInput(raw.payload);
     if (raw.input_format === 'tables' || raw.mode === 'verify-report') return {...blank(false), ...clone(raw)};
-    if (raw.config && raw.mode) return {...blank(false), ...clone(raw)};
+    if (raw.config && raw.mode) {
+      checkDesktopContract(raw.config, raw.mode);
+      return {...blank(false), ...clone(raw)};
+    }
     if (raw.inputs) {
       if (!Array.isArray(raw.inputs) || raw.inputs.length !== 1) throw new Error('The guided form opens one cohort at a time. Use the batch commands for multiple cohorts.');
       const result = importInput(raw.inputs[0]);
@@ -24,7 +27,37 @@
       return result;
     }
     if (!('n' in raw) || !('panel' in raw)) throw new Error('This file is not an input configuration. Open configuration.json or a saved form; results.json alone is not an editable input.');
-    return {...blank(false), config:clone(raw)};
+    checkDesktopContract(raw);
+    return {...blank(false), config:formUnits(clone(raw))};
+  }
+  function formUnit(unit) {
+    // The form offers mg/L and ug/mL; both micro-sign spellings mean ug/mL.
+    return unit==='\u00b5g/mL' || unit==='\u03bcg/mL' ? 'ug/mL' : unit;
+  }
+  function formUnits(config) {
+    if (typeof config.unit==='string') config.unit=formUnit(config.unit);
+    for (const row of Array.isArray(config.additional_counts) ? config.additional_counts : []) {
+      if (row && typeof row.unit==='string') row.unit=formUnit(row.unit);
+    }
+    return config;
+  }
+  function supportedCalibrationContract(config) {
+    const utility=config.question_utility, manifest=config.wasserstein_calibration_manifest;
+    const categories=config.panel && config.panel.categories;
+    return config.mode==='empirical' && config.contract_version==='1.0'
+      && typeof config.iid==='boolean' && utility && Object.keys(utility).length===1 && utility.enabled===false
+      && !('population' in config) && !('wasserstein_radius' in config)
+      && 'reference_distribution' in config && 'calibration_context' in config
+      && manifest && manifest.calibration_contract && manifest.calibration_contract.functional_scope==='all_panel_tails'
+      && Array.isArray(categories) && Array.isArray(config.thresholds)
+      && config.thresholds.length===categories.length-1
+      && config.thresholds.every((value,index)=>typeof value==='number' && Number.isFinite(value) && value===categories[index].panel_value);
+  }
+  function checkDesktopContract(config, mode='distribution') {
+    if(mode==='distribution' && supportedCalibrationContract(config))return;
+    const unsupported=['population','question_utility','thresholds','mode','contract_version','wasserstein_radius']
+      .filter(key=>Object.prototype.hasOwnProperty.call(config,key));
+    if(unsupported.length)throw new Error('These advanced analysis settings cannot be silently converted to this desktop workflow: '+unsupported.sort().join(', ')+'. Use the original command-line interface or provide the desktop fields explicitly.');
   }
   function save(payload) {
     return {format:'mic-50-90-guided-input', version:'1.0.0', payload:clone(payload)};
@@ -50,7 +83,7 @@
   }
   function importText(text) {
     const ordinary=JSON.parse(text.replace(/^\uFEFF/,''));
-    if(ordinary.version==='1.0.0'&&Array.isArray(ordinary.certificates))return certificateInput(text);
+    if(CERTIFICATE_VERSIONS.includes(ordinary.version)&&Array.isArray(ordinary.certificates))return certificateInput(text);
     const payload=importInput(parseJSON(text.replace(/^\uFEFF/,'')));
     if(!payload.calibration_input_text&&['reference_distribution','wasserstein_calibration_manifest','calibration_context'].every(key=>key in payload.config))payload.calibration_input_text=text;
     return payload;
@@ -100,9 +133,11 @@
     else if(/^1\./.test(scaled)&&/[1-9]/.test(scaled.split('.')[1]))throw new Error('Enter a percentage from 0 to 100.');
     return scaled;
   }
+  // Reporting certificates written by these releases have the same content.
+  const CERTIFICATE_VERSIONS=['1.0.0','1.0.1','1.0.2'];
   function certificateInput(text) {
     const raw=JSON.parse(text.replace(/^\uFEFF/,''));
-    if(raw?.version!=='1.0.0'||!Array.isArray(raw.certificates)||!raw.certificates.length)throw new Error('Choose a nonempty MIC-50-90 1.0.0 reporting_certificates.json document.');
+    if(!CERTIFICATE_VERSIONS.includes(raw?.version)||!Array.isArray(raw.certificates)||!raw.certificates.length)throw new Error('Choose a nonempty MIC-50-90 reporting_certificates.json document.');
     return {...blank(),mode:'verify-report',certificate:raw,certificate_json:text};
   }
   function newCount(n,unit) {
@@ -223,7 +258,9 @@
   }
   function integer(text) {
     if(text==null||String(text).trim()==='')return null;
-    const value=String(text).trim();
+    let value;
+    try { value=scaleDecimal(String(text).trim(),0); }
+    catch(error) { throw new Error('Enter an integer using whole-number digits or an exactly integral decimal or exponent. Fractional counts and ranks are not allowed.'); }
     if(!/^\d+$/.test(value))throw new Error('Enter an integer using whole-number digits. Fractional counts and ranks are not allowed.');
     if(BigInt(value)>9007199254740991n)throw new Error('The integer exceeds the supported browser input range.');
     return value;

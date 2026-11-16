@@ -1,0 +1,8552 @@
+[
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+  "histogram": [
+   268,
+   7,
+   0,
+   0,
+   1
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "> 32",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 64
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "<= 4",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16,
+    32
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin",
+  "histogram": [
+   643,
+   8,
+   1,
+   1,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "(32, 64]",
+      "lower_bound": 32,
+      "upper_bound": 64,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 64
+     },
+     {
+      "label": "> 64",
+      "lower_bound": 64,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 128
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "<= 4",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16,
+    32,
+    64
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+  "histogram": [
+   277,
+   5,
+   1,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 283,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "(32, 64]",
+      "lower_bound": 32,
+      "upper_bound": 64,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 64
+     },
+     {
+      "label": "> 64",
+      "lower_bound": 64,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 128
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "<= 4",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16,
+    32,
+    64
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin",
+  "histogram": [
+   595,
+   14,
+   2,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 611,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "(32, 64]",
+      "lower_bound": 32,
+      "upper_bound": 64,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 64
+     },
+     {
+      "label": "> 64",
+      "lower_bound": 64,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 128
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "<= 4",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16,
+    32,
+    64
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid",
+  "histogram": [
+   0,
+   0,
+   4,
+   20,
+   123,
+   57,
+   72
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(2, 4]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amoxicillin/Clavulanic Acid",
+  "histogram": [
+   1,
+   0,
+   8,
+   59,
+   323,
+   144,
+   118
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amoxicillin/Clavulanic Acid",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(2, 4]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid",
+  "histogram": [
+   0,
+   0,
+   2,
+   281
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 283,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "> 1",
+      "lower_bound": 1,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 2
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "> 1",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 1",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin",
+  "histogram": [
+   0,
+   2,
+   7,
+   57,
+   83,
+   12,
+   115
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(2, 4]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ampicillin",
+  "histogram": [
+   2,
+   0,
+   17,
+   178,
+   224,
+   22,
+   210
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ampicillin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(2, 4]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin",
+  "histogram": [
+   1,
+   0,
+   7,
+   275
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 283,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "> 1",
+      "lower_bound": 1,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 2
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "> 1",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 1",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin",
+  "histogram": [
+   45,
+   116,
+   29,
+   12,
+   5,
+   6,
+   63
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "> 32",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 64
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(1, 2]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 32",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin",
+  "histogram": [
+   151,
+   307,
+   52,
+   22,
+   11,
+   3,
+   107
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "> 32",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 64
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(1, 2]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 32",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin",
+  "histogram": [
+   52,
+   134,
+   26,
+   8,
+   63
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 283,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(1, 2]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin",
+  "histogram": [
+   114,
+   343,
+   45,
+   12,
+   97
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 611,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(1, 2]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin",
+  "histogram": [
+   44,
+   262,
+   198,
+   29,
+   8,
+   2,
+   110
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(0.5, 1]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin",
+  "histogram": [
+   47,
+   195,
+   237,
+   32,
+   11,
+   89
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 611,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "> 4",
+      "lower_bound": 4,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 8
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(0.5, 1]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 4",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefoxitin",
+  "histogram": [
+   3,
+   16,
+   5,
+   3,
+   6
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefoxitin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 33,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 2",
+      "lower_bound": null,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "> 16",
+      "lower_bound": 16,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 32
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(2, 4]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 16",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    2,
+    4,
+    8,
+    16
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime",
+  "histogram": [
+   199,
+   4,
+   4,
+   6,
+   63
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 1",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime",
+  "histogram": [
+   523,
+   10,
+   5,
+   7,
+   108
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 1",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime",
+  "histogram": [
+   213,
+   2,
+   2,
+   51
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 268,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 2",
+      "lower_bound": null,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 2",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime",
+  "histogram": [
+   481,
+   5,
+   4,
+   88
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 578,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 2",
+      "lower_bound": null,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 2",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime",
+  "histogram": [
+   229,
+   12,
+   14,
+   21
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "> 16",
+      "lower_bound": 16,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 32
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "(8, 16]",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime",
+  "histogram": [
+   562,
+   22,
+   35,
+   34
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "> 16",
+      "lower_bound": 16,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 32
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "(8, 16]",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime",
+  "histogram": [
+   229,
+   5,
+   19,
+   15
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 268,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "> 16",
+      "lower_bound": 16,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 32
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "(8, 16]",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime",
+  "histogram": [
+   514,
+   11,
+   22,
+   31
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 578,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "> 16",
+      "lower_bound": 16,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 32
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "<= 4",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "(4, 8]",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8,
+    16
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin",
+  "histogram": [
+   0,
+   0,
+   0,
+   1,
+   65,
+   119,
+   12,
+   79
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "> 16",
+      "lower_bound": 16,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 32
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(4, 8]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 16",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.25,
+    0.5,
+    1,
+    2,
+    4,
+    8,
+    16
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin",
+  "histogram": [
+   1,
+   0,
+   5,
+   176,
+   319,
+   28,
+   124
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 653,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.5",
+      "lower_bound": null,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "> 16",
+      "lower_bound": 16,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 32
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(4, 8]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 16",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.5,
+    1,
+    2,
+    4,
+    8,
+    16
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin",
+  "histogram": [
+   1,
+   0,
+   1,
+   62,
+   133,
+   86
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 283,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.5",
+      "lower_bound": null,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(4, 8]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.5,
+    1,
+    2,
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin",
+  "histogram": [
+   160,
+   347,
+   143
+  ],
+  "specification": {
+   "cohort_id": "FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 650,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "> 8",
+      "lower_bound": 8,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(4, 8]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "> 8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    4,
+    8
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "FDA animal pathogens",
+  "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Chloramphenicol",
+  "histogram": [
+   6,
+   76,
+   154,
+   20,
+   4,
+   16
+  ],
+  "specification": {
+   "cohort_id": "FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Chloramphenicol",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 276,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 2",
+      "lower_bound": null,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "> 32",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 64
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "(4, 8]",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "(8, 16]",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    2,
+    4,
+    8,
+    16,
+    32
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T101|Amphotericin B",
+  "histogram": [
+   0,
+   0,
+   0,
+   4,
+   25,
+   74,
+   28,
+   3,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T101|Amphotericin B",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 134,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.125",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.25",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T101|Anidulafungin",
+  "histogram": [
+   48,
+   65,
+   19,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T101|Anidulafungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 134,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.008",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.016",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T101|Caspofungin",
+  "histogram": [
+   0,
+   0,
+   2,
+   16,
+   59,
+   46,
+   8,
+   2,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T101|Caspofungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 134,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.06",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.125",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T101|Fluconazole",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   2,
+   13,
+   80,
+   39,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T101|Fluconazole",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 134,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.5",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T101|Micafungin",
+  "histogram": [
+   1,
+   54,
+   74,
+   3,
+   0,
+   1,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T101|Micafungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 134,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.016",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.016",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T101|Voriconazole",
+  "histogram": [
+   10,
+   75,
+   48,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T101|Voriconazole",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 134,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.008",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.016",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T103|Amphotericin B",
+  "histogram": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   5,
+   17,
+   12,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T103|Amphotericin B",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 37,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.5",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T103|Anidulafungin",
+  "histogram": [
+   0,
+   1,
+   27,
+   7,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T103|Anidulafungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 37,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.016",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.03",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T103|Caspofungin",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   4,
+   13,
+   18,
+   2,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T103|Caspofungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 37,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.25",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T103|Fluconazole",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   1,
+   1,
+   11,
+   10,
+   11,
+   1,
+   0,
+   0,
+   1
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T103|Fluconazole",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 37,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "8",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "16",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T103|Micafungin",
+  "histogram": [
+   0,
+   5,
+   30,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T103|Micafungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 37,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.016",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.016",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T103|Voriconazole",
+  "histogram": [
+   0,
+   0,
+   1,
+   0,
+   3,
+   9,
+   11,
+   6,
+   4,
+   2,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T103|Voriconazole",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 37,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "1",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T105|Amphotericin B",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   6,
+   9,
+   8,
+   2,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T105|Amphotericin B",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 25,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.5",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T105|Anidulafungin",
+  "histogram": [
+   0,
+   0,
+   15,
+   5,
+   4,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T105|Anidulafungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 25,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.016",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.06",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T105|Caspofungin",
+  "histogram": [
+   0,
+   0,
+   0,
+   1,
+   5,
+   11,
+   6,
+   1,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T105|Caspofungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 25,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.125",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.25",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T105|Fluconazole",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   2,
+   9,
+   8,
+   3,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   1
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T105|Fluconazole",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 25,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "1",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "4",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T105|Micafungin",
+  "histogram": [
+   0,
+   0,
+   5,
+   17,
+   2,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T105|Micafungin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 25,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.03",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.06",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T105|Voriconazole",
+  "histogram": [
+   0,
+   0,
+   2,
+   6,
+   6,
+   9,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0,
+   1,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T105|Voriconazole",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 25,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": "128",
+      "lower_bound": 128.0,
+      "upper_bound": 128.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 128.0
+     },
+     {
+      "label": ">=256.0",
+      "lower_bound": 256.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 256.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.06",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.125",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0,
+    128.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Amoxicillin-clavulanic acid",
+  "histogram": [
+   0,
+   0,
+   0,
+   2,
+   5,
+   8,
+   37,
+   26,
+   7,
+   4,
+   4,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Amoxicillin-clavulanic acid",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "1",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Ampicillin",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   1,
+   10,
+   39,
+   22,
+   6,
+   5,
+   0,
+   2,
+   2,
+   1,
+   0,
+   5
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Ampicillin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "8",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Cefotaxime",
+  "histogram": [
+   0,
+   7,
+   29,
+   41,
+   9,
+   5,
+   2,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Cefotaxime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.03",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.06",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Ceftriaxone",
+  "histogram": [
+   0,
+   0,
+   85,
+   5,
+   2,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Ceftriaxone",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.016",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.016",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Cefuroxime",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   3,
+   19,
+   57,
+   3,
+   5,
+   2,
+   2,
+   2,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Cefuroxime",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "1",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "4",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Chloramphenicol",
+  "histogram": [
+   0,
+   0,
+   1,
+   0,
+   0,
+   1,
+   1,
+   33,
+   56,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Chloramphenicol",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "1",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "1",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Meropenem",
+  "histogram": [
+   0,
+   0,
+   2,
+   17,
+   44,
+   24,
+   5,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Meropenem",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.06",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.125",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Tetracycline",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   1,
+   11,
+   77,
+   4,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Tetracycline",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.5",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.5",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T72|Trimethoprim-sulfamethoxazole",
+  "histogram": [
+   1,
+   7,
+   36,
+   25,
+   4,
+   4,
+   2,
+   4,
+   0,
+   1,
+   1,
+   2,
+   2,
+   4,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T72|Trimethoprim-sulfamethoxazole",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 93,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.03",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "2",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T94|Erythromycin",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   3,
+   76,
+   133,
+   2,
+   0,
+   4,
+   10,
+   15,
+   12,
+   0,
+   1,
+   23
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T94|Erythromycin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 279,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.25",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "16",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T94|Gentamicin",
+  "histogram": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   7,
+   52,
+   167,
+   53
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T94|Gentamicin",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 279,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "64",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": ">=128.0",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ },
+ {
+  "source": "NORM Norway 2024",
+  "cohort_id": "NORM2024|T94|Penicillin G",
+  "histogram": [
+   0,
+   0,
+   4,
+   52,
+   210,
+   13,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "specification": {
+   "cohort_id": "NORM2024|T94|Penicillin G",
+   "mode": "empirical",
+   "unit": "mg/L",
+   "n": 279,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004",
+      "lower_bound": null,
+      "upper_bound": 0.004,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.004
+     },
+     {
+      "label": "0.008",
+      "lower_bound": 0.008,
+      "upper_bound": 0.008,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.008
+     },
+     {
+      "label": "0.016",
+      "lower_bound": 0.016,
+      "upper_bound": 0.016,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03",
+      "lower_bound": 0.03,
+      "upper_bound": 0.03,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06",
+      "lower_bound": 0.06,
+      "upper_bound": 0.06,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.06
+     },
+     {
+      "label": "0.125",
+      "lower_bound": 0.125,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25",
+      "lower_bound": 0.25,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5",
+      "lower_bound": 0.5,
+      "upper_bound": 0.5,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "1",
+      "lower_bound": 1.0,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2",
+      "lower_bound": 2.0,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4",
+      "lower_bound": 4.0,
+      "upper_bound": 4.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 4.0
+     },
+     {
+      "label": "8",
+      "lower_bound": 8.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16",
+      "lower_bound": 16.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32",
+      "lower_bound": 32.0,
+      "upper_bound": 32.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 32.0
+     },
+     {
+      "label": "64",
+      "lower_bound": 64.0,
+      "upper_bound": 64.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 64.0
+     },
+     {
+      "label": ">=128.0",
+      "lower_bound": 128.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "category": "0.06",
+      "convention": "ceiling"
+     },
+     {
+      "probability": 0.9,
+      "category": "0.06",
+      "convention": "ceiling"
+     }
+    ]
+   },
+   "thresholds": [
+    0.004,
+    0.008,
+    0.016,
+    0.03,
+    0.06,
+    0.125,
+    0.25,
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0,
+    16.0,
+    32.0,
+    64.0
+   ],
+   "iid": false
+  }
+ }
+]

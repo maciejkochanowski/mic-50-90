@@ -1,4 +1,4 @@
-# MIC-50-90 1.0.0: command and option reference
+# MIC-50-90 1.0.2: command and option reference
 
 Generated from the installed command parser. GUI_GUIDE.md and PUBLIC_FUNCTIONS.md map tasks to Windows and CLI.
 Values shown as None mean the option is omitted, not a numerical zero.

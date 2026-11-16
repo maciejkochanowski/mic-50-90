@@ -124,16 +124,23 @@ def _optional_population(population):
         parts.append("<h3>Threshold "+_fmt(item["threshold"])+" mg/L</h3>")
         if efficiency.get("enabled") and efficiency.get("available",True):
             profile = efficiency.get("profile_likelihood",{})
+            components = profile.get("confidence_set_components")
+            profile_set = (" ∪ ".join(_range(component) for component in components)
+                           if components else _range(profile.get("confidence_set")))
             parts.append("<p>Optional MLE tail="+_pct(efficiency.get("population_tail_mle"))+
                          "; reporting variant="+_fmt(efficiency.get("reporting_variant"))+
-                         "; Optional profile set="+_range(profile.get("confidence_set"))+".</p>")
+                         "; Optional profile set="+profile_set+".</p>")
             parts.append("<p>"+_fmt(profile.get("calibration"))+"; confidence="+
                          _pct(profile.get("confidence_level"))+"; likelihood-ratio cutoff="+_fmt(profile.get("chi_square_1_cutoff"))+
                          "; adaptive refinements="+_fmt(profile.get("adaptive_refinement_rounds"))+
                          "; boundary or weak identification warning="+_fmt(profile.get("boundary_or_weak_identification_warning"))+".</p>")
-            grid = zip(profile.get("theta_grid",[]),profile.get("profile_log_likelihood",[]),profile.get("likelihood_ratio",[]))
-            parts.append(_table(["Tail probability grid","Log likelihood","Likelihood ratio"],
-                                [[_pct(t),_fmt(l),_fmt(r)] for t,l,r in grid]))
+            parts.append("<p>Endpoint method="+_fmt(profile.get("endpoint_method"))+
+                         "; absolute probability tolerance="+_fmt(profile.get("endpoint_tolerance"))+".</p>")
+            statuses = profile.get("evaluation_status") or [None] * len(profile.get("theta_grid", []))
+            grid = zip(profile.get("theta_grid",[]),profile.get("profile_log_likelihood",[]),
+                       profile.get("likelihood_ratio",[]),statuses, strict=True)
+            parts.append(_table(["Tail probability grid","Log likelihood","Likelihood ratio","Evaluation"],
+                                [[_pct(t),_fmt(l),_fmt(r),_fmt(status)] for t,l,r,status in grid]))
             for warning in profile.get("warnings",[]):
                 parts.append("<p class='warning'>"+html.escape(warning)+"</p>")
         else:
@@ -197,7 +204,7 @@ def _interval_chart(result):
     conf = result.get('assumption_dependent_scenarios', {}).get('wasserstein_ambiguity_set', {})
     calibrated = conf.get('guarantee_class') == 'conformal_new_cohort'
     sharp = result.get('reporting_uncertainty_envelope', {}).get('envelope', result.get('identification', []))
-    for i, item in enumerate(sharp):
+    for item in sharp:
         label = f"> {item['threshold']:g} mg/L"
         sample = [[lo/result['sample_size'], hi/result['sample_size']]
                   for lo, hi in _sample_count_ranges(result, item)]
@@ -219,7 +226,7 @@ def _interval_chart(result):
         x = 280+440*tick
         svg.append(f'<line x1="{x}" x2="{x}" y1="25" y2="{height-35}" stroke="#dce3ec"/><text x="{x}" y="17" text-anchor="middle" font-size="13">{100*tick:g}%</text>')
     y = 43
-    for (label, intervals, color), row_height in zip(rows, row_heights):
+    for (label, intervals, color), row_height in zip(rows, row_heights, strict=True):
         svg.append(f'<text x="4" y="{y+4}" font-size="13">{html.escape(label)}</text>')
         for lo, hi in intervals:
             x1, x2 = 280+440*lo, 280+440*hi

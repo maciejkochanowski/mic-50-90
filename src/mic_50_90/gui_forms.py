@@ -93,7 +93,7 @@ def _same_json_semantics(left, right):
     if isinstance(left, dict) and isinstance(right, dict):
         return left.keys() == right.keys() and all(_same_json_semantics(left[key], right[key]) for key in left)
     if isinstance(left, list) and isinstance(right, list):
-        return len(left) == len(right) and all(_same_json_semantics(a, b) for a, b in zip(left, right))
+        return len(left) == len(right) and all(_same_json_semantics(a, b) for a, b in zip(left, right, strict=True))
     if type(left) in (int, float) and type(right) in (int, float):
         return left == right
     return type(left) is type(right) and left == right
@@ -145,6 +145,36 @@ def _restore_previous_configuration(payload):
     if not _same_json_semantics(left, right):
         raise ValueError("The previous configuration differs from its uploaded original. Reopen its matching files.")
     payload["previous"]["configuration"] = source
+
+
+def _supported_prepared_calibration_contract(raw):
+    """Recognise only the existing full-panel empirical calibration adapter.
+
+    An analyse population request must never pass merely because calibration
+    fields were attached. The declared tail family must match the distribution.
+    Detailed binding/hash validation remains in the calibration engine.
+    """
+    if (raw.get("mode") != "empirical" or raw.get("contract_version") != "1.0"
+            or not isinstance(raw.get("question_utility"), dict)
+            or set(raw["question_utility"]) != {"enabled"}
+            or raw["question_utility"]["enabled"] is not False
+            or not isinstance(raw.get("panel"), dict)
+            or not isinstance(raw["panel"].get("categories"), list)
+            or type(raw.get("iid")) is not bool
+            or "population" in raw or "wasserstein_radius" in raw
+            or not all(key in raw for key in ("reference_distribution",
+                "wasserstein_calibration_manifest", "calibration_context"))):
+        return False
+    try:
+        manifest = raw["wasserstein_calibration_manifest"]
+        panel = MICPanel.from_dict(raw["panel"])
+        thresholds = raw["thresholds"]
+        return (manifest["calibration_contract"]["functional_scope"] == "all_panel_tails"
+            and isinstance(thresholds, list)
+            and not any(isinstance(value, bool) for value in thresholds)
+            and thresholds == panel.panel_values[:-1].tolist())
+    except (ValueError, KeyError, TypeError, AttributeError):
+        return False
 
 
 def validate_payload(value):
@@ -238,7 +268,7 @@ def validate_payload(value):
                 elif panel is not None and n is not None:
                     check(field, lambda q=q: QuantileSummary.from_dict(q, n=n, panel=panel))
             if mode == "batch":
-                def summary_pair():
+                def summary_pair(quantiles=quantiles):
                     if len(quantiles) != 2 or sorted(Decimal(str(q.get("probability"))) for q in quantiles) != [Decimal("0.5"), Decimal("0.9")]:
                         raise ValueError("Threshold questions require MIC50 and MIC90 in each reporting variant; use the distribution view for counts-only information.")
                 check(f"config.quantiles.{vi}", summary_pair)
@@ -289,7 +319,7 @@ def validate_payload(value):
         else:
             seen = set()
             for index, row in enumerate(targets):
-                def target(row=row):
+                def target(row=row, index=index):
                     if mode == 'distribution':
                         if panel is None:
                             return  # The missing panel is reported separately.
@@ -326,17 +356,18 @@ def validate_payload(value):
                 check("options." + key, lambda key=key: boolean(options[key], key))
         if mode == "batch" and options.get("reporting_plan"):
             issues.append({"field": "options.reporting_plan", "message": "Sufficient-report selection requires a full histogram. Choose a decision or acquisition plan for incomplete summaries."})
-        unsupported = set(raw) & {"population", "question_utility", "thresholds", "mode", "contract_version", "wasserstein_radius"}
-        if unsupported:
-            issues.append({"field": "config", "message": "These advanced analysis settings cannot be silently converted to this desktop workflow: " + ", ".join(sorted(unsupported)) + ". Use the original command-line interface or provide the desktop fields explicitly."})
+    unsupported = set(raw) & {"population", "question_utility", "thresholds", "mode", "contract_version", "wasserstein_radius"}
+    if unsupported and mode == "distribution" and _supported_prepared_calibration_contract(raw):
+        warnings.append({"field": "config", "message": "The existing prepared calibration contract is evaluated over its complete declared panel tail family; iid inference follows the explicit iid field."})
+        unsupported = set()
+    if unsupported:
+        issues.append({"field": "config", "message": "These advanced analysis settings cannot be silently converted to this desktop workflow: " + ", ".join(sorted(unsupported)) + ". Use the original command-line interface or provide the desktop fields explicitly."})
     if payload.get("previous") is not None:
         def previous():
             if mode != "distribution":
                 raise ValueError("Saved same-sample updates are supported by the distribution workflow.")
             old = payload["previous"]
             configuration, results = old["configuration"], old["results"]
-            if results.get("software") != "MIC-50-90" or results.get("software_version") != "1.0.0":
-                raise ValueError("Use configuration and results from MIC-50-90 1.0.0.")
             from .result_schema import validate_distribution_schema
             validate_distribution_schema(results)
             inputs = configuration["inputs"]

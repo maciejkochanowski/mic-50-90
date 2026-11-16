@@ -1,0 +1,1304 @@
+{
+  "CMV5AGNF:AMC": {
+    "panel_id": "CMV5AGNF:AMC",
+    "drug_code": "AMC",
+    "drug": "amoxicillin/clavulanate",
+    "levels": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=1",
+        "lower_bound": null,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": ">32",
+        "lower_bound": 32.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 64.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "amoxicillin",
+    "axis_label": "amoxicillin component (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC",
+    "paired_component": "clavulanate",
+    "paired_component_levels": [
+      0.5,
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "component_ratio": "amoxicillin:clavulanate = 2:1"
+  },
+  "CMV5AGNF:AMP": {
+    "panel_id": "CMV5AGNF:AMP",
+    "drug_code": "AMP",
+    "drug": "ampicillin",
+    "levels": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=1",
+        "lower_bound": null,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": ">32",
+        "lower_bound": 32.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 64.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "ampicillin",
+    "axis_label": "ampicillin (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:AXO": {
+    "panel_id": "CMV5AGNF:AXO",
+    "drug_code": "AXO",
+    "drug": "ceftriaxone",
+    "levels": [
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.25",
+        "lower_bound": null,
+        "upper_bound": 0.25,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.25
+      },
+      {
+        "label": "0.5",
+        "lower_bound": 0.25,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": "64",
+        "lower_bound": 32.0,
+        "upper_bound": 64.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 64.0
+      },
+      {
+        "label": ">64",
+        "lower_bound": 64.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 128.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "ceftriaxone",
+    "axis_label": "ceftriaxone (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:AZI": {
+    "panel_id": "CMV5AGNF:AZI",
+    "drug_code": "AZI",
+    "drug": "azithromycin",
+    "levels": [
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.25",
+        "lower_bound": null,
+        "upper_bound": 0.25,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.25
+      },
+      {
+        "label": "0.5",
+        "lower_bound": 0.25,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": "64",
+        "lower_bound": 32.0,
+        "upper_bound": 64.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 64.0
+      },
+      {
+        "label": ">64",
+        "lower_bound": 64.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 128.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "azithromycin",
+    "axis_label": "azithromycin (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:CHL": {
+    "panel_id": "CMV5AGNF:CHL",
+    "drug_code": "CHL",
+    "drug": "chloramphenicol",
+    "levels": [
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=2",
+        "lower_bound": null,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": ">32",
+        "lower_bound": 32.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 64.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "chloramphenicol",
+    "axis_label": "chloramphenicol (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:CIP": {
+    "panel_id": "CMV5AGNF:CIP",
+    "drug_code": "CIP",
+    "drug": "ciprofloxacin",
+    "levels": [
+      0.015,
+      0.03,
+      0.06,
+      0.12,
+      0.25,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.015",
+        "lower_bound": null,
+        "upper_bound": 0.015,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.015
+      },
+      {
+        "label": "0.03",
+        "lower_bound": 0.015,
+        "upper_bound": 0.03,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.03
+      },
+      {
+        "label": "0.06",
+        "lower_bound": 0.03,
+        "upper_bound": 0.06,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.06
+      },
+      {
+        "label": "0.12",
+        "lower_bound": 0.06,
+        "upper_bound": 0.12,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.12
+      },
+      {
+        "label": "0.25",
+        "lower_bound": 0.12,
+        "upper_bound": 0.25,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.25
+      },
+      {
+        "label": "0.5",
+        "lower_bound": 0.25,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": ">4",
+        "lower_bound": 4.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 8.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "ciprofloxacin",
+    "axis_label": "ciprofloxacin (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {
+      "0.125": 0.12
+    },
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:COL": {
+    "panel_id": "CMV5AGNF:COL",
+    "drug_code": "COL",
+    "drug": "colistin",
+    "levels": [
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.25",
+        "lower_bound": null,
+        "upper_bound": 0.25,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.25
+      },
+      {
+        "label": "0.5",
+        "lower_bound": 0.25,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": ">8",
+        "lower_bound": 8.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 16.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "colistin",
+    "axis_label": "colistin (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:COT": {
+    "panel_id": "CMV5AGNF:COT",
+    "drug_code": "COT",
+    "drug": "trimethoprim/sulfamethoxazole",
+    "levels": [
+      0.12,
+      0.25,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.12",
+        "lower_bound": null,
+        "upper_bound": 0.12,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.12
+      },
+      {
+        "label": "0.25",
+        "lower_bound": 0.12,
+        "upper_bound": 0.25,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.25
+      },
+      {
+        "label": "0.5",
+        "lower_bound": 0.25,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": ">4",
+        "lower_bound": 4.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 8.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "trimethoprim",
+    "axis_label": "trimethoprim component (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {
+      "0.125": 0.12
+    },
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC",
+    "paired_component": "sulfamethoxazole",
+    "paired_component_levels": [
+      2.38,
+      4.75,
+      9.5,
+      19,
+      38,
+      76
+    ],
+    "component_ratio": "trimethoprim:sulfamethoxazole nominal 1:19; source rounded labels retained"
+  },
+  "CMV5AGNF:FIS": {
+    "panel_id": "CMV5AGNF:FIS",
+    "drug_code": "FIS",
+    "drug": "sulfisoxazole",
+    "levels": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=16",
+        "lower_bound": null,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": "64",
+        "lower_bound": 32.0,
+        "upper_bound": 64.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 64.0
+      },
+      {
+        "label": "128",
+        "lower_bound": 64.0,
+        "upper_bound": 128.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 128.0
+      },
+      {
+        "label": "256",
+        "lower_bound": 128.0,
+        "upper_bound": 256.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 256.0
+      },
+      {
+        "label": ">256",
+        "lower_bound": 256.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 512.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "sulfisoxazole",
+    "axis_label": "sulfisoxazole (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:FOX": {
+    "panel_id": "CMV5AGNF:FOX",
+    "drug_code": "FOX",
+    "drug": "cefoxitin",
+    "levels": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=1",
+        "lower_bound": null,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": ">32",
+        "lower_bound": 32.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 64.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "cefoxitin",
+    "axis_label": "cefoxitin (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:GEN": {
+    "panel_id": "CMV5AGNF:GEN",
+    "drug_code": "GEN",
+    "drug": "gentamicin",
+    "levels": [
+      0.25,
+      0.5,
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.25",
+        "lower_bound": null,
+        "upper_bound": 0.25,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.25
+      },
+      {
+        "label": "0.5",
+        "lower_bound": 0.25,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": ">16",
+        "lower_bound": 16.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 32.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "gentamicin",
+    "axis_label": "gentamicin (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:MER": {
+    "panel_id": "CMV5AGNF:MER",
+    "drug_code": "MER",
+    "drug": "meropenem",
+    "levels": [
+      0.06,
+      0.12,
+      0.25,
+      0.5,
+      1,
+      2,
+      4
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.06",
+        "lower_bound": null,
+        "upper_bound": 0.06,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.06
+      },
+      {
+        "label": "0.12",
+        "lower_bound": 0.06,
+        "upper_bound": 0.12,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.12
+      },
+      {
+        "label": "0.25",
+        "lower_bound": 0.12,
+        "upper_bound": 0.25,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.25
+      },
+      {
+        "label": "0.5",
+        "lower_bound": 0.25,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": ">4",
+        "lower_bound": 4.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 8.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "meropenem",
+    "axis_label": "meropenem (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {
+      "0.125": 0.12
+    },
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:NAL": {
+    "panel_id": "CMV5AGNF:NAL",
+    "drug_code": "NAL",
+    "drug": "nalidixic acid",
+    "levels": [
+      0.5,
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=0.5",
+        "lower_bound": null,
+        "upper_bound": 0.5,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.5
+      },
+      {
+        "label": "1",
+        "lower_bound": 0.5,
+        "upper_bound": 1.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 1.0
+      },
+      {
+        "label": "2",
+        "lower_bound": 1.0,
+        "upper_bound": 2.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2.0
+      },
+      {
+        "label": "4",
+        "lower_bound": 2.0,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": ">32",
+        "lower_bound": 32.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 64.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "nalidixic acid",
+    "axis_label": "nalidixic acid (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  },
+  "CMV5AGNF:TET": {
+    "panel_id": "CMV5AGNF:TET",
+    "drug_code": "TET",
+    "drug": "tetracycline",
+    "levels": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "left_censored": true,
+    "right_censored": true,
+    "categories": [
+      {
+        "label": "<=4",
+        "lower_bound": null,
+        "upper_bound": 4.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 4.0
+      },
+      {
+        "label": "8",
+        "lower_bound": 4.0,
+        "upper_bound": 8.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 8.0
+      },
+      {
+        "label": "16",
+        "lower_bound": 8.0,
+        "upper_bound": 16.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 16.0
+      },
+      {
+        "label": "32",
+        "lower_bound": 16.0,
+        "upper_bound": 32.0,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 32.0
+      },
+      {
+        "label": ">32",
+        "lower_bound": 32.0,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 64.0
+      }
+    ],
+    "concentration_unit": "mg/L",
+    "scalar_component": "tetracycline",
+    "axis_label": "tetracycline (mg/L)",
+    "panel_assignment": "documented program-year; raw PLATE blank; no lot-level claim",
+    "guide_url": "https://documents.thermofisher.com/TFS-Assets/MBD/brochures/Sensititre-PlateGuide-US.pdf",
+    "guide_printed_page": 52,
+    "guide_pdf_page": 54,
+    "fda_ranges_url": "https://www.fda.gov/media/108187/download?attachment=",
+    "panel_year_assignment_url": "https://journals.asm.org/doi/10.1128/spectrum.03485-23",
+    "nominal_label_aliases": {},
+    "estimand": "recorded-category distribution; interval-censored latent endpoints preserved",
+    "transport_coordinate": "log2 of scalar recorded-category panel representative",
+    "right_tail_representative_convention": "twice largest tested scalar reporting level; not latent MIC"
+  }
+}

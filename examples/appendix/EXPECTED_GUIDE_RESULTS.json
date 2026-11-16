@@ -1,0 +1,69 @@
+{
+  "schema": "mic-50-90-guide-expected-results/1",
+  "version": "1.0.1",
+  "interpretation": "Sample count ranges and population confidence limits are separate results. Percentages are computed before display rounding.",
+  "analyses": [
+    {
+      "stage": "before",
+      "source": "output/guide-before/results.json",
+      "n": 67,
+      "unit": "mg/L",
+      "target_scale": "recorded",
+      "start_category": "0.5",
+      "end_category": "0.5",
+      "sample_count_components": [
+        [
+          1,
+          32
+        ]
+      ],
+      "sample_percentage_components": [
+        [
+          1.492537313432836,
+          47.76119402985075
+        ]
+      ],
+      "population": {
+        "status": "available",
+        "lower": 3.735945362742508e-05,
+        "upper": 0.6521522881143645,
+        "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+        "confidence_level": 0.95,
+        "scope": "all contiguous recorded category ranges on the fixed panel"
+      },
+      "calibration_requested": false,
+      "saved_count_update": false
+    },
+    {
+      "stage": "after",
+      "source": "output/guide-after/results.json",
+      "n": 67,
+      "unit": "mg/L",
+      "target_scale": "recorded",
+      "start_category": "0.5",
+      "end_category": "0.5",
+      "sample_count_components": [
+        [
+          2,
+          7
+        ]
+      ],
+      "sample_percentage_components": [
+        [
+          2.985074626865672,
+          10.447761194029852
+        ]
+      ],
+      "population": {
+        "status": "available",
+        "lower": 0.0010886630595660699,
+        "upper": 0.24995356266559515,
+        "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+        "confidence_level": 0.95,
+        "scope": "all contiguous recorded category ranges on the fixed panel"
+      },
+      "calibration_requested": false,
+      "saved_count_update": true
+    }
+  ]
+}

@@ -10,7 +10,7 @@ from heapq import heappop,heappush
 from math import isfinite,lcm
 from time import monotonic
 import numpy as np
-from scipy.optimize import linprog
+from .._solver_resources import linprog
 from scipy.linalg import qr
 from .budget import bounded_calculation,deadline_scope
 
@@ -36,7 +36,7 @@ def _atom_matrix(m):
 
 
 def _solve_exact(a,b):
-    a=[list(map(F,row))+[F(value)] for row,value in zip(a,b)]
+    a=[list(map(F,row))+[F(value)] for row,value in zip(a,b, strict=True)]
     n=len(b)
     for j in range(n):
         _check_deadline(None)
@@ -48,7 +48,7 @@ def _solve_exact(a,b):
         for i in range(n):
             if i!=j and a[i][j]:
                 q=a[i][j]
-                a[i]=[x-q*y for x,y in zip(a[i],a[j])]
+                a[i]=[x-q*y for x,y in zip(a[i],a[j], strict=True)]
     return tuple(row[-1] for row in a)
 
 
@@ -71,10 +71,10 @@ def moment_primal(m,moments,deadline=None):
     weights=_solve_exact(a[np.ix_(rows,columns)].astype(int).tolist(),[rhs[i] for i in rows])
     if weights is None or min(weights)<0:return None
     # All equations, including unused or rank-deficient rows, are mandatory.
-    for row,value in zip(a,rhs):
-        if sum((int(row[j])*w for j,w in zip(columns,weights)),F(0))!=value:return None
+    for row,value in zip(a,rhs, strict=True):
+        if sum((int(row[j])*w for j,w in zip(columns,weights, strict=True)),F(0))!=value:return None
     return dict(patterns=tuple(map(int,columns)),weights=weights,
-                objective=sum((w for j,w in zip(columns,weights) if j),F(0)))
+                objective=sum((w for j,w in zip(columns,weights, strict=True) if j),F(0)))
 
 
 def tail_upper(n,lo,hi,allowed):
@@ -205,7 +205,7 @@ def dominance_forest(n,k,ranges,plus,minus,deadline=None):
     """
     active=list(range(len(ranges)));edges=[]
     segments=[];complements=[]
-    for hi,lo in zip(plus,minus):
+    for hi,lo in zip(plus,minus, strict=True):
         hi=set(hi);lo=set(lo)
         pieces=[]
         for c in sorted(hi):
@@ -259,7 +259,7 @@ def uniform_bound(r,d,deadline=None,alpha=None):
         best=min(best,_uniform_at_level(r,d,ranges,envelopes,upper,deadline,alpha))
         if alpha is not None and best<alpha:break
         lifted=max((hi for lo_scores,hi_scores in envelopes
-            for lo,hi in zip(lo_scores,hi_scores) if lo<=upper),default=upper)
+            for lo,hi in zip(lo_scores,hi_scores, strict=True) if lo<=upper),default=upper)
         if lifted<=upper:break
         upper=lifted
     return best
@@ -277,9 +277,9 @@ def _uniform_at_level(r,d,ranges,envelopes,upper,deadline=None,alpha=None):
     plus=tuple(plus[j] for j in active)
     minus=tuple(minus[j] for j in active)
     marg=tuple(min(score_probability_cap(r.n,-d[b][a],d[a][b],upper),tail_upper(r.n,-d[b][a],d[a][b],event))
-               for (a,b),event in zip(ranges,plus))
+               for (a,b),event in zip(ranges,plus, strict=True))
     marginal_lower=tuple(_binomial_event_box(r.n,-d[b][a],d[a][b],event).lower
-                         for (a,b),event in zip(ranges,minus))
+                         for (a,b),event in zip(ranges,minus, strict=True))
     total=sum(marg,F(0))
     if total==0:return F(0)
     if alpha is not None and total<alpha:return total
@@ -316,7 +316,7 @@ def _uniform_at_level(r,d,ranges,envelopes,upper,deadline=None,alpha=None):
     hunter=min(F(1),max(F(0),total-weight))
     if not allow_moment_lp or (alpha is not None and (hunter<alpha or hunter>2*alpha)):
         return hunter
-    moments=tuple(ProbabilityBounds(lo,hi) for lo,hi in zip(marginal_lower,marg))+tuple(pairs[key] for key in sorted(pairs))
+    moments=tuple(ProbabilityBounds(lo,hi) for lo,hi in zip(marginal_lower,marg, strict=True))+tuple(pairs[key] for key in sorted(pairs))
     certificate,_=_moment_lp(len(ranges),moments,deadline)
     return min(hunter,certificate.upper_bound) if certificate is not None else hunter
 
@@ -442,7 +442,7 @@ def project(problem,*,alpha=F(1,20),time_limit_seconds=120,tolerance_pp=.01,max_
                     if add(destination):continue
                     l,u=F(0),F(1)
                     for _ in range(13):
-                        t=(l+u)/2;p=tuple((1-t)*v+t*w for v,w in zip(origin,destination))
+                        t=(l+u)/2;p=tuple((1-t)*v+t*w for v,w in zip(origin,destination, strict=True))
                         if add(p):l=t
                         else:u=t
         except TimeoutError:pass

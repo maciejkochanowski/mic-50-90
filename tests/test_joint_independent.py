@@ -15,11 +15,11 @@ from mic_50_90.joint_population import (
 from mic_50_90.utility import _prefix_distances
 
 ROOT=Path(__file__).resolve().parents[1]
-CAMPAIGN=ROOT/'reproducibility/v1.0.0/joint-distribution-20260930'
+CHECKS=ROOT/'reproducibility/joint-distribution'
 
 
 def load_file(name):
-    spec=importlib.util.spec_from_file_location('independent_joint_'+name,CAMPAIGN/(name+'.py'))
+    spec=importlib.util.spec_from_file_location('independent_joint_'+name,CHECKS/(name+'.py'))
     module=importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module

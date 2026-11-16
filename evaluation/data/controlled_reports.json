@@ -1,0 +1,1802 @@
+[
+ {
+  "case": "evaluation-5-10-bimodal",
+  "information": "interior",
+  "histogram": [
+   0,
+   6,
+   0,
+   4,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-10-bimodal",
+  "information": "summaries",
+  "histogram": [
+   0,
+   6,
+   0,
+   4,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-10-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   0,
+   6,
+   0,
+   4,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-10-empty_interior",
+  "information": "interior",
+  "histogram": [
+   5,
+   2,
+   0,
+   0,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-5-10-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   5,
+   2,
+   0,
+   0,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-5-10-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   5,
+   2,
+   0,
+   0,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-5-10-rare_interior",
+  "information": "interior",
+  "histogram": [
+   2,
+   4,
+   0,
+   2,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-5-10-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   2,
+   4,
+   0,
+   2,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-5-10-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   2,
+   4,
+   0,
+   2,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-5-10-rare_tail",
+  "information": "interior",
+  "histogram": [
+   3,
+   2,
+   3,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-10-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   3,
+   2,
+   3,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-10-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   3,
+   2,
+   3,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-10-skewed",
+  "information": "interior",
+  "histogram": [
+   5,
+   2,
+   2,
+   0,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-10-skewed",
+  "information": "summaries",
+  "histogram": [
+   5,
+   2,
+   2,
+   0,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-10-skewed",
+  "information": "two_counts",
+  "histogram": [
+   5,
+   2,
+   2,
+   0,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-10-uniform",
+  "information": "interior",
+  "histogram": [
+   2,
+   1,
+   4,
+   2,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-10-uniform",
+  "information": "summaries",
+  "histogram": [
+   2,
+   1,
+   4,
+   2,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-10-uniform",
+  "information": "two_counts",
+  "histogram": [
+   2,
+   1,
+   4,
+   2,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-100-bimodal",
+  "information": "interior",
+  "histogram": [
+   1,
+   39,
+   10,
+   46,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-100-bimodal",
+  "information": "summaries",
+  "histogram": [
+   1,
+   39,
+   10,
+   46,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-100-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   1,
+   39,
+   10,
+   46,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-100-empty_interior",
+  "information": "interior",
+  "histogram": [
+   27,
+   24,
+   0,
+   31,
+   18
+  ]
+ },
+ {
+  "case": "evaluation-5-100-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   27,
+   24,
+   0,
+   31,
+   18
+  ]
+ },
+ {
+  "case": "evaluation-5-100-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   27,
+   24,
+   0,
+   31,
+   18
+  ]
+ },
+ {
+  "case": "evaluation-5-100-rare_interior",
+  "information": "interior",
+  "histogram": [
+   21,
+   21,
+   0,
+   29,
+   29
+  ]
+ },
+ {
+  "case": "evaluation-5-100-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   21,
+   21,
+   0,
+   29,
+   29
+  ]
+ },
+ {
+  "case": "evaluation-5-100-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   21,
+   21,
+   0,
+   29,
+   29
+  ]
+ },
+ {
+  "case": "evaluation-5-100-rare_tail",
+  "information": "interior",
+  "histogram": [
+   35,
+   20,
+   25,
+   19,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-100-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   35,
+   20,
+   25,
+   19,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-100-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   35,
+   20,
+   25,
+   19,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-100-skewed",
+  "information": "interior",
+  "histogram": [
+   57,
+   22,
+   10,
+   10,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-100-skewed",
+  "information": "summaries",
+  "histogram": [
+   57,
+   22,
+   10,
+   10,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-100-skewed",
+  "information": "two_counts",
+  "histogram": [
+   57,
+   22,
+   10,
+   10,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-5-100-uniform",
+  "information": "interior",
+  "histogram": [
+   23,
+   15,
+   17,
+   21,
+   24
+  ]
+ },
+ {
+  "case": "evaluation-5-100-uniform",
+  "information": "summaries",
+  "histogram": [
+   23,
+   15,
+   17,
+   21,
+   24
+  ]
+ },
+ {
+  "case": "evaluation-5-100-uniform",
+  "information": "two_counts",
+  "histogram": [
+   23,
+   15,
+   17,
+   21,
+   24
+  ]
+ },
+ {
+  "case": "evaluation-5-20-bimodal",
+  "information": "interior",
+  "histogram": [
+   0,
+   6,
+   0,
+   14,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-bimodal",
+  "information": "summaries",
+  "histogram": [
+   0,
+   6,
+   0,
+   14,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   0,
+   6,
+   0,
+   14,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-empty_interior",
+  "information": "interior",
+  "histogram": [
+   7,
+   2,
+   0,
+   7,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-20-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   7,
+   2,
+   0,
+   7,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-20-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   7,
+   2,
+   0,
+   7,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-20-rare_interior",
+  "information": "interior",
+  "histogram": [
+   6,
+   7,
+   0,
+   3,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-20-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   6,
+   7,
+   0,
+   3,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-20-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   6,
+   7,
+   0,
+   3,
+   4
+  ]
+ },
+ {
+  "case": "evaluation-5-20-rare_tail",
+  "information": "interior",
+  "histogram": [
+   6,
+   3,
+   3,
+   8,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   6,
+   3,
+   3,
+   8,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   6,
+   3,
+   3,
+   8,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-skewed",
+  "information": "interior",
+  "histogram": [
+   12,
+   6,
+   2,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-skewed",
+  "information": "summaries",
+  "histogram": [
+   12,
+   6,
+   2,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-skewed",
+  "information": "two_counts",
+  "histogram": [
+   12,
+   6,
+   2,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-20-uniform",
+  "information": "interior",
+  "histogram": [
+   5,
+   3,
+   2,
+   4,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-5-20-uniform",
+  "information": "summaries",
+  "histogram": [
+   5,
+   3,
+   2,
+   4,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-5-20-uniform",
+  "information": "two_counts",
+  "histogram": [
+   5,
+   3,
+   2,
+   4,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-5-50-bimodal",
+  "information": "interior",
+  "histogram": [
+   3,
+   23,
+   3,
+   19,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-5-50-bimodal",
+  "information": "summaries",
+  "histogram": [
+   3,
+   23,
+   3,
+   19,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-5-50-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   3,
+   23,
+   3,
+   19,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-5-50-empty_interior",
+  "information": "interior",
+  "histogram": [
+   12,
+   13,
+   0,
+   15,
+   10
+  ]
+ },
+ {
+  "case": "evaluation-5-50-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   12,
+   13,
+   0,
+   15,
+   10
+  ]
+ },
+ {
+  "case": "evaluation-5-50-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   12,
+   13,
+   0,
+   15,
+   10
+  ]
+ },
+ {
+  "case": "evaluation-5-50-rare_interior",
+  "information": "interior",
+  "histogram": [
+   7,
+   9,
+   1,
+   18,
+   15
+  ]
+ },
+ {
+  "case": "evaluation-5-50-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   7,
+   9,
+   1,
+   18,
+   15
+  ]
+ },
+ {
+  "case": "evaluation-5-50-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   7,
+   9,
+   1,
+   18,
+   15
+  ]
+ },
+ {
+  "case": "evaluation-5-50-rare_tail",
+  "information": "interior",
+  "histogram": [
+   10,
+   15,
+   17,
+   8,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-50-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   10,
+   15,
+   17,
+   8,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-50-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   10,
+   15,
+   17,
+   8,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-5-50-skewed",
+  "information": "interior",
+  "histogram": [
+   27,
+   10,
+   7,
+   3,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-5-50-skewed",
+  "information": "summaries",
+  "histogram": [
+   27,
+   10,
+   7,
+   3,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-5-50-skewed",
+  "information": "two_counts",
+  "histogram": [
+   27,
+   10,
+   7,
+   3,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-5-50-uniform",
+  "information": "interior",
+  "histogram": [
+   14,
+   10,
+   8,
+   7,
+   11
+  ]
+ },
+ {
+  "case": "evaluation-5-50-uniform",
+  "information": "summaries",
+  "histogram": [
+   14,
+   10,
+   8,
+   7,
+   11
+  ]
+ },
+ {
+  "case": "evaluation-5-50-uniform",
+  "information": "two_counts",
+  "histogram": [
+   14,
+   10,
+   8,
+   7,
+   11
+  ]
+ },
+ {
+  "case": "evaluation-8-10-bimodal",
+  "information": "interior",
+  "histogram": [
+   0,
+   7,
+   1,
+   0,
+   0,
+   0,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-bimodal",
+  "information": "summaries",
+  "histogram": [
+   0,
+   7,
+   1,
+   0,
+   0,
+   0,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   0,
+   7,
+   1,
+   0,
+   0,
+   0,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-empty_interior",
+  "information": "interior",
+  "histogram": [
+   1,
+   0,
+   2,
+   0,
+   0,
+   1,
+   4,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-8-10-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   1,
+   0,
+   2,
+   0,
+   0,
+   1,
+   4,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-8-10-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   1,
+   0,
+   2,
+   0,
+   0,
+   1,
+   4,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-8-10-rare_interior",
+  "information": "interior",
+  "histogram": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   2,
+   2,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-10-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   2,
+   2,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-10-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   1,
+   1,
+   0,
+   1,
+   0,
+   2,
+   2,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-10-rare_tail",
+  "information": "interior",
+  "histogram": [
+   0,
+   2,
+   2,
+   1,
+   2,
+   1,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   0,
+   2,
+   2,
+   1,
+   2,
+   1,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   0,
+   2,
+   2,
+   1,
+   2,
+   1,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-skewed",
+  "information": "interior",
+  "histogram": [
+   8,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-skewed",
+  "information": "summaries",
+  "histogram": [
+   8,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-skewed",
+  "information": "two_counts",
+  "histogram": [
+   8,
+   1,
+   1,
+   0,
+   0,
+   0,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-10-uniform",
+  "information": "interior",
+  "histogram": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1,
+   4,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-10-uniform",
+  "information": "summaries",
+  "histogram": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1,
+   4,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-10-uniform",
+  "information": "two_counts",
+  "histogram": [
+   1,
+   0,
+   1,
+   1,
+   1,
+   1,
+   4,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-100-bimodal",
+  "information": "interior",
+  "histogram": [
+   3,
+   37,
+   2,
+   2,
+   3,
+   2,
+   48,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-100-bimodal",
+  "information": "summaries",
+  "histogram": [
+   3,
+   37,
+   2,
+   2,
+   3,
+   2,
+   48,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-100-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   3,
+   37,
+   2,
+   2,
+   3,
+   2,
+   48,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-100-empty_interior",
+  "information": "interior",
+  "histogram": [
+   17,
+   8,
+   19,
+   15,
+   0,
+   9,
+   16,
+   16
+  ]
+ },
+ {
+  "case": "evaluation-8-100-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   17,
+   8,
+   19,
+   15,
+   0,
+   9,
+   16,
+   16
+  ]
+ },
+ {
+  "case": "evaluation-8-100-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   17,
+   8,
+   19,
+   15,
+   0,
+   9,
+   16,
+   16
+  ]
+ },
+ {
+  "case": "evaluation-8-100-rare_interior",
+  "information": "interior",
+  "histogram": [
+   15,
+   11,
+   13,
+   17,
+   0,
+   18,
+   7,
+   19
+  ]
+ },
+ {
+  "case": "evaluation-8-100-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   15,
+   11,
+   13,
+   17,
+   0,
+   18,
+   7,
+   19
+  ]
+ },
+ {
+  "case": "evaluation-8-100-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   15,
+   11,
+   13,
+   17,
+   0,
+   18,
+   7,
+   19
+  ]
+ },
+ {
+  "case": "evaluation-8-100-rare_tail",
+  "information": "interior",
+  "histogram": [
+   18,
+   10,
+   14,
+   14,
+   19,
+   11,
+   13,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-100-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   18,
+   10,
+   14,
+   14,
+   19,
+   11,
+   13,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-100-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   18,
+   10,
+   14,
+   14,
+   19,
+   11,
+   13,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-100-skewed",
+  "information": "interior",
+  "histogram": [
+   42,
+   25,
+   16,
+   11,
+   4,
+   1,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-100-skewed",
+  "information": "summaries",
+  "histogram": [
+   42,
+   25,
+   16,
+   11,
+   4,
+   1,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-100-skewed",
+  "information": "two_counts",
+  "histogram": [
+   42,
+   25,
+   16,
+   11,
+   4,
+   1,
+   1,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-100-uniform",
+  "information": "interior",
+  "histogram": [
+   19,
+   12,
+   9,
+   16,
+   13,
+   7,
+   11,
+   13
+  ]
+ },
+ {
+  "case": "evaluation-8-100-uniform",
+  "information": "summaries",
+  "histogram": [
+   19,
+   12,
+   9,
+   16,
+   13,
+   7,
+   11,
+   13
+  ]
+ },
+ {
+  "case": "evaluation-8-100-uniform",
+  "information": "two_counts",
+  "histogram": [
+   19,
+   12,
+   9,
+   16,
+   13,
+   7,
+   11,
+   13
+  ]
+ },
+ {
+  "case": "evaluation-8-20-bimodal",
+  "information": "interior",
+  "histogram": [
+   0,
+   3,
+   0,
+   3,
+   0,
+   1,
+   13,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-20-bimodal",
+  "information": "summaries",
+  "histogram": [
+   0,
+   3,
+   0,
+   3,
+   0,
+   1,
+   13,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-20-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   0,
+   3,
+   0,
+   3,
+   0,
+   1,
+   13,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-20-empty_interior",
+  "information": "interior",
+  "histogram": [
+   2,
+   4,
+   7,
+   1,
+   0,
+   3,
+   2,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-20-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   2,
+   4,
+   7,
+   1,
+   0,
+   3,
+   2,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-20-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   2,
+   4,
+   7,
+   1,
+   0,
+   3,
+   2,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-20-rare_interior",
+  "information": "interior",
+  "histogram": [
+   3,
+   3,
+   2,
+   2,
+   0,
+   1,
+   3,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-8-20-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   3,
+   3,
+   2,
+   2,
+   0,
+   1,
+   3,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-8-20-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   3,
+   3,
+   2,
+   2,
+   0,
+   1,
+   3,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-8-20-rare_tail",
+  "information": "interior",
+  "histogram": [
+   3,
+   4,
+   2,
+   4,
+   1,
+   4,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-20-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   3,
+   4,
+   2,
+   4,
+   1,
+   4,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-20-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   3,
+   4,
+   2,
+   4,
+   1,
+   4,
+   2,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-20-skewed",
+  "information": "interior",
+  "histogram": [
+   6,
+   6,
+   5,
+   2,
+   0,
+   0,
+   0,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-20-skewed",
+  "information": "summaries",
+  "histogram": [
+   6,
+   6,
+   5,
+   2,
+   0,
+   0,
+   0,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-20-skewed",
+  "information": "two_counts",
+  "histogram": [
+   6,
+   6,
+   5,
+   2,
+   0,
+   0,
+   0,
+   1
+  ]
+ },
+ {
+  "case": "evaluation-8-20-uniform",
+  "information": "interior",
+  "histogram": [
+   2,
+   0,
+   6,
+   0,
+   3,
+   4,
+   0,
+   5
+  ]
+ },
+ {
+  "case": "evaluation-8-20-uniform",
+  "information": "summaries",
+  "histogram": [
+   2,
+   0,
+   6,
+   0,
+   3,
+   4,
+   0,
+   5
+  ]
+ },
+ {
+  "case": "evaluation-8-20-uniform",
+  "information": "two_counts",
+  "histogram": [
+   2,
+   0,
+   6,
+   0,
+   3,
+   4,
+   0,
+   5
+  ]
+ },
+ {
+  "case": "evaluation-8-50-bimodal",
+  "information": "interior",
+  "histogram": [
+   3,
+   11,
+   3,
+   3,
+   0,
+   3,
+   25,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-8-50-bimodal",
+  "information": "summaries",
+  "histogram": [
+   3,
+   11,
+   3,
+   3,
+   0,
+   3,
+   25,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-8-50-bimodal",
+  "information": "two_counts",
+  "histogram": [
+   3,
+   11,
+   3,
+   3,
+   0,
+   3,
+   25,
+   2
+  ]
+ },
+ {
+  "case": "evaluation-8-50-empty_interior",
+  "information": "interior",
+  "histogram": [
+   6,
+   8,
+   8,
+   10,
+   0,
+   8,
+   5,
+   5
+  ]
+ },
+ {
+  "case": "evaluation-8-50-empty_interior",
+  "information": "summaries",
+  "histogram": [
+   6,
+   8,
+   8,
+   10,
+   0,
+   8,
+   5,
+   5
+  ]
+ },
+ {
+  "case": "evaluation-8-50-empty_interior",
+  "information": "two_counts",
+  "histogram": [
+   6,
+   8,
+   8,
+   10,
+   0,
+   8,
+   5,
+   5
+  ]
+ },
+ {
+  "case": "evaluation-8-50-rare_interior",
+  "information": "interior",
+  "histogram": [
+   10,
+   7,
+   4,
+   7,
+   0,
+   10,
+   9,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-50-rare_interior",
+  "information": "summaries",
+  "histogram": [
+   10,
+   7,
+   4,
+   7,
+   0,
+   10,
+   9,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-50-rare_interior",
+  "information": "two_counts",
+  "histogram": [
+   10,
+   7,
+   4,
+   7,
+   0,
+   10,
+   9,
+   3
+  ]
+ },
+ {
+  "case": "evaluation-8-50-rare_tail",
+  "information": "interior",
+  "histogram": [
+   7,
+   6,
+   8,
+   5,
+   7,
+   11,
+   6,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-50-rare_tail",
+  "information": "summaries",
+  "histogram": [
+   7,
+   6,
+   8,
+   5,
+   7,
+   11,
+   6,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-50-rare_tail",
+  "information": "two_counts",
+  "histogram": [
+   7,
+   6,
+   8,
+   5,
+   7,
+   11,
+   6,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-50-skewed",
+  "information": "interior",
+  "histogram": [
+   24,
+   16,
+   5,
+   2,
+   2,
+   1,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-50-skewed",
+  "information": "summaries",
+  "histogram": [
+   24,
+   16,
+   5,
+   2,
+   2,
+   1,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-50-skewed",
+  "information": "two_counts",
+  "histogram": [
+   24,
+   16,
+   5,
+   2,
+   2,
+   1,
+   0,
+   0
+  ]
+ },
+ {
+  "case": "evaluation-8-50-uniform",
+  "information": "interior",
+  "histogram": [
+   11,
+   5,
+   6,
+   7,
+   2,
+   6,
+   7,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-8-50-uniform",
+  "information": "summaries",
+  "histogram": [
+   11,
+   5,
+   6,
+   7,
+   2,
+   6,
+   7,
+   6
+  ]
+ },
+ {
+  "case": "evaluation-8-50-uniform",
+  "information": "two_counts",
+  "histogram": [
+   11,
+   5,
+   6,
+   7,
+   2,
+   6,
+   7,
+   6
+  ]
+ }
+]

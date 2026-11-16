@@ -1,6 +1,6 @@
 # Compatible-prefix population projections
 
-This implementation improvement in MIC-50-90 1.0.0 preserves dependence
+This implementation improvement in MIC-50-90 1.0.1 preserves dependence
 between compatible empirical prefix counts when projecting the existing
 Bonferroni Clopper–Pearson construction. It does not introduce a new general
 Clopper–Pearson theory or establish superiority over direct intervals for all

@@ -1,0 +1,8 @@
+cohort_id,panel_id,category,count,rank_convention,iid,confidence_level
+CDC-c51d6506b738a1297240,panel-CDC-c51d6506b738a1297240,<=1,11,ceiling,false,.95
+CDC-c51d6506b738a1297240,panel-CDC-c51d6506b738a1297240,2,7,ceiling,false,.95
+CDC-c51d6506b738a1297240,panel-CDC-c51d6506b738a1297240,4,27,ceiling,false,.95
+CDC-c51d6506b738a1297240,panel-CDC-c51d6506b738a1297240,8,56,ceiling,false,.95
+CDC-c51d6506b738a1297240,panel-CDC-c51d6506b738a1297240,16,67,ceiling,false,.95
+CDC-c51d6506b738a1297240,panel-CDC-c51d6506b738a1297240,32,29,ceiling,false,.95
+CDC-c51d6506b738a1297240,panel-CDC-c51d6506b738a1297240,>=64,69,ceiling,false,.95

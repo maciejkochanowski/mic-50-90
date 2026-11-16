@@ -1,0 +1,3 @@
+panel_id,category,unit,lower,upper,lower_closed,upper_closed,panel_value
+two,1,mg/L,1,1,true,true,1
+two,2,mg/L,1,2,false,true,2

@@ -27,7 +27,7 @@ def render_reporting_plan(plan):
         parts.append('<p>The declared summaries already answer all these questions; no additional counts are needed.</p>')
     parts.append('<table><thead><tr><th>Threshold (mg/L)</th><th>Criterion for the share above it</th><th>Before adding counts</th><th>After adding counts</th></tr></thead><tbody>')
     labels={'supported':'Criterion established','contradicted':'Criterion ruled out','undetermined':'Not settled'}
-    for before,row in zip(plan['initial_decisions'],plan['verification']['bounds']):
+    for before,row in zip(plan['initial_decisions'],plan['verification']['bounds'], strict=True):
         parts.append('<tr><td>'+escape(str(row['threshold']))+'</td><td>'+escape(row['decision_operator'])+' '+
                      escape(_criterion_percent(row))+'</td><td>'+labels[before]+
                      '</td><td>'+labels[row['status']]+'</td></tr>')

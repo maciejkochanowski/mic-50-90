@@ -1,0 +1,1802 @@
+[
+ {
+  "case": "case-01",
+  "cohort_id": "FDA|Vet-LIRN|2020|Salmonella|Dogs|Other Tissues/ Body Sites|Imipenem",
+  "source": "FDA animal pathogens",
+  "organism": "Salmonella",
+  "drug": "Imipenem",
+  "n": 25,
+  "counts": [
+   25,
+   0,
+   0,
+   0,
+   0
+  ],
+  "input": {
+   "cohort_id": "FDA|Vet-LIRN|2020|Salmonella|Dogs|Other Tissues/ Body Sites|Imipenem",
+   "n": 25,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2] through (2, 4]",
+      "lower_bound": 1,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16] through (16, 32]",
+      "lower_bound": 8,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "(32, 64] through > 64",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 128
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 1"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "<= 1"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(4, 8]",
+     "end_category": "(4, 8]",
+     "n": 25,
+     "count": 0,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-02",
+  "cohort_id": "FDA|Vet-LIRN|2021|Klebsiella spp|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+  "source": "FDA animal pathogens",
+  "organism": "Klebsiella spp",
+  "drug": "Enrofloxacin",
+  "n": 56,
+  "counts": [
+   45,
+   1,
+   3,
+   0,
+   7
+  ],
+  "input": {
+   "cohort_id": "FDA|Vet-LIRN|2021|Klebsiella spp|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+   "n": 56,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4] through > 4",
+      "lower_bound": 2,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 8
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 0.25"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "(2, 4] through > 4"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(0.5, 1]",
+     "end_category": "(0.5, 1]",
+     "n": 56,
+     "count": 3,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-03",
+  "cohort_id": "FDA|Vet-LIRN|2022|E. coli|Dogs|Urinary Tract Infections (UTI)|Ticarcillin",
+  "source": "FDA animal pathogens",
+  "organism": "E. coli",
+  "drug": "Ticarcillin",
+  "n": 28,
+  "counts": [
+   14,
+   2,
+   1,
+   0,
+   11
+  ],
+  "input": {
+   "cohort_id": "FDA|Vet-LIRN|2022|E. coli|Dogs|Urinary Tract Infections (UTI)|Ticarcillin",
+   "n": 28,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 8",
+      "lower_bound": null,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "(32, 64]",
+      "lower_bound": 32,
+      "upper_bound": 64,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 64
+     },
+     {
+      "label": "> 64",
+      "lower_bound": 64,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 128
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 8"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "> 64"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(16, 32]",
+     "end_category": "(16, 32]",
+     "n": 28,
+     "count": 1,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-04",
+  "cohort_id": "FDA|Vet-LIRN|2019|Klebsiella spp|Dogs|Urinary Tract Infections (UTI)|Imipenem",
+  "source": "FDA animal pathogens",
+  "organism": "Klebsiella spp",
+  "drug": "Imipenem",
+  "n": 32,
+  "counts": [
+   31,
+   1,
+   0,
+   0,
+   0
+  ],
+  "input": {
+   "cohort_id": "FDA|Vet-LIRN|2019|Klebsiella spp|Dogs|Urinary Tract Infections (UTI)|Imipenem",
+   "n": 32,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 1",
+      "lower_bound": null,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2] through (2, 4]",
+      "lower_bound": 1,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16] through (16, 32]",
+      "lower_bound": 8,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "(32, 64] through > 64",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 128
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 1"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "<= 1"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(4, 8]",
+     "end_category": "(4, 8]",
+     "n": 32,
+     "count": 0,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-05",
+  "cohort_id": "FDA|NAHLN|2018|E. coli|Dogs|Other Tissues/ Body Sites|Marbofloxacin",
+  "source": "FDA animal pathogens",
+  "organism": "E. coli",
+  "drug": "Marbofloxacin",
+  "n": 175,
+  "counts": [
+   139,
+   8,
+   0,
+   0,
+   28
+  ],
+  "input": {
+   "cohort_id": "FDA|NAHLN|2018|E. coli|Dogs|Other Tissues/ Body Sites|Marbofloxacin",
+   "n": 175,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4] through > 4",
+      "lower_bound": 2,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 8
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 0.25"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "(2, 4] through > 4"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(0.5, 1]",
+     "end_category": "(0.5, 1]",
+     "n": 175,
+     "count": 0,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-06",
+  "cohort_id": "FDA|NAHLN|2019|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+  "source": "FDA animal pathogens",
+  "organism": "E. coli",
+  "drug": "Amikacin",
+  "n": 301,
+  "counts": [
+   286,
+   13,
+   2,
+   0,
+   0
+  ],
+  "input": {
+   "cohort_id": "FDA|NAHLN|2019|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+   "n": 301,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "(32, 64] through > 64",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 128
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 4"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "<= 4"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(8, 16]",
+     "end_category": "(8, 16]",
+     "n": 301,
+     "count": 2,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-07",
+  "cohort_id": "FDA|NAHLN|2021|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+  "source": "FDA animal pathogens",
+  "organism": "E. coli",
+  "drug": "Amikacin",
+  "n": 325,
+  "counts": [
+   314,
+   8,
+   2,
+   0,
+   1
+  ],
+  "input": {
+   "cohort_id": "FDA|NAHLN|2021|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+   "n": 325,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 4",
+      "lower_bound": null,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8]",
+      "lower_bound": 4,
+      "upper_bound": 8,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 8
+     },
+     {
+      "label": "(8, 16]",
+      "lower_bound": 8,
+      "upper_bound": 16,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 16
+     },
+     {
+      "label": "(16, 32]",
+      "lower_bound": 16,
+      "upper_bound": 32,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 32
+     },
+     {
+      "label": "> 32",
+      "lower_bound": 32,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 64
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 4"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "<= 4"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(8, 16]",
+     "end_category": "(8, 16]",
+     "n": 325,
+     "count": 2,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-08",
+  "cohort_id": "FDA|Vet-LIRN|2021|E. coli|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+  "source": "FDA animal pathogens",
+  "organism": "E. coli",
+  "drug": "Enrofloxacin",
+  "n": 719,
+  "counts": [
+   624,
+   22,
+   11,
+   6,
+   56
+  ],
+  "input": {
+   "cohort_id": "FDA|Vet-LIRN|2021|E. coli|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+   "n": 719,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "> 2",
+      "lower_bound": 2,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 4
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 0.25"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "(0.5, 1]"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(0.5, 1]",
+     "end_category": "(0.5, 1]",
+     "n": 719,
+     "count": 11,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-09",
+  "cohort_id": "FDA|NAHLN|2020|E. coli|Dogs|Urinary Tract Infections (UTI)|Trimethoprim/Sulfamethoxazole",
+  "source": "FDA animal pathogens",
+  "organism": "E. coli",
+  "drug": "Trimethoprim/Sulfamethoxazole",
+  "n": 592,
+  "counts": [
+   527,
+   4,
+   1,
+   1,
+   59
+  ],
+  "input": {
+   "cohort_id": "FDA|NAHLN|2020|E. coli|Dogs|Urinary Tract Infections (UTI)|Trimethoprim/Sulfamethoxazole",
+   "n": 592,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.5",
+      "lower_bound": null,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1]",
+      "lower_bound": 0.5,
+      "upper_bound": 1,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 1
+     },
+     {
+      "label": "(1, 2]",
+      "lower_bound": 1,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "> 4",
+      "lower_bound": 4,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 8
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<= 0.5"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "(2, 4]"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(1, 2]",
+     "end_category": "(1, 2]",
+     "n": 592,
+     "count": 1,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "case-10",
+  "cohort_id": "FDA|NAHLN|2019|S. pseudintermedius|Dogs|Other Tissues/ Body Sites|Ampicillin",
+  "source": "FDA animal pathogens",
+  "organism": "S. pseudintermedius",
+  "drug": "Ampicillin",
+  "n": 773,
+  "counts": [
+   290,
+   56,
+   102,
+   48,
+   277
+  ],
+  "input": {
+   "cohort_id": "FDA|NAHLN|2019|S. pseudintermedius|Dogs|Other Tissues/ Body Sites|Ampicillin",
+   "n": 773,
+   "panel": {
+    "categories": [
+     {
+      "label": "<= 0.25",
+      "lower_bound": null,
+      "upper_bound": 0.25,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "(0.25, 0.5]",
+      "lower_bound": 0.25,
+      "upper_bound": 0.5,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.5
+     },
+     {
+      "label": "(0.5, 1] through (1, 2]",
+      "lower_bound": 0.5,
+      "upper_bound": 2,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 2
+     },
+     {
+      "label": "(2, 4]",
+      "lower_bound": 2,
+      "upper_bound": 4,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 4
+     },
+     {
+      "label": "(4, 8] through > 8",
+      "lower_bound": 4,
+      "upper_bound": null,
+      "lower_closed": false,
+      "upper_closed": false,
+      "panel_value": 16
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "(0.5, 1] through (1, 2]"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "(4, 8] through > 8"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "(0.5, 1] through (1, 2]",
+     "end_category": "(0.5, 1] through (1, 2]",
+     "n": 773,
+     "count": 102,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-01",
+  "cohort_id": "NORM2024|T88|Cefotaxime",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pneumoniae",
+  "drug": "Cefotaxime",
+  "n": 630,
+  "counts": [
+   577,
+   43,
+   10,
+   0,
+   0
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T88|Cefotaxime",
+   "n": 630,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.008 through 0.03",
+      "lower_bound": null,
+      "upper_bound": 0.03,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06 through 0.25",
+      "lower_bound": 0.06,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5 through 2",
+      "lower_bound": 0.5,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4 through 16",
+      "lower_bound": 4.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32 through >=128.0",
+      "lower_bound": 32.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<=0.008 through 0.03"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "<=0.008 through 0.03"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.5 through 2",
+     "end_category": "0.5 through 2",
+     "n": 630,
+     "count": 10,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-02",
+  "cohort_id": "NORM2024|T88|Chloramphenicol",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pneumoniae",
+  "drug": "Chloramphenicol",
+  "n": 630,
+  "counts": [
+   0,
+   0,
+   266,
+   364,
+   0
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T88|Chloramphenicol",
+   "n": 630,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.008 through 0.03",
+      "lower_bound": null,
+      "upper_bound": 0.03,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06 through 0.25",
+      "lower_bound": 0.06,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5 through 2",
+      "lower_bound": 0.5,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4 through 16",
+      "lower_bound": 4.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32 through >=128.0",
+      "lower_bound": 32.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "4 through 16"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "4 through 16"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.5 through 2",
+     "end_category": "0.5 through 2",
+     "n": 630,
+     "count": 266,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-03",
+  "cohort_id": "NORM2024|T88|Clindamycin",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pneumoniae",
+  "drug": "Clindamycin",
+  "n": 630,
+  "counts": [
+   22,
+   582,
+   0,
+   1,
+   25
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T88|Clindamycin",
+   "n": 630,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.008 through 0.03",
+      "lower_bound": null,
+      "upper_bound": 0.03,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06 through 0.25",
+      "lower_bound": 0.06,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5 through 2",
+      "lower_bound": 0.5,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4 through 16",
+      "lower_bound": 4.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32 through >=128.0",
+      "lower_bound": 32.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "0.06 through 0.25"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "0.06 through 0.25"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.5 through 2",
+     "end_category": "0.5 through 2",
+     "n": 630,
+     "count": 0,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-04",
+  "cohort_id": "NORM2024|T88|Erythromycin",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pneumoniae",
+  "drug": "Erythromycin",
+  "n": 630,
+  "counts": [
+   98,
+   494,
+   1,
+   11,
+   26
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T88|Erythromycin",
+   "n": 630,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.008 through 0.03",
+      "lower_bound": null,
+      "upper_bound": 0.03,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06 through 0.25",
+      "lower_bound": 0.06,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5 through 2",
+      "lower_bound": 0.5,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4 through 16",
+      "lower_bound": 4.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32 through >=128.0",
+      "lower_bound": 32.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "0.06 through 0.25"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "0.06 through 0.25"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.5 through 2",
+     "end_category": "0.5 through 2",
+     "n": 630,
+     "count": 1,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-05",
+  "cohort_id": "NORM2024|T88|Penicillin G",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pneumoniae",
+  "drug": "Penicillin G",
+  "n": 630,
+  "counts": [
+   565,
+   41,
+   19,
+   5,
+   0
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T88|Penicillin G",
+   "n": 630,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.008 through 0.03",
+      "lower_bound": null,
+      "upper_bound": 0.03,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06 through 0.25",
+      "lower_bound": 0.06,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5 through 2",
+      "lower_bound": 0.5,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4 through 16",
+      "lower_bound": 4.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32 through >=128.0",
+      "lower_bound": 32.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<=0.008 through 0.03"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "0.06 through 0.25"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.5 through 2",
+     "end_category": "0.5 through 2",
+     "n": 630,
+     "count": 19,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-06",
+  "cohort_id": "NORM2024|T88|Tetracycline",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pneumoniae",
+  "drug": "Tetracycline",
+  "n": 630,
+  "counts": [
+   0,
+   541,
+   43,
+   11,
+   35
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T88|Tetracycline",
+   "n": 630,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.008 through 0.03",
+      "lower_bound": null,
+      "upper_bound": 0.03,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.03
+     },
+     {
+      "label": "0.06 through 0.25",
+      "lower_bound": 0.06,
+      "upper_bound": 0.25,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.25
+     },
+     {
+      "label": "0.5 through 2",
+      "lower_bound": 0.5,
+      "upper_bound": 2.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 2.0
+     },
+     {
+      "label": "4 through 16",
+      "lower_bound": 4.0,
+      "upper_bound": 16.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 16.0
+     },
+     {
+      "label": "32 through >=128.0",
+      "lower_bound": 32.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "0.06 through 0.25"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "0.5 through 2"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.5 through 2",
+     "end_category": "0.5 through 2",
+     "n": 630,
+     "count": 43,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-07",
+  "cohort_id": "NORM2024|T90|Clindamycin",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pyogenes",
+  "drug": "Clindamycin",
+  "n": 354,
+  "counts": [
+   7,
+   329,
+   2,
+   3,
+   13
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T90|Clindamycin",
+   "n": 354,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004 through 0.016",
+      "lower_bound": null,
+      "upper_bound": 0.016,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03 through 0.125",
+      "lower_bound": 0.03,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25 through 1",
+      "lower_bound": 0.25,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2 through 8",
+      "lower_bound": 2.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16 through >=128.0",
+      "lower_bound": 16.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "0.03 through 0.125"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "0.03 through 0.125"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.25 through 1",
+     "end_category": "0.25 through 1",
+     "n": 354,
+     "count": 2,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-08",
+  "cohort_id": "NORM2024|T90|Erythromycin",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pyogenes",
+  "drug": "Erythromycin",
+  "n": 354,
+  "counts": [
+   1,
+   328,
+   3,
+   5,
+   17
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T90|Erythromycin",
+   "n": 354,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004 through 0.016",
+      "lower_bound": null,
+      "upper_bound": 0.016,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03 through 0.125",
+      "lower_bound": 0.03,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25 through 1",
+      "lower_bound": 0.25,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2 through 8",
+      "lower_bound": 2.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16 through >=128.0",
+      "lower_bound": 16.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "0.03 through 0.125"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "0.03 through 0.125"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.25 through 1",
+     "end_category": "0.25 through 1",
+     "n": 354,
+     "count": 3,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-09",
+  "cohort_id": "NORM2024|T90|Penicillin G",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pyogenes",
+  "drug": "Penicillin G",
+  "n": 354,
+  "counts": [
+   349,
+   5,
+   0,
+   0,
+   0
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T90|Penicillin G",
+   "n": 354,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004 through 0.016",
+      "lower_bound": null,
+      "upper_bound": 0.016,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03 through 0.125",
+      "lower_bound": 0.03,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25 through 1",
+      "lower_bound": 0.25,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2 through 8",
+      "lower_bound": 2.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16 through >=128.0",
+      "lower_bound": 16.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "<=0.004 through 0.016"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "<=0.004 through 0.016"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.25 through 1",
+     "end_category": "0.25 through 1",
+     "n": 354,
+     "count": 0,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ },
+ {
+  "case": "human-10",
+  "cohort_id": "NORM2024|T90|Trimethoprim-sulfamethoxazole",
+  "source": "NORM Norway 2024",
+  "organism": "Streptococcus pyogenes",
+  "drug": "Trimethoprim-sulfamethoxazole",
+  "n": 354,
+  "counts": [
+   21,
+   325,
+   1,
+   3,
+   4
+  ],
+  "input": {
+   "cohort_id": "NORM2024|T90|Trimethoprim-sulfamethoxazole",
+   "n": 354,
+   "panel": {
+    "categories": [
+     {
+      "label": "<=0.004 through 0.016",
+      "lower_bound": null,
+      "upper_bound": 0.016,
+      "lower_closed": false,
+      "upper_closed": true,
+      "panel_value": 0.016
+     },
+     {
+      "label": "0.03 through 0.125",
+      "lower_bound": 0.03,
+      "upper_bound": 0.125,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 0.125
+     },
+     {
+      "label": "0.25 through 1",
+      "lower_bound": 0.25,
+      "upper_bound": 1.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 1.0
+     },
+     {
+      "label": "2 through 8",
+      "lower_bound": 2.0,
+      "upper_bound": 8.0,
+      "lower_closed": true,
+      "upper_closed": true,
+      "panel_value": 8.0
+     },
+     {
+      "label": "16 through >=128.0",
+      "lower_bound": 16.0,
+      "upper_bound": null,
+      "lower_closed": true,
+      "upper_closed": false,
+      "panel_value": 128.0
+     }
+    ]
+   },
+   "unit": "mg/L",
+   "iid": true,
+   "confidence_level": 0.95,
+   "summaries": {
+    "quantiles": [
+     {
+      "probability": 0.5,
+      "convention": "ceiling",
+      "category": "0.03 through 0.125"
+     },
+     {
+      "probability": 0.9,
+      "convention": "ceiling",
+      "category": "0.03 through 0.125"
+     }
+    ]
+   },
+   "additional_counts": [
+    {
+     "start_category": "0.25 through 1",
+     "end_category": "0.25 through 1",
+     "n": 354,
+     "count": 1,
+     "unit": "mg/L",
+     "source": "Controlled disclosure from the complete table of the cohort"
+    }
+   ]
+  }
+ }
+]

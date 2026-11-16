@@ -1,6 +1,6 @@
 # Find and use additional information in a published MIC table
 
-MIC-50-90 1.0.0. These examples use original aggregate counts from four independent publications. They describe the assayed isolates in two or three broad MIC groups. They do not reconstruct the full assay panel or claim treatment susceptibility.
+These examples use original aggregate counts from four independent publications. They describe the assayed isolates in two or three broad MIC groups. They do not reconstruct the full assay panel or claim treatment susceptibility.
 
 ## Start with the published count
 
@@ -43,6 +43,6 @@ The second report shows both stages. The additional count reduces missing inform
 
 ## A conflict that needs source clarification
 
-`amikacin-14-conflict.json` retains a real source inconsistency under ceiling ranks: MIC90=4 in 14 isolates allows at most one value above 4, whereas two values are reported >=16. The prepared input is expected to be refused. Do not change the denominator or silently discard a source value to force a numerical answer.
+`amikacin-14-conflict.json` contains a real source inconsistency under ceiling ranks: MIC90=4 in 14 isolates allows at most one value above 4, whereas two values are reported >=16. The prepared input is expected to be refused. Do not change the denominator or silently discard a source value to force a numerical answer.
 
-The complete extraction register, inspected-supplement descriptions and source hashes are in `results/v1.0.0/publication-methods-20261001/`. Fourteen previously examined papers and 16 newly extracted papers make up its purposive 30-paper review. These examples are demonstrations of using published data, not a human usability study or evidence of a new statistical method.
+These examples are demonstrations of using published data, not a human usability study or evidence of a new statistical method.

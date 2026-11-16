@@ -6,7 +6,7 @@ With explicitly re-summarized MIC50 = 0.125 and MIC90 = 0.25 mg/L, the answer is
 
 ## Run
 
-Install the version 1.0.0 wheel, then run these single-line commands from the extracted source/reproduction package:
+Install MIC-50-90 (`pip install mic-50-90==1.0.1`), then run these single-line commands from the repository root:
 
 ```text
 mic-50-90 batch examples/published_table/summaries.csv --panels examples/published_table/panels.csv --targets examples/published_table/targets.csv --output-dir output/published-summary
@@ -21,6 +21,6 @@ The factual counts come from the local Candida albicans row in [Table 1 of Delma
 
 We choose ceiling ranks explicitly: 1451 and 2612. This is a new summary of the full published counts, **not proof of the original authors' finite-sample quantile convention**. Interior categories represent the reported-value scale; the two censored end categories are retained. The representative 128 encodes >64 and is not a measured value. This choice cannot affect the selected threshold of 0.5.
 
-The independent check is `2902 − 2612 = 290` for the upper compatible count and `38 + 9 + 18 + 9 + 1 + 1 + 4 + 5 = 85` for the observed count. The reproduction package's `run_published_example.py` asserts agreement with the program and saves CHECK.json and RECEIPT.json.
+The independent check is `2902 − 2612 = 290` for the upper compatible count and `38 + 9 + 18 + 9 + 1 + 1 + 4 + 5 = 85` for the observed count.
 
-This exploratory follow-up was added after the frozen researcher pilot. It does not replace the ten original refused tasks, estimate population prevalence or assign clinical susceptibility categories.
+This is an exploratory example. It does not estimate population prevalence or assign clinical susceptibility categories.

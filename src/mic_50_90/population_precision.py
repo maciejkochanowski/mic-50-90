@@ -46,7 +46,7 @@ def maximum_population_partition(population, panel, *, precision_pp, required_cu
     certain, possible = path(False), path(True)
     low, high = max(0,len(certain)-1), max(0,len(possible)-1)
     bins = []
-    for a,b in zip(certain,certain[1:]):
+    for a,b in zip(certain,certain[1:], strict=False):
         r = rows[a,b]
         bins.append(dict(r,label=' through '.join(dict.fromkeys([panel.labels[a],panel.labels[b-1]])),
             width_pp=float(100*width(r,False)), cumulative_width_pp=float(100*width(rows[0,b],False))))

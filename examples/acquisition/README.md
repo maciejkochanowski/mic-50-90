@@ -1,6 +1,6 @@
 # Obtain only the additional counts your question needs
 
-Version **1.0.0**. The first example is a constructed teaching example, not patient data or measured laboratory work. It uses the retained inputs in `examples/decision_planning`.
+The first example is a constructed teaching example, not patient data or measured laboratory work. It uses the inputs in `examples/decision_planning`.
 
 Ten isolates have MIC50=1 and MIC90=2 mg/L under ceiling ranks. We want to know whether fewer than 5% exceeded each of 2, 4 and 8 mg/L. With ten isolates, each question asks whether the corresponding count is zero.
 
@@ -40,4 +40,4 @@ This uses the original-publication inputs and their existing source declarations
 mic-50-90 reporting-audit examples/acquisition/laboratory-counts.csv --panels examples/acquisition/laboratory-panels.csv --targets examples/acquisition/laboratory-targets.csv --acquisition-plan --round-cost 1 --output-dir output/laboratory-requests
 ```
 
-These files contain the first cohort in the retained CDC/NARMS selection, without selecting it for a favorable outcome. Its source identifier and the copied panel are preserved. The planner receives only the derived summaries; the audit separately uses the complete counts to show what those summaries omit. The threshold questions are descriptive examples, not susceptibility classifications.
+These files contain the first cohort of the CDC/NARMS laboratory selection, without selecting it for a favorable outcome. Its source identifier and the copied panel are preserved. The planner receives only the derived summaries; the audit separately uses the complete counts to show what those summaries omit. The threshold questions are descriptive examples, not susceptibility classifications.

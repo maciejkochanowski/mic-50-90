@@ -1,0 +1,14 @@
+{
+  "protocol_label": "synthetic-calibration-preparation-v1",
+  "unit_definition": "One synthetic independent study, containing all prespecified panel cohorts",
+  "cohort_selection_rule": "Exactly one cohort on P1 and one on P2 in every calibration and target study; no selection by scores",
+  "roster_provenance": "Small hand-written teaching roster, with three calibration studies and one target study; not empirical evidence",
+  "counts_provenance": "Synthetic complete histograms generated for arithmetic and workflow checks; not empirical evidence",
+  "grouping": {
+    "population": "Synthetic teaching example"
+  },
+  "panel_provenance": {
+    "P1": "Explicit synthetic grid <=1, 2, >2 mg/L, with recorded values 1, 2, 4 mg/L",
+    "P2": "Explicit synthetic grid <=2, 4, >4 mg/L, with recorded values 2, 4, 8 mg/L"
+  }
+}

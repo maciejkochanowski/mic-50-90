@@ -240,7 +240,7 @@ def _log_event_positive(log_probabilities, n, summaries, minimum_index, maximum_
     log_factorials = gammaln(np.arange(n + 1, dtype=float) + 1)
     previous = np.full(n + 1, NEG_INF)
     previous[0] = 0.0
-    for left, right in zip(boundaries[:-1], boundaries[1:]):
+    for left, right in zip(boundaries[:-1], boundaries[1:], strict=True):
         log_mass = float(logsumexp(log_probabilities[left:right]))
         current = np.full(n + 1, NEG_INF)
         prior_counts = np.flatnonzero(np.isfinite(previous))
@@ -293,7 +293,7 @@ def log_order_event_probability(
     lost_mass = np.any((p > 0) & (normalized == 0))
     p = normalized
     n = _exact_integer(n, "n", minimum=1)
-    summaries = []
+    validated: list[QuantileSummary] = []
     for q in quantiles:
         if not isinstance(q, QuantileSummary):
             raise ValueError("quantiles must contain QuantileSummary records")
@@ -302,8 +302,8 @@ def log_order_event_probability(
         probability = decimal_probability(q.as_dict()["probability"])
         if rank > n or category >= len(p):
             raise ValueError("quantile rank or category_index is outside the declared sample/panel")
-        summaries.append(QuantileSummary(probability, rank, category, q.category_label, q.convention))
-    summaries = tuple(sorted(summaries, key=lambda item: item.rank))
+        validated.append(QuantileSummary(probability, rank, category, q.category_label, q.convention))
+    summaries = tuple(sorted(validated, key=lambda item: item.rank))
     if not 1 <= len(summaries) <= 2:
         raise ValueError("Exact population likelihood supports one or two quantiles")
     if len(summaries) == 2:

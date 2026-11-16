@@ -1,0 +1,240 @@
+{
+ "case": "human-10",
+ "method": "joint-exact",
+ "cohort_id": "NORM2024|T90|Trimethoprim-sulfamethoxazole",
+ "source": "NORM Norway 2024",
+ "n": 354,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.10506501898635179,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "31c6539a3efe0cf3a229126f8486bad43ba3f4b3998c584c8baa354b7e6be7be",
+  "family_size": 4,
+  "sample_size": 354,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5646432121213701
+   ],
+   [
+    0.8548320807813852,
+    0.99998228938661
+   ],
+   [
+    0.8581181649654172,
+    1.0
+   ],
+   [
+    0.8581181649654172,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5646432121213701
+   ],
+   [
+    0.2901888686600152,
+    0.99998228938661
+   ],
+   [
+    0.0,
+    0.08428572796523638
+   ],
+   [
+    0.0,
+    0.14188183503458277
+   ],
+   [
+    0.0,
+    0.14188183503458277
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5646432121213701
+   ],
+   [
+    0.8548320807813852,
+    0.99998228938661
+   ],
+   [
+    0.8581181649654172,
+    1.0
+   ],
+   [
+    0.8581181649654172,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5646432121213701
+   ],
+   [
+    0.2901888686600152,
+    0.99998228938661
+   ],
+   [
+    0.0,
+    0.08428572796523638
+   ],
+   [
+    0.0,
+    0.14188183503458277
+   ],
+   [
+    0.0,
+    0.14188183503458277
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 5808,
+  "excluded_boxes": 1338,
+  "elapsed_seconds": 115.39275454496965,
+  "baseline_seconds": 0.005676753935404122,
+  "refinement_seconds": 115.38695852190722,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5646432121213701,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5558206619319735
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8548320807813852,
+    "upper": 0.99998228938661,
+    "inner_lower": 0.8593680248002985,
+    "inner_upper": 0.9971751412429377
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8581181649654172,
+    "upper": 1.0,
+    "inner_lower": 0.862551972310248,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8581181649654172,
+    "upper": 1.0,
+    "inner_lower": 0.8669857796550787,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.2901888686600152,
+    "upper": 0.99998228938661,
+    "inner_lower": 0.3035473628683248,
+    "inner_upper": 0.9971751412429377
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.2934749528440472,
+    "upper": 1.0,
+    "inner_lower": 0.30673131037827434,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.29472481267892825,
+    "upper": 1.0,
+    "inner_lower": 0.311165117723105,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.4353567878786299,
+    "upper": 1.0,
+    "inner_lower": 0.4441793380680264,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.08428572796523638,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.07402272835315825
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14516791921861474,
+    "inner_lower": 8.85530669503254e-06,
+    "inner_upper": 0.1361981678548709
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 1.7710613390065074e-05,
+    "upper": 0.14516791921861474,
+    "inner_lower": 0.002824858757062177,
+    "inner_upper": 0.14063197519970158
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14188183503458277,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12858041300009068
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14188183503458277,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13744802768975203
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14188183503458277,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13301422034492136
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 0,
+  "endpoint_gap_pp": 1.6440305044176768
+ },
+ "refinement_budget_seconds": 114.87554851605091,
+ "seconds": 115.51957239897456,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

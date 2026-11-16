@@ -38,7 +38,7 @@ class BayesianTailResult:
     def as_dict(self, labels: list[str]) -> dict[str, object]:
         return {
             "method": "self-normalized importance sampling from a Dirichlet prior",
-            "prior_alpha": dict(zip(labels, self.prior_alpha)),
+            "prior_alpha": dict(zip(labels, self.prior_alpha, strict=True)),
             "draws": self.draws,
             "effective_sample_size": self.effective_sample_size,
             "prior_predictive_log_probability_of_reported_event": self.prior_predictive_log_probability,

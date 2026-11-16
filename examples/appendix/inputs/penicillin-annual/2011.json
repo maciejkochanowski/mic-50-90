@@ -1,0 +1,63 @@
+{
+  "cohort_id": "de-Miguel-2011",
+  "n": 466,
+  "unit": "mg/L",
+  "panel": {
+    "categories": [
+      {
+        "label": "<=0.06",
+        "lower_bound": null,
+        "upper_bound": 0.06,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 0.06
+      },
+      {
+        "label": "(0.06,2]",
+        "lower_bound": 0.06,
+        "upper_bound": 2,
+        "lower_closed": false,
+        "upper_closed": true,
+        "panel_value": 2
+      },
+      {
+        "label": ">2",
+        "lower_bound": 2,
+        "upper_bound": null,
+        "lower_closed": false,
+        "upper_closed": false,
+        "panel_value": 4
+      }
+    ]
+  },
+  "additional_counts": [
+    {
+      "threshold": 0.06,
+      "count": 123,
+      "n": 466,
+      "unit": "mg/L",
+      "source": "https://doi.org/10.3390/antibiotics12020289; verified published category counts"
+    },
+    {
+      "threshold": 2,
+      "count": 1,
+      "n": 466,
+      "unit": "mg/L",
+      "source": "https://doi.org/10.3390/antibiotics12020289; verified published category counts"
+    }
+  ],
+  "iid": false,
+  "confidence_level": 0.95,
+  "organism": "Streptococcus pneumoniae",
+  "antimicrobial": "Penicillin",
+  "source_doi": "10.3390/antibiotics12020289",
+  "source_location": "Table 1, year 2011; source-defined thresholds",
+  "source": "de Miguel et al. (2023), Madrid invasive isolates; https://doi.org/10.3390/antibiotics12020289",
+  "panel_basis": "Broad groups defined by the published count thresholds; not a fine MIC histogram",
+  "rank_basis": "Counts-only analysis; no quantile convention assumed",
+  "explain_counts": true,
+  "targets": [],
+  "question_note": "Describe the three source-defined sample groups for this year.",
+  "published_mic50": "0.023",
+  "published_mic90": "1"
+}

@@ -38,7 +38,7 @@ def _integer(value, name):
 def _interval(row, names, key, corrections):
     """Normalize only bounded endpoint arithmetic error, preserving evidence."""
     values = []
-    identifiers = dict(zip(('unit_id', 'cohort_id', 'target_id'), key))
+    identifiers = dict(zip(('unit_id', 'cohort_id', 'target_id'), key, strict=True))
     for name in names:
         raw = row.get(name)
         if isinstance(raw, bool):
@@ -212,7 +212,7 @@ def audit_calibration(roster, observations, *, level=None, assurance=.95,
     targets, corrections = [], []
     for key in intended:
         row = observed.get(key)
-        item = dict(zip(('unit_id', 'cohort_id', 'target_id'), key))
+        item = dict(zip(('unit_id', 'cohort_id', 'target_id'), key, strict=True))
         item.update(status='unavailable', reason='Missing planned observation', available=False,
                     covered=False, truth=None, lower=None, upper=None, width=None,
                     baseline_lower=None, baseline_upper=None, width_reduction=None)

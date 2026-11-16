@@ -2,7 +2,7 @@
 
 
 
-MIC-50-90 1.0.0 describes the MIC categories supported by the information you supply. It does not fill in a plausible histogram or create isolate records.
+MIC-50-90 1.0.1 describes the MIC categories supported by the information you supply. It does not fill in a plausible histogram or create isolate records.
 
 
 

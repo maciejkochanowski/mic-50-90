@@ -1,0 +1,85 @@
+{
+ "comparison": "planning_controls",
+ "created_utc": "2026-11-02T05:33:36+00:00",
+ "status": "complete",
+ "full_design": true,
+ "elapsed_seconds": 1.460141652962193,
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c6s1b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 192
+ },
+ "limits": {
+  "time_limit_seconds": 5,
+  "max_states": 5000
+ },
+ "stress_seed": 2026092802,
+ "controlled": {
+  "tasks": 2400,
+  "agreements": 2400,
+  "disagreements": 0,
+  "status_counts": {
+   "already_resolved": 2064,
+   "optimal": 196,
+   "impossible": 140
+  },
+  "oracle_status_counts": {
+   "already_resolved": 2064,
+   "optimal": 196,
+   "impossible": 140
+  },
+  "checked_histogram_paths": 8828,
+  "checked_witnesses": 140,
+  "seconds": 1.2473560420330614,
+  "failures": [],
+  "reports": 50,
+  "compatible_histogram_task_pairs": 9840
+ },
+ "stress": {
+  "tasks": 128,
+  "agreements": 128,
+  "disagreements": 0,
+  "status_counts": {
+   "already_resolved": 49,
+   "optimal": 62,
+   "impossible": 17
+  },
+  "oracle_status_counts": {
+   "already_resolved": 49,
+   "optimal": 62,
+   "impossible": 17
+  },
+  "checked_histogram_paths": 1015,
+  "checked_witnesses": 17,
+  "seconds": 0.19158337905537337,
+  "failures": [],
+  "method_counts": {
+   "no_additional_information_required": 49,
+   "integer_prefix_decision_tree": 62,
+   "weighted_ordered_prefix_search": 17
+  }
+ },
+ "contract": {
+  "controls": 31,
+  "passed": 31,
+  "failed": [],
+  "seconds": 0.02118123904801905
+ },
+ "all_agree": true
+}

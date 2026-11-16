@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Software-only verification; article material is maintained separately.
+# Software verification: source integrity, self-test, Python and JavaScript tests.
 # Usage: bash verify.sh [MANIFEST]
 set -euo pipefail
 cd "$(dirname "$0")"

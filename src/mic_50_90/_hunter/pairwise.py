@@ -110,7 +110,7 @@ def as_region(problem):
             raise ValueError("reporting variants must share n and panel")
         matrix, lower, upper = item.linear_constraints
         constraints = []
-        for row, lo, hi in zip(matrix, lower, upper):
+        for row, lo, hi in zip(matrix, lower, upper, strict=True):
             row = np.asarray(row)
             if row.shape != (k,) or not np.all(np.isin(row, (0, 1))):
                 raise ValueError("only contiguous indicator constraints are supported")
@@ -243,7 +243,7 @@ def _max_from_scores(region,ranges,scores,deadline):
         _check_deadline(deadline)
         checks += 1
         constraints = []
-        for (a,b), row in zip(ranges, scores):
+        for (a,b), row in zip(ranges, scores, strict=True):
             allowed = [c for c,value in enumerate(row) if value >= t]
             if not allowed:
                 return None
@@ -464,12 +464,12 @@ def certify_moment_dual(m,moments,coefficients):
                 value += integers[pair_index[(i,j)]]
         lhs[mask] = value
     required = [0]+[common]*((1<<m)-1)
-    repair_int = max(0,max(want-got for want,got in zip(required,lhs)))
+    repair_int = max(0,max(want-got for want,got in zip(required,lhs, strict=True)))
     repair = Fraction(repair_int,common)
     repaired = (y[0]+repair,*y[1:])
-    slack = Fraction(min(got+repair_int-want for want,got in zip(required,lhs)),common)
+    slack = Fraction(min(got+repair_int-want for want,got in zip(required,lhs, strict=True)),common)
     objective = repaired[0]+sum((coefficient*(moment.upper if coefficient>=0 else moment.lower)
-                                for coefficient,moment in zip(repaired[1:],moments)),ZERO)
+                                for coefficient,moment in zip(repaired[1:],moments, strict=True)),ZERO)
     return DualCertificate(repaired,repair,slack,1<<m,min(ONE,max(ZERO,objective)),slack>=0)
 
 
@@ -478,7 +478,7 @@ def _moment_lp(m,moments,deadline):
         return None,"not attempted: more than 12 events"
     try:
         _check_deadline(deadline)
-        from scipy.optimize import linprog
+        from .._solver_resources import linprog
         pairs = tuple((i,j) for i in range(m) for j in range(i+1,m))
         masks = np.arange(1<<m,dtype=np.int64)
         indicators = ((masks[:,None] >> np.arange(m)) & 1).astype(float)
@@ -530,12 +530,12 @@ def _simplex_box(lower,upper,minimum_length=2):
     lower,upper = tuple(_threshold(x) for x in lower),tuple(_threshold(x) for x in upper)
     if len(lower) < minimum_length or len(lower) != len(upper):
         raise ValueError("box dimensions must agree")
-    if any(a>b for a,b in zip(lower,upper)) or sum(lower)>1 or sum(upper)<1:
+    if any(a>b for a,b in zip(lower,upper, strict=True)) or sum(lower)>1 or sum(upper)<1:
         raise ValueError("empty probability box on the simplex")
     # Individual tightening is exact for a box intersected with sum p=1.
     sumlo,sumhi = sum(lower),sum(upper)
-    lo = tuple(max(a,ONE-(sumhi-b)) for a,b in zip(lower,upper))
-    hi = tuple(min(b,ONE-(sumlo-a)) for a,b in zip(lower,upper))
+    lo = tuple(max(a,ONE-(sumhi-b)) for a,b in zip(lower,upper, strict=True))
+    hi = tuple(min(b,ONE-(sumlo-a)) for a,b in zip(lower,upper, strict=True))
     return lo,hi
 
 
@@ -551,16 +551,16 @@ def pair_count_distribution_box_bounds(n,lower,upper,*,deadline=None):
     lower,upper = _simplex_box(lower,upper,4)
     if len(lower) != 4:
         raise ValueError("four membership cells required")
-    intervals = tuple((_float_interval(a)[0],_float_interval(b)[1]) for a,b in zip(lower,upper))
+    intervals = tuple((_float_interval(a)[0],_float_interval(b)[1]) for a,b in zip(lower,upper, strict=True))
     return _pair_interval_dp(n,intervals,deadline)
 
 
 def _score_envelopes(n,lo,hi):
     masses_lo,masses_hi = _binomial_masses(n,lo),_binomial_masses(n,hi)
     scores_lo,scores_hi = _exact_scores(n,lo),_exact_scores(n,hi)
-    lower = tuple(min(a,b) for a,b in zip(scores_lo,scores_hi))
+    lower = tuple(min(a,b) for a,b in zip(scores_lo,scores_hi, strict=True))
     cdf_lo,sf_hi,upper = ZERO,ONE,[]
-    for a,b in zip(masses_lo,masses_hi):
+    for a,b in zip(masses_lo,masses_hi, strict=True):
         cdf_lo += a
         upper.append(min(ONE,2*min(cdf_lo,sf_hi)))
         sf_hi -= b
@@ -580,7 +580,6 @@ def _binomial_event_box(n,lo,hi,allowed):
             maximum = max(maximum,Fraction(comb(n,c))*mode**c*(1-mode)**(n-c))
         total_hi += maximum
     return ProbabilityBounds(total_lo,min(ONE,total_hi))
-
 
 
 

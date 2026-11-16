@@ -103,7 +103,7 @@ def _binomial_tails(n, probability, deadline=None):
     upper = _binomial_window(n, theta, 0, n, _UP, deadline)
     c_lo, c_hi, s_lo, s_hi = [], [], [_ZERO]*(n+1), [_ZERO]*(n+1)
     a, b = _ZERO, _ZERO
-    for i, (x, y) in enumerate(zip(lower, upper)):
+    for i, (x, y) in enumerate(zip(lower, upper, strict=True)):
         if i % 64 == 0:
             _check_time(deadline)
         a, b = _DOWN.add(a, x), _UP.add(b, y)
@@ -123,7 +123,7 @@ def _scores(n, probability, upper, deadline=None):
     cl, cu, sl, su = _binomial_tails(n, float(probability), deadline)
     context = _UP if upper else _DOWN
     return tuple(min(_ONE, context.multiply(Decimal(2), min(a, b)))
-                 for a, b in zip(cu if upper else cl, su if upper else sl))
+                 for a, b in zip(cu if upper else cl, su if upper else sl, strict=True))
 
 
 @lru_cache(maxsize=64)
@@ -143,7 +143,7 @@ def rectangle_probability_bounds(n, cdf, lower, upper, *, deadline=None):
     if len(lower) != len(f) or len(upper) != len(f):
         raise ValueError("one integer count interval is required per cut")
     constraints = {}
-    for q, lo, hi in zip(f, lower, upper):
+    for q, lo, hi in zip(f, lower, upper, strict=True):
         lo, hi = exact_integer(lo, "count lower", 0), exact_integer(hi, "count upper", 0)
         if lo > hi or lo > n:
             return 0., 0.
@@ -160,7 +160,7 @@ def rectangle_probability_bounds(n, cdf, lower, upper, *, deadline=None):
         theta = (q-prev_q)/(1-prev_q) if prev_q < 1 else Fraction(0)
         states = list(range(low, high+1))
         new_lo, new_hi = [_ZERO]*len(states), [_ZERO]*len(states)
-        for s0, wlo, whi in zip(prev_states, weights_lo, weights_hi):
+        for s0, wlo, whi in zip(prev_states, weights_lo, weights_hi, strict=True):
             if whi == 0:
                 continue
             _check_time(deadline)
@@ -169,12 +169,12 @@ def rectangle_probability_bounds(n, cdf, lower, upper, *, deadline=None):
                 continue
             plo = _binomial_window(n-s0, theta, begin-s0, end-s0, _DOWN, deadline)
             phi = _binomial_window(n-s0, theta, begin-s0, end-s0, _UP, deadline)
-            for offset, (a, b) in enumerate(zip(plo, phi), begin-low):
+            for offset, (a, b) in enumerate(zip(plo, phi, strict=True), begin-low):
                 new_lo[offset] = _DOWN.add(new_lo[offset], _DOWN.multiply(wlo, a))
                 new_hi[offset] = _UP.add(new_hi[offset], _UP.multiply(whi, b))
         prev_states, weights_lo, weights_hi, prev_q = states, new_lo, new_hi, q
     a, b = _ZERO, _ZERO
-    for x, y in zip(weights_lo, weights_hi):
+    for x, y in zip(weights_lo, weights_hi, strict=True):
         a, b = _DOWN.add(a, x), _UP.add(b, y)
     return _float_out(a, False), _float_out(min(b, _ONE), True)
 
@@ -263,12 +263,12 @@ def joint_report_pvalue(problems, probabilities):
 def _box_upper(n, matrices, lower, upper, deadline=None, reject_below=None):
     _check_time(deadline)
     columns = []
-    for l, u in zip(lower, upper):
+    for l, u in zip(lower, upper, strict=True):
         _check_time(deadline)
         _, c_hi, _, _ = _binomial_tails(n, float(l), deadline)
         _, _, _, s_hi = _binomial_tails(n, float(u), deadline)
         columns.append([_float_out(min(_ONE, _UP.multiply(Decimal(2), min(a, b))), True)
-                        for a, b in zip(c_hi, s_hi)])
+                        for a, b in zip(c_hi, s_hi, strict=True)])
     t = _max_statistic(matrices, np.array(columns).T)
     if t >= 1:
         return 1.
@@ -279,7 +279,7 @@ def _box_upper(n, matrices, lower, upper, deadline=None, reject_below=None):
     if reject_below is not None and Fraction.from_float(union_bound) < reject_below:
         return union_bound
     constraints = {}
-    for l, u in zip(lower, upper):
+    for l, u in zip(lower, upper, strict=True):
         lo_allowed = [i for i, v in enumerate(_scores(n, float(u), False, deadline)) if v > threshold]
         hi_allowed = [i for i, v in enumerate(_scores(n, float(l), False, deadline)) if v > threshold]
         if not lo_allowed or not hi_allowed:
@@ -314,8 +314,8 @@ def _point_lower(n, matrices, f, deadline):
         return 0.
     # A lower threshold gives a subset of the exact rejection event. Upper
     # acceptance probabilities therefore give a valid lower p-value bound.
-    lower_scores = [_scores(n, float(q), False, deadline)[int(s)] for q, s in zip(f, counts)]
-    upper_scores = [_scores(n, float(q), True, deadline)[int(s)] for q, s in zip(f, counts)]
+    lower_scores = [_scores(n, float(q), False, deadline)[int(s)] for q, s in zip(f, counts, strict=True)]
+    upper_scores = [_scores(n, float(q), True, deadline)[int(s)] for q, s in zip(f, counts, strict=True)]
     threshold = min(lower_scores)
     critical = int(np.argmin(upper_scores))
     critical_proved = all(upper_scores[critical] <= lower_scores[j]
@@ -364,7 +364,8 @@ def _interval_vectors(lower, upper, *, outward=True):
 
 def _attach_intervals(result, k, lo, hi, inner_lo=None, inner_hi=None):
     rows = []
-    for index,(a,b) in enumerate((a,b) for a in range(k) for b in range(a+1,k+1)):
+    pairs = [(start, stop) for start in range(k) for stop in range(start+1, k+1)]
+    for index,(a,b) in enumerate(pairs):
         valid = inner_lo is not None and np.isfinite(inner_lo[index]) and inner_lo[index] <= inner_hi[index]
         rows.append(dict(start_index=a,stop_index=b,lower=float(lo[index]),upper=float(hi[index]),
             inner_lower=float(inner_lo[index]) if valid else None, inner_upper=float(inner_hi[index]) if valid else None))
@@ -794,7 +795,7 @@ def update_population_distribution(previous_problems, problems, previous_result,
             raise ValueError('An update must retain the original denominator and panel')
         def rows(p):
             matrix, lo, hi = p.linear_constraints
-            return {(tuple(row), float(a), float(b)) for row, a, b in zip(matrix, lo, hi)}
+            return {(tuple(row), float(a), float(b)) for row, a, b in zip(matrix, lo, hi, strict=True)}
         if not rows(old).issubset(rows(new)):
             raise ValueError('An update must retain every original constraint and add only truthful counts')
     confidence = previous_result['confidence_level']

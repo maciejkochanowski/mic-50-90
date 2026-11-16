@@ -1,0 +1,251 @@
+{
+ "case": "human-01",
+ "method": "range-calibrated",
+ "cohort_id": "NORM2024|T88|Cefotaxime",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.0668373639928177,
+ "result": {
+  "requested_method": "range-calibrated",
+  "method": "range-calibrated",
+  "confidence_level": 0.95,
+  "constraint_signature": "77152b15ca2b71cee94e72f72d76f1adae2c246857fd5c8b5fcd06af2e57f2ad",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "coverage_scope": "all contiguous recorded category ranges on the fixed panel",
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "endpoint_gap_pp": 2.0000667788622195e-10,
+  "critical_score_fraction": "45035996273705/9007199254740992",
+  "compatible_histogram_search_complete": false,
+  "evaluated_histograms": 4,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "range_witnesses_checked": 2,
+  "population_row_lift_certificate": {
+   "status": "not_checked",
+   "reason": "Numerical witnesses or the general refinement suffice"
+  },
+  "probability_vertices_checked": 0,
+  "probability_certificates": [],
+  "count_partition_splits": 0,
+  "baseline_cdf_bounds": [
+   [
+    0.8620333187990851,
+    0.9946403807875954
+   ],
+   [
+    0.8620333187990851,
+    0.9946403807875954
+   ],
+   [
+    0.8802344042874347,
+    1.0
+   ],
+   [
+    0.8802344042874347,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.8620333187990851,
+    0.9946403807875954
+   ],
+   [
+    0.0,
+    0.11976559571256541
+   ],
+   [
+    0.005359619212404607,
+    0.03551852295833549
+   ],
+   [
+    0.0,
+    0.11976559571256529
+   ],
+   [
+    0.0,
+    0.11976559571256529
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.8620333187990851,
+    0.9946403807875954
+   ],
+   [
+    0.8620333187990851,
+    0.9946403807875954
+   ],
+   [
+    0.8802344042874347,
+    1.0
+   ],
+   [
+    0.8802344042874347,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.8620333187990851,
+    0.9946403807875954
+   ],
+   [
+    0.0,
+    0.11976559571256541
+   ],
+   [
+    0.005359619212404607,
+    0.03551852295833549
+   ],
+   [
+    0.0,
+    0.11976559571256529
+   ],
+   [
+    0.0,
+    0.11976559571256529
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
+  "elapsed_seconds": 0.015603731968440115,
+  "baseline_seconds": 0.003675672924146056,
+  "refinement_seconds": 0.012027235003188252,
+  "time_limit_scope": "optional_compatible_histogram_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.8620333187990851,
+    "upper": 0.9946403807875954,
+    "inner_lower": 0.862033318801085,
+    "inner_upper": 0.9946403807855954
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8620333187990851,
+    "upper": 0.9946403807875954,
+    "inner_lower": 0.862033318801085,
+    "inner_upper": 0.9946403807855954
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8802344042874347,
+    "upper": 1.0,
+    "inner_lower": 0.8802344042894347,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8802344042874347,
+    "upper": 1.0,
+    "inner_lower": 0.8802344042894347,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.11976559571256541,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1197655957105654
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.005359619212404607,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.005359619214404608,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.005359619212404607,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.005359619214404608,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.005359619212404607,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.005359619214404608,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.005359619212404607,
+    "upper": 0.03551852295833549,
+    "inner_lower": 0.005359619214404608,
+    "inner_upper": 0.035518522956335494
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.005359619212404607,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.005359619214404608,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.005359619212404607,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.005359619214404608,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.11976559571256529,
+    "inner_lower": 0.0,
+    "inner_upper": 0.11976559571056533
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.11976559571256529,
+    "inner_lower": 0.0,
+    "inner_upper": 0.11976559571056533
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.11976559571256529,
+    "inner_lower": 0.0,
+    "inner_upper": 0.11976559571056533
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.93158208194654,
+ "seconds": 0.08419198903720826,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

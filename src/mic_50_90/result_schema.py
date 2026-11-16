@@ -1,12 +1,26 @@
-"""Result format identity and explicit compatibility for retained evidence."""
+"""Result format identity and explicit compatibility for saved results."""
 from copy import deepcopy
+
+from . import _version
 
 DISTRIBUTION_SCHEMA = 'mic-50-90.distribution/1'
 
 
 def validate_distribution_schema(result):
-    # Unlabelled 1.0.0 analyses predate the explicit result-format identifier.
-    if result.get('result_schema') not in (None, DISTRIBUTION_SCHEMA):
+    """Accept explicitly compatible patch versions; refuse unknown producers.
+
+    Results written by 1.0.0 may lack the schema field; later results must name it.
+    """
+    if not isinstance(result, dict) or result.get('software') != 'MIC-50-90':
+        raise ValueError('Previous output must be a MIC-50-90 distribution analysis')
+    version = result.get('software_version')
+    schema = result.get('result_schema')
+    if version not in _version.COMPATIBLE_REPORT_VERSIONS:
+        raise ValueError('Unsupported distribution producer version; use a known compatible result')
+    if schema is None:
+        if version != '1.0.0':
+            raise ValueError('Only results written by version 1.0.0 may omit the distribution result schema')
+    elif schema != DISTRIBUTION_SCHEMA:
         raise ValueError('Unsupported distribution result schema; use matching results and configuration')
 
 

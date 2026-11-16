@@ -2,28 +2,20 @@
 
 A transport distance between two MIC histograms is only a statement about the organisms
 if both were measured over the same concentrations. Where they were not, the distance
-measures the panels. The failure is not hypothetical and it is not small: in the released
-external corpus the largest calibration score came from an *Escherichia coli* trimethoprim
-cohort tested over 0.25-64 mg/L scored against a reference tested over 0.5-2 mg/L, with
-**no shared concentration at all**. Trimethoprim resistance in *E. coli* sits at 8 mg/L and
-above, so the reference could not see a resistant isolate; every one it held was reported
-off-scale and dropped by the exact-value filter. The 5.38 dilution steps that radius
-certified were the width of a panel difference.
-
-That single pair set the conformal radius, because at twenty exchangeable units a 95%
-guarantee takes the largest unit score. Removing incomparable pairs takes the radius from
-5.38 to 2.74 without touching the guarantee.
+measures the panels. A cohort tested over 0.25-64 mg/L scored against a reference tested
+over 0.5-2 mg/L shares no concentration with it: a reference that cannot see a resistant
+isolate reports every such isolate off-scale, and the resulting distance is the width of a
+panel difference. With few exchangeable units a single such pair can set the conformal
+radius, because a high-level guarantee takes the largest unit score.
 
 The rule here introduces no new threshold. Two distributions are restricted to the range
 both were tested over, and the pair is admissible only if each restriction still satisfies
-the eligibility this work already applies to every cohort: at least `minimum_count`
-observations across at least `minimum_categories` concentrations. Those are the same 20 and
-3 that decide which cohorts exist in the first place.
+the eligibility the caller applies to every cohort: at least `minimum_count`
+observations across at least `minimum_categories` concentrations.
 
 The tested range of a cohort is read from its censoring operators, not assumed: a `<=x`
 record marks x as the lowest concentration on the panel and a `>y` record marks y as the
-highest, exactly as W7 reads a tested range. Where a cohort carries no censored
-observation the observed range is all the data support, and this module says so rather
+highest. Where a cohort carries no censored observation the observed range is all the data support, and this module says so rather
 than inventing a panel: `tested_range` reports whether the bounds came from censoring or
 from observation, so a caller can tell a known panel from an assumed one.
 """
@@ -33,7 +25,7 @@ from __future__ import annotations
 from collections import Counter
 from dataclasses import dataclass
 import re
-from typing import Iterable, Mapping
+from typing import Iterable, Mapping, cast
 
 _CENSORED = re.compile(r"^(<=|<|>=|>)([0-9]+(?:[.][0-9]+)?)$")
 
@@ -42,9 +34,9 @@ _CENSORED = re.compile(r"^(<=|<|>=|>)([0-9]+(?:[.][0-9]+)?)$")
 class TestedRange:
     """The concentrations a cohort was tested over, and how the bounds were established."""
 
-    #: Not a test class. The domain term is "tested range" -- W7 turns on
-    #: `tested_range_known` -- so the name stays, and pytest is told to leave it alone
-    #: rather than the vocabulary being bent around a collection convention.
+    #: Not a test class. The domain term is "tested range", so the name stays, and pytest
+    #: is told to leave it alone rather than the vocabulary being bent around a collection
+    #: convention.
     __test__ = False
 
     low: float
@@ -56,7 +48,7 @@ class TestedRange:
     def fully_known(self) -> bool:
         """True when both bounds come from a censoring operator rather than from data.
 
-        The distinction W7 exists to make: an observed range is a lower bound on the panel,
+        The distinction matters: an observed range is a lower bound on the panel,
         and treating it as the panel is the assumption that no isolate fell off either end.
         """
         return self.low_from_censoring and self.high_from_censoring
@@ -130,7 +122,8 @@ def comparability_graph(cohorts: Iterable, key, unit_of: Mapping[str, str | None
         edges: dict[str, set[str]] = {}
         for index, left in enumerate(members):
             for right in members[index + 1:]:
-                first, second = unit_of[left.identifier], unit_of[right.identifier]
+                first = cast(str, unit_of[left.identifier])
+                second = cast(str, unit_of[right.identifier])
                 if first == second:
                     continue
                 if comparable_pair(left.counts, ranges[left.identifier],

@@ -1,0 +1,251 @@
+{
+ "case": "human-05",
+ "method": "range-calibrated",
+ "cohort_id": "NORM2024|T88|Penicillin G",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.14855156699195504,
+ "result": {
+  "requested_method": "range-calibrated",
+  "method": "range-calibrated",
+  "confidence_level": 0.95,
+  "constraint_signature": "82ea5b630e21fdab267129991d961cad668e02201097581feae7888dfd95fd98",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "coverage_scope": "all contiguous recorded category ranges on the fixed panel",
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "endpoint_gap_pp": 2.0000008593701324e-10,
+  "critical_score_fraction": "45035996273705/9007199254740992",
+  "compatible_histogram_search_complete": false,
+  "evaluated_histograms": 5,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "range_witnesses_checked": 4,
+  "population_row_lift_certificate": {
+   "status": "not_checked",
+   "reason": "Numerical witnesses or the general refinement suffice"
+  },
+  "probability_vertices_checked": 0,
+  "probability_certificates": [],
+  "count_partition_splits": 0,
+  "baseline_cdf_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    0.8620333187990851,
+    0.9855710827248773
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    3.973213675203779e-06,
+    0.526519341460492
+   ],
+   [
+    0.014428917275122695,
+    0.054621704101473045
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    0.8620333187990851,
+    0.9855710827248773
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ],
+   [
+    0.8968887982300416,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.4434923600890933,
+    0.9293397127990327
+   ],
+   [
+    3.973213675203779e-06,
+    0.526519341460492
+   ],
+   [
+    0.014428917275122695,
+    0.054621704101473045
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ],
+   [
+    0.0,
+    0.10311120176995836
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
+  "elapsed_seconds": 0.034259640029631555,
+  "baseline_seconds": 0.007471818011254072,
+  "refinement_seconds": 0.02695207204669714,
+  "time_limit_scope": "optional_compatible_histogram_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.4434923600890933,
+    "upper": 0.9293397127990327,
+    "inner_lower": 0.4434923600910933,
+    "inner_upper": 0.9293397127970328
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8620333187990851,
+    "upper": 0.9855710827248773,
+    "inner_lower": 0.862033318801085,
+    "inner_upper": 0.9855710827228773
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8968887982300416,
+    "upper": 1.0,
+    "inner_lower": 0.8968887982320416,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8968887982300416,
+    "upper": 1.0,
+    "inner_lower": 0.8968887982320416,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 3.973213675203779e-06,
+    "upper": 0.526519341460492,
+    "inner_lower": 3.97321567520378e-06,
+    "inner_upper": 0.526519341458492
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.01552553718478998,
+    "upper": 0.5565076399109067,
+    "inner_lower": 0.01552553718678998,
+    "inner_upper": 0.5565076399089067
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.01552553718478998,
+    "upper": 0.5565076399109067,
+    "inner_lower": 0.01552553718678998,
+    "inner_upper": 0.5565076399089067
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.07066028720096729,
+    "upper": 0.5565076399109067,
+    "inner_lower": 0.07066028720296724,
+    "inner_upper": 0.5565076399089067
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.014428917275122695,
+    "upper": 0.054621704101473045,
+    "inner_lower": 0.014428917277122696,
+    "inner_upper": 0.05462170409947305
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.014428917275122695,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.014428917277122696,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.014428917275122743,
+    "upper": 0.13796668120091493,
+    "inner_lower": 0.0144289172771227,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.10311120176995836,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1031112017679584
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.10311120176995836,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1031112017679584
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.10311120176995836,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1031112017679584
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.84696762403473,
+ "seconds": 0.18758590100333095,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

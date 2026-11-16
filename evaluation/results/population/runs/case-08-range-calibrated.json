@@ -1,0 +1,251 @@
+{
+ "case": "case-08",
+ "method": "range-calibrated",
+ "cohort_id": "FDA|Vet-LIRN|2021|E. coli|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+ "source": "FDA animal pathogens",
+ "n": 719,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.1581617130432278,
+ "result": {
+  "requested_method": "range-calibrated",
+  "method": "range-calibrated",
+  "confidence_level": 0.95,
+  "constraint_signature": "ab8cdaaff686b5f8e17d3b63ab3cd907c177a9931bf45e4b09d84e806b12579c",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "coverage_scope": "all contiguous recorded category ranges on the fixed panel",
+  "sample_size": 719,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "endpoint_gap_pp": 2.0000667788622195e-10,
+  "critical_score_fraction": "45035996273705/9007199254740992",
+  "compatible_histogram_search_complete": false,
+  "evaluated_histograms": 5,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "range_witnesses_checked": 4,
+  "population_row_lift_certificate": {
+   "status": "not_checked",
+   "reason": "Numerical witnesses or the general refinement suffice"
+  },
+  "probability_vertices_checked": 0,
+  "probability_certificates": [],
+  "count_partition_splits": 0,
+  "baseline_cdf_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.848942591527448,
+    0.9287763587431259
+   ],
+   [
+    0.8661429424129277,
+    0.9417121050589025
+   ],
+   [
+    0.8661429424129277,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.0,
+    0.4517630683734793
+   ],
+   [
+    0.005492584498687971,
+    0.03310147732496115
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.848942591527448,
+    0.9287763587431259
+   ],
+   [
+    0.8661429424129277,
+    0.9417121050589025
+   ],
+   [
+    0.8661429424129277,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.44781879313561607,
+    0.9287763587431259
+   ],
+   [
+    0.0,
+    0.4517630683734793
+   ],
+   [
+    0.005492584498687971,
+    0.03310147732496115
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ],
+   [
+    0.0,
+    0.13385705758707234
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
+  "elapsed_seconds": 0.036703129997476935,
+  "baseline_seconds": 0.007110044942237437,
+  "refinement_seconds": 0.029753079055808485,
+  "time_limit_scope": "optional_compatible_histogram_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.44781879313561607,
+    "upper": 0.9287763587431259,
+    "inner_lower": 0.447818793137616,
+    "inner_upper": 0.9287763587411259
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.848942591527448,
+    "upper": 0.9287763587431259,
+    "inner_lower": 0.848942591529448,
+    "inner_upper": 0.9287763587411259
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8661429424129277,
+    "upper": 0.9417121050589025,
+    "inner_lower": 0.8661429424149276,
+    "inner_upper": 0.9417121050569024
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8661429424129277,
+    "upper": 1.0,
+    "inner_lower": 0.8661429424149276,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.4517630683734793,
+    "inner_lower": 0.0,
+    "inner_upper": 0.45176306837147934
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.005492584498687971,
+    "upper": 0.46724334379027505,
+    "inner_lower": 0.005492584500687972,
+    "inner_upper": 0.4672433437882751
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.005492584498687971,
+    "upper": 0.552181206864384,
+    "inner_lower": 0.005492584500687972,
+    "inner_upper": 0.5521812068623839
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.07122364125687408,
+    "upper": 0.552181206864384,
+    "inner_lower": 0.07122364125887413,
+    "inner_upper": 0.5521812068623839
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.005492584498687971,
+    "upper": 0.03310147732496115,
+    "inner_lower": 0.005492584500687972,
+    "inner_upper": 0.033101477322961155
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.005492584498687971,
+    "upper": 0.151057408472552,
+    "inner_lower": 0.005492584500687972,
+    "inner_upper": 0.15105740847055205
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.07122364125687408,
+    "upper": 0.151057408472552,
+    "inner_lower": 0.07122364125887413,
+    "inner_upper": 0.15105740847055205
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.13385705758707234,
+    "inner_lower": 0.0,
+    "inner_upper": 0.13385705758507238
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.05828789494109754,
+    "upper": 0.13385705758707234,
+    "inner_lower": 0.05828789494309759,
+    "inner_upper": 0.13385705758507238
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13385705758707234,
+    "inner_lower": 0.0,
+    "inner_upper": 0.13385705758507238
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.83739734091796,
+ "seconds": 0.199589679017663,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

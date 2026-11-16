@@ -34,7 +34,7 @@ def verify_reporting(specification, criteria, disclosures):
     state = _state(spec, observations)
     statuses = _statuses(state, parsed)
     bounds = []
-    for criterion, status in zip(parsed, statuses):
+    for criterion, status in zip(parsed, statuses, strict=True):
         q = criterion['cut']
         bounds.append(dict(threshold=criterion['threshold'], unit='mg/L',
                            decision_operator=criterion['decision_operator'],
@@ -57,7 +57,7 @@ def _apply(state, cuts, prefix):
 
 
 def _boundary_certificate(state, parsed, prefix, queries, budget):
-    unresolved = [c for c,s in zip(parsed,_statuses(state,parsed)) if s == 'undetermined']
+    unresolved = [c for c,s in zip(parsed,_statuses(state,parsed), strict=True) if s == 'undetermined']
     if len(state) != 1 or len({c['boundary'] for c in unresolved}) != 1:
         return None
     boundary = unresolved[0]['boundary']
@@ -101,7 +101,7 @@ def plan_reporting(specification, histogram, criteria, *, queries=None,
     for v in counts:
         prefix.append(prefix[-1]+v)
     state = _state(spec, [])
-    if not any(all(lo <= f <= hi for lo,f,hi in zip(b.lower,prefix,b.upper)) for b in state):
+    if not any(all(lo <= f <= hi for lo,f,hi in zip(b.lower,prefix,b.upper, strict=True)) for b in state):
         raise ValueError('histogram is incompatible with every declared reporting interpretation')
     query_map = _query_map(queries, spec)
     costs = {q:Fraction(row['cost_exact']) for q,row in query_map.items()}

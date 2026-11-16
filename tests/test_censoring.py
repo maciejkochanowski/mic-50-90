@@ -1,8 +1,4 @@
-"""A reported bound must not become a measurement.
-
-These tests used to import from scripts/run_external_validation.py, which put a campaign
-script on the import path of the library's own suite. The rule they check is the library's.
-"""
+"""A reported bound must not become a measurement."""
 
 from __future__ import annotations
 

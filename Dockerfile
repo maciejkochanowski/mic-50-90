@@ -1,6 +1,6 @@
 # Optional Linux environment for running and checking the software.
-# Build: docker build -t mic-50-90:1.0.0 .
-# Check: docker run --rm mic-50-90:1.0.0
+# Build: docker build -t mic-50-90 .
+# Check: docker run --rm mic-50-90
 # When mounting your own data, run with the uid/gid that owns the mounted directory.
 FROM node:22-bookworm-slim@sha256:c3de60bf2f9dd0ac6370e6117950ff62d6e339527e7472301c9c78a017978392 AS node-runtime
 FROM ghcr.io/astral-sh/uv:python3.11-bookworm-slim@sha256:4f5d923c9dcea037f57bda425dd209f3ec643da2f0b74227f68d09dab0b3bb36

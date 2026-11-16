@@ -92,6 +92,10 @@ def build_parser() -> argparse.ArgumentParser:
     distribution.add_argument("--population-method", choices=("bonferroni", "joint-exact", "range-calibrated", "range-hunter"), default="bonferroni",
                               help="simultaneous population construction, chosen by the kind of question (default: bonferroni)")
     distribution.add_argument("--population-time-limit", type=float, default=30., help="seconds per cohort for optional joint refinement (default: 30)")
+    distribution.add_argument("--solver-execution", choices=("in-process", "isolated"), default="in-process",
+                              help="run the entire analysis in a fresh single-thread worker when isolated")
+    distribution.add_argument("--solver-timeout", type=float, default=300.,
+                              help="hard wall seconds per isolated cohort, including startup (default: 300)")
     distribution.add_argument("--population-tolerance-pp", type=float, default=.01, help="requested outer-bound precision in percentage points (default: 0.01)")
     distribution.add_argument("--precision-pp", help="maximum width in percentage points for a contiguous sample description; exact decimal, no default")
     distribution.add_argument("--population-precision-pp", help="maximum population interval width in percentage points; requires declared iid sampling; separate from numerical tolerance")

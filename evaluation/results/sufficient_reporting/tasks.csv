@@ -1,0 +1,181 @@
+cohort_id,source,n,fraction,answers,direct_fields,greedy_fields,minimal_fields,optimality_verified,recipient_sufficient,minimal_correct,direct_correct,greedy_correct,disclosures
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin,FDA animal pathogens,276,0.05,4,4,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 8, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin,FDA animal pathogens,276,0.10,4,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin,FDA animal pathogens,276,0.20,4,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin,FDA animal pathogens,653,0.05,5,5,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 10, ""n"": 653}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin,FDA animal pathogens,653,0.10,5,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin,FDA animal pathogens,653,0.20,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin,FDA animal pathogens,283,0.05,5,5,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 6, ""n"": 283}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin,FDA animal pathogens,283,0.10,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin,FDA animal pathogens,283,0.20,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin,FDA animal pathogens,611,0.05,5,5,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 16, ""n"": 611}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin,FDA animal pathogens,611,0.10,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amikacin,FDA animal pathogens,611,0.20,5,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid,FDA animal pathogens,276,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid,FDA animal pathogens,276,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid,FDA animal pathogens,276,0.20,6,2,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 72, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amoxicillin/Clavulanic Acid,FDA animal pathogens,653,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amoxicillin/Clavulanic Acid,FDA animal pathogens,653,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Amoxicillin/Clavulanic Acid,FDA animal pathogens,653,0.20,6,2,2,2,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 262, ""n"": 653}, {""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 118, ""n"": 653}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid,FDA animal pathogens,283,0.05,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid,FDA animal pathogens,283,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Amoxicillin/Clavulanic Acid,FDA animal pathogens,283,0.20,3,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin,FDA animal pathogens,276,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin,FDA animal pathogens,276,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin,FDA animal pathogens,276,0.20,6,2,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 115, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ampicillin,FDA animal pathogens,653,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ampicillin,FDA animal pathogens,653,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ampicillin,FDA animal pathogens,653,0.20,6,2,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 210, ""n"": 653}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin,FDA animal pathogens,283,0.05,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin,FDA animal pathogens,283,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ampicillin,FDA animal pathogens,283,0.20,3,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin,FDA animal pathogens,276,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin,FDA animal pathogens,276,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin,FDA animal pathogens,276,0.20,6,5,1,1,True,True,True,True,True,"[{""threshold"": 32.0, ""unit"": ""mg/L"", ""count"": 63, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin,FDA animal pathogens,653,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin,FDA animal pathogens,653,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin,FDA animal pathogens,653,0.20,6,5,2,2,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 143, ""n"": 653}, {""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 121, ""n"": 653}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin,FDA animal pathogens,283,0.05,4,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin,FDA animal pathogens,283,0.10,4,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefazolin,FDA animal pathogens,283,0.20,4,3,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 63, ""n"": 283}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin,FDA animal pathogens,611,0.05,4,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin,FDA animal pathogens,611,0.10,4,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefazolin,FDA animal pathogens,611,0.20,4,3,2,2,True,True,True,True,True,"[{""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 154, ""n"": 611}, {""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 109, ""n"": 611}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin,FDA animal pathogens,653,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin,FDA animal pathogens,653,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin,FDA animal pathogens,653,0.20,6,4,2,2,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 149, ""n"": 653}, {""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 120, ""n"": 653}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin,FDA animal pathogens,611,0.05,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin,FDA animal pathogens,611,0.10,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefovecin,FDA animal pathogens,611,0.20,5,3,2,2,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 132, ""n"": 611}, {""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 100, ""n"": 611}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefoxitin,FDA animal pathogens,33,0.05,4,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefoxitin,FDA animal pathogens,33,0.10,4,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefoxitin,FDA animal pathogens,33,0.20,4,3,2,2,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 9, ""n"": 33}, {""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 6, ""n"": 33}]"
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime,FDA animal pathogens,276,0.05,4,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime,FDA animal pathogens,276,0.10,4,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime,FDA animal pathogens,276,0.20,4,4,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 63, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime,FDA animal pathogens,653,0.05,4,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime,FDA animal pathogens,653,0.10,4,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime,FDA animal pathogens,653,0.20,4,4,1,1,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 130, ""n"": 653}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime,FDA animal pathogens,268,0.05,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime,FDA animal pathogens,268,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cefpodoxime,FDA animal pathogens,268,0.20,3,3,2,2,True,True,True,True,True,"[{""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 55, ""n"": 268}, {""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 53, ""n"": 268}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime,FDA animal pathogens,578,0.05,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime,FDA animal pathogens,578,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cefpodoxime,FDA animal pathogens,578,0.20,3,3,1,1,True,True,True,True,True,"[{""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 97, ""n"": 578}]"
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime,FDA animal pathogens,276,0.05,3,1,1,1,True,True,True,True,True,"[{""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 21, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime,FDA animal pathogens,276,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime,FDA animal pathogens,276,0.20,3,2,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 47, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime,FDA animal pathogens,653,0.05,3,1,1,1,True,True,True,True,True,"[{""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 34, ""n"": 653}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime,FDA animal pathogens,653,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime,FDA animal pathogens,653,0.20,3,2,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 91, ""n"": 653}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime,FDA animal pathogens,268,0.05,3,1,1,1,True,True,True,True,True,"[{""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 15, ""n"": 268}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime,FDA animal pathogens,268,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Ceftazidime,FDA animal pathogens,268,0.20,3,2,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 39, ""n"": 268}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime,FDA animal pathogens,578,0.05,3,2,1,1,True,True,True,True,True,"[{""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 31, ""n"": 578}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime,FDA animal pathogens,578,0.10,3,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Ceftazidime,FDA animal pathogens,578,0.20,3,1,1,1,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 64, ""n"": 578}]"
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin,FDA animal pathogens,276,0.05,7,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin,FDA animal pathogens,276,0.10,7,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin,FDA animal pathogens,276,0.20,7,2,1,1,True,True,True,True,True,"[{""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 79, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin,FDA animal pathogens,653,0.05,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin,FDA animal pathogens,653,0.10,6,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin,FDA animal pathogens,653,0.20,6,2,2,2,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 152, ""n"": 653}, {""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 124, ""n"": 653}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin,FDA animal pathogens,283,0.05,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin,FDA animal pathogens,283,0.10,5,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Cephalexin,FDA animal pathogens,283,0.20,5,1,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 86, ""n"": 283}]"
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin,FDA animal pathogens,650,0.05,2,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin,FDA animal pathogens,650,0.10,2,0,0,0,True,True,True,True,True,[]
+FDA|Vet-LIRN|2024|E. coli|Dogs|Urinary Tract Infections (UTI)|Cephalexin,FDA animal pathogens,650,0.20,2,1,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 143, ""n"": 650}]"
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Chloramphenicol,FDA animal pathogens,276,0.05,5,2,1,1,True,True,True,True,True,"[{""threshold"": 32.0, ""unit"": ""mg/L"", ""count"": 16, ""n"": 276}]"
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Chloramphenicol,FDA animal pathogens,276,0.10,5,0,0,0,True,True,True,True,True,[]
+FDA|NAHLN|2024|E. coli|Dogs|Other Tissues/ Body Sites|Chloramphenicol,FDA animal pathogens,276,0.20,5,1,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 40, ""n"": 276}]"
+NORM2024|T101|Amphotericin B,NORM Norway 2024,134,0.05,16,10,1,1,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 3, ""n"": 134}]"
+NORM2024|T101|Amphotericin B,NORM Norway 2024,134,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T101|Amphotericin B,NORM Norway 2024,134,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.125, ""unit"": ""mg/L"", ""count"": 31, ""n"": 134}]"
+NORM2024|T101|Anidulafungin,NORM Norway 2024,134,0.05,16,14,1,1,True,True,True,True,True,"[{""threshold"": 0.016, ""unit"": ""mg/L"", ""count"": 2, ""n"": 134}]"
+NORM2024|T101|Anidulafungin,NORM Norway 2024,134,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T101|Anidulafungin,NORM Norway 2024,134,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.008, ""unit"": ""mg/L"", ""count"": 21, ""n"": 134}]"
+NORM2024|T101|Caspofungin,NORM Norway 2024,134,0.05,16,11,2,2,True,True,True,True,True,"[{""threshold"": 0.125, ""unit"": ""mg/L"", ""count"": 11, ""n"": 134}, {""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 3, ""n"": 134}]"
+NORM2024|T101|Caspofungin,NORM Norway 2024,134,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T101|Caspofungin,NORM Norway 2024,134,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 57, ""n"": 134}]"
+NORM2024|T101|Fluconazole,NORM Norway 2024,134,0.05,16,9,1,1,True,True,True,True,True,"[{""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 0, ""n"": 134}]"
+NORM2024|T101|Fluconazole,NORM Norway 2024,134,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T101|Fluconazole,NORM Norway 2024,134,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 39, ""n"": 134}]"
+NORM2024|T101|Micafungin,NORM Norway 2024,134,0.05,16,14,1,1,True,True,True,True,True,"[{""threshold"": 0.016, ""unit"": ""mg/L"", ""count"": 5, ""n"": 134}]"
+NORM2024|T101|Micafungin,NORM Norway 2024,134,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T101|Micafungin,NORM Norway 2024,134,0.20,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T101|Voriconazole,NORM Norway 2024,134,0.05,16,14,1,1,True,True,True,True,True,"[{""threshold"": 0.016, ""unit"": ""mg/L"", ""count"": 1, ""n"": 134}]"
+NORM2024|T101|Voriconazole,NORM Norway 2024,134,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T101|Voriconazole,NORM Norway 2024,134,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.008, ""unit"": ""mg/L"", ""count"": 49, ""n"": 134}]"
+NORM2024|T103|Amphotericin B,NORM Norway 2024,37,0.05,16,9,1,1,True,True,True,True,True,"[{""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 0, ""n"": 37}]"
+NORM2024|T103|Amphotericin B,NORM Norway 2024,37,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Amphotericin B,NORM Norway 2024,37,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 12, ""n"": 37}]"
+NORM2024|T103|Anidulafungin,NORM Norway 2024,37,0.05,16,13,2,2,True,True,True,True,True,"[{""threshold"": 0.03, ""unit"": ""mg/L"", ""count"": 2, ""n"": 37}, {""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 1, ""n"": 37}]"
+NORM2024|T103|Anidulafungin,NORM Norway 2024,37,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Anidulafungin,NORM Norway 2024,37,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.016, ""unit"": ""mg/L"", ""count"": 9, ""n"": 37}]"
+NORM2024|T103|Caspofungin,NORM Norway 2024,37,0.05,16,10,2,2,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 2, ""n"": 37}, {""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 0, ""n"": 37}]"
+NORM2024|T103|Caspofungin,NORM Norway 2024,37,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Caspofungin,NORM Norway 2024,37,0.20,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Fluconazole,NORM Norway 2024,37,0.05,16,4,2,2,True,True,True,True,True,"[{""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 2, ""n"": 37}, {""threshold"": 32.0, ""unit"": ""mg/L"", ""count"": 1, ""n"": 37}]"
+NORM2024|T103|Fluconazole,NORM Norway 2024,37,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Fluconazole,NORM Norway 2024,37,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 13, ""n"": 37}]"
+NORM2024|T103|Micafungin,NORM Norway 2024,37,0.05,16,14,2,2,True,True,True,True,True,"[{""threshold"": 0.016, ""unit"": ""mg/L"", ""count"": 2, ""n"": 37}, {""threshold"": 0.03, ""unit"": ""mg/L"", ""count"": 1, ""n"": 37}]"
+NORM2024|T103|Micafungin,NORM Norway 2024,37,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Micafungin,NORM Norway 2024,37,0.20,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Voriconazole,NORM Norway 2024,37,0.05,16,8,2,2,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 3, ""n"": 37}, {""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 1, ""n"": 37}]"
+NORM2024|T103|Voriconazole,NORM Norway 2024,37,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T103|Voriconazole,NORM Norway 2024,37,0.20,16,2,2,2,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 13, ""n"": 37}, {""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 7, ""n"": 37}]"
+NORM2024|T105|Amphotericin B,NORM Norway 2024,25,0.05,16,9,2,2,True,True,True,True,True,"[{""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 2, ""n"": 25}, {""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 0, ""n"": 25}]"
+NORM2024|T105|Amphotericin B,NORM Norway 2024,25,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T105|Amphotericin B,NORM Norway 2024,25,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 10, ""n"": 25}]"
+NORM2024|T105|Anidulafungin,NORM Norway 2024,25,0.05,16,12,1,1,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 1, ""n"": 25}]"
+NORM2024|T105|Anidulafungin,NORM Norway 2024,25,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T105|Anidulafungin,NORM Norway 2024,25,0.20,16,2,1,1,True,True,True,True,True,"[{""threshold"": 0.03, ""unit"": ""mg/L"", ""count"": 5, ""n"": 25}]"
+NORM2024|T105|Caspofungin,NORM Norway 2024,25,0.05,16,10,2,2,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 2, ""n"": 25}, {""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 1, ""n"": 25}]"
+NORM2024|T105|Caspofungin,NORM Norway 2024,25,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T105|Caspofungin,NORM Norway 2024,25,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.125, ""unit"": ""mg/L"", ""count"": 8, ""n"": 25}]"
+NORM2024|T105|Fluconazole,NORM Norway 2024,25,0.05,16,6,2,2,True,True,True,True,True,"[{""threshold"": 32.0, ""unit"": ""mg/L"", ""count"": 2, ""n"": 25}, {""threshold"": 64.0, ""unit"": ""mg/L"", ""count"": 1, ""n"": 25}]"
+NORM2024|T105|Fluconazole,NORM Norway 2024,25,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T105|Fluconazole,NORM Norway 2024,25,0.20,16,2,2,2,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 6, ""n"": 25}, {""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 3, ""n"": 25}]"
+NORM2024|T105|Micafungin,NORM Norway 2024,25,0.05,16,12,1,1,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 1, ""n"": 25}]"
+NORM2024|T105|Micafungin,NORM Norway 2024,25,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T105|Micafungin,NORM Norway 2024,25,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.03, ""unit"": ""mg/L"", ""count"": 3, ""n"": 25}]"
+NORM2024|T105|Voriconazole,NORM Norway 2024,25,0.05,16,11,2,2,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 2, ""n"": 25}, {""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 1, ""n"": 25}]"
+NORM2024|T105|Voriconazole,NORM Norway 2024,25,0.10,16,0,0,0,True,True,True,True,True,[]
+NORM2024|T105|Voriconazole,NORM Norway 2024,25,0.20,16,1,1,1,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 11, ""n"": 25}]"
+NORM2024|T72|Amoxicillin-clavulanic acid,NORM Norway 2024,93,0.05,15,7,2,2,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 8, ""n"": 93}, {""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 4, ""n"": 93}]"
+NORM2024|T72|Amoxicillin-clavulanic acid,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Amoxicillin-clavulanic acid,NORM Norway 2024,93,0.20,15,2,2,2,True,True,True,True,True,"[{""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 41, ""n"": 93}, {""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 15, ""n"": 93}]"
+NORM2024|T72|Ampicillin,NORM Norway 2024,93,0.05,15,4,1,1,True,True,True,True,True,"[{""threshold"": 64.0, ""unit"": ""mg/L"", ""count"": 5, ""n"": 93}]"
+NORM2024|T72|Ampicillin,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Ampicillin,NORM Norway 2024,93,0.20,15,5,2,2,True,True,True,True,True,"[{""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 21, ""n"": 93}, {""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 15, ""n"": 93}]"
+NORM2024|T72|Cefotaxime,NORM Norway 2024,93,0.05,15,11,2,2,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 7, ""n"": 93}, {""threshold"": 0.125, ""unit"": ""mg/L"", ""count"": 2, ""n"": 93}]"
+NORM2024|T72|Cefotaxime,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Cefotaxime,NORM Norway 2024,93,0.20,15,1,1,1,True,True,True,True,True,"[{""threshold"": 0.03, ""unit"": ""mg/L"", ""count"": 16, ""n"": 93}]"
+NORM2024|T72|Ceftriaxone,NORM Norway 2024,93,0.05,15,13,2,2,True,True,True,True,True,"[{""threshold"": 0.016, ""unit"": ""mg/L"", ""count"": 8, ""n"": 93}, {""threshold"": 0.03, ""unit"": ""mg/L"", ""count"": 3, ""n"": 93}]"
+NORM2024|T72|Ceftriaxone,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Ceftriaxone,NORM Norway 2024,93,0.20,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Cefuroxime,NORM Norway 2024,93,0.05,15,5,2,2,True,True,True,True,True,"[{""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 6, ""n"": 93}, {""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 4, ""n"": 93}]"
+NORM2024|T72|Cefuroxime,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Cefuroxime,NORM Norway 2024,93,0.20,15,2,1,1,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 14, ""n"": 93}]"
+NORM2024|T72|Chloramphenicol,NORM Norway 2024,93,0.05,15,7,1,1,True,True,True,True,True,"[{""threshold"": 1.0, ""unit"": ""mg/L"", ""count"": 1, ""n"": 93}]"
+NORM2024|T72|Chloramphenicol,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Chloramphenicol,NORM Norway 2024,93,0.20,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Meropenem,NORM Norway 2024,93,0.05,15,10,2,2,True,True,True,True,True,"[{""threshold"": 0.125, ""unit"": ""mg/L"", ""count"": 6, ""n"": 93}, {""threshold"": 0.25, ""unit"": ""mg/L"", ""count"": 1, ""n"": 93}]"
+NORM2024|T72|Meropenem,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Meropenem,NORM Norway 2024,93,0.20,15,1,1,1,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 30, ""n"": 93}]"
+NORM2024|T72|Tetracycline,NORM Norway 2024,93,0.05,15,8,1,1,True,True,True,True,True,"[{""threshold"": 0.5, ""unit"": ""mg/L"", ""count"": 4, ""n"": 93}]"
+NORM2024|T72|Tetracycline,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Tetracycline,NORM Norway 2024,93,0.20,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Trimethoprim-sulfamethoxazole,NORM Norway 2024,93,0.05,15,6,2,2,True,True,True,True,True,"[{""threshold"": 8.0, ""unit"": ""mg/L"", ""count"": 6, ""n"": 93}, {""threshold"": 16.0, ""unit"": ""mg/L"", ""count"": 4, ""n"": 93}]"
+NORM2024|T72|Trimethoprim-sulfamethoxazole,NORM Norway 2024,93,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T72|Trimethoprim-sulfamethoxazole,NORM Norway 2024,93,0.20,15,6,2,2,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 20, ""n"": 93}, {""threshold"": 0.125, ""unit"": ""mg/L"", ""count"": 16, ""n"": 93}]"
+NORM2024|T94|Erythromycin,NORM Norway 2024,279,0.05,15,3,1,1,True,True,True,True,True,"[{""threshold"": 64.0, ""unit"": ""mg/L"", ""count"": 23, ""n"": 279}]"
+NORM2024|T94|Erythromycin,NORM Norway 2024,279,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T94|Erythromycin,NORM Norway 2024,279,0.20,15,6,2,2,True,True,True,True,True,"[{""threshold"": 2.0, ""unit"": ""mg/L"", ""count"": 61, ""n"": 279}, {""threshold"": 4.0, ""unit"": ""mg/L"", ""count"": 51, ""n"": 279}]"
+NORM2024|T94|Gentamicin,NORM Norway 2024,279,0.05,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T94|Gentamicin,NORM Norway 2024,279,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T94|Gentamicin,NORM Norway 2024,279,0.20,15,1,1,1,True,True,True,True,True,"[{""threshold"": 64.0, ""unit"": ""mg/L"", ""count"": 53, ""n"": 279}]"
+NORM2024|T94|Penicillin G,NORM Norway 2024,279,0.05,15,11,1,1,True,True,True,True,True,"[{""threshold"": 0.06, ""unit"": ""mg/L"", ""count"": 13, ""n"": 279}]"
+NORM2024|T94|Penicillin G,NORM Norway 2024,279,0.10,15,0,0,0,True,True,True,True,True,[]
+NORM2024|T94|Penicillin G,NORM Norway 2024,279,0.20,15,0,0,0,True,True,True,True,True,[]

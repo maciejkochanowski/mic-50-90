@@ -13,6 +13,9 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
+from runpy import run_path
+
+read_version = run_path(str(Path(__file__).with_name("release_version.py")))["read_version"]
 
 
 def digest(path):
@@ -25,7 +28,7 @@ def digest(path):
 def source_identity(root):
     paths=[p for p in (root/'src').rglob('*')
            if p.is_file() and '__pycache__' not in p.parts and p.suffix!='.pyc']
-    paths.extend(root/name for name in ('tools/build_windows.py','tools/desktop_launcher.py','pyproject.toml','LICENSE','NOTICE.md'))
+    paths.extend(root/name for name in ('tools/build_windows.py','tools/desktop_launcher.py','tools/release_version.py','pyproject.toml','LICENSE.txt','NOTICE.md'))
     return {p.relative_to(root).as_posix():digest(p) for p in sorted(paths)}
 
 
@@ -43,6 +46,7 @@ def main():
     args=parser.parse_args()
     if sys.platform!='win32':parser.error('Build the Windows executable on Windows.')
     root=Path(__file__).resolve().parents[1]
+    version=read_version(root)
     output=args.output.resolve()
     if output.exists() and any(output.iterdir()):
         parser.error('Use an empty output directory; existing builds are preserved.')
@@ -60,7 +64,7 @@ def main():
     with (output/'build.log').open('w',encoding='utf-8') as log:
         subprocess.run(command,cwd=root,stdout=log,stderr=subprocess.STDOUT,check=True)
     app=output/'application/MIC-50-90'
-    for name in ('LICENSE','NOTICE.md'):
+    for name in ('LICENSE.txt','NOTICE.md'):
         shutil.copyfile(root/name,app/name)
     after=verify_source_identity(root,sources)
     assets=root/'src/mic_50_90/gui_assets'
@@ -70,7 +74,7 @@ def main():
         if not bundled.is_file() or digest(source)!=digest(bundled):
             raise RuntimeError('Missing or changed application resource: '+str(source.relative_to(assets)))
     files={p.relative_to(app).as_posix():digest(p) for p in app.rglob('*') if p.is_file()}
-    receipt={'status':'built_not_yet_runtime_verified','software_version':'1.0.0',
+    receipt={'status':'built_not_yet_runtime_verified','software_version':version,
         'created_utc':datetime.now(timezone.utc).isoformat(),'python':sys.version,
         'dependencies':{n:importlib.metadata.version(n) for n in ('PyInstaller','numpy','scipy')},
         'command':command,'source_sha256':sources,'source_sha256_after':after,

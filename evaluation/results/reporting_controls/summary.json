@@ -1,0 +1,43 @@
+{
+ "comparison": "reporting_controls",
+ "created_utc": "2026-11-02T05:33:35+00:00",
+ "status": "complete",
+ "full_design": true,
+ "elapsed_seconds": 7.671063864021562,
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c6s1b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 192
+ },
+ "seed": 29092026,
+ "counts": {
+  "cases": 5016,
+  "common_boundary": 4716,
+  "variant": 300,
+  "agreements": 5016,
+  "common_boundary_agreements": 4716,
+  "variant_agreements": 300,
+  "disagreements": 0,
+  "impossible": 132,
+  "impossible_identified": 132,
+  "package_impossible": 132
+ },
+ "disagreements": [],
+ "all_agree": true
+}

@@ -24,3 +24,16 @@ for name,change in [('range',dict(count='',count_min=7,count_max=9,decimal_place
  raw=deepcopy(base);raw['additional_counts'][0].update(change)
  (O/f'blanks-{name}.json').write_text(json.dumps(form(raw)),encoding='utf-8')
 print('Prepared three saved analyses and three count-entry forms')
+
+# Build the two artifacts required by check_acceptance.cjs from shipped inputs.
+import shutil
+ROOT = Path(__file__).resolve().parents[1]
+ampicillin = json.loads((ROOT/'examples/biological_cases/ampicillin-67-summaries.json').read_text(encoding='utf-8'))
+execute_job(form(ampicillin)['payload'], O/'ampicillin-job')
+if json.loads((O/'ampicillin-job/job-status.json').read_text(encoding='utf-8'))['status'] != 'completed':
+    raise RuntimeError('Ampicillin browser reference generation failed')
+(O/'output/ampicillin').mkdir(parents=True, exist_ok=True)
+shutil.copyfile(O/'ampicillin-job/output/report.html', O/'output/ampicillin/report.html')
+(O/'windows').mkdir(exist_ok=True)
+shutil.copyfile(ROOT/'examples/received_report/certificate.json', O/'windows/amikacin-certificate.json')
+print('Prepared self-contained offline report and reporting certificate')

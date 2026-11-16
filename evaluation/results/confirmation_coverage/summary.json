@@ -1,0 +1,116 @@
+{
+ "comparison": "confirmation_coverage",
+ "created_utc": "2026-11-02T06:00:23+00:00",
+ "status": "complete",
+ "full_design": true,
+ "settings": {
+  "cohorts": 610,
+  "replicates": 2000,
+  "seed": 20261102,
+  "block": 50
+ },
+ "seed_scheme": "numpy default_rng([seed, 1, configuration index, replicate index])",
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c0s7b0n0",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 4
+ },
+ "totals": {
+  "R1": {
+   "bonferroni": {
+    "configurations": 610,
+    "replicates": 1220000,
+    "covered": 1218589,
+    "errors": 0,
+    "lowest_coverage": 0.9885,
+    "configurations_with_undercoverage": 0,
+    "coverage": 0.9988434426229508
+   },
+   "range-calibrated": {
+    "configurations": 610,
+    "replicates": 1220000,
+    "covered": 1218546,
+    "errors": 0,
+    "lowest_coverage": 0.976,
+    "configurations_with_undercoverage": 0,
+    "coverage": 0.9988081967213115
+   }
+  },
+  "R2": {
+   "bonferroni": {
+    "configurations": 610,
+    "replicates": 1220000,
+    "covered": 1218674,
+    "errors": 0,
+    "lowest_coverage": 0.9895,
+    "configurations_with_undercoverage": 0,
+    "coverage": 0.9989131147540984
+   },
+   "range-calibrated": {
+    "configurations": 610,
+    "replicates": 1220000,
+    "covered": 1219511,
+    "errors": 0,
+    "lowest_coverage": 0.9885,
+    "configurations_with_undercoverage": 0,
+    "coverage": 0.9995991803278689
+   }
+  },
+  "R3": {
+   "bonferroni": {
+    "configurations": 610,
+    "replicates": 1220000,
+    "covered": 1215882,
+    "errors": 0,
+    "lowest_coverage": 0.9775,
+    "configurations_with_undercoverage": 0,
+    "coverage": 0.9966245901639345
+   },
+   "range-calibrated": {
+    "configurations": 610,
+    "replicates": 1220000,
+    "covered": 1218644,
+    "errors": 0,
+    "lowest_coverage": 0.9835,
+    "configurations_with_undercoverage": 0,
+    "coverage": 0.998888524590164
+   }
+  }
+ },
+ "overall": {
+  "bonferroni": {
+   "configurations": 1830,
+   "replicates": 3660000,
+   "covered": 3653145,
+   "errors": 0,
+   "lowest_coverage": 0.9775,
+   "configurations_with_undercoverage": 0,
+   "coverage": 0.9981270491803279
+  },
+  "range-calibrated": {
+   "configurations": 1830,
+   "replicates": 3660000,
+   "covered": 3656701,
+   "errors": 0,
+   "lowest_coverage": 0.976,
+   "configurations_with_undercoverage": 0,
+   "coverage": 0.9990986338797814
+  }
+ }
+}

@@ -1,6 +1,6 @@
-# Reviewing MIC-50-90 1.0.0 software
+# Reviewing MIC-50-90 1.0.2 software
 
-Start with README.md, docs/GUI_GUIDE.md and docs/distribution-user-guide.md. The source tree contains the engine, application, tests, examples and formal algebra. The manuscript and supplementary appendices are supplied separately by the author and are not part of the public software distribution.
+Start with README.md, docs/GUI_GUIDE.md and docs/distribution-user-guide.md. The source tree contains the engine, application, tests, examples, formal algebra and, in `evaluation/`, the inputs, scripts and results of the evaluation; see evaluation/README.md. The manuscript and supplementary appendices are not part of the repository.
 
 ## Run the examples
 
@@ -26,4 +26,4 @@ node --test "tests/*.cjs"
 
 docs/PUBLIC_FUNCTIONS.md maps scientific and practical tasks to functions, outputs and independent tests. docs/population-row-lift.md and formal/README.md describe the endpoint construction and scoped algebraic checks. Test execution coverage and statistical confidence are different quantities.
 
-The tests workflow runs on Windows and Linux with Python 3.11–3.13. The release workflow builds software packages and records their identities. Use the completed run and checksums as evidence for the downloaded assets. Numerical campaigns and article documents are maintained separately; this software package does not claim to contain that full editorial archive.
+The tests workflow runs on Windows and Linux with Python 3.11–3.13. The release workflow builds software packages and records their identities. Use the completed run and checksums as evidence for the downloaded assets.

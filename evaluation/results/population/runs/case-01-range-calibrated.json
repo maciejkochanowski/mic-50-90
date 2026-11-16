@@ -1,0 +1,254 @@
+{
+ "case": "case-01",
+ "method": "range-calibrated",
+ "cohort_id": "FDA|Vet-LIRN|2020|Salmonella|Dogs|Other Tissues/ Body Sites|Imipenem",
+ "source": "FDA animal pathogens",
+ "n": 25,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.029341847985051572,
+ "result": {
+  "requested_method": "range-calibrated",
+  "method": "range-calibrated",
+  "confidence_level": 0.95,
+  "constraint_signature": "478bf83c1e38a84211835c221f7dd11524f10d403828da13351f6f30694ebdf3",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "coverage_scope": "all contiguous recorded category ranges on the fixed panel",
+  "sample_size": 25,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "endpoint_gap_pp": 2.0000112677109882e-10,
+  "critical_score_fraction": "225179981368525/42784196460019712",
+  "compatible_histogram_search_complete": false,
+  "evaluated_histograms": 2,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "range_witnesses_checked": 0,
+  "population_row_lift_certificate": {
+   "status": "certified",
+   "n": 25,
+   "critical_score_fraction": "225179981368525/42784196460019712",
+   "minimum_concavity_margin": "13492635352549/9007199254740992",
+   "claim": "At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed"
+  },
+  "probability_vertices_checked": 0,
+  "probability_certificates": [],
+  "count_partition_splits": 0,
+  "baseline_cdf_bounds": [
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.656971564935423,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.0,
+    0.34302843506457703
+   ],
+   [
+    0.0,
+    0.21148736618201391
+   ],
+   [
+    0.0,
+    0.34302843506457703
+   ],
+   [
+    0.0,
+    0.34302843506457703
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.656971564935423,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.656971564935423,
+    1.0
+   ],
+   [
+    0.0,
+    0.34302843506457703
+   ],
+   [
+    0.0,
+    0.21148736618201391
+   ],
+   [
+    0.0,
+    0.34302843506457703
+   ],
+   [
+    0.0,
+    0.34302843506457703
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
+  "elapsed_seconds": 0.021408508997410536,
+  "baseline_seconds": 0.002704204060137272,
+  "refinement_seconds": 0.018809590954333544,
+  "time_limit_scope": "optional_compatible_histogram_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.656971564935423,
+    "upper": 1.0,
+    "inner_lower": 0.6569715649374229,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.656971564935423,
+    "upper": 1.0,
+    "inner_lower": 0.6569715649374229,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.656971564935423,
+    "upper": 1.0,
+    "inner_lower": 0.6569715649374229,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.656971564935423,
+    "upper": 1.0,
+    "inner_lower": 0.6569715649374229,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.21148736618201391,
+    "inner_lower": 0.0,
+    "inner_upper": 0.2114873661800139
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.34302843506457703,
+    "inner_lower": 0.0,
+    "inner_upper": 0.3430284350625771
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.96917450102046,
+ "seconds": 0.05240264406893402,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

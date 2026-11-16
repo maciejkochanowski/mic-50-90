@@ -1,0 +1,240 @@
+{
+ "case": "human-02",
+ "method": "joint-exact",
+ "cohort_id": "NORM2024|T88|Chloramphenicol",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.4521404360421002,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "d4517215edc19bf6f0127437e27a5d46462050f82ec1639a1d4bb150a7131276",
+  "family_size": 4,
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.37298837740913204,
+    0.5488248772433022
+   ],
+   [
+    0.8664239879554598,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.34149092405496034,
+    0.4967128598435255
+   ],
+   [
+    0.3175991107121578,
+    0.6270116225908681
+   ],
+   [
+    0.0,
+    0.1335760120445401
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.37298837740913204,
+    0.5488248772433022
+   ],
+   [
+    0.8664239879554598,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.0,
+    0.10653264648232934
+   ],
+   [
+    0.34149092405496034,
+    0.4967128598435255
+   ],
+   [
+    0.3175991107121578,
+    0.6270116225908681
+   ],
+   [
+    0.0,
+    0.1335760120445401
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 2223,
+  "excluded_boxes": 592,
+  "elapsed_seconds": 115.14613711298443,
+  "baseline_seconds": 0.4246412080246955,
+  "refinement_seconds": 114.72133558103815,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.10653264648232934,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.09321606567203815
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.10653264648232934,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.09321606567203815
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.37298837740913204,
+    "upper": 0.5488248772433022,
+    "inner_lower": 0.3839781586487677,
+    "inner_upper": 0.5378350960036665
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8664239879554598,
+    "upper": 1.0,
+    "inner_lower": 0.8831209894610275,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.10653264648232934,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.07989948486174697
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.34149092405496034,
+    "upper": 0.5488248772433022,
+    "inner_lower": 0.3567007804145434,
+    "inner_upper": 0.5245185151933753
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.7598913414731305,
+    "upper": 1.0,
+    "inner_lower": 0.7899049237889894,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.8934673535176706,
+    "upper": 1.0,
+    "inner_lower": 0.906783934327962,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.34149092405496034,
+    "upper": 0.4967128598435255,
+    "inner_lower": 0.3567007804145434,
+    "inner_upper": 0.4868955723331574
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.7598913414731305,
+    "upper": 1.0,
+    "inner_lower": 0.7899049237889894,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.8934673535176706,
+    "upper": 1.0,
+    "inner_lower": 0.906783934327962,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.3175991107121578,
+    "upper": 0.627011622590868,
+    "inner_lower": 0.34528589345736077,
+    "inner_upper": 0.5993248398456646
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.45117512275669786,
+    "upper": 0.627011622590868,
+    "inner_lower": 0.4621649039963334,
+    "inner_upper": 0.6160218413512322
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.1335760120445401,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.11687901053897264
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 0,
+  "endpoint_gap_pp": 3.001358231585883
+ },
+ "refinement_budget_seconds": 114.54584150703158,
+ "seconds": 115.60101693007164,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

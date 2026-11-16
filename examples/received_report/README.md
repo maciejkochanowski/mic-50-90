@@ -19,7 +19,7 @@ histogram or establish a population prevalence below 5%.
 Verification checks logical sufficiency assuming truthful counts; it does not
 authenticate the source. Removing the disclosure makes all four questions
 undetermined. `expected.json` records the before/after calculation. The same
-cohort is part of the retained sixty-cohort reporting comparison; it is not a
+cohort is part of the sixty-cohort reporting comparison in `evaluation/`; it is not a
 new independent validation set.
 
 Source: https://www.fda.gov/animal-veterinary/national-antimicrobial-resistance-monitoring-system/2017-2024-animal-pathogen-amr-data

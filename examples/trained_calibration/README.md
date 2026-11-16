@@ -1,4 +1,4 @@
-# Trained calibration, MIC-50-90 1.0.0
+# Trained calibration
 
 This small synthetic example demonstrates separate training, calibration and target roles. It is not an empirical validation. Two complete training units determine references and scales. Three calibration units support the requested 75% marginal level; they cannot support 95%.
 
@@ -13,4 +13,4 @@ Open both output report.html files. Each reference is [0.7, 0.15, 0.15], and eac
 
 For real data, declare collection units before assigning roles, record all categories including zeros, and replace the synthetic provenance with documented sources. At least two complete training units are needed. Calibration and target units must be suitable for the stated exchangeability assumption. Do not split a dependent collection into invented independent units. Target counts do not belong in the preparation input.
 
-Manifest 1.3 is a data-contract version. The software version remains 1.0.0. Without these two options, calibration-prepare retains its uniform, unscaled default and emits manifest 1.2.
+Manifest 1.3 is a data-contract version. Without these two options, calibration-prepare retains its uniform, unscaled default and emits manifest 1.2.

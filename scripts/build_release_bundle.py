@@ -39,7 +39,7 @@ def main() -> None:
     parser.add_argument("--output", type=Path, help="explicit source-bundle destination")
     args = parser.parse_args()
     registry = json.loads((ROOT / "PACKAGE_STATUS.json").read_text(encoding="utf-8"))
-    destination = args.output or ROOT / registry["current_delivery"] / "MIC-50-90-1.0.0-source-bundle.zip"
+    destination = args.output or ROOT / registry["current_delivery"] / f"MIC-50-90-{registry['version']}-source-bundle.zip"
     if destination.exists():
         raise SystemExit("Destination already exists; choose a new path to preserve dated evidence")
     files = selected_files()

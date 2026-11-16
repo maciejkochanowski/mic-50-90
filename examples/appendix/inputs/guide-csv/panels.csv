@@ -1,0 +1,6 @@
+panel_id,unit,category,lower,upper,lower_closed,upper_closed,panel_value
+P,mg/L,<=0.12,,.12,false,true,.12
+P,mg/L,.25,.12,.25,false,true,.25
+P,mg/L,0.5,.25,.5,false,true,.5
+P,mg/L,1,.5,1,false,true,1
+P,mg/L,>1,1,,false,false,2

@@ -1,0 +1,77 @@
+{
+ "calibration_contract": {
+  "score_kind": "simultaneous_tail_intervals",
+  "reference_rule": "projected",
+  "functional_scope": "all_panel_tails",
+  "transport_unit": "log2_mg_L",
+  "summary_policy": "ceiling_50_90_no_range",
+  "reference_protocol": "MIC5090-NARMS2021|training-reference|ceiling50-90|all14",
+  "unit_definition": "Conservative NARMS collection-region/laboratory block; all 14 drugs"
+ },
+ "exchangeable_units": 9,
+ "exchangeable_unit_definition": "Conservative NARMS collection-region/laboratory block; all 14 drugs",
+ "exchangeable_unit_labels": [
+  "CA_HI",
+  "IA",
+  "MD",
+  "MO",
+  "NC",
+  "NM",
+  "PA",
+  "SC",
+  "TX_OK"
+ ],
+ "unit_score_aggregation": "max",
+ "conformal_rank_counts": "units",
+ "unit_scores": [
+  0.46153879165649414,
+  0.25,
+  0.5483875274658203,
+  0.3076925277709961,
+  1.090909481048584,
+  0.37931060791015625,
+  0.4878048896789551,
+  0.769230842590332,
+  0.4047117233276367
+ ],
+ "unit_scores_median": [
+  0.0783078670501709,
+  0.10400021076202393,
+  0.06967782974243164,
+  0.1436924934387207,
+  0.27681834910375985,
+  0.06379318237304688,
+  0.09658575057983398,
+  0.1044618322915791,
+  0.1016950527171092
+ ],
+ "attained_level_all_cohorts": 0.9,
+ "attained_level_median_cohort": null,
+ "maximum_supported_level": 0.9,
+ "attained_level": 0.9,
+ "manifest_version": "1.2",
+ "guarantee_class": "conformal_new_cohort",
+ "confidence_level": 0.9,
+ "requested_level": 0.9,
+ "requested_level_supported": true,
+ "alpha": 0.1,
+ "rank": 9,
+ "calibration_size": 9,
+ "minimum_group_calibration_size": 9,
+ "radius": 1.090909481048584,
+ "grouping": {
+  "program": "NARMS retail",
+  "year": "2021",
+  "species": "Salmonella enterica",
+  "panel": "CMV5AGNF"
+ },
+ "source": "MIC5090-NARMS2021|training-reference|ceiling50-90|all14",
+ "data_hashes": {
+  "narms_histograms": "a9332bada665cb235926b37e308e5ec7e4deb2b27ff0c6588112f3f56d10cb1c",
+  "panels": "872ae877a676c594cd5abd88e4ae47840b19f910aa47d67ee98631094ca527f6"
+ },
+ "guarantee_scope": "declared_group_marginal",
+ "fallback_used": false,
+ "calibration_scores_sha256": "de01ce4c4ceffebb09eac5dd6989b8860c0ea82d622aef282be34e5d2ee807cc",
+ "coverage_statement": "Marginal coverage of the recorded tail intervals simultaneously over the declared panel cuts, not the whole distribution for every eligible cohort of a new exchangeable unit, conditional on the fixed training/reference protocol. Requires exchangeable calibration and target units, the same summary/selection rule and max aggregation. No latent-MIC or conditional-on-covariates guarantee."
+}

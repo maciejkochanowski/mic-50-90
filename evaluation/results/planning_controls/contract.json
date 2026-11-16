@@ -1,0 +1,265 @@
+[
+ {
+  "id": "invalid-cost-0",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-cost--1",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-cost-'nan'",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-cost-'inf'",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-cost-True",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-cost-None",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-cost-'1e-1000'",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-cost-'1e1000'",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Query cost must be a finite positive number"
+  }
+ },
+ {
+  "id": "invalid-time--1",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-time-'nan'",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-time-'inf'",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-time-None",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-state-budget-0",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-state-budget--1",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-state-budget-1.5",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-state-budget-True",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "invalid-state-budget-None",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires a finite nonnegative time limit and positive integer max_states"
+  }
+ },
+ {
+  "id": "empty-mapping-is-not-no-counts",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Supply at least one additional count"
+  }
+ },
+ {
+  "id": "foreign-denominator",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Additional information must use the original n and satisfy 0 <= count_min <= count_max <= n"
+  }
+ },
+ {
+  "id": "conflicting-count",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "No histogram satisfies the declared summaries and additional counts"
+  }
+ },
+ {
+  "id": "duplicate-equivalent-cut",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Duplicate or equivalent query cuts; supply one cost per recorded tail"
+  }
+ },
+ {
+  "id": "zero-time-valid-fixed-plan",
+  "passed": true,
+  "detail": {
+   "status": "incomplete",
+   "verified_policy_available": true,
+   "histogram_paths": 16,
+   "attained_cost": "3",
+   "reported_upper_bound": "3"
+  }
+ },
+ {
+  "id": "one-state-valid-fixed-plan",
+  "passed": true,
+  "detail": {
+   "status": "incomplete",
+   "verified_policy_available": true,
+   "histogram_paths": 16,
+   "attained_cost": "3",
+   "reported_upper_bound": "3"
+  }
+ },
+ {
+  "id": "union-one-state-valid-fixed-plan",
+  "passed": true,
+  "detail": {
+   "status": "incomplete",
+   "verified_policy_available": true,
+   "histogram_paths": 4,
+   "attained_cost": "3",
+   "reported_upper_bound": "3"
+  }
+ },
+ {
+  "id": "union-budget-no-false-impossibility",
+  "passed": true,
+  "detail": {
+   "status": "incomplete",
+   "verified_policy_available": false
+  }
+ },
+ {
+  "id": "union-complete-certificate-valid-fixed-plan",
+  "passed": true,
+  "detail": {
+   "status": "incomplete",
+   "verified_policy_available": true,
+   "histogram_paths": 4,
+   "attained_cost": "2",
+   "reported_upper_bound": "2"
+  }
+ },
+ {
+  "id": "population-scope-refusal",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision planning requires empirical recorded-sample summaries"
+  }
+ },
+ {
+  "id": "latent-scope-refusal",
+  "passed": true,
+  "detail": {
+   "refused_with": "ValueError",
+   "reason": "Decision criteria require threshold, unit, decision_operator and decision_fraction"
+  }
+ },
+ {
+  "id": "censored-category-stays-recorded",
+  "passed": true,
+  "detail": {
+   "status": "already_resolved",
+   "recorded_decision": "contradicted",
+   "note": "both observations may lie below or above 1.5 inside (1, 2]; no latent claim is made"
+  }
+ },
+ {
+  "id": "no-numerical-solver-required",
+  "passed": true,
+  "detail": {
+   "statuses": [
+    "optimal",
+    "optimal",
+    "impossible"
+   ]
+  }
+ },
+ {
+  "id": "large-finite-costs-exact-sum",
+  "passed": true,
+  "detail": {
+   "explicit_refusal": "Total permitted query cost exceeds the finite range of report exports"
+  }
+ }
+]

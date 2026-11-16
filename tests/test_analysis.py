@@ -30,7 +30,7 @@ def test_cli_writes_json_and_html(tmp_path):
     ])
     assert status == 0
     payload = json.loads(output.read_text())
-    assert payload["version"] == "1.0.0"
+    assert payload["version"] == __import__("mic_50_90").__version__
     assert payload["contract_version"] == "1.0"
     assert "MIC-50-90" in html.read_text()
 

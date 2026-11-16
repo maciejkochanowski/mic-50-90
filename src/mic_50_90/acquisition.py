@@ -74,8 +74,8 @@ def _answers(state, batch, budget, boundary=None):
 
 def _solve(state, criteria, queries, rho, budget, maximum):
     common = len(state) == 1 and len({c['boundary'] for c,s in
-        zip(criteria, _statuses(state, criteria)) if s == 'undetermined'}) == 1
-    boundary = next(c['boundary'] for c,s in zip(criteria, _statuses(state, criteria))
+        zip(criteria, _statuses(state, criteria), strict=True) if s == 'undetermined'}) == 1
+    boundary = next(c['boundary'] for c,s in zip(criteria, _statuses(state, criteria), strict=True)
                     if s == 'undetermined') if common else None
     memo, choices = {}, {}
 
@@ -83,7 +83,7 @@ def _solve(state, criteria, queries, rho, budget, maximum):
         # With one common boundary the remaining ordered target cuts completely
         # describe the worst-case problem (see supplement, acquisition theorem).
         if common:
-            return tuple(sorted({c['cut'] for c,s in zip(criteria, _statuses(current,criteria))
+            return tuple(sorted({c['cut'] for c,s in zip(criteria, _statuses(current,criteria), strict=True)
                                  if s == 'undetermined'}))
         return current
 
@@ -149,7 +149,7 @@ def _cost_lower_bound(state, criteria, queries, rho):
     """
     lower, pairs = Fraction(0), []
     n = state[0].lower[-1]
-    for index, (item, status) in enumerate(zip(criteria, _statuses(state, criteria))):
+    for index, (item, status) in enumerate(zip(criteria, _statuses(state, criteria), strict=True)):
         if status != 'undetermined':
             continue
         cut, boundary = item['cut'], item['boundary']
@@ -204,9 +204,9 @@ def plan_acquisition(specification, criteria, *, queries=None, additional_counts
     state = _state(spec,observations)
     statuses = _statuses(state,parsed)
     lower_bound, lower_certificate = _cost_lower_bound(state, parsed, query_map, rho)
-    targets = {c['cut'] for c,s in zip(parsed,statuses) if s == 'undetermined'}
+    targets = {c['cut'] for c,s in zip(parsed,statuses, strict=True) if s == 'undetermined'}
     public = [dict({k:v for k,v in c.items() if k not in {'cut','boundary','high_true'}}, initial_status=s)
-              for c,s in zip(parsed,statuses)]
+              for c,s in zip(parsed,statuses, strict=True)]
     result = dict(status='incomplete', available=True, scope='recorded_sample_decisions',
                   sample_size=spec.n, criteria=public, allowed_queries=list(query_map.values()),
                   additional_counts=observations, round_cost=float(rho), round_cost_exact=str(rho),

@@ -1,0 +1,108 @@
+{
+ "dataset": "retail-ecoli",
+ "reference": "uniform",
+ "source": "NARMS retail meats",
+ "genus": "E. coli",
+ "agency": "FDA",
+ "years": {
+  "training": 2017,
+  "calibration": 2018,
+  "test": 2019
+ },
+ "drugs": [
+  "AMC",
+  "AMP",
+  "AXO",
+  "AZI",
+  "CHL",
+  "CIP",
+  "CIP2",
+  "COT",
+  "FIS",
+  "GEN",
+  "NAL",
+  "SUF",
+  "TET"
+ ],
+ "nominal_level": 0.9285714285714286,
+ "calibration_rank": 13,
+ "calibration_units": 13,
+ "radius": 1.04722261428833,
+ "test_units": 13,
+ "test_units_covered": 11,
+ "audit_successful_units": 11,
+ "test_tails": 1105,
+ "test_tails_covered": 1101,
+ "mean_width_pp": 24.073198058226534,
+ "mean_sample_width_pp": 24.379266141942573,
+ "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
+ "seconds": 151.3432509379927,
+ "missed": [
+  {
+   "unit_id": "2019:CO",
+   "cohort_id": "retail-ecoli:2019:CO:FIS",
+   "target_id": "gt:16",
+   "truth": 0.1794871794871795,
+   "status": "ok",
+   "lower": 0.19332255155612255,
+   "upper": 0.49572649572649574,
+   "baseline_lower": 0.10256410256410256,
+   "baseline_upper": 0.49572649572649574
+  },
+  {
+   "unit_id": "2019:CO",
+   "cohort_id": "retail-ecoli:2019:CO:SUF",
+   "target_id": "gt:16",
+   "truth": 0.1794871794871795,
+   "status": "ok",
+   "lower": 0.19332255155612255,
+   "upper": 0.49572649572649574,
+   "baseline_lower": 0.10256410256410256,
+   "baseline_upper": 0.49572649572649574
+  },
+  {
+   "unit_id": "2019:TN",
+   "cohort_id": "retail-ecoli:2019:TN:FIS",
+   "target_id": "gt:16",
+   "truth": 0.18446601941747573,
+   "status": "ok",
+   "lower": 0.19288690306222167,
+   "upper": 0.49514563106796117,
+   "baseline_lower": 0.10679611650485436,
+   "baseline_upper": 0.49514563106796117
+  },
+  {
+   "unit_id": "2019:TN",
+   "cohort_id": "retail-ecoli:2019:TN:SUF",
+   "target_id": "gt:16",
+   "truth": 0.18446601941747573,
+   "status": "ok",
+   "lower": 0.19288690306222167,
+   "upper": 0.49514563106796117,
+   "baseline_lower": 0.10679611650485436,
+   "baseline_upper": 0.49514563106796117
+  }
+ ],
+ "created_utc": "2026-11-02T05:28:59+00:00",
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c7s2b0n2",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 48
+ }
+}

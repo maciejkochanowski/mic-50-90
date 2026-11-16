@@ -1,0 +1,2 @@
+cohort_id,threshold,relation,unit,n,count,source
+A,.25,<=,mg/L,67,59,Brookshire Table 1; same 67 isolates

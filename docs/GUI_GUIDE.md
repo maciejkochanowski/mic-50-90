@@ -2,7 +2,7 @@
 
 
 
-MIC-50-90 1.0.0 provides an English-language form for preparing one sample, importing tables for several samples, and checking a received report. These routes use the same validation, calculations and HTML reports as the command-line workflows. The software does not estimate a missing histogram or supply undocumented panel information.
+MIC-50-90 1.0.1 provides an English-language form for preparing one sample, importing tables for several samples, and checking a received report. These routes use the same validation, calculations and HTML reports as the command-line workflows. The software does not estimate a missing histogram or supply undocumented panel information.
 
 
 
@@ -292,7 +292,7 @@ Save the editable input to retain all table text, chosen separators and analysis
 
 
 
-Choose **Verify a received report**, then open `reporting_certificates.json` or paste its complete JSON document. A valid envelope contains `version: "1.0.0"` and a nonempty `certificates` list. A bare single certificate or `results.json` is not that envelope. The original JSON text is retained so exact decimal criteria survive the browser.
+Choose **Verify a received report**, then open `reporting_certificates.json` or paste its complete JSON document. A valid envelope contains `version` "1.0.0" or "1.0.1" and a nonempty `certificates` list. A bare single certificate or `results.json` is not that envelope. The original JSON text is retained so exact decimal criteria survive the browser.
 
 
 

@@ -1,0 +1,240 @@
+{
+ "case": "case-06",
+ "method": "joint-exact",
+ "cohort_id": "FDA|NAHLN|2019|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+ "source": "FDA animal pathogens",
+ "n": 301,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.07803517498541623,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "487fc47e1c19d9f434f63da366f93123e717f2bd2d0fca9e066176d03755cd50",
+  "family_size": 4,
+  "sample_size": 301,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.0,
+    0.15024867180189397
+   ],
+   [
+    0.0,
+    0.09471953856828942
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ],
+   [
+    0.8571828879872554,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.8493647240145739,
+    0.999613395816468
+   ],
+   [
+    0.0,
+    0.15024867180189397
+   ],
+   [
+    0.0,
+    0.09471953856828942
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ],
+   [
+    0.0,
+    0.14281711201274452
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 5441,
+  "excluded_boxes": 19,
+  "elapsed_seconds": 115.74555490200873,
+  "baseline_seconds": 0.0045758289052173495,
+  "refinement_seconds": 115.74089457909577,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.8493647240145739,
+    "upper": 0.999613395816468,
+    "inner_lower": 0.8587552660021923,
+    "inner_upper": 0.9933554817275746
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8493647240145739,
+    "upper": 0.999613395816468,
+    "inner_lower": 0.8587552660021923,
+    "inner_upper": 0.9933554817275746
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8571828879872554,
+    "upper": 1.0,
+    "inner_lower": 0.8661089574880521,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8571828879872554,
+    "upper": 1.0,
+    "inner_lower": 0.8750350269888486,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.15024867180189397,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13146758782665732
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.00019330209176593452,
+    "inner_upper": 0.13652530024252782
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.00019330209176593452,
+    "inner_upper": 0.13652530024252782
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.000386604183532091,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.0066445182724252936,
+    "inner_upper": 0.14124473399780776
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.09471953856828942,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.07876224749223203
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.15063527598542606,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.1323186644970112
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.000386604183532091,
+    "upper": 0.15063527598542606,
+    "inner_lower": 0.0066445182724252936,
+    "inner_upper": 0.14124473399780776
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14281711201274452,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.11603890351035494
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14281711201274452,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13389104251194803
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14281711201274452,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.12496497301115149
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 257,
+  "endpoint_gap_pp": 2.6778208502389593
+ },
+ "refinement_budget_seconds": 114.92028746800497,
+ "seconds": 115.82794319500681,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:31+00:00"
+}

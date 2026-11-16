@@ -1,4 +1,4 @@
-"""Regressions derived from independent counterexamples for release 1.1."""
+"""Independent counterexamples for the input, calibration and transport contracts."""
 from copy import deepcopy
 from itertools import product
 
@@ -125,10 +125,10 @@ def test_manifest_scope_projection_and_fixed_rank_level_with_ties():
         analyse_spec(bad)
 
 
-def test_legacy_manifest_requires_migration_before_new_guarantee():
-    from test_conformal import _legacy_manifest
+def test_manifest_without_contract_requires_migration_before_new_guarantee():
+    from test_conformal import _v11_manifest
     raw = raw_spec()
     raw["reference_distribution"] = [1,1,1,1,1]
-    raw["wasserstein_calibration_manifest"] = _legacy_manifest('legacy_application')
+    raw["wasserstein_calibration_manifest"] = _v11_manifest('contractless_application')
     with pytest.raises(ValueError, match="migrat"):
         analyse_spec(raw)

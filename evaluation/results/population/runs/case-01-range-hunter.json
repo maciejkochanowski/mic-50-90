@@ -1,0 +1,247 @@
+{
+ "case": "case-01",
+ "method": "range-hunter",
+ "cohort_id": "FDA|Vet-LIRN|2020|Salmonella|Dogs|Other Tissues/ Body Sites|Imipenem",
+ "source": "FDA animal pathogens",
+ "n": 25,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.05277659697458148,
+ "result": {
+  "requested_method": "range-hunter",
+  "method": "range-hunter",
+  "statistical_target": "pairwise-range-monotone-majorant",
+  "confidence_level": 0.95,
+  "constraint_signature": "478bf83c1e38a84211835c221f7dd11524f10d403828da13351f6f30694ebdf3",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "sample_size": 25,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "endpoint_gap_pp": 13.131466805532284,
+  "cdf_bounds": [
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.6552579335695321,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.0,
+    0.3447420664304679
+   ],
+   [
+    0.0,
+    0.21310352408000052
+   ],
+   [
+    0.0,
+    0.3224567502696783
+   ],
+   [
+    0.0,
+    0.3447420664304679
+   ]
+  ],
+  "baseline_cdf_bounds": [
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.6552579335695321,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.6552579335695321,
+    1.0
+   ],
+   [
+    0.0,
+    0.3447420664304679
+   ],
+   [
+    0.0,
+    0.21310352408000052
+   ],
+   [
+    0.0,
+    0.3447420664304679
+   ],
+   [
+    0.0,
+    0.3447420664304679
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
+  "elapsed_seconds": 114.94795985892415,
+  "baseline_seconds": 0.003944910946302116,
+  "refinement_seconds": 114.94401525903959,
+  "time_limit_scope": "optional_original_region_refinement",
+  "requested_time_limit_seconds": 114.93340379802976,
+  "effective_time_limit_seconds": 114.93340379802976,
+  "box_count": 445,
+  "excluded_boxes": 130,
+  "retained_nodes": 275,
+  "question_certificates": [],
+  "accepted_witness_count": 108,
+  "algebraic_witness_count": 81,
+  "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
+  "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.6552579335695321,
+    "upper": 1.0,
+    "inner_lower": 0.7147541046142578,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.6552579335695321,
+    "upper": 1.0,
+    "inner_lower": 0.7147541046142578,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.6552579335695321,
+    "upper": 1.0,
+    "inner_lower": 0.7164424854966001,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.6552579335695321,
+    "upper": 1.0,
+    "inner_lower": 0.7484931945800781,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.2515068054199219
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.28355751450339994
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.28410039847852886
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.2852458953857422
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.21310352408000052,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1593983128361291
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.28355751450339994
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.2852458953857422
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.3224567502696783,
+    "inner_lower": 0.0,
+    "inner_upper": 0.19114208221435547
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.28355751450339994
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.3447420664304679,
+    "inner_lower": 0.0,
+    "inner_upper": 0.2515068054199219
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.93340379802976,
+ "seconds": 115.01515171397477,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

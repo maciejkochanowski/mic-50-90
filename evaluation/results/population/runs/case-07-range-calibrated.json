@@ -1,0 +1,251 @@
+{
+ "case": "case-07",
+ "method": "range-calibrated",
+ "cohort_id": "FDA|NAHLN|2021|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+ "source": "FDA animal pathogens",
+ "n": 325,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.04149226797744632,
+ "result": {
+  "requested_method": "range-calibrated",
+  "method": "range-calibrated",
+  "confidence_level": 0.95,
+  "constraint_signature": "425cc0f3334d6e2d5b010558b4bf8dc410408d78f5b6958caa7c8d2a8aa87de7",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "coverage_scope": "all contiguous recorded category ranges on the fixed panel",
+  "sample_size": 325,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "endpoint_gap_pp": 2.0000667788622195e-10,
+  "critical_score_fraction": "45035996273705/9007199254740992",
+  "compatible_histogram_search_complete": false,
+  "evaluated_histograms": 4,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "range_witnesses_checked": 2,
+  "population_row_lift_certificate": {
+   "status": "not_checked",
+   "reason": "Numerical witnesses or the general refinement suffice"
+  },
+  "probability_vertices_checked": 0,
+  "probability_certificates": [],
+  "count_partition_splits": 0,
+  "baseline_cdf_bounds": [
+   [
+    0.8465254302008265,
+    0.9997768091313564
+   ],
+   [
+    0.8465254302008265,
+    0.9997768091313564
+   ],
+   [
+    0.853855834895182,
+    1.0
+   ],
+   [
+    0.853855834895182,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.8465254302008265,
+    0.9997768091313564
+   ],
+   [
+    0.0,
+    0.1461441651048182
+   ],
+   [
+    0.00022319086864361064,
+    0.030766210763024854
+   ],
+   [
+    0.0,
+    0.14614416510481798
+   ],
+   [
+    0.0,
+    0.14614416510481798
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.8465254302008265,
+    0.9997768091313564
+   ],
+   [
+    0.8465254302008265,
+    0.9997768091313564
+   ],
+   [
+    0.853855834895182,
+    1.0
+   ],
+   [
+    0.853855834895182,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.8465254302008265,
+    0.9997768091313564
+   ],
+   [
+    0.0,
+    0.1461441651048182
+   ],
+   [
+    0.00022319086864361064,
+    0.030766210763024854
+   ],
+   [
+    0.0,
+    0.14614416510481798
+   ],
+   [
+    0.0,
+    0.14614416510481798
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
+  "elapsed_seconds": 0.0133575729560107,
+  "baseline_seconds": 0.005606752936728299,
+  "refinement_seconds": 0.007859532022848725,
+  "time_limit_scope": "optional_compatible_histogram_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.8465254302008265,
+    "upper": 0.9997768091313564,
+    "inner_lower": 0.8465254302028264,
+    "inner_upper": 0.9997768091293563
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8465254302008265,
+    "upper": 0.9997768091313564,
+    "inner_lower": 0.8465254302028264,
+    "inner_upper": 0.9997768091293563
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.853855834895182,
+    "upper": 1.0,
+    "inner_lower": 0.853855834897182,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.853855834895182,
+    "upper": 1.0,
+    "inner_lower": 0.853855834897182,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.1461441651048182,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1461441651028182
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.00022319086864361064,
+    "upper": 0.1534745697991735,
+    "inner_lower": 0.00022319087064361063,
+    "inner_upper": 0.15347456979717355
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.00022319086864361064,
+    "upper": 0.1534745697991735,
+    "inner_lower": 0.00022319087064361063,
+    "inner_upper": 0.15347456979717355
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.00022319086864364124,
+    "upper": 0.1534745697991735,
+    "inner_lower": 0.00022319087064361063,
+    "inner_upper": 0.15347456979717355
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.00022319086864361064,
+    "upper": 0.030766210763024854,
+    "inner_lower": 0.00022319087064361063,
+    "inner_upper": 0.030766210761024856
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.00022319086864361064,
+    "upper": 0.1534745697991735,
+    "inner_lower": 0.00022319087064361063,
+    "inner_upper": 0.15347456979717355
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.00022319086864364124,
+    "upper": 0.1534745697991735,
+    "inner_lower": 0.00022319087064361063,
+    "inner_upper": 0.15347456979717355
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14614416510481798,
+    "inner_lower": 0.0,
+    "inner_upper": 0.14614416510281802
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14614416510481798,
+    "inner_lower": 0.0,
+    "inner_upper": 0.14614416510281802
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14614416510481798,
+    "inner_lower": 0.0,
+    "inner_upper": 0.14614416510281802
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.95616286701988,
+ "seconds": 0.05740460893139243,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

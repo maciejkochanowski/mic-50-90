@@ -1,6 +1,6 @@
 # Sources of the supplied software examples
 
-This directory records provenance and rights. It does not contain research-campaign datasets or results. The runnable inputs are in `examples/`; the source manifest identifies exactly which files are supplied.
+This directory records provenance and rights. The runnable inputs are in `examples/`; the inputs, scripts and result tables of the article's evaluation are in `evaluation/`, with their sources in `evaluation/data/README.md`.
 
 | Example | Source record supplied with the input |
 |---|---|
@@ -11,10 +11,11 @@ This directory records provenance and rights. It does not contain research-campa
 | Counts extracted from other publications | `examples/publication_review/README.md` and the JSON inputs retain DOI links and the exact count statements used. |
 | Delma et al. histogram and returned counts | `examples/published_table/SOURCE.json` and `examples/returned_counts/SOURCE.json` identify the factual row, source hash and CC BY-NC 4.0 terms, DOI 10.1093/jacamr/dlae153. |
 | NARMS laboratory reporting | `examples/laboratory_use/README.md` attributes the selected aggregate counts to FDA NARMS and identifies the methods and panel source. |
+| Evaluation count tables (FDA animal-pathogen, NORM 2024, NARMS, FSIS) | `evaluation/data/README.md` identifies each source, the derived count tables and their terms. |
 | Controlled calibration, decision and reporting examples | The corresponding example README or JSON metadata identifies constructed inputs and the purpose of the check. |
 
 Source observations and analyst choices are separate. A panel representative is a coding convention, not an observed concentration; a stated rank sensitivity is not attributed to a paper unless its definition supports it. Clinical interpretations are not inferred from descriptive thresholds.
 
-Full journal articles, publisher graphics, complete downloaded workbooks, ATLAS derivatives and historical campaign outcomes are not supplied. The external calibration adapter is retained for its tested panel and unit-contract checks; running its separate external-data entry point requires obtaining the named sources under their own terms.
+Full journal articles, publisher graphics, complete downloaded workbooks and ATLAS derivatives are not supplied.
 
 See [LICENSES.md](LICENSES.md) and [source-data terms](../docs/DATA_TERMS.md) before redistributing an example.

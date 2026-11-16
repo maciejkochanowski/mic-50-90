@@ -1,6 +1,6 @@
 # Describe the MIC distribution at a requested precision
 
-MIC-50-90 1.0.0 distinguishes missing information about the tested isolates from
+MIC-50-90 1.0.1 distinguishes missing information about the tested isolates from
 uncertainty about a population. A 95% confidence level is not 95% accuracy of an
 individual MIC result.
 

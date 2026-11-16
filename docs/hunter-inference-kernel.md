@@ -3,7 +3,7 @@
 The internal module `mic_50_90._hunter` computes conservative projections of a
 fixed confidence region for an incomplete MIC report. Select **Joint refinement
 across MIC ranges** in the population settings of the form, or pass
-`--population-method range-hunter` to `distribution`. The package version is 1.0.0.
+`--population-method range-hunter` to `distribution`. The package version is 1.0.1.
 This is an optional construction; selecting it does not establish that it will
 give narrower intervals than another method.
 

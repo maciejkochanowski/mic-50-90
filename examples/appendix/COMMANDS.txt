@@ -1,0 +1,75 @@
+MIC-50-90 1.0.1: commands of Appendices B and C
+Run from the folder examples/appendix of the source archive. Each command is one line. Output folders are local.
+
+INSTALL (Windows PowerShell; Python 3.12 shown)
+py -3.12 -m venv .venv
+.\.venv\Scripts\python -m pip install mic-50-90==1.0.1
+$env:Path = "$PWD\.venv\Scripts;" + $env:Path
+mic-50-90 --version
+
+GUIDED APPLICATION (close using Quit application)
+mic-50-90 gui
+
+SOURCE PUBLICATION: sample category, before and after a count
+mic-50-90 distribution inputs/ampicillin-67-summaries-category.json --output-dir output/ampicillin-before
+mic-50-90 distribution inputs/ampicillin-67-with-count-category.json --output-dir output/ampicillin
+
+SAME COLLECTION: population inference conditional on iid sampling
+mic-50-90 distribution inputs/ampicillin-67-with-count-conditional-population.json --population-method range-calibrated --output-dir output/ampicillin-population
+
+MIC MEASUREMENT INTERVALS
+mic-50-90 distribution inputs/chloramphenicol-67-censored.json --output-dir output/chloramphenicol
+
+COUNTS WITHOUT QUANTILES
+mic-50-90 distribution inputs/penicillin-7133-two-counts.json --output-dir output/penicillin
+
+ANNUAL COLLECTIONS (repeat for a source year from 2007 through 2021)
+mic-50-90 distribution inputs/penicillin-annual/2018.json --output-dir output/penicillin-2018
+
+POPULATION PRECISION: fixed groups, confidence and 10 percentage points
+mic-50-90 distribution inputs/penicillin-2018-precision-before.json --population-method range-calibrated --population-precision-pp 10 --output-dir output/precision-before
+mic-50-90 distribution inputs/penicillin-2018-precision-after.json --population-method range-calibrated --population-precision-pp 10 --output-dir output/precision
+
+LABORATORY REPORT AND RECIPIENT VERIFICATION
+mic-50-90 reporting-audit inputs/laboratory/counts.csv --panels inputs/laboratory/panels.csv --targets inputs/laboratory/targets.csv --reporting-plan --output-dir output/amikacin
+python ../received_report/verify.py output/amikacin/reporting_certificates.json
+
+COUNT REQUESTS (constructed teaching case)
+mic-50-90 batch inputs/acquisition-teaching/summaries.csv --panels inputs/acquisition-teaching/panels.csv --targets inputs/acquisition-teaching/targets.csv --acquisition-plan --round-cost 0 --output-dir output/request-sequential
+mic-50-90 batch inputs/acquisition-teaching/summaries.csv --panels inputs/acquisition-teaching/panels.csv --targets inputs/acquisition-teaching/targets.csv --acquisition-plan --round-cost 2 --output-dir output/request-batch
+
+COUNT REQUESTS (real laboratory cohort: the first CDC/NARMS cohort, 266 isolates; summaries already answer the questions)
+mic-50-90 reporting-audit inputs/acquisition-laboratory/counts.csv --panels inputs/acquisition-laboratory/panels.csv --targets inputs/acquisition-laboratory/targets.csv --acquisition-plan --round-cost 1 --output-dir output/laboratory-requests
+
+REAL CALIBRATION APPLICATION: fourteen drug cohorts from one held-out FSIS unit
+mic-50-90 batch inputs/fsis-calibration/summaries.csv --panels inputs/fsis-calibration/panels.csv --targets inputs/fsis-calibration/targets.csv --calibrations inputs/fsis-calibration/calibrations.json --question-time-limit 0.01 --output-dir output/fsis-calibration
+
+OPTIONAL SENSITIVITY MODELS (summaries-only specifications)
+mic-50-90 analyse inputs/advanced/ampicillin-scenarios.json --output output/ampicillin-scenarios.json --html output/ampicillin-scenarios.html
+mic-50-90 analyse inputs/advanced/ampicillin-reference-wide.json --output output/ampicillin-reference-wide.json --html output/ampicillin-reference-wide.html
+mic-50-90 analyse inputs/advanced/ampicillin-models.json --output output/ampicillin-models.json --html output/ampicillin-models.html
+
+LINKED CSV TABLES, RETURNED COUNTS AND CALIBRATION UTILITIES
+The calibration preparation, audit and score examples below are teaching inputs.
+They demonstrate the interface and are separate from the real FSIS application.
+mic-50-90 distribution inputs/guide-csv/summaries.csv --panels inputs/guide-csv/panels.csv --targets inputs/guide-csv/targets.csv --additional-counts inputs/guide-csv/additional-counts.csv --output-dir output/guide-csv
+mic-50-90 batch inputs/acquisition-teaching/summaries.csv --panels inputs/acquisition-teaching/panels.csv --targets inputs/acquisition-teaching/targets.csv --additional-counts inputs/acquisition-teaching/completed.csv --acquisition-plan --round-cost 2 --output-dir output/returned-counts
+mic-50-90 calibration-prepare inputs/calibration-teaching/counts.csv --panels inputs/calibration-teaching/panels.csv --roster inputs/calibration-teaching/roster.csv --metadata inputs/calibration-teaching/metadata.json --level 0.75 --output-dir output/prepared-calibration
+mic-50-90 batch inputs/calibration-teaching/future-summaries.csv --panels inputs/calibration-teaching/panels.csv --targets output/prepared-calibration/targets.csv --calibrations output/prepared-calibration/calibrations.json --question-time-limit 0 --output-dir output/calibration-application
+mic-50-90 calibration-plan --level 0.95 --assurance 0.95 --calibration-units 19 --test-units 30 --output-dir output/calibration-plan
+mic-50-90 calibration-audit inputs/calibration-audit/observed.csv --roster inputs/calibration-audit/expected.csv --output-dir output/calibration-audit
+mic-50-90 calibrate-wasserstein inputs/calibration-scores.json --output output/score-manifest.json
+
+USEFUL OPTIONS
+Append --help to any subcommand to inspect its complete argument list.
+For batch and reporting-audit, --report-page-size 25 creates a navigable paginated report.
+--fail-on-refusal returns a failure code after saving reports containing refused cohorts.
+Keep CSV, JSON, configuration and all report pages together when copying an analysis.
+
+# Same-sample population update: keep the earlier output folder
+mic-50-90 distribution inputs/ampicillin-67-summaries-population-category.json --population-method range-calibrated --output-dir output/update-before
+mic-50-90 distribution inputs/ampicillin-67-with-count-population-category.json --population-method range-calibrated --previous-output output/update-before --population-time-limit 1 --output-dir output/update-after
+
+# Appendix B complete worked example (both standard runs: 120 seconds)
+mic-50-90 distribution inputs/guide-ampicillin-before.json --population-method range-calibrated --population-time-limit 120 --population-tolerance-pp 0.01 --output-dir output/guide-before
+mic-50-90 distribution inputs/guide-ampicillin-after.json --population-method range-calibrated --population-time-limit 120 --population-tolerance-pp 0.01 --previous-output output/guide-before --output-dir output/guide-after

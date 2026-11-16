@@ -82,7 +82,7 @@ def _rank_robust_tail_count_questions_lp(
         for answer in range(answer_min, answer_max + 1):
             _check_deadline(deadline, scores)
             conditional: list[EmpiricalProblem] = []
-            for problem, (lower, upper) in zip(problem_list, candidate_bounds):
+            for problem, (lower, upper) in zip(problem_list, candidate_bounds, strict=True):
                 if answer < lower.count or answer > upper.count:
                     continue
                 try:
@@ -163,7 +163,7 @@ def _prefix_distances(problem):
     for i in range(k):
         dist[i+1,i]=0.
     matrix,lower,upper=problem.linear_constraints
-    for row,lo,hi in zip(matrix,lower,upper):
+    for row,lo,hi in zip(matrix,lower,upper, strict=True):
         support=np.flatnonzero(row)
         if not len(support):
             continue
@@ -215,7 +215,7 @@ def _rank_interval_count_questions(values,intervals,*,exclude_direct_targets,cos
             lo_union=np.full((len(answers),len(s)),np.inf)
             hi_union=np.full_like(lo_union,-np.inf)
             valid_any=np.zeros(len(answers),dtype=bool)
-            for d,(lo,hi) in zip(distances,ranges):
+            for d,(lo,hi) in zip(distances,ranges, strict=True):
                 valid=(answers>=lo)&(answers<=hi)
                 a=answers[valid,None]
                 high=np.minimum(np.minimum(d[s,t],d[s,0]+a+d[q,t]),d[s,q]-a+d[0,t])
@@ -292,7 +292,7 @@ def rank_robust_tail_count_questions(*,problems,target_objectives,exclude_direct
             lo_union=np.full((len(answers),len(cuts)),np.inf)
             hi_union=np.full_like(lo_union,-np.inf)
             valid_any=np.zeros(len(answers),dtype=bool)
-            for d,(lo,hi) in zip(distances,ranges):
+            for d,(lo,hi) in zip(distances,ranges, strict=True):
                 valid=(answers>=lo)&(answers<=hi)
                 a=answers[valid,None]
                 low=np.maximum(-d[cuts,0],a-d[cuts,q])

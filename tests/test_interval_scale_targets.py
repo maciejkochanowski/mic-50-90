@@ -24,7 +24,7 @@ def test_full_recorded_histogram_does_not_resolve_within_tail():
     assert 'measurement' in result['interpretation']['next_step'].lower()
 
 
-def test_boundary_and_legacy_recorded_meaning_are_distinct():
+def test_boundary_and_default_recorded_meaning_are_distinct():
     raw = censored_input()
     raw['targets'] += [dict(raw['targets'][0], target_scale='recorded'),
                       dict(raw['targets'][0], threshold=32)]

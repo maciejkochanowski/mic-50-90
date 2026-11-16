@@ -3,7 +3,7 @@
 Scientific outputs are compared exactly after removing only enumerated timing fields.
 Report text differences remain explicit; they are not automatically called equivalent.
 """
-import hashlib, html, json, os, re, subprocess, sys, time, urllib.request
+import hashlib, json, os, re, subprocess, sys, time, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -66,7 +66,7 @@ def differences(a,b,path=''):
         return result
     if isinstance(a,list) and isinstance(b,list):
         if len(a)!=len(b):return [[path+'/length',len(a),len(b)]]
-        return sum((differences(x,y,path+'/'+str(i)) for i,(x,y) in enumerate(zip(a,b))),[])
+        return sum((differences(x,y,path+'/'+str(i)) for i,(x,y) in enumerate(zip(a,b,strict=True))),[])
     return [] if a==b else [[path,a,b]]
 
 def cli_args(payload,work,destination):
@@ -121,8 +121,8 @@ def main():
                 origin='http://127.0.0.1:'+str(ready['port'])
                 assert ready['token']
                 break
-            except (OSError,json.JSONDecodeError,KeyError):
-                if time.monotonic()>deadline:raise TimeoutError('Windows readiness record')
+            except (OSError,json.JSONDecodeError,KeyError) as exc:
+                if time.monotonic()>deadline:raise TimeoutError('Windows readiness record') from exc
                 time.sleep(.05)
         def request(path,data=None):
             body=None if data is None else json.dumps(data).encode('utf-8')
@@ -161,7 +161,7 @@ def main():
             print(name,result['status'],run.returncode,'differences',row.get('result_difference_count'),flush=True)
         assert len(records)==11 and all(r.get('result_difference_count')==0 and r['cli_exit']==0 and r['windows_status']=='completed' for r in records), records
         save('RUNTIME_SCOPE.json',{'installed_cli_module':identity['module'],'cli_identity':identity,'source_checkout_used_for_cli_import':not identity['installed_distribution_import'],'portable_exe':str(EXE),'sha256':hashlib.sha256(EXE.read_bytes()).hexdigest(),
-            'interface':'final frozen Windows runtime via localhost jobs API; command-line module on same normalized scientific inputs',
+            'interface':'frozen Windows runtime via localhost jobs API; command-line module on same normalized scientific inputs',
             'browser_validation':'This check exercises the packaged jobs API; separate real-browser receipts are required for form interactions and exports.'})
     finally:
         if READY.exists():

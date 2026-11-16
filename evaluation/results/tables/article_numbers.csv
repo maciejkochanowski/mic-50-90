@@ -1,0 +1,245 @@
+number,comparison,quantity,article,reproduced,status
+1,population,"Bonferroni: mean width, cumulative ranges (pp)",28.617,28.617,match
+2,population,"Bonferroni: resolved questions, cumulative ranges (of 480)",309,309,match
+3,population,"Bonferroni: mean width, single categories (pp)",29.730,29.730,match
+4,population,"Bonferroni: resolved questions, single categories (of 180)",67,67,match
+5,population,"Bonferroni: mean width, all ranges (pp)",31.734,31.734,match
+6,population,"Bonferroni: resolved questions, all ranges (of 840)",440,440,match
+7,population,Bonferroni: cohorts meeting the endpoint target (of 20),20,20,match
+8,population,Bonferroni: median seconds per cohort,0.221,0.221,timing
+9,population,"joint-exact: mean width, cumulative ranges (pp)",28.481,28.481,match
+10,population,"joint-exact: resolved questions, cumulative ranges (of 480)",309,309,match
+11,population,"joint-exact: mean width, single categories (pp)",29.466,29.466,match
+12,population,"joint-exact: resolved questions, single categories (of 180)",67,67,match
+13,population,"joint-exact: mean width, all ranges (pp)",31.571,31.571,match
+14,population,"joint-exact: resolved questions, all ranges (of 840)",440,440,match
+15,population,joint-exact: cohorts meeting the endpoint target (of 20),0,0,match
+16,population,joint-exact: median seconds per cohort,115.639,115.639,timing
+17,population,"range-calibrated: mean width, cumulative ranges (pp)",29.731,29.731,match
+18,population,"range-calibrated: resolved questions, cumulative ranges (of 480)",303,303,match
+19,population,"range-calibrated: mean width, single categories (pp)",26.073,26.073,match
+20,population,"range-calibrated: resolved questions, single categories (of 180)",84,84,match
+21,population,"range-calibrated: mean width, all ranges (pp)",31.247,31.247,match
+22,population,"range-calibrated: resolved questions, all ranges (of 840)",454,454,match
+23,population,range-calibrated: cohorts meeting the endpoint target (of 20),20,20,match
+24,population,range-calibrated: median seconds per cohort,0.120,0.120,timing
+25,population,"range-hunter: mean width, cumulative ranges (pp)",29.739,29.739,match
+26,population,"range-hunter: resolved questions, cumulative ranges (of 480)",303,303,match
+27,population,"range-hunter: mean width, single categories (pp)",25.998,25.998,match
+28,population,"range-hunter: resolved questions, single categories (of 180)",84,84,match
+29,population,"range-hunter: mean width, all ranges (pp)",31.237,31.237,match
+30,population,"range-hunter: resolved questions, all ranges (of 840)",454,454,match
+31,population,range-hunter: cohorts meeting the endpoint target (of 20),0,0,match
+32,population,range-hunter: median seconds per cohort,115.094,115.094,timing
+33,population,Bonferroni narrower than range-calibrated for cumulative ranges (cohorts of 20),20,20,match
+34,population,range-calibrated narrower than Bonferroni for single categories (cohorts of 20),20,20,match
+35,population,range-calibrated narrower than Bonferroni for internal ranges (cohorts of 20),15,15,match
+36,population,Bonferroni: maximum seconds per cohort,2.72,2.72,timing
+37,population,range-calibrated: maximum seconds per cohort,0.20,0.20,timing
+38,population,joint-exact: summed-width reduction against Bonferroni (%),0.513,0.513,match
+39,population,range-hunter: summed-width reduction against range-calibrated (%),0.030,0.030,match
+40,coverage,Bonferroni: replicates,100000,100000,match
+41,coverage,Bonferroni: covered replicates,99845,99845,match
+42,coverage,Bonferroni: lowest cohort coverage (%),99.44,99.44,match
+43,coverage,range-calibrated: replicates,100000,100000,match
+44,coverage,range-calibrated: covered replicates,99828,99828,match
+45,coverage,range-calibrated: lowest cohort coverage (%),99.40,99.40,match
+46,complete_tables,Bonferroni: mean width from the incomplete reports (pp),31.73,31.73,match
+47,complete_tables,Bonferroni: mean width from the complete tables (pp),10.62,10.62,match
+48,complete_tables,"Bonferroni: median width ratio, report to complete table",3.7,3.7,match
+49,complete_tables,range-calibrated: mean width from the incomplete reports (pp),31.25,31.25,match
+50,complete_tables,range-calibrated: mean width from the complete tables (pp),9.59,9.59,match
+51,complete_tables,"range-calibrated: median width ratio, report to complete table",4.71,4.71,match
+52,controlled_reports,controlled reports,144,144,match
+53,controlled_reports,proper-range projections,3528,3528,match
+54,controlled_reports,"aggregate width reduction, range-calibrated against Bonferroni cutoff (%)",0.416,0.416,match
+55,controlled_reports,reports with narrower bounds,90,90,match
+56,controlled_reports,reports with equal bounds,54,54,match
+57,controlled_reports,reports whose endpoints are confirmed,144,144,match
+58,controlled_reports,confirmed by the shape condition,142,142,match
+59,controlled_reports,confirmed by direct witnesses,2,2,match
+60,controlled_reports,deterministic probes confirmed (of 15),15,15,match
+61,controlled_reports,largest probe sample size,1000,1000,match
+62,controlled_reports,largest probe category count,16,16,match
+63,sufficient_reporting,drug cohorts,60,60,match
+64,sufficient_reporting,tasks,180,180,match
+65,sufficient_reporting,threshold answers,1809,1809,match
+66,sufficient_reporting,counts sent by direct reporting,405,405,match
+67,sufficient_reporting,counts in the minimal sufficient reports,115,115,match
+68,sufficient_reporting,answers preserved by every rule,1809,1809,match
+69,sufficient_reporting,tasks resolved by the summaries alone,95,95,match
+70,sufficient_reporting,tasks needing counts,85,85,match
+71,sufficient_reporting,tasks needing fewer counts than direct reporting,58,58,match
+72,sufficient_reporting,tasks needing the same number of counts,27,27,match
+73,sufficient_reporting,counts kept by greedy deletion,115,115,match
+74,sufficient_reporting,unequal-cost example: minimal report cost,1,1,match
+75,sufficient_reporting,unequal-cost example: greedy deletion cost,10,10,match
+76,calibration,NARMS: test blocks covered,5,5,match
+77,calibration,NARMS: test blocks,6,6,match
+78,calibration,FSIS: calibration groups,19,19,match
+79,calibration,FSIS: evaluation groups,30,30,match
+80,calibration,FSIS uniform scaling: groups covered (of 30),27,27,match
+81,calibration,FSIS trained scaling: groups covered (of 30),30,30,match
+82,calibration,FSIS trained scaling: mean width (pp),14.5639,14.5639,match
+83,calibration,FSIS uniform scaling: mean width (pp),15.2127,15.2127,match
+84,pba_comparison,feasibility decisions,8800,8800,match
+85,pba_comparison,feasibility decisions where PBA agrees,8800,8800,match
+86,pba_comparison,feasibility decisions where mic-50-90 agrees,8800,8800,match
+87,pba_comparison,sample intervals,17658,17658,match
+88,pba_comparison,sample intervals where PBA agrees,17658,17658,match
+89,pba_comparison,sample intervals where mic-50-90 agrees,17658,17658,match
+90,reporting_controls,finite cases,5016,5016,match
+91,reporting_controls,cases where oracle and package agree,5016,5016,match
+92,reporting_controls,common-boundary cases,4716,4716,match
+93,reporting_controls,fixed-seed cases with variant unions,300,300,match
+94,reporting_controls,impossible-disclosure cases,132,132,match
+95,reporting_controls,impossible-disclosure cases correctly identified,132,132,match
+96,planning_controls,controlled tasks,2400,2400,match
+97,planning_controls,controlled tasks where oracle and package agree,2400,2400,match
+98,planning_controls,controlled: already resolved,2064,2064,match
+99,planning_controls,controlled: nonzero optimal plan,196,196,match
+100,planning_controls,controlled: impossible under the allowed cuts,140,140,match
+101,planning_controls,controlled: checked finite-policy histogram paths,8828,8828,match
+102,planning_controls,controlled: checked impossibility witnesses,140,140,match
+103,planning_controls,stress cases,128,128,match
+104,planning_controls,stress cases where oracle and package agree,128,128,match
+105,planning_controls,stress: already resolved,49,49,match
+106,planning_controls,stress: optimal,62,62,match
+107,planning_controls,stress: impossible,17,17,match
+108,planning_controls,stress: checked histogram paths,1015,1015,match
+109,planning_controls,stress: checked impossibility witnesses,17,17,match
+110,planning_controls,input/contract controls,31,31,match
+111,planning_controls,input/contract controls passing,31,31,match
+112,count_extrema,nonempty reports,268,268,match
+113,count_extrema,P5 rows,1182,1182,match
+114,count_extrema,range-endpoint pairs,2086,2086,match
+115,count_extrema,seeded reports with additional counts,160,160,match
+116,count_extrema,objective pairs with additional counts,720,720,match
+117,count_extrema,feasibility decisions,154,154,match
+118,count_extrema,infeasible reports,50,50,match
+119,count_extrema,failed checks,0,0,match
+120,population_controls,population projection pairs,2832,2832,match
+121,population_controls,"maximum absolute fraction difference (x 10^-12, rounded upward; bound)",2.001,2.001,match
+122,population_controls,zero-budget projection pairs keeping the conservative result,1416,1416,match
+123,population_controls,probability witness queries,267,267,match
+124,population_controls,probability witnesses returned,222,222,match
+125,population_controls,accepted-range checks,747,747,match
+126,population_controls,failed checks,0,0,match
+127,confirmation_population,bonferroni|R1: cohorts meeting the endpoint target (of 610),610,610,match
+128,confirmation_population,"bonferroni|R1: mean width, cumulative ranges (pp)",40.14,40.14,match
+129,confirmation_population,"bonferroni|R1: mean width, single ranges (pp)",42.85,42.85,match
+130,confirmation_population,"bonferroni|R1: mean width, internal ranges (pp)",56.99,56.99,match
+131,confirmation_population,bonferroni|R1: median seconds per cohort,0.2,0.2,timing
+132,confirmation_population,range-calibrated|R1: cohorts meeting the endpoint target (of 610),610,610,match
+133,confirmation_population,"range-calibrated|R1: mean width, cumulative ranges (pp)",42.20,42.20,match
+134,confirmation_population,"range-calibrated|R1: mean width, single ranges (pp)",40.63,40.63,match
+135,confirmation_population,"range-calibrated|R1: mean width, internal ranges (pp)",55.00,55.00,match
+136,confirmation_population,range-calibrated|R1: median seconds per cohort,0.2,0.2,timing
+137,confirmation_population,bonferroni|R2: cohorts meeting the endpoint target (of 610),610,610,match
+138,confirmation_population,"bonferroni|R2: mean width, cumulative ranges (pp)",38.64,38.64,match
+139,confirmation_population,"bonferroni|R2: mean width, single ranges (pp)",46.25,46.25,match
+140,confirmation_population,"bonferroni|R2: mean width, internal ranges (pp)",55.13,55.13,match
+141,confirmation_population,bonferroni|R2: median seconds per cohort,0.2,0.1,timing
+142,confirmation_population,range-calibrated|R2: cohorts meeting the endpoint target (of 610),610,610,match
+143,confirmation_population,"range-calibrated|R2: mean width, cumulative ranges (pp)",40.60,40.60,match
+144,confirmation_population,"range-calibrated|R2: mean width, single ranges (pp)",45.84,45.84,match
+145,confirmation_population,"range-calibrated|R2: mean width, internal ranges (pp)",53.38,53.38,match
+146,confirmation_population,range-calibrated|R2: median seconds per cohort,0.2,0.2,timing
+147,confirmation_population,bonferroni|R3: cohorts meeting the endpoint target (of 610),610,610,match
+148,confirmation_population,"bonferroni|R3: mean width, cumulative ranges (pp)",33.39,33.39,match
+149,confirmation_population,"bonferroni|R3: mean width, single ranges (pp)",40.21,40.21,match
+150,confirmation_population,"bonferroni|R3: mean width, internal ranges (pp)",54.06,54.06,match
+151,confirmation_population,bonferroni|R3: median seconds per cohort,0.2,0.1,timing
+152,confirmation_population,range-calibrated|R3: cohorts meeting the endpoint target (of 610),610,610,match
+153,confirmation_population,"range-calibrated|R3: mean width, cumulative ranges (pp)",35.46,35.46,match
+154,confirmation_population,"range-calibrated|R3: mean width, single ranges (pp)",39.08,39.08,match
+155,confirmation_population,"range-calibrated|R3: mean width, internal ranges (pp)",51.78,51.78,match
+156,confirmation_population,range-calibrated|R3: median seconds per cohort,0.2,0.2,timing
+157,confirmation_population,bonferroni|R1: maximum seconds per cohort,5.8,5.8,timing
+158,confirmation_population,joint-exact|R1: cohorts meeting the endpoint target,1,1,match
+159,confirmation_population,range-hunter|R1: cohorts meeting the endpoint target,2,2,match
+160,confirmation_population,R1: range-calibrated narrower for cumulative ranges (cohorts of 610),0,0,match
+161,confirmation_population,R1: range-calibrated narrower for single categories (cohorts of 610),534,534,match
+162,confirmation_population,R1: range-calibrated narrower for internal ranges (cohorts of 592),426,426,match
+163,confirmation_population,R2: range-calibrated narrower for cumulative ranges (cohorts of 610),0,0,match
+164,confirmation_population,R2: range-calibrated narrower for single categories (cohorts of 610),303,303,match
+165,confirmation_population,R2: range-calibrated narrower for internal ranges (cohorts of 592),426,426,match
+166,confirmation_population,R3: range-calibrated narrower for cumulative ranges (cohorts of 610),0,0,match
+167,confirmation_population,R3: range-calibrated narrower for single categories (cohorts of 610),378,378,match
+168,confirmation_population,R3: range-calibrated narrower for internal ranges (cohorts of 592),456,456,match
+169,confirmation_population,R1: default rule confirmed (1 = yes),1,1,match
+170,confirmation_population,R1: range-calibrated narrower for single categories (% of cohorts),87.5,87.5,match
+171,confirmation_population,R2: range-calibrated narrower for single categories (% of cohorts),49.7,49.7,match
+172,confirmation_population,R3: range-calibrated narrower for single categories (% of cohorts),62.0,62.0,match
+173,confirmation_population,"joint-exact: summed-width change against Bonferroni, R1 (%)",-0.089,-0.089,match
+174,confirmation_population,"range-hunter: summed-width change against range-calibrated, R1 (%)",0.097,0.097,match
+175,confirmation_coverage,bonferroni: replicates,3660000,3660000,match
+176,confirmation_coverage,bonferroni: covered replicates,3653145,3653145,match
+177,confirmation_coverage,bonferroni: lowest configuration coverage (%),97.75,97.75,match
+178,confirmation_coverage,bonferroni: configurations with undercoverage,0,0,match
+179,confirmation_coverage,bonferroni: failed calculations,0,0,match
+180,confirmation_coverage,range-calibrated: replicates,3660000,3660000,match
+181,confirmation_coverage,range-calibrated: covered replicates,3656701,3656701,match
+182,confirmation_coverage,range-calibrated: lowest configuration coverage (%),97.60,97.60,match
+183,confirmation_coverage,range-calibrated: configurations with undercoverage,0,0,match
+184,confirmation_coverage,range-calibrated: failed calculations,0,0,match
+185,confirmation_coverage,"R1, bonferroni: coverage (%)",99.884,99.884,match
+186,confirmation_coverage,"R1, range-calibrated: coverage (%)",99.881,99.881,match
+187,confirmation_coverage,"R2, bonferroni: coverage (%)",99.891,99.891,match
+188,confirmation_coverage,"R2, range-calibrated: coverage (%)",99.960,99.960,match
+189,confirmation_coverage,"R3, bonferroni: coverage (%)",99.662,99.662,match
+190,confirmation_coverage,"R3, range-calibrated: coverage (%)",99.889,99.889,match
+191,synthetic_coverage,bonferroni: coverage (%),99.679,99.679,match
+192,synthetic_coverage,bonferroni: lowest configuration coverage (%),96.9,96.9,match
+193,synthetic_coverage,bonferroni: configurations with undercoverage,0,0,match
+194,synthetic_coverage,range-calibrated: coverage (%),99.724,99.724,match
+195,synthetic_coverage,range-calibrated: lowest configuration coverage (%),96.9,96.9,match
+196,synthetic_coverage,range-calibrated: configurations with undercoverage,0,0,match
+197,external_calibration,test units,109,109,match
+198,external_calibration,"test units covered, uniform reference",103,103,match
+199,external_calibration,"test units covered, trained reference",101,101,match
+200,external_calibration,"dogs-ecoli: test units covered, uniform reference",20,20,match
+201,external_calibration,"dogs-ecoli: test units covered, trained reference",19,19,match
+202,external_calibration,"dogs-spseud: test units covered, uniform reference",18,18,match
+203,external_calibration,"dogs-spseud: test units covered, trained reference",18,18,match
+204,external_calibration,"retail-salmonella: test units covered, uniform reference",19,19,match
+205,external_calibration,"retail-salmonella: test units covered, trained reference",21,21,match
+206,external_calibration,"retail-campylobacter: test units covered, uniform reference",18,18,match
+207,external_calibration,"retail-campylobacter: test units covered, trained reference",18,18,match
+208,external_calibration,"retail-ecoli: test units covered, uniform reference",11,11,match
+209,external_calibration,"retail-ecoli: test units covered, trained reference",8,8,match
+210,external_calibration,"retail-enterococcus: test units covered, uniform reference",17,17,match
+211,external_calibration,"retail-enterococcus: test units covered, trained reference",17,17,match
+212,external_calibration,"synthetic c=20|M=19, SU1: coverage (%)",95.66,95.66,match
+213,external_calibration,"synthetic c=20|M=19, SU2|weight=0.05: coverage (%)",96.68,96.68,match
+214,external_calibration,"synthetic c=20|M=19, SU2|weight=0.1: coverage (%)",97.67,97.67,match
+215,external_calibration,"synthetic c=20|M=19, SU2|weight=0.2: coverage (%)",99.04,99.04,match
+216,external_calibration,"synthetic c=20|M=19, SU2|shift_all=1: coverage (%)",99.84,99.84,match
+217,external_calibration,"synthetic c=20|M=19, SU3: coverage (%)",92.91,92.91,match
+218,external_calibration,"synthetic c=20|M=39, SU1: coverage (%)",95.74,95.74,match
+219,external_calibration,"synthetic c=20|M=39, SU2|weight=0.05: coverage (%)",96.67,96.67,match
+220,external_calibration,"synthetic c=20|M=39, SU2|weight=0.1: coverage (%)",97.89,97.89,match
+221,external_calibration,"synthetic c=20|M=39, SU2|weight=0.2: coverage (%)",99.13,99.13,match
+222,external_calibration,"synthetic c=20|M=39, SU2|shift_all=1: coverage (%)",99.93,99.93,match
+223,external_calibration,"synthetic c=20|M=39, SU3: coverage (%)",92.35,92.35,match
+224,external_calibration,"synthetic c=100|M=19, SU1: coverage (%)",95.99,95.99,match
+225,external_calibration,"synthetic c=100|M=19, SU2|weight=0.05: coverage (%)",98.03,98.03,match
+226,external_calibration,"synthetic c=100|M=19, SU2|weight=0.1: coverage (%)",98.98,98.98,match
+227,external_calibration,"synthetic c=100|M=19, SU2|weight=0.2: coverage (%)",99.79,99.79,match
+228,external_calibration,"synthetic c=100|M=19, SU2|shift_all=1: coverage (%)",99.99,99.99,match
+229,external_calibration,"synthetic c=100|M=19, SU3: coverage (%)",89.78,89.78,match
+230,external_calibration,"synthetic c=100|M=39, SU1: coverage (%)",95.48,95.48,match
+231,external_calibration,"synthetic c=100|M=39, SU2|weight=0.05: coverage (%)",97.76,97.76,match
+232,external_calibration,"synthetic c=100|M=39, SU2|weight=0.1: coverage (%)",98.92,98.92,match
+233,external_calibration,"synthetic c=100|M=39, SU2|weight=0.2: coverage (%)",99.77,99.77,match
+234,external_calibration,"synthetic c=100|M=39, SU2|shift_all=1: coverage (%)",99.99,99.99,match
+235,external_calibration,"synthetic c=100|M=39, SU3: coverage (%)",88.45,88.45,match
+236,endpoint_selection,compatible tables before the count,7938,7938,match
+237,endpoint_selection,compatible tables after the count,546,546,match
+238,endpoint_selection,checked endpoints,60,60,match
+239,endpoint_selection,largest endpoint difference (pp; bound),0.000000001,0E-9,match
+240,endpoint_selection,"selected tables, median seconds before the count",0.086,0.086,timing
+241,endpoint_selection,"all tables, median seconds before the count",4.537,4.537,timing
+242,endpoint_selection,"selected tables, median seconds after the count",0.088,0.088,timing
+243,endpoint_selection,"all tables, median seconds after the count",0.352,0.352,timing
+244,examples,printed numbers that differ from the program output,0,0,match

@@ -2,3 +2,10 @@
 *.woff binary
 *.png binary
 *.zip binary
+
+# Inputs whose bytes are recorded by hash in the evaluation results: store them unchanged.
+evaluation/data/** -text
+examples/appendix/** -text
+
+# Research receipts hash exact output bytes, including CSV line endings.
+research/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

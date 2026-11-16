@@ -1,6 +1,6 @@
 # Prepare calibration from complete category counts
 
-`calibration-prepare` turns complete category histograms and an independently specified roster into a calibration manifest and a `calibrations.json` file for `batch --calibrations`. It saves an HTML report, cohort and unit scores, every scored cut, input and output hashes, and explicit refusals. The software version remains 1.0.0.
+`calibration-prepare` turns complete category histograms and an independently specified roster into a calibration manifest and a `calibrations.json` file for `batch --calibrations`. It saves an HTML report, cohort and unit scores, every scored cut, input and output hashes, and explicit refusals. The software version is 1.0.1.
 
 The default uses a uniform reference on each explicit panel and emits manifest 1.2. Both default and trained modes project using ceiling MIC50/MIC90 without extrema, cover all internal recorded panel tails, and take a maximum over every planned cohort and cut within a unit. Target outcomes are never preparation inputs.
 
@@ -75,7 +75,7 @@ If any expected calibration cohort is missing, incomplete, invalid or fails nume
 
 Other refusals include duplicate roster or category rows, overlapping roles, incompatible unit compositions, absent panel definitions or provenance, target outcomes in the counts input, unplanned count cohorts, unsupported levels and input files changing during scoring. Correct an extraction or metadata error against the independently fixed source; do not edit the roster after seeing scores to manufacture a more favorable result.
 
-## Retained artifacts and bindings
+## Saved files and bindings
 
 `preparation.json` retains full calibration histograms, generated summaries, projected references, per-cut scores, unit accounting, the roster, configuration and refusals. The CSV score files make those quantities easy to inspect. `targets.csv` is machine input and preserves exact IDs; diagnostic CSV exports neutralise spreadsheet formulas. Exact IDs remain available in JSON.
 

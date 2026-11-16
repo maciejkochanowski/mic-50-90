@@ -1,0 +1,240 @@
+{
+ "case": "case-02",
+ "method": "joint-exact",
+ "cohort_id": "FDA|Vet-LIRN|2021|Klebsiella spp|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+ "source": "FDA animal pathogens",
+ "n": 56,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.03151062305551022,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "09e0f0ab73a443fc5100c700feedf16232dbe14ebdfbfaa88292e1ea1e8e309c",
+  "family_size": 4,
+  "sample_size": 56,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.3301299667551048,
+    0.9393791715485923
+   ],
+   [
+    0.3301299667551048,
+    0.9393791715485923
+   ],
+   [
+    0.38018026037700997,
+    0.9703049408037953
+   ],
+   [
+    0.38018026037700997,
+    0.9703049408037953
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.3301299667551048,
+    0.9393791715485923
+   ],
+   [
+    0.0,
+    0.6092492047934874
+   ],
+   [
+    0.0,
+    0.387990167678779
+   ],
+   [
+    0.0,
+    0.5901246804267852
+   ],
+   [
+    0.02969505919620485,
+    0.6198197396229901
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.3301299667551048,
+    0.9393791715485923
+   ],
+   [
+    0.3301299667551048,
+    0.9393791715485923
+   ],
+   [
+    0.38018026037700997,
+    0.9703049408037953
+   ],
+   [
+    0.398621656640347,
+    0.9703049408037953
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.3301299667551048,
+    0.9393791715485923
+   ],
+   [
+    0.0,
+    0.6092492047934874
+   ],
+   [
+    0.0,
+    0.387990167678779
+   ],
+   [
+    0.0,
+    0.5901246804267852
+   ],
+   [
+    0.02969505919620485,
+    0.6013783433596531
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 16369,
+  "excluded_boxes": 5540,
+  "elapsed_seconds": 115.72495842294302,
+  "baseline_seconds": 0.00344594893977046,
+  "refinement_seconds": 115.72143078397494,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.3301299667551048,
+    "upper": 0.9393791715485923,
+    "inner_lower": 0.34916900440490134,
+    "inner_upper": 0.9013010962489992
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.3301299667551048,
+    "upper": 0.9393791715485923,
+    "inner_lower": 0.36820804205469787,
+    "inner_upper": 0.9203401338987957
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.38018026037700997,
+    "upper": 0.9703049408037953,
+    "inner_lower": 0.4170630529036841,
+    "inner_upper": 0.9493330425755485
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.398621656640347,
+    "upper": 0.9703049408037953,
+    "inner_lower": 0.45394584543035815,
+    "inner_upper": 0.9598189916896719
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.6092492047934874,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5711711294938944
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.6354152146362413,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5896780890565239
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.6401749740486904,
+    "inner_lower": 0.015462884627601483,
+    "inner_upper": 0.6106499872847706
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.06062082845140781,
+    "upper": 0.6698700332448952,
+    "inner_lower": 0.09869890375100067,
+    "inner_upper": 0.6508309955950986
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.387990167678779,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.3439173510623789
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.6218663094520699,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5652141062224233
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.06062082845140781,
+    "upper": 0.6698700332448952,
+    "inner_lower": 0.07965986610120425,
+    "inner_upper": 0.6317919579453021
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.5901246804267852,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.534800491636774
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.02969505919620485,
+    "upper": 0.6198197396229901,
+    "inner_lower": 0.05066695742445138,
+    "inner_upper": 0.5829369470963158
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.02969505919620485,
+    "upper": 0.601378343359653,
+    "inner_lower": 0.04018100831032801,
+    "inner_upper": 0.5460541545696418
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 597,
+  "endpoint_gap_pp": 5.665220322964661
+ },
+ "refinement_budget_seconds": 114.96606396394782,
+ "seconds": 115.76159036101308,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

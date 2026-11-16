@@ -1,6 +1,6 @@
 # Calculations visible in a report
 
-The HTML report is the primary interpretation interface. CSV contains compact tabular results. JSON retains unrounded values, full arrays and normalized numerical diagnostics; configuration.json records the exact inputs and their hashes.
+The HTML report is the primary interpretation interface. CSV contains compact tabular results. JSON retains unrounded values, full arrays and normalized numerical diagnostics; configuration.json records the exact inputs and their hashes. [VALIDATION_SCOPE.md](VALIDATION_SCOPE.md) distinguishes the guarantees and evidence for each layer. In particular, valid outer bounds, a reached precision target and completed optimization are separate claims; optional model-based scenarios do not inherit the exact iid construction's guarantee.
 
 The guided application opens these same reports and provides their complete
 download archive. Its five steps collect inputs; they do not replace the report's
@@ -27,9 +27,9 @@ distinguished from a completed analysis. See [GUI_GUIDE.md](GUI_GUIDE.md).
 | Calibrated tail intervals and full manifest contract | New cohort calibration | conformal, dro, comparability | contract/unit checks and public-API replay |
 | Maximum-entropy and KL scenarios, probabilities, tails and status | Assumption-dependent scenarios | scenarios | optimizer and failure-isolation checks |
 | Uncalibrated transport-radius scenario | Assumption-dependent scenarios | dro | transport oracle and failure checks |
-| Additional counts, costs, feasible answers and guaranteed benefit | Additional information | utility | exhaustive small histograms and retained LP oracle |
-| Summary, one-count, all-target and histogram comparison | Laboratory reporting audit | workflows | per-threshold containment and 60-cohort pilot |
-| Refusals, unavailable layers, timeout and zero benefit | Beside the affected result | analysis, workflows, report | controlled failures and frozen researcher pilot |
+| Additional counts, costs, feasible answers and guaranteed benefit | Additional information | utility | exhaustive small histograms and independent LP oracle |
+| Summary, one-count, all-target and histogram comparison | Laboratory reporting audit | workflows | per-threshold containment and the 60-cohort comparison in `evaluation/` |
+| Refusals, unavailable layers, timeout and zero benefit | Beside the affected result | analysis, workflows, report | controlled failures |
 | Intended/available units, containment and paired widths | Separate calibration-audit HTML | calibration_audit | Frozen-roster omissions, whole-unit failures and independent binomial inversion |
 | Calibration/test requirements for three probability statements | Separate calibration-plan HTML | calibration_audit | Marginal rank, PAC rank and zero-failure boundaries |
 
@@ -43,9 +43,9 @@ Stop only when every declared sample criterion is supported or contradicted. Ent
 
 Optional fitting failures leave successfully computed exact results available. A failed reference projection or transport optimization makes the affected optional variant unavailable; the tool does not form a misleading complete envelope from the remaining variants. Profile calculations use a Powell fallback if L-BFGS-B fails and expose its use; failure of both methods refuses that optional result.
 
-No finite test suite proves every possible use correct. Static analysis and execution coverage complement numerical oracles. The [current engineering verification](ENGINEERING_VERIFICATION.md) gives measured coverage, test scope and source-bound records. The reproduction package's dated CODE_AUDIT.md is a retained audit, not the current coverage measurement.
+No finite test suite proves every possible use correct. Static analysis and execution coverage complement numerical oracles. The [engineering verification guide](ENGINEERING_VERIFICATION.md) explains test scope and artifact-specific records; measured results belong to the identified delivery receipt.
 
-Returned counts now have their own visible section: original denominator, source, before/after bounds and observed gain. The next recommendation uses the refined information. Calibration conflicts are explicit, preserving valid sample results. Large reports retain every section on linked detail pages; the index lists all successes and refusals. Preparation has a separate HTML report with the intended calibration denominator, every score/refusal and the provenance contract.
+Returned counts have their own visible section: original denominator, source, before/after bounds and observed gain. The next recommendation uses the refined information. Calibration conflicts are explicit, preserving valid sample results. Large reports retain every section on linked detail pages; the index lists all successes and refusals. Preparation has a separate HTML report with the intended calibration denominator, every score/refusal and the provenance contract.
 
 Trained calibration preparation shows the number of separate training units, learned panel scales and the applied physical radii. Target analysis shows the normalized radius and panel scale alongside the physical radius. Missing training information is reported as a failed trained preparation, without relabeling it as a uniform method.
 

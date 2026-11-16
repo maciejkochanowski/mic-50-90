@@ -1,0 +1,211 @@
+{
+ "created_utc": "2026-11-02T02:07:50+00:00",
+ "source_sha256": {
+  "narms_retail_meats.xlsx": "a989afc9daa0a41b116425524b1e541fdccb09498d7897423f2fec3d3afeb336",
+  "narms_haccp_1997_2005.xlsx": "2ea802291579abe196846ccf158cebe7a2baea494a28f6c55a771bab9fe449ba",
+  "narms_haccp_2006_present.xlsx": "c8cb8dd19b32f6f488de20cfbae6113a211137ae7b8f4c7216d0fd2182c3ec4e",
+  "narms_cecal_2013_present.xlsx": "116831649876a47623040f76d50f806d2ac9940fde3a9983187159452696d7af",
+  "narms_minor_species_2020_2022.xlsx": "469611094b535a5685b916a68617c207c19de777ee3004e0f723949d77fca3e6",
+  "fda_animal_pathogen_2017_2024.xlsx": "a24fc9cdb30b47b94d81c3592f8a1d5b162bd37cd0da2ec38a4d11c4eb27ca97"
+ },
+ "dropped_records": {
+  "sign <=   0": 1,
+  "sign missing": 246,
+  "sign >=": 827
+ },
+ "panel_groups": 4405,
+ "panel_groups_used": 3491,
+ "panel_groups_excluded": {
+  "more than one <= step": 362,
+  "more than one > step": 80,
+  "2 categories": 274,
+  "value not on the doubling-dilution scale": 47,
+  "= value above the > step": 11,
+  "= value below the <= step": 32,
+  "14 categories": 68,
+  "13 categories": 40
+ },
+ "cohorts_considered": 10419,
+ "cohorts_not_eligible": {
+  "shares records with a development cohort": 7,
+  "n outside 20-1000": 2271,
+  "one occupied category": 124
+ },
+ "cohorts_eligible": 8017,
+ "strata": 61,
+ "cohorts_selected": 610,
+ "per_stratum": 10,
+ "calibration_datasets": {
+  "dogs-ecoli": {
+   "source": "FDA animal pathogens",
+   "genus": "E. coli",
+   "agency": "NAHLN",
+   "years": {
+    "training": 2022,
+    "calibration": 2023,
+    "test": 2024
+   },
+   "drugs": [
+    "Amikacin",
+    "Cefazolin",
+    "Cefovecin",
+    "Cefpodoxime",
+    "Ceftazidime",
+    "Chloramphenicol",
+    "Doxycycline",
+    "Enrofloxacin",
+    "Gentamicin",
+    "Marbofloxacin",
+    "Piperacillin/Tazobactam",
+    "Pradofloxacin",
+    "Tetracycline",
+    "Trimethoprim/Sulfamethoxazole"
+   ],
+   "units": {
+    "training": 20,
+    "calibration": 20,
+    "test": 20
+   },
+   "level": 0.95
+  },
+  "dogs-spseud": {
+   "source": "FDA animal pathogens",
+   "genus": "S. pseudintermedius",
+   "agency": "NAHLN",
+   "years": {
+    "training": 2022,
+    "calibration": 2023,
+    "test": 2024
+   },
+   "drugs": [
+    "Amikacin",
+    "Amoxicillin/Clavulanic Acid",
+    "Ampicillin",
+    "Cefazolin",
+    "Cefovecin",
+    "Cefpodoxime",
+    "Cephalothin",
+    "Chloramphenicol",
+    "Clindamycin",
+    "Doxycycline",
+    "Enrofloxacin",
+    "Erythromycin",
+    "Marbofloxacin",
+    "Minocycline",
+    "Oxacillin",
+    "Penicillin",
+    "Pradofloxacin",
+    "Rifampin",
+    "Trimethoprim/Sulfamethoxazole"
+   ],
+   "units": {
+    "training": 22,
+    "calibration": 21,
+    "test": 20
+   },
+   "level": 0.95
+  },
+  "retail-salmonella": {
+   "source": "NARMS retail meats",
+   "genus": "Salmonella",
+   "agency": "FDA",
+   "years": {
+    "training": 2019,
+    "calibration": 2020,
+    "test": 2021
+   },
+   "drugs": [
+    "AMC",
+    "AMP",
+    "AXO",
+    "CHL",
+    "COT",
+    "FIS",
+    "GEN",
+    "SUF",
+    "TET"
+   ],
+   "units": {
+    "training": 19,
+    "calibration": 21,
+    "test": 21
+   },
+   "level": 0.95
+  },
+  "retail-campylobacter": {
+   "source": "NARMS retail meats",
+   "genus": "Campylobacter",
+   "agency": "FDA",
+   "years": {
+    "training": 2017,
+    "calibration": 2018,
+    "test": 2019
+   },
+   "drugs": [
+    "GEN",
+    "NAL",
+    "TET"
+   ],
+   "units": {
+    "training": 18,
+    "calibration": 19,
+    "test": 18
+   },
+   "level": 0.95
+  },
+  "retail-ecoli": {
+   "source": "NARMS retail meats",
+   "genus": "E. coli",
+   "agency": "FDA",
+   "years": {
+    "training": 2017,
+    "calibration": 2018,
+    "test": 2019
+   },
+   "drugs": [
+    "AMC",
+    "AMP",
+    "AXO",
+    "AZI",
+    "CHL",
+    "CIP",
+    "CIP2",
+    "COT",
+    "FIS",
+    "GEN",
+    "NAL",
+    "SUF",
+    "TET"
+   ],
+   "units": {
+    "training": 11,
+    "calibration": 13,
+    "test": 13
+   },
+   "level": 0.9
+  },
+  "retail-enterococcus": {
+   "source": "NARMS retail meats",
+   "genus": "Enterococcus",
+   "agency": "FDA",
+   "years": {
+    "training": 2019,
+    "calibration": 2020,
+    "test": 2021
+   },
+   "drugs": [
+    "AMP",
+    "CHL",
+    "ERY",
+    "QDA",
+    "TET"
+   ],
+   "units": {
+    "training": 11,
+    "calibration": 14,
+    "test": 17
+   },
+   "level": 0.9
+  }
+ }
+}

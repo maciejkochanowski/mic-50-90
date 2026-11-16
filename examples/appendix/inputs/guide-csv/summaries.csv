@@ -1,0 +1,2 @@
+cohort_id,panel_id,variant_id,n,mic50,mic90,rank_convention,rank50,rank90,minimum,maximum
+A,P,primary,67,<=0.12,0.5,explicit,34,61,<=0.12,>1

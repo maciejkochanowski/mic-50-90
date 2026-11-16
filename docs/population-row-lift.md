@@ -30,6 +30,8 @@ For fixed n and c, directed binomial-tail brackets provide lower and upper bound
 
 In the inference engine, numerical endpoint gaps are still certified from inward witness regions and an outward report envelope. This protects the returned endpoints when a shape check is unavailable or numerical brackets do not settle an equality. K+1 accepted probability-row potentials also suffice to certify all projections: each is checked against the report's integer constraints and the fixed binomial acceptance bands. Failure at one chosen point does not exclude its face. Residual count cells are split on an integer cumulative count; the two children are disjoint and cover the parent. Each unresolved cell retains its own outer envelope. A parent is replaced only after both child envelopes exist. Time or memory interruption therefore retains a conservative union.
 
+The historical 144-report controlled benchmark recorded `certified` in 142 runtime shape checks and `not_checked` in two reports, whose direct endpoint witnesses already sufficed. Thus 142/144 counts certificates used by that execution path, not reports satisfying the mathematical condition. The separate research audit dated 2026-11-03 explicitly checked the exact returned sample-size/cutoff pairs and certified the sufficient condition for all 144 reports. Its case-level record is `research/wp6/results/independent/actual_conditions.json` in the research bundle. Historical result files retain their original values.
+
 ## Measurement-interval projection
 
 For an event A, let D(A) contain measured categories wholly in A, and P(A) categories that can intersect A. For every distribution of concentrations compatible with the measurement intervals,

@@ -259,7 +259,7 @@ def audit_histogram(raw, counts, result):
         all_counts = all_counts.with_equality(target,int(target@counts))
     histogram = []
     comparisons = []
-    for threshold, target in zip(spec.thresholds,targets):
+    for threshold, target in zip(spec.thresholds,targets, strict=True):
         histogram.append(dict(threshold=threshold,recorded=float(target@counts/spec.n),
                               latent_lower=float(spec.panel.latent_tail(threshold,upper=False)@counts/spec.n),
                               latent_upper=float(spec.panel.latent_tail(threshold,upper=True)@counts/spec.n)))
@@ -564,7 +564,7 @@ def run_csv_workflow(args):
             if planning_requested:
                 plan_criteria = [dict(threshold=t, unit="mg/L", decision_operator=criterion["decision_operator"],
                                       decision_fraction=criterion["decision_fraction_text"])
-                                 for t, criterion in zip(thresholds, criteria) if criterion is not None]
+                                 for t, criterion in zip(thresholds, criteria, strict=True) if criterion is not None]
                 plan_queries = None if query_path is None else [
                     {k: v for k, v in row.items() if k != "cohort_id"}
                     for row in (query_groups or {}).get(cid, [])]

@@ -1,0 +1,238 @@
+{
+ "case": "human-04",
+ "method": "bonferroni",
+ "cohort_id": "NORM2024|T88|Erythromycin",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.43548715207725763,
+ "result": {
+  "requested_method": "bonferroni",
+  "method": "bonferroni",
+  "confidence_level": 0.95,
+  "constraint_signature": "213e29310e2ea72a6978bd703712898c576462bc359d56b0127d6d6cc510e3f7",
+  "family_size": 4,
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.8664239879554598,
+    0.9999900482838305
+   ],
+   [
+    0.868208927922787,
+    1.0
+   ],
+   [
+    0.868208927922787,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.3175991107121578,
+    0.9999900482838305
+   ],
+   [
+    0.0,
+    0.06262997930826565
+   ],
+   [
+    0.0,
+    0.13179107207721288
+   ],
+   [
+    0.0,
+    0.13179107207721288
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.8664239879554598,
+    0.9999900482838305
+   ],
+   [
+    0.868208927922787,
+    1.0
+   ],
+   [
+    0.868208927922787,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5488248772433022
+   ],
+   [
+    0.3175991107121578,
+    0.9999900482838305
+   ],
+   [
+    0.0,
+    0.06262997930826565
+   ],
+   [
+    0.0,
+    0.13179107207721288
+   ],
+   [
+    0.0,
+    0.13179107207721288
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "elapsed_seconds": 0.3825761319603771,
+  "baseline_seconds": 0.3825761319603771,
+  "refinement_seconds": 0.0,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5488248772433022,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.548824877241302
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8664239879554598,
+    "upper": 0.9999900482838305,
+    "inner_lower": 0.86642398795746,
+    "inner_upper": 0.9999900482818304
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.868208927922787,
+    "upper": 1.0,
+    "inner_lower": 0.8682089279247872,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.868208927922787,
+    "upper": 1.0,
+    "inner_lower": 0.8682089279247872,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.3175991107121578,
+    "upper": 0.9999900482838305,
+    "inner_lower": 0.3175991107161578,
+    "inner_upper": 0.9999900482818304
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.319384050679485,
+    "upper": 1.0,
+    "inner_lower": 0.319384050683485,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.319384050679485,
+    "upper": 1.0,
+    "inner_lower": 0.319384050683485,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.45117512275669786,
+    "upper": 1.0,
+    "inner_lower": 0.4511751227586979,
+    "inner_upper": 0.9999999999999999
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.06262997930826565,
+    "inner_lower": 0.0,
+    "inner_upper": 0.06262997930426571
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.1335760120445401,
+    "inner_lower": 0.0,
+    "inner_upper": 0.13357601204254008
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 9.951716169576129e-06,
+    "upper": 0.1335760120445401,
+    "inner_lower": 9.951718169531889e-06,
+    "inner_upper": 0.13357601204254008
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.13179107207721288,
+    "inner_lower": 0.0,
+    "inner_upper": 0.13179107207521287
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13179107207721288,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13179107207521287
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13179107207721288,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.13179107207521287
+   }
+  ],
+  "endpoint_gap_pp": 4.000022535421978e-10
+ },
+ "refinement_budget_seconds": 0,
+ "seconds": 0.43713855801615864,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

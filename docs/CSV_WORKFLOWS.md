@@ -52,7 +52,7 @@ The compact CSV includes planner status, scope, cost and next question. JSON ret
 
 ## Calibration
 
-calibrate-wasserstein accepts explicit score and unit arrays plus calibration_contract; the example calibration-scores.json documents the fields. New guarantees require manifest 1.2 or 1.3, matching reference_protocol and grouping in calibration_context, unit=mg/L and a matching summary policy. Legacy manifests must be regenerated from the original scores after confirming their semantics; editing only manifest_version is invalid. A user-specified radius without a valid manifest remains an assumption scenario.
+calibrate-wasserstein accepts explicit score and unit arrays plus calibration_contract; the example calibration-scores.json documents the fields. New guarantees require manifest 1.2 or 1.3, matching reference_protocol and grouping in calibration_context, unit=mg/L and a matching summary policy. Manifests of versions 1.0 and 1.1 must be regenerated from the original scores after confirming their semantics; editing only manifest_version is invalid. A user-specified radius without a valid manifest remains an assumption scenario.
 
 Three guarantees answer different questions: the actual sample, an iid source population, and a new exchangeable study unit. They are not interchangeable and do not identify clinical susceptibility without additional justified information.
 
@@ -84,7 +84,7 @@ Use mic-50-90 --version to identify the installed package. The equivalent module
 
 For automated runs, add --fail-on-refusal. The program writes the complete reports and returns status 2 if any cohort is refused. Successful cohorts remain available. Without this switch, status 0 indicates that the files were processed, including any recorded refusals. An unavailable population, calibration or decision-planning result alone does not count as a refused cohort. Required-file errors still stop the command with status 2. Choose a separate output directory for each analysis you want to retain; the command writes fixed filenames there.
 
-The external calibration evaluation used common-range histograms. It does not establish performance for a user possessing only original summaries. Under the independently documented-panel eligibility protocol, all 871 EBI cohorts were ineligible because the tested panels could not be established; all 871 refusals are retained. Calibration remains a conditional capability requiring suitable reference and calibration data, not a generally validated shortcut.
+Calibration remains a conditional capability requiring suitable reference and calibration data with independently documented panels, not a generally validated shortcut.
 
 ## Further information and large reports
 

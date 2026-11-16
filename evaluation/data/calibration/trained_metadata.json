@@ -1,0 +1,29 @@
+{
+  "protocol_label": "MIC5090-FSIS-trained-primary",
+  "unit_definition": "A group of poultry establishments linked by common ownership, pooled across all included years and all fourteen drugs",
+  "cohort_selection_rule": "All 19 calibration and 30 test groups of fsis_split.csv with all fourteen drug panels; four NARMS blocks provide training only",
+  "roster_provenance": "FSIS groups assigned by the ascending SHA-256 of the group identifier (fsis_split.csv); NARMS training blocks KS, MN, CO and OR. Development data (evaluation/PROTOCOL.md, section 1).",
+  "counts_provenance": "Complete original FSIS calibration histograms and NARMS training histograms, including zeros and censored categories. FSIS target histograms are excluded from these inputs.",
+  "grouping": {
+    "program": "USDA-FSIS raw poultry, FDA-linked signs",
+    "years": "2020-2021",
+    "organism": "Salmonella spp.",
+    "panel": "CMV5AGNF"
+  },
+  "panel_provenance": {
+    "CMV5AGNF:AMC": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:AMC; not per-isolate plate-lot verification",
+    "CMV5AGNF:AMP": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:AMP; not per-isolate plate-lot verification",
+    "CMV5AGNF:AXO": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:AXO; not per-isolate plate-lot verification",
+    "CMV5AGNF:AZI": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:AZI; not per-isolate plate-lot verification",
+    "CMV5AGNF:CHL": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:CHL; not per-isolate plate-lot verification",
+    "CMV5AGNF:CIP": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:CIP; not per-isolate plate-lot verification",
+    "CMV5AGNF:COL": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:COL; not per-isolate plate-lot verification",
+    "CMV5AGNF:COT": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:COT; not per-isolate plate-lot verification",
+    "CMV5AGNF:FIS": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:FIS; not per-isolate plate-lot verification",
+    "CMV5AGNF:FOX": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:FOX; not per-isolate plate-lot verification",
+    "CMV5AGNF:GEN": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:GEN; not per-isolate plate-lot verification",
+    "CMV5AGNF:MER": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:MER; not per-isolate plate-lot verification",
+    "CMV5AGNF:NAL": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:NAL; not per-isolate plate-lot verification",
+    "CMV5AGNF:TET": "FDA-linked explicit operators with documented CMV5AGNF program-year grid for CMV5AGNF:TET; not per-isolate plate-lot verification"
+  }
+}

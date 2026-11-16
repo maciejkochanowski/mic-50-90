@@ -1,0 +1,37 @@
+{
+ "settings": {
+  "cohorts": 610,
+  "methods": [
+   "bonferroni",
+   "range-calibrated",
+   "joint-exact",
+   "range-hunter"
+  ],
+  "budget_seconds": 120.0,
+  "reserve_seconds": 5.0,
+  "tolerance_pp": 0.1
+ },
+ "started_utc": "2026-11-02T05:18:31+00:00",
+ "workers": 48,
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c1s4b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 48
+ }
+}

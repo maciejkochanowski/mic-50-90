@@ -1,21 +1,25 @@
-# MIC-50-90 1.0.0
+# MIC-50-90 1.0.2
 
-MIC-50-90 is research software for describing MIC distributions from incomplete laboratory reports. It combines MIC50/MIC90, observed extremes, exact or interval counts, and explicitly rounded percentages to show the smallest and largest category shares compatible with the reported information. A local Windows application, Python command line and Python interface support the same calculation workflows.
+Version **1.0.2** corrects the numerical domain of weighted objectives, the integrity checks of the source distribution and the wording of validation results (see `CHANGELOG.md`). The release files and their checksums are attached to the [GitHub release](https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.2) and archived at Zenodo.
+
+MIC-50-90 is a Python package for bounding MIC distributions from incomplete susceptibility reports. Published antimicrobial susceptibility results often give only MIC50, MIC90, a range and a few percentages. From these, and from exact or rounded counts, MIC-50-90 computes the smallest and largest count the report allows in every MIC category and range, names the count that would narrow an open question most, selects counts a laboratory can publish so that readers can check its conclusions, and gives optional population bounds under stated sampling assumptions. A local browser form, a Windows application, the command line and the Python interface use the same calculation engine.
 
 Use it to interpret an unreported concentration range, distinguish missing counts from measurement censoring, determine which additional counts would resolve a question, or prepare a short laboratory report whose conclusions a recipient can verify. Inputs refer to the same original isolates and retain their denominator, panel, units and reporting convention.
 
 ## Install and start
 
-**Windows application:** download the portable Windows archive from the [version 1.0.0 software release](https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0), extract it, and open `MIC-50-90.exe`. Keep the `_internal` folder beside the executable. Python is included. The application opens a guided form in your browser and performs calculations locally. Use **Quit application** to stop it.
+Use Python 3.11–3.13 in a separate environment. The release checksums identify the published files; the release workflow records the operating systems and Python versions on which they were tested.
 
-**Python:** use Python 3.11–3.13 in a separate environment. Install version 1.0.0 from PyPI:
+Install from PyPI with the Python interpreter of that environment:
 
 ```text
-python -m pip install mic-50-90==1.0.0
+python -m pip install mic-50-90==1.0.2
 mic-50-90 gui
 ```
 
-Alternatively, download the verified wheel from the software release and install it with `python -m pip install mic_50_90-1.0.0-py3-none-any.whl`.
+To install from a source checkout, run `python -m pip install .` from its root directory. The guided form opens in your local browser; use **Quit application** to stop it.
+
+A portable Windows application is part of a release only when the release workflow attaches it together with its build and browser-test receipts. Earlier releases keep their own files and validation records.
 
 To inspect the command-line interface:
 
@@ -48,7 +52,7 @@ These layers answer different questions. Complete category counts can still leav
 - Add a count from the original collection and update the analysis while preserving previous truthful information.
 - Select contiguous concentration groups at a requested sample or population precision.
 - Plan one request or successive requests for additional counts, with explicit permitted questions and costs.
-- Select sufficient counts from a complete histogram so a recipient can verify the stated sample conclusions.
+- Select sufficient counts from complete category counts so a recipient can verify the stated sample conclusions.
 - Prepare and assess study-unit calibration with its own reference and sampling requirements.
 
 The main mathematical result gives a checkable P6 endpoint-attainment condition: when it holds, a selected family of compatible count tables attains the same population-range endpoints as considering every compatible table for the fixed confidence construction. Written proofs, independent numerical checks and 29 Lean-checked algebraic declarations have distinct roles; the Lean development does not certify the entire program or all statistical assumptions.
@@ -65,9 +69,10 @@ The main mathematical result gives a checkable P6 endpoint-attainment condition:
 | `docs` and `schemas` | Installation, usage, input formats and output definitions |
 | `examples` and `data` | Small example inputs, source attribution and data terms |
 | `formal` and `reproducibility` | Formal algebra and independent checks of the implemented calculations |
-| `scripts` | Software integrity, reference calculations and validation utilities |
+| `evaluation` | Inputs, scripts and result tables of the comparisons reported in the article |
+| `scripts` | Source manifest, source bundle, archive installation check, command reference and document claim check |
 
-The Windows application and CLI use the same calculation engine. Cluster job submissions and article-production files are maintained outside this repository.
+The Windows application and CLI use the same calculation engine. Article-production files are maintained outside this repository.
 
 - [Windows user guide](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/GUI_GUIDE.md): installation, data entry, saved analyses and reports.
 - [Distribution guide](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/distribution-user-guide.md): an end-to-end CLI analysis and interpretation.

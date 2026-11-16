@@ -1,0 +1,247 @@
+{
+ "case": "human-08",
+ "method": "range-hunter",
+ "cohort_id": "NORM2024|T90|Erythromycin",
+ "source": "NORM Norway 2024",
+ "n": 354,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.08782531600445509,
+ "result": {
+  "requested_method": "range-hunter",
+  "method": "range-hunter",
+  "statistical_target": "pairwise-range-monotone-majorant",
+  "confidence_level": 0.95,
+  "constraint_signature": "d4b444f04edf3f8af78c26da007a0bda7410774bc019ced1d5063d945741374b",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "sample_size": 354,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "endpoint_gap_pp": 7.556526205275327,
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5727404032956911
+   ],
+   [
+    0.8486934115547172,
+    0.9992544275663795
+   ],
+   [
+    0.8587394270928447,
+    1.0
+   ],
+   [
+    0.8587394270928447,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5727404032956911
+   ],
+   [
+    0.33134972250947875,
+    0.9992544275663795
+   ],
+   [
+    0.0007455724336205087,
+    0.03316094180468522
+   ],
+   [
+    0.0,
+    0.14126057290715532
+   ],
+   [
+    0.0,
+    0.14126057290715532
+   ]
+  ],
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5727404032956911
+   ],
+   [
+    0.8486934115547172,
+    0.9992544275663795
+   ],
+   [
+    0.8587394270928447,
+    1.0
+   ],
+   [
+    0.8587394270928447,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5727404032956911
+   ],
+   [
+    0.33134972250947875,
+    0.9992544275663795
+   ],
+   [
+    0.0007455724336205087,
+    0.03316094180468522
+   ],
+   [
+    0.0,
+    0.14126057290715532
+   ],
+   [
+    0.0,
+    0.14126057290715532
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
+  "elapsed_seconds": 115.67763357097283,
+  "baseline_seconds": 0.004274012055248022,
+  "refinement_seconds": 115.67335951991845,
+  "time_limit_scope": "optional_original_region_refinement",
+  "requested_time_limit_seconds": 114.90312709996942,
+  "effective_time_limit_seconds": 114.90312709996942,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "retained_nodes": 1,
+  "question_certificates": [],
+  "accepted_witness_count": 5,
+  "algebraic_witness_count": 0,
+  "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
+  "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5727404032956911,
+    "inner_lower": 0.0,
+    "inner_upper": 0.4971751412429378
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8486934115547172,
+    "upper": 0.9992544275663795,
+    "inner_lower": 0.9011299435028249,
+    "inner_upper": 0.9915254237288135
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8587394270928447,
+    "upper": 1.0,
+    "inner_lower": 0.9096045197740114,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8587394270928447,
+    "upper": 1.0,
+    "inner_lower": 0.9096045197740114,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.33134972250947875,
+    "upper": 0.9992544275663795,
+    "inner_lower": 0.40395480225988706,
+    "inner_upper": 0.9915254237288135
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.3394547240000767,
+    "upper": 1.0,
+    "inner_lower": 0.4124293785310735,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.3394547240000767,
+    "upper": 1.0,
+    "inner_lower": 0.4124293785310735,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.4272595967043089,
+    "upper": 1.0,
+    "inner_lower": 0.5028248587570622,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0007455724336205087,
+    "upper": 0.03316094180468522,
+    "inner_lower": 0.008474576271186442,
+    "inner_upper": 0.00847457627118644
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0007455724336205087,
+    "upper": 0.15130658844528277,
+    "inner_lower": 0.008474576271186442,
+    "inner_upper": 0.09887005649717513
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.0007455724336205087,
+    "upper": 0.15130658844528277,
+    "inner_lower": 0.008474576271186442,
+    "inner_upper": 0.09887005649717513
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14126057290715532,
+    "inner_lower": 0.0,
+    "inner_upper": 0.0903954802259887
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14126057290715532,
+    "inner_lower": 0.0,
+    "inner_upper": 0.0903954802259887
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14126057290715532,
+    "inner_lower": 0.0,
+    "inner_upper": 0.0903954802259887
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.90312709996942,
+ "seconds": 115.77461893996224,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:31+00:00"
+}

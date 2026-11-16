@@ -148,7 +148,9 @@ def _sharp_reporting_envelope(
     for index, threshold in enumerate(spec.thresholds):
         indexed = [(identifier, values[index]) for identifier, values in raw_results.items()]
 
-        def endpoint(estimand: str, direction: str) -> dict[str, Any]:
+        def endpoint(
+            estimand: str, direction: str, indexed: list[tuple[str, Any]] = indexed
+        ) -> dict[str, Any]:
             attribute = f"{estimand}_{direction}"
             candidates = [
                 (identifier, getattr(result, attribute)) for identifier, result in indexed
@@ -259,11 +261,11 @@ def _wasserstein_scenario(
         "calibration_manifest": spec.wasserstein_calibration_manifest,
         "radius": spec.wasserstein_radius,
         **({"normalized_radius": manifest["radius"], "transport_scale": spec.calibration_transport_scale}
-           if contract.get("transport_scaling") is not None else {}),
+           if manifest is not None and contract.get("transport_scaling") is not None else {}),
         "threshold_results": threshold_results,
         "interpretation": (
             manifest["coverage_statement"]
-            if calibrated
+            if manifest is not None
             else "User-specified Wasserstein sensitivity scenario without a coverage guarantee."
         ),
     }

@@ -1,0 +1,2 @@
+cohort_id,threshold,unit,decision_operator,decision_fraction
+c,2,mg/L,<,0.05

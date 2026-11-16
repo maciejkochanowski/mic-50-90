@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from typing import Iterable
 
 import numpy as np
-from scipy.optimize import linprog
+from ._solver_resources import linprog
 
 from .empirical import EmpiricalProblem
 from .validation import normalized_mass
@@ -37,8 +37,8 @@ class WassersteinBound:
             "upper": self.upper,
             "radius": self.radius,
             "cost_unit": self.cost_unit,
-            "lower_witness": dict(zip(labels, self.lower_distribution)),
-            "upper_witness": dict(zip(labels, self.upper_distribution)),
+            "lower_witness": dict(zip(labels, self.lower_distribution, strict=True)),
+            "upper_witness": dict(zip(labels, self.upper_distribution, strict=True)),
             "lower_witness_distance": self.lower_distance,
             "upper_witness_distance": self.upper_distance,
             "assumption_dependent": True,
@@ -72,7 +72,7 @@ def _linprog_constraints(problem: EmpiricalProblem, total_variables: int):
     b_eq: list[float] = []
     a_ub: list[np.ndarray] = []
     b_ub: list[float] = []
-    for row, lo, hi in zip(matrix, lower, upper):
+    for row, lo, hi in zip(matrix, lower, upper, strict=True):
         expanded = np.zeros(total_variables)
         expanded[: problem.k] = row
         if np.isfinite(lo) and np.isfinite(hi) and abs(lo - hi) <= 1e-12:
@@ -210,7 +210,7 @@ def critical_radius(*, problem, reference: np.ndarray, positions: np.ndarray | N
             or tolerance < 0 or not isinstance(steps, (int, np.integer)) or steps < 1):
         raise ValueError("invalid critical-radius search controls")
     worst = 0.0
-    for objective, truth in zip(objectives, truths):
+    for objective, truth in zip(objectives, truths, strict=True):
         try:
             widest = wasserstein_bounds(problem=problem, reference=reference,
                                         radius=ceiling, objective=objective, positions=positions)
@@ -260,10 +260,8 @@ def project_onto_sharp_set(
     That distance is therefore an additive floor under every calibrated radius, and it is
     paid for nothing. It is not uncertainty about the truth -- for any candidate `P` in the
     sharp set, `W1(P, reference) >= this distance` by definition, so the floor is charged
-    to every unit before a single question about the organisms is asked. Measured on the
-    training cohorts of the repaired corpus it is a median of 0.049 dilution steps but 0.865
-    at the worst unit, against a worst unit score of 1.710 -- half the number that set the
-    radius was the cost of centring.
+    to every unit before a single question about the organisms is asked. At a single unit
+    it can be a large part of the score that sets the radius.
 
     Re-centring on this projection removes the floor exactly, without touching what the
     ball is asked to cover: the projection is a function of the published summary and the

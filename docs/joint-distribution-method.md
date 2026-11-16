@@ -1,6 +1,6 @@
 # Joint population inference from incomplete MIC reports
 
-MIC-50-90 1.0.0. Mathematical specification and implementation requirements.
+MIC-50-90 1.0.1. Mathematical specification and implementation requirements.
 
 This method estimates the distribution of **recorded MIC categories in one
 population**, using a sample whose report may omit category counts. It does not
@@ -311,7 +311,7 @@ bounds and does not certify the requested endpoint precision. The result
 separately explains missing counts, sampling uncertainty and numerical accuracy.
 
 The executable finite-model oracle is in
-`reproducibility/v1.0.0/joint-distribution-20260930`; its integration checks are in
+`reproducibility/joint-distribution`; its integration checks are in
 `tests/test_joint_independent.py`. Lattice diagnostics must not be read as
 continuous-region volumes or guarantees of shorter projected intervals.
 

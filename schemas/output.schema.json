@@ -22,7 +22,9 @@
       "const": "MIC-50-90"
     },
     "version": {
-      "const": "1.0.0"
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "$comment": "Producer metadata, not the compatibility key. contract_version identifies this analyse output format; distribution imports separately enforce their known producer/schema policy."
     },
     "contract_version": {
       "const": "1.0"

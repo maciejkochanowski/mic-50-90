@@ -5,6 +5,11 @@ from html import escape
 import json
 from types import SimpleNamespace
 
+from ._version import __version__, COMPATIBLE_REPORT_VERSIONS
+
+# Reporting certificates have the same content in every release that can read them.
+CERTIFICATE_VERSIONS = COMPATIBLE_REPORT_VERSIONS
+
 
 def validate_document(payload):
     issues, preview, warnings, parsed = [], {}, [], {}
@@ -13,8 +18,8 @@ def validate_document(payload):
     mode = payload.get('mode')
     if mode == 'verify-report':
         doc = payload.get('certificate')
-        if not isinstance(doc,dict) or doc.get('version') != '1.0.0' or not isinstance(doc.get('certificates'),list) or not doc['certificates']:
-            issues.append(dict(field='certificate',message='Supply a nonempty MIC-50-90 1.0.0 reporting_certificates.json document.'))
+        if not isinstance(doc,dict) or doc.get('version') not in CERTIFICATE_VERSIONS or not isinstance(doc.get('certificates'),list) or not doc['certificates']:
+            issues.append(dict(field='certificate',message='Supply a nonempty MIC-50-90 reporting_certificates.json document.'))
         else:
             for index,row in enumerate(doc['certificates']):
                 if not isinstance(row,dict) or not isinstance(row.get('specification'),dict) or not isinstance(row.get('criteria'),list) or not row['criteria'] or not isinstance(row.get('disclosures'),list):
@@ -98,6 +103,7 @@ def run_tables(payload,work,output):
 
 
 def run_verification(payload,output):
+    from ._version import __version__
     from .sufficient_reporting import verify_reporting
     from .gui_worker import write_json
     from .result_view import VIEW_STYLE, verification_overview, count_text
@@ -137,6 +143,6 @@ def run_verification(payload,output):
             body.append('<li>'+escape(f"{amount}; denominator {item.get('n', '?')}; MIC {relation} {item.get('threshold', '?')} {item.get('unit', '')}")+'</li>')
         body.append('</ul><details><summary>Complete calculation record</summary><pre>'+escape(json.dumps(record,indent=2))+'</pre></details></section>')
     body.append('</html>')
-    write_json(output/'results.json',dict(software='MIC-50-90',software_version='1.0.0',cohorts=records))
+    write_json(output/'results.json',dict(software='MIC-50-90',software_version=__version__,cohorts=records))
     from .typography import html_with_typography
     (output/'report.html').write_text(html_with_typography(''.join(body)),encoding='utf-8')

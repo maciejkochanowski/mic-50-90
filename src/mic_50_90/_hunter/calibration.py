@@ -48,7 +48,7 @@ def calibrate(n,p,t,*,use_lp=True,exact=False,deadline=None):
             marginals.extend(ProbabilityBounds(ZERO,ONE) for _ in range(missing))
             break
         q = sum(p[a:b])
-        value = sum((mass for mass,score in zip(_binomial_masses(n,q),exact_binomial_scores(n,q)) if score <= t),ZERO)
+        value = sum((mass for mass,score in zip(_binomial_masses(n,q),exact_binomial_scores(n,q), strict=True) if score <= t),ZERO)
         marginals.append(ProbabilityBounds(value,value))
     pairs,completed = {},0
     for i,e in enumerate(ranges):

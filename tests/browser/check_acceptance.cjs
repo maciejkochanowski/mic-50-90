@@ -5,6 +5,7 @@ const {chromium}=require('playwright');
  const [readyFile,pack,out,chrome]=process.argv.slice(2),ready=JSON.parse(fs.readFileSync(readyFile,'utf8'));
  const browser=await chromium.launch({headless:true,executablePath:chrome});
  const page=await browser.newPage({viewport:{width:1280,height:960},acceptDownloads:true});
+ await page.context().tracing.start({screenshots:true,snapshots:true,sources:true});
  const records=[],errors=[];page.on('pageerror',e=>errors.push(String(e)));
  const open=async file=>{await page.locator('#input-file').setInputFiles(file);await page.waitForFunction(()=>document.querySelector('#input-file').value==='');};
  async function run(){if(await page.locator('#steps').isVisible())await page.locator('#steps button').nth(4).click();await page.locator('#validate').click();await page.locator('#validation').filter({hasText:'ready for calculation'}).waitFor();await page.locator('#run').click();await page.locator('#job-title').filter({hasText:'Your report is ready'}).waitFor({timeout:120000});}
@@ -13,7 +14,7 @@ const {chromium}=require('playwright');
  try{
   await page.goto(ready.url);await page.getByText('Local session ready',{exact:true}).waitFor();
   await page.evaluate(async()=>{await Promise.all([...document.fonts].map(f=>f.load()));const p=document.createElement('p');p.id='font-probe';p.textContent='MIC ≤ 4 μg/mL ≥ 1';document.querySelector('main').prepend(p);await document.fonts.ready;});
-  const actual=await fonts(page,'#font-probe');assert(actual.every(f=>f.isCustomFont),JSON.stringify(actual));assert(actual.some(f=>/CMU/.test(f.familyName)));
+  const actual=await fonts(page,'#font-probe');assert(actual.length&&actual.every(f=>f.isCustomFont),JSON.stringify(actual));assert(actual.some(f=>/CMU/.test(f.familyName)));
   records.push({case:'desktop-font-glyphs',fonts:actual});
   await page.locator('#font-probe').screenshot({path:path.join(out,'font-glyphs.png')});await page.locator('#font-probe').evaluate(x=>x.remove());
   for(let i=0;i<3;i++){
@@ -38,7 +39,7 @@ const {chromium}=require('playwright');
   const offline=await browser.newPage();await offline.context().setOffline(true);await offline.goto(pathToFileURL(path.join(out,'exported-chart.svg')).href);await offline.evaluate(()=>document.fonts.ready);
   const chartFonts=[];for(let i=0;i<await offline.locator('text').count();i++){await offline.locator('text').nth(i).evaluate((x,j)=>x.id='chart-font-'+j,i);const ff=await fonts(offline,'#chart-font-'+i);assert(ff.length&&ff.every(f=>f.isCustomFont&&/DejaVu/.test(f.familyName)),JSON.stringify(ff));chartFonts.push(...ff);}await offline.screenshot({path:path.join(out,'offline-svg.png')});
   await offline.goto(pathToFileURL(path.join(pack,'output','ampicillin','report.html')).href);await offline.evaluate(()=>document.fonts.ready);
-  const bodyFonts=await fonts(offline,'h1');assert(bodyFonts.every(f=>f.isCustomFont),JSON.stringify(bodyFonts));
+  const bodyFonts=await fonts(offline,'h1');assert(bodyFonts.length&&bodyFonts.every(f=>f.isCustomFont),JSON.stringify(bodyFonts));
   await offline.pdf({path:path.join(out,'offline-report.pdf'),format:'A4',printBackground:true});
   records.push({case:'offline-export',svg_fonts:chartFonts,html_fonts:bodyFonts,png_bytes:png.length});
   await open(path.join(pack,'windows','amikacin-certificate.json'));
@@ -58,6 +59,6 @@ const {chromium}=require('playwright');
   const pre=await page.locator('#report-print-area pre').evaluate(x=>({height:x.clientHeight,scroll:x.scrollHeight,max:getComputedStyle(x).maxHeight,overflow:getComputedStyle(x).overflow}));assert.equal(pre.max,'none');assert.equal(pre.overflow,'visible');assert(pre.height>=pre.scroll-1);
   const headingText=await head.innerText();await page.pdf({path:path.join(out,'certificate-print.pdf'),format:'A4',printBackground:true});assert.equal(await page.locator('#report-print-area').count(),0);records.push({case:'certificate-print',visible_heading:headingText,interpretation_paragraphs:interpretationParagraphs,flow_labels:flowLabels,calculation_record:pre});
   assert.deepEqual(errors,[]);fs.writeFileSync(path.join(out,'ACCEPTANCE_BROWSER.json'),JSON.stringify({status:'passed',records,errors},null,2));
- }catch(e){await page.screenshot({path:path.join(out,'acceptance-error.png'),fullPage:true});console.error(await page.locator('#validation').innerText());throw e;}finally{await browser.close();}
+ }catch(e){await page.screenshot({path:path.join(out,'acceptance-error.png'),fullPage:true});console.error(await page.locator('#validation').innerText());throw e;}finally{await page.context().tracing.stop({path:path.join(out,'acceptance-trace.zip')});await browser.close();}
 })().catch(e=>{console.error(e);process.exit(1)});
 

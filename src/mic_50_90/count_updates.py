@@ -170,6 +170,10 @@ class CountInformationConflict(ValueError):
             "denominator and the use of strictly above (>), rather than at or above (>=). No input was changed.")
 
 
+def _present(row, key):
+    return row.get(key) is not None and str(row[key]).strip() != ""
+
+
 def _observations(rows, spec):
     if not isinstance(rows, (list, tuple)) or not rows:
         raise ValueError("Supply at least one additional count")
@@ -183,10 +187,9 @@ def _observations(rows, spec):
         if row.get("unit") not in {"mg/L", "ug/mL", "µg/mL", "μg/mL"}:
             raise ValueError("Additional count unit must explicitly be mg/L or equivalent ug/mL")
         n = _integer(row.get("n"), "n")
-        present = lambda key: row.get(key) is not None and str(row[key]).strip() != ""
-        exact = present("count")
-        interval = any(present(k) for k in ("count_min", "count_max"))
-        rounded = any(present(k) for k in ("percentage", "decimal_places", "rounding_rule"))
+        exact = _present(row, "count")
+        interval = any(_present(row, k) for k in ("count_min", "count_max"))
+        rounded = any(_present(row, k) for k in ("percentage", "decimal_places", "rounding_rule"))
         if interval and rounded and not exact:
             preimage = counts_from_percentage(row.get("percentage"), n=n,
                 decimal_places=row.get("decimal_places"), rounding_rule=row.get("rounding_rule"))
@@ -211,16 +214,16 @@ def _observations(rows, spec):
         scale = row.get('source_scale') or None
         if scale not in {None, 'recorded', 'interval'}:
             raise ValueError("source_scale must be recorded or interval")
-        if scale == 'interval' and (present('start_category') or present('end_category')):
+        if scale == 'interval' and (_present(row, 'start_category') or _present(row, 'end_category')):
             raise ValueError("A category range counts recorded categories; use source_scale=recorded")
-        if scale is not None and not (present('start_category') or present('end_category')):
+        if scale is not None and not (_present(row, 'start_category') or _present(row, 'end_category')):
             threshold = positive_concentration(row.get('threshold'), 'Additional count threshold')
             relation = row.get('relation') or '>'
             if relation not in {'>', '>=', '<', '<='}:
                 raise ValueError("Source relation must be <, <=, > or >=")
             if scale == 'recorded':
-                comparisons = {'>': lambda x: x > threshold, '>=': lambda x: x >= threshold,
-                               '<': lambda x: x < threshold, '<=': lambda x: x <= threshold}
+                comparisons = {'>': lambda x, t=threshold: x > t, '>=': lambda x, t=threshold: x >= t,
+                               '<': lambda x, t=threshold: x < t, '<=': lambda x, t=threshold: x <= t}
                 selected = [comparisons[relation](v) for v in spec.panel.panel_values]
             else:
                 selected = []
@@ -251,10 +254,10 @@ def _observations(rows, spec):
                 normalized.update(threshold=float(spec.panel.panel_values[-1]))
             row = normalized
             scale = None
-        if present("start_category") or present("end_category"):
-            if not all(present(k) for k in ("start_category", "end_category")):
+        if _present(row, "start_category") or _present(row, "end_category"):
+            if not all(_present(row, k) for k in ("start_category", "end_category")):
                 raise ValueError("Supply both start_category and end_category from the panel")
-            if any(present(k) for k in ("threshold", "relation", "source_relation", "source_threshold")):
+            if any(_present(row, k) for k in ("threshold", "relation", "source_relation", "source_threshold")):
                 raise ValueError("Choose a category interval OR a threshold relation, not both")
             if any(row[k] not in spec.panel.labels for k in ("start_category", "end_category")):
                 raise ValueError("Interval endpoints must be exact category labels from the declared panel")
@@ -508,7 +511,7 @@ panel and declared rank variants stay fixed. This API accepts empirical inputs;
     result["identification"] = by_variant[selected_id]
     before = baseline["reporting_uncertainty_envelope"]["envelope"]
     comparisons = []
-    for old, new in zip(before, envelope["envelope"]):
+    for old, new in zip(before, envelope["envelope"], strict=True):
         comparisons.append(dict(threshold=new["threshold"],
             before_counts=[old["panel_recorded_estimand"][x]["count"] for x in ("lower", "upper")],
             after_counts=[new["panel_recorded_estimand"][x]["count"] for x in ("lower", "upper")]))

@@ -1,0 +1,251 @@
+{
+ "case": "human-04",
+ "method": "range-calibrated",
+ "cohort_id": "NORM2024|T88|Erythromycin",
+ "source": "NORM Norway 2024",
+ "n": 630,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.0937902060104534,
+ "result": {
+  "requested_method": "range-calibrated",
+  "method": "range-calibrated",
+  "confidence_level": 0.95,
+  "constraint_signature": "213e29310e2ea72a6978bd703712898c576462bc359d56b0127d6d6cc510e3f7",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "coverage_scope": "all contiguous recorded category ranges on the fixed panel",
+  "sample_size": 630,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "complete",
+  "precision_reached": true,
+  "endpoint_gap_pp": 2.0000667788622195e-10,
+  "critical_score_fraction": "45035996273705/9007199254740992",
+  "compatible_histogram_search_complete": false,
+  "evaluated_histograms": 5,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "range_witnesses_checked": 4,
+  "population_row_lift_certificate": {
+   "status": "not_checked",
+   "reason": "Numerical witnesses or the general refinement suffice"
+  },
+  "probability_vertices_checked": 0,
+  "probability_certificates": [],
+  "count_partition_splits": 0,
+  "baseline_cdf_bounds": [
+   [
+    0.0,
+    0.5549343492180154
+   ],
+   [
+    0.8620333187990851,
+    0.9999960267863248
+   ],
+   [
+    0.8638410142319785,
+    1.0
+   ],
+   [
+    0.8638410142319785,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.0,
+    0.5549343492180154
+   ],
+   [
+    0.34705215593347927,
+    0.9999960267863248
+   ],
+   [
+    3.973213675203779e-06,
+    0.012960518344817647
+   ],
+   [
+    0.0,
+    0.13615898576802155
+   ],
+   [
+    0.0,
+    0.13615898576802155
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.0,
+    0.5549343492180154
+   ],
+   [
+    0.8620333187990851,
+    0.9999960267863248
+   ],
+   [
+    0.8638410142319785,
+    1.0
+   ],
+   [
+    0.8638410142319785,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.0,
+    0.5549343492180154
+   ],
+   [
+    0.34705215593347927,
+    0.9999960267863248
+   ],
+   [
+    3.973213675203779e-06,
+    0.012960518344817647
+   ],
+   [
+    0.0,
+    0.13615898576802155
+   ],
+   [
+    0.0,
+    0.13615898576802155
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
+  "elapsed_seconds": 0.0274236889090389,
+  "baseline_seconds": 0.005106610944494605,
+  "refinement_seconds": 0.022424168069846928,
+  "time_limit_scope": "optional_compatible_histogram_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.0,
+    "upper": 0.5549343492180154,
+    "inner_lower": 0.0,
+    "inner_upper": 0.5549343492160155
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8620333187990851,
+    "upper": 0.9999960267863248,
+    "inner_lower": 0.862033318801085,
+    "inner_upper": 0.9999960267843248
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8638410142319785,
+    "upper": 1.0,
+    "inner_lower": 0.8638410142339784,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8638410142319785,
+    "upper": 1.0,
+    "inner_lower": 0.8638410142339784,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.34705215593347927,
+    "upper": 0.9999960267863248,
+    "inner_lower": 0.3470521559354792,
+    "inner_upper": 0.9999960267843248
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.34859006249361874,
+    "upper": 1.0,
+    "inner_lower": 0.3485900624956187,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.34859006249361874,
+    "upper": 1.0,
+    "inner_lower": 0.3485900624956187,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.44506565078198457,
+    "upper": 1.0,
+    "inner_lower": 0.4450656507839845,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 3.973213675203779e-06,
+    "upper": 0.012960518344817647,
+    "inner_lower": 3.97321567520378e-06,
+    "inner_upper": 0.012960518342817647
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 3.973213675203779e-06,
+    "upper": 0.13796668120091493,
+    "inner_lower": 3.97321567520378e-06,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 3.973213675203779e-06,
+    "upper": 0.13796668120091493,
+    "inner_lower": 3.97321567520378e-06,
+    "inner_upper": 0.13796668119891498
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.13615898576802155,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1361589857660216
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13615898576802155,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1361589857660216
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.13615898576802155,
+    "inner_lower": 0.0,
+    "inner_upper": 0.1361589857660216
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.90462420205586,
+ "seconds": 0.12299308297224343,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:18:35+00:00"
+}

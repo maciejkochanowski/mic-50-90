@@ -1,0 +1,240 @@
+{
+ "case": "case-05",
+ "method": "joint-exact",
+ "cohort_id": "FDA|NAHLN|2018|E. coli|Dogs|Other Tissues/ Body Sites|Marbofloxacin",
+ "source": "FDA animal pathogens",
+ "n": 175,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.10532691399566829,
+ "result": {
+  "requested_method": "joint-exact",
+  "method": "joint-exact",
+  "confidence_level": 0.95,
+  "constraint_signature": "98b71dc38042f185f00203b04fcb20cf4d467cb9bf0955687d982ac2882ef650",
+  "family_size": 4,
+  "sample_size": 175,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "baseline_cdf_bounds": [
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.0,
+    0.5399256458375491
+   ],
+   [
+    0.0,
+    0.1924388427469079
+   ],
+   [
+    0.0,
+    0.5399256458375491
+   ],
+   [
+    0.05351201314419362,
+    0.5934376589817426
+   ]
+  ],
+  "cdf_bounds": [
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.4149986792344691,
+    0.9464879868558065
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.4065623410182574,
+    0.9464879868558065
+   ],
+   [
+    0.0,
+    0.5357074767294434
+   ],
+   [
+    0.0,
+    0.1924388427469079
+   ],
+   [
+    0.0,
+    0.5357074767294434
+   ],
+   [
+    0.05351201314419362,
+    0.585001320765531
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
+  "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
+  "box_count": 5506,
+  "excluded_boxes": 1392,
+  "elapsed_seconds": 115.42018451099284,
+  "baseline_seconds": 0.09178527991753072,
+  "refinement_seconds": 115.32828065392096,
+  "time_limit_scope": "optional_joint_refinement",
+  "question_certificates": [],
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.4065623410182574,
+    "upper": 0.9464879868558065,
+    "inner_lower": 0.41499867923446915,
+    "inner_upper": 0.929615310423383
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.4065623410182574,
+    "upper": 0.9464879868558065,
+    "inner_lower": 0.42343501745068085,
+    "inner_upper": 0.929615310423383
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.4065623410182574,
+    "upper": 0.9464879868558065,
+    "inner_lower": 0.42343501745068085,
+    "inner_upper": 0.929615310423383
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.4149986792344691,
+    "upper": 0.9464879868558065,
+    "inner_lower": 0.44030769388310426,
+    "inner_upper": 0.929615310423383
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": null,
+    "inner_upper": null
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.5357074767294433,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5061802929727022
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.5378165612834962,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5061802929727022
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.5399256458375491,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5146166311889139
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.05351201314419362,
+    "upper": 0.5934376589817426,
+    "inner_lower": 0.07038468957661694,
+    "inner_upper": 0.5850013207655308
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.0,
+    "upper": 0.1924388427469079,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.16872676432423414
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.5378165612834962,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5061802929727022
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.05351201314419362,
+    "upper": 0.5934376589817426,
+    "inner_lower": 0.07038468957661694,
+    "inner_upper": 0.5765649825493191
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.5357074767294433,
+    "inner_lower": 5e-324,
+    "inner_upper": 0.5061802929727022
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.05351201314419362,
+    "upper": 0.5934376589817426,
+    "inner_lower": 0.07038468957661694,
+    "inner_upper": 0.5765649825493191
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.05351201314419362,
+    "upper": 0.5850013207655309,
+    "inner_lower": 0.07038468957661694,
+    "inner_upper": 0.5596923061168957
+   }
+  ],
+  "reason": "Time limit reached; all unresolved parameter boxes retained.",
+  "unresolved_small_boxes": 0,
+  "endpoint_gap_pp": 3.163626831079404
+ },
+ "refinement_budget_seconds": 114.8931075159926,
+ "seconds": 115.52843361499254,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

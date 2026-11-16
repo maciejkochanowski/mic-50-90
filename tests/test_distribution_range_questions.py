@@ -184,7 +184,7 @@ def test_csv_range_selector_is_not_dropped_when_reading_multiple_cohorts(tmp_pat
         key: dict(text=(tmp_path/name).read_text(encoding='utf8'), delimiter='comma')
         for key, name in [('input','samples.csv'),('panels','panels.csv'),
                           ('targets','targets.csv'),('additional_counts','counts.csv')]})
-    # Remove the unused legacy header, matching a category-only user's table.
+    # Remove the unused threshold column, matching a category-only user's table.
     payload['tables']['targets']['text'] = payload['tables']['targets']['text'].replace(
         'cohort_id,threshold,', 'cohort_id,').replace('A,,','A,').replace('B,,','B,')
     checked = validate_payload(payload)
@@ -197,7 +197,7 @@ def test_csv_range_selector_is_not_dropped_when_reading_multiple_cohorts(tmp_pat
 
 
 @pytest.mark.parametrize('mode', ['batch','reporting-audit'])
-def test_legacy_table_modes_still_require_threshold_questions(mode):
+def test_threshold_table_modes_require_threshold_questions(mode):
     from mic_50_90.gui_documents import validate_document
     result = validate_document(dict(mode=mode, tables={'targets': dict(delimiter='comma',
         text='cohort_id,start_category,end_category,unit\nA,2,2,mg/L\n')}))

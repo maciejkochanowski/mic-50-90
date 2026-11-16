@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from fractions import Fraction
 from typing import Iterable
 
 import numpy as np
-from scipy.optimize import Bounds, LinearConstraint, linprog, milp
+from scipy.optimize import Bounds, LinearConstraint
+from ._solver_resources import linprog, milp
 
 from .model import MICPanel, QuantileSummary, _positive_integer
-from .validation import exact_integer
+from .validation import MAX_EXACT_INTEGER, exact_integer
 
 
 @dataclass(frozen=True)
@@ -61,7 +63,7 @@ class BoundSolution:
         return {
             "count": self.count,
             "fraction": self.fraction,
-            "compatible_histogram": dict(zip(labels, self.histogram)),
+            "compatible_histogram": dict(zip(labels, self.histogram, strict=True)),
             "certificate": self.certificate.as_dict(),
         }
 
@@ -140,6 +142,7 @@ class EmpiricalProblem:
         self.equalities = tuple(equalities or ())
         self.count_intervals = tuple(count_intervals or ())
         self._matrix, self._lower, self._upper = self._build_constraints()
+        self._scaled_matrix, self._scaled_lower, self._scaled_upper = self._scaled_constraints()
         self._canonical_tu = self._has_interval_rows(self._matrix)
         self._integral_rhs = self._has_integral_rhs(self._lower, self._upper)
         self._assert_feasible()
@@ -247,7 +250,7 @@ class EmpiricalProblem:
         eq_labels: list[str] = []
         ub_labels: list[str] = []
         for index, (row, lower, upper) in enumerate(
-            zip(self._matrix, self._lower, self._upper)
+            zip(self._matrix, self._lower, self._upper, strict=True)
         ):
             if np.isfinite(lower) and np.isfinite(upper) and abs(lower - upper) <= 1e-12:
                 a_eq.append(row)
@@ -271,15 +274,41 @@ class EmpiricalProblem:
             ub_labels,
         )
 
+    def _scaled_constraints(self) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        """Equivalent rows in coefficient units, including sub-unit coefficients.
+
+        Do not use max(1, norm): it would leave small equalities invisible to
+        the solver's absolute feasibility tolerance. Keep the original rows
+        for provenance and the structural TU check.
+        """
+        scale = np.max(np.abs(self._matrix), axis=1)
+        zero = scale == 0
+        if np.any(zero & ((self._lower > 0) | (self._upper < 0))):
+            raise ValueError("Incompatible MIC summaries: a zero constraint row excludes zero")
+        scale = np.where(zero, 1.0, scale)
+        with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
+            matrix = self._matrix / scale[:, None]
+            lower = self._lower / scale
+            upper = self._upper / scale
+        if (np.any(~np.isfinite(matrix))
+                or np.any(np.isfinite(self._lower) & ~np.isfinite(lower))
+                or np.any(np.isfinite(self._upper) & ~np.isfinite(upper))):
+            raise ValueError("Constraint scaling exceeds the supported finite numerical range")
+        return matrix, lower, upper
+
     def _violations(self, histogram: np.ndarray) -> tuple[float, float]:
-        values = self._matrix @ histogram
+        if histogram.shape != (self.k,) or np.any(~np.isfinite(histogram)):
+            return float("inf"), float("inf")
+        values = self._scaled_matrix @ histogram
         lower_violation = np.where(
-            np.isfinite(self._lower), np.maximum(self._lower - values, 0), 0
+            np.isfinite(self._scaled_lower), np.maximum(self._scaled_lower - values, 0), 0
         )
         upper_violation = np.where(
-            np.isfinite(self._upper), np.maximum(values - self._upper, 0), 0
+            np.isfinite(self._scaled_upper), np.maximum(values - self._scaled_upper, 0), 0
         )
-        primal = float(max(np.max(lower_violation), np.max(upper_violation)))
+        primal = float(max(np.max(lower_violation), np.max(upper_violation),
+                           np.max(np.maximum(-histogram, 0)),
+                           np.max(np.maximum(histogram - self.n, 0))))
         integrality = float(np.max(np.abs(histogram - np.rint(histogram))))
         return primal, integrality
 
@@ -293,40 +322,71 @@ class EmpiricalProblem:
             c=sign * coefficients,
             integrality=np.ones(self.k, dtype=int),
             bounds=Bounds(np.zeros(self.k), np.full(self.k, float(self.n))),
-            constraints=LinearConstraint(self._matrix, self._lower, self._upper),
+            constraints=LinearConstraint(self._scaled_matrix, self._scaled_lower, self._scaled_upper),
             options={"mip_rel_gap": 0.0, "presolve": True},
         )
         if not result.success or result.x is None:
             if result.status == 2:
                 raise ValueError("Incompatible MIC summaries: no count table satisfies all the entered facts")
             raise RuntimeError(f"MIC solver failed (status {result.status}): {result.message}")
-        histogram = np.rint(result.x).astype(int)
-        violation, integrality = self._violations(histogram)
-        count = int(round(float(coefficients @ histogram)))
-        primal = float(coefficients @ histogram)
+        raw = np.asarray(result.x, dtype=float)
+        raw_violation, integrality = self._violations(raw)
+        if raw_violation > 1e-7 or integrality > 1e-6:
+            raise RuntimeError("MILP returned a numerically invalid histogram witness")
+        # Supported counts extend beyond int32, including on NumPy 1.x/Windows.
+        histogram = np.rint(raw).astype(np.int64)
+        rounded_violation, _ = self._violations(histogram)
+        # A norm-scaled residual alone still misses mixed-scale rows, e.g.
+        # h0 + 1e-8*h1 = 1 with h0+h1=3. Check original finite decimal
+        # coefficients exactly at the integer witness; never certify a row
+        # merely because a small coefficient was ignored by the solver.
+        for row, rhs in self.equalities:
+            exact = sum((Fraction(str(float(a))) * int(h)
+                         for a, h in zip(row, histogram, strict=True)), Fraction(0))
+            if exact != exact_integer(rhs, "Additional equality value", minimum=None):
+                raise RuntimeError("MILP witness violates an original equality in exact decimal arithmetic")
+        violation = max(raw_violation, rounded_violation)
+        # Coefficients were checked before float conversion and every possible
+        # objective lies in the exact integer range. Evaluate the integer
+        # witness without a floating dot product or an integer cast/round-trip.
+        count = sum(int(a) * int(h) for a, h in zip(coefficients, histogram, strict=True))
+        primal = float(count)
+        try:
+            bound = float(result.mip_dual_bound)
+            relative_gap = float(result.mip_gap)
+            solver_objective = float(result.fun)
+        except (AttributeError, TypeError, ValueError, OverflowError):
+            raise RuntimeError("MILP returned no finite optimality diagnostics") from None
+        if not np.all(np.isfinite([bound, relative_gap, solver_objective])) or relative_gap < 0:
+            raise RuntimeError("MILP returned no finite optimality diagnostics")
+        dual = sign * bound
+        gap = abs(primal - dual)
+        verified = bool(
+            result.success and result.status == 0
+            and violation <= 1e-7 and integrality <= 1e-6
+            and relative_gap <= 1e-9 and gap <= 1e-7
+            and abs(sign * primal - solver_objective) <= 1e-7
+            and bound <= solver_objective + 1e-7
+        )
         certificate = SolverCertificate(
             solver="scipy.optimize.milp/HiGHS",
             status=int(result.status),
-            success=bool(result.success and violation <= 1e-7),
+            success=verified,
             message=str(result.message),
             primal_objective=primal,
-            dual_objective=primal,
-            duality_gap=float(getattr(result, "mip_gap", 0.0) or 0.0),
+            dual_objective=dual,
+            duality_gap=gap,
             max_primal_violation=violation,
             max_integrality_violation=integrality,
             objective_count=count,
             total_unimodular=self._canonical_tu,
             integral_rhs=self._integral_rhs,
-            optimality_verified=bool(
-                result.success
-                and violation <= 1e-7
-                and float(getattr(result, "mip_gap", 0.0) or 0.0) <= 1e-9
-            ),
+            optimality_verified=verified,
             dual_multipliers={},
             fallback_used=fallback_used,
         )
-        if not certificate.success:
-            raise RuntimeError("MILP returned a numerically invalid histogram witness")
+        if not verified:
+            raise RuntimeError("MILP returned an uncertified numerical optimum or invalid histogram witness")
         return BoundSolution(
             count=count,
             fraction=count / self.n,
@@ -372,8 +432,9 @@ class EmpiricalProblem:
             return self._solve_milp_oracle(
                 coefficients, maximize=maximize, fallback_used=True
             )
-        histogram = rounded.astype(int)
-        primal = float(coefficients @ histogram)
+        histogram = rounded.astype(np.int64)
+        count = sum(int(a) * int(h) for a, h in zip(coefficients, histogram, strict=True))
+        primal = float(count)
 
         eq_marginals = (
             np.empty(0)
@@ -396,8 +457,8 @@ class EmpiricalProblem:
         dual = dual_solver / sign
         gap = abs(primal - dual)
         duals = {
-            **{label: float(value) for label, value in zip(eq_labels, eq_marginals)},
-            **{label: float(value) for label, value in zip(ub_labels, ub_marginals)},
+            **{label: float(value) for label, value in zip(eq_labels, eq_marginals, strict=True)},
+            **{label: float(value) for label, value in zip(ub_labels, ub_marginals, strict=True)},
             **{
                 f"variable_{index}:lower": float(value)
                 for index, value in enumerate(lower_marginals)
@@ -426,7 +487,7 @@ class EmpiricalProblem:
             duality_gap=gap,
             max_primal_violation=max(raw_primal_violation, rounded_violation),
             max_integrality_violation=raw_integrality,
-            objective_count=int(round(primal)),
+            objective_count=count,
             total_unimodular=True,
             integral_rhs=True,
             optimality_verified=optimal,
@@ -437,8 +498,8 @@ class EmpiricalProblem:
                 coefficients, maximize=maximize, fallback_used=True
             )
         return BoundSolution(
-            count=int(round(primal)),
-            fraction=int(round(primal)) / self.n,
+            count=count,
+            fraction=count / self.n,
             histogram=tuple(int(value) for value in histogram),
             certificate=certificate,
         )
@@ -447,20 +508,45 @@ class EmpiricalProblem:
         self._solve(np.zeros(self.k))
 
     def _count_objective(self, objective: np.ndarray) -> np.ndarray:
-        """Validate the integer-valued objective stored in BoundSolution.count."""
-        coefficients = np.asarray(objective, dtype=float)
-        if (coefficients.shape != (self.k,) or not np.all(np.isfinite(coefficients))
-                or np.any(coefficients != np.rint(coefficients))):
-            raise ValueError("Count objective coefficients must be finite integers matching the MIC panel")
-        return coefficients
+        """Validate exact coefficients and the entire objective domain first.
+
+        For h >= 0 and sum(h) = n, abs(w @ h) <= n * max(abs(w)).
+        Restricting this bound to MAX_EXACT_INTEGER keeps integer objectives
+        representable in the numerical solver's primal/dual diagnostics.
+        Object conversion preserves Decimal/Fraction/string inputs long enough
+        to reject fractional tokens that float conversion would round away.
+        """
+        message = "Count objective coefficients must be finite integers matching the MIC panel"
+        try:
+            supplied = np.asarray(objective, dtype=object)
+        except (TypeError, ValueError):
+            raise ValueError(message) from None
+        if supplied.shape != (self.k,):
+            raise ValueError(message)
+        try:
+            integers = tuple(
+                int(value) if isinstance(value, (bool, np.bool_))
+                else exact_integer(value, "Count objective coefficient", minimum=None)
+                for value in supplied
+            )
+        except ValueError as error:
+            raise ValueError(f"{message}; {error}") from None
+        if self.n * max(abs(value) for value in integers) > MAX_EXACT_INTEGER:
+            raise ValueError(
+                "Count objective exceeds the exact supported integer range: "
+                f"n * max(abs(coefficients)) must not exceed {MAX_EXACT_INTEGER}"
+            )
+        return np.asarray(integers, dtype=float)
 
     def bounds(self, objective: np.ndarray) -> tuple[BoundSolution, BoundSolution]:
         """Sharp bounds for a finite integral linear count objective.
 
-        Ordinary category/tail objectives are binary. Integral weighted counts
-        are also supported; fractional weights are refused because the result
-        stores an integer count. Transport bounds accept real objectives through
-        their separate API.
+        Ordinary category/tail objectives are binary (boolean masks are valid).
+        Integral weighted counts are supported when n * max(abs(weights)) is
+        at most 2**53 - 1. Fractional and out-of-domain weights are refused
+        before float conversion; count values are computed exactly on the
+        integer witness. Transport bounds accept real objectives through their
+        separate API.
         """
         return self._solve(objective), self._solve(objective, maximize=True)
 

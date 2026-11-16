@@ -2,6 +2,7 @@
 import argparse
 from pathlib import Path
 
+from mic_50_90 import __version__
 from mic_50_90.cli import build_parser
 
 
@@ -11,7 +12,7 @@ def reference():
     for action in root._actions:
         if isinstance(action, argparse._SubParsersAction):
             groups.extend(("mic-50-90 " + name, parser) for name, parser in action.choices.items())
-    lines = ["# MIC-50-90 1.0.0: command and option reference", "",
+    lines = [f"# MIC-50-90 {__version__}: command and option reference", "",
              "Generated from the installed command parser. GUI_GUIDE.md and PUBLIC_FUNCTIONS.md map tasks to Windows and CLI.",
              "Values shown as None mean the option is omitted, not a numerical zero.", ""]
     for name, parser in groups:

@@ -1,0 +1,33 @@
+{
+  "$schema": "../schemas/input.schema.json",
+  "contract_version": "1.0",
+  "mode": "population",
+  "n": 100,
+  "panel": {
+    "levels": [0.125, 0.25, 0.5, 1, 2, 4, 8, 16, 32, 64],
+    "left_censored": true,
+    "right_censored": true
+  },
+  "summaries": {
+    "quantiles": [
+      {"probability": 0.5, "category": "0.5"},
+      {"probability": 0.9, "category": "16"}
+    ],
+    "minimum": "<=0.125",
+    "maximum": ">64"
+  },
+  "thresholds": [2],
+  "population": {
+    "exact_count_confidence": {
+      "confidence_level": 0.95,
+      "multiplicity": "bonferroni"
+    },
+    "profile_likelihood_enabled": true,
+    "profile_grid_size": 41,
+    "confidence_level": 0.95,
+    "bayes_enabled": true,
+    "bayes_draws": 10000,
+    "seed": 20260809,
+    "dirichlet_concentration": 12
+  }
+}

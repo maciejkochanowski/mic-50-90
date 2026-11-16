@@ -8,6 +8,53 @@ from time import monotonic
 
 
 def binomial_shape_certificate(n, cutoff, deadline):
+    """Use the fast directed certificate only after receiver verification.
+
+    Generation gets 45% and generation plus verification 90% of the remaining
+    caller budget. The old method can use the remainder after a failed attempt.
+    The same exact cutoff and original finite shape claim are retained.
+    """
+    from ._shape_generator import generate
+    from ._shape_receiver import verify_certificate, POLICY
+    from . import _shape_receiver
+    started = monotonic()
+    remaining = deadline - started
+    if remaining <= 0:
+        return dict(status='unresolved', reason='Shape certificate time limit')
+    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')
+    if type(n) is int and 1 <= n <= POLICY['max_n']:
+        try:
+            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)
+            certificate = produced.get('certificate')
+            attempt = dict(status=produced['status'], reason=produced.get('reason'),
+                           generator_seconds=produced['elapsed_seconds'])
+            if certificate is not None:
+                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):
+                    raise ValueError('Accelerated certificate target mismatch')
+                checked = verify_certificate(certificate, deadline=started + .9 * remaining)
+                attempt.update(receiver_status=checked['status'],
+                               receiver_reason=checked.get('reason'),
+                               receiver_seconds=checked['elapsed_seconds'])
+                if checked['status'] == 'certified':
+                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),
+                        minimum_concavity_margin=checked['minimum_concavity_margin'],
+                        claim=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,
+                        arithmetic_certificate=certificate, receiver_verified=True,
+                        acceleration=attempt)
+        except (ValueError, ArithmeticError, RuntimeError, MemoryError) as exc:
+            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)
+    if monotonic() >= deadline:
+        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)
+    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)
+    result['acceleration'] = attempt
+    return result
+
+
+_SHAPE_CLAIM = ('At most K distinct histograms from K+1 indexed count rows attain all '
+    'contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')
+
+
+def _legacy_binomial_shape_certificate(n, cutoff, deadline):
     """Sufficient precondition for the population row-lift theorem.
 
     Certify discrete concavity of the exact upper endpoint sequence by inward

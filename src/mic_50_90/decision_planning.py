@@ -12,7 +12,7 @@ from fractions import Fraction
 from math import ceil, floor, isfinite
 from time import monotonic
 
-from .count_updates import _observations, _count_range
+from .count_updates import _observations, _count_range, observation_coefficients
 from .decisions import parse_criterion
 from .model import parse_spec
 
@@ -29,7 +29,7 @@ def _close(lower, upper):
         lower[j] = max(lower[j], lower[j-1])
     for j in range(len(upper)-2, -1, -1):
         upper[j] = min(upper[j], upper[j+1])
-    if any(a > b for a, b in zip(lower, upper)):
+    if any(a > b for a, b in zip(lower, upper, strict=True)):
         return None
     return _Box(tuple(lower), tuple(upper))
 
@@ -64,11 +64,22 @@ def _state(spec, observations):
             boxes.add(box)
     state = tuple(sorted(boxes))
     for row in observations:
-        if 'start_category' in row:
-            raise ValueError('Threshold decision planning does not accept interior counts; use the distribution workflow for these counts')
-        cut = _cut(spec, row['threshold'])
+        coefficients = observation_coefficients(row, spec.panel)
+        selected = [j for j, value in enumerate(coefficients) if value == 1]
         low, high = _count_range(row)
-        state = _condition(state, cut, n-high, n-low)
+        if not selected or len(selected) == size:
+            fixed = n if selected else 0
+            if not low <= fixed <= high:
+                state = ()
+            continue
+        consecutive = selected == list(range(selected[0], selected[-1] + 1))
+        if consecutive and selected[0] == 0:
+            cut = selected[-1] + 1
+        elif consecutive and selected[-1] == size - 1:
+            cut, low, high = selected[0], n - high, n - low
+        else:
+            raise ValueError('Threshold decision planning does not accept interior counts; use the distribution workflow for these counts')
+        state = _condition(state, cut, low, high)
     if not state:
         raise ValueError('No histogram satisfies the declared summaries and additional counts')
     return state
@@ -238,7 +249,7 @@ def _fixed_policy(cuts, queries):
 
 def _ordered_plan(state, criteria, queries, budget):
     """Weighted ordered search for one prefix box and one integer decision boundary."""
-    unresolved = [c for c, s in zip(criteria, _statuses(state, criteria)) if s == 'undetermined']
+    unresolved = [c for c, s in zip(criteria, _statuses(state, criteria), strict=True) if s == 'undetermined']
     boundary = unresolved[0]['boundary']
     targets = tuple(sorted({c['cut'] for c in unresolved}))
     positions = {cut: j for j, cut in enumerate(targets)}
@@ -274,7 +285,7 @@ def _ordered_plan(state, criteria, queries, budget):
         identifier = f's{len(nodes)}'
         node = dict(decisions=statuses, worst_case_cost=0)
         nodes[identifier] = node
-        remaining = tuple(sorted({c['cut'] for c, s in zip(criteria, statuses) if s == 'undetermined'}))
+        remaining = tuple(sorted({c['cut'] for c, s in zip(criteria, statuses, strict=True) if s == 'undetermined'}))
         if not remaining:
             return identifier
         node_cost, cut = value(positions[remaining[0]], positions[remaining[-1]])
@@ -370,10 +381,10 @@ def plan_decisions(specification, criteria, *, queries=None, additional_counts=N
         observations = _observations(additional_counts, spec)
     state = _state(spec, observations)
     statuses = _statuses(state, parsed_criteria)
-    targets = {c['cut'] for c, s in zip(parsed_criteria, statuses) if s == 'undetermined'}
+    targets = {c['cut'] for c, s in zip(parsed_criteria, statuses, strict=True) if s == 'undetermined'}
     public_criteria = [dict((key, value) for key, value in c.items()
                            if key not in {'cut', 'boundary', 'high_true'}) for c in parsed_criteria]
-    for row, status in zip(public_criteria, statuses):
+    for row, status in zip(public_criteria, statuses, strict=True):
         row['initial_status'] = status
     result = dict(status='incomplete', available=True, scope='recorded_sample_decisions',
                   sample_size=spec.n, criteria=public_criteria, worst_case_cost=None,
@@ -403,7 +414,7 @@ def plan_decisions(specification, criteria, *, queries=None, additional_counts=N
             incumbent(targets)
         try:
             budget.check()
-            common = len(state) == 1 and len({c['boundary'] for c, s in zip(parsed_criteria, statuses)
+            common = len(state) == 1 and len({c['boundary'] for c, s in zip(parsed_criteria, statuses, strict=True)
                                              if s == 'undetermined'}) == 1
             # Each unresolved target cut is necessary for a single coherent box.
             if not targets <= query_map.keys():

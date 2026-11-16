@@ -62,7 +62,7 @@ def bound(node, alpha, deadline):
                                                 envelopes, upper, deadline, alpha))
         if best < alpha:
             break
-        lifted = max((hi for lows, highs in envelopes for lo, hi in zip(lows, highs)
+        lifted = max((hi for lows, highs in envelopes for lo, hi in zip(lows, highs, strict=True)
                       if lo <= upper), default=upper)
         if lifted <= upper:
             break

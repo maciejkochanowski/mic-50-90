@@ -1,0 +1,123 @@
+document,quantity,printed,reproduced,status
+Article 3.2,"ampicillin 0.5 mg/L, summaries: lowest count",1,1,match
+Article 3.2,"ampicillin 0.5 mg/L, summaries: highest count",32,32,match
+Article 3.2,"ampicillin 0.5 mg/L, with 59 at <=0.25: lowest count",2,2,match
+Article 3.2,"ampicillin 0.5 mg/L, with 59 at <=0.25: highest count",7,7,match
+Appendix B.5/B.7,"ampicillin 0.5 mg/L, summaries: lowest count",1,1,match
+Appendix B.5/B.7,"ampicillin 0.5 mg/L, summaries: highest count",32,32,match
+Appendix B.5/B.7,"ampicillin 0.5 mg/L, with 59 at <=0.25: lowest count",2,2,match
+Appendix B.5/B.7,"ampicillin 0.5 mg/L, with 59 at <=0.25: highest count",7,7,match
+Appendix C.3,"ampicillin 0.5 mg/L, summaries: lowest count",1,1,match
+Appendix C.3,"ampicillin 0.5 mg/L, summaries: highest count",32,32,match
+Appendix C.3,"ampicillin 0.5 mg/L, with 59 at <=0.25: lowest count",2,2,match
+Appendix C.3,"ampicillin 0.5 mg/L, with 59 at <=0.25: highest count",7,7,match
+Appendix C.3,"ampicillin 0.5 mg/L, MIC90 rank 60: lowest count",1,1,match
+Appendix C.3,"ampicillin 0.5 mg/L, MIC90 rank 60: highest count",7,7,match
+Article 3.2,"ampicillin 0.5 mg/L share, lower (%)",2.99,2.99,match
+Article 3.2,"ampicillin 0.5 mg/L share, upper (%)",10.45,10.45,match
+Appendix B.5,"ampicillin 0.5 mg/L share before the count, lower (%)",1.49,1.49,match
+Appendix B.5,"ampicillin 0.5 mg/L share before the count, upper (%)",47.76,47.76,match
+Article 3.3,"population interval, category 0.5, summaries: lower (%)",0.004,0.004,match
+Article 3.3,"population interval, category 0.5, summaries: upper (%)",65.22,65.22,match
+Article 3.3,"population interval, category 0.5, with count: lower (%)",0.109,0.109,match
+Article 3.3,"population interval, category 0.5, with count: upper (%)",25.00,25.00,match
+Appendix B.6/B.7,"population interval, category 0.5, summaries: lower (%)",0.004,0.004,match
+Appendix B.6/B.7,"population interval, category 0.5, summaries: upper (%)",65.22,65.22,match
+Appendix B.6/B.7,"population interval, category 0.5, with count: lower (%)",0.109,0.109,match
+Appendix B.6/B.7,"population interval, category 0.5, with count: upper (%)",25.00,25.00,match
+Appendix C.4,"population interval, category 0.5, summaries: lower (%)",0.004,0.004,match
+Appendix C.4,"population interval, category 0.5, summaries: upper (%)",65.22,65.22,match
+Appendix C.4,"population interval, category 0.5, with count: lower (%)",0.109,0.109,match
+Appendix C.4,"population interval, category 0.5, with count: upper (%)",25.00,25.00,match
+Appendix B.6,"compatible tables evaluated, summaries",2,2,match
+Appendix B.6,"compatible tables evaluated, with count",2,2,match
+Article 3.4,chloramphenicol above 2 mg/L: lowest count,34,34,match
+Article 3.4,chloramphenicol above 2 mg/L: highest count,67,67,match
+Appendix C.5,chloramphenicol above 2 mg/L: lowest count,34,34,match
+Appendix C.5,chloramphenicol above 2 mg/L: highest count,67,67,match
+Article 3.4,chloramphenicol above 2 mg/L: lowest share (%),50.75,50.75,match
+Appendix C.5,chloramphenicol: results recorded <=4,33,33,match
+Article Figure 3,penicillin 2007: isolates >0.06 to 2 mg/L,123,123,match
+Article Figure 3,penicillin 2007: isolates,539,539,match
+Article Figure 3,penicillin 2007: share >0.06 to 2 mg/L (%),22.8,22.8,match
+Article Figure 3,penicillin 2008: isolates >0.06 to 2 mg/L,167,167,match
+Article Figure 3,penicillin 2008: isolates,710,710,match
+Article Figure 3,penicillin 2008: share >0.06 to 2 mg/L (%),23.5,23.5,match
+Article Figure 3,penicillin 2009: isolates >0.06 to 2 mg/L,169,169,match
+Article Figure 3,penicillin 2009: isolates,730,730,match
+Article Figure 3,penicillin 2009: share >0.06 to 2 mg/L (%),23.2,23.2,match
+Article Figure 3,penicillin 2010: isolates >0.06 to 2 mg/L,132,132,match
+Article Figure 3,penicillin 2010: isolates,482,482,match
+Article Figure 3,penicillin 2010: share >0.06 to 2 mg/L (%),27.4,27.4,match
+Article Figure 3,penicillin 2011: isolates >0.06 to 2 mg/L,122,122,match
+Article Figure 3,penicillin 2011: isolates,466,466,match
+Article Figure 3,penicillin 2011: share >0.06 to 2 mg/L (%),26.2,26.2,match
+Article Figure 3,penicillin 2012: isolates >0.06 to 2 mg/L,92,92,match
+Article Figure 3,penicillin 2012: isolates,366,366,match
+Article Figure 3,penicillin 2012: share >0.06 to 2 mg/L (%),25.1,25.1,match
+Article Figure 3,penicillin 2013: isolates >0.06 to 2 mg/L,97,97,match
+Article Figure 3,penicillin 2013: isolates,331,331,match
+Article Figure 3,penicillin 2013: share >0.06 to 2 mg/L (%),29.3,29.3,match
+Article Figure 3,penicillin 2014: isolates >0.06 to 2 mg/L,84,84,match
+Article Figure 3,penicillin 2014: isolates,394,394,match
+Article Figure 3,penicillin 2014: share >0.06 to 2 mg/L (%),21.3,21.3,match
+Article Figure 3,penicillin 2015: isolates >0.06 to 2 mg/L,107,107,match
+Article Figure 3,penicillin 2015: isolates,468,468,match
+Article Figure 3,penicillin 2015: share >0.06 to 2 mg/L (%),22.9,22.9,match
+Article Figure 3,penicillin 2016: isolates >0.06 to 2 mg/L,99,99,match
+Article Figure 3,penicillin 2016: isolates,504,504,match
+Article Figure 3,penicillin 2016: share >0.06 to 2 mg/L (%),19.6,19.6,match
+Article Figure 3,penicillin 2017: isolates >0.06 to 2 mg/L,78,78,match
+Article Figure 3,penicillin 2017: isolates,548,548,match
+Article Figure 3,penicillin 2017: share >0.06 to 2 mg/L (%),14.2,14.2,match
+Article Figure 3,penicillin 2018: isolates >0.06 to 2 mg/L,107,107,match
+Article Figure 3,penicillin 2018: isolates,591,591,match
+Article Figure 3,penicillin 2018: share >0.06 to 2 mg/L (%),18.1,18.1,match
+Article Figure 3,penicillin 2019: isolates >0.06 to 2 mg/L,118,118,match
+Article Figure 3,penicillin 2019: isolates,633,633,match
+Article Figure 3,penicillin 2019: share >0.06 to 2 mg/L (%),18.6,18.6,match
+Article Figure 3,penicillin 2020: isolates >0.06 to 2 mg/L,41,41,match
+Article Figure 3,penicillin 2020: isolates,210,210,match
+Article Figure 3,penicillin 2020: share >0.06 to 2 mg/L (%),19.5,19.5,match
+Article Figure 3,penicillin 2021: isolates >0.06 to 2 mg/L,47,47,match
+Article Figure 3,penicillin 2021: isolates,161,161,match
+Article Figure 3,penicillin 2021: share >0.06 to 2 mg/L (%),29.2,29.2,match
+Article 3.1 / Appendix C.2,penicillin 2016: share >0.06 to 2 mg/L (%),19.64,19.64,match
+Article 3.1 / Appendix C.2,penicillin 2018: share >0.06 to 2 mg/L (%),18.10,18.10,match
+Article 3.1 / Appendix C.2,penicillin 2021: share >0.06 to 2 mg/L (%),29.19,29.19,match
+Article 3.1,isolates 2007-2021,7133,7133,match
+Appendix C.6,"precision-before: <=0.06, lower (%)",75.62,75.62,match
+Appendix C.6,"precision-before: <=0.06, upper (%)",83.67,83.67,match
+Appendix C.6,"precision-before: >0.06 to 2, lower (%)",0.00,0.00,match
+Appendix C.6,"precision-before: >0.06 to 2, upper (%)",24.38,24.38,match
+Appendix C.6,"precision-before: >2, lower (%)",0.00,0.00,match
+Appendix C.6,"precision-before: >2, upper (%)",24.38,24.38,match
+Appendix C.6,precision-before: confirmed groups,2,2,match
+Appendix C.6,"precision-after: <=0.06, lower (%)",75.62,75.62,match
+Appendix C.6,"precision-after: <=0.06, upper (%)",83.67,83.67,match
+Appendix C.6,"precision-after: >0.06 to 2, lower (%)",14.47,14.47,match
+Appendix C.6,"precision-after: >0.06 to 2, upper (%)",22.20,22.20,match
+Appendix C.6,"precision-after: >2, lower (%)",0.90,0.90,match
+Appendix C.6,"precision-after: >2, upper (%)",3.88,3.88,match
+Appendix C.6,precision-after: confirmed groups,3,3,match
+Appendix A.7,"teaching request, no round cost: worst-case cost",2,2,match
+Appendix A.7,"teaching request, round cost 2: worst-case cost",5,5,match
+Appendix C.7,"teaching request, no round cost: worst-case cost",2,2,match
+Appendix C.7,"teaching request, round cost 2: worst-case cost",5,5,match
+Appendix A.7 / C.7,laboratory cohort: counts requested (worst case),0,0,match
+Appendix A.7 / C.7,laboratory cohort: observations,266,266,match
+Appendix A (at a glance),"maximum entropy, share above 0.25 mg/L (%)",29.10,29.10,match
+Appendix A (at a glance),"multinomial likelihood, share above 0.25 mg/L (%)",28.21,28.21,match
+Appendix C.10,"maximum entropy, share above 0.25 mg/L (%)",29.10,29.10,match
+Appendix C.10,"multinomial likelihood, share above 0.25 mg/L (%)",28.21,28.21,match
+Appendix C.10,KL projection to a uniform reference (%),29.10,29.10,match
+Appendix C.10,transport radius 1: lower (%),34.65,34.65,match
+Appendix C.10,transport radius 1: upper (%),49.25,49.25,match
+Appendix C.10,profile likelihood: lower (%),6.448,6.448,match
+Appendix C.10,profile likelihood: upper (%),56.400,56.400,match
+Appendix C.10,Dirichlet posterior mean (%),25.62,25.62,match
+Appendix C.10,Dirichlet posterior interval: lower (%),9.89,9.89,match
+Appendix C.10,Dirichlet posterior interval: upper (%),47.95,47.95,match
+Appendix C.10,Dirichlet effective sample size,2168,2168,match
+Appendix C.10,"Dirichlet posterior mean, Monte Carlo standard error (pp)",0.197,0.197,match
+Appendix B.9 / C.8,recipient check of the amikacin certificate (exit status),0,0,match

@@ -39,7 +39,7 @@ def threshold_layer_state(result, kind):
     available = bool(layer) and (population or layer.get("guarantee_class") == "conformal_new_cohort")
     requested = result.get("inference_requested", {}).get(kind)
     if requested is None:
-        # Earlier output contracts recorded intent in these specific reasons.
+        # Results without inference_requested record intent in these specific reasons.
         requested = available or (not (reason.startswith("iid sampling was not declared") or
                      "was not requested" in reason) if population else reason != default_reason)
     if not requested:

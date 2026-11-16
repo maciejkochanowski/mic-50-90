@@ -1,0 +1,247 @@
+{
+ "case": "case-06",
+ "method": "range-hunter",
+ "cohort_id": "FDA|NAHLN|2019|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+ "source": "FDA animal pathogens",
+ "n": 301,
+ "process_budget_seconds": 120.0,
+ "reserve_seconds": 5.0,
+ "baseline_seconds": 0.08377711207140237,
+ "result": {
+  "requested_method": "range-hunter",
+  "method": "range-hunter",
+  "statistical_target": "pairwise-range-monotone-majorant",
+  "confidence_level": 0.95,
+  "constraint_signature": "487fc47e1c19d9f434f63da366f93123e717f2bd2d0fca9e066176d03755cd50",
+  "family_size": 10,
+  "family_kind": "all_contiguous_ranges_up_to_complements",
+  "sample_size": 301,
+  "numerical_tolerance_pp": 0.1,
+  "bounds_kind": "conservative_outer",
+  "status": "time_limit",
+  "precision_reached": false,
+  "endpoint_gap_pp": 5.774885829440469,
+  "cdf_bounds": [
+   [
+    0.8425833676192166,
+    0.9997589856706585
+   ],
+   [
+    0.8425833676192166,
+    0.9997589856706585
+   ],
+   [
+    0.8505305366966909,
+    1.0
+   ],
+   [
+    0.8505305366966909,
+    1.0
+   ]
+  ],
+  "category_bounds": [
+   [
+    0.8425833676192166,
+    0.9997589856706585
+   ],
+   [
+    0.0,
+    0.14946946330330932
+   ],
+   [
+    0.00024101432934153845,
+    0.03318628551296037
+   ],
+   [
+    0.0,
+    0.14946946330330912
+   ],
+   [
+    0.0,
+    0.14946946330330912
+   ]
+  ],
+  "baseline_cdf_bounds": [
+   [
+    0.8425833676192166,
+    0.9997589856706585
+   ],
+   [
+    0.8425833676192166,
+    0.9997589856706585
+   ],
+   [
+    0.8505305366966909,
+    1.0
+   ],
+   [
+    0.8505305366966909,
+    1.0
+   ]
+  ],
+  "baseline_category_bounds": [
+   [
+    0.8425833676192166,
+    0.9997589856706585
+   ],
+   [
+    0.0,
+    0.14946946330330932
+   ],
+   [
+    0.00024101432934153845,
+    0.03318628551296037
+   ],
+   [
+    0.0,
+    0.14946946330330912
+   ],
+   [
+    0.0,
+    0.14946946330330912
+   ]
+  ],
+  "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
+  "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
+  "elapsed_seconds": 115.00830705289263,
+  "baseline_seconds": 0.004681356949731708,
+  "refinement_seconds": 115.00362564600073,
+  "time_limit_scope": "optional_original_region_refinement",
+  "requested_time_limit_seconds": 114.91212840098888,
+  "effective_time_limit_seconds": 114.91212840098888,
+  "box_count": 0,
+  "excluded_boxes": 0,
+  "retained_nodes": 1,
+  "question_certificates": [],
+  "accepted_witness_count": 5,
+  "algebraic_witness_count": 0,
+  "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
+  "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
+  "interval_bounds": [
+   {
+    "start_index": 0,
+    "stop_index": 1,
+    "lower": 0.8425833676192166,
+    "upper": 0.9997589856706585,
+    "inner_lower": 0.9003322259136213,
+    "inner_upper": 0.9933554817275747
+   },
+   {
+    "start_index": 0,
+    "stop_index": 2,
+    "lower": 0.8425833676192166,
+    "upper": 0.9997589856706585,
+    "inner_lower": 0.9003322259136213,
+    "inner_upper": 0.9933554817275747
+   },
+   {
+    "start_index": 0,
+    "stop_index": 3,
+    "lower": 0.8505305366966909,
+    "upper": 1.0,
+    "inner_lower": 0.9069767441860466,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 4,
+    "lower": 0.8505305366966909,
+    "upper": 1.0,
+    "inner_lower": 0.9069767441860466,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 0,
+    "stop_index": 5,
+    "lower": 1.0,
+    "upper": 1.0,
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
+   },
+   {
+    "start_index": 1,
+    "stop_index": 2,
+    "lower": 0.0,
+    "upper": 0.14946946330330932,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09302325581395349
+   },
+   {
+    "start_index": 1,
+    "stop_index": 3,
+    "lower": 0.00024101432934153845,
+    "upper": 0.1574166323807834,
+    "inner_lower": 0.006644518272425249,
+    "inner_upper": 0.09966777408637872
+   },
+   {
+    "start_index": 1,
+    "stop_index": 4,
+    "lower": 0.00024101432934153845,
+    "upper": 0.1574166323807834,
+    "inner_lower": 0.006644518272425249,
+    "inner_upper": 0.09966777408637872
+   },
+   {
+    "start_index": 1,
+    "stop_index": 5,
+    "lower": 0.00024101432934153845,
+    "upper": 0.1574166323807834,
+    "inner_lower": 0.006644518272425249,
+    "inner_upper": 0.09966777408637872
+   },
+   {
+    "start_index": 2,
+    "stop_index": 3,
+    "lower": 0.00024101432934153845,
+    "upper": 0.03318628551296037,
+    "inner_lower": 0.006644518272425249,
+    "inner_upper": 0.0066445182724252485
+   },
+   {
+    "start_index": 2,
+    "stop_index": 4,
+    "lower": 0.00024101432934153845,
+    "upper": 0.1574166323807834,
+    "inner_lower": 0.006644518272425249,
+    "inner_upper": 0.09966777408637872
+   },
+   {
+    "start_index": 2,
+    "stop_index": 5,
+    "lower": 0.00024101432934153845,
+    "upper": 0.1574166323807834,
+    "inner_lower": 0.006644518272425249,
+    "inner_upper": 0.09966777408637872
+   },
+   {
+    "start_index": 3,
+    "stop_index": 4,
+    "lower": 0.0,
+    "upper": 0.14946946330330912,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09302325581395349
+   },
+   {
+    "start_index": 3,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14946946330330912,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09302325581395349
+   },
+   {
+    "start_index": 4,
+    "stop_index": 5,
+    "lower": 0.0,
+    "upper": 0.14946946330330912,
+    "inner_lower": 0.0,
+    "inner_upper": 0.09302325581395349
+   }
+  ]
+ },
+ "refinement_budget_seconds": 114.91212840098888,
+ "seconds": 115.09630225703586,
+ "process_status": "completed",
+ "completed_utc": "2026-11-02T05:20:30+00:00"
+}

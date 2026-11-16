@@ -1,0 +1,973 @@
+{
+ "comparison": "complete_tables",
+ "created_utc": "2026-11-02T05:24:21+00:00",
+ "status": "complete",
+ "full_design": true,
+ "settings": {
+  "time_limit_seconds": 30,
+  "confidence_level": 0.95,
+  "tolerance_pp": 0.1
+ },
+ "elapsed_seconds": 4.274999690940604,
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c6s1b0n3",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 192
+ },
+ "summary": {
+  "bonferroni": {
+   "mean_width_complete_pp": 10.623369062786166,
+   "mean_width_report_pp": 31.733591993616457,
+   "median_width_ratio": 3.6850884348096447,
+   "minimum_width_ratio": 1.415041189141482,
+   "maximum_width_ratio": 6.292484689141321,
+   "endpoint_target_met": 40
+  },
+  "range-calibrated": {
+   "mean_width_complete_pp": 9.593596987210292,
+   "mean_width_report_pp": 31.246527728081716,
+   "median_width_ratio": 4.708472355683887,
+   "minimum_width_ratio": 1.57755354588402,
+   "maximum_width_ratio": 8.394545107064445,
+   "endpoint_target_met": 40
+  }
+ },
+ "cohorts": [
+  {
+   "case": "case-01",
+   "cohort_id": "FDA|Vet-LIRN|2020|Salmonella|Dogs|Other Tissues/ Body Sites|Imipenem",
+   "n": 25,
+   "counts": [
+    25,
+    0,
+    0,
+    0,
+    0
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 18.37274338193973,
+     "seconds": 0.0016153199831023812
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 31.275609552795313,
+     "seconds": 0.005970180034637451
+    },
+    "width_ratio": 1.7022830451950361
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 21.148736618201387,
+     "seconds": 0.0037143760127946734
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 33.36326444301081,
+     "seconds": 0.02268237096723169
+    },
+    "width_ratio": 1.57755354588402
+   }
+  },
+  {
+   "case": "case-02",
+   "cohort_id": "FDA|Vet-LIRN|2021|Klebsiella spp|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+   "n": 56,
+   "counts": [
+    45,
+    1,
+    3,
+    0,
+    7
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 27.048719949743226,
+     "seconds": 0.004818585002794862
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 59.324175113758656,
+     "seconds": 0.01698626601137221
+    },
+    "width_ratio": 2.193234105864659
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 23.526806452476126,
+     "seconds": 0.010790678090415895
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 57.23305330553734,
+     "seconds": 0.07305416604503989
+    },
+    "width_ratio": 2.4326741252004362
+   }
+  },
+  {
+   "case": "case-03",
+   "cohort_id": "FDA|Vet-LIRN|2022|E. coli|Dogs|Urinary Tract Infections (UTI)|Ticarcillin",
+   "n": 28,
+   "counts": [
+    14,
+    2,
+    1,
+    0,
+    11
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 48.89666068101916,
+     "seconds": 0.0036742319352924824
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 69.19078887511691,
+     "seconds": 0.0075794099830091
+    },
+    "width_ratio": 1.415041189141482
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 41.687197435372504,
+     "seconds": 0.008245615055784583
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 66.99579839066514,
+     "seconds": 0.07359693699982017
+    },
+    "width_ratio": 1.6071072778286057
+   }
+  },
+  {
+   "case": "case-04",
+   "cohort_id": "FDA|Vet-LIRN|2019|Klebsiella spp|Dogs|Urinary Tract Infections (UTI)|Imipenem",
+   "n": 32,
+   "counts": [
+    31,
+    1,
+    0,
+    0,
+    0
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 16.704468654765826,
+     "seconds": 0.002597085083834827
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 29.5109459458293,
+     "seconds": 0.004006559029221535
+    },
+    "width_ratio": 1.7666497843024629
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 19.173279184128432,
+     "seconds": 0.011888317065313458
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 31.24695767208343,
+     "seconds": 0.031209512962959707
+    },
+    "width_ratio": 1.629713799710878
+   }
+  },
+  {
+   "case": "case-05",
+   "cohort_id": "FDA|NAHLN|2018|E. coli|Dogs|Other Tissues/ Body Sites|Marbofloxacin",
+   "n": 175,
+   "counts": [
+    139,
+    8,
+    0,
+    0,
+    28
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 15.619324922973501,
+     "seconds": 0.006935258978046477
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 51.510515990250326,
+     "seconds": 0.20237220404669642
+    },
+    "width_ratio": 3.2978708263176397
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 12.134915651820316,
+     "seconds": 0.012976392055861652
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 49.963137100950156,
+     "seconds": 0.017680075019598007
+    },
+    "width_ratio": 4.117304028681515
+   }
+  },
+  {
+   "case": "case-06",
+   "cohort_id": "FDA|NAHLN|2019|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+   "n": 301,
+   "counts": [
+    286,
+    13,
+    2,
+    0,
+    0
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.211603445439026,
+     "seconds": 0.012259806040674448
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 14.371102039984006,
+     "seconds": 0.07719493808690459
+    },
+    "width_ratio": 3.4122638149959847
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.264869123947441,
+     "seconds": 0.04332088399678469
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 14.499938409739766,
+     "seconds": 0.11145578394643962
+    },
+    "width_ratio": 3.3998554207260265
+   }
+  },
+  {
+   "case": "case-07",
+   "cohort_id": "FDA|NAHLN|2021|E. coli|Dogs|Other Tissues/ Body Sites|Amikacin",
+   "n": 325,
+   "counts": [
+    314,
+    8,
+    2,
+    0,
+    1
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 3.9013253287652767,
+     "seconds": 0.01775026589166373
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 14.027672337577767,
+     "seconds": 0.0876012759981677
+    },
+    "width_ratio": 3.595617169926549
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 3.8446546247505404,
+     "seconds": 0.035127931041643023
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 14.144054735978557,
+     "seconds": 0.040666647953912616
+    },
+    "width_ratio": 3.6788882530368485
+   }
+  },
+  {
+   "case": "case-08",
+   "cohort_id": "FDA|Vet-LIRN|2021|E. coli|Dogs|Urinary Tract Infections (UTI)|Enrofloxacin",
+   "n": 719,
+   "counts": [
+    624,
+    22,
+    11,
+    6,
+    56
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 6.939630526830631,
+     "seconds": 0.0527303529670462
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 23.876845306746628,
+     "seconds": 0.17528497299645096
+    },
+    "width_ratio": 3.4406507975362373
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 5.166955230953787,
+     "seconds": 0.10670378606300801
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 23.62620236093172,
+     "seconds": 0.2327979849651456
+    },
+    "width_ratio": 4.572557977548119
+   }
+  },
+  {
+   "case": "case-09",
+   "cohort_id": "FDA|NAHLN|2020|E. coli|Dogs|Urinary Tract Infections (UTI)|Trimethoprim/Sulfamethoxazole",
+   "n": 592,
+   "counts": [
+    527,
+    4,
+    1,
+    1,
+    59
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 6.643908524737678,
+     "seconds": 0.03464002802502364
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 41.80669266796734,
+     "seconds": 0.9949386869557202
+    },
+    "width_ratio": 6.292484689141321
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.934925195627331,
+     "seconds": 0.08083974302280694
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 41.42645215468246,
+     "seconds": 0.12663976405747235
+    },
+    "width_ratio": 8.394545107064445
+   }
+  },
+  {
+   "case": "case-10",
+   "cohort_id": "FDA|NAHLN|2019|S. pseudintermedius|Dogs|Other Tissues/ Body Sites|Ampicillin",
+   "n": 773,
+   "counts": [
+    290,
+    56,
+    102,
+    48,
+    277
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 12.38285792427238,
+     "seconds": 0.043745805975049734
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 44.09842004867404,
+     "seconds": 2.7679073539329693
+    },
+    "width_ratio": 3.5612473564954734
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 8.747078594666911,
+     "seconds": 0.11281251395121217
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 42.37423150368227,
+     "seconds": 0.1099884599680081
+    },
+    "width_ratio": 4.844386733819656
+   }
+  },
+  {
+   "case": "human-01",
+   "cohort_id": "NORM2024|T88|Cefotaxime",
+   "n": 630,
+   "counts": [
+    577,
+    43,
+    10,
+    0,
+    0
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 3.4800842438911395,
+     "seconds": 0.023362789070233703
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 12.077595564601792,
+     "seconds": 0.2953003509901464
+    },
+    "width_ratio": 3.4704894244449767
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 3.4340013688735906,
+     "seconds": 0.061400440987199545
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 11.97858508529211,
+     "seconds": 0.07013547094538808
+    },
+    "width_ratio": 3.4882295603805438
+   }
+  },
+  {
+   "case": "human-02",
+   "cohort_id": "NORM2024|T88|Chloramphenicol",
+   "n": 630,
+   "counts": [
+    0,
+    0,
+    266,
+    364,
+    0
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.3593996147152305,
+     "seconds": 0.026388323050923645
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 16.454814100560167,
+     "seconds": 0.4595421269768849
+    },
+    "width_ratio": 3.77455969969274
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.596456940672897,
+     "seconds": 0.029513293993659317
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 15.961218560840924,
+     "seconds": 0.09281918394844979
+    },
+    "width_ratio": 3.472504750257551
+   }
+  },
+  {
+   "case": "human-03",
+   "cohort_id": "NORM2024|T88|Clindamycin",
+   "n": 630,
+   "counts": [
+    22,
+    582,
+    0,
+    1,
+    25
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.915938387693734,
+     "seconds": 0.02951190306339413
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 30.53375405411627,
+     "seconds": 0.3881021880079061
+    },
+    "width_ratio": 6.211175089287662
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.142103465997274,
+     "seconds": 0.06299860298167914
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 29.870791870821844,
+     "seconds": 0.05704981693997979
+    },
+    "width_ratio": 7.211503072299522
+   }
+  },
+  {
+   "case": "human-04",
+   "cohort_id": "NORM2024|T88|Erythromycin",
+   "n": 630,
+   "counts": [
+    98,
+    494,
+    1,
+    11,
+    26
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 6.866283225341144,
+     "seconds": 0.03670078399591148
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 30.454043307820854,
+     "seconds": 0.34913544496521354
+    },
+    "width_ratio": 4.435302522247438
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 5.928193217662197,
+     "seconds": 0.09995905798859894
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 29.809086015961498,
+     "seconds": 0.22947975702118129
+    },
+    "width_ratio": 5.028359387334007
+   }
+  },
+  {
+   "case": "human-05",
+   "cohort_id": "NORM2024|T88|Penicillin G",
+   "n": 630,
+   "counts": [
+    565,
+    41,
+    19,
+    5,
+    0
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.5962199346076735,
+     "seconds": 0.06659696402493864
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 25.29206114741257,
+     "seconds": 0.31292223394848406
+    },
+    "width_ratio": 5.502796103592345
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 4.236900157022552,
+     "seconds": 0.0895128360716626
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 25.04668833266033,
+     "seconds": 0.1324642940890044
+    },
+    "width_ratio": 5.911559726312195
+   }
+  },
+  {
+   "case": "human-06",
+   "cohort_id": "NORM2024|T88|Tetracycline",
+   "n": 630,
+   "counts": [
+    0,
+    541,
+    43,
+    11,
+    35
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 6.175349015467298,
+     "seconds": 0.14035018789581954
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 31.248291188026663,
+     "seconds": 0.426056086900644
+    },
+    "width_ratio": 5.060166010011671
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 5.350585599254509,
+     "seconds": 0.06354627094697207
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 30.131986074632714,
+     "seconds": 0.1313270810060203
+    },
+    "width_ratio": 5.631530514871301
+   }
+  },
+  {
+   "case": "human-07",
+   "cohort_id": "NORM2024|T90|Clindamycin",
+   "n": 354,
+   "counts": [
+    7,
+    329,
+    2,
+    3,
+    13
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 6.595453609579735,
+     "seconds": 0.029829726088792086
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 31.85400921180832,
+     "seconds": 0.11034387198742479
+    },
+    "width_ratio": 4.829691951064769
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 5.761515472787201,
+     "seconds": 0.2301735969958827
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 31.035023138008942,
+     "seconds": 0.07908258796669543
+    },
+    "width_ratio": 5.386607618185461
+   }
+  },
+  {
+   "case": "human-08",
+   "cohort_id": "NORM2024|T90|Erythromycin",
+   "n": 354,
+   "counts": [
+    1,
+    328,
+    3,
+    5,
+    17
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 6.6912666080871634,
+     "seconds": 0.022012999979779124
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 31.689656513363445,
+     "seconds": 0.269491637009196
+    },
+    "width_ratio": 4.735972779064409
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 5.967520594115087,
+     "seconds": 0.055895316996611655
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 30.891981039928275,
+     "seconds": 0.06533707899507135
+    },
+    "width_ratio": 5.176686121601763
+   }
+  },
+  {
+   "case": "human-09",
+   "cohort_id": "NORM2024|T90|Penicillin G",
+   "n": 354,
+   "counts": [
+    349,
+    5,
+    0,
+    0,
+    0
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 2.245775845438377,
+     "seconds": 0.008978015976026654
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 14.06560991414413,
+     "seconds": 0.2895694199251011
+    },
+    "width_ratio": 6.2631406169561465
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 2.4938710415181675,
+     "seconds": 0.0478208129061386
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 14.169773335836627,
+     "seconds": 0.021452622022479773
+    },
+    "width_ratio": 5.681838836065334
+   }
+  },
+  {
+   "case": "human-10",
+   "cohort_id": "NORM2024|T90|Trimethoprim-sulfamethoxazole",
+   "n": 354,
+   "counts": [
+    21,
+    325,
+    1,
+    3,
+    4
+   ],
+   "bonferroni": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 5.820367430415387,
+     "seconds": 0.1914816980715841
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 32.00923699177468,
+     "seconds": 0.120594143983908
+    },
+    "width_ratio": 5.499521701070726
+   },
+   "range-calibrated": {
+    "complete": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 5.331373774357585,
+     "seconds": 0.056035239016637206
+    },
+    "report": {
+     "status": "complete",
+     "precision_reached": true,
+     "ranges": 14,
+     "mean_width_pp": 31.162331030389407,
+     "seconds": 0.06471818801946938
+    },
+    "width_ratio": 5.845084653466146
+   }
+  }
+ ]
+}

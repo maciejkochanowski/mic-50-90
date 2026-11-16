@@ -1,4 +1,4 @@
-# Answer a laboratory question with MIC-50-90 1.0.0
+# Answer a laboratory question with MIC-50-90
 
 Start with a question about the isolates already tested, for example: **Were fewer than 5% above 8 mg/L?** This is a descriptive concentration threshold. It is not automatically a clinical resistance breakpoint.
 

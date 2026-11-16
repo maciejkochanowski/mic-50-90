@@ -2,11 +2,12 @@
 import argparse,json
 from pathlib import Path
 from mic_50_90 import verify_reporting
+from mic_50_90._version import COMPATIBLE_REPORT_VERSIONS
 parser=argparse.ArgumentParser(description=__doc__)
 parser.add_argument('certificate',type=Path)
 args=parser.parse_args()
 document=json.loads(args.certificate.read_text(encoding='utf-8'))
-if document.get('version')!='1.0.0':raise ValueError('Expected a version 1.0.0 certificate')
+if document.get('version') not in COMPATIBLE_REPORT_VERSIONS:raise ValueError('Expected a MIC-50-90 reporting certificate')
 records=document['certificates']
 if not records:raise ValueError('Certificate list is empty')
 success=True

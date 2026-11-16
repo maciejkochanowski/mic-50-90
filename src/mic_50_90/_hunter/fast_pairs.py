@@ -25,7 +25,7 @@ def geometry(n,states):
     a=i-j;b=j;c=n-i
     x=a*(states[0]&1)+b*(states[1]&1)+c*(states[2]&1)
     y=a*(states[0]>>1)+b*(states[1]>>1)+c*(states[2]>>1)
-    coefficients=tuple(comb(n,int(u))*comb(n-int(u),int(v)) for u,v in zip(a,b))
+    coefficients=tuple(comb(n,int(u))*comb(n-int(u),int(v)) for u,v in zip(a,b, strict=True))
     lo=[];hi=[]
     for coefficient in coefficients:
         value=float(coefficient);actual=F(value)
@@ -45,7 +45,7 @@ def power_bounds(n,low,high):
 def box(n,lower,upper,*,deadline=None):
     n=original._integer(n,'n',1)
     lower=tuple(map(original._fraction,lower));upper=tuple(map(original._fraction,upper))
-    if len(lower)!=4 or len(upper)!=4 or any(not 0<=a<=b<=1 for a,b in zip(lower,upper)):
+    if len(lower)!=4 or len(upper)!=4 or any(not 0<=a<=b<=1 for a,b in zip(lower,upper, strict=True)):
         raise ValueError('four valid membership probability intervals required')
     if sum(lower)>1 or sum(upper)<1:raise ValueError('membership box misses the simplex')
     original._check_deadline(deadline)
@@ -54,7 +54,7 @@ def box(n,lower,upper,*,deadline=None):
         return original.pair_count_distribution_box_bounds(n,lower,upper,deadline=deadline)
     a,b,c,x,y,cl,ch,_=geometry(n,states)
     lower_value=cl.copy();upper_value=ch.copy()
-    for state,counts in zip(states,(a,b,c)):
+    for state,counts in zip(states,(a,b,c), strict=True):
         original._check_deadline(deadline)
         qlo=original._float_interval(lower[state])[0]
         qhi=original._float_interval(upper[state])[1]
@@ -89,7 +89,7 @@ def exact(n,q):
         for _ in range(n):values.append(values[-1]*weight)
         powers.append(values)
     common=denominator**n;cells=[[F(0)]*(n+1) for _ in range(n+1)]
-    for index,(u,v,w,i,j,coefficient) in enumerate(zip(a,b,c,x,y,coefficients)):
+    for index,(u,v,w,i,j,coefficient) in enumerate(zip(a,b,c,x,y,coefficients, strict=True)):
         if index%128==0:original._check_deadline(None)
         cells[i][j]=F(coefficient*powers[0][u]*powers[1][v]*powers[2][w],common)
     return tuple(map(tuple,cells))

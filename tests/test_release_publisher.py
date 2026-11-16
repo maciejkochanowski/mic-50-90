@@ -18,7 +18,8 @@ def publisher(monkeypatch):
     return publish_software_release
 
 
-def setup_run(publisher, monkeypatch, tmp_path, tag="v1.0.0"):
+def setup_run(publisher, monkeypatch, tmp_path, tag=None):
+    tag = tag or f"v{publisher.VERSION}"
     commit = "a" * 40
     run_url = "https://github.com/owner/project/actions/runs/123"
     directory = tmp_path / "release"
@@ -26,13 +27,13 @@ def setup_run(publisher, monkeypatch, tmp_path, tag="v1.0.0"):
     asset = directory / "usage.txt"
     asset.write_text("Verified software example\n", encoding="utf-8")
     row = publisher.inspect_archive(asset)
-    manifest = {"source_commit": commit, "publisher_commit": commit, "version": "1.0.0",
+    manifest = {"source_commit": commit, "publisher_commit": commit, "version": publisher.VERSION,
                 "actions_run": run_url, "publisher_actions_run": run_url, "files": [row]}
     (directory / "SOFTWARE_MANIFEST.json").write_text(json.dumps(manifest), encoding="utf-8")
     (directory / "SHA256SUMS.txt").write_text("".join(
         f"{sha256(path.read_bytes()).hexdigest()}  {path.name}\n"
         for path in sorted(directory.iterdir())), encoding="utf-8")
-    for key, value in {"GITHUB_ACTIONS": "true", "GITHUB_EVENT_NAME": "workflow_dispatch",
+    for key, value in {"MIC50_90_PUBLISH_APPROVED": "true", "GITHUB_ACTIONS": "true", "GITHUB_EVENT_NAME": "workflow_dispatch",
                        "GITHUB_REF": "refs/heads/main", "GITHUB_REPOSITORY": "owner/project",
                        "GITHUB_SHA": commit, "GITHUB_RUN_ID": "123"}.items():
         monkeypatch.setenv(key, value)
@@ -90,7 +91,7 @@ def fake_remote(publisher, monkeypatch, draft, *, initial=False, delay_assets=Fa
 
 
 def test_new_draft_uses_returned_id_despite_stale_tag_listing(publisher, monkeypatch, tmp_path):
-    _, draft = setup_run(publisher, monkeypatch, tmp_path, tag="v1.0.0-code-20261007")
+    _, draft = setup_run(publisher, monkeypatch, tmp_path, tag=f"v{publisher.VERSION}-code-20261007")
     state = fake_remote(publisher, monkeypatch, draft, delay_assets=True)
     publisher.main()
     receipt = json.loads((tmp_path / "RELEASE_PUBLICATION.json").read_text())
@@ -133,13 +134,18 @@ def test_foreign_release_is_protected(publisher, monkeypatch, tmp_path, change):
     assert state["mutations"] == []
 
 
-@pytest.mark.parametrize("tag", ["v1.0.0", "v1.0.0-code-20261007", "v1.0.0-review.2"])
-def test_fixed_version_tag_and_safe_labels_are_accepted(publisher, tag):
-    publisher.validate_tag(tag)
+@pytest.mark.parametrize("suffix", ["", "-code-20261007", "-review.2"])
+def test_fixed_version_tag_and_safe_labels_are_accepted(publisher, suffix):
+    publisher.validate_tag(f"v{publisher.VERSION}{suffix}")
 
 
-@pytest.mark.parametrize("tag", ["v1.0.1", "v1.0.01", "v1.0.0/other", "v1.0.0-..", "v1.0.0-", "v1.0.0-$(cmd)"])
-def test_other_versions_and_unsafe_tags_are_rejected(publisher, tag):
+@pytest.mark.parametrize("kind", ["other_version", "extra_digit", "slash", "dotdot", "empty", "shell"])
+def test_other_versions_and_unsafe_tags_are_rejected(publisher, kind):
+    version = publisher.VERSION
+    different = ".".join([*version.split(".")[:2], str(int(version.split(".")[2]) + 1)])
+    tag = {"other_version": f"v{different}", "extra_digit": f"v{version}1",
+           "slash": f"v{version}/other", "dotdot": f"v{version}-..",
+           "empty": f"v{version}-", "shell": f"v{version}-$(cmd)"}[kind]
     with pytest.raises(ValueError):
         publisher.validate_tag(tag)
 
@@ -176,10 +182,10 @@ def test_creation_posts_json_and_keeps_the_returned_release_id(publisher, monkey
 
     monkeypatch.setattr(publisher, "urlopen", transport)
     result = publisher.api("owner/project", "releases", method="POST",
-                           payload={"tag_name": "v1.0.0", "draft": True})
+                           payload={"tag_name": "v1.0.1", "draft": True})
     assert result["id"] == 42
     assert requests[0].method == "POST"
-    assert json.loads(requests[0].data) == {"tag_name": "v1.0.0", "draft": True}
+    assert json.loads(requests[0].data) == {"tag_name": "v1.0.1", "draft": True}
 
 
 def test_upload_streams_to_release_id_without_tag_lookup(publisher, monkeypatch, tmp_path):

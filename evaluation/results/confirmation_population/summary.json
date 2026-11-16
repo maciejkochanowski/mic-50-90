@@ -1,0 +1,764 @@
+{
+ "comparison": "confirmation_population",
+ "created_utc": "2026-11-02T05:32:49+00:00",
+ "status": "complete",
+ "full_design": true,
+ "jobs": 4880,
+ "settings": {
+  "cohorts": 610,
+  "methods": [
+   "bonferroni",
+   "range-calibrated",
+   "joint-exact",
+   "range-hunter"
+  ],
+  "budget_seconds": 120.0,
+  "reserve_seconds": 5.0,
+  "tolerance_pp": 0.1
+ },
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "1.0.1",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1001c0s7b0n0",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 4
+ },
+ "constructions": {
+  "bonferroni|R1": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 610,
+   "median_seconds": 0.19713627302553505,
+   "maximum_seconds": 5.7946952059865,
+   "process_statuses": {
+    "completed": 610
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 40.1396647687431,
+    "resolved_questions": 12763,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 42.85143179211204,
+    "resolved_questions": 1199,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 56.99353482807345,
+    "resolved_questions": 4758,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 47.45515227423865,
+    "resolved_questions": 18720,
+    "questions": 52203
+   }
+  },
+  "bonferroni|R2": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 610,
+   "median_seconds": 0.0885618954198435,
+   "maximum_seconds": 0.5907315999502316,
+   "process_statuses": {
+    "completed": 610
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 38.644112366748864,
+    "resolved_questions": 13293,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 46.24868799253904,
+    "resolved_questions": 1230,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 55.13450968717963,
+    "resolved_questions": 5624,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 46.666551996557445,
+    "resolved_questions": 20147,
+    "questions": 52203
+   }
+  },
+  "bonferroni|R3": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 610,
+   "median_seconds": 0.09488811087794602,
+   "maximum_seconds": 0.5744805430294946,
+   "process_statuses": {
+    "completed": 610
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 33.38693170484561,
+    "resolved_questions": 14396,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 40.21274508717705,
+    "resolved_questions": 1659,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 54.05718754387618,
+    "resolved_questions": 5690,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 42.97019324819464,
+    "resolved_questions": 21745,
+    "questions": 52203
+   }
+  },
+  "range-calibrated|R1": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 610,
+   "median_seconds": 0.18288280349224806,
+   "maximum_seconds": 0.6211217429954559,
+   "process_statuses": {
+    "completed": 610
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 42.195012190435506,
+    "resolved_questions": 12526,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 40.634985452772014,
+    "resolved_questions": 1848,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 55.00196937370047,
+    "resolved_questions": 6320,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 47.12159251839507,
+    "resolved_questions": 20694,
+    "questions": 52203
+   }
+  },
+  "range-calibrated|R2": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 610,
+   "median_seconds": 0.16911793750477955,
+   "maximum_seconds": 0.5997524980921298,
+   "process_statuses": {
+    "completed": 610
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 40.600897400309414,
+    "resolved_questions": 12961,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 45.83623950628581,
+    "resolved_questions": 1204,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 53.381060695174455,
+    "resolved_questions": 6571,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 46.70337876201208,
+    "resolved_questions": 20736,
+    "questions": 52203
+   }
+  },
+  "range-calibrated|R3": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 610,
+   "median_seconds": 0.1904725794447586,
+   "maximum_seconds": 0.7201724529732019,
+   "process_statuses": {
+    "completed": 610
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 35.46347522353273,
+    "resolved_questions": 14029,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 39.08406296464153,
+    "resolved_questions": 1784,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 51.78357075077167,
+    "resolved_questions": 7291,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 42.72099611024303,
+    "resolved_questions": 23104,
+    "questions": 52203
+   }
+  },
+  "joint-exact|R1": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 1,
+   "median_seconds": 116.2252571330173,
+   "maximum_seconds": 120.2367048591841,
+   "process_statuses": {
+    "completed": 503,
+    "process_time_limit": 107
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 40.10130353121021,
+    "resolved_questions": 12767,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 42.76785105416308,
+    "resolved_questions": 1207,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 56.965616009696184,
+    "resolved_questions": 4776,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 47.413132809428696,
+    "resolved_questions": 18750,
+    "questions": 52203
+   }
+  },
+  "range-hunter|R1": {
+   "cohorts": 610,
+   "meeting_endpoint_target": 2,
+   "median_seconds": 115.02929680759553,
+   "maximum_seconds": 120.39131403691135,
+   "process_statuses": {
+    "completed": 577,
+    "process_time_limit": 33
+   },
+   "cumulative": {
+    "ranges": 7298,
+    "mean_width_pp": 42.23808300678941,
+    "resolved_questions": 12516,
+    "questions": 21894
+   },
+   "single": {
+    "ranges": 3039,
+    "mean_width_pp": 40.67456181797818,
+    "resolved_questions": 1846,
+    "questions": 9117
+   },
+   "internal": {
+    "ranges": 7064,
+    "mean_width_pp": 55.05343360655577,
+    "resolved_questions": 6287,
+    "questions": 21192
+   },
+   "all": {
+    "ranges": 17401,
+    "mean_width_pp": 47.167460384178796,
+    "resolved_questions": 20649,
+    "questions": 52203
+   }
+  }
+ },
+ "pairs": [
+  {
+   "baseline": "bonferroni",
+   "candidate": "range-calibrated",
+   "report": "R1",
+   "cohorts": 610,
+   "cumulative": {
+    "cohorts": 610,
+    "candidate_narrower": 0,
+    "candidate_wider": 610,
+    "equal": 0,
+    "summed_width_change_percent": 5.120489753798108,
+    "extra_resolved": -237
+   },
+   "single": {
+    "cohorts": 610,
+    "candidate_narrower": 534,
+    "candidate_wider": 76,
+    "equal": 0,
+    "summed_width_change_percent": -5.172397389410033,
+    "extra_resolved": 649
+   },
+   "internal": {
+    "cohorts": 592,
+    "candidate_narrower": 426,
+    "candidate_wider": 166,
+    "equal": 0,
+    "summed_width_change_percent": -3.4943708271135243,
+    "extra_resolved": 1562
+   },
+   "all": {
+    "cohorts": 610,
+    "candidate_narrower": 427,
+    "candidate_wider": 183,
+    "equal": 0,
+    "summed_width_change_percent": -0.7028947118660089,
+    "extra_resolved": 1974
+   }
+  },
+  {
+   "baseline": "bonferroni",
+   "candidate": "range-calibrated",
+   "report": "R2",
+   "cohorts": 610,
+   "cumulative": {
+    "cohorts": 610,
+    "candidate_narrower": 0,
+    "candidate_wider": 610,
+    "equal": 0,
+    "summed_width_change_percent": 5.06360455375412,
+    "extra_resolved": -332
+   },
+   "single": {
+    "cohorts": 610,
+    "candidate_narrower": 303,
+    "candidate_wider": 307,
+    "equal": 0,
+    "summed_width_change_percent": -0.8918058093232206,
+    "extra_resolved": -26
+   },
+   "internal": {
+    "cohorts": 592,
+    "candidate_narrower": 426,
+    "candidate_wider": 166,
+    "equal": 0,
+    "summed_width_change_percent": -3.1803112097193553,
+    "extra_resolved": 947
+   },
+   "all": {
+    "cohorts": 610,
+    "candidate_narrower": 303,
+    "candidate_wider": 307,
+    "equal": 0,
+    "summed_width_change_percent": 0.07891469131326989,
+    "extra_resolved": 589
+   }
+  },
+  {
+   "baseline": "bonferroni",
+   "candidate": "range-calibrated",
+   "report": "R3",
+   "cohorts": 610,
+   "cumulative": {
+    "cohorts": 610,
+    "candidate_narrower": 0,
+    "candidate_wider": 610,
+    "equal": 0,
+    "summed_width_change_percent": 6.219629695368933,
+    "extra_resolved": -367
+   },
+   "single": {
+    "cohorts": 610,
+    "candidate_narrower": 378,
+    "candidate_wider": 232,
+    "equal": 0,
+    "summed_width_change_percent": -2.8067771053397417,
+    "extra_resolved": 125
+   },
+   "internal": {
+    "cohorts": 592,
+    "candidate_narrower": 456,
+    "candidate_wider": 136,
+    "equal": 0,
+    "summed_width_change_percent": -4.20594725032466,
+    "extra_resolved": 1601
+   },
+   "all": {
+    "cohorts": 610,
+    "candidate_narrower": 376,
+    "candidate_wider": 234,
+    "equal": 0,
+    "summed_width_change_percent": -0.5799302239863247,
+    "extra_resolved": 1359
+   }
+  },
+  {
+   "baseline": "bonferroni",
+   "candidate": "joint-exact",
+   "report": "R1",
+   "cohorts": 610,
+   "cumulative": {
+    "cohorts": 610,
+    "candidate_narrower": 67,
+    "candidate_wider": 0,
+    "equal": 543,
+    "summed_width_change_percent": -0.09556940187194218,
+    "extra_resolved": 4
+   },
+   "single": {
+    "cohorts": 610,
+    "candidate_narrower": 140,
+    "candidate_wider": 0,
+    "equal": 470,
+    "summed_width_change_percent": -0.19504771358501705,
+    "extra_resolved": 8
+   },
+   "internal": {
+    "cohorts": 592,
+    "candidate_narrower": 97,
+    "candidate_wider": 0,
+    "equal": 495,
+    "summed_width_change_percent": -0.04898593930257045,
+    "extra_resolved": 18
+   },
+   "all": {
+    "cohorts": 610,
+    "candidate_narrower": 200,
+    "candidate_wider": 0,
+    "equal": 410,
+    "summed_width_change_percent": -0.08854563265782156,
+    "extra_resolved": 30
+   }
+  },
+  {
+   "baseline": "range-calibrated",
+   "candidate": "range-hunter",
+   "report": "R1",
+   "cohorts": 610,
+   "cumulative": {
+    "cohorts": 610,
+    "candidate_narrower": 24,
+    "candidate_wider": 154,
+    "equal": 432,
+    "summed_width_change_percent": 0.10207561064212722,
+    "extra_resolved": -10
+   },
+   "single": {
+    "cohorts": 610,
+    "candidate_narrower": 24,
+    "candidate_wider": 153,
+    "equal": 433,
+    "summed_width_change_percent": 0.09739480589248117,
+    "extra_resolved": -2
+   },
+   "internal": {
+    "cohorts": 592,
+    "candidate_narrower": 9,
+    "candidate_wider": 156,
+    "equal": 427,
+    "summed_width_change_percent": 0.09356798209467776,
+    "extra_resolved": -33
+   },
+   "all": {
+    "cohorts": 610,
+    "candidate_narrower": 28,
+    "candidate_wider": 154,
+    "equal": 428,
+    "summed_width_change_percent": 0.09733937953353422,
+    "extra_resolved": -45
+   }
+  }
+ ],
+ "default_rule": {
+  "R1": {
+   "bonferroni_narrower_cumulative": 1.0,
+   "range_calibrated_narrower_single": 0.8754098360655738,
+   "confirmed": true
+  },
+  "R2": {
+   "bonferroni_narrower_cumulative": 1.0,
+   "range_calibrated_narrower_single": 0.4967213114754098,
+   "confirmed": false
+  },
+  "R3": {
+   "bonferroni_narrower_cumulative": 1.0,
+   "range_calibrated_narrower_single": 0.6196721311475409,
+   "confirmed": false
+  }
+ },
+ "criterion_threshold": 0.8,
+ "strata": {
+  "FDA animal pathogens|Dogs|E. coli": {
+   "bonferroni": 44.71589522512964,
+   "range-calibrated": 43.95090617941197
+  },
+  "FDA animal pathogens|Dogs|Klebsiella": {
+   "bonferroni": 52.47224208697211,
+   "range-calibrated": 51.528479858223
+  },
+  "FDA animal pathogens|Dogs|S. pseudintermedius": {
+   "bonferroni": 30.484810707477727,
+   "range-calibrated": 29.981827036708417
+  },
+  "FDA animal pathogens|Dogs|Salmonella": {
+   "bonferroni": 50.67823510579882,
+   "range-calibrated": 50.01348889583453
+  },
+  "NARMS cecal|Cattle|Campylobacter": {
+   "bonferroni": 50.44501452859835,
+   "range-calibrated": 50.23210686742597
+  },
+  "NARMS cecal|Cattle|E. coli": {
+   "bonferroni": 35.055488627855894,
+   "range-calibrated": 34.71420494889106
+  },
+  "NARMS cecal|Cattle|Enterococcus": {
+   "bonferroni": 33.35657625872411,
+   "range-calibrated": 32.8941894930032
+  },
+  "NARMS cecal|Cattle|Salmonella": {
+   "bonferroni": 28.44071519553714,
+   "range-calibrated": 28.34959536429345
+  },
+  "NARMS cecal|Chickens|Campylobacter": {
+   "bonferroni": 53.89116073800149,
+   "range-calibrated": 53.23614856606049
+  },
+  "NARMS cecal|Chickens|E. coli": {
+   "bonferroni": 54.173769128245716,
+   "range-calibrated": 53.11506309481609
+  },
+  "NARMS cecal|Chickens|Enterococcus": {
+   "bonferroni": 40.838222384186984,
+   "range-calibrated": 40.09883850514574
+  },
+  "NARMS cecal|Chickens|Salmonella": {
+   "bonferroni": 45.38564863080745,
+   "range-calibrated": 44.85860832436729
+  },
+  "NARMS cecal|Swine|Campylobacter": {
+   "bonferroni": 51.59713035803668,
+   "range-calibrated": 50.79554719925708
+  },
+  "NARMS cecal|Swine|E. coli": {
+   "bonferroni": 40.87145806295289,
+   "range-calibrated": 39.90730296156724
+  },
+  "NARMS cecal|Swine|Enterococcus": {
+   "bonferroni": 40.2837491823698,
+   "range-calibrated": 39.828005221754125
+  },
+  "NARMS cecal|Swine|Salmonella": {
+   "bonferroni": 36.919568427073045,
+   "range-calibrated": 36.406875136721276
+  },
+  "NARMS cecal|Turkeys|Campylobacter": {
+   "bonferroni": 58.99402997759077,
+   "range-calibrated": 58.60116244257142
+  },
+  "NARMS cecal|Turkeys|E. coli": {
+   "bonferroni": 46.993801778746366,
+   "range-calibrated": 46.8081572362296
+  },
+  "NARMS cecal|Turkeys|Enterococcus": {
+   "bonferroni": 56.69506529839561,
+   "range-calibrated": 54.554563336034676
+  },
+  "NARMS cecal|Turkeys|Salmonella": {
+   "bonferroni": 56.518817691458096,
+   "range-calibrated": 55.34225104103608
+  },
+  "NARMS minor species|Cattle|Campylobacter": {
+   "bonferroni": 65.1603817047454,
+   "range-calibrated": 64.0937989714088
+  },
+  "NARMS minor species|Cattle|E. coli": {
+   "bonferroni": 53.35067136644037,
+   "range-calibrated": 52.56625178230206
+  },
+  "NARMS minor species|Cattle|Enterococcus": {
+   "bonferroni": 45.846856276138084,
+   "range-calibrated": 44.61731469948961
+  },
+  "NARMS minor species|Cattle|Salmonella": {
+   "bonferroni": 37.7724379201599,
+   "range-calibrated": 37.69045102531295
+  },
+  "NARMS minor species|Goats|E. coli": {
+   "bonferroni": 51.67323164023819,
+   "range-calibrated": 51.72432768314314
+  },
+  "NARMS minor species|Goats|Enterococcus": {
+   "bonferroni": 54.38875504352901,
+   "range-calibrated": 53.46210290962039
+  },
+  "NARMS minor species|Lambs|Campylobacter": {
+   "bonferroni": 67.73635817824135,
+   "range-calibrated": 66.43475850232691
+  },
+  "NARMS minor species|Lambs|E. coli": {
+   "bonferroni": 43.6187208841645,
+   "range-calibrated": 44.055782996259566
+  },
+  "NARMS minor species|Lambs|Enterococcus": {
+   "bonferroni": 56.941737066968585,
+   "range-calibrated": 55.95144275650009
+  },
+  "NARMS minor species|Lambs|Salmonella": {
+   "bonferroni": 45.485688303338975,
+   "range-calibrated": 47.39758614412226
+  },
+  "NARMS minor species|Sheep|Campylobacter": {
+   "bonferroni": 73.12353571303065,
+   "range-calibrated": 71.77234220386293
+  },
+  "NARMS minor species|Sheep|E. coli": {
+   "bonferroni": 50.296256077507465,
+   "range-calibrated": 49.44790976990841
+  },
+  "NARMS minor species|Sheep|Enterococcus": {
+   "bonferroni": 59.550385668543875,
+   "range-calibrated": 57.72252738378984
+  },
+  "NARMS minor species|Sheep|Salmonella": {
+   "bonferroni": 42.793878939481665,
+   "range-calibrated": 44.35070279774889
+  },
+  "NARMS retail meats|Cattle|E. coli": {
+   "bonferroni": 24.553030389758852,
+   "range-calibrated": 24.71584473070331
+  },
+  "NARMS retail meats|Cattle|Enterococcus": {
+   "bonferroni": 41.88129353740353,
+   "range-calibrated": 40.997364563073226
+  },
+  "NARMS retail meats|Cattle|Salmonella": {
+   "bonferroni": 45.92800425931831,
+   "range-calibrated": 46.93629836691841
+  },
+  "NARMS retail meats|Chickens|Campylobacter": {
+   "bonferroni": 47.21434272027325,
+   "range-calibrated": 46.823704224366374
+  },
+  "NARMS retail meats|Chickens|E. coli": {
+   "bonferroni": 37.27180714063655,
+   "range-calibrated": 36.94268556688043
+  },
+  "NARMS retail meats|Chickens|Enterococcus": {
+   "bonferroni": 43.26792054299513,
+   "range-calibrated": 42.567450306923675
+  },
+  "NARMS retail meats|Chickens|Salmonella": {
+   "bonferroni": 38.798088536219474,
+   "range-calibrated": 37.7439455696413
+  },
+  "NARMS retail meats|Swine|E. coli": {
+   "bonferroni": 34.22317520291864,
+   "range-calibrated": 33.656664123860736
+  },
+  "NARMS retail meats|Swine|Enterococcus": {
+   "bonferroni": 34.85035526371244,
+   "range-calibrated": 34.309740117168495
+  },
+  "NARMS retail meats|Swine|Salmonella": {
+   "bonferroni": 52.42612156261983,
+   "range-calibrated": 52.194008058938884
+  },
+  "NARMS retail meats|Turkeys|Campylobacter": {
+   "bonferroni": 65.38878494897399,
+   "range-calibrated": 64.07892562015655
+  },
+  "NARMS retail meats|Turkeys|E. coli": {
+   "bonferroni": 45.45564853665728,
+   "range-calibrated": 44.67952341974689
+  },
+  "NARMS retail meats|Turkeys|Enterococcus": {
+   "bonferroni": 49.16528131740931,
+   "range-calibrated": 48.35979752233035
+  },
+  "NARMS retail meats|Turkeys|Salmonella": {
+   "bonferroni": 46.75964651528243,
+   "range-calibrated": 45.70848940036016
+  },
+  "NARMS slaughter|Cattle|Salmonella": {
+   "bonferroni": 35.83563147639952,
+   "range-calibrated": 35.48214347388836
+  },
+  "NARMS slaughter|Chickens|Campylobacter": {
+   "bonferroni": 43.971122021123705,
+   "range-calibrated": 43.43209230162665
+  },
+  "NARMS slaughter|Chickens|E. coli": {
+   "bonferroni": 43.49561405705529,
+   "range-calibrated": 42.907128674455905
+  },
+  "NARMS slaughter|Chickens|Enterococcus": {
+   "bonferroni": 46.36573642095559,
+   "range-calibrated": 45.795876705543094
+  },
+  "NARMS slaughter|Chickens|Salmonella": {
+   "bonferroni": 37.01585195952693,
+   "range-calibrated": 36.67068892453093
+  },
+  "NARMS slaughter|Eggs|Salmonella": {
+   "bonferroni": 24.97043630733774,
+   "range-calibrated": 25.36034266432507
+  },
+  "NARMS slaughter|Ready To Eat Products|Salmonella": {
+   "bonferroni": 60.41650312619968,
+   "range-calibrated": 59.89049506691582
+  },
+  "NARMS slaughter|Siluriformes|E. coli": {
+   "bonferroni": 37.64865032592536,
+   "range-calibrated": 37.474424528655305
+  },
+  "NARMS slaughter|Siluriformes|Enterococcus": {
+   "bonferroni": 47.4700819468409,
+   "range-calibrated": 46.6010315461827
+  },
+  "NARMS slaughter|Siluriformes|Salmonella": {
+   "bonferroni": 49.33892204880316,
+   "range-calibrated": 51.20431814302877
+  },
+  "NARMS slaughter|Swine|Salmonella": {
+   "bonferroni": 36.72576816544977,
+   "range-calibrated": 36.56970916659597
+  },
+  "NARMS slaughter|Turkeys|Campylobacter": {
+   "bonferroni": 73.80993207155524,
+   "range-calibrated": 73.4245481075119
+  },
+  "NARMS slaughter|Turkeys|Salmonella": {
+   "bonferroni": 44.80934164040797,
+   "range-calibrated": 44.680314708992526
+  }
+ }
+}

@@ -102,7 +102,7 @@ def _index_document(manifest: dict[str, Any], configuration: Mapping[str, Any], 
             f'<td>{page["refused"]}/{page["records"]}</td></tr>'
         )
     cohort_rows = []
-    for record, entry in zip(records, manifest["cohorts"]):
+    for record, entry in zip(records, manifest["cohorts"], strict=True):
         label = html.escape(str(entry["cohort_id"]))
         status = html.escape(str(entry["status"]))
         reason = "" if entry["status"] == "ok" else html.escape(str(record.get("reason", "")))
@@ -165,7 +165,7 @@ def render_paginated_batch_html(
     page_size: int = 50,
     render_page: DetailRenderer,
 ) -> Path:
-    """Write a static index and complete detail pages, or use the legacy renderer.
+    """Write a static index and complete detail pages, or one page when pagination is not needed.
 
     ``render_page`` receives ``None`` for its context when pagination is not
     needed. For paginated output it must use ``cohort_anchor(i)`` on each article,

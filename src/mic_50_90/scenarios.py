@@ -5,7 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 import numpy as np
-from scipy.optimize import linprog
+from ._solver_resources import linprog
 
 from .empirical import EmpiricalProblem
 
@@ -24,7 +24,7 @@ class ScenarioResult:
     def as_dict(self, labels: list[str]) -> dict[str, object]:
         return {
             "name": self.name,
-            "probabilities": dict(zip(labels, self.probabilities)),
+            "probabilities": dict(zip(labels, self.probabilities, strict=True)),
             "objective": self.objective,
             "success": self.success,
             "message": self.message,
@@ -56,7 +56,7 @@ def _split_constraints(matrix: np.ndarray, lower: np.ndarray, upper: np.ndarray)
     """Equality rows and one-sided inequality rows (a x <= b) of two-sided restrictions."""
     equal = np.isfinite(lower) & np.isfinite(upper) & (np.abs(lower - upper) <= 1e-12)
     rows, rhs = [], []
-    for a, lb, ub in zip(matrix[~equal], lower[~equal], upper[~equal]):
+    for a, lb, ub in zip(matrix[~equal], lower[~equal], upper[~equal], strict=True):
         if np.isfinite(ub):
             rows.append(a)
             rhs.append(ub)

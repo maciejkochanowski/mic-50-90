@@ -1,4 +1,4 @@
-"""Independent contracts and conjugate controls from the September audit."""
+"""Independent contracts and conjugate controls."""
 
 import numpy as np
 import pytest

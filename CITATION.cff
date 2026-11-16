@@ -1,9 +1,8 @@
 cff-version: 1.2.0
 message: "If you use MIC-50-90, cite this software using the metadata below."
-title: "MIC-50-90: Software for incomplete MIC distributions and laboratory reporting"
+title: "MIC-50-90: A Python package for bounding MIC distributions from incomplete susceptibility reports"
 type: software
-version: 1.0.0
-doi: "10.5281/zenodo.23297915"
+version: 1.0.2
 repository-code: "https://github.com/maciejkochanowski/mic-50-90"
 license: MIT
 authors:
@@ -13,9 +12,10 @@ authors:
     affiliation: "Department of Bacteriology and Bacterial Diseases, National Veterinary Research Institute, 57 Partyzantów Avenue, 24-100 Puławy, Poland"
     email: "maciej.kochanowski@piwet.pulawy.pl"
 keywords:
-  - antimicrobial resistance
-  - minimum inhibitory concentration
-  - partial identification
-  - order statistics
-date-released: "2026-10-11"
-url: "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.0"
+  - "minimum inhibitory concentration"
+  - "MIC50/MIC90"
+  - "antimicrobial susceptibility reporting"
+  - "partial identification"
+  - "surveillance"
+  - "antimicrobial resistance"
+url: "https://github.com/maciejkochanowski/mic-50-90"

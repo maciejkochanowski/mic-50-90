@@ -43,6 +43,6 @@
   "rank90": 2612,
   "rank_policy": "Explicit re-summary with ceiling ranks; not an attribution of the original authors' finite-sample convention.",
   "panel_policy": "Published recorded values, with explicit <=0.03 and >64 end censoring. 128 is a declared coding representative for >64, not an observed concentration. Target 0.5 is insensitive to this coding choice.",
-  "status": "Exploratory follow-up after the frozen pilot, not a replacement or prospective success.",
+  "status": "Exploratory example, not a prospective evaluation.",
   "use": "Descriptive recorded fraction only; no clinical classification or population sampling claim."
 }

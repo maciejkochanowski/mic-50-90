@@ -29,9 +29,9 @@ def direct_union(region,p,alpha=F(1,20),deadline=None):
     scores=tuple(core.exact_binomial_scores(r.n,sum(p[a:b])) for a,b in fam)
     denominator=lcm(*(v.denominator for v in p));weights=tuple(int(v*denominator) for v in p)
     hist,coeff=space(r.n,r.k);total=0
-    for h,c in zip(hist,coeff):
+    for h,c in zip(hist,coeff, strict=True):
         if any(scores[j][sum(h[a:b])]<=s for j,(a,b) in enumerate(fam)):
-            total+=c*prod(w**v for w,v in zip(weights,h))
+            total+=c*prod(w**v for w,v in zip(weights,h, strict=True))
     return F(total,denominator**r.n)
 
 

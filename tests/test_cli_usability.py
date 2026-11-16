@@ -69,14 +69,14 @@ def test_version_without_subcommand(capsys):
     with pytest.raises(SystemExit) as stopped:
         main(["--version"])
     assert stopped.value.code == 0
-    assert capsys.readouterr().out.strip() == "MIC-50-90 1.0.0"
+    assert capsys.readouterr().out.strip() == "MIC-50-90 " + __import__("mic_50_90").__version__
 
 
 def test_module_entry_point_outside_checkout(tmp_path):
     completed = subprocess.run([sys.executable, "-m", "mic_50_90", "--version"],
                                cwd=tmp_path, capture_output=True, text=True)
     assert completed.returncode == 0, completed.stderr
-    assert completed.stdout.strip() == "MIC-50-90 1.0.0"
+    assert completed.stdout.strip() == "MIC-50-90 " + __import__("mic_50_90").__version__
 
 
 @pytest.mark.parametrize("invalid", ["missing_hashes", "empty_hashes", "empty_source"])
