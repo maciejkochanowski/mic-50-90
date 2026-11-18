@@ -1,13 +1,18 @@
 name: Publish container image
 
 on:
+  workflow_call:
+    inputs:
+      release_tag:
+        description: Released tag to build the image from
+        required: true
+        type: string
   workflow_dispatch:
     inputs:
       release_tag:
         description: Released tag to build the image from
         required: true
         type: string
-        default: v1.0.2
 
 permissions:
   contents: read
@@ -20,28 +25,32 @@ concurrency:
 jobs:
   image:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.release_tag }}
+          ref: refs/tags/${{ inputs.release_tag }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
       - name: Build and smoke-test the image
         run: |
           set -euo pipefail
-          version="${INPUT_TAG#v}"
+          version="$(python tools/release_version.py)"
           image="ghcr.io/${GITHUB_REPOSITORY,,}"
           docker build \
             --label org.opencontainers.image.source="https://github.com/${GITHUB_REPOSITORY}" \
+            --label org.opencontainers.image.url="https://github.com/${GITHUB_REPOSITORY}" \
             --label org.opencontainers.image.title="MIC-50-90" \
             --label org.opencontainers.image.description="A Python package for bounding MIC distributions from incomplete susceptibility reports" \
             --label org.opencontainers.image.version="${version}" \
             --label org.opencontainers.image.revision="$(git rev-parse HEAD)" \
+            --label org.opencontainers.image.created="$(git log -1 --format=%cI)" \
             --label org.opencontainers.image.licenses="MIT" \
             -t "${image}:${version}" -t "${image}:latest" .
           docker run --rm "${image}:${version}" bash -euo pipefail -c 'node --version; uv pip check; mic-50-90 --help >/dev/null; python reproducibility/self_test.py; python scripts/refresh_package_manifest.py --check'
           echo "IMAGE=${image}" >> "$GITHUB_ENV"
           echo "VERSION=${version}" >> "$GITHUB_ENV"
-        env:
-          INPUT_TAG: ${{ inputs.release_tag }}
       - name: Push to GitHub Container Registry
         run: |
           set -euo pipefail

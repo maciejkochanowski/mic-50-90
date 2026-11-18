@@ -254,3 +254,13 @@ jobs:
           cp packages/*.whl packages/*.tar.gz dist/
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+
+  container:
+    needs: publish
+    if: inputs.publish_github && github.ref == 'refs/heads/main'
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/container.yml
+    with:
+      release_tag: ${{ inputs.release_tag }}
