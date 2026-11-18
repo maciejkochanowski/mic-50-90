@@ -5,7 +5,7 @@ from html import escape
 import json
 from types import SimpleNamespace
 
-from ._version import __version__, COMPATIBLE_REPORT_VERSIONS
+from ._version import COMPATIBLE_REPORT_VERSIONS
 
 # Reporting certificates have the same content in every release that can read them.
 CERTIFICATE_VERSIONS = COMPATIBLE_REPORT_VERSIONS
