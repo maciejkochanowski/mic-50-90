@@ -1,0 +1,52 @@
+name: Publish container image
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Released tag to build the image from
+        required: true
+        type: string
+        default: v1.0.2
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: container-${{ inputs.release_tag }}
+  cancel-in-progress: false
+
+jobs:
+  image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_tag }}
+      - name: Build and smoke-test the image
+        run: |
+          set -euo pipefail
+          version="${INPUT_TAG#v}"
+          image="ghcr.io/${GITHUB_REPOSITORY,,}"
+          docker build \
+            --label org.opencontainers.image.source="https://github.com/${GITHUB_REPOSITORY}" \
+            --label org.opencontainers.image.title="MIC-50-90" \
+            --label org.opencontainers.image.description="A Python package for bounding MIC distributions from incomplete susceptibility reports" \
+            --label org.opencontainers.image.version="${version}" \
+            --label org.opencontainers.image.revision="$(git rev-parse HEAD)" \
+            --label org.opencontainers.image.licenses="MIT" \
+            -t "${image}:${version}" -t "${image}:latest" .
+          docker run --rm "${image}:${version}" bash -euo pipefail -c 'node --version; uv pip check; mic-50-90 --help >/dev/null; python reproducibility/self_test.py; python scripts/refresh_package_manifest.py --check'
+          echo "IMAGE=${image}" >> "$GITHUB_ENV"
+          echo "VERSION=${version}" >> "$GITHUB_ENV"
+        env:
+          INPUT_TAG: ${{ inputs.release_tag }}
+      - name: Push to GitHub Container Registry
+        run: |
+          set -euo pipefail
+          echo "${GITHUB_TOKEN}" | docker login ghcr.io -u "${GITHUB_ACTOR}" --password-stdin
+          docker push "${IMAGE}:${VERSION}"
+          docker push "${IMAGE}:latest"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
