@@ -1,12 +1,12 @@
 {
- "created_utc": "2026-11-19T15:30:14+00:00",
+ "created_utc": "2026-11-19T16:37:20+00:00",
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1001c4s3b0n3",
+  "node": "x1001c0s7b0n1",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",
@@ -22,9 +22,9 @@
   "available_cpus": 8
  },
  "statuses": {
-  "match": 218,
-  "differs": 9,
-  "timing": 17,
+  "match": 227,
+  "differs": 0,
+  "timing": 15,
   "reduced run": 0,
   "not run": 0
  },
@@ -144,7 +144,7 @@
   "examples": {
    "status": "complete",
    "full_design": true,
-   "created_utc": "2026-11-19T12:04:57+00:00",
+   "created_utc": "2026-11-19T16:37:19+00:00",
    "package_version": "2.0.0",
    "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34"
   }
@@ -210,7 +210,7 @@
    "number": 8,
    "comparison": "population",
    "quantity": "Bonferroni: median seconds per cohort",
-   "article": "0.221",
+   "article": "0.306",
    "reproduced": "0.306",
    "status": "timing"
   },
@@ -218,9 +218,9 @@
    "number": 9,
    "comparison": "population",
    "quantity": "joint-exact: mean width, cumulative ranges (pp)",
-   "article": "28.481",
+   "article": "28.558",
    "reproduced": "28.558",
-   "status": "differs"
+   "status": "match"
   },
   {
    "number": 10,
@@ -234,9 +234,9 @@
    "number": 11,
    "comparison": "population",
    "quantity": "joint-exact: mean width, single categories (pp)",
-   "article": "29.466",
+   "article": "29.601",
    "reproduced": "29.601",
-   "status": "differs"
+   "status": "match"
   },
   {
    "number": 12,
@@ -250,9 +250,9 @@
    "number": 13,
    "comparison": "population",
    "quantity": "joint-exact: mean width, all ranges (pp)",
-   "article": "31.571",
+   "article": "31.666",
    "reproduced": "31.666",
-   "status": "differs"
+   "status": "match"
   },
   {
    "number": 14,
@@ -274,7 +274,7 @@
    "number": 16,
    "comparison": "population",
    "quantity": "joint-exact: median seconds per cohort",
-   "article": "115.639",
+   "article": "115.615",
    "reproduced": "115.615",
    "status": "timing"
   },
@@ -338,7 +338,7 @@
    "number": 24,
    "comparison": "population",
    "quantity": "range-calibrated: median seconds per cohort",
-   "article": "0.120",
+   "article": "0.165",
    "reproduced": "0.165",
    "status": "timing"
   },
@@ -362,9 +362,9 @@
    "number": 27,
    "comparison": "population",
    "quantity": "range-hunter: mean width, single categories (pp)",
-   "article": "25.998",
+   "article": "25.993",
    "reproduced": "25.993",
-   "status": "differs"
+   "status": "match"
   },
   {
    "number": 28,
@@ -378,9 +378,9 @@
    "number": 29,
    "comparison": "population",
    "quantity": "range-hunter: mean width, all ranges (pp)",
-   "article": "31.237",
+   "article": "31.236",
    "reproduced": "31.236",
-   "status": "differs"
+   "status": "match"
   },
   {
    "number": 30,
@@ -402,7 +402,7 @@
    "number": 32,
    "comparison": "population",
    "quantity": "range-hunter: median seconds per cohort",
-   "article": "115.094",
+   "article": "115.163",
    "reproduced": "115.163",
    "status": "timing"
   },
@@ -433,37 +433,21 @@
   {
    "number": 36,
    "comparison": "population",
-   "quantity": "Bonferroni: maximum seconds per cohort",
-   "article": "2.72",
-   "reproduced": "2.61",
-   "status": "timing"
+   "quantity": "joint-exact: summed-width reduction against Bonferroni (%)",
+   "article": "0.213",
+   "reproduced": "0.213",
+   "status": "match"
   },
   {
    "number": 37,
    "comparison": "population",
-   "quantity": "range-calibrated: maximum seconds per cohort",
-   "article": "0.20",
-   "reproduced": "0.71",
-   "status": "timing"
+   "quantity": "range-hunter: summed-width reduction against range-calibrated (%)",
+   "article": "0.033",
+   "reproduced": "0.033",
+   "status": "match"
   },
   {
    "number": 38,
-   "comparison": "population",
-   "quantity": "joint-exact: summed-width reduction against Bonferroni (%)",
-   "article": "0.513",
-   "reproduced": "0.213",
-   "status": "differs"
-  },
-  {
-   "number": 39,
-   "comparison": "population",
-   "quantity": "range-hunter: summed-width reduction against range-calibrated (%)",
-   "article": "0.030",
-   "reproduced": "0.033",
-   "status": "differs"
-  },
-  {
-   "number": 40,
    "comparison": "coverage",
    "quantity": "Bonferroni: replicates",
    "article": "100000",
@@ -471,7 +455,7 @@
    "status": "match"
   },
   {
-   "number": 41,
+   "number": 39,
    "comparison": "coverage",
    "quantity": "Bonferroni: covered replicates",
    "article": "99845",
@@ -479,7 +463,7 @@
    "status": "match"
   },
   {
-   "number": 42,
+   "number": 40,
    "comparison": "coverage",
    "quantity": "Bonferroni: lowest cohort coverage (%)",
    "article": "99.44",
@@ -487,7 +471,7 @@
    "status": "match"
   },
   {
-   "number": 43,
+   "number": 41,
    "comparison": "coverage",
    "quantity": "range-calibrated: replicates",
    "article": "100000",
@@ -495,7 +479,7 @@
    "status": "match"
   },
   {
-   "number": 44,
+   "number": 42,
    "comparison": "coverage",
    "quantity": "range-calibrated: covered replicates",
    "article": "99828",
@@ -503,7 +487,7 @@
    "status": "match"
   },
   {
-   "number": 45,
+   "number": 43,
    "comparison": "coverage",
    "quantity": "range-calibrated: lowest cohort coverage (%)",
    "article": "99.40",
@@ -511,7 +495,7 @@
    "status": "match"
   },
   {
-   "number": 46,
+   "number": 44,
    "comparison": "complete_tables",
    "quantity": "Bonferroni: mean width from the incomplete reports (pp)",
    "article": "31.73",
@@ -519,7 +503,7 @@
    "status": "match"
   },
   {
-   "number": 47,
+   "number": 45,
    "comparison": "complete_tables",
    "quantity": "Bonferroni: mean width from the complete tables (pp)",
    "article": "10.62",
@@ -527,7 +511,7 @@
    "status": "match"
   },
   {
-   "number": 48,
+   "number": 46,
    "comparison": "complete_tables",
    "quantity": "Bonferroni: median width ratio, report to complete table",
    "article": "3.7",
@@ -535,7 +519,7 @@
    "status": "match"
   },
   {
-   "number": 49,
+   "number": 47,
    "comparison": "complete_tables",
    "quantity": "range-calibrated: mean width from the incomplete reports (pp)",
    "article": "31.25",
@@ -543,7 +527,7 @@
    "status": "match"
   },
   {
-   "number": 50,
+   "number": 48,
    "comparison": "complete_tables",
    "quantity": "range-calibrated: mean width from the complete tables (pp)",
    "article": "9.59",
@@ -551,7 +535,7 @@
    "status": "match"
   },
   {
-   "number": 51,
+   "number": 49,
    "comparison": "complete_tables",
    "quantity": "range-calibrated: median width ratio, report to complete table",
    "article": "4.71",
@@ -559,7 +543,7 @@
    "status": "match"
   },
   {
-   "number": 52,
+   "number": 50,
    "comparison": "controlled_reports",
    "quantity": "controlled reports",
    "article": "144",
@@ -567,7 +551,7 @@
    "status": "match"
   },
   {
-   "number": 53,
+   "number": 51,
    "comparison": "controlled_reports",
    "quantity": "proper-range projections",
    "article": "3528",
@@ -575,7 +559,7 @@
    "status": "match"
   },
   {
-   "number": 54,
+   "number": 52,
    "comparison": "controlled_reports",
    "quantity": "aggregate width reduction, range-calibrated against Bonferroni cutoff (%)",
    "article": "0.416",
@@ -583,7 +567,7 @@
    "status": "match"
   },
   {
-   "number": 55,
+   "number": 53,
    "comparison": "controlled_reports",
    "quantity": "reports with narrower bounds",
    "article": "90",
@@ -591,7 +575,7 @@
    "status": "match"
   },
   {
-   "number": 56,
+   "number": 54,
    "comparison": "controlled_reports",
    "quantity": "reports with equal bounds",
    "article": "54",
@@ -599,7 +583,7 @@
    "status": "match"
   },
   {
-   "number": 57,
+   "number": 55,
    "comparison": "controlled_reports",
    "quantity": "reports whose endpoints are confirmed",
    "article": "144",
@@ -607,7 +591,7 @@
    "status": "match"
   },
   {
-   "number": 58,
+   "number": 56,
    "comparison": "controlled_reports",
    "quantity": "confirmed by the shape condition",
    "article": "142",
@@ -615,7 +599,7 @@
    "status": "match"
   },
   {
-   "number": 59,
+   "number": 57,
    "comparison": "controlled_reports",
    "quantity": "confirmed by direct witnesses",
    "article": "2",
@@ -623,7 +607,7 @@
    "status": "match"
   },
   {
-   "number": 60,
+   "number": 58,
    "comparison": "controlled_reports",
    "quantity": "deterministic probes confirmed (of 15)",
    "article": "15",
@@ -631,7 +615,7 @@
    "status": "match"
   },
   {
-   "number": 61,
+   "number": 59,
    "comparison": "controlled_reports",
    "quantity": "largest probe sample size",
    "article": "1000",
@@ -639,7 +623,7 @@
    "status": "match"
   },
   {
-   "number": 62,
+   "number": 60,
    "comparison": "controlled_reports",
    "quantity": "largest probe category count",
    "article": "16",
@@ -647,7 +631,7 @@
    "status": "match"
   },
   {
-   "number": 63,
+   "number": 61,
    "comparison": "sufficient_reporting",
    "quantity": "drug cohorts",
    "article": "60",
@@ -655,7 +639,7 @@
    "status": "match"
   },
   {
-   "number": 64,
+   "number": 62,
    "comparison": "sufficient_reporting",
    "quantity": "tasks",
    "article": "180",
@@ -663,7 +647,7 @@
    "status": "match"
   },
   {
-   "number": 65,
+   "number": 63,
    "comparison": "sufficient_reporting",
    "quantity": "threshold answers",
    "article": "1809",
@@ -671,7 +655,7 @@
    "status": "match"
   },
   {
-   "number": 66,
+   "number": 64,
    "comparison": "sufficient_reporting",
    "quantity": "counts sent by direct reporting",
    "article": "405",
@@ -679,7 +663,7 @@
    "status": "match"
   },
   {
-   "number": 67,
+   "number": 65,
    "comparison": "sufficient_reporting",
    "quantity": "counts in the minimal sufficient reports",
    "article": "115",
@@ -687,7 +671,7 @@
    "status": "match"
   },
   {
-   "number": 68,
+   "number": 66,
    "comparison": "sufficient_reporting",
    "quantity": "answers preserved by every rule",
    "article": "1809",
@@ -695,7 +679,7 @@
    "status": "match"
   },
   {
-   "number": 69,
+   "number": 67,
    "comparison": "sufficient_reporting",
    "quantity": "tasks resolved by the summaries alone",
    "article": "95",
@@ -703,7 +687,7 @@
    "status": "match"
   },
   {
-   "number": 70,
+   "number": 68,
    "comparison": "sufficient_reporting",
    "quantity": "tasks needing counts",
    "article": "85",
@@ -711,7 +695,7 @@
    "status": "match"
   },
   {
-   "number": 71,
+   "number": 69,
    "comparison": "sufficient_reporting",
    "quantity": "tasks needing fewer counts than direct reporting",
    "article": "58",
@@ -719,7 +703,7 @@
    "status": "match"
   },
   {
-   "number": 72,
+   "number": 70,
    "comparison": "sufficient_reporting",
    "quantity": "tasks needing the same number of counts",
    "article": "27",
@@ -727,7 +711,7 @@
    "status": "match"
   },
   {
-   "number": 73,
+   "number": 71,
    "comparison": "sufficient_reporting",
    "quantity": "counts kept by greedy deletion",
    "article": "115",
@@ -735,7 +719,7 @@
    "status": "match"
   },
   {
-   "number": 74,
+   "number": 72,
    "comparison": "sufficient_reporting",
    "quantity": "unequal-cost example: minimal report cost",
    "article": "1",
@@ -743,7 +727,7 @@
    "status": "match"
   },
   {
-   "number": 75,
+   "number": 73,
    "comparison": "sufficient_reporting",
    "quantity": "unequal-cost example: greedy deletion cost",
    "article": "10",
@@ -751,7 +735,7 @@
    "status": "match"
   },
   {
-   "number": 76,
+   "number": 74,
    "comparison": "calibration",
    "quantity": "NARMS: test blocks covered",
    "article": "5",
@@ -759,7 +743,7 @@
    "status": "match"
   },
   {
-   "number": 77,
+   "number": 75,
    "comparison": "calibration",
    "quantity": "NARMS: test blocks",
    "article": "6",
@@ -767,7 +751,7 @@
    "status": "match"
   },
   {
-   "number": 78,
+   "number": 76,
    "comparison": "calibration",
    "quantity": "FSIS: calibration groups",
    "article": "19",
@@ -775,7 +759,7 @@
    "status": "match"
   },
   {
-   "number": 79,
+   "number": 77,
    "comparison": "calibration",
    "quantity": "FSIS: evaluation groups",
    "article": "30",
@@ -783,7 +767,7 @@
    "status": "match"
   },
   {
-   "number": 80,
+   "number": 78,
    "comparison": "calibration",
    "quantity": "FSIS uniform scaling: groups covered (of 30)",
    "article": "27",
@@ -791,7 +775,7 @@
    "status": "match"
   },
   {
-   "number": 81,
+   "number": 79,
    "comparison": "calibration",
    "quantity": "FSIS trained scaling: groups covered (of 30)",
    "article": "30",
@@ -799,7 +783,7 @@
    "status": "match"
   },
   {
-   "number": 82,
+   "number": 80,
    "comparison": "calibration",
    "quantity": "FSIS trained scaling: mean width (pp)",
    "article": "14.5639",
@@ -807,7 +791,7 @@
    "status": "match"
   },
   {
-   "number": 83,
+   "number": 81,
    "comparison": "calibration",
    "quantity": "FSIS uniform scaling: mean width (pp)",
    "article": "15.2127",
@@ -815,7 +799,7 @@
    "status": "match"
   },
   {
-   "number": 84,
+   "number": 82,
    "comparison": "pba_comparison",
    "quantity": "feasibility decisions",
    "article": "8800",
@@ -823,7 +807,7 @@
    "status": "match"
   },
   {
-   "number": 85,
+   "number": 83,
    "comparison": "pba_comparison",
    "quantity": "feasibility decisions where PBA agrees",
    "article": "8800",
@@ -831,7 +815,7 @@
    "status": "match"
   },
   {
-   "number": 86,
+   "number": 84,
    "comparison": "pba_comparison",
    "quantity": "feasibility decisions where mic-50-90 agrees",
    "article": "8800",
@@ -839,7 +823,7 @@
    "status": "match"
   },
   {
-   "number": 87,
+   "number": 85,
    "comparison": "pba_comparison",
    "quantity": "sample intervals",
    "article": "17658",
@@ -847,7 +831,7 @@
    "status": "match"
   },
   {
-   "number": 88,
+   "number": 86,
    "comparison": "pba_comparison",
    "quantity": "sample intervals where PBA agrees",
    "article": "17658",
@@ -855,7 +839,7 @@
    "status": "match"
   },
   {
-   "number": 89,
+   "number": 87,
    "comparison": "pba_comparison",
    "quantity": "sample intervals where mic-50-90 agrees",
    "article": "17658",
@@ -863,7 +847,7 @@
    "status": "match"
   },
   {
-   "number": 90,
+   "number": 88,
    "comparison": "reporting_controls",
    "quantity": "finite cases",
    "article": "5016",
@@ -871,7 +855,7 @@
    "status": "match"
   },
   {
-   "number": 91,
+   "number": 89,
    "comparison": "reporting_controls",
    "quantity": "cases where oracle and package agree",
    "article": "5016",
@@ -879,7 +863,7 @@
    "status": "match"
   },
   {
-   "number": 92,
+   "number": 90,
    "comparison": "reporting_controls",
    "quantity": "common-boundary cases",
    "article": "4716",
@@ -887,7 +871,7 @@
    "status": "match"
   },
   {
-   "number": 93,
+   "number": 91,
    "comparison": "reporting_controls",
    "quantity": "fixed-seed cases with variant unions",
    "article": "300",
@@ -895,7 +879,7 @@
    "status": "match"
   },
   {
-   "number": 94,
+   "number": 92,
    "comparison": "reporting_controls",
    "quantity": "impossible-disclosure cases",
    "article": "132",
@@ -903,7 +887,7 @@
    "status": "match"
   },
   {
-   "number": 95,
+   "number": 93,
    "comparison": "reporting_controls",
    "quantity": "impossible-disclosure cases correctly identified",
    "article": "132",
@@ -911,7 +895,7 @@
    "status": "match"
   },
   {
-   "number": 96,
+   "number": 94,
    "comparison": "planning_controls",
    "quantity": "controlled tasks",
    "article": "2400",
@@ -919,7 +903,7 @@
    "status": "match"
   },
   {
-   "number": 97,
+   "number": 95,
    "comparison": "planning_controls",
    "quantity": "controlled tasks where oracle and package agree",
    "article": "2400",
@@ -927,7 +911,7 @@
    "status": "match"
   },
   {
-   "number": 98,
+   "number": 96,
    "comparison": "planning_controls",
    "quantity": "controlled: already resolved",
    "article": "2064",
@@ -935,7 +919,7 @@
    "status": "match"
   },
   {
-   "number": 99,
+   "number": 97,
    "comparison": "planning_controls",
    "quantity": "controlled: nonzero optimal plan",
    "article": "196",
@@ -943,7 +927,7 @@
    "status": "match"
   },
   {
-   "number": 100,
+   "number": 98,
    "comparison": "planning_controls",
    "quantity": "controlled: impossible under the allowed cuts",
    "article": "140",
@@ -951,7 +935,7 @@
    "status": "match"
   },
   {
-   "number": 101,
+   "number": 99,
    "comparison": "planning_controls",
    "quantity": "controlled: checked finite-policy histogram paths",
    "article": "8828",
@@ -959,7 +943,7 @@
    "status": "match"
   },
   {
-   "number": 102,
+   "number": 100,
    "comparison": "planning_controls",
    "quantity": "controlled: checked impossibility witnesses",
    "article": "140",
@@ -967,7 +951,7 @@
    "status": "match"
   },
   {
-   "number": 103,
+   "number": 101,
    "comparison": "planning_controls",
    "quantity": "stress cases",
    "article": "128",
@@ -975,7 +959,7 @@
    "status": "match"
   },
   {
-   "number": 104,
+   "number": 102,
    "comparison": "planning_controls",
    "quantity": "stress cases where oracle and package agree",
    "article": "128",
@@ -983,7 +967,7 @@
    "status": "match"
   },
   {
-   "number": 105,
+   "number": 103,
    "comparison": "planning_controls",
    "quantity": "stress: already resolved",
    "article": "49",
@@ -991,7 +975,7 @@
    "status": "match"
   },
   {
-   "number": 106,
+   "number": 104,
    "comparison": "planning_controls",
    "quantity": "stress: optimal",
    "article": "62",
@@ -999,7 +983,7 @@
    "status": "match"
   },
   {
-   "number": 107,
+   "number": 105,
    "comparison": "planning_controls",
    "quantity": "stress: impossible",
    "article": "17",
@@ -1007,7 +991,7 @@
    "status": "match"
   },
   {
-   "number": 108,
+   "number": 106,
    "comparison": "planning_controls",
    "quantity": "stress: checked histogram paths",
    "article": "1015",
@@ -1015,7 +999,7 @@
    "status": "match"
   },
   {
-   "number": 109,
+   "number": 107,
    "comparison": "planning_controls",
    "quantity": "stress: checked impossibility witnesses",
    "article": "17",
@@ -1023,7 +1007,7 @@
    "status": "match"
   },
   {
-   "number": 110,
+   "number": 108,
    "comparison": "planning_controls",
    "quantity": "input/contract controls",
    "article": "31",
@@ -1031,7 +1015,7 @@
    "status": "match"
   },
   {
-   "number": 111,
+   "number": 109,
    "comparison": "planning_controls",
    "quantity": "input/contract controls passing",
    "article": "31",
@@ -1039,7 +1023,7 @@
    "status": "match"
   },
   {
-   "number": 112,
+   "number": 110,
    "comparison": "count_extrema",
    "quantity": "nonempty reports",
    "article": "268",
@@ -1047,7 +1031,7 @@
    "status": "match"
   },
   {
-   "number": 113,
+   "number": 111,
    "comparison": "count_extrema",
    "quantity": "P5 rows",
    "article": "1182",
@@ -1055,7 +1039,7 @@
    "status": "match"
   },
   {
-   "number": 114,
+   "number": 112,
    "comparison": "count_extrema",
    "quantity": "range-endpoint pairs",
    "article": "2086",
@@ -1063,7 +1047,7 @@
    "status": "match"
   },
   {
-   "number": 115,
+   "number": 113,
    "comparison": "count_extrema",
    "quantity": "seeded reports with additional counts",
    "article": "160",
@@ -1071,7 +1055,7 @@
    "status": "match"
   },
   {
-   "number": 116,
+   "number": 114,
    "comparison": "count_extrema",
    "quantity": "objective pairs with additional counts",
    "article": "720",
@@ -1079,7 +1063,7 @@
    "status": "match"
   },
   {
-   "number": 117,
+   "number": 115,
    "comparison": "count_extrema",
    "quantity": "feasibility decisions",
    "article": "154",
@@ -1087,7 +1071,7 @@
    "status": "match"
   },
   {
-   "number": 118,
+   "number": 116,
    "comparison": "count_extrema",
    "quantity": "infeasible reports",
    "article": "50",
@@ -1095,7 +1079,7 @@
    "status": "match"
   },
   {
-   "number": 119,
+   "number": 117,
    "comparison": "count_extrema",
    "quantity": "failed checks",
    "article": "0",
@@ -1103,7 +1087,7 @@
    "status": "match"
   },
   {
-   "number": 120,
+   "number": 118,
    "comparison": "population_controls",
    "quantity": "population projection pairs",
    "article": "2832",
@@ -1111,7 +1095,7 @@
    "status": "match"
   },
   {
-   "number": 121,
+   "number": 119,
    "comparison": "population_controls",
    "quantity": "maximum absolute fraction difference (x 10^-12, rounded upward; bound)",
    "article": "2.001",
@@ -1119,7 +1103,7 @@
    "status": "match"
   },
   {
-   "number": 122,
+   "number": 120,
    "comparison": "population_controls",
    "quantity": "zero-budget projection pairs keeping the conservative result",
    "article": "1416",
@@ -1127,7 +1111,7 @@
    "status": "match"
   },
   {
-   "number": 123,
+   "number": 121,
    "comparison": "population_controls",
    "quantity": "probability witness queries",
    "article": "267",
@@ -1135,7 +1119,7 @@
    "status": "match"
   },
   {
-   "number": 124,
+   "number": 122,
    "comparison": "population_controls",
    "quantity": "probability witnesses returned",
    "article": "222",
@@ -1143,7 +1127,7 @@
    "status": "match"
   },
   {
-   "number": 125,
+   "number": 123,
    "comparison": "population_controls",
    "quantity": "accepted-range checks",
    "article": "747",
@@ -1151,7 +1135,7 @@
    "status": "match"
   },
   {
-   "number": 126,
+   "number": 124,
    "comparison": "population_controls",
    "quantity": "failed checks",
    "article": "0",
@@ -1159,7 +1143,7 @@
    "status": "match"
   },
   {
-   "number": 127,
+   "number": 125,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R1: cohorts meeting the endpoint target (of 610)",
    "article": "610",
@@ -1167,7 +1151,7 @@
    "status": "match"
   },
   {
-   "number": 128,
+   "number": 126,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R1: mean width, cumulative ranges (pp)",
    "article": "40.14",
@@ -1175,7 +1159,7 @@
    "status": "match"
   },
   {
-   "number": 129,
+   "number": 127,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R1: mean width, single ranges (pp)",
    "article": "42.85",
@@ -1183,7 +1167,7 @@
    "status": "match"
   },
   {
-   "number": 130,
+   "number": 128,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R1: mean width, internal ranges (pp)",
    "article": "56.99",
@@ -1191,15 +1175,15 @@
    "status": "match"
   },
   {
-   "number": 131,
+   "number": 129,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R1: median seconds per cohort",
-   "article": "0.2",
-   "reproduced": "0.2",
+   "article": "0.194",
+   "reproduced": "0.194",
    "status": "timing"
   },
   {
-   "number": 132,
+   "number": 130,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R1: cohorts meeting the endpoint target (of 610)",
    "article": "610",
@@ -1207,7 +1191,7 @@
    "status": "match"
   },
   {
-   "number": 133,
+   "number": 131,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R1: mean width, cumulative ranges (pp)",
    "article": "42.20",
@@ -1215,7 +1199,7 @@
    "status": "match"
   },
   {
-   "number": 134,
+   "number": 132,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R1: mean width, single ranges (pp)",
    "article": "40.63",
@@ -1223,7 +1207,7 @@
    "status": "match"
   },
   {
-   "number": 135,
+   "number": 133,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R1: mean width, internal ranges (pp)",
    "article": "55.00",
@@ -1231,15 +1215,15 @@
    "status": "match"
   },
   {
-   "number": 136,
+   "number": 134,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R1: median seconds per cohort",
-   "article": "0.2",
-   "reproduced": "0.2",
+   "article": "0.174",
+   "reproduced": "0.174",
    "status": "timing"
   },
   {
-   "number": 137,
+   "number": 135,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R2: cohorts meeting the endpoint target (of 610)",
    "article": "610",
@@ -1247,7 +1231,7 @@
    "status": "match"
   },
   {
-   "number": 138,
+   "number": 136,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R2: mean width, cumulative ranges (pp)",
    "article": "38.64",
@@ -1255,7 +1239,7 @@
    "status": "match"
   },
   {
-   "number": 139,
+   "number": 137,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R2: mean width, single ranges (pp)",
    "article": "46.25",
@@ -1263,7 +1247,7 @@
    "status": "match"
   },
   {
-   "number": 140,
+   "number": 138,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R2: mean width, internal ranges (pp)",
    "article": "55.13",
@@ -1271,15 +1255,15 @@
    "status": "match"
   },
   {
-   "number": 141,
+   "number": 139,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R2: median seconds per cohort",
-   "article": "0.2",
-   "reproduced": "0.1",
+   "article": "0.053",
+   "reproduced": "0.053",
    "status": "timing"
   },
   {
-   "number": 142,
+   "number": 140,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R2: cohorts meeting the endpoint target (of 610)",
    "article": "610",
@@ -1287,7 +1271,7 @@
    "status": "match"
   },
   {
-   "number": 143,
+   "number": 141,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R2: mean width, cumulative ranges (pp)",
    "article": "40.60",
@@ -1295,7 +1279,7 @@
    "status": "match"
   },
   {
-   "number": 144,
+   "number": 142,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R2: mean width, single ranges (pp)",
    "article": "45.84",
@@ -1303,7 +1287,7 @@
    "status": "match"
   },
   {
-   "number": 145,
+   "number": 143,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R2: mean width, internal ranges (pp)",
    "article": "53.38",
@@ -1311,15 +1295,15 @@
    "status": "match"
   },
   {
-   "number": 146,
+   "number": 144,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R2: median seconds per cohort",
-   "article": "0.2",
-   "reproduced": "0.2",
+   "article": "0.165",
+   "reproduced": "0.165",
    "status": "timing"
   },
   {
-   "number": 147,
+   "number": 145,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R3: cohorts meeting the endpoint target (of 610)",
    "article": "610",
@@ -1327,7 +1311,7 @@
    "status": "match"
   },
   {
-   "number": 148,
+   "number": 146,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R3: mean width, cumulative ranges (pp)",
    "article": "33.39",
@@ -1335,7 +1319,7 @@
    "status": "match"
   },
   {
-   "number": 149,
+   "number": 147,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R3: mean width, single ranges (pp)",
    "article": "40.21",
@@ -1343,7 +1327,7 @@
    "status": "match"
   },
   {
-   "number": 150,
+   "number": 148,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R3: mean width, internal ranges (pp)",
    "article": "54.06",
@@ -1351,15 +1335,15 @@
    "status": "match"
   },
   {
-   "number": 151,
+   "number": 149,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R3: median seconds per cohort",
-   "article": "0.2",
-   "reproduced": "0.1",
+   "article": "0.061",
+   "reproduced": "0.061",
    "status": "timing"
   },
   {
-   "number": 152,
+   "number": 150,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R3: cohorts meeting the endpoint target (of 610)",
    "article": "610",
@@ -1367,7 +1351,7 @@
    "status": "match"
   },
   {
-   "number": 153,
+   "number": 151,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R3: mean width, cumulative ranges (pp)",
    "article": "35.46",
@@ -1375,7 +1359,7 @@
    "status": "match"
   },
   {
-   "number": 154,
+   "number": 152,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R3: mean width, single ranges (pp)",
    "article": "39.08",
@@ -1383,7 +1367,7 @@
    "status": "match"
   },
   {
-   "number": 155,
+   "number": 153,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R3: mean width, internal ranges (pp)",
    "article": "51.78",
@@ -1391,23 +1375,23 @@
    "status": "match"
   },
   {
-   "number": 156,
+   "number": 154,
    "comparison": "confirmation_population",
    "quantity": "range-calibrated|R3: median seconds per cohort",
-   "article": "0.2",
-   "reproduced": "0.2",
+   "article": "0.186",
+   "reproduced": "0.186",
    "status": "timing"
   },
   {
-   "number": 157,
+   "number": 155,
    "comparison": "confirmation_population",
    "quantity": "bonferroni|R1: maximum seconds per cohort",
-   "article": "5.8",
-   "reproduced": "6.5",
+   "article": "6.49",
+   "reproduced": "6.49",
    "status": "timing"
   },
   {
-   "number": 158,
+   "number": 156,
    "comparison": "confirmation_population",
    "quantity": "joint-exact|R1: cohorts meeting the endpoint target",
    "article": "1",
@@ -1415,7 +1399,7 @@
    "status": "match"
   },
   {
-   "number": 159,
+   "number": 157,
    "comparison": "confirmation_population",
    "quantity": "range-hunter|R1: cohorts meeting the endpoint target",
    "article": "2",
@@ -1423,7 +1407,7 @@
    "status": "match"
   },
   {
-   "number": 160,
+   "number": 158,
    "comparison": "confirmation_population",
    "quantity": "R1: range-calibrated narrower for cumulative ranges (cohorts of 610)",
    "article": "0",
@@ -1431,7 +1415,7 @@
    "status": "match"
   },
   {
-   "number": 161,
+   "number": 159,
    "comparison": "confirmation_population",
    "quantity": "R1: range-calibrated narrower for single categories (cohorts of 610)",
    "article": "534",
@@ -1439,7 +1423,7 @@
    "status": "match"
   },
   {
-   "number": 162,
+   "number": 160,
    "comparison": "confirmation_population",
    "quantity": "R1: range-calibrated narrower for internal ranges (cohorts of 592)",
    "article": "426",
@@ -1447,7 +1431,7 @@
    "status": "match"
   },
   {
-   "number": 163,
+   "number": 161,
    "comparison": "confirmation_population",
    "quantity": "R2: range-calibrated narrower for cumulative ranges (cohorts of 610)",
    "article": "0",
@@ -1455,7 +1439,7 @@
    "status": "match"
   },
   {
-   "number": 164,
+   "number": 162,
    "comparison": "confirmation_population",
    "quantity": "R2: range-calibrated narrower for single categories (cohorts of 610)",
    "article": "303",
@@ -1463,7 +1447,7 @@
    "status": "match"
   },
   {
-   "number": 165,
+   "number": 163,
    "comparison": "confirmation_population",
    "quantity": "R2: range-calibrated narrower for internal ranges (cohorts of 592)",
    "article": "426",
@@ -1471,7 +1455,7 @@
    "status": "match"
   },
   {
-   "number": 166,
+   "number": 164,
    "comparison": "confirmation_population",
    "quantity": "R3: range-calibrated narrower for cumulative ranges (cohorts of 610)",
    "article": "0",
@@ -1479,7 +1463,7 @@
    "status": "match"
   },
   {
-   "number": 167,
+   "number": 165,
    "comparison": "confirmation_population",
    "quantity": "R3: range-calibrated narrower for single categories (cohorts of 610)",
    "article": "378",
@@ -1487,7 +1471,7 @@
    "status": "match"
   },
   {
-   "number": 168,
+   "number": 166,
    "comparison": "confirmation_population",
    "quantity": "R3: range-calibrated narrower for internal ranges (cohorts of 592)",
    "article": "456",
@@ -1495,7 +1479,7 @@
    "status": "match"
   },
   {
-   "number": 169,
+   "number": 167,
    "comparison": "confirmation_population",
    "quantity": "R1: default rule confirmed (1 = yes)",
    "article": "1",
@@ -1503,7 +1487,7 @@
    "status": "match"
   },
   {
-   "number": 170,
+   "number": 168,
    "comparison": "confirmation_population",
    "quantity": "R1: range-calibrated narrower for single categories (% of cohorts)",
    "article": "87.5",
@@ -1511,7 +1495,7 @@
    "status": "match"
   },
   {
-   "number": 171,
+   "number": 169,
    "comparison": "confirmation_population",
    "quantity": "R2: range-calibrated narrower for single categories (% of cohorts)",
    "article": "49.7",
@@ -1519,7 +1503,7 @@
    "status": "match"
   },
   {
-   "number": 172,
+   "number": 170,
    "comparison": "confirmation_population",
    "quantity": "R3: range-calibrated narrower for single categories (% of cohorts)",
    "article": "62.0",
@@ -1527,23 +1511,23 @@
    "status": "match"
   },
   {
-   "number": 173,
+   "number": 171,
    "comparison": "confirmation_population",
    "quantity": "joint-exact: summed-width change against Bonferroni, R1 (%)",
-   "article": "-0.089",
+   "article": "-0.079",
    "reproduced": "-0.079",
-   "status": "differs"
+   "status": "match"
   },
   {
-   "number": 174,
+   "number": 172,
    "comparison": "confirmation_population",
    "quantity": "range-hunter: summed-width change against range-calibrated, R1 (%)",
-   "article": "0.097",
+   "article": "0.098",
    "reproduced": "0.098",
-   "status": "differs"
+   "status": "match"
   },
   {
-   "number": 175,
+   "number": 173,
    "comparison": "confirmation_coverage",
    "quantity": "bonferroni: replicates",
    "article": "3660000",
@@ -1551,7 +1535,7 @@
    "status": "match"
   },
   {
-   "number": 176,
+   "number": 174,
    "comparison": "confirmation_coverage",
    "quantity": "bonferroni: covered replicates",
    "article": "3653145",
@@ -1559,7 +1543,7 @@
    "status": "match"
   },
   {
-   "number": 177,
+   "number": 175,
    "comparison": "confirmation_coverage",
    "quantity": "bonferroni: lowest configuration coverage (%)",
    "article": "97.75",
@@ -1567,7 +1551,7 @@
    "status": "match"
   },
   {
-   "number": 178,
+   "number": 176,
    "comparison": "confirmation_coverage",
    "quantity": "bonferroni: configurations with undercoverage",
    "article": "0",
@@ -1575,7 +1559,7 @@
    "status": "match"
   },
   {
-   "number": 179,
+   "number": 177,
    "comparison": "confirmation_coverage",
    "quantity": "bonferroni: failed calculations",
    "article": "0",
@@ -1583,7 +1567,7 @@
    "status": "match"
   },
   {
-   "number": 180,
+   "number": 178,
    "comparison": "confirmation_coverage",
    "quantity": "range-calibrated: replicates",
    "article": "3660000",
@@ -1591,7 +1575,7 @@
    "status": "match"
   },
   {
-   "number": 181,
+   "number": 179,
    "comparison": "confirmation_coverage",
    "quantity": "range-calibrated: covered replicates",
    "article": "3656701",
@@ -1599,7 +1583,7 @@
    "status": "match"
   },
   {
-   "number": 182,
+   "number": 180,
    "comparison": "confirmation_coverage",
    "quantity": "range-calibrated: lowest configuration coverage (%)",
    "article": "97.60",
@@ -1607,7 +1591,7 @@
    "status": "match"
   },
   {
-   "number": 183,
+   "number": 181,
    "comparison": "confirmation_coverage",
    "quantity": "range-calibrated: configurations with undercoverage",
    "article": "0",
@@ -1615,7 +1599,7 @@
    "status": "match"
   },
   {
-   "number": 184,
+   "number": 182,
    "comparison": "confirmation_coverage",
    "quantity": "range-calibrated: failed calculations",
    "article": "0",
@@ -1623,7 +1607,7 @@
    "status": "match"
   },
   {
-   "number": 185,
+   "number": 183,
    "comparison": "confirmation_coverage",
    "quantity": "R1, bonferroni: coverage (%)",
    "article": "99.884",
@@ -1631,7 +1615,7 @@
    "status": "match"
   },
   {
-   "number": 186,
+   "number": 184,
    "comparison": "confirmation_coverage",
    "quantity": "R1, range-calibrated: coverage (%)",
    "article": "99.881",
@@ -1639,7 +1623,7 @@
    "status": "match"
   },
   {
-   "number": 187,
+   "number": 185,
    "comparison": "confirmation_coverage",
    "quantity": "R2, bonferroni: coverage (%)",
    "article": "99.891",
@@ -1647,7 +1631,7 @@
    "status": "match"
   },
   {
-   "number": 188,
+   "number": 186,
    "comparison": "confirmation_coverage",
    "quantity": "R2, range-calibrated: coverage (%)",
    "article": "99.960",
@@ -1655,7 +1639,7 @@
    "status": "match"
   },
   {
-   "number": 189,
+   "number": 187,
    "comparison": "confirmation_coverage",
    "quantity": "R3, bonferroni: coverage (%)",
    "article": "99.662",
@@ -1663,7 +1647,7 @@
    "status": "match"
   },
   {
-   "number": 190,
+   "number": 188,
    "comparison": "confirmation_coverage",
    "quantity": "R3, range-calibrated: coverage (%)",
    "article": "99.889",
@@ -1671,7 +1655,7 @@
    "status": "match"
   },
   {
-   "number": 191,
+   "number": 189,
    "comparison": "synthetic_coverage",
    "quantity": "bonferroni: coverage (%)",
    "article": "99.679",
@@ -1679,7 +1663,7 @@
    "status": "match"
   },
   {
-   "number": 192,
+   "number": 190,
    "comparison": "synthetic_coverage",
    "quantity": "bonferroni: lowest configuration coverage (%)",
    "article": "96.9",
@@ -1687,7 +1671,7 @@
    "status": "match"
   },
   {
-   "number": 193,
+   "number": 191,
    "comparison": "synthetic_coverage",
    "quantity": "bonferroni: configurations with undercoverage",
    "article": "0",
@@ -1695,7 +1679,7 @@
    "status": "match"
   },
   {
-   "number": 194,
+   "number": 192,
    "comparison": "synthetic_coverage",
    "quantity": "range-calibrated: coverage (%)",
    "article": "99.724",
@@ -1703,7 +1687,7 @@
    "status": "match"
   },
   {
-   "number": 195,
+   "number": 193,
    "comparison": "synthetic_coverage",
    "quantity": "range-calibrated: lowest configuration coverage (%)",
    "article": "96.9",
@@ -1711,7 +1695,7 @@
    "status": "match"
   },
   {
-   "number": 196,
+   "number": 194,
    "comparison": "synthetic_coverage",
    "quantity": "range-calibrated: configurations with undercoverage",
    "article": "0",
@@ -1719,7 +1703,7 @@
    "status": "match"
   },
   {
-   "number": 197,
+   "number": 195,
    "comparison": "external_calibration",
    "quantity": "test units",
    "article": "109",
@@ -1727,7 +1711,7 @@
    "status": "match"
   },
   {
-   "number": 198,
+   "number": 196,
    "comparison": "external_calibration",
    "quantity": "test units covered, uniform reference",
    "article": "103",
@@ -1735,7 +1719,7 @@
    "status": "match"
   },
   {
-   "number": 199,
+   "number": 197,
    "comparison": "external_calibration",
    "quantity": "test units covered, trained reference",
    "article": "101",
@@ -1743,7 +1727,7 @@
    "status": "match"
   },
   {
-   "number": 200,
+   "number": 198,
    "comparison": "external_calibration",
    "quantity": "dogs-ecoli: test units covered, uniform reference",
    "article": "20",
@@ -1751,7 +1735,7 @@
    "status": "match"
   },
   {
-   "number": 201,
+   "number": 199,
    "comparison": "external_calibration",
    "quantity": "dogs-ecoli: test units covered, trained reference",
    "article": "19",
@@ -1759,7 +1743,7 @@
    "status": "match"
   },
   {
-   "number": 202,
+   "number": 200,
    "comparison": "external_calibration",
    "quantity": "dogs-spseud: test units covered, uniform reference",
    "article": "18",
@@ -1767,7 +1751,7 @@
    "status": "match"
   },
   {
-   "number": 203,
+   "number": 201,
    "comparison": "external_calibration",
    "quantity": "dogs-spseud: test units covered, trained reference",
    "article": "18",
@@ -1775,7 +1759,7 @@
    "status": "match"
   },
   {
-   "number": 204,
+   "number": 202,
    "comparison": "external_calibration",
    "quantity": "retail-salmonella: test units covered, uniform reference",
    "article": "19",
@@ -1783,7 +1767,7 @@
    "status": "match"
   },
   {
-   "number": 205,
+   "number": 203,
    "comparison": "external_calibration",
    "quantity": "retail-salmonella: test units covered, trained reference",
    "article": "21",
@@ -1791,7 +1775,7 @@
    "status": "match"
   },
   {
-   "number": 206,
+   "number": 204,
    "comparison": "external_calibration",
    "quantity": "retail-campylobacter: test units covered, uniform reference",
    "article": "18",
@@ -1799,7 +1783,7 @@
    "status": "match"
   },
   {
-   "number": 207,
+   "number": 205,
    "comparison": "external_calibration",
    "quantity": "retail-campylobacter: test units covered, trained reference",
    "article": "18",
@@ -1807,7 +1791,7 @@
    "status": "match"
   },
   {
-   "number": 208,
+   "number": 206,
    "comparison": "external_calibration",
    "quantity": "retail-ecoli: test units covered, uniform reference",
    "article": "11",
@@ -1815,7 +1799,7 @@
    "status": "match"
   },
   {
-   "number": 209,
+   "number": 207,
    "comparison": "external_calibration",
    "quantity": "retail-ecoli: test units covered, trained reference",
    "article": "8",
@@ -1823,7 +1807,7 @@
    "status": "match"
   },
   {
-   "number": 210,
+   "number": 208,
    "comparison": "external_calibration",
    "quantity": "retail-enterococcus: test units covered, uniform reference",
    "article": "17",
@@ -1831,7 +1815,7 @@
    "status": "match"
   },
   {
-   "number": 211,
+   "number": 209,
    "comparison": "external_calibration",
    "quantity": "retail-enterococcus: test units covered, trained reference",
    "article": "17",
@@ -1839,7 +1823,7 @@
    "status": "match"
   },
   {
-   "number": 212,
+   "number": 210,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=19, SU1: coverage (%)",
    "article": "95.66",
@@ -1847,7 +1831,7 @@
    "status": "match"
   },
   {
-   "number": 213,
+   "number": 211,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=19, SU2|weight=0.05: coverage (%)",
    "article": "96.68",
@@ -1855,7 +1839,7 @@
    "status": "match"
   },
   {
-   "number": 214,
+   "number": 212,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=19, SU2|weight=0.1: coverage (%)",
    "article": "97.67",
@@ -1863,7 +1847,7 @@
    "status": "match"
   },
   {
-   "number": 215,
+   "number": 213,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=19, SU2|weight=0.2: coverage (%)",
    "article": "99.04",
@@ -1871,7 +1855,7 @@
    "status": "match"
   },
   {
-   "number": 216,
+   "number": 214,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=19, SU2|shift_all=1: coverage (%)",
    "article": "99.84",
@@ -1879,7 +1863,7 @@
    "status": "match"
   },
   {
-   "number": 217,
+   "number": 215,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=19, SU3: coverage (%)",
    "article": "92.91",
@@ -1887,7 +1871,7 @@
    "status": "match"
   },
   {
-   "number": 218,
+   "number": 216,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=39, SU1: coverage (%)",
    "article": "95.74",
@@ -1895,7 +1879,7 @@
    "status": "match"
   },
   {
-   "number": 219,
+   "number": 217,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=39, SU2|weight=0.05: coverage (%)",
    "article": "96.67",
@@ -1903,7 +1887,7 @@
    "status": "match"
   },
   {
-   "number": 220,
+   "number": 218,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=39, SU2|weight=0.1: coverage (%)",
    "article": "97.89",
@@ -1911,7 +1895,7 @@
    "status": "match"
   },
   {
-   "number": 221,
+   "number": 219,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=39, SU2|weight=0.2: coverage (%)",
    "article": "99.13",
@@ -1919,7 +1903,7 @@
    "status": "match"
   },
   {
-   "number": 222,
+   "number": 220,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=39, SU2|shift_all=1: coverage (%)",
    "article": "99.93",
@@ -1927,7 +1911,7 @@
    "status": "match"
   },
   {
-   "number": 223,
+   "number": 221,
    "comparison": "external_calibration",
    "quantity": "synthetic c=20|M=39, SU3: coverage (%)",
    "article": "92.35",
@@ -1935,7 +1919,7 @@
    "status": "match"
   },
   {
-   "number": 224,
+   "number": 222,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=19, SU1: coverage (%)",
    "article": "95.99",
@@ -1943,7 +1927,7 @@
    "status": "match"
   },
   {
-   "number": 225,
+   "number": 223,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=19, SU2|weight=0.05: coverage (%)",
    "article": "98.03",
@@ -1951,7 +1935,7 @@
    "status": "match"
   },
   {
-   "number": 226,
+   "number": 224,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=19, SU2|weight=0.1: coverage (%)",
    "article": "98.98",
@@ -1959,7 +1943,7 @@
    "status": "match"
   },
   {
-   "number": 227,
+   "number": 225,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=19, SU2|weight=0.2: coverage (%)",
    "article": "99.79",
@@ -1967,7 +1951,7 @@
    "status": "match"
   },
   {
-   "number": 228,
+   "number": 226,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=19, SU2|shift_all=1: coverage (%)",
    "article": "99.99",
@@ -1975,7 +1959,7 @@
    "status": "match"
   },
   {
-   "number": 229,
+   "number": 227,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=19, SU3: coverage (%)",
    "article": "89.78",
@@ -1983,7 +1967,7 @@
    "status": "match"
   },
   {
-   "number": 230,
+   "number": 228,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=39, SU1: coverage (%)",
    "article": "95.48",
@@ -1991,7 +1975,7 @@
    "status": "match"
   },
   {
-   "number": 231,
+   "number": 229,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=39, SU2|weight=0.05: coverage (%)",
    "article": "97.76",
@@ -1999,7 +1983,7 @@
    "status": "match"
   },
   {
-   "number": 232,
+   "number": 230,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=39, SU2|weight=0.1: coverage (%)",
    "article": "98.92",
@@ -2007,7 +1991,7 @@
    "status": "match"
   },
   {
-   "number": 233,
+   "number": 231,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=39, SU2|weight=0.2: coverage (%)",
    "article": "99.77",
@@ -2015,7 +1999,7 @@
    "status": "match"
   },
   {
-   "number": 234,
+   "number": 232,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=39, SU2|shift_all=1: coverage (%)",
    "article": "99.99",
@@ -2023,7 +2007,7 @@
    "status": "match"
   },
   {
-   "number": 235,
+   "number": 233,
    "comparison": "external_calibration",
    "quantity": "synthetic c=100|M=39, SU3: coverage (%)",
    "article": "88.45",
@@ -2031,7 +2015,7 @@
    "status": "match"
   },
   {
-   "number": 236,
+   "number": 234,
    "comparison": "endpoint_selection",
    "quantity": "compatible tables before the count",
    "article": "7938",
@@ -2039,7 +2023,7 @@
    "status": "match"
   },
   {
-   "number": 237,
+   "number": 235,
    "comparison": "endpoint_selection",
    "quantity": "compatible tables after the count",
    "article": "546",
@@ -2047,7 +2031,7 @@
    "status": "match"
   },
   {
-   "number": 238,
+   "number": 236,
    "comparison": "endpoint_selection",
    "quantity": "checked endpoints",
    "article": "60",
@@ -2055,7 +2039,7 @@
    "status": "match"
   },
   {
-   "number": 239,
+   "number": 237,
    "comparison": "endpoint_selection",
    "quantity": "largest endpoint difference (pp; bound)",
    "article": "0.000000001",
@@ -2063,39 +2047,39 @@
    "status": "match"
   },
   {
-   "number": 240,
+   "number": 238,
    "comparison": "endpoint_selection",
    "quantity": "selected tables, median seconds before the count",
-   "article": "0.086",
+   "article": "0.062",
    "reproduced": "0.062",
+   "status": "timing"
+  },
+  {
+   "number": 239,
+   "comparison": "endpoint_selection",
+   "quantity": "all tables, median seconds before the count",
+   "article": "4.622",
+   "reproduced": "4.622",
+   "status": "timing"
+  },
+  {
+   "number": 240,
+   "comparison": "endpoint_selection",
+   "quantity": "selected tables, median seconds after the count",
+   "article": "0.064",
+   "reproduced": "0.064",
    "status": "timing"
   },
   {
    "number": 241,
    "comparison": "endpoint_selection",
-   "quantity": "all tables, median seconds before the count",
-   "article": "4.537",
-   "reproduced": "4.622",
-   "status": "timing"
-  },
-  {
-   "number": 242,
-   "comparison": "endpoint_selection",
-   "quantity": "selected tables, median seconds after the count",
-   "article": "0.088",
-   "reproduced": "0.064",
-   "status": "timing"
-  },
-  {
-   "number": 243,
-   "comparison": "endpoint_selection",
    "quantity": "all tables, median seconds after the count",
-   "article": "0.352",
+   "article": "0.355",
    "reproduced": "0.355",
    "status": "timing"
   },
   {
-   "number": 244,
+   "number": 242,
    "comparison": "examples",
    "quantity": "printed numbers that differ from the program output",
    "article": "0",

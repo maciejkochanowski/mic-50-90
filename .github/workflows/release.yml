@@ -18,6 +18,11 @@ on:
         required: true
         type: boolean
         default: false
+      expected_wheel_sha256:
+        description: SHA-256 of the tested wheel; the built wheel must be identical (leave empty to skip)
+        required: false
+        type: string
+        default: ''
 
 permissions:
   contents: read
@@ -35,6 +40,8 @@ env:
   OMP_NUM_THREADS: '1'
   MKL_NUM_THREADS: '1'
   RELEASE_TAG: ${{ inputs.release_tag }}
+  # Time stamp of the tested build; with the pinned build backend the wheel is reproduced byte for byte.
+  SOURCE_DATE_EPOCH: '1794614400'
 
 jobs:
   test:
@@ -81,12 +88,17 @@ jobs:
           ref: ${{ github.sha }}
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - run: python -m pip install build twine
+          python-version: '3.11'
+      - run: python -m pip install hatchling==1.27.0 build==1.2.2.post1 twine
       - name: Build and inspect distributions
+        env:
+          EXPECTED_WHEEL_SHA256: ${{ inputs.expected_wheel_sha256 }}
         run: |
           python -c 'import os, sys; sys.path.insert(0, "tools"); from publish_software_release import validate_tag; validate_tag(os.environ["RELEASE_TAG"])'
-          python -m build --outdir release
+          python -m build --no-isolation --outdir release
+          if test -n "$EXPECTED_WHEEL_SHA256"; then
+            echo "$EXPECTED_WHEEL_SHA256  $(find release -name '*.whl' -print -quit)" | sha256sum --check
+          fi
           python -m twine check --strict release/*
           python tools/software_release.py source --output "release/MIC-50-90-$(python tools/release_version.py)-software-source.zip"
           python tools/software_release.py check release/*

@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.0.0 (unreleased)
+## 2.0.0 (2026-11-19)
 
 - The local browser form (`mic-50-90 gui`, the `mic-50-90-gui` program) and the Windows application are removed. The Python interface and the command line remain, and the Galaxy tools in `galaxy/` give the same analyses in a web interface. Because a public command and program are removed, the major version changes.
 - New command `mic-50-90 verify-report` checks a received reporting certificate from the declared summaries and the disclosed counts alone. It keeps exact decimal tokens, refuses contradictory disclosures and writes `verification.csv`, `verification.txt`, `results.json` and `report.html`; `--fail-on-insufficient` returns status 2 when a declared answer is not established. It replaces the verification step of the removed form.
@@ -8,6 +8,8 @@
 - The container image no longer includes Node.js, which only the removed form tests needed.
 - Calculations, results and file formats are unchanged. Reporting certificates and distribution results produced by 1.0.0 to 1.0.3 are still accepted.
 - Every evaluation in `evaluation/results` that calls the program, the test and coverage record and the mutation record were computed again with the 2.0.0 wheel. New tests check the control flow of the shape certificate (time budget, receiver check and fallback) and the limit of six decimal places of a count given as a percentage.
+- `formal/check_formal.py` compiles the formal algebra, audits the axiom dependencies of every theorem and runs five negative controls.
+- The release workflow builds the wheel with the pinned build backend and the time stamp of the tested build, and can require the built wheel to be identical to the tested one.
 
 ## 1.0.3 (2026-11-19)
 

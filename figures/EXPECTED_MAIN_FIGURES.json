@@ -25,14 +25,14 @@
  "default_style_sha256": "8b76e138ce9dc944a843dc6aa1ef9ee0e88638358b10baf227cd248d271b5f5a",
  "inputs_sha256": {
   "data/AMBIGUITY_WITNESS_CERTIFICATE.json": "4bd822b28cf5606758cb896abab10c290dadd528733af7b6fddd57f4144cab7d",
-  "data/ampicillin_rerun.json": "c251f4262b465fd38d95b75462ae66af71905b0646183df771fb895eb5f05edf",
+  "data/ampicillin_rerun.json": "5d533804f18c492df51776395463e5c68c75fdc413c41f7328299f14d77587d9",
   "data/figure3_ampicillin.csv": "78006123a46ec7784d064cc2c2025920b02c9065d6ff182bc0f51ef76723be43",
   "data/figure4_chloramphenicol.csv": "b4385785820ff1752120804a555396f293539821fc72acaecb62eaf51fa04d94",
   "data/figure5_amikacin.csv": "132eeeaea3bfc8e3d6856890271727fd3aa493b0ef1e46a93809da35a641609b",
   "data/figureS2_ampicillin.csv": "dd5dfe157e4d8a9536a334ecf1ab1ca9fc7edf8c00afb2f03714bf21bf26d30f",
   "data/madrid_pneumococci.csv": "951020695db9ecfd72c1ce6a3e2c5a705ba3ccee6ecd6480ae1acea00c6c34ff",
   "efsa/ALL_RANGE_CHECKS.csv": "68d633481b206fb6e07ccd401b51d8592f1679ec04f89017011f2a4f90c807a1",
-  "efsa/EFSA_REPLAY_SUMMARY.json": "5586c527ab97ca5e9dd5e80aac47e09375a080fa82b66eff37796f8724f647c1",
+  "efsa/EFSA_REPLAY_SUMMARY.json": "3c88c338930c0413d50389e5d60803ab2ad6642d843e8c099bd22bf10ed3829b",
   "efsa/OPTIMIZER_SUMMARY.json": "a2fe046f01b1d1042c9a7f229dab5aa95f45d42534ea304449c8a31fc88771c1",
   "efsa/external_input.json": "70e8e7d74eec2e5fb907ac0da57e2a32e7f571d9f9303abbda2ae035a98d4b03",
   "efsa/selected_113_fields.csv": "66ad4ec90475021cdc2eed8df95b08d9bb51bd9d4b5bb28fb42ebb2ecd9092d9"
