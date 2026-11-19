@@ -45,11 +45,10 @@ packaging regressions build an actual sdist and check intentional damage.
 
 ## Read evidence at its recorded scope
 
-Current validation is recorded outside the release by artifact hash, commands,
-environments and outcomes. Python-matrix, coverage, mutation,
-calibration and formal-compilation evidence in `evaluation/` applies to its
-recorded baseline. New checks do not silently replace adverse or interrupted
-historical runs.
+Validation is recorded by artifact hash, commands, environments and outcomes.
+Every record in `evaluation/results/`, including test coverage and mutation
+testing, was produced with version 2.0.0 and names its environment; the formal
+compilation is identified by its own receipt.
 The numerical domain and module-specific validation limits are documented in the
 API documentation and `docs/VALIDATION_SCOPE.md`.
 

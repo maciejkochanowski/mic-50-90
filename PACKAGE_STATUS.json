@@ -17,7 +17,7 @@
     "article source documents",
     "journal submission materials"
   ],
-  "verification_policy": "Check each delivered archive against its external final delivery receipt. The source tree and sdist have separate member manifests. Current validation is documented by matching receipts; historical matrix, coverage and calibration evidence retains its original scope.",
+  "verification_policy": "Check each delivered archive against its external final delivery receipt. The source tree and sdist have separate member manifests. Validation is documented by matching receipts; every evaluation record in evaluation/results was produced with version 2.0.0.",
   "current_delivery": "dist/source",
   "source_manifest": "PACKAGE_MANIFEST.sha256",
   "public_release": true,

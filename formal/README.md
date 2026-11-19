@@ -1,6 +1,6 @@
 # Machine-checked algebra for the population endpoint construction
 
-This directory checks the algebraic core of P6 with Lean 4.29.1 and mathlib commit `5e932f97dd25535344f80f9dd8da3aab83df0fe6`. The formal source is not a runtime dependency of the package. Historical compilation evidence retains its original scope; a fresh compilation must be identified by its own receipt.
+This directory checks the algebraic core of P6 with Lean 4.29.1 and mathlib commit `5e932f97dd25535344f80f9dd8da3aab83df0fe6`. The formal source is not a runtime dependency of the package. A compilation is identified by its own receipt: the toolchain, the SHA-256 of `P6Core.lean` and the printed axiom dependencies. The receipt of the compilation for version 2.0.0 is in the reproduction package of the article.
 
 From this directory, with Lean installed, run:
 

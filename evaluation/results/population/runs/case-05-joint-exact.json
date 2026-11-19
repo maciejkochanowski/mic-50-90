@@ -6,7 +6,7 @@
  "n": 175,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.10532691399566829,
+ "baseline_seconds": 0.1316507309966255,
  "result": {
   "requested_method": "joint-exact",
   "method": "joint-exact",
@@ -100,11 +100,11 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
   "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
-  "box_count": 5506,
-  "excluded_boxes": 1392,
-  "elapsed_seconds": 115.42018451099284,
-  "baseline_seconds": 0.09178527991753072,
-  "refinement_seconds": 115.32828065392096,
+  "box_count": 5483,
+  "excluded_boxes": 1371,
+  "elapsed_seconds": 115.41359705899958,
+  "baseline_seconds": 0.09502757398877293,
+  "refinement_seconds": 115.31844163200003,
   "time_limit_scope": "optional_joint_refinement",
   "question_certificates": [],
   "interval_bounds": [
@@ -233,8 +233,8 @@
   "unresolved_small_boxes": 0,
   "endpoint_gap_pp": 3.163626831079404
  },
- "refinement_budget_seconds": 114.8931075159926,
- "seconds": 115.52843361499254,
+ "refinement_budget_seconds": 114.86794013000326,
+ "seconds": 115.54719931600266,
  "process_status": "completed",
- "completed_utc": "2026-11-02T05:20:30+00:00"
+ "completed_utc": "2026-11-19T15:19:03+00:00"
 }

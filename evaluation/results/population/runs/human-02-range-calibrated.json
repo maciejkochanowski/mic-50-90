@@ -6,7 +6,7 @@
  "n": 630,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.09392890601884574,
+ "baseline_seconds": 0.11677403099020012,
  "result": {
   "requested_method": "range-calibrated",
   "method": "range-calibrated",
@@ -116,9 +116,9 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
   "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
-  "elapsed_seconds": 0.02237308700568974,
-  "baseline_seconds": 0.005217877100221813,
-  "refinement_seconds": 0.017286117072217166,
+  "elapsed_seconds": 0.02098348698928021,
+  "baseline_seconds": 0.0040924619970610365,
+  "refinement_seconds": 0.016987888011499308,
   "time_limit_scope": "optional_compatible_histogram_refinement",
   "question_certificates": [],
   "interval_bounds": [
@@ -244,8 +244,8 @@
    }
   ]
  },
- "refinement_budget_seconds": 114.88660077599343,
- "seconds": 0.13600122299976647,
+ "refinement_budget_seconds": 114.8828247430065,
+ "seconds": 0.1383235249959398,
  "process_status": "completed",
- "completed_utc": "2026-11-02T05:18:35+00:00"
+ "completed_utc": "2026-11-19T15:17:08+00:00"
 }

@@ -6,7 +6,7 @@
  "n": 25,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.029341847985051572,
+ "baseline_seconds": 0.013491041987435892,
  "result": {
   "requested_method": "range-calibrated",
   "method": "range-calibrated",
@@ -31,8 +31,196 @@
    "status": "certified",
    "n": 25,
    "critical_score_fraction": "225179981368525/42784196460019712",
-   "minimum_concavity_margin": "13492635352549/9007199254740992",
-   "claim": "At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed"
+   "minimum_concavity_margin": "13492635352547/9007199254740992",
+   "claim": "At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed",
+   "algorithm": "directed-upper-reverse-geometric-v1",
+   "arithmetic_certificate": {
+    "schema": "mic5090-upper-shape-certificate/1",
+    "algorithm": "directed-upper-reverse-geometric-v1",
+    "claim": "finite_discrete_concavity_of_upper_equal_tailed_binomial_endpoints",
+    "n": 25,
+    "cutoff": "225179981368525/42784196460019712",
+    "rows": [
+     {
+      "count": 0,
+      "inner_upper": "1904908847043757/9007199254740992",
+      "outer_upper": "3809817694123543/18014398509481984"
+     },
+     {
+      "count": 1,
+      "inner_upper": "318961591982939/1125899906842624",
+      "outer_upper": "1275846367940763/4503599627370496"
+     },
+     {
+      "count": 2,
+      "inner_upper": "1544862732325307/4503599627370496",
+      "outer_upper": "772431366167157/2251799813685248"
+     },
+     {
+      "count": 3,
+      "inner_upper": "7141822325199103/18014398509481984",
+      "outer_upper": "7141822325235131/18014398509481984"
+     },
+     {
+      "count": 4,
+      "inner_upper": "4014087196524281/9007199254740992",
+      "outer_upper": "4014087196542295/9007199254740992"
+     },
+     {
+      "count": 5,
+      "inner_upper": "2214317359896515/4503599627370496",
+      "outer_upper": "1107158679952761/2251799813685248"
+     },
+     {
+      "count": 6,
+      "inner_upper": "1204999984427795/2251799813685248",
+      "outer_upper": "2409999968864597/4503599627370496"
+     },
+     {
+      "count": 7,
+      "inner_upper": "5191634906933943/9007199254740992",
+      "outer_upper": "5191634906951957/9007199254740992"
+     },
+     {
+      "count": 8,
+      "inner_upper": "5545842923534119/9007199254740992",
+      "outer_upper": "5545842923552133/9007199254740992"
+     },
+     {
+      "count": 9,
+      "inner_upper": "5884199392833765/9007199254740992",
+      "outer_upper": "5884199392851779/9007199254740992"
+     },
+     {
+      "count": 10,
+      "inner_upper": "6207780389139003/9007199254740992",
+      "outer_upper": "6207780389157017/9007199254740992"
+     },
+     {
+      "count": 11,
+      "inner_upper": "3258646632832527/4503599627370496",
+      "outer_upper": "1629323316420767/2251799813685248"
+     },
+     {
+      "count": 12,
+      "inner_upper": "6813152042992897/9007199254740992",
+      "outer_upper": "6813152043010911/9007199254740992"
+     },
+     {
+      "count": 13,
+      "inner_upper": "7095518184932165/9007199254740992",
+      "outer_upper": "7095518184950179/9007199254740992"
+     },
+     {
+      "count": 14,
+      "inner_upper": "3682158318176195/4503599627370496",
+      "outer_upper": "1841079159092601/2251799813685248"
+     },
+     {
+      "count": 15,
+      "inner_upper": "7619230900515153/9007199254740992",
+      "outer_upper": "7619230900533167/9007199254740992"
+     },
+     {
+      "count": 16,
+      "inner_upper": "7859676503050351/9007199254740992",
+      "outer_upper": "7859676503068365/9007199254740992"
+     },
+     {
+      "count": 17,
+      "inner_upper": "8084747683610073/9007199254740992",
+      "outer_upper": "8084747683628087/9007199254740992"
+     },
+     {
+      "count": 18,
+      "inner_upper": "4146562967074089/4503599627370496",
+      "outer_upper": "518320370885387/562949953421312"
+     },
+     {
+      "count": 19,
+      "inner_upper": "4241464354716667/4503599627370496",
+      "outer_upper": "2120732177362837/2251799813685248"
+     },
+     {
+      "count": 20,
+      "inner_upper": "8651458480300841/9007199254740992",
+      "outer_upper": "8651458480318855/9007199254740992"
+     },
+     {
+      "count": 21,
+      "inner_upper": "8794782909599271/9007199254740992",
+      "outer_upper": "8794782909617285/9007199254740992"
+     },
+     {
+      "count": 22,
+      "inner_upper": "556691414124701/562949953421312",
+      "outer_upper": "4453531313006615/4503599627370496"
+     },
+     {
+      "count": 23,
+      "inner_upper": "561243508898153/562949953421312",
+      "outer_upper": "4489948071194231/4503599627370496"
+     },
+     {
+      "count": 24,
+      "inner_upper": "9006249928798395/9007199254740992",
+      "outer_upper": "9006249928816409/9007199254740992"
+     },
+     {
+      "count": 25,
+      "inner_upper": "1",
+      "outer_upper": "1"
+     }
+    ],
+    "second_difference_lower_bounds": [
+     "217502319993249/18014398509481984",
+     "113694061604273/18014398509481984",
+     "9502415997045/2251799813685248",
+     "57257021239905/18014398509481984",
+     "23182305314571/9007199254740992",
+     "19730248659359/9007199254740992",
+     "17426952586559/9007199254740992",
+     "7925773632251/4503599627370496",
+     "3693868239595/2251799813685248",
+     "14068119743159/9007199254740992",
+     "3413524790545/2251799813685248",
+     "13492635352547/9007199254740992",
+     "13567690483015/9007199254740992",
+     "6942093610717/4503599627370496",
+     "14468661591537/9007199254740992",
+     "1921802742431/1125899906842624",
+     "16692929985589/9007199254740992",
+     "18575475216921/9007199254740992",
+     "21273004381621/9007199254740992",
+     "25205341533049/9007199254740992",
+     "31044712866457/9007199254740992",
+     "39446199984685/9007199254740992",
+     "46479729911257/9007199254740992",
+     "3175557558417/1125899906842624"
+    ],
+    "numerical_policy": {
+     "generator_precisions": [
+      40,
+      80
+     ],
+     "receiver_precisions": [
+      60,
+      120
+     ],
+     "Emin": -999999999,
+     "Emax": 999999999,
+     "max_n": 10000
+    }
+   },
+   "receiver_verified": true,
+   "acceleration": {
+    "status": "certified",
+    "reason": null,
+    "generator_seconds": 0.005899037001654506,
+    "receiver_status": "certified",
+    "receiver_reason": null,
+    "receiver_seconds": 0.005876362003618851
+   }
   },
   "probability_vertices_checked": 0,
   "probability_certificates": [],
@@ -119,9 +307,9 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
   "numerical_certificate": "Directed binomial tail brackets and exact rational difference-constraint closure. Count and accepted probability witnesses certify inner projections. Disjoint count partitions retain an envelope for every unresolved part.",
-  "elapsed_seconds": 0.021408508997410536,
-  "baseline_seconds": 0.002704204060137272,
-  "refinement_seconds": 0.018809590954333544,
+  "elapsed_seconds": 0.0192936959938379,
+  "baseline_seconds": 0.0027578650042414665,
+  "refinement_seconds": 0.01664991199504584,
   "time_limit_scope": "optional_compatible_histogram_refinement",
   "question_certificates": [],
   "interval_bounds": [
@@ -247,8 +435,8 @@
    }
   ]
  },
- "refinement_budget_seconds": 114.96917450102046,
- "seconds": 0.05240264406893402,
+ "refinement_budget_seconds": 114.98613454500446,
+ "seconds": 0.03333873600058723,
  "process_status": "completed",
- "completed_utc": "2026-11-02T05:18:35+00:00"
+ "completed_utc": "2026-11-19T15:17:08+00:00"
 }

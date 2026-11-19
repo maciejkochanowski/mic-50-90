@@ -6,7 +6,7 @@
  "n": 630,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.08163139200769365,
+ "baseline_seconds": 0.37958240999432746,
  "result": {
   "requested_method": "range-hunter",
   "method": "range-hunter",
@@ -103,12 +103,12 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
   "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
-  "elapsed_seconds": 115.45833113102708,
-  "baseline_seconds": 0.004332464071922004,
-  "refinement_seconds": 115.4539988359902,
+  "elapsed_seconds": 114.9876671529928,
+  "baseline_seconds": 0.004138805990805849,
+  "refinement_seconds": 114.98352845699992,
   "time_limit_scope": "optional_original_region_refinement",
-  "requested_time_limit_seconds": 114.91260048898403,
-  "effective_time_limit_seconds": 114.91260048898403,
+  "requested_time_limit_seconds": 114.62001744500594,
+  "effective_time_limit_seconds": 114.62001744500594,
   "box_count": 0,
   "excluded_boxes": 0,
   "retained_nodes": 1,
@@ -240,8 +240,8 @@
    }
   ]
  },
- "refinement_budget_seconds": 114.91260048898403,
- "seconds": 115.5458177489927,
+ "refinement_budget_seconds": 114.62001744500594,
+ "seconds": 115.36770538600103,
  "process_status": "completed",
- "completed_utc": "2026-11-02T05:20:31+00:00"
+ "completed_utc": "2026-11-19T15:19:03+00:00"
 }

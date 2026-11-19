@@ -6,7 +6,7 @@
  "n": 28,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.06583776895422488,
+ "baseline_seconds": 0.06631208200997207,
  "result": {
   "requested_method": "range-hunter",
   "method": "range-hunter",
@@ -103,17 +103,17 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
   "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
-  "elapsed_seconds": 114.93642385897692,
-  "baseline_seconds": 0.004496703972108662,
-  "refinement_seconds": 114.93192738597281,
+  "elapsed_seconds": 114.95474802900571,
+  "baseline_seconds": 0.0042722569924080744,
+  "refinement_seconds": 114.95047595200595,
   "time_limit_scope": "optional_original_region_refinement",
-  "requested_time_limit_seconds": 114.91268598497845,
-  "effective_time_limit_seconds": 114.91268598497845,
-  "box_count": 152,
+  "requested_time_limit_seconds": 114.93332105599984,
+  "effective_time_limit_seconds": 114.93332105599984,
+  "box_count": 155,
   "excluded_boxes": 7,
-  "retained_nodes": 532,
+  "retained_nodes": 535,
   "question_certificates": [],
-  "accepted_witness_count": 271,
+  "accepted_witness_count": 279,
   "algebraic_witness_count": 67,
   "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
   "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
@@ -124,7 +124,7 @@
     "lower": 0.23983043789683173,
     "upper": 0.9793603325279132,
     "inner_lower": 0.2670259475708008,
-    "inner_upper": 0.9030637741088867
+    "inner_upper": 0.950312614440918
    },
    {
     "start_index": 0,
@@ -180,14 +180,14 @@
     "lower": 8.939351095182161e-05,
     "upper": 0.6688521662269571,
     "inner_lower": 0.0009238713219167125,
-    "inner_upper": 0.6156806945800781
+    "inner_upper": 0.6277885437011719
    },
    {
     "start_index": 1,
     "stop_index": 5,
     "lower": 0.020639667472086835,
     "upper": 0.7601695621031683,
-    "inner_lower": 0.09693622589111328,
+    "inner_lower": 0.04968738555908203,
     "inner_upper": 0.7329740524291992
    },
    {
@@ -240,8 +240,8 @@
    }
   ]
  },
- "refinement_budget_seconds": 114.91268598497845,
- "seconds": 115.02422432496678,
+ "refinement_budget_seconds": 114.93332105599984,
+ "seconds": 115.0218137769989,
  "process_status": "completed",
- "completed_utc": "2026-11-02T05:20:30+00:00"
+ "completed_utc": "2026-11-19T15:19:03+00:00"
 }

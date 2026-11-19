@@ -6,7 +6,7 @@
  "n": 32,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.30186115205287933,
+ "baseline_seconds": 0.02344400000583846,
  "result": {
   "requested_method": "range-hunter",
   "method": "range-hunter",
@@ -20,7 +20,7 @@
   "bounds_kind": "conservative_outer",
   "status": "time_limit",
   "precision_reached": false,
-  "endpoint_gap_pp": 14.794799828656048,
+  "endpoint_gap_pp": 14.632961297161907,
   "cdf_bounds": [
    [
     0.6766288960686002,
@@ -46,7 +46,7 @@
    ],
    [
     0.0,
-    0.3096339418900761
+    0.3062961003022511
    ],
    [
     0.0,
@@ -103,15 +103,15 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
   "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
-  "elapsed_seconds": 114.70982587104663,
-  "baseline_seconds": 0.0039367470890283585,
-  "refinement_seconds": 114.70588946493808,
+  "elapsed_seconds": 114.9972275300097,
+  "baseline_seconds": 0.003453648998402059,
+  "refinement_seconds": 114.99377415199706,
   "time_limit_scope": "optional_original_region_refinement",
-  "requested_time_limit_seconds": 114.69581978302449,
-  "effective_time_limit_seconds": 114.69581978302449,
-  "box_count": 258,
-  "excluded_boxes": 43,
-  "retained_nodes": 298,
+  "requested_time_limit_seconds": 114.97620817800635,
+  "effective_time_limit_seconds": 114.97620817800635,
+  "box_count": 270,
+  "excluded_boxes": 45,
+  "retained_nodes": 306,
   "question_certificates": [],
   "accepted_witness_count": 113,
   "algebraic_witness_count": 50,
@@ -162,7 +162,7 @@
     "start_index": 1,
     "stop_index": 2,
     "lower": 0.0,
-    "upper": 0.3096339418900761,
+    "upper": 0.3062961003022511,
     "inner_lower": 0.0,
     "inner_upper": 0.16168594360351562
    },
@@ -240,8 +240,8 @@
    }
   ]
  },
- "refinement_budget_seconds": 114.69581978302449,
- "seconds": 115.01444969105069,
+ "refinement_budget_seconds": 114.97620817800635,
+ "seconds": 115.02135026600445,
  "process_status": "completed",
- "completed_utc": "2026-11-02T05:20:30+00:00"
+ "completed_utc": "2026-11-19T15:19:03+00:00"
 }

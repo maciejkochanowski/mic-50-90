@@ -320,7 +320,7 @@ def cohort_axes(height_mm=112):
 
 
 def figure_D1():
-    """Coverage of the 95% population bounds in the archived simulation, by cohort."""
+    """Coverage of the 95% population bounds in the coverage simulation, by cohort."""
     summary = load('evaluation/results/coverage/summary.json')
     coverage = {c['case']: c for c in summary['cohorts']}
     fig, ax, rows = cohort_axes()
@@ -369,7 +369,7 @@ def figure_D2():
 
 
 def figure_D3():
-    """Archived seconds per cohort for the four constructions."""
+    """Seconds per cohort for the four constructions."""
     summary = load('evaluation/results/population/summary.json')
     budget = summary['settings']['budget_seconds']
     need(round(budget) == 120, 'D.3 budget 120 s')

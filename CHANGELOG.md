@@ -7,6 +7,7 @@
 - The HTML report resources (typography, print styles, report controls and fonts) move from `gui_assets` to `report_assets`. Reports separate list items with commas and semicolons instead of middle dots; their content is otherwise unchanged.
 - The container image no longer includes Node.js, which only the removed form tests needed.
 - Calculations, results and file formats are unchanged. Reporting certificates and distribution results produced by 1.0.0 to 1.0.3 are still accepted.
+- Every evaluation in `evaluation/results` that calls the program, the test and coverage record and the mutation record were computed again with the 2.0.0 wheel. New tests check the control flow of the shape certificate (time budget, receiver check and fallback) and the limit of six decimal places of a count given as a percentage.
 
 ## 1.0.3 (2026-11-19)
 

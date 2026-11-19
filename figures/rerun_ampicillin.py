@@ -1,7 +1,7 @@
 """Recompute the ampicillin values of Figure 3 with the installed MIC-50-90 package.
 
 Writes data/ampicillin_rerun.json, which build_main_figures.py compares with
-data/figure4_ampicillin.csv before it draws Figure 3.
+data/figure3_ampicillin.csv before it draws Figure 3.
 
 Usage, from the repository root after `python -m pip install .`:
     python figures/rerun_ampicillin.py

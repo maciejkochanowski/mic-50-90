@@ -1,17 +1,17 @@
 {
  "comparison": "mutation",
- "package_version": "1.0.1",
- "tool": "mutmut 3.8.0 with pytest 8",
- "environment": "Python 3.11.5 on one Helios CPU node (96 workers); configuration [tool.mutmut] in pyproject.toml; mutants/src on the interpreter path so that tests starting a separate Python process also run the mutated code",
+ "package_version": "2.0.0",
+ "tool": "mutmut 3.8.0 with pytest 8.4.2",
+ "environment": "Python 3.11.5, NumPy 2.3.5 and SciPy 1.17.0 on CPU nodes of the Helios cluster, one job of 64 workers per function; configuration [tool.mutmut] in pyproject.toml; mutants/src on the interpreter path so that tests starting a separate Python process also run the mutated code",
  "runtime_files": {
   "src/mic_50_90/conformal.py": "fc3f4735fb05eef584693df6ce29cc2bf3f64b4124fb9dada089155294d46b7f",
   "src/mic_50_90/count_updates.py": "e1556b7367b623adb2f540efed971f95fcbe77d6ddee2bb1f66eb22a3f4ca78b",
   "src/mic_50_90/decisions.py": "80c9f13b5a7afe30f3f3329d931281aa9cb2cb60e517a6df836c7e40422cb272",
-  "src/mic_50_90/dro.py": "ee677617952b5d7de3af4cbec153bcb5e9deee1c624e55c4c3b5fb3d11d4df94",
+  "src/mic_50_90/dro.py": "026a19878c177c7eb1e41c7f8201919d3a3378fc25b36e206b7809a03a62f207",
   "src/mic_50_90/exact_population.py": "42714c8bd203dc31850670a027374dd26612eea8486b1583314f5b7ba26aab2b",
   "src/mic_50_90/joint_population.py": "dec346bba5e409f7e0a77c9df45c4b07c5cde581259c456eab8918c78bc17604",
-  "src/mic_50_90/range_certificates.py": "e6e3daf4f6762041f0eb0584199adb617b68e7b8e597e6f77c591e9a1472aeef",
-  "src/mic_50_90/range_population.py": "e4a50ad8a9f157108cf699459b03b707b549c53f5d548aa46e8499b5cfe7f23d",
+  "src/mic_50_90/range_certificates.py": "3cc7bcf5b1b6f3431bca6b268c7fe1b673d4fdd4bd1cfd81d067687306c9f2b4",
+  "src/mic_50_90/range_population.py": "8110c05494c8d3fe1f88e536324e17eb64311a6f7fe99de49ffc44b6844e4f96",
   "src/mic_50_90/sufficient_reporting.py": "dc28b1cb508aeb2776088f01d053b56e977dbf28ea3e4bd795e6e036e5c525e5",
   "src/mic_50_90/utility.py": "dee8e8a9cdc45d436d99e2980cd607671154e9bd90afd4d482c81094d7e60b71",
   "src/mic_50_90/validation.py": "943a6d29d83b2f90aab7dd575a1bff368f1c9ed1dcf21083ddc14354dccbe010"
@@ -31,8 +31,8 @@
   "conformal_rank",
   "critical_radius"
  ],
- "executed": 1248,
- "detected": 1215,
+ "executed": 1327,
+ "detected": 1294,
  "equivalent": 33,
  "by_function": {
   "ceiling_rank": {
@@ -48,8 +48,8 @@
    "detected": 40
   },
   "binomial_shape_certificate": {
-   "executed": 100,
-   "detected": 100
+   "executed": 179,
+   "detected": 179
   },
   "_bonferroni_level": {
    "executed": 15,
@@ -1571,8 +1571,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    lower, upper = [], []",
-    "+    lower, upper = None"
+    "-    started = monotonic()",
+    "+    started = None"
    ]
   },
   {
@@ -1582,8 +1582,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    for x in range(n+1):",
-    "+    for x in range(None):"
+    "-    remaining = deadline - started",
+    "+    remaining = None"
    ]
   },
   {
@@ -1593,8 +1593,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    for x in range(n+1):",
-    "+    for x in range(n - 1):"
+    "-    remaining = deadline - started",
+    "+    remaining = deadline + started"
    ]
   },
   {
@@ -1604,8 +1604,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    for x in range(n+1):",
-    "+    for x in range(n+2):"
+    "-    if remaining <= 0:",
+    "+    if remaining < 0:"
    ]
   },
   {
@@ -1615,8 +1615,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        if monotonic() >= deadline:",
-    "+        if monotonic() > deadline:"
+    "-    if remaining <= 0:",
+    "+    if remaining <= 1:"
    ]
   },
   {
@@ -1626,8 +1626,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(statusXX='unresolved', reason='Shape certificate time limit')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(statusXX='unresolved', reason='Shape certificate time limit')"
    ]
   },
   {
@@ -1637,8 +1637,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='unresolved', reasonXX='Shape certificate time limit')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='unresolved', reasonXX='Shape certificate time limit')"
    ]
   },
   {
@@ -1648,8 +1648,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status=None, reason='Shape certificate time limit')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status=None, reason='Shape certificate time limit')"
    ]
   },
   {
@@ -1659,8 +1659,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='unresolved', reason=None)"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='unresolved', reason=None)"
    ]
   },
   {
@@ -1670,8 +1670,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(reason='Shape certificate time limit')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(reason='Shape certificate time limit')"
    ]
   },
   {
@@ -1681,8 +1681,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='unresolved', )"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='unresolved', )"
    ]
   },
   {
@@ -1692,8 +1692,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='XXunresolvedXX', reason='Shape certificate time limit')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='XXunresolvedXX', reason='Shape certificate time limit')"
    ]
   },
   {
@@ -1703,8 +1703,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='UNRESOLVED', reason='Shape certificate time limit')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='UNRESOLVED', reason='Shape certificate time limit')"
    ]
   },
   {
@@ -1714,8 +1714,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='unresolved', reason='XXShape certificate time limitXX')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='unresolved', reason='XXShape certificate time limitXX')"
    ]
   },
   {
@@ -1725,8 +1725,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='unresolved', reason='shape certificate time limit')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='unresolved', reason='shape certificate time limit')"
    ]
   },
   {
@@ -1736,8 +1736,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='Shape certificate time limit')",
-    "+            return dict(status='unresolved', reason='SHAPE CERTIFICATE TIME LIMIT')"
+    "-        return dict(status='unresolved', reason='Shape certificate time limit')",
+    "+        return dict(status='unresolved', reason='SHAPE CERTIFICATE TIME LIMIT')"
    ]
   },
   {
@@ -1747,8 +1747,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        inside = _cp_inner(x,n,cutoff)",
-    "+        inside = None"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = None"
    ]
   },
   {
@@ -1758,8 +1758,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        inside = _cp_inner(x,n,cutoff)",
-    "+        inside = _cp_inner(None,n,cutoff)"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(statusXX='not_attempted', reason='Outside accelerated n domain')"
    ]
   },
   {
@@ -1769,8 +1769,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        inside = _cp_inner(x,n,cutoff)",
-    "+        inside = _cp_inner(x,None,cutoff)"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='not_attempted', reasonXX='Outside accelerated n domain')"
    ]
   },
   {
@@ -1780,8 +1780,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        inside = _cp_inner(x,n,cutoff)",
-    "+        inside = _cp_inner(x,n,None)"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status=None, reason='Outside accelerated n domain')"
    ]
   },
   {
@@ -1791,8 +1791,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        inside = _cp_inner(x,n,cutoff)",
-    "+        inside = _cp_inner(n,cutoff)"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='not_attempted', reason=None)"
    ]
   },
   {
@@ -1802,8 +1802,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        inside = _cp_inner(x,n,cutoff)",
-    "+        inside = _cp_inner(x,cutoff)"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(reason='Outside accelerated n domain')"
    ]
   },
   {
@@ -1813,8 +1813,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        inside = _cp_inner(x,n,cutoff)",
-    "+        inside = _cp_inner(x,n,)"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='not_attempted', )"
    ]
   },
   {
@@ -1824,8 +1824,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        if inside is None:",
-    "+        if inside is not None:"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='XXnot_attemptedXX', reason='Outside accelerated n domain')"
    ]
   },
   {
@@ -1835,8 +1835,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(statusXX='unresolved', reason='An inward endpoint was not certified')"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='NOT_ATTEMPTED', reason='Outside accelerated n domain')"
    ]
   },
   {
@@ -1846,8 +1846,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='unresolved', reasonXX='An inward endpoint was not certified')"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='not_attempted', reason='XXOutside accelerated n domainXX')"
    ]
   },
   {
@@ -1857,8 +1857,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status=None, reason='An inward endpoint was not certified')"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='not_attempted', reason='outside accelerated n domain')"
    ]
   },
   {
@@ -1868,8 +1868,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='unresolved', reason=None)"
+    "-    attempt = dict(status='not_attempted', reason='Outside accelerated n domain')",
+    "+    attempt = dict(status='not_attempted', reason='OUTSIDE ACCELERATED N DOMAIN')"
    ]
   },
   {
@@ -1879,8 +1879,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(reason='An inward endpoint was not certified')"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(n) is int or 1 <= n <= POLICY['max_n']:"
    ]
   },
   {
@@ -1890,8 +1890,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='unresolved', )"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(None) is int and 1 <= n <= POLICY['max_n']:"
    ]
   },
   {
@@ -1901,8 +1901,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='XXunresolvedXX', reason='An inward endpoint was not certified')"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(n) is not int and 1 <= n <= POLICY['max_n']:"
    ]
   },
   {
@@ -1912,8 +1912,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='UNRESOLVED', reason='An inward endpoint was not certified')"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(n) is int and 2 <= n <= POLICY['max_n']:"
    ]
   },
   {
@@ -1923,8 +1923,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='unresolved', reason='XXAn inward endpoint was not certifiedXX')"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(n) is int and 1 < n <= POLICY['max_n']:"
    ]
   },
   {
@@ -1934,8 +1934,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='unresolved', reason='an inward endpoint was not certified')"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(n) is int and 1 <= n < POLICY['max_n']:"
    ]
   },
   {
@@ -1945,8 +1945,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-            return dict(status='unresolved', reason='An inward endpoint was not certified')",
-    "+            return dict(status='unresolved', reason='AN INWARD ENDPOINT WAS NOT CERTIFIED')"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(n) is int and 1 <= n <= POLICY['XXmax_nXX']:"
    ]
   },
   {
@@ -1956,8 +1956,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        lower.append(F(inside[1]))",
-    "+        lower.append(None)"
+    "-    if type(n) is int and 1 <= n <= POLICY['max_n']:",
+    "+    if type(n) is int and 1 <= n <= POLICY['MAX_N']:"
    ]
   },
   {
@@ -1967,8 +1967,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        lower.append(F(inside[1]))",
-    "+        lower.append(F(None))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = None"
    ]
   },
   {
@@ -1978,8 +1978,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        lower.append(F(inside[1]))",
-    "+        lower.append(F(inside[2]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(None, F(cutoff), deadline=started + .45 * remaining)"
    ]
   },
   {
@@ -1989,8 +1989,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(None)"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, None, deadline=started + .45 * remaining)"
    ]
   },
   {
@@ -2000,8 +2000,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(None))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, F(cutoff), deadline=None)"
    ]
   },
   {
@@ -2011,8 +2011,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(_cp_outer(None,n,cutoff)[1]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(F(cutoff), deadline=started + .45 * remaining)"
    ]
   },
   {
@@ -2022,8 +2022,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(_cp_outer(x,None,cutoff)[1]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, deadline=started + .45 * remaining)"
    ]
   },
   {
@@ -2033,8 +2033,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(_cp_outer(x,n,None)[1]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, F(cutoff), )"
    ]
   },
   {
@@ -2044,8 +2044,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(_cp_outer(n,cutoff)[1]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, F(None), deadline=started + .45 * remaining)"
    ]
   },
   {
@@ -2055,8 +2055,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(_cp_outer(x,cutoff)[1]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, F(cutoff), deadline=started - .45 * remaining)"
    ]
   },
   {
@@ -2066,8 +2066,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(_cp_outer(x,n,)[1]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, F(cutoff), deadline=started + .45 / remaining)"
    ]
   },
   {
@@ -2077,8 +2077,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        upper.append(F(_cp_outer(x,n,cutoff)[1]))",
-    "+        upper.append(F(_cp_outer(x,n,cutoff)[2]))"
+    "-            produced = generate(n, F(cutoff), deadline=started + .45 * remaining)",
+    "+            produced = generate(n, F(cutoff), deadline=started + 1.45 * remaining)"
    ]
   },
   {
@@ -2088,8 +2088,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = None"
+    "-            certificate = produced.get('certificate')",
+    "+            certificate = None"
    ]
   },
   {
@@ -2099,8 +2099,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1] + upper[x+1] for x in range(1,n)]"
+    "-            certificate = produced.get('certificate')",
+    "+            certificate = produced.get(None)"
    ]
   },
   {
@@ -2110,8 +2110,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x] + upper[x-1]-upper[x+1] for x in range(1,n)]"
+    "-            certificate = produced.get('certificate')",
+    "+            certificate = produced.get('XXcertificateXX')"
    ]
   },
   {
@@ -2121,8 +2121,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2 / lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]"
+    "-            certificate = produced.get('certificate')",
+    "+            certificate = produced.get('CERTIFICATE')"
    ]
   },
   {
@@ -2132,8 +2132,9 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [3*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "-                           generator_seconds=produced['elapsed_seconds'])",
+    "+            attempt = None"
    ]
   },
   {
@@ -2143,8 +2144,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x + 1]-upper[x+1] for x in range(1,n)]"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(statusXX=produced['status'], reason=produced.get('reason'),"
    ]
   },
   {
@@ -2154,8 +2155,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-2]-upper[x+1] for x in range(1,n)]"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=produced['status'], reasonXX=produced.get('reason'),"
    ]
   },
   {
@@ -2165,8 +2166,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1]-upper[x - 1] for x in range(1,n)]"
+    "-                           generator_seconds=produced['elapsed_seconds'])",
+    "+                           generator_secondsXX=produced['elapsed_seconds'])"
    ]
   },
   {
@@ -2176,8 +2177,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1]-upper[x+2] for x in range(1,n)]"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=None, reason=produced.get('reason'),"
    ]
   },
   {
@@ -2187,8 +2188,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(None,n)]"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=produced['status'], reason=None,"
    ]
   },
   {
@@ -2198,8 +2199,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,None)]"
+    "-                           generator_seconds=produced['elapsed_seconds'])",
+    "+                           generator_seconds=None)"
    ]
   },
   {
@@ -2209,8 +2210,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(n)]"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(reason=produced.get('reason'),"
    ]
   },
   {
@@ -2220,8 +2221,9 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,)]"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "-                           generator_seconds=produced['elapsed_seconds'])",
+    "+            attempt = dict(status=produced['status'], generator_seconds=produced['elapsed_seconds'])"
    ]
   },
   {
@@ -2231,8 +2233,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(1,n)]",
-    "+    margins = [2*lower[x]-upper[x-1]-upper[x+1] for x in range(2,n)]"
+    "-                           generator_seconds=produced['elapsed_seconds'])",
+    "+                           )"
    ]
   },
   {
@@ -2242,8 +2244,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    if any(m < 0 for m in margins):",
-    "+    if any(None):"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=produced['XXstatusXX'], reason=produced.get('reason'),"
    ]
   },
   {
@@ -2253,8 +2255,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    if any(m < 0 for m in margins):",
-    "+    if any(m <= 0 for m in margins):"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=produced['STATUS'], reason=produced.get('reason'),"
    ]
   },
   {
@@ -2264,8 +2266,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    if any(m < 0 for m in margins):",
-    "+    if any(m < 1 for m in margins):"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=produced['status'], reason=produced.get(None),"
    ]
   },
   {
@@ -2275,8 +2277,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(statusXX='unresolved', reason='Discrete concavity was not certified')"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=produced['status'], reason=produced.get('XXreasonXX'),"
    ]
   },
   {
@@ -2286,8 +2288,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='unresolved', reasonXX='Discrete concavity was not certified')"
+    "-            attempt = dict(status=produced['status'], reason=produced.get('reason'),",
+    "+            attempt = dict(status=produced['status'], reason=produced.get('REASON'),"
    ]
   },
   {
@@ -2297,8 +2299,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status=None, reason='Discrete concavity was not certified')"
+    "-                           generator_seconds=produced['elapsed_seconds'])",
+    "+                           generator_seconds=produced['XXelapsed_secondsXX'])"
    ]
   },
   {
@@ -2308,8 +2310,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='unresolved', reason=None)"
+    "-                           generator_seconds=produced['elapsed_seconds'])",
+    "+                           generator_seconds=produced['ELAPSED_SECONDS'])"
    ]
   },
   {
@@ -2319,8 +2321,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(reason='Discrete concavity was not certified')"
+    "-            if certificate is not None:",
+    "+            if certificate is None:"
    ]
   },
   {
@@ -2330,8 +2332,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='unresolved', )"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') != n and certificate.get('cutoff') != str(F(cutoff)):"
    ]
   },
   {
@@ -2341,8 +2343,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='XXunresolvedXX', reason='Discrete concavity was not certified')"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get(None) != n or certificate.get('cutoff') != str(F(cutoff)):"
    ]
   },
   {
@@ -2352,8 +2354,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='UNRESOLVED', reason='Discrete concavity was not certified')"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('XXnXX') != n or certificate.get('cutoff') != str(F(cutoff)):"
    ]
   },
   {
@@ -2363,8 +2365,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='unresolved', reason='XXDiscrete concavity was not certifiedXX')"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('N') != n or certificate.get('cutoff') != str(F(cutoff)):"
    ]
   },
   {
@@ -2374,8 +2376,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='unresolved', reason='discrete concavity was not certified')"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') == n or certificate.get('cutoff') != str(F(cutoff)):"
    ]
   },
   {
@@ -2385,8 +2387,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        return dict(status='unresolved', reason='Discrete concavity was not certified')",
-    "+        return dict(status='unresolved', reason='DISCRETE CONCAVITY WAS NOT CERTIFIED')"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') != n or certificate.get(None) != str(F(cutoff)):"
    ]
   },
   {
@@ -2396,8 +2398,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(statusXX='certified', n=n, critical_score_fraction=str(cutoff),"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') != n or certificate.get('XXcutoffXX') != str(F(cutoff)):"
    ]
   },
   {
@@ -2407,8 +2409,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='certified', nXX=n, critical_score_fraction=str(cutoff),"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') != n or certificate.get('CUTOFF') != str(F(cutoff)):"
    ]
   },
   {
@@ -2418,8 +2420,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='certified', n=n, critical_score_fractionXX=str(cutoff),"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') != n or certificate.get('cutoff') == str(F(cutoff)):"
    ]
   },
   {
@@ -2429,8 +2431,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,",
-    "+        minimum_concavity_marginXX=str(min(margins)) if margins else None,"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') != n or certificate.get('cutoff') != str(None):"
    ]
   },
   {
@@ -2440,8 +2442,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        claim='At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')",
-    "+        claimXX='At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')"
+    "-                if certificate.get('n') != n or certificate.get('cutoff') != str(F(cutoff)):",
+    "+                if certificate.get('n') != n or certificate.get('cutoff') != str(F(None)):"
    ]
   },
   {
@@ -2451,8 +2453,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status=None, n=n, critical_score_fraction=str(cutoff),"
+    "-                    raise ValueError('Accelerated certificate target mismatch')",
+    "+                    raise ValueError(None)"
    ]
   },
   {
@@ -2462,8 +2464,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='certified', n=None, critical_score_fraction=str(cutoff),"
+    "-                    raise ValueError('Accelerated certificate target mismatch')",
+    "+                    raise ValueError('XXAccelerated certificate target mismatchXX')"
    ]
   },
   {
@@ -2473,8 +2475,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='certified', n=n, critical_score_fraction=None,"
+    "-                    raise ValueError('Accelerated certificate target mismatch')",
+    "+                    raise ValueError('accelerated certificate target mismatch')"
    ]
   },
   {
@@ -2484,8 +2486,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,",
-    "+        minimum_concavity_margin=None,"
+    "-                    raise ValueError('Accelerated certificate target mismatch')",
+    "+                    raise ValueError('ACCELERATED CERTIFICATE TARGET MISMATCH')"
    ]
   },
   {
@@ -2495,8 +2497,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        claim='At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')",
-    "+        claim=None)"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = None"
    ]
   },
   {
@@ -2506,8 +2508,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(n=n, critical_score_fraction=str(cutoff),"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = verify_certificate(None, deadline=started + .9 * remaining)"
    ]
   },
   {
@@ -2517,8 +2519,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='certified', critical_score_fraction=str(cutoff),"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = verify_certificate(certificate, deadline=None)"
    ]
   },
   {
@@ -2528,9 +2530,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,",
-    "+    return dict(status='certified', n=n, minimum_concavity_margin=str(min(margins)) if margins else None,"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = verify_certificate(deadline=started + .9 * remaining)"
    ]
   },
   {
@@ -2540,7 +2541,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = verify_certificate(certificate, )"
    ]
   },
   {
@@ -2550,8 +2552,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        claim='At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')",
-    "+        )"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = verify_certificate(certificate, deadline=started - .9 * remaining)"
    ]
   },
   {
@@ -2561,8 +2563,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='XXcertifiedXX', n=n, critical_score_fraction=str(cutoff),"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = verify_certificate(certificate, deadline=started + .9 / remaining)"
    ]
   },
   {
@@ -2572,8 +2574,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='CERTIFIED', n=n, critical_score_fraction=str(cutoff),"
+    "-                checked = verify_certificate(certificate, deadline=started + .9 * remaining)",
+    "+                checked = verify_certificate(certificate, deadline=started + 1.9 * remaining)"
    ]
   },
   {
@@ -2583,8 +2585,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-    return dict(status='certified', n=n, critical_score_fraction=str(cutoff),",
-    "+    return dict(status='certified', n=n, critical_score_fraction=str(None),"
+    "-                attempt.update(receiver_status=checked['status'],",
+    "+                attempt.update(receiver_status=None,"
    ]
   },
   {
@@ -2594,8 +2596,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,",
-    "+        minimum_concavity_margin=str(min(margins)) if (margins) and False else None,"
+    "-                               receiver_reason=checked.get('reason'),",
+    "+                               receiver_reason=None,"
    ]
   },
   {
@@ -2605,8 +2607,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,",
-    "+        minimum_concavity_margin=str(min(margins)) if (margins) or True else None,"
+    "-                               receiver_seconds=checked['elapsed_seconds'])",
+    "+                               receiver_seconds=None)"
    ]
   },
   {
@@ -2616,8 +2618,9 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,",
-    "+        minimum_concavity_margin=str(None) if margins else None,"
+    "-                attempt.update(receiver_status=checked['status'],",
+    "-                               receiver_reason=checked.get('reason'),",
+    "+                attempt.update(receiver_reason=checked.get('reason'),"
    ]
   },
   {
@@ -2627,8 +2630,7 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        minimum_concavity_margin=str(min(margins)) if margins else None,",
-    "+        minimum_concavity_margin=str(min(None)) if margins else None,"
+    "-                               receiver_reason=checked.get('reason'),"
    ]
   },
   {
@@ -2638,8 +2640,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        claim='At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')",
-    "+        claim='XXAt most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimedXX')"
+    "-                               receiver_seconds=checked['elapsed_seconds'])",
+    "+                               )"
    ]
   },
   {
@@ -2649,8 +2651,8 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        claim='At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')",
-    "+        claim='at most k distinct histograms from k+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')"
+    "-                attempt.update(receiver_status=checked['status'],",
+    "+                attempt.update(receiver_status=checked['XXstatusXX'],"
    ]
   },
   {
@@ -2660,8 +2662,879 @@
    "classification": "detected",
    "reason": "A test fails with the change.",
    "changes": [
-    "-        claim='At most K distinct histograms from K+1 indexed count rows attain all contiguous population projection endpoints in each reporting variant; no equality of full regions is claimed')",
-    "+        claim='AT MOST K DISTINCT HISTOGRAMS FROM K+1 INDEXED COUNT ROWS ATTAIN ALL CONTIGUOUS POPULATION PROJECTION ENDPOINTS IN EACH REPORTING VARIANT; NO EQUALITY OF FULL REGIONS IS CLAIMED')"
+    "-                attempt.update(receiver_status=checked['status'],",
+    "+                attempt.update(receiver_status=checked['STATUS'],"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_101",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                               receiver_reason=checked.get('reason'),",
+    "+                               receiver_reason=checked.get(None),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_102",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                               receiver_reason=checked.get('reason'),",
+    "+                               receiver_reason=checked.get('XXreasonXX'),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_103",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                               receiver_reason=checked.get('reason'),",
+    "+                               receiver_reason=checked.get('REASON'),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_104",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                               receiver_seconds=checked['elapsed_seconds'])",
+    "+                               receiver_seconds=checked['XXelapsed_secondsXX'])"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_105",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                               receiver_seconds=checked['elapsed_seconds'])",
+    "+                               receiver_seconds=checked['ELAPSED_SECONDS'])"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_106",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                if checked['status'] == 'certified':",
+    "+                if checked['XXstatusXX'] == 'certified':"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_107",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                if checked['status'] == 'certified':",
+    "+                if checked['STATUS'] == 'certified':"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_108",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                if checked['status'] == 'certified':",
+    "+                if checked['status'] != 'certified':"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_109",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                if checked['status'] == 'certified':",
+    "+                if checked['status'] == 'XXcertifiedXX':"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_110",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                if checked['status'] == 'certified':",
+    "+                if checked['status'] == 'CERTIFIED':"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_111",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(statusXX='certified', n=n, critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_112",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='certified', nXX=n, critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_113",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='certified', n=n, critical_score_fractionXX=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_114",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        minimum_concavity_margin=checked['minimum_concavity_margin'],",
+    "+                        minimum_concavity_marginXX=checked['minimum_concavity_margin'],"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_115",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        claim=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,",
+    "+                        claimXX=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_116",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        claim=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,",
+    "+                        claim=_SHAPE_CLAIM, algorithmXX=_shape_receiver.ALGORITHM,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_117",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "+                        arithmetic_certificateXX=certificate, receiver_verified=True,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_118",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "+                        arithmetic_certificate=certificate, receiver_verifiedXX=True,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_119",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        acceleration=attempt)",
+    "+                        accelerationXX=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_120",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status=None, n=n, critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_121",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='certified', n=None, critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_122",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='certified', n=n, critical_score_fraction=None,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_123",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        minimum_concavity_margin=checked['minimum_concavity_margin'],",
+    "+                        minimum_concavity_margin=None,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_124",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        claim=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,",
+    "+                        claim=None, algorithm=_shape_receiver.ALGORITHM,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_125",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        claim=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,",
+    "+                        claim=_SHAPE_CLAIM, algorithm=None,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_126",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "+                        arithmetic_certificate=None, receiver_verified=True,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_127",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "+                        arithmetic_certificate=certificate, receiver_verified=None,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_128",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        acceleration=attempt)",
+    "+                        acceleration=None)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_129",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(n=n, critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_130",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='certified', critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_131",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "-                        minimum_concavity_margin=checked['minimum_concavity_margin'],",
+    "+                    return dict(status='certified', n=n, minimum_concavity_margin=checked['minimum_concavity_margin'],"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_132",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        minimum_concavity_margin=checked['minimum_concavity_margin'],"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_133",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        claim=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,",
+    "+                        algorithm=_shape_receiver.ALGORITHM,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_134",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        claim=_SHAPE_CLAIM, algorithm=_shape_receiver.ALGORITHM,",
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "+                        claim=_SHAPE_CLAIM, arithmetic_certificate=certificate, receiver_verified=True,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_135",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "+                        receiver_verified=True,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_136",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "-                        acceleration=attempt)",
+    "+                        arithmetic_certificate=certificate, acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_137",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        acceleration=attempt)",
+    "+                        )"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_138",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='XXcertifiedXX', n=n, critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_139",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='CERTIFIED', n=n, critical_score_fraction=str(F(cutoff)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_140",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='certified', n=n, critical_score_fraction=str(None),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_141",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                    return dict(status='certified', n=n, critical_score_fraction=str(F(cutoff)),",
+    "+                    return dict(status='certified', n=n, critical_score_fraction=str(F(None)),"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_142",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        minimum_concavity_margin=checked['minimum_concavity_margin'],",
+    "+                        minimum_concavity_margin=checked['XXminimum_concavity_marginXX'],"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_143",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        minimum_concavity_margin=checked['minimum_concavity_margin'],",
+    "+                        minimum_concavity_margin=checked['MINIMUM_CONCAVITY_MARGIN'],"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_144",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-                        arithmetic_certificate=certificate, receiver_verified=True,",
+    "+                        arithmetic_certificate=certificate, receiver_verified=False,"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_145",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status=None, reason=str(exc), error_type=type(exc).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_146",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='unresolved', reason=None, error_type=type(exc).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_147",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='unresolved', reason=str(exc), error_type=None)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_148",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(reason=str(exc), error_type=type(exc).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_149",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='unresolved', error_type=type(exc).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_150",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='unresolved', reason=str(exc), )"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_151",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='XXunresolvedXX', reason=str(exc), error_type=type(exc).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_152",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='UNRESOLVED', reason=str(exc), error_type=type(exc).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_153",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='unresolved', reason=str(None), error_type=type(exc).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_154",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-            attempt.update(status='unresolved', reason=str(exc), error_type=type(exc).__name__)",
+    "+            attempt.update(status='unresolved', reason=str(exc), error_type=type(None).__name__)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_155",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    if monotonic() >= deadline:",
+    "+    if monotonic() > deadline:"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_156",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(statusXX='unresolved', reason='Shape certificate time limit', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_157",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reasonXX='Shape certificate time limit', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_158",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reason='Shape certificate time limit', accelerationXX=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_159",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status=None, reason='Shape certificate time limit', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_160",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reason=None, acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_161",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=None)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_162",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(reason='Shape certificate time limit', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_163",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_164",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reason='Shape certificate time limit', )"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_165",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='XXunresolvedXX', reason='Shape certificate time limit', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_166",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='UNRESOLVED', reason='Shape certificate time limit', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_167",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reason='XXShape certificate time limitXX', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_168",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reason='shape certificate time limit', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_169",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-        return dict(status='unresolved', reason='Shape certificate time limit', acceleration=attempt)",
+    "+        return dict(status='unresolved', reason='SHAPE CERTIFICATE TIME LIMIT', acceleration=attempt)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_170",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)",
+    "+    result = None"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_171",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)",
+    "+    result = _legacy_binomial_shape_certificate(None, cutoff, deadline)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_172",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)",
+    "+    result = _legacy_binomial_shape_certificate(n, None, deadline)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_173",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)",
+    "+    result = _legacy_binomial_shape_certificate(n, cutoff, None)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_174",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)",
+    "+    result = _legacy_binomial_shape_certificate(cutoff, deadline)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_175",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)",
+    "+    result = _legacy_binomial_shape_certificate(n, deadline)"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_176",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result = _legacy_binomial_shape_certificate(n, cutoff, deadline)",
+    "+    result = _legacy_binomial_shape_certificate(n, cutoff, )"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_177",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result['acceleration'] = attempt",
+    "+    result['acceleration'] = None"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_178",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result['acceleration'] = attempt",
+    "+    result['XXaccelerationXX'] = attempt"
+   ]
+  },
+  {
+   "id": "mic_50_90.range_certificates.x_binomial_shape_certificate__mutmut_179",
+   "function": "binomial_shape_certificate",
+   "result": "killed",
+   "classification": "detected",
+   "reason": "A test fails with the change.",
+   "changes": [
+    "-    result['acceleration'] = attempt",
+    "+    result['ACCELERATION'] = attempt"
    ]
   },
   {

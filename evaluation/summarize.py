@@ -1,9 +1,10 @@
 """Collect the numbers reported in the article from the comparison outputs.
 
-These are the numbers of Section 2.5 and Section 3.3, the confirmation on independent data
-(Appendix A.12, Technical Archive A7.10) and the finite controls of the Technical Archive (A7.5,
-A7.6 and A8.2). Development and confirmation results are listed side by side (PROTOCOL.md,
-section 7).
+These are the numbers of the evaluation reported in Section 2.5 and Appendix D of the article:
+the development comparisons (Appendix D.1, D.3, D.4, D.8 and D.9; Technical Archive T7.3-T7.8),
+the confirmation on independent data (Appendix D.5 and D.8, Technical Archive T7.10) and the finite
+controls of the Technical Archive (T7.5, T7.6 and T8.2). Development and confirmation results are
+listed side by side (PROTOCOL.md, section 7).
 
 Reads OUTPUT/<comparison>/summary.json for every comparison that has been run and writes
 OUTPUT/SUMMARY.json and CSV tables in OUTPUT/tables/. Each number is listed with the value given
@@ -33,10 +34,10 @@ NAMES = {'bonferroni': 'Bonferroni', 'joint-exact': 'joint-exact', 'range-calibr
 # (comparison, quantity, value in the article, path in summary.json, scale, kind)
 ARTICLE = [
     *[row for method, values in {
-        'bonferroni': ('28.617', '309', '29.730', '67', '31.734', '440', '20', '0.221'),
-        'joint-exact': ('28.481', '309', '29.466', '67', '31.571', '440', '0', '115.639'),
-        'range-calibrated': ('29.731', '303', '26.073', '84', '31.247', '454', '20', '0.120'),
-        'range-hunter': ('29.739', '303', '25.998', '84', '31.237', '454', '0', '115.094')}.items()
+        'bonferroni': ('28.617', '309', '29.730', '67', '31.734', '440', '20', '0.306'),
+        'joint-exact': ('28.558', '309', '29.601', '67', '31.666', '440', '0', '115.615'),
+        'range-calibrated': ('29.731', '303', '26.073', '84', '31.247', '454', '20', '0.165'),
+        'range-hunter': ('29.739', '303', '25.993', '84', '31.236', '454', '0', '115.163')}.items()
       for row in (
         ('population', f'{NAMES[method]}: mean width, cumulative ranges (pp)', values[0], f'constructions/{method}/cumulative/mean_width_pp', 1, 'value'),
         ('population', f'{NAMES[method]}: resolved questions, cumulative ranges (of 480)', values[1], f'constructions/{method}/cumulative/resolved_questions', 1, 'value'),
@@ -49,10 +50,8 @@ ARTICLE = [
     ('population', 'Bonferroni narrower than range-calibrated for cumulative ranges (cohorts of 20)', '20', 'pair:bonferroni:range-calibrated/cumulative/wider', 1, 'value'),
     ('population', 'range-calibrated narrower than Bonferroni for single categories (cohorts of 20)', '20', 'pair:bonferroni:range-calibrated/single/narrower', 1, 'value'),
     ('population', 'range-calibrated narrower than Bonferroni for internal ranges (cohorts of 20)', '15', 'pair:bonferroni:range-calibrated/internal/narrower', 1, 'value'),
-    ('population', 'Bonferroni: maximum seconds per cohort', '2.72', 'constructions/bonferroni/maximum_seconds', 1, 'timing'),
-    ('population', 'range-calibrated: maximum seconds per cohort', '0.20', 'constructions/range-calibrated/maximum_seconds', 1, 'timing'),
-    ('population', 'joint-exact: summed-width reduction against Bonferroni (%)', '0.513', 'pair:bonferroni:joint-exact/summed_width_reduction_percent', 1, 'value'),
-    ('population', 'range-hunter: summed-width reduction against range-calibrated (%)', '0.030', 'pair:range-calibrated:range-hunter/summed_width_reduction_percent', 1, 'value'),
+    ('population', 'joint-exact: summed-width reduction against Bonferroni (%)', '0.213', 'pair:bonferroni:joint-exact/summed_width_reduction_percent', 1, 'value'),
+    ('population', 'range-hunter: summed-width reduction against range-calibrated (%)', '0.033', 'pair:range-calibrated:range-hunter/summed_width_reduction_percent', 1, 'value'),
     ('coverage', 'Bonferroni: replicates', '100000', 'totals/bonferroni/replicates', 1, 'value'),
     ('coverage', 'Bonferroni: covered replicates', '99845', 'totals/bonferroni/covered', 1, 'value'),
     ('coverage', 'Bonferroni: lowest cohort coverage (%)', '99.44', 'totals/bonferroni/lowest_cohort_coverage', 100, 'value'),
@@ -143,10 +142,13 @@ ARTICLE = [
     ('population_controls', 'failed checks', '0', 'failed_checks', 1, 'value'),
 ]
 
-CONFIRMATION_WIDTHS = {  # Appendix A, Table A.13: mean width (pp) for cumulative, single and internal ranges
+CONFIRMATION_WIDTHS = {  # Appendix D, Table D.5: mean width (pp) for cumulative, single and internal ranges
     'bonferroni|R1': ('40.14', '42.85', '56.99'), 'range-calibrated|R1': ('42.20', '40.63', '55.00'),
     'bonferroni|R2': ('38.64', '46.25', '55.13'), 'range-calibrated|R2': ('40.60', '45.84', '53.38'),
     'bonferroni|R3': ('33.39', '40.21', '54.06'), 'range-calibrated|R3': ('35.46', '39.08', '51.78')}
+CONFIRMATION_MEDIANS = {  # Appendix D, Table D.5: median seconds per cohort
+    'bonferroni|R1': '0.194', 'range-calibrated|R1': '0.174', 'bonferroni|R2': '0.053', 'range-calibrated|R2': '0.165',
+    'bonferroni|R3': '0.061', 'range-calibrated|R3': '0.186'}
 NARROWER = {'R1': ('534', '426'), 'R2': ('303', '426'), 'R3': ('378', '456')}  # range-calibrated narrower: single, internal
 CALIBRATION = {'dogs-ecoli': ('20', '19'), 'dogs-spseud': ('18', '18'), 'retail-salmonella': ('19', '21'),
                'retail-campylobacter': ('18', '18'), 'retail-ecoli': ('11', '8'), 'retail-enterococcus': ('17', '17')}
@@ -160,8 +162,8 @@ ARTICLE += [
         ('confirmation_population', f'{key}: cohorts meeting the endpoint target (of 610)', '610', f'constructions/{key}/meeting_endpoint_target', 1, 'value'),
         *[('confirmation_population', f'{key}: mean width, {kind} ranges (pp)', value, f'constructions/{key}/{kind}/mean_width_pp', 1, 'value')
           for kind, value in zip(('cumulative', 'single', 'internal'), values)],
-        ('confirmation_population', f'{key}: median seconds per cohort', '0.2', f'constructions/{key}/median_seconds', 1, 'timing'))],
-    ('confirmation_population', 'bonferroni|R1: maximum seconds per cohort', '5.8', 'constructions/bonferroni|R1/maximum_seconds', 1, 'timing'),
+        ('confirmation_population', f'{key}: median seconds per cohort', CONFIRMATION_MEDIANS[key], f'constructions/{key}/median_seconds', 1, 'timing'))],
+    ('confirmation_population', 'bonferroni|R1: maximum seconds per cohort', '6.49', 'constructions/bonferroni|R1/maximum_seconds', 1, 'timing'),
     ('confirmation_population', 'joint-exact|R1: cohorts meeting the endpoint target', '1', 'constructions/joint-exact|R1/meeting_endpoint_target', 1, 'value'),
     ('confirmation_population', 'range-hunter|R1: cohorts meeting the endpoint target', '2', 'constructions/range-hunter|R1/meeting_endpoint_target', 1, 'value'),
     *[row for report, (single, internal) in NARROWER.items() for row in (
@@ -175,8 +177,8 @@ ARTICLE += [
     ('confirmation_population', 'R1: range-calibrated narrower for single categories (% of cohorts)', '87.5', 'default_rule/R1/range_calibrated_narrower_single', 100, 'value'),
     ('confirmation_population', 'R2: range-calibrated narrower for single categories (% of cohorts)', '49.7', 'default_rule/R2/range_calibrated_narrower_single', 100, 'value'),
     ('confirmation_population', 'R3: range-calibrated narrower for single categories (% of cohorts)', '62.0', 'default_rule/R3/range_calibrated_narrower_single', 100, 'value'),
-    ('confirmation_population', 'joint-exact: summed-width change against Bonferroni, R1 (%)', '-0.089', 'pair:bonferroni:joint-exact:R1/all/summed_width_change_percent', 1, 'value'),
-    ('confirmation_population', 'range-hunter: summed-width change against range-calibrated, R1 (%)', '0.097', 'pair:range-calibrated:range-hunter:R1/all/summed_width_change_percent', 1, 'value'),
+    ('confirmation_population', 'joint-exact: summed-width change against Bonferroni, R1 (%)', '-0.079', 'pair:bonferroni:joint-exact:R1/all/summed_width_change_percent', 1, 'value'),
+    ('confirmation_population', 'range-hunter: summed-width change against range-calibrated, R1 (%)', '0.098', 'pair:range-calibrated:range-hunter:R1/all/summed_width_change_percent', 1, 'value'),
     *[row for method, covered, lowest in (('bonferroni', '3653145', '97.75'), ('range-calibrated', '3656701', '97.60')) for row in (
         ('confirmation_coverage', f'{method}: replicates', '3660000', f'overall/{method}/replicates', 1, 'value'),
         ('confirmation_coverage', f'{method}: covered replicates', covered, f'overall/{method}/covered', 1, 'value'),
@@ -202,10 +204,10 @@ ARTICLE += [
     ('endpoint_selection', 'compatible tables after the count', '546', 'reports/with count/compatible_tables', 1, 'value'),
     ('endpoint_selection', 'checked endpoints', '60', 'all_endpoints', 1, 'value'),
     ('endpoint_selection', 'largest endpoint difference (pp; bound)', '0.000000001', 'largest_endpoint_difference_pp', 1, 'bound'),
-    ('endpoint_selection', 'selected tables, median seconds before the count', '0.086', 'reports/summaries/median_seconds_selected', 1, 'timing'),
-    ('endpoint_selection', 'all tables, median seconds before the count', '4.537', 'reports/summaries/median_seconds_exhaustive', 1, 'timing'),
-    ('endpoint_selection', 'selected tables, median seconds after the count', '0.088', 'reports/with count/median_seconds_selected', 1, 'timing'),
-    ('endpoint_selection', 'all tables, median seconds after the count', '0.352', 'reports/with count/median_seconds_exhaustive', 1, 'timing'),
+    ('endpoint_selection', 'selected tables, median seconds before the count', '0.062', 'reports/summaries/median_seconds_selected', 1, 'timing'),
+    ('endpoint_selection', 'all tables, median seconds before the count', '4.622', 'reports/summaries/median_seconds_exhaustive', 1, 'timing'),
+    ('endpoint_selection', 'selected tables, median seconds after the count', '0.064', 'reports/with count/median_seconds_selected', 1, 'timing'),
+    ('endpoint_selection', 'all tables, median seconds after the count', '0.355', 'reports/with count/median_seconds_exhaustive', 1, 'timing'),
     ('examples', 'printed numbers that differ from the program output', '0', 'statuses/differs', 1, 'value'),
 ]
 

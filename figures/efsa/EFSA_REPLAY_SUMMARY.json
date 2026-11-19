@@ -2,7 +2,7 @@
   "status": "passed",
   "scope": "Replay of frozen public inputs against the explicitly identified installed wheel; sample identification and input/output interoperability only. No public-data iid coverage or predictive validation claim.",
   "software_version": "2.0.0",
-  "wheel_sha256": "c7ac028ac7c938184fb8562cd209e9959c98c1bb2c39e110c1c4fcb443bbb223",
+  "wheel_sha256": "ab6344837b65dfb8fa1308ea4e0715158fe3e34efc1ca36934ba01f59339699a",
   "public_source_countries": [
     "DE",
     "PL",
@@ -34,7 +34,7 @@
       "identified_ranges": 39,
       "range_endpoint_disagreements": 0,
       "population_claims": 0,
-      "runtime_seconds_sum": 10.076761916000578
+      "runtime_seconds_sum": 9.151711265003541
     },
     "selected_113": {
       "calls": 39,
@@ -48,7 +48,7 @@
       "identified_ranges": 1093,
       "range_endpoint_disagreements": 0,
       "population_claims": 0,
-      "runtime_seconds_sum": 11.888163575000362
+      "runtime_seconds_sum": 10.754217533976771
     },
     "complete": {
       "calls": 39,
@@ -62,7 +62,7 @@
       "identified_ranges": 1677,
       "range_endpoint_disagreements": 0,
       "population_claims": 0,
-      "runtime_seconds_sum": 12.09559642899876
+      "runtime_seconds_sum": 10.9192636180087
     }
   },
   "manuscript_example_before": [
@@ -76,8 +76,8 @@
   "invalid_inputs_refused": 6,
   "invalid_inputs_tested": 6,
   "cli_api_numeric_match": true,
-  "api_call_runtime_median_seconds": 0.26392849600051704,
-  "api_call_runtime_max_seconds": 0.5488369559998318,
-  "total_elapsed_seconds": 35.62360748100036,
+  "api_call_runtime_median_seconds": 0.24017581800580956,
+  "api_call_runtime_max_seconds": 0.42087350800284185,
+  "total_elapsed_seconds": 32.833068067993736,
   "statistical_caveat": "A new external computational application is not evidence for iid sampling or biological independence. The 39 drug marginals reuse some of 1583 isolates; the three countries are within one harmonized EFSA framework. The 113-count selection is supplied by a separate companion optimization workflow, not a feature newly implemented by this replay. Its previous 294-contrast population family is distinct from this sample-range check."
 }

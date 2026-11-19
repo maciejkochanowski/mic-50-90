@@ -50,7 +50,7 @@ NumPy, SciPy and Matplotlib. It is used only by `pba_comparison.py` and is not p
 | `endpoint_selection.py` | The ampicillin example of Section 3.1: selected tables against every compatible table. | 1 min | 1 min |
 | `examples_check.py` | Reruns the analyses of the article and Appendices B and C (`examples/appendix/COMMANDS.txt`) and compares every printed number with the program output. | 5 min | 5 min |
 | `verify_subsets.py` | Recomputes seeded subsets of every simulation and requires exact agreement with the supplied results; the quick reproduction check. | about 1 h | 2 min |
-| `summarize.py` | Collects the numbers of Section 2.5, the confirmation and the finite controls into `results/SUMMARY.json` and `results/tables/*.csv`. | 1 s | 1 s |
+| `summarize.py` | Collects the numbers of the evaluation in Section 2.5 and Appendix D, including the confirmation and the finite controls, into `results/SUMMARY.json` and `results/tables/*.csv`. | 1 s | 1 s |
 
 Each script explains its design in its docstring (`python evaluation/<script>.py --help`).
 
@@ -71,16 +71,16 @@ replicate draws a sample of the cohort's size, shortens it as the cohort report 
 checks whether every interval contains its population share. The random seed of a replicate is
 `[20261011, cohort position, replicate]`, so any replicate can be recomputed alone.
 
-The historical protocol's criterion of no configuration with statistically detected
-undercoverage is an empirical diagnostic. Non-rejection in finitely many simulated configurations
-does not prove or confirm a universal coverage guarantee. The guarantee must follow from a
-mathematical argument under its stated sampling assumptions; Monte Carlo uncertainty and the
-range of simulated configurations limit the empirical check. The original protocol is
-preserved unchanged in `protocols/PROTOCOL_1_0_1.md` with its SHA-256. The current `PROTOCOL.md`
-makes this interpretation explicit and records the 2026-11-14 reporting amendment without
-changing historical observations or design choices. New per-configuration summaries include
-attempted/completed/failed denominators and a labelled pointwise 95% Monte Carlo interval when
-there are no execution errors. Pooled heterogeneous configurations remain descriptive.
+The protocol's criterion of no configuration with statistically detected undercoverage is an
+empirical diagnostic. Non-rejection in finitely many simulated configurations does not prove or
+confirm a universal coverage guarantee. The guarantee must follow from a mathematical argument
+under its stated sampling assumptions; Monte Carlo uncertainty and the range of simulated
+configurations limit the empirical check. The original protocol is preserved unchanged in
+`protocols/PROTOCOL_1_0_1.md` with its SHA-256. The current `PROTOCOL.md` makes this
+interpretation explicit and records the 2026-11-14 reporting amendment without changing the design
+or the criteria. Per-configuration summaries include attempted/completed/failed denominators and a
+labelled pointwise 95% Monte Carlo interval when there are no execution errors. Pooled
+heterogeneous configurations remain descriptive.
 
 **Finite controls.** The four control scripts need no input files: every case is generated from
 explicit integer histograms, and the seeded cases use fixed seeds. Each oracle enumerates the
@@ -100,14 +100,11 @@ witness must match the report and be accepted exactly on every range. The script
 and their counts do not depend on the machine; the maximum endpoint difference of the population
 projections is a floating-point value and is compared with the stated bound.
 
-**Interpreting the P6 certificate count.** In the historical controlled benchmark,
+**Interpreting the P6 certificate count.** In the controlled benchmark,
 `endpoint_checks.shape_condition = 142` counts runtime results marked `certified`.
 The other two results are `not_checked`: direct endpoint witnesses already met the target.
-This field does not establish that the condition holds in only 142 of the 144 reports.
-The separate 2026-11-03 research audit explicitly checked every actual returned sample-size/cutoff
-pair and certified the sufficient condition for all 144 reports. Its case-level evidence is
-`research/wp6/results/independent/actual_conditions.json` in the research bundle. The historical
-summary remains unchanged so that its execution path is reproducible.
+This field counts which branch the program took; it does not establish that the condition holds in
+only 142 of the 144 reports.
 
 **Confirmation.** `PROTOCOL.md` fixes the data, the selection rules, the three report types, the
 criteria and the outputs. Replicate r of configuration c of a simulation uses the seed
@@ -204,8 +201,10 @@ calibration parts are kept.
 The confirmation runs as sharded jobs with `helios_confirmation.sbatch`; `PART` selects the step
 (`prepare`, `population`, `coverage`, `synthetic`, `calibration-real`, `calibration-synthetic` or
 `summary`) and `SHARD=i/n` the share of one job; a job of the same part without `SHARD` collects the
-shards. The supplied results used 4, 8, 6 and 4 shards of 48 cores for the population, coverage,
-synthetic and synthetic-unit parts, for example:
+shards. The supplied results used shards of 48 cores: 16 for the population part, 48 for the
+real-unit calibration and 64 for each of the coverage, synthetic and synthetic-unit parts. The number
+of shards does not change a result, because every block of work has its own seed and output file.
+For example:
 
 ```text
 sbatch -c 4 --export=ALL,PART=prepare evaluation/helios_confirmation.sbatch
@@ -221,9 +220,9 @@ The `prepare` step rebuilds the confirmation tables and stops if they differ fro
 
 | Path | Content |
 |---|---|
-| `results/SUMMARY.json` | Every number of Section 2.5: article value, reproduced value, status, package version and platform. |
+| `results/SUMMARY.json` | Every number of the evaluation in Section 2.5 and Appendix D: article value, reproduced value, status, package version and platform. |
 | `results/tables/article_numbers.csv` | The same list as a table. |
-| `results/tables/population_table3.csv`, `population_pairs.csv` | Table 3 and the paired cohort comparisons by kind of range. |
+| `results/tables/population_table3.csv`, `population_pairs.csv` | Table D.3 of Appendix D and the paired cohort comparisons by kind of range. |
 | `results/tables/coverage.csv`, `complete_tables.csv` | Per-cohort coverage and widths. |
 | `results/<comparison>/summary.json` | All quantities of one comparison, its settings, the package version and the platform. |
 | `results/population/runs/*.json` | The full result of every job, including all interval bounds. |
@@ -244,10 +243,12 @@ Status values in `SUMMARY.json`: `match` (equal at the precision printed in the 
 above a stated upper bound),
 `differs`, `timing` (seconds; these depend on the machine), `reduced run` and `not run`.
 
-The results supplied in `results/` were computed with MIC-50-90 1.0.1 and Python 3.11 on 192-core
-nodes of the Helios cluster (Cyfronet, Kraków), with the commands of `helios.sbatch` and
-`helios_confirmation.sbatch`; the seconds are those of these nodes. Every number matches the article
-and its supplements.
+The results supplied in `results/` were computed with the installed MIC-50-90 2.0.0 wheel, Python
+3.11.5, NumPy 2.3.5 and SciPy 1.17.0 on AMD EPYC 9654 nodes of the Helios cluster (Cyfronet, Kraków).
+The commands are those of `helios.sbatch` and `helios_confirmation.sbatch`, run as parallel jobs of
+4 to 192 cores; the job scripts are part of the reproduction package. The two population comparisons
+kept their scripts and outputs on node-local memory. The seconds are those of these nodes. Every number
+matches the article and its supplements.
 
 ## Tests, coverage and mutations
 

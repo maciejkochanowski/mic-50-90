@@ -1,6 +1,6 @@
 {
  "comparison": "synthetic_coverage",
- "created_utc": "2026-11-02T06:38:58+00:00",
+ "created_utc": "2026-11-19T14:05:54+00:00",
  "status": "complete",
  "full_design": true,
  "settings": {
@@ -23,84 +23,138 @@
  },
  "environment": {
   "package": "mic-50-90",
-  "package_version": "1.0.1",
+  "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1001c0s7b0n0",
+  "node": "x1000c4s4b0n2",
   "logical_cpus": 192,
   "versions": {
-   "numpy": "2.4.6",
-   "scipy": "1.17.1"
+   "numpy": "2.3.5",
+   "scipy": "1.17.0"
   },
   "thread_limits": {
    "OMP_NUM_THREADS": "1",
    "OPENBLAS_NUM_THREADS": "1",
    "MKL_NUM_THREADS": "1"
   },
-  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "protocol_sha256": "c595a39b52e2cadf2b37d3acc06e879064807eb0162dbf6029bb47c55afd67df",
   "processor": "AMD EPYC 9654 96-Core Processor",
-  "available_cpus": 4
+  "available_cpus": 16
  },
  "generators": {
   "G2": {
    "bonferroni": {
     "configurations": 840,
     "replicates": 840000,
+    "replicates_completed": 840000,
+    "replicates_attempted": 840000,
     "covered": 837227,
     "errors": 0,
+    "coverage": 0.9966988095238095,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9966988095238095,
     "lowest_coverage": 0.971,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9966988095238095
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 840,
     "replicates": 840000,
+    "replicates_completed": 840000,
+    "replicates_attempted": 840000,
     "covered": 837492,
     "errors": 0,
+    "coverage": 0.9970142857142857,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9970142857142857,
     "lowest_coverage": 0.976,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9970142857142857
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   },
   "G3": {
    "bonferroni": {
     "configurations": 540,
     "replicates": 540000,
+    "replicates_completed": 540000,
+    "replicates_attempted": 540000,
     "covered": 538272,
     "errors": 0,
+    "coverage": 0.9968,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9968,
     "lowest_coverage": 0.969,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9968
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 540,
     "replicates": 540000,
+    "replicates_completed": 540000,
+    "replicates_attempted": 540000,
     "covered": 538492,
     "errors": 0,
+    "coverage": 0.9972074074074074,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9972074074074074,
     "lowest_coverage": 0.969,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9972074074074074
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   },
   "G4": {
    "bonferroni": {
     "configurations": 360,
     "replicates": 360000,
+    "replicates_completed": 360000,
+    "replicates_attempted": 360000,
     "covered": 358912,
     "errors": 0,
+    "coverage": 0.9969777777777777,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9969777777777777,
     "lowest_coverage": 0.971,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9969777777777777
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 360,
     "replicates": 360000,
+    "replicates_completed": 360000,
+    "replicates_attempted": 360000,
     "covered": 359205,
     "errors": 0,
+    "coverage": 0.9977916666666666,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9977916666666666,
     "lowest_coverage": 0.978,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9977916666666666
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   }
  },
@@ -109,100 +163,190 @@
    "bonferroni": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 346639,
     "errors": 0,
+    "coverage": 0.9960890804597701,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9960890804597701,
     "lowest_coverage": 0.969,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9960890804597701
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 346956,
     "errors": 0,
+    "coverage": 0.997,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.997,
     "lowest_coverage": 0.969,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.997
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   },
   "30": {
    "bonferroni": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 346691,
     "errors": 0,
+    "coverage": 0.9962385057471265,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9962385057471265,
     "lowest_coverage": 0.975,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9962385057471265
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 347037,
     "errors": 0,
+    "coverage": 0.9972327586206896,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9972327586206896,
     "lowest_coverage": 0.98,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9972327586206896
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   },
   "100": {
    "bonferroni": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 346640,
     "errors": 0,
+    "coverage": 0.9960919540229886,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9960919540229886,
     "lowest_coverage": 0.971,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9960919540229886
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 346938,
     "errors": 0,
+    "coverage": 0.9969482758620689,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9969482758620689,
     "lowest_coverage": 0.98,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9969482758620689
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   },
   "300": {
    "bonferroni": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 347001,
     "errors": 0,
+    "coverage": 0.9971293103448275,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9971293103448275,
     "lowest_coverage": 0.974,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9971293103448275
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 347050,
     "errors": 0,
+    "coverage": 0.9972701149425287,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9972701149425287,
     "lowest_coverage": 0.977,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9972701149425287
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   },
   "1000": {
    "bonferroni": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 347440,
     "errors": 0,
+    "coverage": 0.9983908045977011,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9983908045977011,
     "lowest_coverage": 0.979,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9983908045977011
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    },
    "range-calibrated": {
     "configurations": 348,
     "replicates": 348000,
+    "replicates_completed": 348000,
+    "replicates_attempted": 348000,
     "covered": 347208,
     "errors": 0,
+    "coverage": 0.9977241379310345,
+    "coverage_denominator": "completed_replicates",
+    "coverage_over_attempted_replicates": 0.9977241379310345,
     "lowest_coverage": 0.976,
     "configurations_with_undercoverage": 0,
-    "coverage": 0.9977241379310345
+    "configurations_with_execution_errors": 0,
+    "pooled_interval": null,
+    "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+    "coverage_assessment": "no_undercoverage_detected",
+    "empirical_check_confirms_guarantee": false
    }
   }
  },
@@ -210,20 +354,38 @@
   "bonferroni": {
    "configurations": 1740,
    "replicates": 1740000,
+   "replicates_completed": 1740000,
+   "replicates_attempted": 1740000,
    "covered": 1734411,
    "errors": 0,
+   "coverage": 0.9967879310344827,
+   "coverage_denominator": "completed_replicates",
+   "coverage_over_attempted_replicates": 0.9967879310344827,
    "lowest_coverage": 0.969,
    "configurations_with_undercoverage": 0,
-   "coverage": 0.9967879310344827
+   "configurations_with_execution_errors": 0,
+   "pooled_interval": null,
+   "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+   "coverage_assessment": "no_undercoverage_detected",
+   "empirical_check_confirms_guarantee": false
   },
   "range-calibrated": {
    "configurations": 1740,
    "replicates": 1740000,
+   "replicates_completed": 1740000,
+   "replicates_attempted": 1740000,
    "covered": 1735189,
    "errors": 0,
+   "coverage": 0.9972350574712644,
+   "coverage_denominator": "completed_replicates",
+   "coverage_over_attempted_replicates": 0.9972350574712644,
    "lowest_coverage": 0.969,
    "configurations_with_undercoverage": 0,
-   "coverage": 0.9972350574712644
+   "configurations_with_execution_errors": 0,
+   "pooled_interval": null,
+   "pooled_interval_reason": "different_fixed_configuration_probabilities; use per-configuration Monte Carlo intervals",
+   "coverage_assessment": "no_undercoverage_detected",
+   "empirical_check_confirms_guarantee": false
   }
  }
 }

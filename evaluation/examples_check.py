@@ -77,19 +77,19 @@ def numbers(runs):
     out = []
     add = lambda doc, quantity, printed, value, scale=1: out.append((doc, quantity, printed, value, scale))
     before, after = cohort(runs, 'ampicillin-before'), cohort(runs, 'ampicillin-after')
-    for doc in ('Article 3.2', 'Appendix B.5/B.7', 'Appendix C.3'):
+    for doc in ('Article 3.1', 'Appendix B.5/B.7', 'Appendix C.3'):
         add(doc, 'ampicillin 0.5 mg/L, summaries: lowest count', '1', category(before, '0.5')['count_lower'])
         add(doc, 'ampicillin 0.5 mg/L, summaries: highest count', '32', category(before, '0.5')['count_upper'])
         add(doc, 'ampicillin 0.5 mg/L, with 59 at <=0.25: lowest count', '2', category(after, '0.5')['count_lower'])
         add(doc, 'ampicillin 0.5 mg/L, with 59 at <=0.25: highest count', '7', category(after, '0.5')['count_upper'])
     add('Appendix C.3', 'ampicillin 0.5 mg/L, MIC90 rank 60: lowest count', '1', category(cohort(runs, 'ampicillin-rank60'), '0.5')['count_lower'])
     add('Appendix C.3', 'ampicillin 0.5 mg/L, MIC90 rank 60: highest count', '7', category(cohort(runs, 'ampicillin-rank60'), '0.5')['count_upper'])
-    add('Article 3.2', 'ampicillin 0.5 mg/L share, lower (%)', '2.99', category(after, '0.5')['fraction_lower'], 100)
-    add('Article 3.2', 'ampicillin 0.5 mg/L share, upper (%)', '10.45', category(after, '0.5')['fraction_upper'], 100)
+    add('Article 3.1', 'ampicillin 0.5 mg/L share, lower (%)', '2.99', category(after, '0.5')['fraction_lower'], 100)
+    add('Article 3.1', 'ampicillin 0.5 mg/L share, upper (%)', '10.45', category(after, '0.5')['fraction_upper'], 100)
     add('Appendix B.5', 'ampicillin 0.5 mg/L share before the count, lower (%)', '1.49', category(before, '0.5')['fraction_lower'], 100)
     add('Appendix B.5', 'ampicillin 0.5 mg/L share before the count, upper (%)', '47.76', category(before, '0.5')['fraction_upper'], 100)
     guide_before, guide_after = cohort(runs, 'guide-before'), cohort(runs, 'guide-after')
-    for doc in ('Article 3.3', 'Appendix B.6/B.7', 'Appendix C.4'):
+    for doc in ('Article 3.1', 'Appendix B.6/B.7', 'Appendix C.4'):
         add(doc, 'population interval, category 0.5, summaries: lower (%)', '0.004', population_category(guide_before, 2)[0], 100)
         add(doc, 'population interval, category 0.5, summaries: upper (%)', '65.22', population_category(guide_before, 2)[1], 100)
         add(doc, 'population interval, category 0.5, with count: lower (%)', '0.109', population_category(guide_after, 2)[0], 100)
@@ -98,10 +98,10 @@ def numbers(runs):
     add('Appendix B.6', 'compatible tables evaluated, with count', '2', guide_after['population']['evaluated_histograms'])
     chloramphenicol = cohort(runs, 'chloramphenicol')
     question = chloramphenicol['decisions'][0]['sample']['count_components'][0]
-    for doc in ('Article 3.4', 'Appendix C.5'):
+    for doc in ('Article 3.2', 'Appendix C.5'):
         add(doc, 'chloramphenicol above 2 mg/L: lowest count', '34', question[0])
         add(doc, 'chloramphenicol above 2 mg/L: highest count', '67', question[1])
-    add('Article 3.4', 'chloramphenicol above 2 mg/L: lowest share (%)', '50.75', question[0] / 67, 100)
+    add('Article 3.2', 'chloramphenicol above 2 mg/L: lowest share (%)', '50.75', question[0] / 67, 100)
     add('Appendix C.5', 'chloramphenicol: results recorded <=4', '33', category(chloramphenicol, '<=4')['count_lower'])
     shares = {}
     for year in YEARS:
@@ -109,13 +109,13 @@ def numbers(runs):
         middle = category(result, '(0.06,2]')
         assert middle['count_lower'] == middle['count_upper']
         shares[year] = (middle['count_lower'], result['n'])
-        add('Article Figure 3', f'penicillin {year}: isolates >0.06 to 2 mg/L', str(middle['count_lower']), middle['count_lower'])
-        add('Article Figure 3', f'penicillin {year}: isolates', str(result['n']), result['n'])
-        add('Article Figure 3', f'penicillin {year}: share >0.06 to 2 mg/L (%)', f'{100 * middle["count_lower"] / result["n"]:.1f}',
+        add('Technical Archive T7.2', f'penicillin {year}: isolates >0.06 to 2 mg/L', str(middle['count_lower']), middle['count_lower'])
+        add('Technical Archive T7.2', f'penicillin {year}: isolates', str(result['n']), result['n'])
+        add('Technical Archive T7.2', f'penicillin {year}: share >0.06 to 2 mg/L (%)', f'{100 * middle["count_lower"] / result["n"]:.2f}',
             middle['count_lower'] / result['n'], 100)
     for year, printed in ((2016, '19.64'), (2018, '18.10'), (2021, '29.19')):
-        add('Article 3.1 / Appendix C.2', f'penicillin {year}: share >0.06 to 2 mg/L (%)', printed, shares[year][0] / shares[year][1], 100)
-    add('Article 3.1', 'isolates 2007-2021', '7133', sum(n for _, n in shares.values()))
+        add('Appendix C.2', f'penicillin {year}: share >0.06 to 2 mg/L (%)', printed, shares[year][0] / shares[year][1], 100)
+    add('Appendix C.2', 'isolates 2007-2021', '7133', sum(n for _, n in shares.values()))
     for name, printed in (('precision-before', ((75.62, 83.67), (0, 24.38), (0, 24.38), 2)),
                           ('precision-after', ((75.62, 83.67), (14.47, 22.20), (0.90, 3.88), 3))):
         result = cohort(runs, name)
@@ -126,17 +126,17 @@ def numbers(runs):
         add('Appendix C.6', f'{name}: confirmed groups', str(printed[3]), result['population_resolution']['guaranteed_number_of_bins'])
     sequential = read_json(runs / 'request-sequential' / 'results.json')[0]['result']['acquisition_plan']
     grouped = read_json(runs / 'request-batch' / 'results.json')[0]['result']['acquisition_plan']
-    for doc in ('Appendix A.7', 'Appendix C.7'):
+    for doc in ('Appendix A.6', 'Appendix C.7'):
         add(doc, 'teaching request, no round cost: worst-case cost', '2', sequential['worst_case_cost'])
         add(doc, 'teaching request, round cost 2: worst-case cost', '5', grouped['worst_case_cost'])
     laboratory = read_json(runs / 'laboratory-requests' / 'results.json')[0]['result']
-    add('Appendix A.7 / C.7', 'laboratory cohort: counts requested (worst case)', '0', laboratory['acquisition_plan']['worst_case_cost'])
-    add('Appendix A.7 / C.7', 'laboratory cohort: observations', '266', laboratory['sample_size'])
+    add('Appendix A.6 / C.7', 'laboratory cohort: counts requested (worst case)', '0', laboratory['acquisition_plan']['worst_case_cost'])
+    add('Appendix A.6 / C.7', 'laboratory cohort: observations', '266', laboratory['sample_size'])
     models = read_json(runs / 'models.json')['threshold_results'][0]
     scenarios = read_json(runs / 'scenarios.json')['assumption_dependent_scenarios']
     wide = read_json(runs / 'reference-wide.json')['assumption_dependent_scenarios']['wasserstein_ambiguity_set']['threshold_results'][0]['envelope']
     efficiency, bayes = models['optional_efficiency_analysis'], models['bayesian_sensitivity']
-    for doc in ('Appendix A (at a glance)', 'Appendix C.10'):
+    for doc in ('Appendix D (at a glance)', 'Appendix C.10'):
         add(doc, 'maximum entropy, share above 0.25 mg/L (%)', '29.10', scenarios['maximum_entropy']['tail_estimates']['0.25'], 100)
         add(doc, 'multinomial likelihood, share above 0.25 mg/L (%)', '28.21', efficiency['population_tail_mle'], 100)
     add('Appendix C.10', 'KL projection to a uniform reference (%)', '29.10', scenarios['kl_reference_projection']['tail_estimates']['0.25'], 100)

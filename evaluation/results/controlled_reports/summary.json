@@ -1,27 +1,27 @@
 {
  "comparison": "controlled_reports",
- "created_utc": "2026-11-02T05:24:26+00:00",
+ "created_utc": "2026-11-19T12:24:43+00:00",
  "status": "complete",
  "full_design": true,
- "elapsed_seconds": 4.03501246497035,
+ "elapsed_seconds": 3.5332613920036238,
  "environment": {
   "package": "mic-50-90",
-  "package_version": "1.0.1",
+  "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1001c6s1b0n3",
+  "node": "x1000c1s6b0n1",
   "logical_cpus": 192,
   "versions": {
-   "numpy": "2.4.6",
-   "scipy": "1.17.1"
+   "numpy": "2.3.5",
+   "scipy": "1.17.0"
   },
   "thread_limits": {
    "OMP_NUM_THREADS": "1",
    "OPENBLAS_NUM_THREADS": "1",
    "MKL_NUM_THREADS": "1"
   },
-  "protocol_sha256": "60bd820f3524ad622a6c2f8b8b5531fd8d30b2c083b04b761b073fdc2c6d901e",
+  "protocol_sha256": "c595a39b52e2cadf2b37d3acc06e879064807eb0162dbf6029bb47c55afd67df",
   "processor": "AMD EPYC 9654 96-Core Processor",
   "available_cpus": 192
  },
@@ -115,8 +115,8 @@
     "confirmed": 18,
     "shape": 18,
     "direct_witness": 0,
-    "median_seconds": 0.012064281036145985,
-    "maximum_seconds": 0.012438519042916596
+    "median_seconds": 0.011861908496939577,
+    "maximum_seconds": 0.02318357100011781
    },
    {
     "k": 5,
@@ -125,8 +125,8 @@
     "confirmed": 18,
     "shape": 17,
     "direct_witness": 1,
-    "median_seconds": 0.0336410750169307,
-    "maximum_seconds": 0.05656585993710905
+    "median_seconds": 0.019729362000362016,
+    "maximum_seconds": 0.05588031999650411
    },
    {
     "k": 5,
@@ -135,8 +135,8 @@
     "confirmed": 18,
     "shape": 17,
     "direct_witness": 1,
-    "median_seconds": 0.14309631002834067,
-    "maximum_seconds": 0.1964533959981054
+    "median_seconds": 0.048412410003948025,
+    "maximum_seconds": 0.052169404007145204
    },
    {
     "k": 5,
@@ -145,8 +145,8 @@
     "confirmed": 18,
     "shape": 18,
     "direct_witness": 0,
-    "median_seconds": 0.18916980997892097,
-    "maximum_seconds": 0.30884091602638364
+    "median_seconds": 0.11115027099731378,
+    "maximum_seconds": 0.12293284900079016
    },
    {
     "k": 8,
@@ -155,8 +155,8 @@
     "confirmed": 18,
     "shape": 18,
     "direct_witness": 0,
-    "median_seconds": 0.05356757453409955,
-    "maximum_seconds": 0.10928581701591611
+    "median_seconds": 0.016750943002989516,
+    "maximum_seconds": 0.017851083001005463
    },
    {
     "k": 8,
@@ -165,8 +165,8 @@
     "confirmed": 18,
     "shape": 18,
     "direct_witness": 0,
-    "median_seconds": 0.02659527602372691,
-    "maximum_seconds": 0.09006895695347339
+    "median_seconds": 0.030032934999326244,
+    "maximum_seconds": 0.05015275499317795
    },
    {
     "k": 8,
@@ -175,8 +175,8 @@
     "confirmed": 18,
     "shape": 18,
     "direct_witness": 0,
-    "median_seconds": 0.08912887750193477,
-    "maximum_seconds": 0.1357071219244972
+    "median_seconds": 0.06198038049478782,
+    "maximum_seconds": 0.08995257099741139
    },
    {
     "k": 8,
@@ -185,8 +185,8 @@
     "confirmed": 18,
     "shape": 18,
     "direct_witness": 0,
-    "median_seconds": 0.2313932284596376,
-    "maximum_seconds": 0.2876659140456468
+    "median_seconds": 0.1161670785077149,
+    "maximum_seconds": 0.13056267000501975
    }
   ]
  },
@@ -195,7 +195,7 @@
   "confirmed": 15,
   "maximum_n": 1000,
   "maximum_k": 16,
-  "minimum_seconds": 0.034197387052699924,
-  "maximum_seconds": 0.28348886605817825
+  "minimum_seconds": 0.028121833005570807,
+  "maximum_seconds": 0.2804161079984624
  }
 }

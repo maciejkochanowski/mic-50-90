@@ -1,35 +1,33 @@
 {
  "comparison": "tests_and_coverage",
- "package_version": "1.0.1",
+ "package_version": "2.0.0",
  "python_tests": {
-  "passed": 1540,
+  "passed": 1601,
   "failed": 0,
-  "command": "python -m pytest tests --cov"
- },
- "javascript_tests": {
-  "passed": 46,
-  "failed": 0,
-  "command": "node --test \"tests/*.cjs\""
+  "errors": 0,
+  "skipped": 0,
+  "command": "python -m pytest tests -n 64 --cov=mic_50_90 (installed wheel, outside the source checkout)"
  },
  "coverage": {
   "package": "mic_50_90",
-  "statements": 10907,
-  "statements_covered": 9920,
-  "statement_percent": 90.95,
-  "branches": 4614,
-  "branches_covered": 3785,
-  "branch_percent": 82.03,
-  "tool": "coverage.py 7.17.0"
+  "statements": 10634,
+  "statements_covered": 9649,
+  "statement_percent": 90.74,
+  "branches": 4414,
+  "branches_covered": 3612,
+  "branch_percent": 81.83,
+  "tool": "coverage.py 7.17.3"
  },
- "end_to_end_checks": {
-  "passed": 3,
+ "galaxy_tool_tests": {
+  "passed": 10,
   "failed": 0,
-  "commands": [
-   "python tools/check_browser.py --output browser-check/reopened",
-   "python tools/check_browser.py --acceptance --output browser-check/acceptance",
-   "python tools/check_browser.py --examples examples/appendix --output browser-check/worked-example"
-  ],
-  "browser": "Chromium (Playwright 1.63.0)"
+  "command": "planemo test galaxy/tools/mic_50_90",
+  "galaxy": "25.0",
+  "tools": [
+   "mic_50_90_distribution",
+   "mic_50_90_reporting",
+   "mic_50_90_verify_report"
+  ]
  },
  "static_checks": {
   "ruff": {
@@ -40,14 +38,17 @@
   "mypy": {
    "version": "2.4.1",
    "command": "mypy",
-   "files": 69,
+   "files": 71,
    "findings": 0
   }
  },
  "environment": {
-  "python": "3.13.18",
-  "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
   "pytest": "9.2.0",
-  "logical_cpus": 2
+  "logical_cpus": 192,
+  "machine": "one CPU node of the Helios cluster"
  }
 }

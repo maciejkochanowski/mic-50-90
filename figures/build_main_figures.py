@@ -1,5 +1,5 @@
 """MIC-50-90 SoftwareX figures: six single-graph main figures and four single-graph
-supplementary figures, drawn from archived numeric records.
+supplementary figures, drawn from the numeric records in data/ and efsa/.
 
 Every plotted value is asserted against its source file before drawing. No analysis is
 rerun here; the Figure 3 values are also checked against a rerun with the installed

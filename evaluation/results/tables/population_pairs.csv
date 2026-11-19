@@ -3,11 +3,11 @@ bonferroni,range-calibrated,cumulative,20,0,20,0,3.8908627832157094,-6,2
 bonferroni,range-calibrated,single,20,20,0,0,-12.302252626820497,17,1
 bonferroni,range-calibrated,internal,20,15,5,0,-3.7687868433176064,3,0
 bonferroni,range-calibrated,all,20,15,5,0,-1.534853872302644,14,2
-bonferroni,joint-exact,cumulative,20,4,0,16,-0.4770215353426921,0,0
-bonferroni,joint-exact,single,20,4,0,16,-0.8893082793119067,0,0
-bonferroni,joint-exact,internal,20,8,0,12,-0.31210368078652406,0,0
-bonferroni,joint-exact,all,20,9,0,11,-0.5129661987565259,0,0
+bonferroni,joint-exact,cumulative,20,2,0,18,-0.2077998843298512,0,0
+bonferroni,joint-exact,single,20,3,0,17,-0.4359887134294138,0,0
+bonferroni,joint-exact,internal,20,5,0,15,-0.06566751124122971,0,0
+bonferroni,joint-exact,all,20,6,0,14,-0.2132548688638325,0,0
 range-calibrated,range-hunter,cumulative,20,0,1,19,0.028819327776208326,0,0
-range-calibrated,range-hunter,single,20,2,0,18,-0.2858418486649694,0,0
+range-calibrated,range-hunter,single,20,2,0,18,-0.3071785094618251,0,0
 range-calibrated,range-hunter,internal,20,0,1,19,0.021175429740893925,0,0
-range-calibrated,range-hunter,all,20,1,1,18,-0.02956474169130141,0,0
+range-calibrated,range-hunter,all,20,1,1,18,-0.03337984169773378,0,0
