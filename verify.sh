@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Software verification: source integrity, self-test, Python and JavaScript tests.
+# Software verification: source integrity, self-test and Python tests.
 # Usage: bash verify.sh [MANIFEST]
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -9,12 +9,10 @@ PY=".venv/bin/python"
 [ -x "$PY" ] || { echo "No Python interpreter found"; exit 2; }
 MAN="${1:-PACKAGE_MANIFEST.sha256}"
 export PYTHONPATH="src${PYTHONPATH:+:$PYTHONPATH}"
-echo "1/4 Source integrity"
+echo "1/3 Source integrity"
 "$PY" scripts/refresh_package_manifest.py --check --manifest "$MAN"
-echo "2/4 Offline software self-test"
+echo "2/3 Offline software self-test"
 "$PY" reproducibility/self_test.py
-echo "3/4 Python tests"
+echo "3/3 Python tests"
 "$PY" -m pytest tests -q -rs
-echo "4/4 JavaScript form tests"
-node --test "tests/*.cjs"
-echo "PASS: software source integrity, controlled report, Python and JavaScript tests"
+echo "PASS: software source integrity, controlled report and Python tests"

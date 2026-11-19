@@ -1,6 +1,6 @@
 # Isolated distribution execution and arithmetic certificates
 
-These changes are a checked development revision of MIC-50-90 1.0.1. The method
+The method
 default remains `bonferroni`. A process-control option does not add a statistical
 guarantee or make iid inference valid for dependent observations.
 

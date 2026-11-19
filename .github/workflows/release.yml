@@ -7,7 +7,7 @@ on:
         description: Tag matching the declared package version (optionally with a release label)
         required: true
         type: string
-        default: v1.0.3
+        default: v2.0.0
       publish_github:
         description: Explicitly approve publishing the verified candidate on GitHub
         required: true
@@ -54,9 +54,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
       - uses: actions/download-artifact@v4
         with:
           name: software-packages
@@ -64,8 +61,6 @@ jobs:
       - run: python -m pip install "$(find candidate -name '*.whl' -print -quit)[test]"
       - name: Test Python behaviour
         run: python tools/run_test_evidence.py run --wheel "$(find candidate -name '*.whl' -print -quit)" --commit "$GITHUB_SHA" --manifest candidate/expected-tests.json --junit test-results.xml
-      - name: Test form behaviour
-        run: node --test "tests/*.cjs"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -105,66 +100,17 @@ jobs:
         run: |
           export MIC50_90_IMAGE="mic-50-90:$(python tools/release_version.py)"
           docker build -t "$MIC50_90_IMAGE" .
-          docker run --rm "$MIC50_90_IMAGE" bash -euo pipefail -c 'node --version; uv pip check; python reproducibility/self_test.py; python scripts/refresh_package_manifest.py --check'
-          python -c 'import json, os; from pathlib import Path; Path("release/Docker-runtime-check.json").write_text(json.dumps({"status": "passed", "source_commit": os.environ["GITHUB_SHA"], "image": os.environ["MIC50_90_IMAGE"], "checks": ["node", "dependencies", "offline_self_test", "source_manifest"]}, indent=2) + "\n", encoding="utf-8")'
+          docker run --rm "$MIC50_90_IMAGE" bash -euo pipefail -c 'uv pip check; python reproducibility/self_test.py; python scripts/refresh_package_manifest.py --check'
+          python -c 'import json, os; from pathlib import Path; Path("release/Docker-runtime-check.json").write_text(json.dumps({"status": "passed", "source_commit": os.environ["GITHUB_SHA"], "image": os.environ["MIC50_90_IMAGE"], "checks": ["dependencies", "offline_self_test", "source_manifest"]}, indent=2) + "\n", encoding="utf-8")'
       - uses: actions/upload-artifact@v4
         with:
           name: software-packages
-          overwrite: true
-          path: release/*
-          if-no-files-found: error
-
-  windows:
-    needs: packages
-    if: github.ref == 'refs/heads/main'
-    runs-on: windows-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.sha }}
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - uses: actions/download-artifact@v4
-        with:
-          name: software-packages
-          path: candidate
-      - run: python -m pip install "$(find candidate -name '*.whl' -print -quit)" pyinstaller
-      - name: Build Windows application
-        run: python tools/build_windows.py --output windows-build
-      - name: Run the packaged application and compare it with CLI
-        run: python tools/check_windows_release.py --application windows-build/application/MIC-50-90/MIC-50-90.exe --receipt release/Windows-runtime-check.json
-      - run: npm install --no-save playwright
-      - run: npx playwright install chromium
-      - name: Test the packaged form in Chromium
-        run: |
-          python tools/check_browser.py --application windows-build/application/MIC-50-90/MIC-50-90.exe --output browser-check/reopened
-          python tools/check_browser.py --acceptance --application windows-build/application/MIC-50-90/MIC-50-90.exe --output browser-check/acceptance
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: windows-browser-diagnostics
-          path: browser-check/
-      - name: Package the tested Windows application
-        run: python tools/software_release.py windows --application windows-build/application/MIC-50-90 --output "release/MIC-50-90-$(python tools/release_version.py)-Windows-x64.zip"
-      - name: Include Windows verification receipts
-        run: |
-          cp windows-build/BUILD_RECEIPT.json release/Windows-build-receipt.json
-          cp browser-check/reopened/REOPENED_OPTIONS.json release/Windows-browser-check.json
-          cp browser-check/acceptance/ACCEPTANCE_BROWSER.json release/Windows-browser-acceptance.json
-      - uses: actions/upload-artifact@v4
-        with:
-          name: software-windows
           overwrite: true
           path: release/*
           if-no-files-found: error
 
   verify:
-    needs: [test, packages, windows]
+    needs: [test, packages]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -189,7 +135,7 @@ jobs:
           if-no-files-found: error
 
   publish:
-    needs: [test, packages, windows, verify]
+    needs: [test, packages, verify]
     if: inputs.publish_github && github.ref == 'refs/heads/main'
     environment: github-release
     runs-on: ubuntu-latest

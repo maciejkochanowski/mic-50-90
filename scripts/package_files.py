@@ -18,7 +18,7 @@ ROOT_FILES = (
 )
 SOURCE_DIRECTORIES = (
     "src", "tests", "schemas", "examples", "evaluation", "docs", "formal", "scripts", "reproducibility",
-    ".github/workflows", "tools",
+    ".github/workflows", "tools", "galaxy",
 )
 EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".git", ".venv", "node_modules", ".lake"}
 

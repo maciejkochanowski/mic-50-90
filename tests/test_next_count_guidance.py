@@ -3,7 +3,6 @@ from pathlib import Path
 
 from mic_50_90.distribution_workflow import analyse_distribution
 from mic_50_90.distribution_report import render_distribution_html
-from mic_50_90.gui_forms import validate_payload
 from mic_50_90.result_view import distribution_overview
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -37,24 +36,6 @@ def test_next_count_wording_names_the_categories():
            'summaries': {'minimum': '<=1', 'maximum': '>4'}}
     step = analyse_distribution(raw)['interpretation']['next_step']
     assert 'first 1 recorded' not in step and 'groups,' not in step
-
-
-def test_batch_mode_accepts_any_population_method_left_by_the_distribution_view():
-    from copy import deepcopy
-    from mic_50_90.gui_forms import desktop_examples
-    example = next(item for item in desktop_examples() if item['id'] == 'summary20')
-    for method in ('bonferroni', 'joint-exact', 'range-calibrated', 'range-hunter'):
-        payload = deepcopy(example['payload'])
-        payload['mode'] = 'batch'
-        payload['targets'] = [{'threshold': 1, 'unit': 'mg/L', 'decision_operator': '<', 'decision_fraction': '0.3'}]
-        payload['options'] = {'population_method': method, 'population_time_limit': 30,
-                              'population_tolerance_pp': 0.01, 'precision_pp': None,
-                              'population_precision_pp': None, 'population_count_plan': False,
-                              'population_minimum_bins': None}
-        result = validate_payload(payload)
-        assert result['valid'], result['issues']
-        assert not [w for w in result['warnings'] if w['field'].startswith('options.population')
-                    or w['field'] == 'options.precision_pp']
 
 
 def test_range_hunter_unfinished_refinement_is_reported():

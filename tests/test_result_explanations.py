@@ -5,7 +5,6 @@ import json
 
 from mic_50_90.distribution_workflow import analyse_distribution
 from mic_50_90.distribution_report import render_distribution_html
-from mic_50_90.gui_forms import desktop_examples
 
 
 def published():
@@ -61,15 +60,6 @@ def test_saved_update_compares_sample_bounds_recomputed_from_original_input():
     assert result.get('sample_comparison', {}).get('status') == 'complete'
     assert result['sample_comparison']['before']['categories'][2]['count_upper'] == 1726
     assert result['sample_comparison']['added_counts'][0]['count'] == 143
-
-
-def test_real_laboratory_example_is_available_without_removing_controlled_cases():
-    examples = {row['id']: row['payload'] for row in desktop_examples()}
-    assert {'published7133', 'laboratory276', 'counts20', 'summary20'} <= examples.keys()
-    example = examples['laboratory276']
-    assert example['config']['n'] == 276
-    assert sum(row['count'] for row in example['histogram']) == 276
-    assert len(example['targets']) == 4
 
 
 def test_chart_preserves_disconnected_components_and_escapes_source_labels():

@@ -6,7 +6,7 @@ With explicitly re-summarized MIC50 = 0.125 and MIC90 = 0.25 mg/L, the answer is
 
 ## Run
 
-Install MIC-50-90 (`pip install mic-50-90==1.0.1`), then run these single-line commands from the repository root:
+Install MIC-50-90 (`pip install mic-50-90==2.0.0`), then run these single-line commands from the repository root:
 
 ```text
 mic-50-90 batch examples/published_table/summaries.csv --panels examples/published_table/panels.csv --targets examples/published_table/targets.csv --output-dir output/published-summary

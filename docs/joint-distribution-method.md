@@ -1,6 +1,6 @@
 # Joint population inference from incomplete MIC reports
 
-MIC-50-90 1.0.1. Mathematical specification and implementation requirements.
+MIC-50-90: mathematical specification and implementation requirements.
 
 This method estimates the distribution of **recorded MIC categories in one
 population**, using a sample whose report may omit category counts. It does not

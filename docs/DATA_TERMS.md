@@ -1,4 +1,4 @@
-# Source-data terms for MIC-50-90 1.0.1
+# Source-data terms for MIC-50-90
 
 The software uses MIT. Example inputs retain their own source terms and attribution. The software package contains small runnable examples and source records, not the complete research data collection.
 

@@ -1,8 +1,8 @@
-# MIC-50-90 1.0.3
+# MIC-50-90 2.0.0
 
-Version **1.0.3** publishes a container image with each release; its computations and results are those of 1.0.2 (see `CHANGELOG.md`). The release files and their checksums are attached to the [GitHub release](https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.3) and archived at Zenodo.
+Changes between versions are listed in `CHANGELOG.md`. The release files and their checksums are attached to the [GitHub release](https://github.com/maciejkochanowski/mic-50-90/releases/tag/v2.0.0) and archived at Zenodo.
 
-MIC-50-90 is a Python package for bounding MIC distributions from incomplete susceptibility reports. Published antimicrobial susceptibility results often give only MIC50, MIC90, a range and a few percentages. From these, and from exact or rounded counts, MIC-50-90 computes the smallest and largest count the report allows in every MIC category and range, names the count that would narrow an open question most, selects counts a laboratory can publish so that readers can check its conclusions, and gives optional population bounds under stated sampling assumptions. A local browser form, a Windows application, the command line and the Python interface use the same calculation engine.
+MIC-50-90 is a Python package for bounding MIC distributions from incomplete susceptibility reports. Published antimicrobial susceptibility results often give only MIC50, MIC90, a range and a few percentages. From these, and from exact or rounded counts, MIC-50-90 computes the smallest and largest count the report allows in every MIC category and range, names the count that would narrow an open question most, selects counts a laboratory can publish so that readers can check its conclusions, and gives optional population bounds under stated sampling assumptions. The Python interface, the command line and the Galaxy tools use the same calculation engine.
 
 Use it to interpret an unreported concentration range, distinguish missing counts from measurement censoring, determine which additional counts would resolve a question, or prepare a short laboratory report whose conclusions a recipient can verify. Inputs refer to the same original isolates and retain their denominator, panel, units and reporting convention.
 
@@ -13,18 +13,18 @@ Use Python 3.11–3.13 in a separate environment. The release checksums identify
 Install from PyPI with the Python interpreter of that environment:
 
 ```text
-python -m pip install mic-50-90==1.0.3
-mic-50-90 gui
+python -m pip install mic-50-90==2.0.0
+mic-50-90 --help
 ```
 
-To install from a source checkout, run `python -m pip install .` from its root directory. The guided form opens in your local browser; use **Quit application** to stop it.
+To install from a source checkout, run `python -m pip install .` from its root directory.
 
-A portable Windows application is part of a release only when the release workflow attaches it together with its build and browser-test receipts. Earlier releases keep their own files and validation records.
+For work in a web browser without installing anything, the MIC-50-90 Galaxy tools describe a distribution, audit a laboratory report and check a received certificate. Their wrappers and tests are in `galaxy/`.
 
 Each release is also published as a container image that already contains Python and all dependencies, so only Docker or another container runtime is needed. On Linux or macOS, this runs the program on files in the current folder:
 
 ```text
-docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/data" -w /data ghcr.io/maciejkochanowski/mic-50-90:1.0.3 mic-50-90 --help
+docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/data" -w /data ghcr.io/maciejkochanowski/mic-50-90:2.0.0 mic-50-90 --help
 ```
 
 Started without a command, the container runs the software checks.
@@ -42,7 +42,7 @@ Download the source archive for the example inputs, schemas and documentation. F
 mic-50-90 distribution examples/distribution/summaries.json --precision-pp 10 --output-dir output/distribution
 ```
 
-Open the generated `report.html`. Reports also provide CSV/JSON results and reusable input settings. The wheel installs the application and library; the software source release supplies the tests, formal checks, examples and user documentation.
+Open the generated `report.html`. Reports also provide CSV/JSON results and reusable input settings. The wheel installs the command line and the library; the software source release supplies the tests, formal checks, examples and user documentation.
 
 ## Choose the inference you need
 
@@ -71,8 +71,9 @@ The main mathematical result gives a checkable P6 endpoint-attainment condition:
 
 | Folder | Purpose |
 |---|---|
-| `src` | Calculation engine, CLI, Windows application and report resources |
+| `src` | Calculation engine, command line and report resources |
 | `tests` | Automated checks of calculations, input handling and interfaces |
+| `galaxy` | Galaxy tool wrappers with their test data |
 | `tools` and `.github/workflows` | Build, test and publish the software packages |
 | `docs` and `schemas` | Installation, usage, input formats and output definitions |
 | `examples` and `data` | Small example inputs, source attribution and data terms |
@@ -80,9 +81,8 @@ The main mathematical result gives a checkable P6 endpoint-attainment condition:
 | `evaluation` | Inputs, scripts and result tables of the comparisons reported in the article |
 | `scripts` | Source manifest, source bundle, archive installation check, command reference and document claim check |
 
-The Windows application and CLI use the same calculation engine. Article-production files are maintained outside this repository.
+The command line, the Python interface and the Galaxy tools use the same calculation engine. Article-production files are maintained outside this repository.
 
-- [Windows user guide](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/GUI_GUIDE.md): installation, data entry, saved analyses and reports.
 - [Distribution guide](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/distribution-user-guide.md): an end-to-end CLI analysis and interpretation.
 - [CLI reference](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/CLI_REFERENCE.md): every command and option.
 - [Python interface](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/PYTHON_INTERFACE.md): callable analysis functions and update contracts.
@@ -90,7 +90,7 @@ The Windows application and CLI use the same calculation engine. Article-product
 - [Public functions](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/PUBLIC_FUNCTIONS.md): tasks, implementation and independent checks.
 - [Reproducing software checks](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/REPRODUCING_RESULTS.md) and [formal algebra](https://github.com/maciejkochanowski/mic-50-90/blob/main/formal/README.md).
 
-The GitHub Actions workflow tests installed packages on Windows and Linux with Python 3.11–3.13. The release workflow builds the Python and Windows packages, checks their contents and attaches only software assets. Consult the completed Actions run and the release checksums for the exact distributed files.
+The GitHub Actions workflow tests installed packages on Windows and Linux with Python 3.11–3.13. The release workflow builds the Python packages and the container image, checks their contents and attaches only software assets. Consult the completed Actions run and the release checksums for the exact distributed files.
 
 Manuscripts, supplementary appendices and editorial figures are maintained separately. They are not included in this repository, its software release assets, or a software deposit generated from this repository. [Distribution policy](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/DISTRIBUTION_POLICY.md).
 

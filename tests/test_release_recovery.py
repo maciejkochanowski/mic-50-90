@@ -35,8 +35,8 @@ def test_upload_failure_can_reuse_successful_build(recovery):
     run, jobs, artifacts = origin_fixture(recovery)
     result = recovery.validate_origin(run, jobs, artifacts, "owner/repo", 123)
     assert result["source_commit"] == "a" * 40
-    assert len(result["jobs"]) == 8
-    assert len(result["artifacts"]) == 9
+    assert len(result["jobs"]) == 7
+    assert len(result["artifacts"]) == 8
 
 
 @pytest.mark.parametrize("change", ["foreign_repository", "pull_request", "other_workflow", "unfinished", "failed_job", "missing_job", "foreign_job_commit", "expired_artifact", "foreign_artifact_commit", "missing_artifact"])

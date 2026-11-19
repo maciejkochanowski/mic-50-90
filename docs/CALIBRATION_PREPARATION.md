@@ -1,6 +1,6 @@
 # Prepare calibration from complete category counts
 
-`calibration-prepare` turns complete category histograms and an independently specified roster into a calibration manifest and a `calibrations.json` file for `batch --calibrations`. It saves an HTML report, cohort and unit scores, every scored cut, input and output hashes, and explicit refusals. The software version is 1.0.1.
+`calibration-prepare` turns complete category histograms and an independently specified roster into a calibration manifest and a `calibrations.json` file for `batch --calibrations`. It saves an HTML report, cohort and unit scores, every scored cut, input and output hashes, and explicit refusals.
 
 The default uses a uniform reference on each explicit panel and emits manifest 1.2. Both default and trained modes project using ceiling MIC50/MIC90 without extrema, cover all internal recorded panel tails, and take a maximum over every planned cohort and cut within a unit. Target outcomes are never preparation inputs.
 

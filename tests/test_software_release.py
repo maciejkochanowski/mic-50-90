@@ -23,7 +23,7 @@ def test_publication_paths_are_rejected(name):
 def test_usage_documentation_remains_allowed(tmp_path):
     source = tmp_path / "software.zip"
     with zipfile.ZipFile(source, "w") as archive:
-        archive.writestr("docs/GUI_GUIDE.md", "# Using MIC-50-90\nOpen the program.")
+        archive.writestr("docs/distribution-user-guide.md", "# Using MIC-50-90\nRun the program.")
         archive.writestr("src/mic_50_90/cli.py", "print('hello')")
     assert release.inspect_archive(source)["status"] == "passed"
 

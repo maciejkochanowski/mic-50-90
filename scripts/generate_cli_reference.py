@@ -13,7 +13,7 @@ def reference():
         if isinstance(action, argparse._SubParsersAction):
             groups.extend(("mic-50-90 " + name, parser) for name, parser in action.choices.items())
     lines = [f"# MIC-50-90 {__version__}: command and option reference", "",
-             "Generated from the installed command parser. GUI_GUIDE.md and PUBLIC_FUNCTIONS.md map tasks to Windows and CLI.",
+             "Generated from the installed command parser. PUBLIC_FUNCTIONS.md maps tasks to the command line and the Python interface.",
              "Values shown as None mean the option is omitted, not a numerical zero.", ""]
     for name, parser in groups:
         lines += ["## " + name, "", "| Argument | Meaning | Default or requirement |", "|---|---|---|"]

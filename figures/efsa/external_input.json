@@ -1,0 +1,6818 @@
+{
+  "created_utc": "2026-11-13T14:41:21.765812+00:00",
+  "scope": "frozen external reporting-contract application test; one simultaneous inference family",
+  "local_alpha": "1/5880",
+  "family_size": 294,
+  "family_confidence": "19/20",
+  "cohorts": [
+    {
+      "id": "EFSA2024_017dc72f8da07c26_DE",
+      "block_id": "017dc72f8da07c26",
+      "country": "DE",
+      "year": 2024,
+      "n": 170,
+      "histogram": [
+        165,
+        4,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=1",
+          "lower": "0",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "256",
+          "lower": "128",
+          "upper": "256",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "512",
+          "lower": "256",
+          "upper": "512",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">512",
+          "lower": "512",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 84
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 85,
+          "upper": 170
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 152
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 153,
+          "upper": 170
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 85,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 153,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Erythromycin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000589-VET",
+        "R018A",
+        "R065A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 165,
+        "=": 5
+      },
+      "codes_by_category": {
+        "0": [
+          "R093A"
+        ],
+        "1": [
+          "R020A"
+        ],
+        "3": [
+          "R026A"
+        ]
+      },
+      "source_collection": "DE|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n170_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_017dc72f8da07c26_PL",
+      "block_id": "017dc72f8da07c26",
+      "country": "PL",
+      "year": 2024,
+      "n": 181,
+      "histogram": [
+        178,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=1",
+          "lower": "0",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "256",
+          "lower": "128",
+          "upper": "256",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "512",
+          "lower": "256",
+          "upper": "512",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">512",
+          "lower": "512",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 90
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 91,
+          "upper": 181
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 162
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 163,
+          "upper": 181
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 91,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 163,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Erythromycin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000589-VET",
+        "R018A",
+        "R065A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 178,
+        "=": 3
+      },
+      "codes_by_category": {
+        "0": [
+          "R093A"
+        ],
+        "1": [
+          "R020A"
+        ]
+      },
+      "source_collection": "PL|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n181_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_017dc72f8da07c26_SE",
+      "block_id": "017dc72f8da07c26",
+      "country": "SE",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        173,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=1",
+          "lower": "0",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "256",
+          "lower": "128",
+          "upper": "256",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "512",
+          "lower": "256",
+          "upper": "512",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">512",
+          "lower": "512",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Erythromycin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000589-VET",
+        "R018A",
+        "R065A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 173,
+        "=": 2
+      },
+      "codes_by_category": {
+        "0": [
+          "R093A"
+        ],
+        "1": [
+          "R020A"
+        ]
+      },
+      "source_collection": "SE|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_0647a475cb3c509c_DE",
+      "block_id": "0647a475cb3c509c",
+      "country": "DE",
+      "year": 2024,
+      "n": 248,
+      "histogram": [
+        247,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.03",
+          "lower": "0",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">16",
+          "lower": "16",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 123
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 124,
+          "upper": 248
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 223
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 224,
+          "upper": 248
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 124,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 224,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Meropenem",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 247,
+        "=": 1
+      },
+      "codes_by_category": {
+        "0": [
+          "R088A"
+        ],
+        "1": [
+          "R009A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n248_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_0647a475cb3c509c_PL",
+      "block_id": "0647a475cb3c509c",
+      "country": "PL",
+      "year": 2024,
+      "n": 187,
+      "histogram": [
+        185,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.03",
+          "lower": "0",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">16",
+          "lower": "16",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 93
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 94,
+          "upper": 187
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 168
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 169,
+          "upper": 187
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 94,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 169,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Meropenem",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 185,
+        "=": 2
+      },
+      "codes_by_category": {
+        "0": [
+          "R088A"
+        ],
+        "1": [
+          "R009A"
+        ],
+        "2": [
+          "R117A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n187_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_0647a475cb3c509c_SE",
+      "block_id": "0647a475cb3c509c",
+      "country": "SE",
+      "year": 2024,
+      "n": 29,
+      "histogram": [
+        29,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.03",
+          "lower": "0",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">16",
+          "lower": "16",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 14
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 15,
+          "upper": 29
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 26
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 27,
+          "upper": 29
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 15,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 27,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Meropenem",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 29
+      },
+      "codes_by_category": {
+        "0": [
+          "R088A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n29_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_07a5881e372f57b9_DE",
+      "block_id": "07a5881e372f57b9",
+      "country": "DE",
+      "year": 2024,
+      "n": 245,
+      "histogram": [
+        95,
+        8,
+        1,
+        0,
+        0,
+        0,
+        0,
+        141
+      ],
+      "panel": [
+        {
+          "label": "<=8",
+          "lower": "0",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "256",
+          "lower": "128",
+          "upper": "256",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "512",
+          "lower": "256",
+          "upper": "512",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">512",
+          "lower": "512",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 7,
+          "lower": 0,
+          "upper": 122
+        },
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 123,
+          "upper": 245
+        },
+        {
+          "start": 0,
+          "stop": 7,
+          "lower": 0,
+          "upper": 220
+        },
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 221,
+          "upper": 245
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 123,
+          "category": 7,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 221,
+          "category": 7,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Sulfamethoxazole",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000612-VET",
+        "R026A",
+        "R065A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        ">": 141,
+        "<=": 95,
+        "=": 9
+      },
+      "codes_by_category": {
+        "7": [
+          "R066A"
+        ],
+        "0": [
+          "R096A"
+        ],
+        "1": [
+          "R035A"
+        ],
+        "2": [
+          "R052A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n245_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_07a5881e372f57b9_PL",
+      "block_id": "07a5881e372f57b9",
+      "country": "PL",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        45,
+        14,
+        3,
+        2,
+        0,
+        0,
+        0,
+        111
+      ],
+      "panel": [
+        {
+          "label": "<=8",
+          "lower": "0",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "256",
+          "lower": "128",
+          "upper": "256",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "512",
+          "lower": "256",
+          "upper": "512",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">512",
+          "lower": "512",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 7,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 7,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 7,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 7,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Sulfamethoxazole",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000612-VET",
+        "R026A",
+        "R065A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "=": 19,
+        "<=": 45,
+        ">": 111
+      },
+      "codes_by_category": {
+        "2": [
+          "R052A"
+        ],
+        "3": [
+          "R059A"
+        ],
+        "0": [
+          "R096A"
+        ],
+        "1": [
+          "R035A"
+        ],
+        "7": [
+          "R066A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_07a5881e372f57b9_SE",
+      "block_id": "07a5881e372f57b9",
+      "country": "SE",
+      "year": 2024,
+      "n": 173,
+      "histogram": [
+        134,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        19
+      ],
+      "panel": [
+        {
+          "label": "<=8",
+          "lower": "0",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "256",
+          "lower": "128",
+          "upper": "256",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "512",
+          "lower": "256",
+          "upper": "512",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">512",
+          "lower": "512",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 86
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 87,
+          "upper": 173
+        },
+        {
+          "start": 0,
+          "stop": 7,
+          "lower": 0,
+          "upper": 155
+        },
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 156,
+          "upper": 173
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 87,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 156,
+          "category": 7,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Sulfamethoxazole",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000612-VET",
+        "R026A",
+        "R065A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 134,
+        ">": 19,
+        "=": 20
+      },
+      "codes_by_category": {
+        "0": [
+          "R096A"
+        ],
+        "7": [
+          "R066A"
+        ],
+        "1": [
+          "R035A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n173_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_083bdb17c1c32c9e_DE",
+      "block_id": "083bdb17c1c32c9e",
+      "country": "DE",
+      "year": 2024,
+      "n": 245,
+      "histogram": [
+        160,
+        5,
+        0,
+        0,
+        2,
+        78
+      ],
+      "panel": [
+        {
+          "label": "<=2",
+          "lower": "0",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">32",
+          "lower": "32",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 122
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 123,
+          "upper": 245
+        },
+        {
+          "start": 0,
+          "stop": 5,
+          "lower": 0,
+          "upper": 220
+        },
+        {
+          "start": 0,
+          "stop": 6,
+          "lower": 221,
+          "upper": 245
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 123,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 221,
+          "category": 5,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Tetracycline",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R020A",
+        "R052A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 160,
+        ">": 78,
+        "=": 7
+      },
+      "codes_by_category": {
+        "0": [
+          "R094A"
+        ],
+        "5": [
+          "R053A"
+        ],
+        "1": [
+          "R022A"
+        ],
+        "4": [
+          "R052A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n245_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_083bdb17c1c32c9e_PL",
+      "block_id": "083bdb17c1c32c9e",
+      "country": "PL",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        52,
+        2,
+        1,
+        0,
+        4,
+        116
+      ],
+      "panel": [
+        {
+          "label": "<=2",
+          "lower": "0",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">32",
+          "lower": "32",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 5,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 6,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 5,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 6,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 5,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 5,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Tetracycline",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R020A",
+        "R052A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 52,
+        ">": 116,
+        "=": 7
+      },
+      "codes_by_category": {
+        "0": [
+          "R094A"
+        ],
+        "5": [
+          "R053A"
+        ],
+        "4": [
+          "R052A"
+        ],
+        "2": [
+          "R026A"
+        ],
+        "1": [
+          "R022A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_083bdb17c1c32c9e_SE",
+      "block_id": "083bdb17c1c32c9e",
+      "country": "SE",
+      "year": 2024,
+      "n": 173,
+      "histogram": [
+        166,
+        1,
+        0,
+        0,
+        0,
+        6
+      ],
+      "panel": [
+        {
+          "label": "<=2",
+          "lower": "0",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">32",
+          "lower": "32",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 86
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 87,
+          "upper": 173
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 155
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 156,
+          "upper": 173
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 87,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 156,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Tetracycline",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R020A",
+        "R052A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 166,
+        ">": 6,
+        "=": 1
+      },
+      "codes_by_category": {
+        "0": [
+          "R094A"
+        ],
+        "5": [
+          "R053A"
+        ],
+        "1": [
+          "R022A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n173_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_0b54b24b0e14bb5b_DE",
+      "block_id": "0b54b24b0e14bb5b",
+      "country": "DE",
+      "year": 2024,
+      "n": 170,
+      "histogram": [
+        49,
+        0,
+        0,
+        0,
+        1,
+        3,
+        1,
+        2,
+        114
+      ],
+      "panel": [
+        {
+          "label": "<=0.5",
+          "lower": "0",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 0,
+          "upper": 84
+        },
+        {
+          "start": 0,
+          "stop": 9,
+          "lower": 85,
+          "upper": 170
+        },
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 0,
+          "upper": 152
+        },
+        {
+          "start": 0,
+          "stop": 9,
+          "lower": 153,
+          "upper": 170
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 85,
+          "category": 8,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 153,
+          "category": 8,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Tetracycline",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R016A",
+        "R059A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 49,
+        ">": 114,
+        "=": 7
+      },
+      "codes_by_category": {
+        "0": [
+          "R092A"
+        ],
+        "8": [
+          "R060A"
+        ],
+        "5": [
+          "R035A"
+        ],
+        "6": [
+          "R052A"
+        ],
+        "7": [
+          "R059A"
+        ],
+        "4": [
+          "R026A"
+        ]
+      },
+      "source_collection": "DE|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n170_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_0b54b24b0e14bb5b_PL",
+      "block_id": "0b54b24b0e14bb5b",
+      "country": "PL",
+      "year": 2024,
+      "n": 181,
+      "histogram": [
+        32,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        18,
+        127
+      ],
+      "panel": [
+        {
+          "label": "<=0.5",
+          "lower": "0",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 0,
+          "upper": 90
+        },
+        {
+          "start": 0,
+          "stop": 9,
+          "lower": 91,
+          "upper": 181
+        },
+        {
+          "start": 0,
+          "stop": 8,
+          "lower": 0,
+          "upper": 162
+        },
+        {
+          "start": 0,
+          "stop": 9,
+          "lower": 163,
+          "upper": 181
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 91,
+          "category": 8,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 163,
+          "category": 8,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Tetracycline",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R016A",
+        "R059A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        ">": 127,
+        "=": 22,
+        "<=": 32
+      },
+      "codes_by_category": {
+        "8": [
+          "R060A"
+        ],
+        "2": [
+          "R020A"
+        ],
+        "0": [
+          "R092A"
+        ],
+        "7": [
+          "R059A"
+        ],
+        "3": [
+          "R022A"
+        ],
+        "5": [
+          "R035A"
+        ],
+        "6": [
+          "R052A"
+        ]
+      },
+      "source_collection": "PL|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n181_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_0b54b24b0e14bb5b_SE",
+      "block_id": "0b54b24b0e14bb5b",
+      "country": "SE",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        170,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.5",
+          "lower": "0",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Tetracycline",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R016A",
+        "R059A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 170,
+        "=": 5
+      },
+      "codes_by_category": {
+        "0": [
+          "R092A"
+        ],
+        "1": [
+          "R018A"
+        ],
+        "7": [
+          "R059A"
+        ]
+      },
+      "source_collection": "SE|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_14fc803e570047eb_DE",
+      "block_id": "14fc803e570047eb",
+      "country": "DE",
+      "year": 2024,
+      "n": 248,
+      "histogram": [
+        232,
+        16,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=4",
+          "lower": "0",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">128",
+          "lower": "128",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 123
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 124,
+          "upper": 248
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 223
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 224,
+          "upper": 248
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 124,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 224,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Amikacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 232,
+        "=": 16
+      },
+      "codes_by_category": {
+        "0": [
+          "R095A"
+        ],
+        "1": [
+          "R026A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n248_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_14fc803e570047eb_PL",
+      "block_id": "14fc803e570047eb",
+      "country": "PL",
+      "year": 2024,
+      "n": 187,
+      "histogram": [
+        182,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=4",
+          "lower": "0",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">128",
+          "lower": "128",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 93
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 94,
+          "upper": 187
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 168
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 169,
+          "upper": 187
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 94,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 169,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Amikacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 182,
+        "=": 5
+      },
+      "codes_by_category": {
+        "0": [
+          "R095A"
+        ],
+        "1": [
+          "R026A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n187_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_14fc803e570047eb_SE",
+      "block_id": "14fc803e570047eb",
+      "country": "SE",
+      "year": 2024,
+      "n": 29,
+      "histogram": [
+        27,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=4",
+          "lower": "0",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">128",
+          "lower": "128",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 14
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 15,
+          "upper": 29
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 26
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 27,
+          "upper": 29
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 15,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 27,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Amikacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 27,
+        "=": 2
+      },
+      "codes_by_category": {
+        "0": [
+          "R095A"
+        ],
+        "1": [
+          "R026A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n29_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_3137c69fc3d185a0_DE",
+      "block_id": "3137c69fc3d185a0",
+      "country": "DE",
+      "year": 2024,
+      "n": 245,
+      "histogram": [
+        238,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=4",
+          "lower": "0",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">128",
+          "lower": "128",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 122
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 123,
+          "upper": 245
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 220
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 221,
+          "upper": 245
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 123,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 221,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Amikacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 238,
+        "=": 7
+      },
+      "codes_by_category": {
+        "0": [
+          "R095A"
+        ],
+        "1": [
+          "R026A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n245_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_3137c69fc3d185a0_PL",
+      "block_id": "3137c69fc3d185a0",
+      "country": "PL",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        168,
+        7,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=4",
+          "lower": "0",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">128",
+          "lower": "128",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Amikacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 168,
+        "=": 7
+      },
+      "codes_by_category": {
+        "0": [
+          "R095A"
+        ],
+        "1": [
+          "R026A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_3137c69fc3d185a0_SE",
+      "block_id": "3137c69fc3d185a0",
+      "country": "SE",
+      "year": 2024,
+      "n": 173,
+      "histogram": [
+        160,
+        12,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=4",
+          "lower": "0",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "128",
+          "lower": "64",
+          "upper": "128",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">128",
+          "lower": "128",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 86
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 87,
+          "upper": 173
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 155
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 156,
+          "upper": 173
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 87,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 156,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Amikacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 160,
+        "=": 13
+      },
+      "codes_by_category": {
+        "0": [
+          "R095A"
+        ],
+        "1": [
+          "R026A"
+        ],
+        "2": [
+          "R035A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n173_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_343d7fb4acdca606_DE",
+      "block_id": "343d7fb4acdca606",
+      "country": "DE",
+      "year": 2024,
+      "n": 245,
+      "histogram": [
+        223,
+        13,
+        1,
+        1,
+        7
+      ],
+      "panel": [
+        {
+          "label": "<=8",
+          "lower": "0",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 122
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 123,
+          "upper": 245
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 220
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 221,
+          "upper": 245
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 123,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 221,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Chloramphenicol",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R026A",
+        "R059A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        ">": 7,
+        "<=": 223,
+        "=": 15
+      },
+      "codes_by_category": {
+        "4": [
+          "R060A"
+        ],
+        "0": [
+          "R096A"
+        ],
+        "1": [
+          "R035A"
+        ],
+        "3": [
+          "R059A"
+        ],
+        "2": [
+          "R052A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n245_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_343d7fb4acdca606_PL",
+      "block_id": "343d7fb4acdca606",
+      "country": "PL",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        91,
+        3,
+        11,
+        15,
+        55
+      ],
+      "panel": [
+        {
+          "label": "<=8",
+          "lower": "0",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 4,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 5,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 4,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Chloramphenicol",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R026A",
+        "R059A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        ">": 55,
+        "<=": 91,
+        "=": 29
+      },
+      "codes_by_category": {
+        "4": [
+          "R060A"
+        ],
+        "0": [
+          "R096A"
+        ],
+        "2": [
+          "R052A"
+        ],
+        "3": [
+          "R059A"
+        ],
+        "1": [
+          "R035A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_343d7fb4acdca606_SE",
+      "block_id": "343d7fb4acdca606",
+      "country": "SE",
+      "year": 2024,
+      "n": 173,
+      "histogram": [
+        173,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=8",
+          "lower": "0",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 86
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 87,
+          "upper": 173
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 155
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 156,
+          "upper": 173
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 87,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 156,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Chloramphenicol",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R026A",
+        "R059A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 173
+      },
+      "codes_by_category": {
+        "0": [
+          "R096A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n173_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_36081e4ce989059f_DE",
+      "block_id": "36081e4ce989059f",
+      "country": "DE",
+      "year": 2024,
+      "n": 248,
+      "histogram": [
+        229,
+        19,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.25",
+          "lower": "0",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 123
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 124,
+          "upper": 248
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 223
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 224,
+          "upper": 248
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 124,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 224,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Ceftazidim",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000720-VET",
+        "R014A",
+        "R026A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 229,
+        "=": 19
+      },
+      "codes_by_category": {
+        "0": [
+          "R091A"
+        ],
+        "1": [
+          "R016A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n248_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_36081e4ce989059f_PL",
+      "block_id": "36081e4ce989059f",
+      "country": "PL",
+      "year": 2024,
+      "n": 187,
+      "histogram": [
+        167,
+        18,
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.25",
+          "lower": "0",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 93
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 94,
+          "upper": 187
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 0,
+          "upper": 168
+        },
+        {
+          "start": 0,
+          "stop": 2,
+          "lower": 169,
+          "upper": 187
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 94,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 169,
+          "category": 1,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Ceftazidim",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000720-VET",
+        "R014A",
+        "R026A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 167,
+        "=": 20
+      },
+      "codes_by_category": {
+        "0": [
+          "R091A"
+        ],
+        "1": [
+          "R016A"
+        ],
+        "4": [
+          "R022A"
+        ],
+        "5": [
+          "R026A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n187_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_36081e4ce989059f_SE",
+      "block_id": "36081e4ce989059f",
+      "country": "SE",
+      "year": 2024,
+      "n": 29,
+      "histogram": [
+        29,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.25",
+          "lower": "0",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 14
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 15,
+          "upper": 29
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 26
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 27,
+          "upper": 29
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 15,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 27,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Ceftazidim",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000720-VET",
+        "R014A",
+        "R026A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 29
+      },
+      "codes_by_category": {
+        "0": [
+          "R091A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n29_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_3e40ca2b66cb0728_DE",
+      "block_id": "3e40ca2b66cb0728",
+      "country": "DE",
+      "year": 2024,
+      "n": 245,
+      "histogram": [
+        117,
+        7,
+        2,
+        16,
+        67,
+        14,
+        6,
+        4,
+        3,
+        7,
+        2
+      ],
+      "panel": [
+        {
+          "label": "<=0.015",
+          "lower": "0",
+          "upper": "1/64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/32",
+          "lower": "1/64",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 0,
+          "upper": 122
+        },
+        {
+          "start": 0,
+          "stop": 2,
+          "lower": 123,
+          "upper": 245
+        },
+        {
+          "start": 0,
+          "stop": 5,
+          "lower": 0,
+          "upper": 220
+        },
+        {
+          "start": 0,
+          "stop": 6,
+          "lower": 221,
+          "upper": 245
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 123,
+          "category": 1,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 221,
+          "category": 5,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Ciprofloxacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 117,
+        "=": 126,
+        ">": 2
+      },
+      "codes_by_category": {
+        "0": [
+          "R085A"
+        ],
+        "4": [
+          "R014A"
+        ],
+        "2": [
+          "R009A"
+        ],
+        "1": [
+          "R007A"
+        ],
+        "6": [
+          "R018A"
+        ],
+        "3": [
+          "R117A"
+        ],
+        "9": [
+          "R026A"
+        ],
+        "7": [
+          "R020A"
+        ],
+        "5": [
+          "R016A"
+        ],
+        "10": [
+          "R027A"
+        ],
+        "8": [
+          "R022A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n245_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_3e40ca2b66cb0728_PL",
+      "block_id": "3e40ca2b66cb0728",
+      "country": "PL",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        18,
+        0,
+        0,
+        3,
+        18,
+        12,
+        6,
+        6,
+        7,
+        52,
+        53
+      ],
+      "panel": [
+        {
+          "label": "<=0.015",
+          "lower": "0",
+          "upper": "1/64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/32",
+          "lower": "1/64",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 9,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 10,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 10,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 11,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 9,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 10,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Ciprofloxacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        ">": 53,
+        "=": 104,
+        "<=": 18
+      },
+      "codes_by_category": {
+        "10": [
+          "R027A"
+        ],
+        "9": [
+          "R026A"
+        ],
+        "0": [
+          "R085A"
+        ],
+        "5": [
+          "R016A"
+        ],
+        "4": [
+          "R014A"
+        ],
+        "6": [
+          "R018A"
+        ],
+        "8": [
+          "R022A"
+        ],
+        "7": [
+          "R020A"
+        ],
+        "3": [
+          "R117A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_3e40ca2b66cb0728_SE",
+      "block_id": "3e40ca2b66cb0728",
+      "country": "SE",
+      "year": 2024,
+      "n": 173,
+      "histogram": [
+        144,
+        17,
+        0,
+        7,
+        4,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.015",
+          "lower": "0",
+          "upper": "1/64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/32",
+          "lower": "1/64",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 86
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 87,
+          "upper": 173
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 0,
+          "upper": 155
+        },
+        {
+          "start": 0,
+          "stop": 2,
+          "lower": 156,
+          "upper": 173
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 87,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 156,
+          "category": 1,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Ciprofloxacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 144,
+        "=": 29
+      },
+      "codes_by_category": {
+        "0": [
+          "R085A"
+        ],
+        "4": [
+          "R014A"
+        ],
+        "1": [
+          "R007A"
+        ],
+        "3": [
+          "R117A"
+        ],
+        "7": [
+          "R020A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n173_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4a83000e8f6ee3e3_DE",
+      "block_id": "4a83000e8f6ee3e3",
+      "country": "DE",
+      "year": 2024,
+      "n": 170,
+      "histogram": [
+        73,
+        44,
+        49,
+        4,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=2",
+          "lower": "0",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 0,
+          "upper": 84
+        },
+        {
+          "start": 0,
+          "stop": 2,
+          "lower": 85,
+          "upper": 170
+        },
+        {
+          "start": 0,
+          "stop": 2,
+          "lower": 0,
+          "upper": 152
+        },
+        {
+          "start": 0,
+          "stop": 3,
+          "lower": 153,
+          "upper": 170
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 85,
+          "category": 1,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 153,
+          "category": 2,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Chloramphenicol",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R020A",
+        "R059A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "=": 97,
+        "<=": 73
+      },
+      "codes_by_category": {
+        "1": [
+          "R022A"
+        ],
+        "0": [
+          "R094A"
+        ],
+        "2": [
+          "R026A"
+        ],
+        "3": [
+          "R035A"
+        ]
+      },
+      "source_collection": "DE|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n170_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4a83000e8f6ee3e3_PL",
+      "block_id": "4a83000e8f6ee3e3",
+      "country": "PL",
+      "year": 2024,
+      "n": 181,
+      "histogram": [
+        110,
+        47,
+        23,
+        0,
+        0,
+        1,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=2",
+          "lower": "0",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 90
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 91,
+          "upper": 181
+        },
+        {
+          "start": 0,
+          "stop": 2,
+          "lower": 0,
+          "upper": 162
+        },
+        {
+          "start": 0,
+          "stop": 3,
+          "lower": 163,
+          "upper": 181
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 91,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 163,
+          "category": 2,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Chloramphenicol",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R020A",
+        "R059A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "=": 71,
+        "<=": 110
+      },
+      "codes_by_category": {
+        "1": [
+          "R022A"
+        ],
+        "0": [
+          "R094A"
+        ],
+        "2": [
+          "R026A"
+        ],
+        "5": [
+          "R059A"
+        ]
+      },
+      "source_collection": "PL|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n181_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4a83000e8f6ee3e3_SE",
+      "block_id": "4a83000e8f6ee3e3",
+      "country": "SE",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        165,
+        2,
+        8,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=2",
+          "lower": "0",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "32",
+          "lower": "16",
+          "upper": "32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "64",
+          "lower": "32",
+          "upper": "64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">64",
+          "lower": "64",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Campylobacter jejuni",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Chloramphenicol",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R020A",
+        "R059A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 165,
+        "=": 10
+      },
+      "codes_by_category": {
+        "0": [
+          "R094A"
+        ],
+        "2": [
+          "R026A"
+        ],
+        "1": [
+          "R022A"
+        ]
+      },
+      "source_collection": "SE|RF-00000061-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4d02870398d21eac_DE",
+      "block_id": "4d02870398d21eac",
+      "country": "DE",
+      "year": 2024,
+      "n": 248,
+      "histogram": [
+        162,
+        10,
+        0,
+        5,
+        32,
+        21,
+        4,
+        0,
+        1,
+        11,
+        2
+      ],
+      "panel": [
+        {
+          "label": "<=0.015",
+          "lower": "0",
+          "upper": "1/64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/32",
+          "lower": "1/64",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 123
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 124,
+          "upper": 248
+        },
+        {
+          "start": 0,
+          "stop": 5,
+          "lower": 0,
+          "upper": 223
+        },
+        {
+          "start": 0,
+          "stop": 6,
+          "lower": 224,
+          "upper": 248
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 124,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 224,
+          "category": 5,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Ciprofloxacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 162,
+        "=": 84,
+        ">": 2
+      },
+      "codes_by_category": {
+        "0": [
+          "R085A"
+        ],
+        "9": [
+          "R026A"
+        ],
+        "5": [
+          "R016A"
+        ],
+        "4": [
+          "R014A"
+        ],
+        "1": [
+          "R007A"
+        ],
+        "3": [
+          "R117A"
+        ],
+        "6": [
+          "R018A"
+        ],
+        "8": [
+          "R022A"
+        ],
+        "10": [
+          "R027A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n248_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4d02870398d21eac_PL",
+      "block_id": "4d02870398d21eac",
+      "country": "PL",
+      "year": 2024,
+      "n": 187,
+      "histogram": [
+        47,
+        3,
+        0,
+        0,
+        36,
+        44,
+        4,
+        1,
+        3,
+        15,
+        34
+      ],
+      "panel": [
+        {
+          "label": "<=0.015",
+          "lower": "0",
+          "upper": "1/64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/32",
+          "lower": "1/64",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 5,
+          "lower": 0,
+          "upper": 93
+        },
+        {
+          "start": 0,
+          "stop": 6,
+          "lower": 94,
+          "upper": 187
+        },
+        {
+          "start": 0,
+          "stop": 10,
+          "lower": 0,
+          "upper": 168
+        },
+        {
+          "start": 0,
+          "stop": 11,
+          "lower": 169,
+          "upper": 187
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 94,
+          "category": 5,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 169,
+          "category": 10,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Ciprofloxacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "=": 106,
+        "<=": 47,
+        ">": 34
+      },
+      "codes_by_category": {
+        "4": [
+          "R014A"
+        ],
+        "9": [
+          "R026A"
+        ],
+        "0": [
+          "R085A"
+        ],
+        "5": [
+          "R016A"
+        ],
+        "10": [
+          "R027A"
+        ],
+        "7": [
+          "R020A"
+        ],
+        "1": [
+          "R007A"
+        ],
+        "6": [
+          "R018A"
+        ],
+        "8": [
+          "R022A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n187_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4d02870398d21eac_SE",
+      "block_id": "4d02870398d21eac",
+      "country": "SE",
+      "year": 2024,
+      "n": 29,
+      "histogram": [
+        25,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.015",
+          "lower": "0",
+          "upper": "1/64",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/32",
+          "lower": "1/64",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">8",
+          "lower": "8",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 14
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 15,
+          "upper": 29
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 0,
+          "upper": 26
+        },
+        {
+          "start": 0,
+          "stop": 2,
+          "lower": 27,
+          "upper": 29
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 15,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 27,
+          "category": 1,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Turkeys - fattening flocks",
+      "drug": "Ciprofloxacin",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 25,
+        "=": 4
+      },
+      "codes_by_category": {
+        "0": [
+          "R085A"
+        ],
+        "1": [
+          "R007A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A041277A|2024",
+      "cp_file": "cp/n29_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4d9a347f6a73feb4_DE",
+      "block_id": "4d9a347f6a73feb4",
+      "country": "DE",
+      "year": 2024,
+      "n": 245,
+      "histogram": [
+        243,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.03",
+          "lower": "0",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">16",
+          "lower": "16",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 122
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 123,
+          "upper": 245
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 220
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 221,
+          "upper": 245
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 123,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 221,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Meropenem",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "method": "Micromethod dilution (in microtiter plate)",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 243,
+        "=": 2
+      },
+      "codes_by_category": {
+        "0": [
+          "R088A"
+        ],
+        "1": [
+          "R009A"
+        ]
+      },
+      "source_collection": "DE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n245_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4d9a347f6a73feb4_PL",
+      "block_id": "4d9a347f6a73feb4",
+      "country": "PL",
+      "year": 2024,
+      "n": 175,
+      "histogram": [
+        173,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.03",
+          "lower": "0",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">16",
+          "lower": "16",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 87
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 88,
+          "upper": 175
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 157
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 158,
+          "upper": 175
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 88,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 158,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Meropenem",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 173,
+        "=": 2
+      },
+      "codes_by_category": {
+        "0": [
+          "R088A"
+        ],
+        "1": [
+          "R009A"
+        ]
+      },
+      "source_collection": "PL|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n175_alpha1_5880.json"
+    },
+    {
+      "id": "EFSA2024_4d9a347f6a73feb4_SE",
+      "block_id": "4d9a347f6a73feb4",
+      "country": "SE",
+      "year": 2024,
+      "n": 173,
+      "histogram": [
+        173,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "panel": [
+        {
+          "label": "<=0.03",
+          "lower": "0",
+          "upper": "1/32",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/16",
+          "lower": "1/32",
+          "upper": "1/16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/8",
+          "lower": "1/16",
+          "upper": "1/8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/4",
+          "lower": "1/8",
+          "upper": "1/4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1/2",
+          "lower": "1/4",
+          "upper": "1/2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "1",
+          "lower": "1/2",
+          "upper": "1",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "2",
+          "lower": "1",
+          "upper": "2",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "4",
+          "lower": "2",
+          "upper": "4",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "8",
+          "lower": "4",
+          "upper": "8",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": "16",
+          "lower": "8",
+          "upper": "16",
+          "lower_closed": false,
+          "upper_closed": true,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        },
+        {
+          "label": ">16",
+          "lower": "16",
+          "upper": null,
+          "lower_closed": false,
+          "upper_closed": false,
+          "coordinate_basis": "nominal twofold ordinal dilution; decimal source labels retained separately"
+        }
+      ],
+      "constraints": [
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 86
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 87,
+          "upper": 173
+        },
+        {
+          "start": 0,
+          "stop": 0,
+          "lower": 0,
+          "upper": 155
+        },
+        {
+          "start": 0,
+          "stop": 1,
+          "lower": 156,
+          "upper": 173
+        }
+      ],
+      "quantiles": {
+        "mic50": {
+          "rank": 87,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        },
+        "mic90": {
+          "rank": 156,
+          "category": 0,
+          "definition": "ceiling inverse empirical CDF on the complete declared ordinal panel"
+        }
+      },
+      "organism": "Escherichia coli, non-pathogenic, unspecified",
+      "host_matrix": "Gallus gallus (fowl) - broilers",
+      "drug": "Meropenem",
+      "unit": "mg/L, nominal ordinal dilution categories",
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "method": "Dilution - sensititre",
+      "sampling_unit": "slaughter animal batch",
+      "censoring": {
+        "<=": 173
+      },
+      "codes_by_category": {
+        "0": [
+          "R088A"
+        ]
+      },
+      "source_collection": "SE|RF-00003897-MCG|A007101A|2024",
+      "cp_file": "cp/n173_alpha1_5880.json"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "017dc72f8da07c26",
+      "cohort_ids": [
+        "EFSA2024_017dc72f8da07c26_DE",
+        "EFSA2024_017dc72f8da07c26_PL",
+        "EFSA2024_017dc72f8da07c26_SE"
+      ],
+      "events": [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000589-VET",
+        "R018A",
+        "R065A"
+      ],
+      "selection_rank": 1
+    },
+    {
+      "id": "0647a475cb3c509c",
+      "cohort_ids": [
+        "EFSA2024_0647a475cb3c509c_DE",
+        "EFSA2024_0647a475cb3c509c_PL",
+        "EFSA2024_0647a475cb3c509c_SE"
+      ],
+      "events": [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "selection_rank": 2
+    },
+    {
+      "id": "07a5881e372f57b9",
+      "cohort_ids": [
+        "EFSA2024_07a5881e372f57b9_DE",
+        "EFSA2024_07a5881e372f57b9_PL",
+        "EFSA2024_07a5881e372f57b9_SE"
+      ],
+      "events": [
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000612-VET",
+        "R026A",
+        "R065A"
+      ],
+      "selection_rank": 3
+    },
+    {
+      "id": "083bdb17c1c32c9e",
+      "cohort_ids": [
+        "EFSA2024_083bdb17c1c32c9e_DE",
+        "EFSA2024_083bdb17c1c32c9e_PL",
+        "EFSA2024_083bdb17c1c32c9e_SE"
+      ],
+      "events": [
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R020A",
+        "R052A"
+      ],
+      "selection_rank": 4
+    },
+    {
+      "id": "0b54b24b0e14bb5b",
+      "cohort_ids": [
+        "EFSA2024_0b54b24b0e14bb5b_DE",
+        "EFSA2024_0b54b24b0e14bb5b_PL",
+        "EFSA2024_0b54b24b0e14bb5b_SE"
+      ],
+      "events": [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000670-VET",
+        "R016A",
+        "R059A"
+      ],
+      "selection_rank": 5
+    },
+    {
+      "id": "14fc803e570047eb",
+      "cohort_ids": [
+        "EFSA2024_14fc803e570047eb_DE",
+        "EFSA2024_14fc803e570047eb_PL",
+        "EFSA2024_14fc803e570047eb_SE"
+      ],
+      "events": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "selection_rank": 6
+    },
+    {
+      "id": "3137c69fc3d185a0",
+      "cohort_ids": [
+        "EFSA2024_3137c69fc3d185a0_DE",
+        "EFSA2024_3137c69fc3d185a0_PL",
+        "EFSA2024_3137c69fc3d185a0_SE"
+      ],
+      "events": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000702-VET",
+        "R022A",
+        "R061A"
+      ],
+      "selection_rank": 7
+    },
+    {
+      "id": "343d7fb4acdca606",
+      "cohort_ids": [
+        "EFSA2024_343d7fb4acdca606_DE",
+        "EFSA2024_343d7fb4acdca606_PL",
+        "EFSA2024_343d7fb4acdca606_SE"
+      ],
+      "events": [
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R026A",
+        "R059A"
+      ],
+      "selection_rank": 8
+    },
+    {
+      "id": "36081e4ce989059f",
+      "cohort_ids": [
+        "EFSA2024_36081e4ce989059f_DE",
+        "EFSA2024_36081e4ce989059f_PL",
+        "EFSA2024_36081e4ce989059f_SE"
+      ],
+      "events": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000720-VET",
+        "R014A",
+        "R026A"
+      ],
+      "selection_rank": 9
+    },
+    {
+      "id": "3e40ca2b66cb0728",
+      "cohort_ids": [
+        "EFSA2024_3e40ca2b66cb0728_DE",
+        "EFSA2024_3e40ca2b66cb0728_PL",
+        "EFSA2024_3e40ca2b66cb0728_SE"
+      ],
+      "events": [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "selection_rank": 10
+    },
+    {
+      "id": "4a83000e8f6ee3e3",
+      "cohort_ids": [
+        "EFSA2024_4a83000e8f6ee3e3_DE",
+        "EFSA2024_4a83000e8f6ee3e3_PL",
+        "EFSA2024_4a83000e8f6ee3e3_SE"
+      ],
+      "events": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "source_key": [
+        "RF-00000061-MCG",
+        "A007101A",
+        "RF-00000525-VET",
+        "R020A",
+        "R059A"
+      ],
+      "selection_rank": 11
+    },
+    {
+      "id": "4d02870398d21eac",
+      "cohort_ids": [
+        "EFSA2024_4d02870398d21eac_DE",
+        "EFSA2024_4d02870398d21eac_PL",
+        "EFSA2024_4d02870398d21eac_SE"
+      ],
+      "events": [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A041277A",
+        "RF-00000695-VET",
+        "R004A",
+        "R026A"
+      ],
+      "selection_rank": 12
+    },
+    {
+      "id": "4d9a347f6a73feb4",
+      "cohort_ids": [
+        "EFSA2024_4d9a347f6a73feb4_DE",
+        "EFSA2024_4d9a347f6a73feb4_PL",
+        "EFSA2024_4d9a347f6a73feb4_SE"
+      ],
+      "events": [
+        [
+          1,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          9,
+          11
+        ],
+        [
+          10,
+          11
+        ]
+      ],
+      "source_key": [
+        "RF-00003897-MCG",
+        "A007101A",
+        "RF-00000712-VET",
+        "R007A",
+        "R035A"
+      ],
+      "selection_rank": 13
+    }
+  ],
+  "excluded_selected_blocks": [],
+  "n_distinct_source_collections": 9,
+  "n_unique_isolates_by_country": {
+    "DE": 663,
+    "PL": 543,
+    "SE": 377
+  },
+  "n_isolate_drug_records": 6992,
+  "source_selection_hash": "ddec51d8b08c0dc26cb6ad0f1e0667f57d442cd13b4a6c66e2e14bbfe07e52a2"
+}

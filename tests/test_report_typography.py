@@ -1,11 +1,9 @@
 """Portable typography and display status must survive real output boundaries."""
 import base64
 import hashlib
-import http.client
 import json
 from pathlib import Path
 import re
-import threading
 from urllib.parse import unquote
 
 from mic_50_90.distribution_workflow import analyse_distribution
@@ -54,34 +52,9 @@ def test_unrequested_layer_has_same_readable_status_in_details(tmp_path):
     assert not re.search(r'[{}]\s*article\s*\{break-before:page', text)
 
 
-def test_packaged_fonts_are_integral_and_served_by_explicit_local_routes(tmp_path):
+def test_packaged_fonts_are_integral():
     from mic_50_90 import typography
-    from mic_50_90.gui import create_server
     for name, info in typography.FONT_FILES.items():
         data = (typography.FONT_DIR/name).read_bytes()
         assert hashlib.sha256(data).hexdigest() == info['sha256']
         assert data[:4] == b'wOFF'
-    server = create_server(output_root=tmp_path/'jobs')
-    thread = threading.Thread(target=server.serve_forever, daemon=True)
-    thread.start()
-    def get(path):
-        connection = http.client.HTTPConnection('127.0.0.1', server.server_port, timeout=5)
-        connection.request('GET', path)
-        response = connection.getresponse()
-        data = response.read()
-        result = response.status, dict(response.headers), data
-        connection.close()
-        return result
-    try:
-        name = next(iter(typography.FONT_FILES))
-        status, headers, data = get('/assets/fonts/'+name)
-        assert status == 200 and data == (typography.FONT_DIR/name).read_bytes()
-        assert headers['Content-Type'] == 'font/woff'
-        assert get('/assets/fonts/../../gui.py')[0] == 404
-        assert get('/assets/fonts/unknown.woff')[0] == 404
-        css_status, _, css = get('/assets/typography.css')
-        assert css_status == 200 and b'CMU Serif' in css
-    finally:
-        server.shutdown()
-        server.server_close()
-        thread.join(timeout=5)

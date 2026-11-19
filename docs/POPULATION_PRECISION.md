@@ -1,30 +1,28 @@
 # Describe the MIC distribution at a requested precision
 
-MIC-50-90 1.0.1 distinguishes missing information about the tested isolates from
+MIC-50-90 distinguishes missing information about the tested isolates from
 uncertainty about a population. A 95% confidence level is not 95% accuracy of an
 individual MIC result.
 
-In the Windows form, enter the sample size and the actual MIC categories, then
+In the input file, give the sample size and the actual MIC categories, then
 copy the available summaries or counts. A count can refer to results above a
-concentration or to adjacent categories: choose **Inside a group of adjacent MIC
-categories**, then select the first and last included category. Both endpoints
-are included. Do not supply a new denominator for an existing sample.
+concentration or to a group of adjacent categories: give the first and last
+included category as `start_category` and `end_category`. Both endpoints are
+included. Do not supply a new denominator for an existing sample.
 
-If independent, identically distributed sampling is appropriate, acknowledge
-that assumption in **Extend the result to a population**. Select the confidence
-level and largest acceptable interval width; 10 means 10 percentage points,
+If independent, identically distributed sampling is appropriate, declare that
+assumption with `iid: true`. Choose the confidence level (`confidence_level`)
+and the largest acceptable interval width (`--population-precision-pp`); 10 means 10 percentage points,
 such as 20–30%. The result shows a confirmed grouping, its population intervals
 and the possible maximum number of groups. An unresolved maximum reflects
 unfinished numerical evidence. One group covering the whole panel gives no
 information about the distribution inside the panel.
 
-To ask for missing information, select **Plan which counts to request from these
-same isolates**. By default the goal retains every supplied category. The next
-question names the categories and denominator. This requests existing records;
-it does not request new susceptibility tests. Add the answer using **Add a
-count**, retaining earlier inputs. The full tree and cost bounds are in JSON.
-
-Command-line equivalent:
+To ask for missing information, add `--population-count-plan`. By default the
+goal retains every supplied category. The next question names the categories and
+denominator. This requests existing records; it does not request new
+susceptibility tests. Add the answer as a further count, retaining earlier
+inputs. The full tree and cost bounds are in JSON.
 
 ```text
 mic-50-90 distribution input.json --population-precision-pp 10 --population-count-plan --output-dir output

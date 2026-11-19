@@ -4,41 +4,13 @@ import json
 
 import pytest
 
-from mic_50_90.gui_forms import desktop_examples, validate_payload
-from mic_50_90.gui_worker import execute_job
+from mic_50_90.cli import main
+from worked_inputs import worked_inputs
 from mic_50_90.distribution_workflow import analyse_distribution
 
 
-@pytest.mark.parametrize('measurement', [dict(count=10), dict(count_min=9,count_max=10),
-    dict(percentage=50,decimal_places=0,rounding_rule='half_up')])
-def test_interval_counts_survive_gui_batch(tmp_path,measurement):
-    payload=deepcopy(desktop_examples()[0]['payload'])
-    row=dict(start_category='2',end_category='2',n=20,unit='mg/L',**measurement)
-    payload['config']['additional_counts']=[row]
-    payload.update(mode='batch',targets=[dict(threshold=2,unit='mg/L')])
-    assert validate_payload(payload)['valid']
-    execute_job(payload,tmp_path)
-    assert json.loads((tmp_path/'job-status.json').read_text())['status']=='completed'
-    import csv
-    with (tmp_path/'input/additional-counts.csv').open(newline='') as f:
-        saved=list(csv.DictReader(f))[0]
-    assert saved['start_category']==saved['end_category']=='2'
-
-
-@pytest.mark.parametrize('key,value', [('population_precision_pp',101),
-    ('population_precision_pp',-1),('population_time_limit',-1),
-    ('population_tolerance_pp',0),('population_minimum_bins',1.5),
-    ('population_count_plan','yes'),('population_method',[]),('population_method',{})])
-def test_gui_preflight_catches_optional_settings(key,value):
-    payload=deepcopy(desktop_examples()[0]['payload'])
-    payload['options'][key]=value
-    result=validate_payload(payload)
-    assert not result['valid']
-    assert any(issue['field']=='options.'+key for issue in result['issues'])
-
-
 def test_invalid_population_precision_retains_sample_and_basic_population():
-    raw=deepcopy(desktop_examples()[0]['payload']['config']);raw['iid']=True
+    raw=deepcopy(worked_inputs()[0]['payload']['config']);raw['iid']=True
     original=analyse_distribution(raw)
     result=analyse_distribution(raw,population_precision_pp=101)
     assert result['sample']==original['sample']
@@ -51,7 +23,7 @@ def test_optional_partition_failure_retains_basic_results(monkeypatch):
     def interrupted(*args,**kwargs):
         raise TimeoutError('controlled interruption')
     monkeypatch.setattr(precision,'maximum_population_partition',interrupted)
-    raw=deepcopy(desktop_examples()[0]['payload']['config']);raw['iid']=True
+    raw=deepcopy(worked_inputs()[0]['payload']['config']);raw['iid']=True
     result=analyse_distribution(raw,population_precision_pp=10)
     assert result['sample']['categories']
     assert result['population']['cdf_bounds']
@@ -88,7 +60,7 @@ def test_planning_contract_present_for_every_terminal_status(seconds):
 
 def test_distribution_opening_explains_known_unknown_and_next_step():
     from mic_50_90.result_view import distribution_overview
-    payload=next(e['payload'] for e in desktop_examples() if e['id']=='published7133')
+    payload=next(e['payload'] for e in worked_inputs() if e['id']=='published7133')
     html=distribution_overview(analyse_distribution(payload['config']))
     for text in ['Result for this collection','Reading the graph','What to do next','5407','1583','143']:
         assert text in html
@@ -108,9 +80,10 @@ def test_verification_schema_migration_preserves_scientific_differences():
 
 def test_distribution_saved_schema_and_version_100_loading(tmp_path):
     from mic_50_90.distribution_workflow import _load_previous_output
-    payload=deepcopy(desktop_examples()[0]['payload'])
-    execute_job(payload,tmp_path)
+    source=tmp_path/'input.json'
+    source.write_text(json.dumps(worked_inputs()[0]['payload']['config']))
     out=tmp_path/'output'
+    assert main(['distribution',str(source),'--output-dir',str(out)])==0
     results=json.loads((out/'results.json').read_text())
     assert results['result_schema']=='mic-50-90.distribution/1'
     assert _load_previous_output(out)
@@ -135,7 +108,7 @@ def test_laboratory_opening_explains_scope():
 
 
 def test_unknown_optional_method_does_not_drop_sample():
-    raw=deepcopy(desktop_examples()[0]['payload']['config']);raw['iid']=True
+    raw=deepcopy(worked_inputs()[0]['payload']['config']);raw['iid']=True
     result=analyse_distribution(raw,population_method='unknown')
     assert result['sample']['categories']
     assert result['population']['status']=='unavailable'
@@ -144,7 +117,7 @@ def test_unknown_optional_method_does_not_drop_sample():
 
 def test_interrupted_saved_refinement_preserves_sample_and_allows_retry(monkeypatch):
     import mic_50_90.joint_population as joint
-    raw=deepcopy(desktop_examples()[0]['payload']['config']);raw['iid']=True
+    raw=deepcopy(worked_inputs()[0]['payload']['config']);raw['iid']=True
     old=analyse_distribution(raw)
     new=deepcopy(raw)
     new['additional_counts']=[dict(threshold=2,count=1,n=20,unit='mg/L')]

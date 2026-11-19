@@ -1,9 +1,8 @@
 # Joint range inference and numerical stopping
 
 The internal module `mic_50_90._hunter` computes conservative projections of a
-fixed confidence region for an incomplete MIC report. Select **Joint refinement
-across MIC ranges** in the population settings of the form, or pass
-`--population-method range-hunter` to `distribution`. The package version is 1.0.1.
+fixed confidence region for an incomplete MIC report. Pass
+`--population-method range-hunter` to `distribution`.
 This is an optional construction; selecting it does not establish that it will
 give narrower intervals than another method.
 
@@ -134,7 +133,7 @@ range into two disjoint integer intervals. Their union equals the original
 range. The parent remains available until all replacements have been built,
 so an interrupted split cannot remove admissible possibilities.
 
-The CLI, form and HTML report use the shared distribution adapter. Optional
+The command line, the Python interface and the HTML report use the shared distribution adapter. Optional
 refinement failures retain the selected construction's own valid envelope;
 they do not silently substitute a different method. Timing for
 a membership check or width assessment is not the timing of full endpoint

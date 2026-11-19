@@ -103,30 +103,15 @@ def source_archive(root: Path, output: Path) -> None:
     inspect_archive(output)
 
 
-def windows_archive(application: Path, output: Path) -> None:
-    if not (application / "MIC-50-90.exe").is_file():
-        raise ValueError("A built MIC-50-90.exe is required")
-    output.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(output, "x", compression=zipfile.ZIP_DEFLATED) as archive:
-        for path in sorted(application.rglob("*")):
-            if path.is_symlink():
-                raise ValueError(f"Application symlink is forbidden: {path}")
-            if path.is_file():
-                name = f"MIC-50-90-{VERSION}-Windows/" + path.relative_to(application).as_posix()
-                check_content(name, path.read_bytes())
-                archive.write(path, name)
-    inspect_archive(output)
-
-
 def manifest(directory: Path, commit: str, run_url: str, publisher_commit=None, publisher_run_url=None) -> dict:
     files = sorted(path for path in directory.iterdir() if path.is_file())
     if any(path.name in {"SOFTWARE_MANIFEST.json", "SHA256SUMS.txt"} for path in files):
         raise ValueError("Use a fresh staging directory; manifests must not be overwritten")
     rows = [inspect_archive(path) for path in files]
     required = {f"mic_50_90-{VERSION}-py3-none-any.whl", f"mic_50_90-{VERSION}.tar.gz",
-                f"MIC-50-90-{VERSION}-software-source.zip", f"MIC-50-90-{VERSION}-Windows-x64.zip"}
+                f"MIC-50-90-{VERSION}-software-source.zip"}
     if not required <= {row["file"] for row in rows}:
-        raise ValueError("The release must contain a wheel, sdist, source ZIP and tested Windows ZIP")
+        raise ValueError("The release must contain a wheel, sdist and source ZIP")
     result = {"software": "MIC-50-90", "version": VERSION, "source_commit": commit,
               "actions_run": run_url, "scope": "software, usage documentation, examples and verification only",
               "publisher_commit": publisher_commit or commit, "publisher_actions_run": publisher_run_url or run_url,
@@ -145,9 +130,6 @@ def main() -> None:
     source = commands.add_parser("source")
     source.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     source.add_argument("--output", type=Path, required=True)
-    windows = commands.add_parser("windows")
-    windows.add_argument("--application", type=Path, required=True)
-    windows.add_argument("--output", type=Path, required=True)
     check = commands.add_parser("check")
     check.add_argument("paths", type=Path, nargs="+")
     final = commands.add_parser("manifest")
@@ -159,8 +141,6 @@ def main() -> None:
     args = parser.parse_args()
     if args.command == "source":
         source_archive(args.root.resolve(), args.output.resolve())
-    elif args.command == "windows":
-        windows_archive(args.application.resolve(), args.output.resolve())
     elif args.command == "check":
         print(json.dumps([inspect_archive(path) for path in args.paths], indent=2))
     else:

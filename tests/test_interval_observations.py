@@ -51,17 +51,14 @@ def test_interval_and_tail_must_hold_together():
         distribution_problems(raw)
 
 
-def test_desktop_worker_and_html_keep_interval_and_population_target(tmp_path):
+def test_cli_and_html_keep_interval_and_population_target(tmp_path):
     import json
-    from mic_50_90.gui_forms import validate_payload
-    from mic_50_90.gui_worker import execute_job
+    from mic_50_90.cli import main
     raw = raw_count(count=7)
     raw['iid'] = True
-    payload = dict(mode='distribution', config=raw, options=dict(population_precision_pp=40))
-    validation = validate_payload(payload)
-    assert validation['valid'], validation
-    assert not any('not used' in w['message'] for w in validation['warnings'])
-    execute_job(payload,tmp_path)
+    source = tmp_path/'input.json'
+    source.write_text(json.dumps(raw), encoding='utf-8')
+    assert main(['distribution', str(source), '--population-precision-pp', '40', '--output-dir', str(tmp_path/'output')]) == 0
     record = json.loads((tmp_path/'output/results.json').read_text())['cohorts'][0]
     assert record['population_resolution']['precision_pp'] == 40
     html = (tmp_path/'output/report.html').read_text(encoding='utf-8')

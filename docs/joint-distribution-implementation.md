@@ -1,4 +1,4 @@
-# Joint distribution implementation, MIC-50-90 1.0.1
+# Joint distribution implementation in MIC-50-90
 
 The workflow uses the exact multinomial sampling law for joint minimum-p-value
 inference. “Exact” describes the sampling law; endpoint precision is separate.

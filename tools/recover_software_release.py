@@ -13,10 +13,10 @@ from check_release_tests import EXPECTED, verify_matrix
 from publish_software_release import api
 from software_release import VERSION, inspect_archive
 
-BUILD_JOBS = {"packages", "windows"} | {
+BUILD_JOBS = {"packages"} | {
     f"test ({platform}, {version})" for platform in ("ubuntu-latest", "windows-latest")
     for version in ("3.11", "3.12", "3.13")}
-ARTIFACTS = EXPECTED | {"software-packages", "software-windows", "release-verification"}
+ARTIFACTS = EXPECTED | {"software-packages", "release-verification"}
 
 
 def validate_origin(run, jobs, artifacts, repository, run_id):

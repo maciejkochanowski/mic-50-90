@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.0.0 (unreleased)
+
+- The local browser form (`mic-50-90 gui`, the `mic-50-90-gui` program) and the Windows application are removed. The Python interface and the command line remain, and the Galaxy tools in `galaxy/` give the same analyses in a web interface. Because a public command and program are removed, the major version changes.
+- New command `mic-50-90 verify-report` checks a received reporting certificate from the declared summaries and the disclosed counts alone. It keeps exact decimal tokens, refuses contradictory disclosures and writes `verification.csv`, `verification.txt`, `results.json` and `report.html`; `--fail-on-insufficient` returns status 2 when a declared answer is not established. It replaces the verification step of the removed form.
+- The HTML report resources (typography, print styles, report controls and fonts) move from `gui_assets` to `report_assets`. Reports separate list items with commas and semicolons instead of middle dots; their content is otherwise unchanged.
+- The container image no longer includes Node.js, which only the removed form tests needed.
+- Calculations, results and file formats are unchanged. Reporting certificates and distribution results produced by 1.0.0 to 1.0.3 are still accepted.
+
 ## 1.0.3 (2026-11-19)
 
 - Each GitHub release also publishes a container image to the GitHub Container Registry (`ghcr.io/maciejkochanowski/mic-50-90`), tagged with the version and `latest`. The image is built from the release tag and checked before it is published.

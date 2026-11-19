@@ -9,3 +9,10 @@ examples/appendix/** -text
 
 # Research receipts hash exact output bytes, including CSV line endings.
 research/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Galaxy tool test inputs are compared as exact bytes by the tool tests.
+galaxy/tools/mic_50_90/test-data/** -text
+
+# Figure inputs are recorded by hash in figures/EXPECTED_*.json: store them unchanged.
+figures/data/** -text
+figures/efsa/** -text

@@ -191,24 +191,20 @@ def test_variants_are_unioned_and_impossible_counts_refused():
         population_distribution({'a': bad}, method='range-calibrated')
 
 
-def test_desktop_worker_uses_selected_method(tmp_path):
+def test_cli_uses_selected_method(tmp_path):
     import json
-    from mic_50_90.gui_forms import validate_payload
-    from mic_50_90.gui_worker import execute_job
-    payload = {'mode': 'distribution', 'config': dict(cohort_id='desktop-ranges', n=5,
-        unit='mg/L', panel={'levels': [1, 2]}, iid=True,
+    from mic_50_90.cli import main
+    raw = dict(cohort_id='ranges', n=5, unit='mg/L', panel={'levels': [1, 2]}, iid=True,
         additional_counts=[dict(threshold=1, count=2, n=5, unit='mg/L', source='Table'),
-                           dict(threshold=2, count=1, n=5, unit='mg/L', source='Table')]),
-        'options': {'population_method': 'range-calibrated', 'population_time_limit': 0}}
-    assert validate_payload(payload)['valid']
-    execute_job(payload, tmp_path)
+                           dict(threshold=2, count=1, n=5, unit='mg/L', source='Table')])
+    source = tmp_path/'input.json'
+    source.write_text(json.dumps(raw), encoding='utf-8')
+    assert main(['distribution', str(source), '--population-method', 'range-calibrated',
+                 '--population-time-limit', '0', '--output-dir', str(tmp_path/'output')]) == 0
     result = json.loads((tmp_path/'output/results.json').read_text(encoding='utf-8'))['cohorts'][0]
     assert result['population']['method'] == 'range-calibrated'
     assert result['population']['precision_reached']
-    from pathlib import Path
-    import mic_50_90
-    html = (Path(mic_50_90.__file__).parent/'gui_assets/index.html').read_text(encoding='utf-8')
-    assert '<option value="range-calibrated">' in html
+
 
 
 def test_planning_accepts_the_same_fixed_method():

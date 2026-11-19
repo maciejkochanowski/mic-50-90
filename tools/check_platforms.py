@@ -20,7 +20,6 @@ import time
 TESTS = [
     'tests/test_report_interface_consistency.py', 'tests/test_report_typography.py',
     'tests/test_result_explanations.py', 'tests/test_count_updates.py',
-    'tests/test_gui_saved_input_validation.py', 'tests/test_gui_backend.py',
     'tests/test_distribution_calibration_reporting.py', 'tests/test_range_population.py',
     'tests/test_exact_population.py', 'tests/test_hunter_audit_safety.py',
     'tests/test_hunter_budget.py', 'tests/test_hunter_independent_boundaries.py',

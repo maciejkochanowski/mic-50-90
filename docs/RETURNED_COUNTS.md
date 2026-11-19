@@ -1,6 +1,6 @@
 # Using a count obtained after the first analysis
 
-MIC-50-90 1.0.1 accepts truthful aggregate counts from the same original collection. Use this when a source table, laboratory or author supplies the count recommended in your first report. This does not require a complete histogram.
+MIC-50-90 accepts truthful aggregate counts from the same original collection. Use this when a source table, laboratory or author supplies the count recommended in your first report. This does not require a complete histogram.
 
 ```text
 mic-50-90 batch examples/returned_counts/summaries.csv --panels examples/returned_counts/panels.csv --targets examples/returned_counts/targets.csv --additional-counts examples/returned_counts/additional-counts.csv --output-dir output/returned-counts

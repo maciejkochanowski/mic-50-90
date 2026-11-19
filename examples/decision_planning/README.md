@@ -1,6 +1,6 @@
 # Plan the counts needed to answer a question
 
-This constructed example uses ten observations, ceiling-rank MIC50=1 and MIC90=2 mg/L. It asks separately whether fewer than 5% of the recorded values exceed 2, 4 and 8 mg/L. These are descriptive sample criteria, not clinical breakpoints or population conclusions. Version: **1.0.0**.
+This constructed example uses ten observations, ceiling-rank MIC50=1 and MIC90=2 mg/L. It asks separately whether fewer than 5% of the recorded values exceed 2, 4 and 8 mg/L. These are descriptive sample criteria, not clinical breakpoints or population conclusions.
 
 From the extracted example directory's parent, run:
 

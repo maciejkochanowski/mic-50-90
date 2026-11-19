@@ -2,7 +2,7 @@
 
 
 
-MIC-50-90 1.0.1 describes the MIC categories supported by the information you supply. It does not fill in a plausible histogram or create isolate records.
+MIC-50-90 describes the MIC categories supported by the information you supply. It does not fill in a plausible histogram or create isolate records.
 
 
 
@@ -116,11 +116,9 @@ Only the additional counts may change in a saved update. Retain earlier count ro
 
 
 
-In the Windows form, add a question and select **One or more adjacent MIC
+Add a question with the first and last included categories as `start_category`
 
-categories**. Choose the first and last included categories. Select the same
-
-category twice to ask about that category alone. The percentage criterion is
+and `end_category`. Give the same category twice to ask about that category alone. The percentage criterion is
 
 optional; for example, enter `10` for a 10% criterion. A censored endpoint remains
 
@@ -450,7 +448,7 @@ Saved updates retain the original questions as well as the denominator and panel
 
 
 
-The guided form displays **5%**, while saved files retain **0.05**. No conversion
+Reports display **5%**, while saved files retain **0.05**. No conversion
 
 is applied retrospectively to existing saved fractions.
 
@@ -471,7 +469,7 @@ For population inference, a fixed confidence construction and iid sampling assum
 
 ## Choose the document for your task
 
-GUI_GUIDE.md explains Windows entry, execution and saving. distribution-user-guide.md gives CLI analyses. REPORT_CONTENTS.md explains the generated reports, and PUBLIC_FUNCTIONS.md maps functions to their checks. The examples directory supplies input files and attributed source facts.
+distribution-user-guide.md gives command-line analyses; the Galaxy tools in `galaxy/` run the same analyses in a web interface. REPORT_CONTENTS.md explains the generated reports, and PUBLIC_FUNCTIONS.md maps functions to their checks. The examples directory supplies input files and attributed source facts.
 
 
 ## Preserve a completed population calculation
@@ -483,9 +481,7 @@ mic-50-90 distribution updated.json --population-method range-calibrated --previ
 ```
 
 Use the same population method as the original run. The previous directory must
-contain configuration.json and results.json. In Windows, Add a count passes this
-pair automatically. A saved form created through that action also retains the
-previous analysis. Ordinary input files describe a fresh calculation.
+contain configuration.json and results.json. Ordinary input files describe a fresh calculation.
 
 The report states when previous population outer bounds were retained. A shorter
 refinement cannot widen that saved result. Inspect How this result was checked for

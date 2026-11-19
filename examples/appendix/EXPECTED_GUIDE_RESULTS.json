@@ -1,6 +1,6 @@
 {
   "schema": "mic-50-90-guide-expected-results/1",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "interpretation": "Sample count ranges and population confidence limits are separate results. Percentages are computed before display rounding.",
   "analyses": [
     {

@@ -156,7 +156,7 @@ def test_validation_workflow_has_no_publishing_capability():
     assert 'contents: write' not in text and 'id-token: write' not in text
     assert 'publish_software_release.py' not in text
     assert 'run_test_evidence.py' in text and 'check_release_tests.py' in text
-    assert 'build_windows.py' in text and '--application' in text
+    assert 'check_release_archives.py' in text
 
 
 @pytest.mark.parametrize('version,schema', [('1.0.0',None),('1.0.0','mic-50-90.distribution/1')])

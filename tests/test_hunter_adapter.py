@@ -125,24 +125,20 @@ def test_invalid_width_goal_does_not_remove_sample_or_population_result():
     assert r['population_resolution']['status']=='unavailable'
 
 
-def test_cli_and_desktop_use_the_same_selected_method(tmp_path):
+def test_cli_and_api_use_the_same_selected_method(tmp_path):
     import json
     from mic_50_90.cli import main
-    from mic_50_90.gui_worker import execute_job
+    from mic_50_90.distribution_workflow import analyse_distribution
     source=tmp_path/'input.json';source.write_text(json.dumps(data()),encoding='utf-8')
     assert main(['distribution',str(source),'--population-method','range-hunter',
                  '--population-time-limit','0','--population-precision-pp','100',
                  '--output-dir',str(tmp_path/'cli')])==0
-    execute_job(dict(mode='distribution',config=data(),options=dict(
-        population_method='range-hunter',population_time_limit=0,population_precision_pp='100')),
-        tmp_path/'desktop')
-    status=json.loads((tmp_path/'desktop/job-status.json').read_text())
-    assert status['status']=='completed',status
+    api=analyse_distribution(data(),population_method='range-hunter',population_time_limit=0,population_precision_pp='100')
     cli=json.loads((tmp_path/'cli/results.json').read_text())['cohorts'][0]
-    desktop=json.loads((tmp_path/'desktop/output/results.json').read_text())['cohorts'][0]
-    assert cli['population']['method']==desktop['population']['method']=='range-hunter'
-    assert cli['population']['interval_bounds']==desktop['population']['interval_bounds']
-    assert cli['population_resolution']==desktop['population_resolution']
+    assert cli['population']['method']==api['population']['method']=='range-hunter'
+    assert cli['population']['interval_bounds']==api['population']['interval_bounds']
+    assert cli['population_resolution']==api['population_resolution']
+
 
 
 def test_count_planning_accepts_original_method_without_switching():

@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import re
 
-ASSET_DIR = Path(__file__).parent / 'gui_assets'
+ASSET_DIR = Path(__file__).parent / 'report_assets'
 FONT_DIR = ASSET_DIR / 'fonts'
 FONT_FILES = json.loads((FONT_DIR / 'FONT_MANIFEST.json').read_text(encoding='utf-8'))
 

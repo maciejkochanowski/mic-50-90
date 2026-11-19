@@ -1,11 +1,10 @@
 {
   "software": "MIC-50-90",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "distribution_scope": "software_only",
-  "release_url": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.3",
+  "release_url": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v2.0.0",
   "publication_channel": "public_release",
   "documentation": [
-    "docs/GUI_GUIDE.md",
     "docs/CLI_REFERENCE.md",
     "docs/distribution-user-guide.md",
     "docs/PUBLIC_FUNCTIONS.md",
@@ -23,7 +22,6 @@
   "source_manifest": "PACKAGE_MANIFEST.sha256",
   "public_release": true,
   "source_runtime_changed": true,
-  "repaired_windows_executable_verified": false,
   "sdist_manifest": "MANIFEST.sha256",
   "archive_identity_policy": "external_delivery_receipt"
 }

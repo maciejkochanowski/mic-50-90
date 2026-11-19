@@ -1,8 +1,8 @@
 # Evaluation
 
-This folder contains the inputs and scripts of the evaluation in Section 2.5 of the article, of the
-confirmation on independent data (Appendix A.12, Technical Archive A6.7 and A7.10) and of the finite
-controls in Technical Archive A7.5, A7.6 and A8.2. Each script runs one comparison with the
+This folder contains the inputs and scripts of the evaluation reported in the article (Section 2.5
+and Appendix D), including the confirmation on independent data and the finite controls described
+in its Technical Archive. Each script runs one comparison with the
 installed `mic_50_90` package and writes its results to `results/<comparison>/`. `summarize.py`
 then collects every number reported there into `results/SUMMARY.json` and CSV tables, next to the
 value given in the article and its supplements.
@@ -37,19 +37,19 @@ NumPy, SciPy and Matplotlib. It is used only by `pba_comparison.py` and is not p
 | `sufficient_reporting.py` | Which counts a laboratory must send so that the recipient can verify every threshold answer: direct reporting, greedy deletion and minimal sufficient reports on 60 cohorts (180 tasks). | 2 s | 2 s |
 | `calibration.py` | Held-out coverage and width of the calibrated intervals: NARMS 2021 collection blocks, and FSIS 2020–2021 plant groups (establishments under one owner) with a uniform or a trained reference. | 14 min | about 8 min |
 | `pba_comparison.py` | Agreement with an exhaustive oracle, an independent cumulative-count calculation and PBA-for-Python on 8800 small inputs. | 1 min | 1 min |
-| `reporting_controls.py` | Sufficient reporting against an independent histogram filter and exhaustive subset search: 4716 common-boundary and 300 seeded variant cases (A7.5). | 7 s | about 7 s (one core) |
-| `planning_controls.py` | Request planning against independent decision-tree enumeration: 2400 controlled tasks, a 128-case stress set and 31 input/contract controls (A7.6). | 2 s | about 2 s (one core) |
-| `count_extrema_controls.py` | Count extrema and P5 rows against explicit histograms for n = 1–6, K = 2–4, and 160 seeded reports with additional counts (A8.2). | 12 s | about 12 s (one core) |
-| `population_controls.py` | Population projections, zero-budget results and probability witnesses against complete-table regions for n = 1–5, K = 2–4: 2832 projection pairs, 1416 zero-budget pairs, 267 witness queries (A8.2). | 36 s | about 36 s (one core) |
+| `reporting_controls.py` | Sufficient reporting against an independent histogram filter and exhaustive subset search: 4716 common-boundary and 300 seeded variant cases. | 7 s | about 7 s (one core) |
+| `planning_controls.py` | Request planning against independent decision-tree enumeration: 2400 controlled tasks, a 128-case stress set and 31 input/contract controls. | 2 s | about 2 s (one core) |
+| `count_extrema_controls.py` | Count extrema and P5 rows against explicit histograms for n = 1–6, K = 2–4, and 160 seeded reports with additional counts. | 12 s | about 12 s (one core) |
+| `population_controls.py` | Population projections, zero-budget results and probability witnesses against complete-table regions for n = 1–5, K = 2–4: 2832 projection pairs, 1416 zero-budget pairs, 267 witness queries. | 36 s | about 36 s (one core) |
 | `download_sources.py` | Fetches the six public isolate-level files of the confirmation data (FDA NARMS and FDA animal-pathogen data) and checks their SHA-256 values. | 1 min | 1 min |
 | `prepare_benchmark.py` | Builds the 610 confirmation cohorts and the unit tables of the six calibration datasets from those files (PROTOCOL.md, sections 2 and 6). Deterministic. | 3 min | 3 min |
 | `confirmation_population.py` | Bonferroni and range-calibrated on reports R1–R3, joint-exact and range-hunter on R1, for 610 cohorts: 4880 jobs. | about 1 day | about 15 min |
 | `confirmation_coverage.py` | Coverage on the confirmation cohorts: 2000 replicates per cohort and report (3.66 million). | about 2.5 days | about 40 min |
 | `synthetic_coverage.py` | Coverage on 1740 synthetic populations (generators G2–G4), 1000 replicates each. | about 2 days | about 35 min |
 | `external_calibration.py` | Study-unit calibration on a later year in six datasets, uniform and trained reference, and synthetic units SU1–SU3. | about 1.5 days | about 25 min |
-| `endpoint_selection.py` | The ampicillin example of Section 3.3: selected tables against every compatible table. | 1 min | 1 min |
+| `endpoint_selection.py` | The ampicillin example of Section 3.1: selected tables against every compatible table. | 1 min | 1 min |
 | `examples_check.py` | Reruns the analyses of the article and Appendices B and C (`examples/appendix/COMMANDS.txt`) and compares every printed number with the program output. | 5 min | 5 min |
-| `verify_subsets.py` | Recomputes seeded subsets of every simulation and requires exact agreement with the supplied results; the quick reproduction check of the Code Ocean capsule. | about 1 h | 2 min |
+| `verify_subsets.py` | Recomputes seeded subsets of every simulation and requires exact agreement with the supplied results; the quick reproduction check. | about 1 h | 2 min |
 | `summarize.py` | Collects the numbers of Section 2.5, the confirmation and the finite controls into `results/SUMMARY.json` and `results/tables/*.csv`. | 1 s | 1 s |
 
 Each script explains its design in its docstring (`python evaluation/<script>.py --help`).
@@ -238,7 +238,7 @@ The `prepare` step rebuilds the confirmation tables and stops if they differ fro
 | `results/confirmation_population/jobs.jsonl.gz` | Every cohort, report and construction: widths by kind of range, resolved questions, seconds and completion. |
 | `results/confirmation_coverage/configurations.json.gz`, `results/synthetic_coverage/configurations.json.gz` | Every configuration with its covered replicates by block of 50 and every missed range. |
 | `results/external_calibration/<dataset>-<reference>/` | Manifest, scores and test intervals of every calibration dataset and reference; `synthetic/` every repetition of the synthetic units. |
-| `results/endpoint_selection/summary.json`, `results/examples/summary.json`, `results/examples/numbers.csv` | The Section 3.3 comparison and every printed number of the examples with the program output. |
+| `results/endpoint_selection/summary.json`, `results/examples/summary.json`, `results/examples/numbers.csv` | The Section 3.1 comparison and every printed number of the examples with the program output. |
 
 Status values in `SUMMARY.json`: `match` (equal at the precision printed in the article, or not
 above a stated upper bound),
@@ -256,17 +256,12 @@ The numbers of the software tests in Section 2.5 come from the repository test s
 ```text
 python -m pip install -e ".[test]"
 python -m pytest tests --cov --cov-report=json:coverage.json
-node --test "tests/*.cjs"
-python tools/check_browser.py --output browser-check/reopened
-python tools/check_browser.py --acceptance --output browser-check/acceptance
-python tools/check_browser.py --examples examples/appendix --output browser-check/worked-example
 ruff check src/mic_50_90 scripts tools && mypy
 sbatch evaluation/mutation.sbatch
 ```
 
 `results/software_checks/coverage.json` records the test counts and the statement and branch
-coverage of the package. The browser checks drive the application in a headless Chromium (the
-Windows build is checked the same way in continuous integration). `mutation.sbatch` runs mutmut
+coverage of the package. `mutation.sbatch` runs mutmut
 3.8.0 on the thirteen critical functions it lists; `results/software_checks/mutation.json` records
 every change, whether a test detected it and, for every change that no test detects, why it does
 not alter a result on valid input. The mutation configuration is in `pyproject.toml`; the tests that

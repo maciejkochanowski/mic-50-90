@@ -3,16 +3,12 @@ from copy import deepcopy
 from dataclasses import replace
 import json
 from pathlib import Path
-import subprocess
 from types import SimpleNamespace
 
 import numpy as np
 import pytest
 from scipy.stats import chi2
 
-import mic_50_90
-from mic_50_90.gui_forms import validate_payload
-from mic_50_90.gui import DesktopServer
 from mic_50_90.model import MICPanel, QuantileSummary, parse_spec
 from mic_50_90.empirical import EmpiricalProblem
 from mic_50_90.population import fit_population_mle, profile_likelihood, _group_probabilities
@@ -20,22 +16,6 @@ from mic_50_90.decision_planning import plan_decisions
 from mic_50_90.acquisition import plan_acquisition
 
 FIXTURES = Path(__file__).parent / 'fixtures/contracts'
-MODEL = Path(mic_50_90.__file__).parent / 'gui_assets/model.js'
-
-def node(code, payload):
-    return subprocess.run(['node', '-e', 'const M=require(process.argv[1]); const x=JSON.parse(process.argv[2]);'+code,
-                           str(MODEL), json.dumps(payload)], text=True, capture_output=True, check=True)
-
-@pytest.mark.parametrize('targets', [None, [], [{'threshold':1,'unit':'mg/L'}]])
-def test_unsupported_analysis_refused_independently_of_targets(targets):
-    raw = json.loads((FIXTURES/'case_audit_unit.json').read_text())
-    if targets is not None: raw['targets'] = targets
-    payload = dict(mode='distribution', config=raw, options={}, histogram=[], targets=[], previous=None)
-    assert not validate_payload(payload)['valid']
-    for value in [raw, payload, {'format':'mic-50-90-guided-input','payload':payload}]:
-        p=node('try { M.importInput(x); process.stdout.write("accepted"); } catch(e) { process.stdout.write(e.message); }', value)
-        assert 'cannot be silently converted' in p.stdout
-
 def test_count_encodings_give_same_nontrivial_plan_without_mutation():
     raw={'n':20,'panel':{'levels':[1,2,4,8],'left_censored':False,'right_censored':False},
          'summaries':{'quantiles':[{'probability':.5,'category':'2','convention':'ceiling'},
@@ -90,24 +70,6 @@ def test_milp_integrality_is_checked_before_rounding(monkeypatch):
         x=np.array([1.25,1.75]),success=True,status=0,fun=0.,mip_gap=0.,mip_dual_bound=0.,message='fake'))
     with pytest.raises(RuntimeError,match='invalid histogram'):
         p._solve_milp_oracle(np.array([0.,0.]))
-
-def test_integer_text_normalization_never_rounds_fractional_tokens():
-    pairs={'20':'20','20.0':'20','2e1':'20','200e-1':'20','00020':'20','0e12':'0','9007199254740991.0':'9007199254740991'}
-    bad=['20.5','20.0000000000000001','2.00000000000000001e1','9007199254740992','1e10001','-1','true']
-    r=node('process.stdout.write(JSON.stringify([Object.entries(x.pairs).map(([a,b])=>[M.integer(a),b]),x.bad.map(a=>{try {M.integer(a); return false;} catch(e) {return true;}})]));',dict(pairs=pairs,bad=bad))
-    valid,rejected=json.loads(r.stdout)
-    assert all(a==b for a,b in valid)
-    assert all(rejected)
-
-def test_checksums_export_keeps_path_and_symlink_guards(tmp_path):
-    out=tmp_path/'output';out.mkdir();outside=tmp_path/'private.sha256';outside.write_text('secret')
-    (out/'checksums.sha256').write_text('generated');(out/'other.sha256').write_text('not generated')
-    (out/'linked.json').symlink_to(outside)
-    server=SimpleNamespace(jobs={'j':{'directory':tmp_path}})
-    allowed=DesktopServer.allowed_files(server,'j')
-    assert set(allowed)=={'checksums.sha256'}
-    (out/'checksums.sha256').unlink();(out/'checksums.sha256').symlink_to(outside)
-    assert not DesktopServer.allowed_files(server,'j')
 
 def test_zero_mass_group_keeps_parameter_offsets():
     p=_group_probabilities(np.log([2.,3.,4.]),non_tail_indices=np.array([0,1,2]),
@@ -169,31 +131,6 @@ def test_profile_html_preserves_detected_components_and_endpoint_method():
     assert 'zero_event_probability' in text
 
 
-def test_prepared_calibration_contract_is_not_confused_with_population_import():
-    """The form keeps accepting the explicitly declared calibration contract."""
-    raw = dict(n=10, unit='mg/L', iid=True, mode='empirical', contract_version='1.0',
-        panel={'categories':[
-            {'label':'<=1','lower_bound':None,'upper_bound':1,'lower_closed':False,'upper_closed':True,'panel_value':1},
-            {'label':'2','lower_bound':1,'upper_bound':2,'lower_closed':False,'upper_closed':True,'panel_value':2},
-            {'label':'>2','lower_bound':2,'upper_bound':None,'lower_closed':False,'upper_closed':False,'panel_value':4}]},
-        summaries={'quantiles':[{'probability':.5,'category':'<=1','convention':'ceiling'}]}, thresholds=[1,2], question_utility={'enabled':False},
-        reference_distribution=[.2,.6,.2],
-        wasserstein_calibration_manifest={'calibration_contract':{'functional_scope':'all_panel_tails'}},
-        calibration_context={})
-    payload=dict(mode='distribution',config=raw,options={})
-    result=validate_payload(payload)
-    assert result['valid'], result['issues']
-    assert any('calibration contract' in row['message'] for row in result['warnings'])
-    assert json.loads(node('process.stdout.write(JSON.stringify(M.importInput(x).config));',payload).stdout)==raw
-    # These similar-looking inputs actually request unsupported/different analyses.
-    for update in [dict(mode='population'),dict(population={}),dict(wasserstein_radius=1),
-                   dict(question_utility={'enabled':True}),dict(question_utility={'enabled':0}),dict(thresholds=[1.5,2]),
-                   dict(contract_version='2.0')]:
-        changed=deepcopy(payload);changed['config'].update(update)
-        assert not validate_payload(changed)['valid']
-        assert 'cannot be silently converted' in node('try{M.importInput(x);process.stdout.write("accepted");}catch(e){process.stdout.write(e.message);}',changed).stdout
-
-
 def test_profile_nan_is_optimizer_failure_not_zero_event(monkeypatch):
     import mic_50_90.population as population
     mle = population.PopulationMLE((.5,.5), -1., True, 'fixture', 1)
@@ -203,7 +140,7 @@ def test_profile_nan_is_optimizer_failure_not_zero_event(monkeypatch):
             minimum_index=None,maximum_index=None,grid_size=11)
 
 
-def test_actual_paginated_checksum_directory_is_exported(tmp_path):
+def test_paginated_report_writes_its_checksum_directory(tmp_path):
     from mic_50_90 import analyse_spec
     from mic_50_90.report import render_batch_html
     raw=json.loads((FIXTURES/'case_audit_unit.json').read_text())
@@ -214,7 +151,3 @@ def test_actual_paginated_checksum_directory_is_exported(tmp_path):
     render_batch_html(records,{'version':'1.0.0'},out/'report.html',page_size=1)
     checksum=next(out.rglob('checksums.sha256'))
     assert checksum.parent.name.startswith('report-pages-')
-    server=SimpleNamespace(jobs={'j':{'directory':tmp_path}})
-    assert checksum.relative_to(out).as_posix() in DesktopServer.allowed_files(server,'j')
-    other=out/'not-generated';other.mkdir();(other/'checksums.sha256').write_text('not a report')
-    assert 'not-generated/checksums.sha256' not in DesktopServer.allowed_files(server,'j')

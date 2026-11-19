@@ -123,24 +123,19 @@ def test_recorded_and_interval_counts_agree_on_an_exact_partition():
     assert [observation_coefficients(x,panel).tolist() for x in results] == [[0,1],[0,1]]
 
 
-@pytest.mark.parametrize('mode', ['distribution', 'batch'])
-def test_form_csv_adapter_retains_count_scale_and_analysis(tmp_path, mode):
+def test_cli_retains_count_scale_and_analysis(tmp_path):
     import json
-    from mic_50_90.gui_worker import execute_job
+    from mic_50_90.cli import main
     raw=specification()
     for key in ('mode', 'question_utility', 'thresholds'):
         raw.pop(key)
     raw['additional_counts']=[dict(threshold=2,relation='>=',source_scale='recorded',count=11,n=20,unit='mg/L')]
-    payload=dict(mode=mode,config=raw,targets=[dict(threshold=2,unit='mg/L')],options={})
-    execute_job(payload,tmp_path/'job')
-    status=json.loads((tmp_path/'job/job-status.json').read_text())
-    assert status['status']=='completed', status
-    report=(tmp_path/'job/output/report.html').read_text()
-    assert '11' in report
-    if mode=='batch':
-        paths=list((tmp_path/'job').rglob('additional-counts.csv'))
-        assert len(paths)==1
-        assert 'source_scale' in paths[0].read_text() and 'recorded' in paths[0].read_text()
+    raw['targets']=[dict(threshold=2,unit='mg/L')]
+    source=tmp_path/'input.json'
+    source.write_text(json.dumps(raw),encoding='utf-8')
+    assert main(['distribution',str(source),'--output-dir',str(tmp_path/'output'),'--fail-on-refusal'])==0
+    assert '11' in (tmp_path/'output/report.html').read_text()
+
 
 
 def test_variant_reordering_preserves_union_and_counts():
@@ -155,3 +150,31 @@ def test_variant_reordering_preserves_union_and_counts():
         problem=next(iter(problems.values()))
         bounds.append(tuple(x.count for x in problem.bounds(problem.panel.panel_tail(2))))
     assert bounds[0]==bounds[1]
+
+
+def test_batch_csv_retains_count_scale_and_analysis(tmp_path):
+    import csv
+    from mic_50_90.cli import main
+    from mic_50_90.model import MICPanel
+    raw = specification()
+
+    def write(name, rows):
+        with (tmp_path / name).open('w', newline='', encoding='utf-8') as stream:
+            writer = csv.DictWriter(stream, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+        return str(tmp_path / name)
+
+    panels = write('panels.csv', [dict(panel_id='p', unit='mg/L', category=b.label, panel_value=b.panel_value,
+                                       lower=b.lower, upper=b.upper, lower_closed=str(b.lower_closed).lower(),
+                                       upper_closed=str(b.upper_closed).lower())
+                                  for b in MICPanel.from_dict(raw['panel']).bins])
+    summaries = write('summaries.csv', [dict(cohort_id='c', panel_id='p', variant_id='primary', n=20, mic50='2',
+                                             mic90='4', rank50=10, rank90=18, rank_convention='ceiling')])
+    targets = write('targets.csv', [dict(cohort_id='c', threshold=2, unit='mg/L')])
+    counts = write('additional-counts.csv', [dict(cohort_id='c', threshold=2, relation='>=', source_scale='recorded',
+                                                  count=11, n=20, unit='mg/L')])
+    out = tmp_path / 'output'
+    assert main(['batch', summaries, '--panels', panels, '--targets', targets, '--additional-counts', counts,
+                 '--output-dir', str(out), '--fail-on-refusal']) == 0
+    assert '11' in (out / 'report.html').read_text()

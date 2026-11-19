@@ -74,7 +74,7 @@ def records():
         "../../outside",
         '<script>alert("x")</script> & α /?',
         "a#b%20 space",
-        "菌 żółć",
+        "菌 Dvořák",
     ]
     return [
         {

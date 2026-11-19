@@ -4,7 +4,7 @@ For invocation examples and interface defaults, see [Python interface](PYTHON_IN
 
 This map covers every name exported by `mic_50_90.__all__`, the command-line tasks, and the reporting/workflow entry points. Classes represent data contracts; they are not competing analysis methods. The [current engineering record](ENGINEERING_VERIFICATION.md) links module coverage and a lexical function execution inventory. Lack of execution or use in a tutorial does not justify deleting a public function.
 
-## Guided local application
+## Interfaces and population constructions
 
 The distribution workflow exposes four population constructions: `bonferroni`,
 `joint-exact`, `range-calibrated` and `range-hunter`. The common input/output
@@ -15,7 +15,7 @@ categories remain the default. For `target_scale=interval`, definite and possibl
 membership preserve uncertainty within the declared measurement intervals.
 `distribution_decisions` projects sample, population and calibrated results onto
 that event, using the same simultaneous region for both membership bounds.
-Independent finite-histogram checks and JSON/CSV/GUI round trips are in
+Independent finite-histogram checks and JSON/CSV round trips are in
 `test_distribution_range_questions.py` and `test_interval_scale_targets.py`.
 
 `range_certificates` checks the P6 sufficient condition documented in population-row-lift.md for
@@ -34,21 +34,15 @@ The independent partition and question-tree checks are in
 `test_population_resolution.py` and `test_population_acquisition.py`.
 `observation_coefficients` translates tail or whole-category range observations
 into the common constraint representation; `test_interval_observations.py`
-checks exact counts, rounding, contradictions and the guided report.
+checks exact counts, rounding, contradictions and the report.
 
-The portable Windows launcher, `mic-50-90-gui` and `mic-50-90 gui` open the same
-English form. `gui_forms.validate_payload` checks the input structure and explicit
-metadata; scientific feasibility is checked by the calculation engine. `gui_worker`
-runs distribution, summary-threshold or histogram-reporting workflows in a separate
-process. `gui.DesktopServer` manages local sessions, cancellation, protected output
-downloads and shutdown. These interfaces add no statistical estimator. Saved input
-and same-sample updates preserve exact decimal counts and decision criteria.
-
-Backend tests check malformed inputs, local access restrictions, optional failures,
-saved updates and real engine results. Browser checks exercise all five steps,
-prepared examples, validation, saved-input reuse and responsive layouts. Installed
-archive and portable checks run in the software release workflow.
-The form is described in [the guided application manual](GUI_GUIDE.md).
+`received_report.check_certificates` and the command `mic-50-90 verify-report`
+check a received reporting certificate from the declared summaries and the
+disclosed counts alone. They keep exact decimal tokens, refuse contradictory
+disclosures and write CSV, text, JSON and HTML results; `test_usability_backend.py`
+and `test_patch_version_compatibility.py` check them. The Galaxy tools in `galaxy/`
+run `distribution`, `reporting-audit` and `verify-report`; these interfaces add no
+statistical estimator.
 
 | Public entry | User task and calculation | Result or export | Independent check |
 |---|---|---|---|

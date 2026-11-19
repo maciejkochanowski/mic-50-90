@@ -1,6 +1,6 @@
 # Large batch reports
 
-MIC-50-90 1.0.1 creates a static index and detail pages when a CSV batch contains
+MIC-50-90 creates a static index and detail pages when a CSV batch contains
 more than 50 cohorts. Open `report.html` to see the complete cohort list, each
 status and refusal reason, and a link to the corresponding result. The detail
 pages contain the same scientific sections, diagnostics and available audit

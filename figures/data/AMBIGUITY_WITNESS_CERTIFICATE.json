@@ -1,0 +1,131 @@
+{
+  "schema": "archival-abstract-ambiguity-witness/1",
+  "scope": {
+    "source_verified_by_this_script": false,
+    "actual_source_quantile_estimator_identified": false,
+    "support_points_are_original_assay_panel": false,
+    "witnesses_are_reconstructed_observations": false,
+    "population_inference": false,
+    "additional_count_was_already_available_in_same_report": true,
+    "comparison": "Different available-information subsets of the same report; no claim that authors omitted this count"
+  },
+  "n": 32,
+  "mathematical_support_points": [
+    "0.25",
+    "1",
+    "2",
+    "32"
+  ],
+  "reported_summary": {
+    "minimum": "0.25",
+    "maximum": "32",
+    "q50": "1",
+    "q90": "2"
+  },
+  "event": {
+    "relation": ">",
+    "threshold": "8"
+  },
+  "criteria": {
+    "main": "1/20",
+    "control": "1/10"
+  },
+  "registered_second_question": {
+    "lower_exclusive": "1",
+    "upper_inclusive": "8",
+    "criterion": "1/5"
+  },
+  "existing_additional_count": 2,
+  "witnesses": [
+    {
+      "id": "A",
+      "counts": [
+        1,
+        16,
+        14,
+        1
+      ],
+      "event_count": 1,
+      "event_fraction": "1/32",
+      "event_percentage": "3.125",
+      "main_answer": false,
+      "control_answer": false,
+      "Q2_count": 14,
+      "Q2_fraction": "7/16",
+      "Q2_answer": true,
+      "compatible_with_additional_count": false
+    },
+    {
+      "id": "B",
+      "counts": [
+        1,
+        16,
+        13,
+        2
+      ],
+      "event_count": 2,
+      "event_fraction": "1/16",
+      "event_percentage": "6.25",
+      "main_answer": true,
+      "control_answer": false,
+      "Q2_count": 13,
+      "Q2_fraction": "13/32",
+      "Q2_answer": true,
+      "compatible_with_additional_count": true
+    },
+    {
+      "id": "C",
+      "counts": [
+        2,
+        15,
+        13,
+        2
+      ],
+      "event_count": 2,
+      "event_fraction": "1/16",
+      "event_percentage": "6.25",
+      "main_answer": true,
+      "control_answer": false,
+      "Q2_count": 13,
+      "Q2_fraction": "13/32",
+      "Q2_answer": true,
+      "compatible_with_additional_count": true
+    },
+    {
+      "id": "D",
+      "counts": [
+        1,
+        26,
+        3,
+        2
+      ],
+      "event_count": 2,
+      "event_fraction": "1/16",
+      "event_percentage": "6.25",
+      "main_answer": true,
+      "control_answer": false,
+      "Q2_count": 3,
+      "Q2_fraction": "3/32",
+      "Q2_answer": false,
+      "compatible_with_additional_count": true
+    }
+  ],
+  "claims": {
+    "main_question_undetermined_without_additional_count": true,
+    "main_answer_with_additional_count": true,
+    "control_answer_with_additional_count": false,
+    "control_question_newly_resolved_by_these_witnesses": false,
+    "full_histogram_identified_after_additional_count": false,
+    "registered_Q2_remains_undetermined_after_additional_count": true,
+    "all_witnesses_match_both_quantiles_under_each_HF1_to_HF9": true,
+    "witness_method_is_not_an_actual_estimator_identification": true,
+    "disclosure_minimality_proved": false
+  },
+  "unregistered_diagnostic": {
+    "question": "N(X>8)/32 >= 0.10",
+    "included_in_registered_question_denominator": false,
+    "claimed_lower_envelope_q90_over_HF1_to_HF9": "129/20",
+    "event_count_upper_bound_under_any_HF1_to_HF9": 3,
+    "argument": "Four values >8 would force every sample coordinate to dominate [0.25]*28+[8]*4; every HF q90 of that lower envelope exceeds the reported value 2."
+  }
+}

@@ -10,7 +10,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3"])
+@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3", "2.0.0"])
 def test_patch_102_accepts_known_distribution_producers(monkeypatch, version):
     from mic_50_90 import _version
     from mic_50_90.result_schema import validate_distribution_schema
@@ -22,7 +22,7 @@ def test_patch_102_accepts_known_distribution_producers(monkeypatch, version):
     assert document == before
 
 
-@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3"])
+@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3", "2.0.0"])
 def test_patch_102_recipient_example_accepts_known_certificate_versions(tmp_path, version):
     document = json.loads((ROOT / "examples/received_report/certificate.json").read_text())
     document["version"] = version
@@ -34,10 +34,9 @@ def test_patch_102_recipient_example_accepts_known_certificate_versions(tmp_path
     assert "Sufficient" in result.stdout
 
 
-@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3"])
-def test_patch_102_gui_accepts_known_certificate_versions(version):
-    from mic_50_90.gui_documents import validate_document
+@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3", "2.0.0"])
+def test_recipient_check_accepts_known_certificate_versions(version):
+    from mic_50_90.received_report import check_certificates
     document = json.loads((ROOT / "examples/received_report/certificate.json").read_text())
     document["version"] = version
-    result = validate_document({"mode": "verify-report", "certificate": document})
-    assert result["valid"], result["issues"]
+    assert all(record["status"] == "established" for record in check_certificates(document))

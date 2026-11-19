@@ -33,23 +33,17 @@ def test_complement_percentage_preimage():
     assert (r['count_min'],r['count_max'])==(7133-hi,7133-lo)
 
 
-def test_table_preview_and_certificate_job(tmp_path):
-    from mic_50_90.gui_forms import validate_payload
-    from mic_50_90.gui_worker import execute_job
-    table={'mode':'distribution','input_format':'tables','tables':{'input':{'text':'cohort_id,panel_id,n,variant_id\na,p,1,primary\n','delimiter':'comma'},'panels':{'text':'panel_id,unit,category,panel_value,lower,upper,lower_closed,upper_closed\np,mg/L,<=1,1,,1,false,true\np,mg/L,>1,2,1,,false,false\n','delimiter':'comma'},'additional_counts':{'text':'cohort_id,threshold,unit,n,count\na,1,mg/L,1,0\n','delimiter':'comma'}}}
-    checked=validate_payload(table)
-    assert checked['valid'],checked
-    assert checked['preview']['input']['rows']==1
-    execute_job(table,tmp_path/'table')
+def test_certificate_check_escapes_labels_and_states_its_scope(tmp_path):
     import json
-    assert json.loads((tmp_path/'table/job-status.json').read_text())['status']=='completed'
+    from mic_50_90.cli import main
     from test_decision_planning import specification,criteria
-    payload={'mode':'verify-report','certificate':{'version':'1.0.0','certificates':[{'cohort_id':'<script>','specification':specification(),'criteria':criteria(),'disclosures':[]}]}}
-    assert validate_payload(payload)['valid']
-    execute_job(payload,tmp_path/'certificate')
-    status=json.loads((tmp_path/'certificate/job-status.json').read_text())
-    assert status['status']=='refused'
-    report=(tmp_path/'certificate/output/report.html').read_text()
+    source=tmp_path/'certificate.json'
+    source.write_text(json.dumps({'version':'1.0.0','certificates':[{'cohort_id':'<script>','specification':specification(),'criteria':criteria(),'disclosures':[]}]}))
+    assert main(['verify-report',str(source),'--output-dir',str(tmp_path/'out')])==0
+    assert main(['verify-report',str(source),'--output-dir',str(tmp_path/'out'),'--fail-on-insufficient'])==2
+    records=json.loads((tmp_path/'out/results.json').read_text())['cohorts']
+    assert records[0]['status']=='undetermined'
+    report=(tmp_path/'out/report.html').read_text()
     assert '&lt;script&gt;' in report and '<script>' not in report
     assert 'does not authenticate' in report
 
@@ -60,10 +54,10 @@ def test_json_decision_fraction_retains_exact_token():
     assert raw['targets'][0]['decision_fraction']=='0.050000000000000000000001'
 
 
-def test_distribution_form_validates_targets():
-    from mic_50_90.gui_forms import validate_payload
-    p={'mode':'distribution','config':dict(n=1,unit='mg/L',panel={'levels':[1,2]},additional_counts=[dict(threshold=2,count=0,n=1,unit='mg/L')],targets=[dict(threshold=2,unit='mg/L',decision_operator='<',decision_fraction='5')])}
-    assert not validate_payload(p)['valid']
+def test_distribution_refuses_a_decision_fraction_above_one():
+    p=dict(n=1,unit='mg/L',panel={'levels':[1,2]},additional_counts=[dict(threshold=2,count=0,n=1,unit='mg/L')],targets=[dict(threshold=2,unit='mg/L',decision_operator='<',decision_fraction='5')])
+    with pytest.raises(ValueError):
+        analyse_distribution(p)
 
 
 def test_normalized_percentage_can_be_reused():
@@ -99,17 +93,14 @@ def test_json_csv_decisions_equivalent_and_mixed_cohorts(tmp_path):
     assert exported[0]['count_components']=='[[0, 0]]'
 
 
-def test_certificate_contradictions_refused_and_valid_without_histogram(tmp_path):
-    import json
+def test_certificate_contradictions_refused_and_valid_without_histogram():
     from test_decision_planning import specification,criteria
-    from mic_50_90.gui_worker import execute_job
+    from mic_50_90.received_report import check_certificates
     rows=[dict(threshold=t,count=k,n=10,unit='mg/L') for t,k in [(2,1),(4,0)]]
     cert=dict(cohort_id='good',specification=specification(),criteria=criteria(),disclosures=rows)
-    execute_job(dict(mode='verify-report',certificate=dict(version='1.0.0',certificates=[cert])),tmp_path/'good')
-    assert json.loads((tmp_path/'good/job-status.json').read_text())['status']=='completed'
+    assert check_certificates(dict(version='1.0.0',certificates=[cert]))[0]['status']=='established'
     cert['disclosures'][0]['count']=10
-    execute_job(dict(mode='verify-report',certificate=dict(version='1.0.0',certificates=[cert])),tmp_path/'bad')
-    assert json.loads((tmp_path/'bad/job-status.json').read_text())['status']=='refused'
+    assert check_certificates(dict(version='1.0.0',certificates=[cert]))[0]['status']=='refused'
 
 
 @pytest.mark.parametrize('n',[1,7,20,101])
@@ -123,33 +114,11 @@ def test_every_integer_rounded_preimage_complement(n):
         assert [result['count_min'],result['count_max']]==[n-max(compatible),n-min(compatible)]
 
 
-def test_table_preview_reports_missing_columns_without_solver():
-    from mic_50_90.gui_forms import validate_payload
-    p=dict(mode='batch',input_format='tables',tables={k:dict(text='cohort_id\na\n',delimiter='comma') for k in ['input','panels','targets']})
-    v=validate_payload(p)
-    assert not v['valid']
-    assert any('mic50' in issue['message'] for issue in v['issues'])
-
-
-def test_table_preview_warns_on_panel_mismatch_but_keeps_independent_cohorts():
-    from mic_50_90.gui_forms import validate_payload
-    p=dict(mode='distribution',input_format='tables',tables={'input':dict(text='cohort_id,panel_id,n,variant_id\na,missing,1,primary\n',delimiter='comma'),'panels':dict(text='panel_id,unit,category,panel_value,lower_closed,upper_closed\np,mg/L,a,1,false,true\n',delimiter='comma')})
-    v=validate_payload(p)
-    assert v['valid']
-    assert any('missing' in warning['message'] for warning in v['warnings'])
-
-
 def test_certificate_retains_original_decimal_tokens():
-    import json
-    from mic_50_90.gui_forms import decode_payload, validate_payload
+    from mic_50_90.received_report import load_certificate_json
     original = '{"version":"1.0.0","certificates":[{"specification":{"n":20},"criteria":[{"decision_fraction":0.050000000000000000000001}],"disclosures":[]}]}'
-    raw = '{"mode":"verify-report","certificate":' + original + '}'
-    value = decode_payload(raw)
-    assert value['certificate']['certificates'][0]['criteria'][0]['decision_fraction'] == '0.050000000000000000000001'
-    payload = dict(mode='verify-report', certificate=json.loads(original), certificate_json=original)
-    validated = validate_payload(payload)
-    assert validated['valid']
-    assert validated['payload']['certificate']['certificates'][0]['criteria'][0]['decision_fraction'] == '0.050000000000000000000001'
+    value = load_certificate_json(original)
+    assert value['certificates'][0]['criteria'][0]['decision_fraction'] == '0.050000000000000000000001'
 
 
 def test_population_complement_does_not_change_strict_boundary():
@@ -166,15 +135,16 @@ def test_population_complement_does_not_change_strict_boundary():
 @pytest.mark.parametrize('disclosure',[{'count':19,'relation':'<='}, {'count_min':19,'count_max':19,'relation':'<='}])
 def test_certificate_readable_report_keeps_rational_criterion_and_source_relation(tmp_path,disclosure):
     import json
-    from mic_50_90.gui_worker import execute_job
+    from mic_50_90.cli import main
     spec=dict(mode='empirical',unit='mg/L',n=20,panel={'levels':[1,2]},summaries={'quantiles':[
         dict(probability=.5,category='<=1',convention='ceiling'),dict(probability=.9,category='<=1',convention='ceiling')]},thresholds=[2])
     # Use the panel's actual generated label rather than assuming its spelling.
     spec['summaries']['quantiles'][0]['category']=MICPanel.from_dict(spec['panel']).bins[0].label
     spec['summaries']['quantiles'][1]['category']=MICPanel.from_dict(spec['panel']).bins[0].label
     cert=dict(specification=spec,criteria=[dict(threshold=2,unit='mg/L',decision_operator='<=',decision_fraction='1/20')],disclosures=[dict(threshold=2,unit='mg/L',n=20,**disclosure)])
-    execute_job(dict(mode='verify-report',certificate=dict(version='1.0.0',certificates=[cert])),tmp_path/'job')
-    assert json.loads((tmp_path/'job/job-status.json').read_text())['status']=='completed'
-    html=(tmp_path/'job/output/report.html').read_text(encoding='utf-8')
+    source=tmp_path/'certificate.json'
+    source.write_text(json.dumps(dict(version='1.0.0',certificates=[cert])))
+    assert main(['verify-report',str(source),'--output-dir',str(tmp_path/'job'),'--fail-on-insufficient'])==0
+    html=(tmp_path/'job/report.html').read_text(encoding='utf-8')
     assert 'MIC &lt;= 2' in html and '5%' in html
     assert '19–19' in html if 'count_min' in disclosure else '19; denominator' in html

@@ -1,6 +1,5 @@
 # What to ask for when MIC50 and MIC90 are not enough
 
-MIC-50-90 version **1.0.1**.
 
 You have read a paper reporting MIC50 and MIC90, but need to know whether fewer than 5% of its isolates exceeded another concentration. The program first checks whether those summaries already answer your question. If they do not, it identifies counts that would answer it. These are counts of **existing results in the same original sample**, not requests for new susceptibility tests.
 

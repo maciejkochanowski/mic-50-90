@@ -77,24 +77,16 @@ def test_calibration_projects_joint_cdf_event_without_assuming_independence():
     assert row['calibration']['status'] == 'undetermined'
 
 
-def test_gui_json_cli_and_csv_keep_range_question_and_display_its_meaning(tmp_path):
+def test_cli_keeps_range_question_and_displays_its_meaning(tmp_path):
     from mic_50_90.cli import main
-    from mic_50_90.gui_forms import validate_payload
-    from mic_50_90.gui_worker import execute_job
     raw = specimen()
-    payload = dict(mode='distribution', config=deepcopy(raw), options={})
-    validation = validate_payload(payload)
-    assert validation['valid'], validation
-    job = tmp_path/'desktop'
-    job.mkdir()
-    execute_job(payload, job)
-    desktop = json.loads((job/'output/results.json').read_text())['cohorts'][0]
+    api = analyse_distribution(deepcopy(raw))
     source = tmp_path/'input.json'
     source.write_text(json.dumps(raw))
     out = tmp_path/'cli'
     assert main(['distribution', str(source), '--output-dir', str(out)]) == 0
     command = json.loads((out/'results.json').read_text())['cohorts'][0]
-    assert desktop['decisions'] == command['decisions']
+    assert api['decisions'] == command['decisions']
     html = (out/'report.html').read_text(encoding='utf8')
     assert 'recorded MIC category 2 mg/L' in html
     assert '6 of 20 isolates' in html
@@ -177,28 +169,3 @@ def test_csv_range_selector_is_not_dropped_when_reading_multiple_cohorts(tmp_pat
     rows = json.loads((out/'results.json').read_text())['cohorts']
     assert len(rows) == 2
     assert all(r['decisions'][0]['sample']['count_components'] == [[6, 6]] for r in rows)
-    # The Windows text-table route must accept the identical no-threshold CSV.
-    from mic_50_90.gui_forms import validate_payload
-    from mic_50_90.gui_documents import run_tables
-    payload = dict(mode='distribution', input_format='tables', tables={
-        key: dict(text=(tmp_path/name).read_text(encoding='utf8'), delimiter='comma')
-        for key, name in [('input','samples.csv'),('panels','panels.csv'),
-                          ('targets','targets.csv'),('additional_counts','counts.csv')]})
-    # Remove the unused threshold column, matching a category-only user's table.
-    payload['tables']['targets']['text'] = payload['tables']['targets']['text'].replace(
-        'cohort_id,threshold,', 'cohort_id,').replace('A,,','A,').replace('B,,','B,')
-    checked = validate_payload(payload)
-    assert checked['valid'], checked['issues']
-    gui_work, gui_out = tmp_path/'gui-work', tmp_path/'gui-out'
-    gui_work.mkdir(); gui_out.mkdir()
-    run_tables(payload, gui_work, gui_out)
-    received = json.loads((gui_out/'results.json').read_text())['cohorts']
-    assert all(r['decisions'][0]['sample']['count_components'] == [[6, 6]] for r in received)
-
-
-@pytest.mark.parametrize('mode', ['batch','reporting-audit'])
-def test_threshold_table_modes_require_threshold_questions(mode):
-    from mic_50_90.gui_documents import validate_document
-    result = validate_document(dict(mode=mode, tables={'targets': dict(delimiter='comma',
-        text='cohort_id,start_category,end_category,unit\nA,2,2,mg/L\n')}))
-    assert any(r['field']=='tables.targets' and 'threshold' in r['message'] for r in result['issues'])

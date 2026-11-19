@@ -157,8 +157,8 @@ def render_distribution_html(result, destination):
         '</style></head><body><main><h1>What does this report tell us about the MIC distribution?</h1>',
         f'<p>MIC-50-90 {escape(result["software_version"])}. Input and full numerical results are saved alongside this report.</p>',
         '<p>Start with the sample answer and graph. Open the details for cumulative results, assumptions and other kinds of inference.</p>',
-        '<p><a href="distribution.csv">Distribution table</a> · <a href="results.json">Full numerical results</a> · '
-        '<a href="configuration.json">Input and settings</a></p>']
+        '<p>Files: <a href="distribution.csv">distribution table</a>, <a href="results.json">full numerical results</a>, '
+        '<a href="configuration.json">input and settings</a>.</p>']
     if len(result["cohorts"]) > 50:
         body.append('<nav class="pager" aria-label="Cohort pages"><button id="previous">Previous</button><span id="page"></span><button id="next">Next</button></nav>')
     for record in result["cohorts"]:

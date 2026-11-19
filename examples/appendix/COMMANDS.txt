@@ -1,14 +1,11 @@
-MIC-50-90 1.0.1: commands of Appendices B and C
+MIC-50-90 2.0.0: commands of Appendices B and C
 Run from the folder examples/appendix of the source archive. Each command is one line. Output folders are local.
 
 INSTALL (Windows PowerShell; Python 3.12 shown)
 py -3.12 -m venv .venv
-.\.venv\Scripts\python -m pip install mic-50-90==1.0.1
+.\.venv\Scripts\python -m pip install mic-50-90==2.0.0
 $env:Path = "$PWD\.venv\Scripts;" + $env:Path
 mic-50-90 --version
-
-GUIDED APPLICATION (close using Quit application)
-mic-50-90 gui
 
 SOURCE PUBLICATION: sample category, before and after a count
 mic-50-90 distribution inputs/ampicillin-67-summaries-category.json --output-dir output/ampicillin-before

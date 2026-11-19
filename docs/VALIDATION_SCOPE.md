@@ -77,9 +77,9 @@ roster and the assessment rules in [CALIBRATION_ASSESSMENT.md](CALIBRATION_ASSES
 ## Formal and engineering checks
 
 Lean formalizes the stated algebraic consequences under explicit hypotheses. It does not
-verify the whole Python implementation, every report translation, floating-point arithmetic,
-GUI or statistical sampling argument. A fresh compilation must identify its toolchain and
-source. A Linux wheel test is not a native Windows executable test. A dependency or build
+verify the whole Python implementation, every report translation, floating-point arithmetic
+or statistical sampling argument. A fresh compilation must identify its toolchain and
+source. A test on one operating system does not replace a test on another. A dependency or build
 change needs artifact-specific evidence; a version number alone is insufficient.
 
 For the supplied delivery, use the accompanying acceptance report and artifact receipts to

@@ -7,7 +7,7 @@ replicates, or repetitions) and requires the recomputed outcome to equal the sto
   confirmation_coverage    the first block (50 replicates) of every --stride-th configuration
   synthetic_coverage       the first block of every --stride-th configuration
   external_calibration     the first --repetitions synthetic repetitions of every setting
-It is the quick reproduction check used by the Code Ocean capsule; the full simulations are run by
+It is the quick reproduction check; the full simulations are run by
 the scripts named above.
 
 Output: OUTPUT/verify_subsets/summary.json

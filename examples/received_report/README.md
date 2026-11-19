@@ -1,8 +1,10 @@
 # Check a received laboratory report
 
-Open the local MIC-50-90 form, choose **Verify a received report**, and load
-`certificate.json`. No complete histogram is supplied. The expected conclusion
-is that all four recorded-sample questions are supported.
+Run `mic-50-90 verify-report certificate.json --output-dir output`, or load
+`certificate.json` into the Galaxy tool **MIC-50-90 check a received report**.
+No complete histogram is supplied. The expected conclusion is that all four
+recorded-sample questions are supported. `verify.py` performs the same check
+through the Python interface.
 
 The source is the FDA animal-pathogen AMR collection, NAHLN 2024: 276 canine
 E. coli isolates, other tissues/body sites, amikacin. The source categories are

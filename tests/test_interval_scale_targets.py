@@ -73,16 +73,13 @@ def test_contradictory_counts_are_not_discarded():
         analyse_distribution(raw)
 
 
-def test_form_missing_rounding_metadata_keeps_sample(tmp_path):
-    from mic_50_90.gui_forms import validate_payload, canonical_distribution_input
+def test_missing_rounding_metadata_keeps_sample():
     raw=censored_input()
     raw['additional_counts'].append(dict(threshold=32,percentage='16',decimal_places=None,
         rounding_rule='',n=50,unit='mg/L'))
-    payload=dict(mode='distribution',config=raw)
-    checked=validate_payload(payload)
-    assert checked['valid'] and checked['warnings']
-    result=analyse_distribution(canonical_distribution_input(raw))
+    result=analyse_distribution(raw)
     assert result['input_information_issues']
+
 
 
 def test_saved_interval_question_update_and_csv(tmp_path):

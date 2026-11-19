@@ -33,7 +33,7 @@ def run(script, *args):
 
 
 def test_shared_manifest_includes_runtime_assets_and_user_docs_but_excludes_article(tmp_path):
-    names = ["src/mic_50_90/gui_assets/fonts/body.woff2", "src/mic_50_90/gui_assets/typography.css",
+    names = ["src/mic_50_90/report_assets/fonts/body.woff2", "src/mic_50_90/report_assets/typography.css",
              "docs/new-guide.md", "tests/test_new.py",
              "reproducibility/independent-check/oracle.py"]
     for name in names:
@@ -61,7 +61,7 @@ def test_shared_manifest_includes_runtime_assets_and_user_docs_but_excludes_arti
 
 def test_source_bundle_uses_the_manifest_selection_and_refuses_replacement(tmp_path, monkeypatch):
     write(tmp_path, "PACKAGE_STATUS.json", '{"current_delivery": "dist/current"}\n')
-    write(tmp_path, "src/mic_50_90/gui_assets/fonts/body.woff2", "font bytes")
+    write(tmp_path, "src/mic_50_90/report_assets/fonts/body.woff2", "font bytes")
     write(tmp_path, "docs/current.md", "current document\n")
     result = run("refresh_package_manifest.py", "--root", tmp_path)
     assert result.returncode == 0, result.stdout + result.stderr
@@ -74,10 +74,10 @@ def test_source_bundle_uses_the_manifest_selection_and_refuses_replacement(tmp_p
     module.main()
     with zipfile.ZipFile(target) as archive:
         assert set(archive.namelist()) == {
-            "PACKAGE_STATUS.json", "src/mic_50_90/gui_assets/fonts/body.woff2",
+            "PACKAGE_STATUS.json", "src/mic_50_90/report_assets/fonts/body.woff2",
             "docs/current.md", "MANIFEST.sha256",
         }
-        assert archive.read("src/mic_50_90/gui_assets/fonts/body.woff2") == b"font bytes"
+        assert archive.read("src/mic_50_90/report_assets/fonts/body.woff2") == b"font bytes"
     before = target.read_bytes()
     with pytest.raises(SystemExit, match="already exists"):
         module.main()

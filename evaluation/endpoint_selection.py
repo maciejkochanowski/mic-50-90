@@ -1,4 +1,4 @@
-"""Selected tables against every compatible table: the ampicillin example of Section 3.3.
+"""Selected tables against every compatible table: the ampicillin example of Section 3.1.
 
 The two ampicillin reports (67 canine staphylococci; MIC50, MIC90 and the observed range, then
 with the published count of 59 results at or below 0.25 mg/L) are analyzed with the

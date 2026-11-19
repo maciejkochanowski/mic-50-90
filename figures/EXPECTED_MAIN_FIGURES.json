@@ -1,0 +1,439 @@
+{
+ "status": "passed",
+ "versions": {
+  "matplotlib": "3.11.2",
+  "numpy": "2.5.3",
+  "PIL": "12.3.0",
+  "fontTools": "4.67.0"
+ },
+ "rule": "one data graph per figure; black text; palette of black, greys and two muted accents; no middle-dot or bullet separators; all text inside canvas",
+ "palette": {
+  "ink": "#000000",
+  "dark grey": "#4D4D4D",
+  "grey": "#8C8C8C",
+  "grid": "#E0E0E0",
+  "light grey": "#F2F2F2",
+  "blue": "#2F5D7C",
+  "pale blue": "#E4ECF1",
+  "slate": "#1F3447",
+  "ochre": "#9A5B3E"
+ },
+ "fonts_sha256": {
+  "LiberationSans-Bold.ttf": "3973aa5054fb467dd5627245d3dc82e37bf16fe075756156a570455871351582",
+  "LiberationSans-Regular.ttf": "4659bc0c58c5028dd488ec928d41d9265db43d9b669fc14ca8b0832daca7b144"
+ },
+ "default_style_sha256": "8b76e138ce9dc944a843dc6aa1ef9ee0e88638358b10baf227cd248d271b5f5a",
+ "inputs_sha256": {
+  "data/AMBIGUITY_WITNESS_CERTIFICATE.json": "4bd822b28cf5606758cb896abab10c290dadd528733af7b6fddd57f4144cab7d",
+  "data/ampicillin_rerun.json": "c251f4262b465fd38d95b75462ae66af71905b0646183df771fb895eb5f05edf",
+  "data/figure3_ampicillin.csv": "78006123a46ec7784d064cc2c2025920b02c9065d6ff182bc0f51ef76723be43",
+  "data/figure4_chloramphenicol.csv": "b4385785820ff1752120804a555396f293539821fc72acaecb62eaf51fa04d94",
+  "data/figure5_amikacin.csv": "132eeeaea3bfc8e3d6856890271727fd3aa493b0ef1e46a93809da35a641609b",
+  "data/figureS2_ampicillin.csv": "dd5dfe157e4d8a9536a334ecf1ab1ca9fc7edf8c00afb2f03714bf21bf26d30f",
+  "data/madrid_pneumococci.csv": "951020695db9ecfd72c1ce6a3e2c5a705ba3ccee6ecd6480ae1acea00c6c34ff",
+  "efsa/ALL_RANGE_CHECKS.csv": "68d633481b206fb6e07ccd401b51d8592f1679ec04f89017011f2a4f90c807a1",
+  "efsa/EFSA_REPLAY_SUMMARY.json": "5586c527ab97ca5e9dd5e80aac47e09375a080fa82b66eff37796f8724f647c1",
+  "efsa/OPTIMIZER_SUMMARY.json": "a2fe046f01b1d1042c9a7f229dab5aa95f45d42534ea304449c8a31fc88771c1",
+  "efsa/external_input.json": "70e8e7d74eec2e5fb907ac0da57e2a32e7f571d9f9303abbda2ae035a98d4b03",
+  "efsa/selected_113_fields.csv": "66ad4ec90475021cdc2eed8df95b08d9bb51bd9d4b5bb28fb42ebb2ecd9092d9"
+ },
+ "figures": [
+  {
+   "figure": "Figure1",
+   "inches": [
+    6.5,
+    3.3
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "2007": 22.82,
+    "2008": 23.5211,
+    "2009": 23.1507,
+    "2010": 27.3859,
+    "2011": 26.1803,
+    "2012": 25.1366,
+    "2013": 29.3051,
+    "2014": 21.3198,
+    "2015": 22.8632,
+    "2016": 19.6429,
+    "2017": 14.2336,
+    "2018": 18.1049,
+    "2019": 18.6414,
+    "2020": 19.5238,
+    "2021": 29.1925
+   },
+   "file_sha256": {
+    "svg": "3d4d2382ff9f7ae491ebe47572ea56dfd97f0e8a1c87786d3ae5aa2ea199ead6",
+    "pdf": "775525b4507b0bf80d880060a22cd06ee648a77761e8b6956f346145c53ae2b8",
+    "png": "5f5a84581e448be7389d1f3ce1d0fd4785459cd35ee8a1a6c2782427b0348aa8",
+    "tif": "82748612e2a325c2f9253f1e4e24c96d6506379e732b95e3e8d62aca2d78459a"
+   },
+   "pixel_sha256": {
+    "png": "682573806b45f53cf38f1bf8e538d44083718a6173c11516153258b39cb38218",
+    "tif": "db74c4c7730377cd84420f65eedace3360b6798bfdf7c2af206b7b20eb827d00"
+   }
+  },
+  {
+   "figure": "Figure2",
+   "inches": [
+    7.0,
+    3.35
+   ],
+   "axes_with_data": 0,
+   "plotted_values": {
+    "example_before": "1–32",
+    "example_after": "2–7"
+   },
+   "file_sha256": {
+    "svg": "708f13fa062d3fb800c51edf2e79e14f8b14f36931e8933a475c18f04ae9525b",
+    "pdf": "4be826dac80ed4ea9d171e24ceb70fd3d1b5473b714418b981451b003c11a326",
+    "png": "ff09cebbd457c0e3bc4bc50f32b0cb87eef8943a9c324d3ba6e0aca0457a722b",
+    "tif": "39ce010ab25e6155fe9dc1b641769a8bc6bf47f78102a7b2d61dc7b99fe9221c"
+   },
+   "pixel_sha256": {
+    "png": "1f3425dd0f97ea82df07f463fc3e3cc87fea970185d3ccc0fbda50f8159a5a2b",
+    "tif": "a2aa13efec3fa68a897f80b7bedc3bf4a8780842fe13eaa6bfeac58c9a1af5fc"
+   }
+  },
+  {
+   "figure": "Figure3",
+   "inches": [
+    6.5,
+    2.75
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "collection_before": [
+     1.4925,
+     47.7612
+    ],
+    "collection_after": [
+     2.9851,
+     10.4478
+    ],
+    "population_before": [
+     0.0037,
+     65.2152
+    ],
+    "population_after": [
+     0.1089,
+     24.9954
+    ]
+   },
+   "file_sha256": {
+    "svg": "4347e9f3f7fdf081264294556a2672a38cf896752511823860ae13cbc70dcef3",
+    "pdf": "fa106e0098b4da30245e4aafdb1d819d853ddfdd6eb550cfd616e0ae4877af0d",
+    "png": "a07837e7c79149043f1d4c1368e40a56c7a72ae73c0bdf3b61264c79d1c2dc46",
+    "tif": "7c3810d8825de91f6f395576df419b15ad4fae7329693a774b9bcdd48b85d0bd"
+   },
+   "pixel_sha256": {
+    "png": "9d503f2d0bb9818a8315b5a2ea8cd90a4b3bc201c90e1bbba8a15d0e958c95c2",
+    "tif": "947cb21aa2867beda9c9b4b2d260a82de7c7bdbbd4208eaf7f8563719794d001"
+   }
+  },
+  {
+   "figure": "Figure4",
+   "inches": [
+    6.5,
+    3.1
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "t=2": [
+     34,
+     67
+    ],
+    "t=4": [
+     34,
+     34
+    ],
+    "t=8": [
+     0,
+     0
+    ]
+   },
+   "file_sha256": {
+    "svg": "c8c5094a4583dad35ee99600a1e9cad216b29415de7f2977c7b802e4ef88ab3a",
+    "pdf": "a24be6ebcbc930e6a78db28aedd9bbf5c928eb24e838a056ad31ae5fedfa44f3",
+    "png": "01326c9342c3c31b692853ff359ebb660fd23b562b3fa77eb71d1b3ba1800e99",
+    "tif": "e4baceec75fd0cd7196af64729d5cd461ee62587d121eaae853548d06dc1b1fc"
+   },
+   "pixel_sha256": {
+    "png": "89322fe9d056a768c57bac8fe8be2aa071c07d12976273a4fe48a06339429ab1",
+    "tif": "708c6d2955548a57761036b090c94eaa96e2ee0cfcdce83e4f7687fbb64b9ee4"
+   }
+  },
+  {
+   "figure": "Figure5",
+   "inches": [
+    6.5,
+    3.3
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "4.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "8",
+      "8"
+     ],
+     "laboratory": "8"
+    },
+    "8.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "0",
+      "8"
+     ],
+     "laboratory": "1"
+    },
+    "16.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "0",
+      "8"
+     ],
+     "laboratory": "1"
+    },
+    "32.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "0",
+      "8"
+     ],
+     "laboratory": "1"
+    }
+   },
+   "file_sha256": {
+    "svg": "db4e1e87bf11cf25ececab05afe0c6640527e6be4826032f69dc940970aa141f",
+    "pdf": "5f929617ac8570697eefb397df4c058cb9d9ae12605694a363e9453182b5c2cd",
+    "png": "42c89b0cca3c771092d4a3bc707294ef431582d833f3908b2ebf0cb9e70461ac",
+    "tif": "53d6eaea00f7d4656ff998e5e28e0812ea5fa588bc99949581cc0dd435f0e5ad"
+   },
+   "pixel_sha256": {
+    "png": "f0b3a84efede980e675d761dd48c33d66d51a7a15b53d7170a820bf35f73ba35",
+    "tif": "ebe47b7a591b92d1710e7c137dbb7e70ac022fdab77f73ddc0bc34ee3e8f4dee"
+   }
+  },
+  {
+   "figure": "Figure6",
+   "inches": [
+    6.5,
+    3.6
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "medians_pp": [
+     9.82659,
+     0.578035,
+     0.0
+    ],
+    "identified": [
+     0,
+     16,
+     39
+    ]
+   },
+   "file_sha256": {
+    "svg": "00e576e3924ba233300b77c443254a7a59ef37ce1b6d131b3021a0a57ff73558",
+    "pdf": "21b8f54ba7f4284a93d665afda26f69696d4028f47d85a639fc72b32079db7e5",
+    "png": "71ceaa0ce5c3dcbfc75b72f12aa81de6d40840ed96ef716f9a0f41e13036b413",
+    "tif": "8ee4dfd2972eb3d90271c4933f35688f0d6d098cc473bfbf666cd3ba70d111b1"
+   },
+   "pixel_sha256": {
+    "png": "2adae0e47df7376a8a8bd592d49b04c0f13357d1da8265773b522311eb279f17",
+    "tif": "adc63fb3ce019bbe4d8d1a4d5c951416902b7e9e17f17bded0dc265e963a77a4"
+   }
+  },
+  {
+   "figure": "SupplementaryFigureS1",
+   "inches": [
+    6.5,
+    2.9
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "2007": [
+     "0.023",
+     "1"
+    ],
+    "2008": [
+     "0.023",
+     "0.75"
+    ],
+    "2009": [
+     "0.016",
+     "0.75"
+    ],
+    "2010": [
+     "0.023",
+     "1.5"
+    ],
+    "2011": [
+     "0.023",
+     "1"
+    ],
+    "2012": [
+     "0.023",
+     "1"
+    ],
+    "2013": [
+     "0.032",
+     "1.5"
+    ],
+    "2014": [
+     "0.032",
+     "2"
+    ],
+    "2015": [
+     "0.032",
+     "0.75"
+    ],
+    "2016": [
+     "0.023",
+     "0.5"
+    ],
+    "2017": [
+     "0.023",
+     "0.38"
+    ],
+    "2018": [
+     "0.023",
+     "0.5"
+    ],
+    "2019": [
+     "0.023",
+     "0.38"
+    ],
+    "2020": [
+     "0.023",
+     "0.38"
+    ],
+    "2021": [
+     "0.023",
+     "0.5"
+    ]
+   },
+   "file_sha256": {
+    "svg": "9ca029e7162fa1ce279f17531cf06980e169f7b2b4bae8452d0eeff6e4459401",
+    "pdf": "0cdcb88bab2d0500a6a37a703b6564062eb608019e533e90de53266145634471",
+    "png": "58a017983ee21870d38f429bd6a7f7c84d09f8b842fd8390f6cb553cdcb73190",
+    "tif": "4a5189767315757cead7d4583a2e0acdc410d228f1db0ef63a3114872e299206"
+   },
+   "pixel_sha256": {
+    "png": "6b447ddded3c1a54a8bb16c1e02ce25bbda3864363b700f0b8b3e6e6bce1416a",
+    "tif": "94df6c0fc1a5c15097bb4677a69179baaba33de747c68c6d491ba8cfd43df5ab"
+   }
+  },
+  {
+   "figure": "SupplementaryFigureS2",
+   "inches": [
+    6.5,
+    3.25
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "≤0.12": [
+     "34",
+     "59"
+    ],
+    "0.25": [
+     "0",
+     "25"
+    ],
+    "0.5": [
+     "2",
+     "7"
+    ],
+    "1": [
+     "0",
+     "5"
+    ],
+    ">1": [
+     "1",
+     "6"
+    ]
+   },
+   "file_sha256": {
+    "svg": "ae5642994ba5a1cdf25b7f64fe099009b8bafcb00fcb8b824c870509523021ba",
+    "pdf": "82e119241eb686a9136c315b6d9d8af7af2e172c1622e4832e847f76513f4af2",
+    "png": "3de22e5ab251cb5c641d2a035ac1bdf6d5fca8b68afa2256fcc076d367736a27",
+    "tif": "38c6d333637350119f919c27519b1b179f7f568e731d1c4008ea8d036b03aa2a"
+   },
+   "pixel_sha256": {
+    "png": "137ab769dbce62f2e8587c42ba0f0eea2d4871406ba694d32590cb86225f505b",
+    "tif": "b084d8591b81ab848e261e24a16d2bebfd8f08aa74c643cfdd07ab8d0a14cbde"
+   }
+  },
+  {
+   "figure": "SupplementaryFigureS3",
+   "inches": [
+    6.5,
+    1.9
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "<=4": 33,
+    "(4,8]": 34
+   },
+   "file_sha256": {
+    "svg": "64346fbeabe43a494cf7f09165568d30140f7b04ab36445efe51fe316485e343",
+    "pdf": "2e4c6dfeabf434e9532c0d0a0757060915da199746416f0c9ce5e2daf794ef65",
+    "png": "797601d85a56788767dc66e5897053b91a1d9721531bbc71494492f89a114b9a",
+    "tif": "6bd5675875ba2efe61f4c12290f6383cc5de9fd3e4680fd67c6dd87ac3d38305"
+   },
+   "pixel_sha256": {
+    "png": "7d9b1d2cb234d7411c14fac677f275708ca931f78d090b29aaa3f864e6541985",
+    "tif": "6faa3bd177b1f1b17055bd8cb3c6e2929cb94db06b27280e7caf359cb72caa7e"
+   }
+  },
+  {
+   "figure": "SupplementaryFigureS4",
+   "inches": [
+    6.5,
+    3.3
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "Classes only": [
+     37,
+     46.3355
+    ],
+    "Loss ≤ 5 pp": [
+     89,
+     4.7908
+    ],
+    "Loss ≤ 2 pp": [
+     113,
+     1.9513
+    ],
+    "Exact endpoints": [
+     150,
+     0.0
+    ]
+   },
+   "file_sha256": {
+    "svg": "050eaed118dad8f42603df65e7ff4cc91229cf92697479d7e4738a220cfcfec6",
+    "pdf": "884a561528d3e161e60dfbb531363d80f187bac27713b9015b420e3a42f8583e",
+    "png": "8980c93c695fed6d653922aa66e1ae2fd731a9aaaef9c9696999e3a4c0a3a69a",
+    "tif": "fa31071c031b638c90c49414bb3da300201e2294166d4fa7ad45485f7bbfc278"
+   },
+   "pixel_sha256": {
+    "png": "7072c844da551c6da45f73cbd62b0a6a040ec21a54fb7e2ea4094b5c22197482",
+    "tif": "f95fb7b4362e21c10d2d0396d06c59111ea0bf72bb4435d4ebf17774ee86ec15"
+   }
+  }
+ ]
+}

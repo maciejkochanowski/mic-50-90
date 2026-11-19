@@ -48,7 +48,7 @@ jobs:
             --label org.opencontainers.image.created="$(git log -1 --format=%cI)" \
             --label org.opencontainers.image.licenses="MIT" \
             -t "${image}:${version}" -t "${image}:latest" .
-          docker run --rm "${image}:${version}" bash -euo pipefail -c 'node --version; uv pip check; mic-50-90 --help >/dev/null; python reproducibility/self_test.py; python scripts/refresh_package_manifest.py --check'
+          docker run --rm "${image}:${version}" bash -euo pipefail -c 'uv pip check; mic-50-90 --help >/dev/null; python reproducibility/self_test.py; python scripts/refresh_package_manifest.py --check'
           echo "IMAGE=${image}" >> "$GITHUB_ENV"
           echo "VERSION=${version}" >> "$GITHUB_ENV"
       - name: Push to GitHub Container Registry

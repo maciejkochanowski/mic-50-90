@@ -60,11 +60,6 @@ def _calibrate_wasserstein(args: argparse.Namespace) -> int:
     return 0
 
 
-def _gui(args: argparse.Namespace) -> int:
-    from .gui import start_gui
-    return start_gui(args)
-
-
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="mic-50-90",
@@ -72,12 +67,6 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--version", action="version", version=f"MIC-50-90 {__version__}")
     subparsers = parser.add_subparsers(dest="command", required=True)
-    gui = subparsers.add_parser("gui", help="open the local guided analysis form")
-    gui.add_argument("--no-browser", action="store_true", help="start without opening a browser")
-    gui.add_argument("--port", type=int, default=0, help="local port; zero selects an available port")
-    gui.add_argument("--output-root", help="directory for separately saved analysis runs")
-    gui.add_argument("--ready-file", help=argparse.SUPPRESS)
-    gui.set_defaults(handler=_gui)
     analyse = subparsers.add_parser("analyse", help="analyse a JSON specification")
     analyse.add_argument("input", help="path to a MIC-50-90 JSON input")
     analyse.add_argument("--output", help="write strict JSON to this path")
@@ -194,6 +183,14 @@ def build_parser() -> argparse.ArgumentParser:
         command.add_argument("--fail-on-refusal", action="store_true",
                              help="return status 2 after writing reports if any cohort is refused")
         command.set_defaults(handler=run_csv_workflow)
+    from .received_report import run_verify_report
+    received = subparsers.add_parser("verify-report",
+                                     help="check a received reporting certificate without the complete counts")
+    received.add_argument("input", help="reporting_certificates.json written by reporting-audit --reporting-plan")
+    received.add_argument("--output-dir", required=True, help="directory for the report, the results and the answer table")
+    received.add_argument("--fail-on-insufficient", action="store_true",
+                          help="return status 2 after writing the results if any declared answer is not established")
+    received.set_defaults(handler=run_verify_report)
     return parser
 
 

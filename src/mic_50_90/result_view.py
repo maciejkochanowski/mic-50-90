@@ -108,7 +108,7 @@ def chart_block(rows, n, **kwargs):
 
 def context_text(provenance, n):
     names = [str(provenance[key]) for key in ('organism', 'antimicrobial') if provenance.get(key)]
-    text = escape(' · '.join([*names, counted(n, 'isolate'), 'MIC in mg/L']))
+    text = escape('; '.join([*names, counted(n, 'isolate'), 'MIC in mg/L']))
     source = provenance.get('source') or provenance.get('source_location')
     if source:
         text += '<br>Source: ' + escape(str(source))

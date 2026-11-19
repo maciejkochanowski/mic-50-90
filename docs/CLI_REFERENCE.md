@@ -1,6 +1,6 @@
-# MIC-50-90 1.0.3: command and option reference
+# MIC-50-90 2.0.0: command and option reference
 
-Generated from the installed command parser. GUI_GUIDE.md and PUBLIC_FUNCTIONS.md map tasks to Windows and CLI.
+Generated from the installed command parser. PUBLIC_FUNCTIONS.md maps tasks to the command line and the Python interface.
 Values shown as None mean the option is omitted, not a numerical zero.
 
 ## mic-50-90
@@ -9,15 +9,6 @@ Values shown as None mean the option is omitted, not a numerical zero.
 |---|---|---|
 | `-h, --help` | show this help message and exit | — |
 | `--version` | show program's version number and exit | — |
-
-## mic-50-90 gui
-
-| Argument | Meaning | Default or requirement |
-|---|---|---|
-| `-h, --help` | show this help message and exit | — |
-| `--no-browser` | start without opening a browser | False |
-| `--port` | local port; zero selects an available port | 0 |
-| `--output-root` | directory for separately saved analysis runs | None |
 
 ## mic-50-90 analyse
 
@@ -148,3 +139,12 @@ Values shown as None mean the option is omitted, not a numerical zero.
 | `--decision-plan-max-states` | decision-plan search state limit (default: 5000) | 5000 |
 | `--delimiter` | separator used by all three input tables (default: comma); choices: comma, semicolon, tab | comma |
 | `--fail-on-refusal` | return status 2 after writing reports if any cohort is refused | False |
+
+## mic-50-90 verify-report
+
+| Argument | Meaning | Default or requirement |
+|---|---|---|
+| `-h, --help` | show this help message and exit | — |
+| `input` | reporting_certificates.json written by reporting-audit --reporting-plan | required |
+| `--output-dir` | directory for the report, the results and the answer table | required |
+| `--fail-on-insufficient` | return status 2 after writing the results if any declared answer is not established | False |

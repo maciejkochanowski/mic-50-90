@@ -19,7 +19,7 @@ cd "${SLURM_SUBMIT_DIR:-.}"
 if ! test -x "$PYTHON"; then
   python3 -m venv "$VENV"
   "$PYTHON" -m pip install --quiet --upgrade pip
-  "$PYTHON" -m pip install --quiet -e ".[test]" mutmut==3.8.0 "pytest<9" nodejs-wheel
+  "$PYTHON" -m pip install --quiet -e ".[test]" mutmut==3.8.0 "pytest<9"
 fi
 export PATH="$VENV/bin:$PATH" OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
 # tests that start a separate Python process must import the mutated package

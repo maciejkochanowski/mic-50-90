@@ -1,9 +1,7 @@
-# MIC-50-90 1.0.3 source delivery
+# MIC-50-90 2.0.0 source delivery
 
-This release contains the calculation engine, local browser application, tests,
-examples, historical evaluation materials, formal algebra, verification tools and
-usage documentation. Version 1.0.3 publishes a container image with each release; its
-computations are those of 1.0.2, which included runtime and packaging corrections.
+This release contains the calculation engine, command line, Galaxy tool wrappers, tests,
+examples, evaluation materials, formal algebra, verification tools and usage documentation.
 `PACKAGE_STATUS.json` describes the distribution policy; it does not contain the digest of an
 archive that contains it.
 
@@ -26,7 +24,6 @@ With NumPy, SciPy and `jsonschema` installed, run from the extracted root:
 
 ```sh
 python reproducibility/self_test.py
-node --test 'tests/*.cjs'
 ```
 
 The self-test checks imports, declared versions, shipped schemas and examples,
@@ -49,10 +46,10 @@ packaging regressions build an actual sdist and check intentional damage.
 ## Read evidence at its recorded scope
 
 Current validation is recorded outside the release by artifact hash, commands,
-environments and outcomes. Historical Windows, Python-matrix, coverage, mutation,
+environments and outcomes. Python-matrix, coverage, mutation,
 calibration and formal-compilation evidence in `evaluation/` applies to its
 recorded baseline. New checks do not silently replace adverse or interrupted
-historical runs. A source build or Linux test does not verify a Windows executable.
+historical runs.
 The numerical domain and module-specific validation limits are documented in the
 API documentation and `docs/VALIDATION_SCOPE.md`.
 

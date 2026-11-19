@@ -1,6 +1,6 @@
 # Simultaneous population bounds for MIC ranges
 
-MIC-50-90 1.0.1 offers `range-calibrated` as an explicit choice for population
+MIC-50-90 offers `range-calibrated` as an explicit choice for population
 inference. It uses counts in all contiguous ranges of a fixed ordered panel.
 The default remains `bonferroni`. The method must be chosen independently of
 which result happens to be narrower. It is not an automatic selection among
@@ -15,8 +15,7 @@ calculation does not locate concentrations within it. A report may contain
 quantiles, exact or interval counts, and several explicitly declared reporting
 conventions. It must contain at least one truthful interpretation.
 
-In the Windows form, select **Simultaneous bounds for all MIC ranges** under
-the optional population calculation. In the CLI:
+On the command line:
 
 ```text
 mic-50-90 distribution input.json --population-method range-calibrated --output-dir output
@@ -154,8 +153,8 @@ a narrower answer.
 `tests/test_range_population.py` checks exact rational small-sample coverage,
 complete histogram projections against independent linear programming,
 incomplete-report containment and union projections, multiple conventions,
-same-sample updates, contradictory counts, extreme confidence, CLI exports,
-the desktop worker, and population precision planning. These are mathematical
+same-sample updates, contradictory counts, extreme confidence, CLI exports
+and population precision planning. These are mathematical
 and software checks. They do not establish empirical superiority in AMR data,
 independent usability validation, or a general recommendation for fewer
 isolates. The method can be evaluated as an explicit option without declaring

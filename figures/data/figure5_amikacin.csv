@@ -1,0 +1,5 @@
+threshold,n,before_min,before_max,after_min,after_max,laboratory_count,criterion_percent
+4.0,276,0,27,8,8,8,5
+8.0,276,0,27,0,8,1,5
+16.0,276,0,27,0,8,1,5
+32.0,276,0,27,0,8,1,5

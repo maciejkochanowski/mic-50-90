@@ -2,12 +2,11 @@
 
 The HTML report is the primary interpretation interface. CSV contains compact tabular results. JSON retains unrounded values, full arrays and normalized numerical diagnostics; configuration.json records the exact inputs and their hashes. [VALIDATION_SCOPE.md](VALIDATION_SCOPE.md) distinguishes the guarantees and evidence for each layer. In particular, valid outer bounds, a reached precision target and completed optimization are separate claims; optional model-based scenarios do not inherit the exact iid construction's guarantee.
 
-The guided application opens these same reports and provides their complete
-download archive. Its five steps collect inputs; they do not replace the report's
-scientific assumptions. `gui-input.json` preserves the completed form. Reopening
-that file restores an analysis; a supported saved-output update also retains the
-original numerical bounds. A refused input or cancelled calculation is clearly
-distinguished from a completed analysis. See [GUI_GUIDE.md](GUI_GUIDE.md).
+`configuration.json` and `results.json` of a completed run can be passed to a later
+run with `--previous-output`; a supported saved-output update retains the original
+numerical bounds. A refused input is clearly distinguished from a completed analysis.
+`mic-50-90 verify-report` writes a report of the same kind for a received reporting
+certificate.
 
 | Calculation | HTML location | Main implementation | Verification |
 |---|---|---|---|
@@ -63,7 +62,7 @@ Distribution calibration identifies its own achieved marginal level, requested l
 
 ## Checking a received report
 
-The guided verification operation accepts the existing versioned certificate
+`mic-50-90 verify-report` accepts the existing versioned certificate
 export. It recomputes logical sufficiency without a hidden histogram and shows
 sample size, each question, compatible counts, decisions and disclosed source
 comparisons. Full calculation records remain available in a collapsed section
@@ -78,9 +77,8 @@ exported to decisions.csv. User-entered comparisons retain strict endpoints.
 
 ## Portable controls and endpoint evidence
 
-Windows and standalone HTML share local SVG/PNG export and Print / save as PDF.
-The HTML embeds the control code and fonts. The application binds the same controls
-from its host, retaining the script-disabled report sandbox. Reading tables and
+The standalone HTML report offers local SVG/PNG export and Print / save as PDF.
+It embeds the control code and fonts. Reading tables and
 links does not require JavaScript. Printing opens all details and includes every
 cohort in the current file; a paginated index retains links to other detail files.
 

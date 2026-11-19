@@ -116,25 +116,23 @@ the optional `source_scale`:
 
 An omitted relation means strictly greater than. Exact, ranged and rounded
 counts retain their original denominator; percentage conversion precedes any
-complement. The form defaults new counts to recorded categories and previews
-the selected labels. A question's `target_scale` is independent of the meaning
+complement. New counts default to recorded categories. A question's `target_scale` is independent of the meaning
 of its input counts. For example, an exact count in category ≤4 can support a
 question about MIC >2 while preserving uncertainty within that category.
 
 The `distribution --targets questions.csv` option evaluates the same explicit
 criteria without requiring MIC50/MIC90 when other supplied counts are sufficient.
-The question table keeps `decision_fraction` on the 0–1 scale. The guided table
-workspace reads these same CSV schemas, or tab-separated text pasted from Excel,
-with an explicit delimiter for each table. It does not evaluate spreadsheet
-formulas. Structural preview precedes analysis; invalid identifiable cohorts are
-retained as refusals alongside valid results.
+The question table keeps `decision_fraction` on the 0–1 scale. `--delimiter`
+selects comma, semicolon or tab separators, so tables exported from a spreadsheet
+can be read directly; spreadsheet formulas are not evaluated. Invalid identifiable
+cohorts are retained as refusals alongside valid results.
 
 
 ## Measurement intervals and incomplete counts
 
 Distribution questions optionally accept `target_scale`: `recorded` (default) or `interval`. The latter asks about MIC within the measured intervals. For eight of fifty results recorded as >32 mg/L, the sample count above 32 is eight, whereas the count above 64 can be zero to eight. Whole-category counts cannot resolve that ambiguity. The threshold-only reporting planners retain recorded-category semantics and refuse an interval-scale request rather than change its meaning.
 
-Use `count_min` and `count_max` for suppressed counts. Fewer than five isolates means 0–4; at least five of fifty means 5–50. The Windows form supplies a conversion control and retains the original statement in `source_information`. This is different from MIC measurement censoring. Blank fields are not zeros.
+Use `count_min` and `count_max` for suppressed counts. Fewer than five isolates means 0–4; at least five of fifty means 5–50. Record the original statement in `source_information`. This is different from MIC measurement censoring. Blank fields are not zeros.
 
 A percentage without its rounding rule or decimal precision is reported as unused in the distribution workflow. Other valid information remains available; malformed percentages, inconsistent denominators and contradictory usable counts are still rejected. Original statements remain in the saved configuration and input-information warnings.
 
