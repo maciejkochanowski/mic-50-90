@@ -25,17 +25,17 @@
  "default_style_sha256": "8b76e138ce9dc944a843dc6aa1ef9ee0e88638358b10baf227cd248d271b5f5a",
  "inputs_sha256": {
   "data/AMBIGUITY_WITNESS_CERTIFICATE.json": "4bd822b28cf5606758cb896abab10c290dadd528733af7b6fddd57f4144cab7d",
-  "data/ampicillin_rerun.json": "5d533804f18c492df51776395463e5c68c75fdc413c41f7328299f14d77587d9",
-  "data/figure3_ampicillin.csv": "78006123a46ec7784d064cc2c2025920b02c9065d6ff182bc0f51ef76723be43",
-  "data/figure4_chloramphenicol.csv": "b4385785820ff1752120804a555396f293539821fc72acaecb62eaf51fa04d94",
-  "data/figure5_amikacin.csv": "132eeeaea3bfc8e3d6856890271727fd3aa493b0ef1e46a93809da35a641609b",
-  "data/figureS2_ampicillin.csv": "dd5dfe157e4d8a9536a334ecf1ab1ca9fc7edf8c00afb2f03714bf21bf26d30f",
+  "data/ampicillin_rerun.json": "38f80106af71e627b02e620989781fdf46164edc70546975dfade8490ccc9da7",
+  "data/figureS2_ampicillin_category.csv": "78006123a46ec7784d064cc2c2025920b02c9065d6ff182bc0f51ef76723be43",
+  "data/figureS3_chloramphenicol.csv": "b4385785820ff1752120804a555396f293539821fc72acaecb62eaf51fa04d94",
+  "data/figureS5_amikacin.csv": "132eeeaea3bfc8e3d6856890271727fd3aa493b0ef1e46a93809da35a641609b",
   "data/madrid_pneumococci.csv": "951020695db9ecfd72c1ce6a3e2c5a705ba3ccee6ecd6480ae1acea00c6c34ff",
   "efsa/ALL_RANGE_CHECKS.csv": "68d633481b206fb6e07ccd401b51d8592f1679ec04f89017011f2a4f90c807a1",
-  "efsa/EFSA_REPLAY_SUMMARY.json": "3c88c338930c0413d50389e5d60803ab2ad6642d843e8c099bd22bf10ed3829b",
+  "efsa/EFSA_REPLAY_SUMMARY.json": "478b2a775f5bfbc04a5f14b3a95aaf750ba599407ba31cabd08e93f013da0b1c",
   "efsa/OPTIMIZER_SUMMARY.json": "a2fe046f01b1d1042c9a7f229dab5aa95f45d42534ea304449c8a31fc88771c1",
   "efsa/external_input.json": "70e8e7d74eec2e5fb907ac0da57e2a32e7f571d9f9303abbda2ae035a98d4b03",
-  "efsa/selected_113_fields.csv": "66ad4ec90475021cdc2eed8df95b08d9bb51bd9d4b5bb28fb42ebb2ecd9092d9"
+  "efsa/selected_113_fields.csv": "66ad4ec90475021cdc2eed8df95b08d9bb51bd9d4b5bb28fb42ebb2ecd9092d9",
+  "evaluation/results/sufficient_reporting/tasks.csv": "51422b4429213518ea2fe8c636829f997714e0834e07ca909ddbaeb0d17b3a8d"
  },
  "figures": [
   {
@@ -85,146 +85,180 @@
     "example_after": "2–7"
    },
    "file_sha256": {
-    "svg": "708f13fa062d3fb800c51edf2e79e14f8b14f36931e8933a475c18f04ae9525b",
-    "pdf": "4be826dac80ed4ea9d171e24ceb70fd3d1b5473b714418b981451b003c11a326",
-    "png": "ff09cebbd457c0e3bc4bc50f32b0cb87eef8943a9c324d3ba6e0aca0457a722b",
-    "tif": "39ce010ab25e6155fe9dc1b641769a8bc6bf47f78102a7b2d61dc7b99fe9221c"
+    "svg": "f389e8a53c3524ec3db65632e7b52bfbb1f0e136d6600d4e6e6e8dfcd09c753c",
+    "pdf": "f5f829c04de7642a449f2e4749a7845b4cb0e96b061275c8b4ae4afd24186d95",
+    "png": "574e8f92a70a12bf4c61e36d47098bd077c86ac0a8c9e44ec79a7b235713da71",
+    "tif": "17cb737b7f484b04afa0d94c40dee6df33a39860f526274d5116a2bcc6a3a2a2"
    },
    "pixel_sha256": {
-    "png": "1f3425dd0f97ea82df07f463fc3e3cc87fea970185d3ccc0fbda50f8159a5a2b",
-    "tif": "a2aa13efec3fa68a897f80b7bedc3bf4a8780842fe13eaa6bfeac58c9a1af5fc"
+    "png": "401f26ecef186cc649cfc5dad9a52eb46ade6a48c9140607643d9b3c5b8189df",
+    "tif": "47565d9d00cd402e92d0d69fa366fe76e7c219f2faadd7ef61ebbcfed9b468e6"
    }
   },
   {
    "figure": "Figure3",
    "inches": [
     6.5,
-    2.75
+    3.45
    ],
    "axes_with_data": 1,
    "plotted_values": {
-    "collection_before": [
-     1.4925,
-     47.7612
+    "before": [
+     [
+      34,
+      60
+     ],
+     [
+      0,
+      26
+     ],
+     [
+      1,
+      32
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      6
+     ]
     ],
-    "collection_after": [
-     2.9851,
-     10.4478
-    ],
-    "population_before": [
-     0.0037,
-     65.2152
-    ],
-    "population_after": [
-     0.1089,
-     24.9954
+    "after": [
+     [
+      34,
+      59
+     ],
+     [
+      0,
+      25
+     ],
+     [
+      2,
+      7
+     ],
+     [
+      0,
+      5
+     ],
+     [
+      1,
+      6
+     ]
     ]
    },
    "file_sha256": {
-    "svg": "4347e9f3f7fdf081264294556a2672a38cf896752511823860ae13cbc70dcef3",
-    "pdf": "fa106e0098b4da30245e4aafdb1d819d853ddfdd6eb550cfd616e0ae4877af0d",
-    "png": "a07837e7c79149043f1d4c1368e40a56c7a72ae73c0bdf3b61264c79d1c2dc46",
-    "tif": "7c3810d8825de91f6f395576df419b15ad4fae7329693a774b9bcdd48b85d0bd"
+    "svg": "07f4c9eea1912fbdc349efa7e2ed1e53b28bbce00cc28a7b79046c61a94da91e",
+    "pdf": "1a3481a0960402d502d1060191391deca6833a81f0f47d148eac8cb58202ea71",
+    "png": "16f69f078ba7c0aaffce81c660306d988ca1c8b511a9c3b7100145d8cab4ed41",
+    "tif": "5c0eb5bb25d3722021b0e8da201e78810bb606b38bdceebb7135b0ae23ab3e58"
    },
    "pixel_sha256": {
-    "png": "9d503f2d0bb9818a8315b5a2ea8cd90a4b3bc201c90e1bbba8a15d0e958c95c2",
-    "tif": "947cb21aa2867beda9c9b4b2d260a82de7c7bdbbd4208eaf7f8563719794d001"
+    "png": "d3416f9aeb07f2486a06e771242effcfd26d638a87697602a023f3b79015de9d",
+    "tif": "8d36a77a49069aef1dacebb278ab437eafc2dde8c117cc017542c15260c3d70c"
    }
   },
   {
    "figure": "Figure4",
    "inches": [
     6.5,
-    3.1
+    3.5
    ],
    "axes_with_data": 1,
    "plotted_values": {
-    "t=2": [
-     34,
-     67
-    ],
-    "t=4": [
-     34,
-     34
-    ],
-    "t=8": [
-     0,
-     0
+    "compatible": 7938,
+    "selected": [
+     [
+      34,
+      26,
+      6,
+      0,
+      1
+     ],
+     [
+      34,
+      0,
+      32,
+      0,
+      1
+     ],
+     [
+      60,
+      0,
+      1,
+      5,
+      1
+     ],
+     [
+      60,
+      0,
+      1,
+      0,
+      6
+     ],
+     [
+      60,
+      0,
+      6,
+      0,
+      1
+     ]
     ]
    },
    "file_sha256": {
-    "svg": "c8c5094a4583dad35ee99600a1e9cad216b29415de7f2977c7b802e4ef88ab3a",
-    "pdf": "a24be6ebcbc930e6a78db28aedd9bbf5c928eb24e838a056ad31ae5fedfa44f3",
-    "png": "01326c9342c3c31b692853ff359ebb660fd23b562b3fa77eb71d1b3ba1800e99",
-    "tif": "e4baceec75fd0cd7196af64729d5cd461ee62587d121eaae853548d06dc1b1fc"
+    "svg": "7d8477b6a8e0864b5f123f289253a8e1d4036f7e1d85b76ce99f868a14a54062",
+    "pdf": "2415934fc8729da8a1d90e9e882e222d5fbfd3133668cb49eb3e867ddcfab00a",
+    "png": "2d3a88de384f63443282e89fe5a9a49f58bccf5b257f2d59e00031e058b875d5",
+    "tif": "52f2a482e03051d11958a433682186bcf43b01abe2a1fee64d8b5612c57cbeb8"
    },
    "pixel_sha256": {
-    "png": "89322fe9d056a768c57bac8fe8be2aa071c07d12976273a4fe48a06339429ab1",
-    "tif": "708c6d2955548a57761036b090c94eaa96e2ee0cfcdce83e4f7687fbb64b9ee4"
+    "png": "ab1e7175278f6a03a895cb23a04ad52f79af03e6494e05b6d018638f1dc16293",
+    "tif": "2cd35c8938c25d9a8557c239a3a2e08be54e5bc265dd969662e318185e4de9d6"
    }
   },
   {
    "figure": "Figure5",
    "inches": [
     6.5,
-    3.3
+    3.0
    ],
    "axes_with_data": 1,
    "plotted_values": {
-    "4.0": {
-     "before": [
-      "0",
-      "27"
-     ],
-     "after": [
-      "8",
-      "8"
-     ],
-     "laboratory": "8"
-    },
-    "8.0": {
-     "before": [
-      "0",
-      "27"
-     ],
-     "after": [
-      "0",
-      "8"
-     ],
-     "laboratory": "1"
-    },
-    "16.0": {
-     "before": [
-      "0",
-      "27"
-     ],
-     "after": [
-      "0",
-      "8"
-     ],
-     "laboratory": "1"
-    },
-    "32.0": {
-     "before": [
-      "0",
-      "27"
-     ],
-     "after": [
-      "0",
-      "8"
-     ],
-     "laboratory": "1"
-    }
+    "Share below 5%": [
+     60,
+     603,
+     301,
+     54
+    ],
+    "Share below 10%": [
+     60,
+     603,
+     0,
+     0
+    ],
+    "Share below 20%": [
+     60,
+     603,
+     104,
+     61
+    ],
+    "All three questions": [
+     180,
+     1809,
+     405,
+     115
+    ]
    },
    "file_sha256": {
-    "svg": "db4e1e87bf11cf25ececab05afe0c6640527e6be4826032f69dc940970aa141f",
-    "pdf": "5f929617ac8570697eefb397df4c058cb9d9ae12605694a363e9453182b5c2cd",
-    "png": "42c89b0cca3c771092d4a3bc707294ef431582d833f3908b2ebf0cb9e70461ac",
-    "tif": "53d6eaea00f7d4656ff998e5e28e0812ea5fa588bc99949581cc0dd435f0e5ad"
+    "svg": "6af258b1f0e797f7053583bf614ba734a6eb03e688241cac5d2c053f931bc691",
+    "pdf": "768d8054e1f4462b4e5a48515dcf0a502662cd658a29421004a406be30ae39ae",
+    "png": "da4b34b59001580088ef89ffed1ed361b2a807ff8205f7619810a6682494b5b5",
+    "tif": "b9e59b9699870a032390c586e871465b0b9673ceaac4458fb1da1b879f694014"
    },
    "pixel_sha256": {
-    "png": "f0b3a84efede980e675d761dd48c33d66d51a7a15b53d7170a820bf35f73ba35",
-    "tif": "ebe47b7a591b92d1710e7c137dbb7e70ac022fdab77f73ddc0bc34ee3e8f4dee"
+    "png": "221adcbd2b734d9467d7010df3305689f6946820ba9721b0082d73cabc773a6a",
+    "tif": "495e542781f20d6c596db9bfb86f4b6d098aa345f4b9466cb1782e6d51890c06"
    }
   },
   {
@@ -341,44 +375,72 @@
    "figure": "SupplementaryFigureS2",
    "inches": [
     6.5,
-    3.25
+    2.75
    ],
    "axes_with_data": 1,
    "plotted_values": {
-    "≤0.12": [
-     "34",
-     "59"
+    "collection_before": [
+     1.4925,
+     47.7612
     ],
-    "0.25": [
-     "0",
-     "25"
+    "collection_after": [
+     2.9851,
+     10.4478
     ],
-    "0.5": [
-     "2",
-     "7"
+    "population_before": [
+     0.0037,
+     65.2152
     ],
-    "1": [
-     "0",
-     "5"
-    ],
-    ">1": [
-     "1",
-     "6"
+    "population_after": [
+     0.1089,
+     24.9954
     ]
    },
    "file_sha256": {
-    "svg": "ae5642994ba5a1cdf25b7f64fe099009b8bafcb00fcb8b824c870509523021ba",
-    "pdf": "82e119241eb686a9136c315b6d9d8af7af2e172c1622e4832e847f76513f4af2",
-    "png": "3de22e5ab251cb5c641d2a035ac1bdf6d5fca8b68afa2256fcc076d367736a27",
-    "tif": "38c6d333637350119f919c27519b1b179f7f568e731d1c4008ea8d036b03aa2a"
+    "svg": "4347e9f3f7fdf081264294556a2672a38cf896752511823860ae13cbc70dcef3",
+    "pdf": "fa106e0098b4da30245e4aafdb1d819d853ddfdd6eb550cfd616e0ae4877af0d",
+    "png": "a07837e7c79149043f1d4c1368e40a56c7a72ae73c0bdf3b61264c79d1c2dc46",
+    "tif": "7c3810d8825de91f6f395576df419b15ad4fae7329693a774b9bcdd48b85d0bd"
    },
    "pixel_sha256": {
-    "png": "137ab769dbce62f2e8587c42ba0f0eea2d4871406ba694d32590cb86225f505b",
-    "tif": "b084d8591b81ab848e261e24a16d2bebfd8f08aa74c643cfdd07ab8d0a14cbde"
+    "png": "9d503f2d0bb9818a8315b5a2ea8cd90a4b3bc201c90e1bbba8a15d0e958c95c2",
+    "tif": "947cb21aa2867beda9c9b4b2d260a82de7c7bdbbd4208eaf7f8563719794d001"
    }
   },
   {
    "figure": "SupplementaryFigureS3",
+   "inches": [
+    6.5,
+    3.1
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "t=2": [
+     34,
+     67
+    ],
+    "t=4": [
+     34,
+     34
+    ],
+    "t=8": [
+     0,
+     0
+    ]
+   },
+   "file_sha256": {
+    "svg": "c8c5094a4583dad35ee99600a1e9cad216b29415de7f2977c7b802e4ef88ab3a",
+    "pdf": "a24be6ebcbc930e6a78db28aedd9bbf5c928eb24e838a056ad31ae5fedfa44f3",
+    "png": "01326c9342c3c31b692853ff359ebb660fd23b562b3fa77eb71d1b3ba1800e99",
+    "tif": "e4baceec75fd0cd7196af64729d5cd461ee62587d121eaae853548d06dc1b1fc"
+   },
+   "pixel_sha256": {
+    "png": "89322fe9d056a768c57bac8fe8be2aa071c07d12976273a4fe48a06339429ab1",
+    "tif": "708c6d2955548a57761036b090c94eaa96e2ee0cfcdce83e4f7687fbb64b9ee4"
+   }
+  },
+  {
+   "figure": "SupplementaryFigureS4",
    "inches": [
     6.5,
     1.9
@@ -400,7 +462,71 @@
    }
   },
   {
-   "figure": "SupplementaryFigureS4",
+   "figure": "SupplementaryFigureS5",
+   "inches": [
+    6.5,
+    3.3
+   ],
+   "axes_with_data": 1,
+   "plotted_values": {
+    "4.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "8",
+      "8"
+     ],
+     "laboratory": "8"
+    },
+    "8.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "0",
+      "8"
+     ],
+     "laboratory": "1"
+    },
+    "16.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "0",
+      "8"
+     ],
+     "laboratory": "1"
+    },
+    "32.0": {
+     "before": [
+      "0",
+      "27"
+     ],
+     "after": [
+      "0",
+      "8"
+     ],
+     "laboratory": "1"
+    }
+   },
+   "file_sha256": {
+    "svg": "db4e1e87bf11cf25ececab05afe0c6640527e6be4826032f69dc940970aa141f",
+    "pdf": "5f929617ac8570697eefb397df4c058cb9d9ae12605694a363e9453182b5c2cd",
+    "png": "42c89b0cca3c771092d4a3bc707294ef431582d833f3908b2ebf0cb9e70461ac",
+    "tif": "53d6eaea00f7d4656ff998e5e28e0812ea5fa588bc99949581cc0dd435f0e5ad"
+   },
+   "pixel_sha256": {
+    "png": "f0b3a84efede980e675d761dd48c33d66d51a7a15b53d7170a820bf35f73ba35",
+    "tif": "ebe47b7a591b92d1710e7c137dbb7e70ac022fdab77f73ddc0bc34ee3e8f4dee"
+   }
+  },
+  {
+   "figure": "SupplementaryFigureS6",
    "inches": [
     6.5,
     3.3

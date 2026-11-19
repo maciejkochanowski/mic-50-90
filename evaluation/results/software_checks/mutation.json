@@ -5,7 +5,7 @@
  "environment": "Python 3.11.5, NumPy 2.3.5 and SciPy 1.17.0 on CPU nodes of the Helios cluster, one job of 64 workers per function; configuration [tool.mutmut] in pyproject.toml; mutants/src on the interpreter path so that tests starting a separate Python process also run the mutated code",
  "runtime_files": {
   "src/mic_50_90/conformal.py": "fc3f4735fb05eef584693df6ce29cc2bf3f64b4124fb9dada089155294d46b7f",
-  "src/mic_50_90/count_updates.py": "e1556b7367b623adb2f540efed971f95fcbe77d6ddee2bb1f66eb22a3f4ca78b",
+  "src/mic_50_90/count_updates.py": "e2416217e9c3f47eb186e8254da97b449cf3c39eb6a71b3e5bbe73cf9c5099e1",
   "src/mic_50_90/decisions.py": "80c9f13b5a7afe30f3f3329d931281aa9cb2cb60e517a6df836c7e40422cb272",
   "src/mic_50_90/dro.py": "026a19878c177c7eb1e41c7f8201919d3a3378fc25b36e206b7809a03a62f207",
   "src/mic_50_90/exact_population.py": "42714c8bd203dc31850670a027374dd26612eea8486b1583314f5b7ba26aab2b",
@@ -13,7 +13,7 @@
   "src/mic_50_90/range_certificates.py": "3cc7bcf5b1b6f3431bca6b268c7fe1b673d4fdd4bd1cfd81d067687306c9f2b4",
   "src/mic_50_90/range_population.py": "8110c05494c8d3fe1f88e536324e17eb64311a6f7fe99de49ffc44b6844e4f96",
   "src/mic_50_90/sufficient_reporting.py": "dc28b1cb508aeb2776088f01d053b56e977dbf28ea3e4bd795e6e036e5c525e5",
-  "src/mic_50_90/utility.py": "dee8e8a9cdc45d436d99e2980cd607671154e9bd90afd4d482c81094d7e60b71",
+  "src/mic_50_90/utility.py": "15383f1bdf56e7ced8a86fdfe1a1519421a8c4063dfacd0ee31902ac4d4ce36d",
   "src/mic_50_90/validation.py": "943a6d29d83b2f90aab7dd575a1bff368f1c9ed1dcf21083ddc14354dccbe010"
  },
  "functions": [
