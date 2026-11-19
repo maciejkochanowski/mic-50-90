@@ -211,7 +211,8 @@ def test_prefix_distances_tolerance_is_one_billionth():
     (dict(percentage=49, n=67, decimal_places=0, rounding_rule='half_up'), (33, 33)),
     (dict(percentage=10, n=200, decimal_places=0, rounding_rule='floor'), (20, 21)),
     (dict(percentage=10, n=200, decimal_places=0, rounding_rule='ceiling'), (19, 20)),
-    (dict(percentage=100, n=7, decimal_places=0, rounding_rule='half_up'), (7, 7))])
+    (dict(percentage=100, n=7, decimal_places=0, rounding_rule='half_up'), (7, 7)),
+    (dict(percentage='40.000000', n=30, decimal_places=6, rounding_rule='half_even'), (12, 12))])
 def test_counts_from_percentage_at_rounding_ties(arguments, expected):
     assert counts_from_percentage(**arguments) == expected
 
