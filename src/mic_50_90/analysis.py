@@ -354,6 +354,9 @@ def _empirical_analysis(spec: ParsedSpec) -> dict[str, Any]:
             "optimality_claimed": search_complete,
             "best_question": (ranked[0].as_dict() if search_complete and ranked
                               and ranked[0].minimax_width_reduction > 1e-12 else None),
+            "best_average_question": (ranked[0].as_dict() if search_complete and ranked
+                                      and ranked[0].minimax_width_reduction <= 1e-12
+                                      and ranked[0].mean_width_reduction > 1e-12 else None),
             "ranked_questions": [item.as_dict() for item in ranked[:10]],
             "direct_target_questions_excluded": bool(
                 spec.question_options.get("exclude_direct_target_questions", False)

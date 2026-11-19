@@ -154,6 +154,22 @@ remain separate and require their stated sampling assumptions.
 
 
 
+The result also names one cumulative count to request for the question (the next
+
+step of the report and `interpretation.suggested_count` in `results.json`). It is
+
+the count that narrows the answer most whatever its value turns out to be. When no
+
+single count is certain to narrow the answer, it is the count that narrows the
+
+answer most on average over its possible values; counts that are equal on that
+
+measure are separated by nearness to the question range and then to the median.
+
+`selection_rule` states which of the two cases applied.
+
+
+
 The `batch` and `reporting-audit` question planners retain their strict-tail
 
 contract. Category-range questions belong to `distribution`; the theorem giving

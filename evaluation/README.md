@@ -48,6 +48,8 @@ NumPy, SciPy and Matplotlib. It is used only by `pba_comparison.py` and is not p
 | `synthetic_coverage.py` | Coverage on 1740 synthetic populations (generators G2–G4), 1000 replicates each. | about 2 days | about 35 min |
 | `external_calibration.py` | Study-unit calibration on a later year in six datasets, uniform and trained reference, and synthetic units SU1–SU3. | about 1.5 days | about 25 min |
 | `endpoint_selection.py` | The ampicillin example of Section 3.1: selected tables against every compatible table. | 1 min | 1 min |
+| `next_count_rules.py` | Choice of the rule that names the count to request: five rules compared on the 545 cohorts of the development block with an independent calculation (protocols/NEXT_COUNT.md). | 1 min | 10 s |
+| `next_count.py` | The count to request on real collections: for every open category of a range report the program names one cumulative count, the complete table supplies it and the category is bounded again; every other count is added for comparison and an independent calculation checks every bound and the named count. Blocks: confirmation (601 cohorts), development (545) and benchmark (610). | 10 min per block | 15 s per block |
 | `examples_check.py` | Reruns the analyses of the article and Appendices B and C (`examples/appendix/COMMANDS.txt`) and compares every printed number with the program output. | 5 min | 5 min |
 | `verify_subsets.py` | Recomputes seeded subsets of every simulation and requires exact agreement with the supplied results; the quick reproduction check. | about 1 h | 2 min |
 | `summarize.py` | Collects the numbers of the evaluation in Section 2.5 and Appendix D, including the confirmation and the finite controls, into `results/SUMMARY.json` and `results/tables/*.csv`. | 1 s | 1 s |
@@ -138,6 +140,10 @@ python evaluation/confirmation_coverage.py
 python evaluation/synthetic_coverage.py
 python evaluation/external_calibration.py
 python evaluation/endpoint_selection.py
+python evaluation/next_count_rules.py
+python evaluation/next_count.py --block confirmation
+python evaluation/next_count.py --block development
+python evaluation/next_count.py --block benchmark
 python evaluation/examples_check.py
 python evaluation/summarize.py
 ```
@@ -229,6 +235,7 @@ The `prepare` step rebuilds the confirmation tables and stops if they differ fro
 | `results/coverage/replicates.jsonl.gz` | One line per replicate, with every missed range. |
 | `results/calibration/<part>/intervals.csv.gz` | Every held-out tail with its truth, calibrated interval and sample interval. |
 | `results/controlled_reports/records.json`, `results/sufficient_reporting/tasks.csv`, `results/pba_comparison/*.csv.gz` | Per-report, per-task and per-input records. |
+| `results/next_count/rule_comparison.json`, `results/next_count/<block>/summary.json`, `tasks.jsonl.gz` | The comparison of rules on the development block; for each block the measures of protocols/NEXT_COUNT.md, the independent check and one line per task. |
 | `results/reporting_controls/cases.csv.gz` | Every finite reporting case: kind, histogram, oracle cost, package status and cost, agreement. |
 | `results/planning_controls/controlled.csv.gz`, `stress.csv.gz`, `contract.json` | Every planning task with oracle and package status, cost, checked paths and witnesses; every contract control with its outcome. |
 | `results/count_extrema/summary.json` | Counts of reports, P5 rows, range-endpoint pairs and feasibility decisions, and any failed check. |

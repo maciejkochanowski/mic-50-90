@@ -398,18 +398,23 @@ def result_sections(result, provenance=None):
         if best and best["minimax_width_reduction"]>1e-12:
             parts += ["<p>Recommended count for reducing interval widths: "+html.escape(best["question"])+"</p>",
                       f"<p>Guaranteed reduction: {100*best['minimax_width_reduction']:.2f} percentage points; worst residual width: {100*best['worst_case_residual_width']:.2f}. Actual benefit depends on the answer.</p>"]
+        elif utility.get("best_average_question"):
+            average=utility["best_average_question"]
+            parts += ["<p>Recommended count for reducing interval widths: "+html.escape(average["question"])+"</p>",
+                      f"<p>Average reduction over the possible values of this count: {100*average['mean_width_reduction']:.2f} percentage points. No single count guarantees a reduction for every value; the benefit depends on the answer.</p>"]
         elif utility.get("search_complete",True):
-            parts.append("<p>No allowed question has a positive guaranteed width reduction. This width calculation makes no count recommendation.</p>")
+            parts.append("<p>No allowed question can reduce the interval widths. This width calculation makes no count recommendation.</p>")
         parts.append("<p>Direct target counts excluded: "+_fmt(utility.get("direct_target_questions_excluded",False))+".</p>")
         rows=[]
         for q in utility.get("ranked_questions",[]):
             rows.append([html.escape(q["question"]),_fmt(q["cost"]),
                          f"{100*q['minimax_width_reduction']:.2f}",
                          f"{100*q['score_per_cost']:.2f}",
+                         f"{100*q['mean_width_reduction']:.2f}",
                          f"{100*q['worst_case_residual_width']:.2f}",
                          _fmt(q["feasible_answer_range"]),_fmt(q["feasible_answers_evaluated"])])
-        parts += ["<details><summary>Evaluated questions (up to ten highest ranked)</summary><p>Ranking uses guaranteed gain per acquisition cost. Zero-gain rows are comparisons, not recommendations. If the search is incomplete, this is only the evaluated subset.</p>",
-                  _table(["Question","Acquisition cost","Guaranteed gain (pp)","Gain per cost (pp)","Worst residual (pp)","Feasible answers","Answers evaluated"],rows),"</details>"]
+        parts += ["<details><summary>Evaluated questions (up to ten highest ranked)</summary><p>Ranking uses guaranteed gain per acquisition cost, then the gain averaged over the possible values of the count. If the search is incomplete, this is only the evaluated subset.</p>",
+                  _table(["Question","Acquisition cost","Guaranteed gain (pp)","Gain per cost (pp)","Average gain (pp)","Worst residual (pp)","Feasible answers","Answers evaluated"],rows),"</details>"]
     else:
         parts.append("<h2>Additional information</h2><p>Additional-count search was not requested in this analysis mode or configuration.</p>")
     parts.append(_scenarios(result))

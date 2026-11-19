@@ -37,8 +37,11 @@ def test_union_question_scores_match_independent_composition_oracle(with_range):
     baseline=width(hist)
     for score in scores:
         answers={sum(h[score.cut_index+1:]) for h in hist}
-        residual=max(width([h for h in hist if sum(h[score.cut_index+1:])==answer]) for answer in answers)
+        residuals=[width([h for h in hist if sum(h[score.cut_index+1:])==answer]) for answer in answers]
+        residual=max(residuals)
         assert score.feasible_answers_evaluated==len(answers)
         assert score.baseline_total_width==pytest.approx(baseline)
         assert score.worst_case_residual_width==pytest.approx(residual)
         assert score.minimax_width_reduction==pytest.approx(baseline-residual)
+        assert score.mean_residual_width==pytest.approx(sum(residuals)/len(residuals))
+        assert score.mean_width_reduction==pytest.approx(baseline-sum(residuals)/len(residuals))

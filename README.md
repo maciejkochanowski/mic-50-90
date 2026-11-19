@@ -63,7 +63,7 @@ These layers answer different questions. Complete category counts can still leav
 - Select sufficient counts from complete category counts so a recipient can verify the stated sample conclusions.
 - Prepare and assess study-unit calibration with its own reference and sampling requirements.
 
-The main mathematical result gives a checkable P6 endpoint-attainment condition: when it holds, a selected family of compatible count tables attains the same population-range endpoints as considering every compatible table for the fixed confidence construction. Written proofs, independent numerical checks and 29 Lean-checked algebraic declarations have distinct roles; the Lean development does not certify the entire program or all statistical assumptions.
+The main mathematical result gives a checkable P6 endpoint-attainment condition: when it holds, a selected family of compatible count tables attains the same population-range endpoints as considering every compatible table for the fixed confidence construction. The result has a written proof and independent numerical checks, and the algebraic core of the proof is checked in the Lean proof assistant (29 declarations).
 
 ## Documentation and checks
 
@@ -96,7 +96,7 @@ Manuscripts, supplementary appendices and editorial figures are maintained separ
 
 ## Scientific scope and license
 
-MIC-50-90 supports research and reporting audits. It does not infer clinical breakpoints, classify individual susceptibility or recommend treatment. Results depend on correct metadata and the assumptions attached to the chosen inference layer.
+MIC-50-90 is a tool for research, surveillance and reporting audits. Its results describe a collection of isolates or the population from which the collection was sampled, and every result states the reporting convention and the sampling assumption on which it rests.
 
 The software is distributed under **MIT**. Example data, source publications and bundled fonts retain their own attributed terms; some publication examples have noncommercial source terms. Source URLs, hashes and exclusions are documented in `docs/DATA_TERMS.md` and `data/LICENSES.md`. The software license does not relicense third-party material.
 

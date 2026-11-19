@@ -1,4 +1,10 @@
-"""Minimax value of one additional recoverable sample statistic."""
+"""Value of one additional recoverable sample statistic.
+
+Single cumulative counts are ranked by, in this order: the reduction of the question ranges
+that the count guarantees whatever its value (exact minimax), the reduction averaged over the
+possible values of the count, the number of category boundaries between the count and the
+question ranges, and the number of boundaries between the count and the median.
+"""
 
 from __future__ import annotations
 
@@ -23,6 +29,10 @@ class QuestionScore:
     score_per_cost: float
     feasible_answers_evaluated: int
     reporting_variants_considered: int = 1
+    mean_residual_width: float = 0.0
+    mean_width_reduction: float = 0.0
+    boundaries_from_targets: int = 0
+    boundaries_from_median: int = 0
 
     def as_dict(self) -> dict[str, object]:
         return {
@@ -36,7 +46,47 @@ class QuestionScore:
             "score_per_cost": self.score_per_cost,
             "feasible_answers_evaluated": self.feasible_answers_evaluated,
             "reporting_variants_considered": self.reporting_variants_considered,
+            "mean_residual_width": self.mean_residual_width,
+            "mean_width_reduction": self.mean_width_reduction,
+            "boundaries_from_targets": self.boundaries_from_targets,
+            "boundaries_from_median": self.boundaries_from_median,
         }
+
+
+def _rank_key(score):
+    """Guaranteed reduction per cost, then average reduction per cost, then nearness to the question and to the median."""
+    return (score.score_per_cost, score.minimax_width_reduction, score.mean_width_reduction / score.cost,
+            -score.boundaries_from_targets, -score.boundaries_from_median, -score.cut_index)
+
+
+def _boundaries_from_targets(q, targets):
+    """Category boundaries between prefix index q and the nearest edge of each target, summed over targets.
+
+    An edge is a prefix index at which the target vector changes value, so a tail target has one
+    edge and a range of categories two.
+    """
+    total = 0
+    for target in targets:
+        edges = np.flatnonzero(np.diff(target) != 0) + 1
+        if len(edges):
+            total += int(np.min(np.abs(edges - q)))
+    return total
+
+
+def _boundaries_from_median(lower, upper, n):
+    """For every prefix index 0..K, the category boundaries between it and the median.
+
+    lower and upper bound the cumulative counts F_0..F_K. A boundary lies above the median when at
+    least half of the isolates are certainly at or below it, below the median when fewer than
+    half can be, and is otherwise counted as lying at the median (distance zero).
+    """
+    rank = -(-int(n) // 2)
+    index = np.arange(len(lower))
+    above = np.asarray(lower) >= rank
+    below = np.asarray(upper) < rank
+    first_above = int(index[above].min()) if above.any() else len(lower)
+    last_below = int(index[below].max()) if below.any() else -1
+    return np.where(above, index - first_above + 1, np.where(below, last_below - index + 1, 0))
 
 
 def _rank_robust_tail_count_questions_lp(
@@ -68,16 +118,22 @@ def _rank_robust_tail_count_questions_lp(
         )
     scores: list[QuestionScore] = []
     costs = costs or {}
-    for cut_index in range(reference_problem.k - 1):
+    k, n = reference_problem.k, reference_problem.n
+    tails = np.triu(np.ones((k, k)), 1)[: k - 1]
+    tail_bounds = [[problem.bounds(tail) for problem in problem_list] for tail in tails]
+    prefix_lower = [0] + [n - max(upper.count for _, upper in bounds) for bounds in tail_bounds] + [n]
+    prefix_upper = [0] + [n - min(lower.count for lower, _ in bounds) for bounds in tail_bounds] + [n]
+    from_median = _boundaries_from_median(prefix_lower, prefix_upper, n)
+    for cut_index in range(k - 1):
         _check_deadline(deadline, scores)
-        candidate = np.zeros(reference_problem.k)
-        candidate[cut_index + 1 :] = 1.0
+        candidate = tails[cut_index]
         if exclude_direct_targets and any(np.array_equal(candidate, target) for target in targets):
             continue
-        candidate_bounds = [problem.bounds(candidate) for problem in problem_list]
+        candidate_bounds = tail_bounds[cut_index]
         answer_min = min(lower.count for lower, _ in candidate_bounds)
         answer_max = max(upper.count for _, upper in candidate_bounds)
         worst_residual = 0.0
+        total_residual = 0.0
         feasible_answers = 0
         for answer in range(answer_min, answer_max + 1):
             _check_deadline(deadline, scores)
@@ -100,6 +156,7 @@ def _rank_robust_tail_count_questions_lp(
                     - min(lower.fraction for lower, _ in conditioned_bounds)
                 )
             worst_residual = max(worst_residual, residual)
+            total_residual += residual
         if feasible_answers == 0:
             continue
         question = (
@@ -110,6 +167,7 @@ def _rank_robust_tail_count_questions_lp(
         if not np.isfinite(cost) or cost <= 0:
             raise ValueError("Question acquisition costs must be positive")
         reduction = max(0.0, baseline_width - worst_residual)
+        mean_residual = round(total_residual / feasible_answers, 12)
         scores.append(
             QuestionScore(
                 question=question,
@@ -123,13 +181,13 @@ def _rank_robust_tail_count_questions_lp(
                 score_per_cost=reduction / cost,
                 feasible_answers_evaluated=feasible_answers,
                 reporting_variants_considered=len(problem_list),
+                mean_residual_width=mean_residual,
+                mean_width_reduction=max(0.0, round(baseline_width - mean_residual, 12)),
+                boundaries_from_targets=_boundaries_from_targets(cut_index + 1, targets),
+                boundaries_from_median=int(from_median[cut_index + 1]),
             )
         )
-    return sorted(
-        scores,
-        key=lambda item: (item.score_per_cost, item.minimax_width_reduction, -item.cut_index),
-        reverse=True,
-    )
+    return sorted(scores, key=_rank_key, reverse=True)
 
 
 class QuestionSearchTimeout(TimeoutError):
@@ -177,6 +235,13 @@ def _prefix_distances(problem):
     return np.rint(dist)
 
 
+def _closure_boundaries_from_median(distances,n):
+    """Boundaries from the median for prefix indices 0..K, with cumulative bounds united across variants."""
+    lower=np.min(np.stack([-d[:,0] for d in distances]),axis=0)
+    upper=np.max(np.stack([d[0,:] for d in distances]),axis=0)
+    return _boundaries_from_median(lower,upper,n)
+
+
 def _contiguous_interval(target,k):
     """Return (s,t) when target is one contiguous block of ones over categories s..t-1, else None."""
     if target.shape!=(k,) or not np.all(np.isin(target,[0.,1.])):
@@ -203,12 +268,14 @@ def _rank_interval_count_questions(values,intervals,*,exclude_direct_targets,cos
     upper=np.max(np.stack([d[s,t] for d in distances]),axis=0)
     baseline=float(np.sum(upper-lower))/base.n
     costs=costs or {}
+    targets=[np.isin(np.arange(base.k),np.arange(a,b)).astype(float) for a,b in intervals]
+    from_median=_closure_boundaries_from_median(distances,base.n)
     for q in range(1,base.k):
         _check_deadline(deadline,scores)
         if exclude_direct_targets and any(b==base.k and a==q or a==0 and b==q for a,b in intervals):continue
         ranges=[(int(-d[q,0]),int(d[0,q])) for d in distances]
         first=min(lo for lo,hi in ranges);last=max(hi for lo,hi in ranges)
-        worst_count_width=0.; evaluated=0
+        worst_count_width=0.; total_count_width=0.; evaluated=0
         for start in range(first,last+1,100000):
             _check_deadline(deadline,scores)
             answers=np.arange(start,min(start+100000,last+1),dtype=float)
@@ -225,18 +292,24 @@ def _rank_interval_count_questions(values,intervals,*,exclude_direct_targets,cos
                 valid_any |= valid
             evaluated+=int(valid_any.sum())
             if valid_any.any():
-                worst_count_width=max(worst_count_width,float(np.max(np.sum(hi_union[valid_any]-lo_union[valid_any],axis=1))))
+                answer_widths=np.sum(hi_union[valid_any]-lo_union[valid_any],axis=1)
+                worst_count_width=max(worst_count_width,float(np.max(answer_widths)))
+                total_count_width+=float(np.sum(answer_widths))
         if not evaluated:continue
         question=f"How many isolates had recorded MIC above category {base.panel.bins[q-1].label} (all subsequent panel categories)?"
         cost=float(costs.get(question,costs.get(f"How many isolates had recorded MIC above {base.panel.bins[q-1].label}?",1.)))
         if not np.isfinite(cost) or cost<=0:raise ValueError("Question acquisition costs must be positive")
         residual=worst_count_width/base.n;gain=max(0.,baseline-residual)
+        mean_residual=total_count_width/evaluated/base.n
         scores.append(QuestionScore(question=question,cut_index=q-1,
             feasible_answer_min=base.n-last,feasible_answer_max=base.n-first,
             baseline_total_width=baseline,worst_case_residual_width=residual,
             minimax_width_reduction=gain,cost=cost,score_per_cost=gain/cost,
-            feasible_answers_evaluated=evaluated,reporting_variants_considered=len(values)))
-    return sorted(scores,key=lambda s:(s.score_per_cost,s.minimax_width_reduction,-s.cut_index),reverse=True)
+            feasible_answers_evaluated=evaluated,reporting_variants_considered=len(values),
+            mean_residual_width=mean_residual,mean_width_reduction=max(0.,baseline-mean_residual),
+            boundaries_from_targets=_boundaries_from_targets(q,targets),
+            boundaries_from_median=int(from_median[q])))
+    return sorted(scores,key=_rank_key,reverse=True)
 
 
 def rank_tail_count_questions(*,problem,target_objectives,exclude_direct_targets=False,
@@ -248,7 +321,10 @@ def rank_tail_count_questions(*,problem,target_objectives,exclude_direct_targets
 
 def rank_robust_tail_count_questions(*,problems,target_objectives,exclude_direct_targets=False,
                                      costs=None,time_limit_seconds=None):
-    """Exact minimax over integer answers, using cumulative-constraint closure.
+    """Exact ranking over integer answers, using cumulative-constraint closure.
+
+    The order is the guaranteed (minimax) reduction per cost, then the reduction averaged over
+    the admissible answers, then nearness to the question ranges and to the median (_rank_key).
 
     Condition F_q=a. For any prefix j its exact bounds become
     max(-D[j,0], a-D[j,q]) and min(D[0,j], a+D[q,j]). This is the
@@ -279,12 +355,13 @@ def rank_robust_tail_count_questions(*,problems,target_objectives,exclude_direct
     upper=np.max(np.stack([d[0,cuts] for d in distances]),axis=0)
     baseline=float(np.sum(upper-lower))/base.n
     costs=costs or {}
+    from_median=_closure_boundaries_from_median(distances,base.n)
     for q in range(1,base.k):
         _check_deadline(deadline,scores)
         if exclude_direct_targets and q in cuts:continue
         ranges=[(int(-d[q,0]),int(d[0,q])) for d in distances]
         first=min(lo for lo,hi in ranges);last=max(hi for lo,hi in ranges)
-        worst_count_width=0.; evaluated=0
+        worst_count_width=0.; total_count_width=0.; evaluated=0
         # Chunked to keep large-n memory bounded. Every feasible answer still counts.
         for start in range(first,last+1,100000):
             _check_deadline(deadline,scores)
@@ -302,15 +379,21 @@ def rank_robust_tail_count_questions(*,problems,target_objectives,exclude_direct
                 valid_any |= valid
             evaluated+=int(valid_any.sum())
             if valid_any.any():
-                worst_count_width=max(worst_count_width,float(np.max(np.sum(hi_union[valid_any]-lo_union[valid_any],axis=1))))
+                answer_widths=np.sum(hi_union[valid_any]-lo_union[valid_any],axis=1)
+                worst_count_width=max(worst_count_width,float(np.max(answer_widths)))
+                total_count_width+=float(np.sum(answer_widths))
         if not evaluated:continue
         question=f"How many isolates had recorded MIC above category {base.panel.bins[q-1].label} (all subsequent panel categories)?"
         cost=float(costs.get(question,costs.get(f"How many isolates had recorded MIC above {base.panel.bins[q-1].label}?",1.)))
         if not np.isfinite(cost) or cost<=0:raise ValueError("Question acquisition costs must be positive")
         residual=worst_count_width/base.n;gain=max(0.,baseline-residual)
+        mean_residual=total_count_width/evaluated/base.n
         scores.append(QuestionScore(question=question,cut_index=q-1,
             feasible_answer_min=base.n-last,feasible_answer_max=base.n-first,
             baseline_total_width=baseline,worst_case_residual_width=residual,
             minimax_width_reduction=gain,cost=cost,score_per_cost=gain/cost,
-            feasible_answers_evaluated=evaluated,reporting_variants_considered=len(values)))
-    return sorted(scores,key=lambda s:(s.score_per_cost,s.minimax_width_reduction,-s.cut_index),reverse=True)
+            feasible_answers_evaluated=evaluated,reporting_variants_considered=len(values),
+            mean_residual_width=mean_residual,mean_width_reduction=max(0.,baseline-mean_residual),
+            boundaries_from_targets=_boundaries_from_targets(q,targets),
+            boundaries_from_median=int(from_median[q])))
+    return sorted(scores,key=_rank_key,reverse=True)

@@ -1,10 +1,13 @@
-"""MIC-50-90 SoftwareX figures: six single-graph main figures and four single-graph
-supplementary figures, drawn from the numeric records in data/ and efsa/.
+"""MIC-50-90 SoftwareX figures: six single-graph main figures and six single-graph
+supplementary figures, drawn from the numeric records in data/ and efsa/ and from the
+reporting evaluation (../evaluation/results/sufficient_reporting/tasks.csv).
 
-Every plotted value is asserted against its source file before drawing. No analysis is
-rerun here; the Figure 3 values are also checked against a rerun with the installed
-package (data/ampicillin_rerun.json, written by rerun_ampicillin.py), and the Figure 6
-values against the replay of the public EFSA data (efsa/EFSA_REPLAY_SUMMARY.json).
+Every plotted value is asserted against its source file before drawing. No program
+analysis is rerun here. The ampicillin values of Figures 3 and 4 and Supplementary
+Figure S2 come from a rerun with the installed package (data/ampicillin_rerun.json,
+written by rerun_ampicillin.py); Figure 4 also enumerates the compatible tables with
+its own calculation and compares the selected tables with the rerun. The Figure 6 values
+are checked against the replay of the public EFSA data (efsa/EFSA_REPLAY_SUMMARY.json).
 
 Appearance is fixed by this script: colours are black, greys and two muted accents,
 all text is black, the font files are bundled (fonts/), and the library versions are
@@ -76,6 +79,7 @@ plt.rcParams.update({
 
 OUT: Path
 RECORD: list = []
+EXTRA_INPUTS: list = []
 
 
 def need(cond, msg):
@@ -158,7 +162,7 @@ def save(fig, name, values):
 
 # ---------------------------------------------------------------- data checks
 def load_ampicillin():
-    recs = {(r['quantity'], r['state']): r for r in rows(DATA / 'figure3_ampicillin.csv')}
+    recs = {(r['quantity'], r['state']): r for r in rows(DATA / 'figureS2_ampicillin_category.csv')}
     rerun = json.loads((DATA / 'ampicillin_rerun.json').read_text())
     need(rerun['version'] == PACKAGE_VERSION, f'rerun not from MIC-50-90 {PACKAGE_VERSION}')
     res = rerun['results']
@@ -170,6 +174,9 @@ def load_ampicillin():
             need(math.isclose(v, w, rel_tol=0, abs_tol=1e-9), f'population {st} differs from rerun')
         need(math.isclose(float(c['lower_percent']), 100 * int(c['count_lower']) / 67, abs_tol=1e-12), 'pct')
     need(res['sample_before'] == [1, 32] and res['sample_after'] == [2, 7], 'headline counts')
+    for st in ['before', 'after']:
+        need(len(res[f'categories_{st}']) == 5 and res[f'categories_{st}'][2][1:] == res[f'sample_{st}'], f'categories {st}')
+    recs['rerun'] = res
     return recs
 
 
@@ -246,17 +253,17 @@ def figure2(amp):
         text(x, .9025, s, fontsize=9.6)
         ax.add_patch(FancyArrowPatch((x, .852), (.5 + (x - .5) * .25, .745), arrowstyle='-|>',
                                      mutation_scale=9, lw=.75, color=MUTED))
-    box(.01, .49, .285, .27, 'Reader', 'Incomplete MIC report\nSample size, categories,\nsummaries and counts')
-    box(.01, .13, .285, .27, 'Laboratory', 'Complete count table\nQuestions to preserve\nAllowed counts and costs')
-    box(.365, .2, .27, .54, 'Shared calculation engine',
-        'Check consistency\nBound compatible counts\nSelect useful counts\nIssue certificates', fill=PALEBLUE)
-    box(.705, .49, .285, .27, 'Narrow an answer', f'67-isolate example\nOne added count:\n{b} → {a} isolates')
-    box(.705, .13, .285, .27, 'Share checkable answers', '276-isolate example\nOne disclosed count\nsettles four questions')
+    box(.01, .49, .285, .27, 'Reader', 'Incomplete MIC report:\nsample size, categories,\nMIC50, MIC90, range, counts')
+    box(.01, .13, .285, .27, 'Laboratory', 'Complete count table\nand the questions\nreaders will ask')
+    box(.365, .2, .27, .54, 'One calculation engine',
+        'Check the report\nBound every count\nRank counts to request\nSelect counts to publish\nAdd population bounds', fill=PALEBLUE)
+    box(.705, .49, .285, .27, 'What the report proves', f'Exact bounds on every count\nThe count to request:\n{b} → {a} of 67 isolates')
+    box(.705, .13, .285, .27, 'A report readers can check', 'The fewest counts to publish\nand a certificate:\none count, four answers')
     for y in [.625, .265]:
         ax.add_patch(FancyArrowPatch((.300, y), (.359, y), arrowstyle='-|>', mutation_scale=11, lw=.9, color=BLUE))
         ax.add_patch(FancyArrowPatch((.641, y), (.699, y), arrowstyle='-|>', mutation_scale=11, lw=.9, color=BLUE))
     text(.5, .07, 'Outputs: HTML report, CSV and JSON results, reusable input and certificates', fontsize=9.1)
-    text(.5, .025, 'Optional population bounds require stated sampling assumptions', fontsize=8.8)
+    text(.5, .025, 'Population bounds are available for independently sampled isolates', fontsize=8.8)
     save(fig, 'Figure2', {'example_before': b, 'example_after': a})
 
 
@@ -286,7 +293,7 @@ def figure1(rr):
     save(fig, 'Figure1', {str(y): round(v, 4) for y, v in zip(years, p)})
 
 
-def figure3(amp):
+def figureS2(amp):
     fig = plt.figure(figsize=(6.5, 2.75))
     ax = fig.add_axes([.27, .2, .58, .66])
     ax.set_xlim(0, 70); ax.set_ylim(-.6, 4.1); ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70])
@@ -312,11 +319,11 @@ def figure3(amp):
     ax.text(-.395, .4, 'Population\n(95%)', transform=ax.get_yaxis_transform(), ha='left', va='center',
             fontsize=8.8, fontweight='bold', linespacing=1.2)
     ax.axhline(1.7, color=GRID, lw=.8)
-    save(fig, 'Figure3', vals)
+    save(fig, 'SupplementaryFigureS2', vals)
 
 
-def figure4():
-    rr = rows(DATA / 'figure4_chloramphenicol.csv')
+def figureS3():
+    rr = rows(DATA / 'figureS3_chloramphenicol.csv')
     at = {r['threshold']: r for r in rr}
     need(at['2.0']['certainly_above'] == '34' and at['2.0']['possibly_above'] == '67', 'chloramphenicol at 2')
     need(at['4.0']['certainly_above'] == '34' and at['8.0']['possibly_above'] == '0', 'boundaries')
@@ -339,11 +346,11 @@ def figure4():
                arrowprops={'arrowstyle': '-', 'color': OCHRE, 'lw': .6})
     b.text(.53, 68.8, 'Upper bound', fontsize=7.6, va='bottom')
     b.text(.53, 35.7, 'Lower bound', fontsize=7.6, va='bottom')
-    save(fig, 'Figure4', {'t=2': [34, 67], 't=4': [34, 34], 't=8': [0, 0]})
+    save(fig, 'SupplementaryFigureS3', {'t=2': [34, 67], 't=4': [34, 34], 't=8': [0, 0]})
 
 
-def figure5():
-    rr = rows(DATA / 'figure5_amikacin.csv')
+def figureS5():
+    rr = rows(DATA / 'figureS5_amikacin.csv')
     need(len(rr) == 4 and all(r['n'] == '276' and r['before_max'] == '27' for r in rr), 'amikacin rows')
     need(rr[0]['after_min'] == rr[0]['after_max'] == '8' and all(r['after_max'] == '8' for r in rr), 'after')
     fig = plt.figure(figsize=(6.5, 3.3)); ax = fig.add_axes([.14, .19, .79, .60])
@@ -370,7 +377,122 @@ def figure5():
                Line2D([0], [0], color=BLUE, lw=2.5, label='+ disclosed count'),
                Line2D([0], [0], color=INK, marker='D', ls='none', mfc=WHITE, ms=4, label='Laboratory count')]
     fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.53, .95), ncol=3, columnspacing=2, handletextpad=.7)
-    save(fig, 'Figure5', vals)
+    save(fig, 'SupplementaryFigureS5', vals)
+
+
+def figure3(amp):
+    """Ampicillin: possible number of isolates in every category, before and after the published count."""
+    res = amp['rerun']
+    before, after = res['categories_before'], res['categories_after']
+    need([b[0] for b in before] == [a[0] for a in after] == ['<=0.12', '0.25', '0.5', '1', '>1'], 'ampicillin categories')
+    need([b[1:] for b in before] == [[34, 60], [0, 26], [1, 32], [0, 5], [1, 6]], 'bounds from the summaries')
+    need([a[1:] for a in after] == [[34, 59], [0, 25], [2, 7], [0, 5], [1, 6]], 'bounds with the count')
+    fig = plt.figure(figsize=(6.5, 3.45)); ax = fig.add_axes([.14, .17, .58, .64])
+    ax.set_xlim(0, 67); ax.set_ylim(-.6, 4.6); ax.set_yticks(range(5))
+    ax.set_yticklabels([b[0].replace('<=', '≤') for b in before[::-1]])
+    ax.set_ylabel('MIC category (mg/L)', labelpad=10); ax.set_xlabel('Possible number of isolates (of 67)', labelpad=6)
+    ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 67]); forest(ax)
+    ax.axhspan(1.55, 2.45, color=LIGHT, zorder=0)
+    for i, (b, a) in enumerate(zip(before, after)):
+        y = 4 - i
+        span(ax, b[1], b[2], y + .16, GREY, 1.8, 5)
+        span(ax, a[1], a[2], y - .16, BLUE, 2.5, 5)
+        ax.text(70.5, y + .16, f'{b[1]}–{b[2]}', ha='left', va='center', fontsize=8.2, clip_on=False)
+        ax.text(81.5, y - .16, f'{a[1]}–{a[2]}', ha='left', va='center', fontsize=8.2, clip_on=False)
+    ax.text(70.5, 4.82, 'Summaries', fontsize=8, ha='left', clip_on=False)
+    ax.text(81.5, 4.82, '+ count of 59', fontsize=8, ha='left', clip_on=False)
+    handles = [Line2D([0], [0], color=GREY, lw=1.8, label='MIC50, MIC90 and range'),
+               Line2D([0], [0], color=BLUE, lw=2.5, label='+ 59 isolates at or below 0.25 mg/L')]
+    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.43, .97), ncol=2, columnspacing=2, handletextpad=.7)
+    save(fig, 'Figure3', {'before': [b[1:] for b in before], 'after': [a[1:] for a in after]})
+
+
+def compatible_tables():
+    """Every complete table that fits the ampicillin summaries, and the tables at the category boundaries.
+
+    The report says: 67 isolates in five categories; MIC50 (34th result) in the first category; MIC90 (61st
+    result) in the third; at least one isolate in the first and in the last category. The enumeration and the
+    shortest-path closure below use no program code.
+    """
+    n, k = 67, 5
+    tables = []
+    for c0 in range(34, n + 1):
+        for c1 in range(0, n - c0 + 1):
+            if c0 + c1 > 60:
+                break
+            for c2 in range(max(0, 61 - c0 - c1), n - c0 - c1 + 1):
+                rest = n - c0 - c1 - c2
+                tables += [(c0, c1, c2, c3, rest - c3) for c3 in range(0, rest)]   # last category holds at least one
+    big = 10 ** 6
+    d = np.full((k + 1, k + 1), big, dtype=np.int64); np.fill_diagonal(d, 0)
+    for u, v, w in ([(i + 1, i, 0) for i in range(k)] + [(0, k, n), (k, 0, -n), (1, 0, -34), (0, 2, 60), (3, 0, -61),
+                                                          (0, 4, n - 1)]):
+        d[u, v] = min(d[u, v], w)
+    for m in range(k + 1):
+        d = np.minimum(d, d[:, m:m + 1] + d[m:m + 1, :])
+    selected = []
+    for a in range(1, k + 1):
+        table = [int(x) for x in np.diff(d[a, :])]
+        if table not in selected:
+            selected.append(table)
+    return n, tables, selected
+
+
+def figure4(amp):
+    """The endpoint theorem on the ampicillin summaries: all compatible tables and the selected ones."""
+    n, tables, selected = compatible_tables()
+    need(len(tables) == len(set(tables)) == 7938, 'compatible tables')
+    need(selected == amp['rerun']['selected_tables_before'] and len(selected) == 5, 'selected tables equal the rerun')
+    need(all(tuple(t) in set(tables) for t in selected), 'selected tables are compatible')
+    labels = ['≤0.12', '0.25', '0.5', '1', '>1']
+    x = np.arange(5)
+    fig = plt.figure(figsize=(6.5, 3.5)); ax = fig.add_axes([.12, .16, .84, .76])
+    cumulative = np.unique(100 * np.cumsum(np.array(tables), axis=1) / n, axis=0)
+    for row in cumulative:
+        ax.plot(x, row, color='#C9CED3', lw=.45, zorder=2)
+    for table in selected:
+        ax.plot(x, 100 * np.cumsum(table) / n, color=BLUE, lw=1.5, marker='o', ms=3.2, zorder=4)
+    ax.set_xticks(x); ax.set_xticklabels(labels); ax.set_xlim(-.25, 4.25)
+    ax.set_ylim(40, 101.5); ax.set_yticks(range(40, 101, 10))
+    ax.set_xlabel('MIC category (mg/L)', labelpad=6); ax.set_ylabel('Isolates at or below the category (%)', labelpad=8)
+    ax.grid(axis='y', color=GRID, lw=.5); ax.set_axisbelow(True)
+    handles = [Line2D([0], [0], color='#C9CED3', lw=1.2, label='7938 tables compatible with the report'),
+               Line2D([0], [0], color=BLUE, lw=1.5, marker='o', ms=3.2, label='5 tables that give every population bound')]
+    ax.legend(handles=handles, loc='lower right', bbox_to_anchor=(.99, .04), handletextpad=.7)
+    save(fig, 'Figure4', {'compatible': len(tables), 'selected': selected})
+
+
+def figure5():
+    """Sixty collections and three share criteria: counts a laboratory has to publish."""
+    path = HERE.parent / 'evaluation' / 'results' / 'sufficient_reporting' / 'tasks.csv'
+    EXTRA_INPUTS.append(path)
+    tasks = rows(path)
+    need(len(tasks) == 180 and all(t['recipient_sufficient'] == 'True' for t in tasks), '180 sufficient tasks')
+    groups = []
+    for fraction, label in ((.05, 'Share below 5%'), (.1, 'Share below 10%'), (.2, 'Share below 20%'), (None, 'All three questions')):
+        chosen = [t for t in tasks if fraction is None or float(t['fraction']) == fraction]
+        groups.append((label, len(chosen), sum(int(t['answers']) for t in chosen),
+                       sum(int(t['direct_fields']) for t in chosen), sum(int(t['minimal_fields']) for t in chosen)))
+    need(groups[-1][1:] == (180, 1809, 405, 115), 'totals: 180 tasks, 1809 answers, 405 and 115 counts')
+    fig = plt.figure(figsize=(6.5, 3.0)); ax = fig.add_axes([.25, .2, .71, .64])
+    ax.set_xlim(-8, 440); ax.set_ylim(3.6, -.6); ax.set_yticks(range(4))
+    ax.set_yticklabels([f'{g[0]}\n{g[1]} tasks, {g[2]} answers' for g in groups], linespacing=1.2)
+    ax.set_xticks(range(0, 401, 50)); ax.set_xlabel('Counts the laboratory has to publish', labelpad=6); forest(ax)
+    ax.axhline(2.5, color=GRID, lw=.9)
+    for y, (label, count, answers, direct, minimal) in enumerate(groups):
+        if direct == 0:
+            ax.scatter(0, y, s=26, color=BLUE, zorder=4)
+            ax.text(9, y, 'none: the summaries settle every answer', ha='left', va='center', fontsize=8)
+            continue
+        ax.plot([minimal, direct], [y, y], color=GRID, lw=1.6, zorder=2)
+        ax.scatter(direct, y, s=26, color=GREY, zorder=4)
+        ax.scatter(minimal, y, s=26, color=BLUE, zorder=4)
+        ax.text(direct + 8, y, str(direct), ha='left', va='center', fontsize=8)
+        ax.text(minimal - 8, y, str(minimal), ha='right', va='center', fontsize=8)
+    handles = [Line2D([0], [0], color=GREY, marker='o', ls='none', ms=5, label='Every count left open by the summaries'),
+               Line2D([0], [0], color=BLUE, marker='o', ls='none', ms=5, label='Smallest sufficient set')]
+    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.6, .98), ncol=2, columnspacing=2, handletextpad=.4)
+    save(fig, 'Figure5', {g[0]: list(g[1:]) for g in groups})
 
 
 def figure6(per, med, ident):
@@ -399,28 +521,6 @@ def figure6(per, med, ident):
 
 
 # ---------------------------------------------------------- supplementary
-def figureS2():
-    rr = rows(DATA / 'figureS2_ampicillin.csv')
-    need([(r['lower_count'], r['upper_count']) for r in rr] ==
-         [('34', '59'), ('0', '25'), ('2', '7'), ('0', '5'), ('1', '6')], 'S1 bounds')
-    fig = plt.figure(figsize=(6.5, 3.25)); ax = fig.add_axes([.17, .19, .64, .61])
-    ax.set_xlim(0, 67); ax.set_ylim(-.55, 4.55); ax.set_yticks(range(5)); ax.set_yticklabels([r['category'] for r in rr[::-1]])
-    ax.set_ylabel('MIC category (mg/L)', labelpad=10); ax.set_xlabel('Feasible isolate count', labelpad=6)
-    ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 67]); forest(ax)
-    top = ax.secondary_xaxis('top', functions=(lambda x: 100 * x / 67, lambda x: 67 * x / 100))
-    top.set_xticks([0, 25, 50, 75, 100]); top.set_xlabel('Share of the collection (%)', labelpad=6)
-    ax.axhspan(1.62, 2.38, color=LIGHT, zorder=0)
-    for i, r in enumerate(rr):
-        y = 4 - i; lo, hi = int(r['lower_count']), int(r['upper_count']); c = BLUE if i == 2 else MUTED
-        span(ax, lo, hi, y, c, lw=2.5 if i == 2 else 1.6)
-        ax.text(69.3, y, f'{lo}–{hi}', ha='left', va='center', fontsize=8.5, clip_on=False)
-    ax.text(69.3, 4.7, 'Count bounds', fontsize=8, clip_on=False)
-    goal = .15 * 67; ax.plot([goal, goal], [1.64, 2.36], ls=(0, (2, 2)), color=OCHRE, lw=.8)
-    ax.annotate('15% criterion', xy=(goal, 2), xytext=(goal + 3, 1.70), fontsize=7.5,
-                arrowprops={'arrowstyle': '-', 'lw': .5, 'color': OCHRE})
-    save(fig, 'SupplementaryFigureS2', {r['category']: [r['lower_count'], r['upper_count']] for r in rr})
-
-
 def figureS1(rr):
     years = np.array([int(r['year']) for r in rr]); same = np.isin(years, [2016, 2018, 2021])
     fig = plt.figure(figsize=(6.5, 2.9)); a = fig.add_axes([.13, .2, .84, .66])
@@ -437,7 +537,7 @@ def figureS1(rr):
     save(fig, 'SupplementaryFigureS1', {r['year']: [r['mic50'], r['mic90']] for r in rr})
 
 
-def figureS3():
+def figureS4():
     fig = plt.figure(figsize=(6.5, 1.9)); a = fig.add_axes([.14, .3, .82, .58])
     a.set_xscale('log', base=2); a.set_xlim(.5, 16); a.set_xticks([.5, 1, 2, 4, 8, 16])
     a.set_xticklabels(['0.5', '1', '2', '4', '8', '16']); a.xaxis.set_minor_locator(NullLocator())
@@ -446,10 +546,10 @@ def figureS3():
     a.plot([.5, 4], [1, 1], lw=2, color=GREY); a.plot(.5, 1, '<', ms=4, color=GREY); a.plot(4, 1, 'o', ms=4, color=GREY)
     a.plot([4, 8], [0, 0], lw=2, color=BLUE); a.plot(4, 0, 'o', ms=4, mfc=WHITE, mec=BLUE); a.plot(8, 0, 'o', ms=4, color=BLUE)
     a.axvline(2, color=OCHRE, lw=.8, ls=(0, (3, 3))); a.text(2.08, 1.45, 't = 2 mg/L', fontsize=7.6)
-    save(fig, 'SupplementaryFigureS3', {'<=4': 33, '(4,8]': 34})
+    save(fig, 'SupplementaryFigureS4', {'<=4': 33, '(4,8]': 34})
 
 
-def figureS4(cost):
+def figureS6(cost):
     fig = plt.figure(figsize=(6.5, 3.3)); b = fig.add_axes([.12, .17, .84, .74])
     b.set_xlim(22, 166); b.set_ylim(-2, 52); b.set_xticks([37, 89, 113, 150]); b.set_yticks([0, 10, 20, 30, 40, 50])
     b.axhline(2, color=OCHRE, ls=(0, (3, 3)), lw=.8, zorder=1)
@@ -462,7 +562,7 @@ def figureS4(cost):
         b.annotate(f'{lab}: {v:.2f} pp' if v else f'{lab}: 0 pp', (f, v), xytext=off, textcoords='offset points',
                    fontsize=8, ha=ha, va='bottom',
                    arrowprops={'arrowstyle': '-', 'color': MUTED, 'lw': .6} if off[1] > 12 else None)
-    save(fig, 'SupplementaryFigureS4', {lab: [f, round(v, 4)] for lab, f, v in cost})
+    save(fig, 'SupplementaryFigureS6', {lab: [f, round(v, 4)] for lab, f, v in cost})
 
 
 def main():
@@ -483,8 +583,8 @@ def main():
     font = Path(font_manager.findfont('Liberation Sans', fallback_to_default=False)).resolve()
     need(font.parent == (HERE / 'fonts').resolve(), f'font not taken from the bundled folder: {font}')
     amp = load_ampicillin(); pne = load_pneumococci(); per, med, ident, cost = load_efsa()
-    figure1(pne); figure2(amp); figure3(amp); figure4(); figure5(); figure6(per, med, ident)
-    figureS1(pne); figureS2(); figureS3(); figureS4(cost)
+    figure1(pne); figure2(amp); figure3(amp); figure4(amp); figure5(); figure6(per, med, ident)
+    figureS1(pne); figureS2(amp); figureS3(); figureS4(); figureS5(); figureS6(cost)
     need(all(r['axes_with_data'] <= 1 for r in RECORD), 'a figure has more than one data axis')
     receipt = {'status': 'passed', 'versions': have,
                'rule': 'one data graph per figure; black text; palette of black, greys and two muted accents; '
@@ -493,7 +593,8 @@ def main():
                            'blue': BLUE, 'pale blue': PALEBLUE, 'slate': SLATE, 'ochre': OCHRE},
                'fonts_sha256': {f.name: sha(f) for f in sorted((HERE / 'fonts').glob('*.ttf'))},
                'default_style_sha256': sha(HERE / 'style' / 'matplotlibrc-3.11.2-default'),
-               'inputs_sha256': {str(p.relative_to(HERE)): sha(p) for p in sorted(list(DATA.glob('*')) + list(EFSA.glob('*')))},
+               'inputs_sha256': {**{str(p.relative_to(HERE)): sha(p) for p in sorted(list(DATA.glob('*')) + list(EFSA.glob('*')))},
+                                 **{str(p.relative_to(HERE.parent)): sha(p) for p in EXTRA_INPUTS}},
                'figures': RECORD}
     (OUT / 'FIGURE_BUILD_RECEIPT.json').write_text(json.dumps(receipt, indent=1, ensure_ascii=False) + '\n')
     result = {'figures': len(RECORD), 'single_graph': True}

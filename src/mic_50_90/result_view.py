@@ -225,11 +225,12 @@ def decision_cards(decisions, n):
 def question_ranked_cut(record, problems):
     """Index of the cumulative count that most reduces the declared questions' sample ranges.
 
-    Uses the exact minimax ranking of single counts by difference-constraint closure, so the
-    result does not depend on computing time. Open questions are unresolved criteria and
-    questions without a criterion whose count is not yet fixed. Returns None when no open
-    sample question exists, the report has constraints outside that exact class, or no count has a positive
-    guaranteed reduction.
+    Uses the exact ranking of single counts by difference-constraint closure, so the result does
+    not depend on computing time. Open questions are unresolved criteria and questions without a
+    criterion whose count is not yet fixed. Returns the index, the number of open questions and
+    whether the reduction is guaranteed for every value of the count or is the largest on
+    average over its possible values. Returns None when no open sample question exists, the
+    report has constraints outside that exact class, or no count can reduce the ranges.
     """
     if not problems or not all(p._canonical_tu and p._integral_rhs for p in problems.values()):
         return None
@@ -255,9 +256,9 @@ def question_ranked_cut(record, problems):
         ranked = rank_robust_tail_count_questions(problems=problems, target_objectives=targets)
     except (ValueError, RuntimeError, ArithmeticError, MemoryError):
         return None
-    if not ranked or ranked[0].minimax_width_reduction <= 0:
+    if not ranked or ranked[0].mean_width_reduction <= 0:
         return None
-    return ranked[0].cut_index, len(targets)
+    return ranked[0].cut_index, len(targets), ranked[0].minimax_width_reduction > 0
 
 
 def distribution_guidance(record, problems=None):
@@ -265,19 +266,24 @@ def distribution_guidance(record, problems=None):
 
     With declared questions, the count is the cumulative count with the largest
     guaranteed reduction of those questions' sample ranges (exact minimax ranking).
-    Otherwise, or if that ranking gives no positive reduction, it is the largest
-    unresolved cumulative range: a truthful cumulative count fixes that coordinate.
-    Neither rule is a minimum-cost plan; the planning functions provide those.
+    When no single count guarantees a reduction, it is the count with the largest
+    reduction averaged over its possible values; equal counts are separated by
+    nearness to the question range and then to the median. Without an open question
+    it is the largest unresolved cumulative range: a truthful cumulative count fixes
+    that coordinate. No rule is a minimum-cost plan; the planning functions provide those.
     """
     sample, n = record['sample'], record['n']
     missing = any(r['count_lower'] != r['count_upper'] for r in sample['categories'])
     unresolved = [r for r in sample['cdf'] if r['count_lower'] < r['count_upper']]
     ranked = question_ranked_cut(record, problems)
-    ranked_cut, questions = ranked if ranked is not None else (None, 0)
+    ranked_cut, questions, guaranteed = ranked if ranked is not None else (None, 0, False)
     if ranked_cut is not None and sample['cdf'][ranked_cut]['count_lower'] < sample['cdf'][ranked_cut]['count_upper']:
         candidate = sample['cdf'][ranked_cut]
         rule = ('Largest guaranteed reduction of the declared question ranges (exact minimax ranking of single '
-                'cumulative counts); not a minimum-cost plan')
+                'cumulative counts); not a minimum-cost plan' if guaranteed else
+                'Largest average reduction of the declared question ranges over the possible values of the count; '
+                'equal counts are separated by nearness to the question range, then to the median; '
+                'not a minimum-cost plan')
     else:
         candidate = max(unresolved, key=lambda r: r['count_upper']-r['count_lower']) if unresolved else None
         rule = 'Largest unresolved cumulative count range; not a minimum-cost plan'
@@ -292,7 +298,8 @@ def distribution_guidance(record, problems=None):
                   f'recorded MIC groups {first} through {category_label(candidate["label"])}')
         reason = (' Of the single counts that could be requested, this one narrows the answer'
                   + (' to the declared question' if questions == 1 else 's to the declared questions')
-                  + ' most in the worst case.' if ranked_cut is not None and candidate is sample['cdf'][ranked_cut] else '')
+                  + (' most in the worst case.' if guaranteed else ' most on average over its possible values.')
+                  if ranked_cut is not None and candidate is sample['cdf'][ranked_cut] else '')
         next_step = (f'Ask for the total number of the same {counted(n, "isolate")} in the {groups}. '
                      f'That total is currently {count_text(suggestion["count_components"])}.{reason} '
                      'One exact count fixes this cumulative share; other MIC groups may still be uncertain.')

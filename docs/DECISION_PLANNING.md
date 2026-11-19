@@ -35,7 +35,7 @@ The default limits are five seconds and 5,000 explored states; change them with 
 
 ## Why this differs from narrowing an interval
 
-The additional-information section of a report ranks one count by its guaranteed reduction in the sum of interval widths. The decision planner minimizes the total worst-case cost until all declared criteria are settled. A wide interval can already settle a lenient criterion, while a narrow interval can straddle an important boundary. The two objectives can therefore select different questions.
+The additional-information section of a report ranks one count by its guaranteed reduction in the sum of interval widths; counts that are equal on that measure are ranked by the reduction averaged over the possible values of the count. The decision planner minimizes the total worst-case cost until all declared criteria are settled. A wide interval can already settle a lenient criterion, while a narrow interval can straddle an important boundary. The two objectives can therefore select different questions.
 
 For one feasible reporting interpretation and a common integer count boundary, an exact reduction gives an ordered-search algorithm whose arithmetic work is independent of sample size. With m unresolved target cuts at equal cost, it requires at most and in the worst case exactly `ceil(log2(m+1))` counts. A fixed set needs all m. General decision-tree optimization and ordered search are established methods; The implementation and independent decision-tree oracle are in src/mic_50_90/decision_planning.py and tests/test_decision_planning.py.
 

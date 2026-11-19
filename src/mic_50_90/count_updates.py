@@ -462,6 +462,8 @@ def _scenarios_and_questions(result, spec, problems, selected_id):
             criterion="exact minimax reduction in the sum of remaining envelope widths per unit acquisition cost",
             search_complete=complete, optimality_claimed=complete,
             best_question=ranked[0].as_dict() if complete and ranked and ranked[0].minimax_width_reduction > 1e-12 else None,
+            best_average_question=(ranked[0].as_dict() if complete and ranked and ranked[0].minimax_width_reduction <= 1e-12
+                                   and ranked[0].mean_width_reduction > 1e-12 else None),
             ranked_questions=[x.as_dict() for x in ranked[:10]],
             direct_target_questions_excluded=bool(spec.question_options.get("exclude_direct_target_questions", False)))
 
