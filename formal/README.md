@@ -43,6 +43,10 @@ The file uses an abstract real-valued endpoint sequence U and explicit hypothese
 
 `CompleteRegion` is stated in cumulative coordinates: its first value is zero, its final value is one, adjacent increments are nonnegative, and every contiguous range meets its band. `normalized_anchor_member` proves membership in this region, rather than assuming membership as a premise. The correspondence between U and the exact binomial confidence endpoints is stated in ../docs/population-row-lift.md and checked by independent numerical evidence. Count rows and probability constructions are connected in the written P6 proof; the complete translation from an arbitrary MIC report and Python objects into these formal objects is outside this formalization.
 
+## Axiom audit and negative controls
+
+`python check_formal.py --receipt RECEIPT.json`, run from this directory after the commands above, compiles P6Core.lean, checks that every theorem reports its axiom dependencies and that none goes beyond `propext`, `Classical.choice` and `Quot.sound`, and runs five negative controls. Each control is a copy of P6Core.lean with one addition before its last line. Lean must reject three false arguments: that the nonconcave example is concave, that a count row exceeds its upper bound by one, and that the endpoint order holds without the concavity hypothesis. The audit must reject a proof completed with `sorry` and a theorem that rests on an added axiom, both of which Lean itself accepts. The receipt records the Lean version, the SHA-256 of P6Core.lean, the axioms of every theorem and the outcome of every control.
+
 ## What is not checked by Lean
 
 Lean does not verify the Python program, the numerical enclosure implementation, the statistical coverage proof, source-data transcription, biological interpretation or user interface. Passing these algebraic proofs does not establish novelty. Property tests, direct enumeration, numerical certificates, example replay and the written statistical proofs address different parts of that evidence.
