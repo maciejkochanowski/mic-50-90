@@ -164,12 +164,15 @@ def main():
     if release is None:
         notes = f"""## MIC-50-90 {VERSION}
 
-MIC-50-90 combines MIC summaries and additional counts to describe compatible MIC distributions, evaluate reporting choices and produce readable local reports.
+MIC-50-90 is a Python package for bounding MIC distributions from incomplete susceptibility reports. Published antimicrobial susceptibility results often give only MIC50, MIC90, a range and a few percentages. From these, and from exact or rounded counts, MIC-50-90 computes the smallest and largest count the report allows in every MIC category and range, names the count that would narrow an open question most, selects counts a laboratory can publish so that readers can check its conclusions, and gives optional population bounds under stated sampling assumptions.
+
+Archived at Zenodo (all versions): https://doi.org/10.5281/zenodo.23297915.
 
 ### Downloads
 - **Windows:** extract `MIC-50-90-{VERSION}-Windows-x64.zip` and run `MIC-50-90.exe`.
 - **CLI:** install the wheel with `python -m pip install mic_50_90-{VERSION}-py3-none-any.whl`.
 - **PyPI:** after separate approval and successful PyPI publication, `python -m pip install mic-50-90=={VERSION}` installs this version. Until then use the verified wheel above.
+- **Container:** after the release is published, `docker pull ghcr.io/{repository.lower()}:{VERSION}` provides the program with Python and all dependencies.
 - **Source:** `MIC-50-90-{VERSION}-software-source.zip` contains the code, tests, usage documentation, example inputs and build scripts.
 
 The wheel, source distribution and Windows application were built by GitHub Actions from `{commit}`. Release checks include Windows/Linux Python tests, JavaScript form tests, isolated package installation, a packaged Windows analysis compared with CLI, and a real browser form check. The manifests and verification receipts accompany the downloads.

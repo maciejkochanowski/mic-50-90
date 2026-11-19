@@ -10,11 +10,11 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 
 
-@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2"])
+@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3"])
 def test_patch_102_accepts_known_distribution_producers(monkeypatch, version):
     from mic_50_90 import _version
     from mic_50_90.result_schema import validate_distribution_schema
-    monkeypatch.setattr(_version, "__version__", "1.0.2")
+    monkeypatch.setattr(_version, "__version__", "1.0.3")
     document = {"software": "MIC-50-90", "software_version": version,
                 "result_schema": "mic-50-90.distribution/1"}
     before = deepcopy(document)
@@ -22,7 +22,7 @@ def test_patch_102_accepts_known_distribution_producers(monkeypatch, version):
     assert document == before
 
 
-@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2"])
+@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3"])
 def test_patch_102_recipient_example_accepts_known_certificate_versions(tmp_path, version):
     document = json.loads((ROOT / "examples/received_report/certificate.json").read_text())
     document["version"] = version
@@ -34,7 +34,7 @@ def test_patch_102_recipient_example_accepts_known_certificate_versions(tmp_path
     assert "Sufficient" in result.stdout
 
 
-@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2"])
+@pytest.mark.parametrize("version", ["1.0.0", "1.0.1", "1.0.2", "1.0.3"])
 def test_patch_102_gui_accepts_known_certificate_versions(version):
     from mic_50_90.gui_documents import validate_document
     document = json.loads((ROOT / "examples/received_report/certificate.json").read_text())

@@ -1,8 +1,8 @@
 {
   "software": "MIC-50-90",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "distribution_scope": "software_only",
-  "release_url": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.2",
+  "release_url": "https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.3",
   "publication_channel": "public_release",
   "documentation": [
     "docs/GUI_GUIDE.md",

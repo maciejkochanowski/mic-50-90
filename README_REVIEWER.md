@@ -1,4 +1,4 @@
-# Reviewing MIC-50-90 1.0.2 software
+# Reviewing MIC-50-90 1.0.3 software
 
 Start with README.md, docs/GUI_GUIDE.md and docs/distribution-user-guide.md. The source tree contains the engine, application, tests, examples, formal algebra and, in `evaluation/`, the inputs, scripts and results of the evaluation; see evaluation/README.md. The manuscript and supplementary appendices are not part of the repository.
 

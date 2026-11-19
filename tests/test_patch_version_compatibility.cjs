@@ -1,7 +1,7 @@
 const {test}=require('node:test');
 const assert=require('node:assert/strict');
 const M=require('../src/mic_50_90/gui_assets/model.js');
-for (const version of ['1.0.0','1.0.1','1.0.2']) {
+for (const version of ['1.0.0','1.0.1','1.0.2','1.0.3']) {
  test(`certificate ${version} remains readable after patch upgrade`,()=>{
   const raw=JSON.stringify({version,certificates:[{specification:{n:20},criteria:[{decision_fraction:'0.05'}],disclosures:[]}]});
   const imported=M.certificateInput(raw);

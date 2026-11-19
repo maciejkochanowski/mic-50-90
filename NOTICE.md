@@ -1,6 +1,6 @@
 # Scientific scope
 
-MIC-50-90 1.0.2 is research software for incomplete MIC summaries and reporting audits.
+MIC-50-90 1.0.3 is research software for incomplete MIC summaries and reporting audits.
 
 Sharp finite-sample bounds are conditional on the correctness of the supplied panel, ranks, summaries and category semantics. They require no sampling model, but incorrect metadata can invalidate their interpretation. The iid population layer additionally requires iid sampling. The calibrated layer requires exchangeable study units and a reference/score protocol matching manifest 1.2; a global fallback is not a group-conditional guarantee.
 

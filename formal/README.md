@@ -1,6 +1,6 @@
 # Machine-checked algebra for the population endpoint construction
 
-This directory checks the algebraic core of P6 with Lean 4.29.1 and mathlib commit `5e932f97dd25535344f80f9dd8da3aab83df0fe6`. The same formal source is carried forward into MIC-50-90 1.0.2; it is not a runtime dependency. Its pinned Lean and mathlib versions are unchanged. Historical compilation evidence retains its original scope; a fresh compilation must be identified by its own receipt.
+This directory checks the algebraic core of P6 with Lean 4.29.1 and mathlib commit `5e932f97dd25535344f80f9dd8da3aab83df0fe6`. The same formal source is carried forward into MIC-50-90 1.0.3; it is not a runtime dependency. Its pinned Lean and mathlib versions are unchanged. Historical compilation evidence retains its original scope; a fresh compilation must be identified by its own receipt.
 
 From this directory, with Lean installed, run:
 

@@ -1,4 +1,4 @@
-# Python interface: MIC-50-90 1.0.2
+# Python interface: MIC-50-90 1.0.3
 
 Use the same versioned input dictionary as the JSON command line. The example below runs from the extracted source archive; the wheel installs the library and command line, while examples are supplied separately.
 

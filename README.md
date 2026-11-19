@@ -1,6 +1,6 @@
-# MIC-50-90 1.0.2
+# MIC-50-90 1.0.3
 
-Version **1.0.2** corrects the numerical domain of weighted objectives, the integrity checks of the source distribution and the wording of validation results (see `CHANGELOG.md`). The release files and their checksums are attached to the [GitHub release](https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.2) and archived at Zenodo.
+Version **1.0.3** publishes a container image with each release; its computations and results are those of 1.0.2 (see `CHANGELOG.md`). The release files and their checksums are attached to the [GitHub release](https://github.com/maciejkochanowski/mic-50-90/releases/tag/v1.0.3) and archived at Zenodo.
 
 MIC-50-90 is a Python package for bounding MIC distributions from incomplete susceptibility reports. Published antimicrobial susceptibility results often give only MIC50, MIC90, a range and a few percentages. From these, and from exact or rounded counts, MIC-50-90 computes the smallest and largest count the report allows in every MIC category and range, names the count that would narrow an open question most, selects counts a laboratory can publish so that readers can check its conclusions, and gives optional population bounds under stated sampling assumptions. A local browser form, a Windows application, the command line and the Python interface use the same calculation engine.
 
@@ -13,13 +13,21 @@ Use Python 3.11–3.13 in a separate environment. The release checksums identify
 Install from PyPI with the Python interpreter of that environment:
 
 ```text
-python -m pip install mic-50-90==1.0.2
+python -m pip install mic-50-90==1.0.3
 mic-50-90 gui
 ```
 
 To install from a source checkout, run `python -m pip install .` from its root directory. The guided form opens in your local browser; use **Quit application** to stop it.
 
 A portable Windows application is part of a release only when the release workflow attaches it together with its build and browser-test receipts. Earlier releases keep their own files and validation records.
+
+Each release is also published as a container image that already contains Python and all dependencies, so only Docker or another container runtime is needed. On Linux or macOS, this runs the program on files in the current folder:
+
+```text
+docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/data" -w /data ghcr.io/maciejkochanowski/mic-50-90:1.0.3 mic-50-90 --help
+```
+
+Started without a command, the container runs the software checks.
 
 To inspect the command-line interface:
 

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use MIC-50-90, cite this software using the metadata below."
 title: "MIC-50-90: A Python package for bounding MIC distributions from incomplete susceptibility reports"
 type: software
-version: 1.0.2
+version: 1.0.3
 repository-code: "https://github.com/maciejkochanowski/mic-50-90"
 license: MIT
 authors:

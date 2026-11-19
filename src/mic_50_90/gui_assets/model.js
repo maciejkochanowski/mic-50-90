@@ -134,7 +134,7 @@
     return scaled;
   }
   // Reporting certificates written by these releases have the same content.
-  const CERTIFICATE_VERSIONS=['1.0.0','1.0.1','1.0.2'];
+  const CERTIFICATE_VERSIONS=['1.0.0','1.0.1','1.0.2','1.0.3'];
   function certificateInput(text) {
     const raw=JSON.parse(text.replace(/^\uFEFF/,''));
     if(!CERTIFICATE_VERSIONS.includes(raw?.version)||!Array.isArray(raw.certificates)||!raw.certificates.length)throw new Error('Choose a nonempty MIC-50-90 reporting_certificates.json document.');

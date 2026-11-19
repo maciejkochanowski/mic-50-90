@@ -7,7 +7,7 @@ on:
         description: Tag matching the declared package version (optionally with a release label)
         required: true
         type: string
-        default: v1.0.2
+        default: v1.0.3
       publish_github:
         description: Explicitly approve publishing the verified candidate on GitHub
         required: true

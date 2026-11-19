@@ -3,7 +3,7 @@
   "@type": "SoftwareSourceCode",
   "name": "mic-50-90",
   "description": "A Python package for bounding MIC distributions from incomplete susceptibility reports",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "https://spdx.org/licenses/MIT",
   "author": [
     {
@@ -19,7 +19,7 @@
     }
   ],
   "codeRepository": "https://github.com/maciejkochanowski/mic-50-90",
-  "dateModified": "2026-11-18",
+  "dateModified": "2026-11-19",
   "programmingLanguage": [
     {
       "@type": "ComputerLanguage",

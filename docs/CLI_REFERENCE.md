@@ -1,4 +1,4 @@
-# MIC-50-90 1.0.2: command and option reference
+# MIC-50-90 1.0.3: command and option reference
 
 Generated from the installed command parser. GUI_GUIDE.md and PUBLIC_FUNCTIONS.md map tasks to Windows and CLI.
 Values shown as None mean the option is omitted, not a numerical zero.
@@ -39,6 +39,8 @@ Values shown as None mean the option is omitted, not a numerical zero.
 | `--additional-counts` | same-sample recorded-tail counts CSV for CSV input | None |
 | `--population-method` | simultaneous population construction, chosen by the kind of question (default: bonferroni); choices: bonferroni, joint-exact, range-calibrated, range-hunter | bonferroni |
 | `--population-time-limit` | seconds per cohort for optional joint refinement (default: 30) | 30.0 |
+| `--solver-execution` | run the entire analysis in a fresh single-thread worker when isolated; choices: in-process, isolated | in-process |
+| `--solver-timeout` | hard wall seconds per isolated cohort, including startup (default: 300) | 300.0 |
 | `--population-tolerance-pp` | requested outer-bound precision in percentage points (default: 0.01) | 0.01 |
 | `--precision-pp` | maximum width in percentage points for a contiguous sample description; exact decimal, no default | None |
 | `--population-precision-pp` | maximum population interval width in percentage points; requires declared iid sampling; separate from numerical tolerance | None |

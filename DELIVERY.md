@@ -1,8 +1,9 @@
-# MIC-50-90 1.0.2 source delivery
+# MIC-50-90 1.0.3 source delivery
 
 This release contains the calculation engine, local browser application, tests,
 examples, historical evaluation materials, formal algebra, verification tools and
-usage documentation. Version 1.0.2 includes runtime and packaging corrections.
+usage documentation. Version 1.0.3 publishes a container image with each release; its
+computations are those of 1.0.2, which included runtime and packaging corrections.
 `PACKAGE_STATUS.json` describes the distribution policy; it does not contain the digest of an
 archive that contains it.
 

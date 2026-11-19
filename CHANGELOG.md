@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.3 (2026-11-19)
+
+- Each GitHub release also publishes a container image to the GitHub Container Registry (`ghcr.io/maciejkochanowski/mic-50-90`), tagged with the version and `latest`. The image is built from the release tag and checked before it is published.
+- Two unused imports reported by the static checks are removed. Computations, results and file formats are unchanged from 1.0.2.
+- The command reference lists the `distribution` options `--solver-execution` and `--solver-timeout`, which were missing from the 1.0.2 reference.
+- Version checks accept reporting certificates and distribution results produced by 1.0.0, 1.0.1, 1.0.2 and 1.0.3. Unknown producer versions remain refused.
+
 ## 1.0.2 (2026-11-18)
 
 - General integer-weighted objectives explicitly enforce a safe numerical domain, and returned objective values are recomputed exactly on integer witnesses. The large-weight audit reproducer is covered by regression tests; the domain restriction is a deliberate refusal of unsupported objectives.
