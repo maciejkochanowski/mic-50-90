@@ -34,15 +34,15 @@
   "CMV5AGNF:NAL": 0.8600001335144043,
   "CMV5AGNF:TET": 0.8231964111328125
  },
- "seconds": 285.5155219839944,
- "created_utc": "2026-11-19T12:33:41+00:00",
+ "seconds": 286.5815685100024,
+ "created_utc": "2026-11-19T21:30:32+00:00",
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c1s6b0n1",
+  "node": "x1000c5s1b0n3",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

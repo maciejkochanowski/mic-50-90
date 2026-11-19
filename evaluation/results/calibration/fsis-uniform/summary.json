@@ -53,15 +53,15 @@
   }
  ],
  "maximum_independent_score_difference": 5.399521403940659e-07,
- "seconds": 144.14387521799654,
- "created_utc": "2026-11-19T12:28:55+00:00",
+ "seconds": 143.1990031280002,
+ "created_utc": "2026-11-19T21:25:45+00:00",
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c1s6b0n1",
+  "node": "x1000c5s1b0n3",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

@@ -2,20 +2,20 @@
  "comparison": "tests_and_coverage",
  "package_version": "2.0.0",
  "python_tests": {
-  "passed": 1601,
+  "passed": 1607,
   "failed": 0,
   "errors": 0,
   "skipped": 0,
-  "command": "python -m pytest tests -n 64 --cov=mic_50_90 (installed wheel, outside the source checkout)"
+  "command": "python -m pytest tests -n 192 --cov=mic_50_90 (installed wheel, outside the source checkout)"
  },
  "coverage": {
   "package": "mic_50_90",
-  "statements": 10634,
-  "statements_covered": 9649,
+  "statements": 10679,
+  "statements_covered": 9690,
   "statement_percent": 90.74,
-  "branches": 4414,
-  "branches_covered": 3612,
-  "branch_percent": 81.83,
+  "branches": 4420,
+  "branches_covered": 3616,
+  "branch_percent": 81.81,
   "tool": "coverage.py 7.17.3"
  },
  "galaxy_tool_tests": {

@@ -4,7 +4,7 @@ This folder draws every figure of the article and its supplements with Python (m
 
 | Script | Figures |
 |---|---|
-| `build_main_figures.py` | Figures 1–6 and Supplementary Figures S1–S4 |
+| `build_main_figures.py` | Figures 1–6 and Supplementary Figures S1–S6 |
 | `build_appendix_figures.py` | Figures A.1–A.2, C.1–C.6, D.1–D.8 and the Technical Archive figures TA1–TA3 |
 
 Each script checks every value that a caption or the text prints before it draws, and writes SVG,
@@ -17,11 +17,12 @@ PDF and PNG (300 dpi) files; the main figures are also written as TIFF (600 dpi)
 | File | Used for |
 |---|---|
 | `data/madrid_pneumococci.csv` | Figure 1 and Supplementary Figure S1 (published Madrid data) |
-| `data/figure3_ampicillin.csv`, `data/ampicillin_rerun.json` | Figure 3; the rerun file is written by `rerun_ampicillin.py` with the installed package and must agree with the CSV file |
-| `data/figure4_chloramphenicol.csv` | Figure 4 |
-| `data/figure5_amikacin.csv` | Figure 5 |
-| `data/figureS2_ampicillin.csv` | Supplementary Figure S2 |
-| `efsa/` | Figure 6 and Supplementary Figure S4: the public EFSA inputs, the range checks and summary of their replay with the installed package, and the summary of the reporting-cost optimizer |
+| `data/ampicillin_rerun.json` | Figures 3 and 4 and Supplementary Figure S2: the ampicillin bounds of every category before and after the published count, the selected tables and the population bounds, written by `rerun_ampicillin.py` with the installed package. Figure 4 also enumerates all 7938 compatible tables itself and checks that the selected tables of the program are among them |
+| `../evaluation/results/sufficient_reporting/tasks.csv` | Figure 5 (180 reporting tasks) |
+| `data/figureS2_ampicillin_category.csv` | Supplementary Figure S2; must agree with the rerun file |
+| `data/figureS3_chloramphenicol.csv` | Supplementary Figures S3 and S4 |
+| `data/figureS5_amikacin.csv` | Supplementary Figure S5 |
+| `efsa/` | Figure 6 and Supplementary Figure S6: the public EFSA inputs, the range checks and summary of their replay with the installed package, and the summary of the reporting-cost optimizer |
 
 `build_appendix_figures.py` reads the example inputs (`examples/appendix/inputs/`) and the
 evaluation results (`evaluation/results/`) of this repository, and computes the worked examples
@@ -67,4 +68,4 @@ package.
   so they do not depend on the zlib build.
 
 The recorded files were drawn on Linux with Python 3.12.13 and checked with Python 3.14.6; both
-gave identical pixels and identical SVG and PDF bytes for all 29 figures.
+gave identical pixels and identical SVG and PDF bytes for all 31 figures.

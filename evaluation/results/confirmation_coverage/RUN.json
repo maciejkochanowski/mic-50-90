@@ -5,15 +5,15 @@
   "seed": 20261102,
   "block": 50
  },
- "started_utc": "2026-11-19T13:41:45+00:00",
- "workers": 48,
+ "started_utc": "2026-11-19T21:38:40+00:00",
+ "workers": 192,
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1001c6s4b0n3",
+  "node": "x1001c5s4b0n0",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",
@@ -26,6 +26,6 @@
   },
   "protocol_sha256": "c595a39b52e2cadf2b37d3acc06e879064807eb0162dbf6029bb47c55afd67df",
   "processor": "AMD EPYC 9654 96-Core Processor",
-  "available_cpus": 48
+  "available_cpus": 192
  }
 }

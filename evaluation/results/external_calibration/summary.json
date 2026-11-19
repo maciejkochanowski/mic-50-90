@@ -1,6 +1,6 @@
 {
  "comparison": "external_calibration",
- "created_utc": "2026-11-19T14:14:42+00:00",
+ "created_utc": "2026-11-19T22:16:13+00:00",
  "status": "complete",
  "full_design": true,
  "real": [
@@ -43,8 +43,8 @@
    "mean_width_pp": 27.197340586074244,
    "mean_sample_width_pp": 27.245729883686725,
    "maximum_independent_endpoint_difference": 1.1102230246251565e-15,
-   "seconds": 177.62169220399994,
-   "created_utc": "2026-11-19T14:00:19+00:00"
+   "seconds": 181.54065421098494,
+   "created_utc": "2026-11-19T21:54:26+00:00"
   },
   {
    "dataset": "dogs-ecoli",
@@ -85,8 +85,8 @@
    "mean_width_pp": 25.068276792168426,
    "mean_sample_width_pp": 27.245729883686725,
    "maximum_independent_endpoint_difference": 1.6653345369377348e-15,
-   "seconds": 262.46459238200003,
-   "created_utc": "2026-11-19T14:01:44+00:00"
+   "seconds": 263.73264290901716,
+   "created_utc": "2026-11-19T21:56:55+00:00"
   },
   {
    "dataset": "dogs-spseud",
@@ -132,8 +132,8 @@
    "mean_width_pp": 36.616576540394284,
    "mean_sample_width_pp": 37.11299426495576,
    "maximum_independent_endpoint_difference": 2.9194111850205928e-08,
-   "seconds": 214.71348789999996,
-   "created_utc": "2026-11-19T14:00:56+00:00"
+   "seconds": 218.58430452700122,
+   "created_utc": "2026-11-19T21:57:27+00:00"
   },
   {
    "dataset": "dogs-spseud",
@@ -179,8 +179,8 @@
    "mean_width_pp": 34.68351740799304,
    "mean_sample_width_pp": 37.11299426495576,
    "maximum_independent_endpoint_difference": 1.887379141862766e-15,
-   "seconds": 320.73945277800004,
-   "created_utc": "2026-11-19T14:04:11+00:00"
+   "seconds": 323.3002058910006,
+   "created_utc": "2026-11-19T21:58:52+00:00"
   },
   {
    "dataset": "retail-salmonella",
@@ -216,8 +216,8 @@
    "mean_width_pp": 29.196514281055848,
    "mean_sample_width_pp": 29.217055233589356,
    "maximum_independent_endpoint_difference": 1.1934897514720433e-15,
-   "seconds": 142.4427088030002,
-   "created_utc": "2026-11-19T14:01:13+00:00"
+   "seconds": 142.19017470799736,
+   "created_utc": "2026-11-19T21:55:51+00:00"
   },
   {
    "dataset": "retail-salmonella",
@@ -253,8 +253,8 @@
    "mean_width_pp": 28.89795095050524,
    "mean_sample_width_pp": 29.217055233589356,
    "maximum_independent_endpoint_difference": 1.4432899320127035e-15,
-   "seconds": 212.60629957099445,
-   "created_utc": "2026-11-19T14:02:23+00:00"
+   "seconds": 210.93233282899018,
+   "created_utc": "2026-11-19T21:56:59+00:00"
   },
   {
    "dataset": "retail-campylobacter",
@@ -284,8 +284,8 @@
    "mean_width_pp": 31.78028391554935,
    "mean_sample_width_pp": 33.11918538130049,
    "maximum_independent_endpoint_difference": 1.5543122344752192e-15,
-   "seconds": 62.41160282501369,
-   "created_utc": "2026-11-19T13:59:53+00:00"
+   "seconds": 63.3371496250038,
+   "created_utc": "2026-11-19T21:54:52+00:00"
   },
   {
    "dataset": "retail-campylobacter",
@@ -315,8 +315,8 @@
    "mean_width_pp": 29.959515773569745,
    "mean_sample_width_pp": 33.11918538130049,
    "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
-   "seconds": 98.67304649201105,
-   "created_utc": "2026-11-19T14:00:29+00:00"
+   "seconds": 99.19719850699767,
+   "created_utc": "2026-11-19T21:55:28+00:00"
   },
   {
    "dataset": "retail-ecoli",
@@ -356,8 +356,8 @@
    "mean_width_pp": 24.073198058226534,
    "mean_sample_width_pp": 24.379266141942573,
    "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
-   "seconds": 142.90148902102374,
-   "created_utc": "2026-11-19T14:01:17+00:00"
+   "seconds": 140.63651220098836,
+   "created_utc": "2026-11-19T21:56:59+00:00"
   },
   {
    "dataset": "retail-ecoli",
@@ -397,8 +397,8 @@
    "mean_width_pp": 18.12320815546912,
    "mean_sample_width_pp": 24.379266141942573,
    "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
-   "seconds": 209.97910084400792,
-   "created_utc": "2026-11-19T14:02:23+00:00"
+   "seconds": 209.461311664003,
+   "created_utc": "2026-11-19T21:58:07+00:00"
   },
   {
    "dataset": "retail-enterococcus",
@@ -430,8 +430,8 @@
    "mean_width_pp": 32.401670939880255,
    "mean_sample_width_pp": 32.870506584835226,
    "maximum_independent_endpoint_difference": 1.6653345369377348e-15,
-   "seconds": 64.82503990600003,
-   "created_utc": "2026-11-19T13:59:55+00:00"
+   "seconds": 65.26588064202224,
+   "created_utc": "2026-11-19T21:55:43+00:00"
   },
   {
    "dataset": "retail-enterococcus",
@@ -463,8 +463,8 @@
    "mean_width_pp": 31.056166804770434,
    "mean_sample_width_pp": 32.870506584835226,
    "maximum_independent_endpoint_difference": 1.7763568394002505e-15,
-   "seconds": 90.81479705700008,
-   "created_utc": "2026-11-19T14:00:21+00:00"
+   "seconds": 91.17525474599097,
+   "created_utc": "2026-11-19T21:56:09+00:00"
   }
  ],
  "not_evaluable": [],
@@ -684,14 +684,14 @@
    }
   ],
   "repetitions": 200,
-  "created_utc": "2026-11-19T14:13:10+00:00",
+  "created_utc": "2026-11-19T22:03:44+00:00",
   "environment": {
    "package": "mic-50-90",
    "package_version": "2.0.0",
    "python": "3.11.5",
    "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
    "machine": "x86_64",
-   "node": "x1000c0s0b0n2",
+   "node": "x1000c0s0b0n3",
    "logical_cpus": 192,
    "versions": {
     "numpy": "2.3.5",
@@ -713,7 +713,7 @@
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c0s0b0n2",
+  "node": "x1001c7s7b0n3",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

@@ -1,6 +1,6 @@
 {
  "comparison": "coverage",
- "created_utc": "2026-11-19T12:20:36+00:00",
+ "created_utc": "2026-11-19T21:26:28+00:00",
  "status": "complete",
  "full_design": true,
  "settings": {
@@ -32,7 +32,7 @@
   "block": 50
  },
  "seed_scheme": "numpy default_rng([seed, cohort index, replicate index])",
- "elapsed_seconds_this_invocation": 218.03332682901237,
+ "elapsed_seconds_this_invocation": 218.60542050499862,
  "workers": 192,
  "environment": {
   "package": "mic-50-90",
@@ -40,7 +40,7 @@
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c1s6b0n1",
+  "node": "x1000c0s6b0n3",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

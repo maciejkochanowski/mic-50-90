@@ -17,7 +17,7 @@
   "seed": 20261102,
   "block": 50
  },
- "started_utc": "2026-11-19T13:49:11+00:00",
+ "started_utc": "2026-11-19T21:44:20+00:00",
  "workers": 48,
  "environment": {
   "package": "mic-50-90",
@@ -25,7 +25,7 @@
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c7s4b0n0",
+  "node": "x1000c4s3b0n0",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

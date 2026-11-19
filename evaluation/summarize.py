@@ -28,16 +28,17 @@ from common import now, read_json, write_csv, write_json
 
 COMPARISONS = ('population', 'coverage', 'complete_tables', 'controlled_reports', 'sufficient_reporting', 'calibration', 'pba_comparison',
                'reporting_controls', 'planning_controls', 'count_extrema', 'population_controls', 'confirmation_population',
-               'confirmation_coverage', 'synthetic_coverage', 'external_calibration', 'endpoint_selection', 'examples')
+               'confirmation_coverage', 'synthetic_coverage', 'external_calibration', 'endpoint_selection', 'examples',
+               'next_count/confirmation', 'next_count/development', 'next_count/benchmark')
 NAMES = {'bonferroni': 'Bonferroni', 'joint-exact': 'joint-exact', 'range-calibrated': 'range-calibrated', 'range-hunter': 'range-hunter'}
 
 # (comparison, quantity, value in the article, path in summary.json, scale, kind)
 ARTICLE = [
     *[row for method, values in {
-        'bonferroni': ('28.617', '309', '29.730', '67', '31.734', '440', '20', '0.306'),
-        'joint-exact': ('28.558', '309', '29.601', '67', '31.666', '440', '0', '115.615'),
-        'range-calibrated': ('29.731', '303', '26.073', '84', '31.247', '454', '20', '0.165'),
-        'range-hunter': ('29.739', '303', '25.993', '84', '31.236', '454', '0', '115.163')}.items()
+        'bonferroni': ('28.617', '309', '29.730', '67', '31.734', '440', '20', '0.214'),
+        'joint-exact': ('28.481', '309', '29.466', '67', '31.571', '440', '0', '115.627'),
+        'range-calibrated': ('29.731', '303', '26.073', '84', '31.247', '454', '20', '0.108'),
+        'range-hunter': ('29.739', '303', '25.993', '84', '31.236', '454', '0', '115.103')}.items()
       for row in (
         ('population', f'{NAMES[method]}: mean width, cumulative ranges (pp)', values[0], f'constructions/{method}/cumulative/mean_width_pp', 1, 'value'),
         ('population', f'{NAMES[method]}: resolved questions, cumulative ranges (of 480)', values[1], f'constructions/{method}/cumulative/resolved_questions', 1, 'value'),
@@ -50,7 +51,7 @@ ARTICLE = [
     ('population', 'Bonferroni narrower than range-calibrated for cumulative ranges (cohorts of 20)', '20', 'pair:bonferroni:range-calibrated/cumulative/wider', 1, 'value'),
     ('population', 'range-calibrated narrower than Bonferroni for single categories (cohorts of 20)', '20', 'pair:bonferroni:range-calibrated/single/narrower', 1, 'value'),
     ('population', 'range-calibrated narrower than Bonferroni for internal ranges (cohorts of 20)', '15', 'pair:bonferroni:range-calibrated/internal/narrower', 1, 'value'),
-    ('population', 'joint-exact: summed-width reduction against Bonferroni (%)', '0.213', 'pair:bonferroni:joint-exact/summed_width_reduction_percent', 1, 'value'),
+    ('population', 'joint-exact: summed-width reduction against Bonferroni (%)', '0.513', 'pair:bonferroni:joint-exact/summed_width_reduction_percent', 1, 'value'),
     ('population', 'range-hunter: summed-width reduction against range-calibrated (%)', '0.033', 'pair:range-calibrated:range-hunter/summed_width_reduction_percent', 1, 'value'),
     ('coverage', 'Bonferroni: replicates', '100000', 'totals/bonferroni/replicates', 1, 'value'),
     ('coverage', 'Bonferroni: covered replicates', '99845', 'totals/bonferroni/covered', 1, 'value'),
@@ -140,6 +141,27 @@ ARTICLE = [
     ('population_controls', 'probability witnesses returned', '222', 'counts/probability_witnesses_returned', 1, 'value'),
     ('population_controls', 'accepted-range checks', '747', 'counts/accepted_probability_range_checks', 1, 'value'),
     ('population_controls', 'failed checks', '0', 'failed_checks', 1, 'value'),
+    *[row for block, values in {
+        'confirmation': ('601', '3570', '84.2', '55.3', '1353', '3482', '3002', '16.7', '86.3', '4171', '3570'),
+        'development': ('545', '3324', '83.8', '55.3', '1226', '3270', '2802', '16.7', '86.1', '3869', '3324'),
+        'benchmark': ('610', '3599', '84.8', '55.4', '1404', '3507', '3057', '17.6', '87.3', '4209', '3599')}.items()
+      for row in (
+        (f'next_count/{block}', f'count to request, {block} block: cohorts', values[0], 'cohorts', 1, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: open categories (tasks)', values[1], 'all_tasks/tasks', 1, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: median narrowing (%)', values[2], 'all_tasks/relative_reduction/median', 100, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: lower quartile of the narrowing (%)', values[3], 'all_tasks/relative_reduction/lower_quartile', 100, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: categories fixed exactly', values[4], 'all_tasks/fixed_exactly', 1, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: tasks with more than one candidate', values[5], 'all_tasks/tasks_with_alternatives', 1, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: tasks in which no other count narrows more', values[6], 'all_tasks/no_alternative_narrower', 1, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: median narrowing by the other counts (%)', values[7], 'all_tasks/mean_alternative_reduction/median', 100, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: median narrowing by the best single count (%)', values[8], 'all_tasks/best_single_count_relative_reduction/median', 100, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: sets of bounds compared with the independent calculation', values[9], 'independent_check/bound_comparisons', 1, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: sets of bounds that differ', '0', 'independent_check/bound_mismatches', 1, 'value'),
+        (f'next_count/{block}', f'count to request, {block} block: tasks in which the program names the count of the rule', values[10], 'independent_check/suggestion_follows_the_rule', 1, 'value'))],
+    ('next_count/confirmation', 'count to request, confirmation block: tasks with a guaranteed narrowing', '1781', 'selection_rule/guaranteed', 1, 'value'),
+    ('next_count/confirmation', 'count to request, confirmation block: tasks without a guaranteed narrowing', '1789', 'selection_rule/average', 1, 'value'),
+    ('next_count/confirmation', 'count to request, confirmation block: median narrowing without a guarantee (%)', '62.5', 'by_rule/average/relative_reduction/median', 100, 'value'),
+    ('next_count/confirmation', 'count to request, confirmation block: median narrowing, cohorts with equal weight (%)', '77.6', 'cohorts_equal_weight/relative_reduction/median', 100, 'value'),
 ]
 
 CONFIRMATION_WIDTHS = {  # Appendix D, Table D.5: mean width (pp) for cumulative, single and internal ranges
@@ -147,8 +169,8 @@ CONFIRMATION_WIDTHS = {  # Appendix D, Table D.5: mean width (pp) for cumulative
     'bonferroni|R2': ('38.64', '46.25', '55.13'), 'range-calibrated|R2': ('40.60', '45.84', '53.38'),
     'bonferroni|R3': ('33.39', '40.21', '54.06'), 'range-calibrated|R3': ('35.46', '39.08', '51.78')}
 CONFIRMATION_MEDIANS = {  # Appendix D, Table D.5: median seconds per cohort
-    'bonferroni|R1': '0.194', 'range-calibrated|R1': '0.174', 'bonferroni|R2': '0.053', 'range-calibrated|R2': '0.165',
-    'bonferroni|R3': '0.061', 'range-calibrated|R3': '0.186'}
+    'bonferroni|R1': '0.170', 'range-calibrated|R1': '0.173', 'bonferroni|R2': '0.043', 'range-calibrated|R2': '0.147',
+    'bonferroni|R3': '0.056', 'range-calibrated|R3': '0.183'}
 NARROWER = {'R1': ('534', '426'), 'R2': ('303', '426'), 'R3': ('378', '456')}  # range-calibrated narrower: single, internal
 CALIBRATION = {'dogs-ecoli': ('20', '19'), 'dogs-spseud': ('18', '18'), 'retail-salmonella': ('19', '21'),
                'retail-campylobacter': ('18', '18'), 'retail-ecoli': ('11', '8'), 'retail-enterococcus': ('17', '17')}
@@ -163,7 +185,7 @@ ARTICLE += [
         *[('confirmation_population', f'{key}: mean width, {kind} ranges (pp)', value, f'constructions/{key}/{kind}/mean_width_pp', 1, 'value')
           for kind, value in zip(('cumulative', 'single', 'internal'), values)],
         ('confirmation_population', f'{key}: median seconds per cohort', CONFIRMATION_MEDIANS[key], f'constructions/{key}/median_seconds', 1, 'timing'))],
-    ('confirmation_population', 'bonferroni|R1: maximum seconds per cohort', '6.49', 'constructions/bonferroni|R1/maximum_seconds', 1, 'timing'),
+    ('confirmation_population', 'bonferroni|R1: maximum seconds per cohort', '5.66', 'constructions/bonferroni|R1/maximum_seconds', 1, 'timing'),
     ('confirmation_population', 'joint-exact|R1: cohorts meeting the endpoint target', '1', 'constructions/joint-exact|R1/meeting_endpoint_target', 1, 'value'),
     ('confirmation_population', 'range-hunter|R1: cohorts meeting the endpoint target', '2', 'constructions/range-hunter|R1/meeting_endpoint_target', 1, 'value'),
     *[row for report, (single, internal) in NARROWER.items() for row in (
@@ -177,8 +199,8 @@ ARTICLE += [
     ('confirmation_population', 'R1: range-calibrated narrower for single categories (% of cohorts)', '87.5', 'default_rule/R1/range_calibrated_narrower_single', 100, 'value'),
     ('confirmation_population', 'R2: range-calibrated narrower for single categories (% of cohorts)', '49.7', 'default_rule/R2/range_calibrated_narrower_single', 100, 'value'),
     ('confirmation_population', 'R3: range-calibrated narrower for single categories (% of cohorts)', '62.0', 'default_rule/R3/range_calibrated_narrower_single', 100, 'value'),
-    ('confirmation_population', 'joint-exact: summed-width change against Bonferroni, R1 (%)', '-0.079', 'pair:bonferroni:joint-exact:R1/all/summed_width_change_percent', 1, 'value'),
-    ('confirmation_population', 'range-hunter: summed-width change against range-calibrated, R1 (%)', '0.098', 'pair:range-calibrated:range-hunter:R1/all/summed_width_change_percent', 1, 'value'),
+    ('confirmation_population', 'joint-exact: summed-width change against Bonferroni, R1 (%)', '-0.042', 'pair:bonferroni:joint-exact:R1/all/summed_width_change_percent', 1, 'value'),
+    ('confirmation_population', 'range-hunter: summed-width change against range-calibrated, R1 (%)', '0.099', 'pair:range-calibrated:range-hunter:R1/all/summed_width_change_percent', 1, 'value'),
     *[row for method, covered, lowest in (('bonferroni', '3653145', '97.75'), ('range-calibrated', '3656701', '97.60')) for row in (
         ('confirmation_coverage', f'{method}: replicates', '3660000', f'overall/{method}/replicates', 1, 'value'),
         ('confirmation_coverage', f'{method}: covered replicates', covered, f'overall/{method}/covered', 1, 'value'),
@@ -204,10 +226,10 @@ ARTICLE += [
     ('endpoint_selection', 'compatible tables after the count', '546', 'reports/with count/compatible_tables', 1, 'value'),
     ('endpoint_selection', 'checked endpoints', '60', 'all_endpoints', 1, 'value'),
     ('endpoint_selection', 'largest endpoint difference (pp; bound)', '0.000000001', 'largest_endpoint_difference_pp', 1, 'bound'),
-    ('endpoint_selection', 'selected tables, median seconds before the count', '0.062', 'reports/summaries/median_seconds_selected', 1, 'timing'),
-    ('endpoint_selection', 'all tables, median seconds before the count', '4.622', 'reports/summaries/median_seconds_exhaustive', 1, 'timing'),
+    ('endpoint_selection', 'selected tables, median seconds before the count', '0.063', 'reports/summaries/median_seconds_selected', 1, 'timing'),
+    ('endpoint_selection', 'all tables, median seconds before the count', '4.665', 'reports/summaries/median_seconds_exhaustive', 1, 'timing'),
     ('endpoint_selection', 'selected tables, median seconds after the count', '0.064', 'reports/with count/median_seconds_selected', 1, 'timing'),
-    ('endpoint_selection', 'all tables, median seconds after the count', '0.355', 'reports/with count/median_seconds_exhaustive', 1, 'timing'),
+    ('endpoint_selection', 'all tables, median seconds after the count', '0.356', 'reports/with count/median_seconds_exhaustive', 1, 'timing'),
     ('examples', 'printed numbers that differ from the program output', '0', 'statuses/differs', 1, 'value'),
 ]
 

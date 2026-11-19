@@ -38,15 +38,15 @@
    "covered": false
   }
  ],
- "seconds": 31.35376719600754,
- "created_utc": "2026-11-19T12:26:31+00:00",
+ "seconds": 31.73716295700433,
+ "created_utc": "2026-11-19T21:23:21+00:00",
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c1s6b0n1",
+  "node": "x1000c5s1b0n3",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

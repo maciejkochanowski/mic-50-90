@@ -5,7 +5,7 @@
   "confidence_level": 0.95,
   "tolerance_pp": 0.1
  },
- "started_utc": "2026-11-19T15:17:03+00:00",
+ "started_utc": "2026-11-19T21:22:49+00:00",
  "workers": 80,
  "environment": {
   "package": "mic-50-90",
@@ -13,7 +13,7 @@
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1001c6s1b0n2",
+  "node": "x1000c2s2b0n1",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

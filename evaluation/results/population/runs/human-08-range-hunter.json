@@ -6,7 +6,7 @@
  "n": 354,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.37806271998852026,
+ "baseline_seconds": 0.08565911298501305,
  "result": {
   "requested_method": "range-hunter",
   "method": "range-hunter",
@@ -20,7 +20,7 @@
   "bounds_kind": "conservative_outer",
   "status": "time_limit",
   "precision_reached": false,
-  "endpoint_gap_pp": null,
+  "endpoint_gap_pp": 7.556526205275327,
   "cdf_bounds": [
    [
     0.0,
@@ -103,17 +103,17 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; all contiguous category ranges; no within-category reconstruction.",
   "numerical_certificate": "Exact count and score constraints, directed probability bounds, certified Hunter/moment exclusions and attained inner witnesses; unprocessed regions remain in the outer cover.",
-  "elapsed_seconds": 0.03189982401090674,
-  "baseline_seconds": 0.031777089010574855,
-  "refinement_seconds": 0.00012279499787837267,
+  "elapsed_seconds": 115.77677952699014,
+  "baseline_seconds": 0.0041799150058068335,
+  "refinement_seconds": 115.77259970200248,
   "time_limit_scope": "optional_original_region_refinement",
-  "requested_time_limit_seconds": 0,
-  "effective_time_limit_seconds": 0,
+  "requested_time_limit_seconds": 114.91387998498976,
+  "effective_time_limit_seconds": 114.91387998498976,
   "box_count": 0,
   "excluded_boxes": 0,
   "retained_nodes": 1,
   "question_certificates": [],
-  "accepted_witness_count": 0,
+  "accepted_witness_count": 5,
   "algebraic_witness_count": 0,
   "reason": "Valid population bounds are available. The requested numerical endpoint precision is not yet confirmed; this does not change the confidence level.",
   "calculation_diagnostic": "TimeoutError: Joint MIC range calculation reached its time limit",
@@ -123,124 +123,125 @@
     "stop_index": 1,
     "lower": 0.0,
     "upper": 0.5727404032956911,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.0,
+    "inner_upper": 0.4971751412429378
    },
    {
     "start_index": 0,
     "stop_index": 2,
     "lower": 0.8486934115547172,
     "upper": 0.9992544275663795,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.9011299435028249,
+    "inner_upper": 0.9915254237288135
    },
    {
     "start_index": 0,
     "stop_index": 3,
     "lower": 0.8587394270928447,
     "upper": 1.0,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.9096045197740114,
+    "inner_upper": 1.0
    },
    {
     "start_index": 0,
     "stop_index": 4,
     "lower": 0.8587394270928447,
     "upper": 1.0,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.9096045197740114,
+    "inner_upper": 1.0
    },
    {
     "start_index": 0,
     "stop_index": 5,
     "lower": 1.0,
     "upper": 1.0,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 1.0,
+    "inner_upper": 1.0
    },
    {
     "start_index": 1,
     "stop_index": 2,
     "lower": 0.33134972250947875,
     "upper": 0.9992544275663795,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.40395480225988706,
+    "inner_upper": 0.9915254237288135
    },
    {
     "start_index": 1,
     "stop_index": 3,
     "lower": 0.3394547240000767,
     "upper": 1.0,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.4124293785310735,
+    "inner_upper": 1.0
    },
    {
     "start_index": 1,
     "stop_index": 4,
     "lower": 0.3394547240000767,
     "upper": 1.0,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.4124293785310735,
+    "inner_upper": 1.0
    },
    {
     "start_index": 1,
     "stop_index": 5,
     "lower": 0.4272595967043089,
     "upper": 1.0,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.5028248587570622,
+    "inner_upper": 1.0
    },
    {
     "start_index": 2,
     "stop_index": 3,
     "lower": 0.0007455724336205087,
     "upper": 0.03316094180468522,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.008474576271186442,
+    "inner_upper": 0.00847457627118644
    },
    {
     "start_index": 2,
     "stop_index": 4,
     "lower": 0.0007455724336205087,
     "upper": 0.15130658844528277,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.008474576271186442,
+    "inner_upper": 0.09887005649717513
    },
    {
     "start_index": 2,
     "stop_index": 5,
     "lower": 0.0007455724336205087,
     "upper": 0.15130658844528277,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.008474576271186442,
+    "inner_upper": 0.09887005649717513
    },
    {
     "start_index": 3,
     "stop_index": 4,
     "lower": 0.0,
     "upper": 0.14126057290715532,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.0,
+    "inner_upper": 0.0903954802259887
    },
    {
     "start_index": 3,
     "stop_index": 5,
     "lower": 0.0,
     "upper": 0.14126057290715532,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.0,
+    "inner_upper": 0.0903954802259887
    },
    {
     "start_index": 4,
     "stop_index": 5,
     "lower": 0.0,
     "upper": 0.14126057290715532,
-    "inner_lower": null,
-    "inner_upper": null
+    "inner_lower": 0.0,
+    "inner_upper": 0.0903954802259887
    }
   ]
  },
- "process_status": "process_time_limit",
- "seconds": 120.16139813599875,
- "completed_utc": "2026-11-19T15:19:04+00:00"
+ "refinement_budget_seconds": 114.91387998498976,
+ "seconds": 115.86295751400758,
+ "process_status": "completed",
+ "completed_utc": "2026-11-19T21:24:49+00:00"
 }

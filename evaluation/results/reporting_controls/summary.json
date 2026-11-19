@@ -1,16 +1,16 @@
 {
  "comparison": "reporting_controls",
- "created_utc": "2026-11-19T12:00:16+00:00",
+ "created_utc": "2026-11-19T21:22:57+00:00",
  "status": "complete",
  "full_design": true,
- "elapsed_seconds": 7.8147707040043315,
+ "elapsed_seconds": 8.179111570992973,
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c0s2b0n3",
+  "node": "x1000c0s1b0n2",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

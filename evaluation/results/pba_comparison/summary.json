@@ -1,6 +1,6 @@
 {
  "comparison": "pba_comparison",
- "created_utc": "2026-11-19T12:00:49+00:00",
+ "created_utc": "2026-11-19T21:23:32+00:00",
  "status": "complete",
  "full_design": true,
  "settings": {
@@ -23,14 +23,14 @@
    8
   ]
  },
- "elapsed_seconds": 36.11064862400235,
+ "elapsed_seconds": 38.11054957500164,
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c0s2b0n3",
+  "node": "x1000c0s1b0n1",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",
@@ -67,9 +67,9 @@
  },
  "maximum_pba_fraction_error": 1.1102230246251565e-16,
  "timing_seconds": {
-  "cdf": 0.19594947960285936,
-  "package": 31.983270228360198,
-  "pba": 2.638134495864506
+  "cdf": 0.228753562856582,
+  "package": 33.789100038062315,
+  "pba": 2.7497258387957118
  },
  "discrepancies": [],
  "all_agree": true

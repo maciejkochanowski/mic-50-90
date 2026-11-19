@@ -6,7 +6,7 @@
  "n": 25,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.0093917979975231,
+ "baseline_seconds": 0.012349714001175016,
  "result": {
   "requested_method": "joint-exact",
   "method": "joint-exact",
@@ -87,11 +87,11 @@
    ],
    [
     0.0,
-    0.2806839979137334
+    0.28114263189725247
    ],
    [
     0.0,
-    0.28068399791373316
+    0.2812955098917587
    ],
    [
     0.0,
@@ -100,11 +100,11 @@
   ],
   "guarantee": "Simultaneous finite-sample coverage under iid sampling on the fixed recorded panel; no within-category reconstruction.",
   "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
-  "box_count": 40682,
-  "excluded_boxes": 19136,
-  "elapsed_seconds": 115.38349062300404,
-  "baseline_seconds": 0.0008829510043142363,
-  "refinement_seconds": 115.38251624700206,
+  "box_count": 39931,
+  "excluded_boxes": 18730,
+  "elapsed_seconds": 115.38817680897773,
+  "baseline_seconds": 0.0009365559963043779,
+  "refinement_seconds": 115.38715612899978,
   "time_limit_scope": "optional_joint_refinement",
   "question_certificates": [],
   "interval_bounds": [
@@ -184,7 +184,7 @@
     "start_index": 2,
     "stop_index": 3,
     "lower": 0.0,
-    "upper": 0.28068399791373333,
+    "upper": 0.2811426318972524,
     "inner_lower": 5e-324,
     "inner_upper": 0.15654706637454394
    },
@@ -208,7 +208,7 @@
     "start_index": 3,
     "stop_index": 4,
     "lower": 0.0,
-    "upper": 0.2806839979137331,
+    "upper": 0.28129550989175867,
     "inner_lower": 5e-324,
     "inner_upper": 0.15654706637454394
    },
@@ -231,10 +231,10 @@
   ],
   "reason": "Time limit reached; all unresolved parameter boxes retained.",
   "unresolved_small_boxes": 0,
-  "endpoint_gap_pp": 12.413693153918947
+  "endpoint_gap_pp": 12.474844351721481
  },
- "refinement_budget_seconds": 114.99024602699501,
- "seconds": 115.39460434300418,
+ "refinement_budget_seconds": 114.98716103000334,
+ "seconds": 115.40260316000786,
  "process_status": "completed",
- "completed_utc": "2026-11-19T15:19:03+00:00"
+ "completed_utc": "2026-11-19T21:24:48+00:00"
 }

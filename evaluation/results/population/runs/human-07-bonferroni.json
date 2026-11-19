@@ -6,7 +6,7 @@
  "n": 354,
  "process_budget_seconds": 120.0,
  "reserve_seconds": 5.0,
- "baseline_seconds": 0.1431553900038125,
+ "baseline_seconds": 0.12459094301448204,
  "result": {
   "requested_method": "bonferroni",
   "method": "bonferroni",
@@ -102,8 +102,8 @@
   "numerical_certificate": "Compatible-prefix projections with CP endpoints bracketed by directed binomial tails; parameter-box exclusions use outward Decimal probabilities.",
   "box_count": 0,
   "excluded_boxes": 0,
-  "elapsed_seconds": 0.13392608999856748,
-  "baseline_seconds": 0.13392608999856748,
+  "elapsed_seconds": 0.11656076600775123,
+  "baseline_seconds": 0.11656076600775123,
   "refinement_seconds": 0.0,
   "time_limit_scope": "optional_joint_refinement",
   "question_certificates": [],
@@ -232,7 +232,7 @@
   "endpoint_gap_pp": 4.000022535421978e-10
  },
  "refinement_budget_seconds": 0,
- "seconds": 0.14358042500680313,
+ "seconds": 0.1250235300103668,
  "process_status": "completed",
- "completed_utc": "2026-11-19T15:17:08+00:00"
+ "completed_utc": "2026-11-19T21:22:54+00:00"
 }

@@ -37,7 +37,7 @@
  "mean_width_pp": 25.068276792168426,
  "mean_sample_width_pp": 27.245729883686725,
  "maximum_independent_endpoint_difference": 1.6653345369377348e-15,
- "seconds": 262.46459238200003,
+ "seconds": 263.73264290901716,
  "missed": [
   {
    "unit_id": "2024:Louisiana",
@@ -73,14 +73,14 @@
    "baseline_upper": 0.5
   }
  ],
- "created_utc": "2026-11-19T14:01:44+00:00",
+ "created_utc": "2026-11-19T21:56:55+00:00",
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c0s6b0n3",
+  "node": "x1000c7s5b0n3",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

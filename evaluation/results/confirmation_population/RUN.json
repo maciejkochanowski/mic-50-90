@@ -11,7 +11,7 @@
   "reserve_seconds": 5.0,
   "tolerance_pp": 0.1
  },
- "started_utc": "2026-11-19T15:16:54+00:00",
+ "started_utc": "2026-11-19T21:22:49+00:00",
  "workers": 48,
  "environment": {
   "package": "mic-50-90",
@@ -19,7 +19,7 @@
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1001c6s6b0n1",
+  "node": "x1000c7s2b0n1",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

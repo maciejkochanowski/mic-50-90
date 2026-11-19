@@ -32,7 +32,7 @@
  "mean_width_pp": 29.196514281055848,
  "mean_sample_width_pp": 29.217055233589356,
  "maximum_independent_endpoint_difference": 1.1934897514720433e-15,
- "seconds": 142.4427088030002,
+ "seconds": 142.19017470799736,
  "missed": [
   {
    "unit_id": "2021:IA",
@@ -57,14 +57,14 @@
    "baseline_upper": 0.5
   }
  ],
- "created_utc": "2026-11-19T14:01:13+00:00",
+ "created_utc": "2026-11-19T21:55:51+00:00",
  "environment": {
   "package": "mic-50-90",
   "package_version": "2.0.0",
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c1s2b0n2",
+  "node": "x1000c1s3b0n0",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",

@@ -1,0 +1,143 @@
+{
+ "comparison": "next_count_rules",
+ "created_utc": "2026-11-19T21:22:50+00:00",
+ "environment": {
+  "package": "mic-50-90",
+  "package_version": "2.0.0",
+  "python": "3.11.5",
+  "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
+  "machine": "x86_64",
+  "node": "x1000c0s3b0n2",
+  "logical_cpus": 192,
+  "versions": {
+   "numpy": "2.3.5",
+   "scipy": "1.17.0"
+  },
+  "thread_limits": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1"
+  },
+  "protocol_sha256": "c595a39b52e2cadf2b37d3acc06e879064807eb0162dbf6029bb47c55afd67df",
+  "processor": "AMD EPYC 9654 96-Core Processor",
+  "available_cpus": 48
+ },
+ "protocol": "protocols/NEXT_COUNT.md",
+ "next_count_protocol_sha256": "814a694cb2c4bce5702cb3b9f3bd4dff676120672974b6e30e3267791008dbed",
+ "block": "development",
+ "hash_ranks": [
+  21,
+  30
+ ],
+ "report": "R2",
+ "cohorts": 545,
+ "tasks": 3324,
+ "tasks_without_a_guaranteed_reduction": 1703,
+ "selected_rule": "guarantee, average, nearest, side of the median",
+ "rules": {
+  "guarantee, then the widest open count": {
+   "all_tasks": {
+    "tasks": 3324,
+    "median": 0.5553631351869607,
+    "lower_quartile": 0.0,
+    "upper_quartile": 1.0,
+    "mean": 0.5244673122620969,
+    "fixed_exactly": 1107,
+    "best_single_count": 1798
+   },
+   "without_a_guaranteed_reduction": {
+    "tasks": 1703,
+    "median": 0.0,
+    "lower_quartile": 0.0,
+    "upper_quartile": 0.2222222222222222,
+    "mean": 0.16850931483671958,
+    "fixed_exactly": 17,
+    "best_single_count": 177
+   }
+  },
+  "guarantee, average": {
+   "all_tasks": {
+    "tasks": 3324,
+    "median": 0.6966632962588473,
+    "lower_quartile": 0.2857142857142857,
+    "upper_quartile": 1.0,
+    "mean": 0.623233747346249,
+    "fixed_exactly": 1120,
+    "best_single_count": 2015
+   },
+   "without_a_guaranteed_reduction": {
+    "tasks": 1703,
+    "median": 0.30043859649122806,
+    "lower_quartile": 0.07594936708860756,
+    "upper_quartile": 0.6101694915254237,
+    "mean": 0.36128654925816506,
+    "fixed_exactly": 30,
+    "best_single_count": 394
+   }
+  },
+  "guarantee, average, nearest (lower count on ties)": {
+   "all_tasks": {
+    "tasks": 3324,
+    "median": 0.8205128205128205,
+    "lower_quartile": 0.5263157894736843,
+    "upper_quartile": 1.0,
+    "mean": 0.7020538551081202,
+    "fixed_exactly": 1217,
+    "best_single_count": 2695
+   },
+   "without_a_guaranteed_reduction": {
+    "tasks": 1703,
+    "median": 0.5443037974683544,
+    "lower_quartile": 0.17316341829085458,
+    "upper_quartile": 0.8421052631578947,
+    "mean": 0.5151315511374722,
+    "fixed_exactly": 127,
+    "best_single_count": 1074
+   }
+  },
+  "guarantee, average, nearest (higher count on ties)": {
+   "all_tasks": {
+    "tasks": 3324,
+    "median": 0.6833667893386863,
+    "lower_quartile": 0.23346421020839622,
+    "upper_quartile": 1.0,
+    "mean": 0.6100524779534964,
+    "fixed_exactly": 1145,
+    "best_single_count": 2308
+   },
+   "without_a_guaranteed_reduction": {
+    "tasks": 1703,
+    "median": 0.24705882352941178,
+    "lower_quartile": 0.06753059208026146,
+    "upper_quartile": 0.55,
+    "mean": 0.3355586928509368,
+    "fixed_exactly": 55,
+    "best_single_count": 687
+   }
+  },
+  "guarantee, average, nearest, side of the median": {
+   "all_tasks": {
+    "tasks": 3324,
+    "median": 0.8380084979148634,
+    "lower_quartile": 0.5526315789473684,
+    "upper_quartile": 1.0,
+    "mean": 0.7347962392308228,
+    "fixed_exactly": 1226,
+    "best_single_count": 2856
+   },
+   "without_a_guaranteed_reduction": {
+    "tasks": 1703,
+    "median": 0.6375,
+    "lower_quartile": 0.30814302884615385,
+    "upper_quartile": 0.8704261730520878,
+    "mean": 0.5790397630129056,
+    "fixed_exactly": 136,
+    "best_single_count": 1235
+   }
+  }
+ },
+ "best_single_count_known_afterwards": {
+  "median": 0.8611111111111112,
+  "mean": 0.7977876620054244
+ }
+}

@@ -1,6 +1,6 @@
 {
  "comparison": "calibration",
- "created_utc": "2026-11-19T12:33:41+00:00",
+ "created_utc": "2026-11-19T21:30:32+00:00",
  "status": "complete",
  "full_design": true,
  "environment": {
@@ -9,7 +9,7 @@
   "python": "3.11.5",
   "platform": "Linux-5.14.0-687.58.1.cyfp2.el9.x86_64-x86_64-with-glibc2.34",
   "machine": "x86_64",
-  "node": "x1000c1s6b0n1",
+  "node": "x1000c5s1b0n3",
   "logical_cpus": 192,
   "versions": {
    "numpy": "2.3.5",
@@ -50,8 +50,8 @@
    "calibration_blocks": 9,
    "maximum_independent_score_difference": 5.244593466180447e-07,
    "maximum_independent_endpoint_difference": 1.887379141862766e-15,
-   "seconds": 31.35376719600754,
-   "created_utc": "2026-11-19T12:26:31+00:00"
+   "seconds": 31.73716295700433,
+   "created_utc": "2026-11-19T21:23:21+00:00"
   },
   "fsis-uniform": {
    "part": "fsis-uniform",
@@ -70,8 +70,8 @@
    "mean_sample_width_pp": 15.220693346260544,
    "maximum_independent_endpoint_difference": 9.992007221626409e-16,
    "maximum_independent_score_difference": 5.399521403940659e-07,
-   "seconds": 144.14387521799654,
-   "created_utc": "2026-11-19T12:28:55+00:00"
+   "seconds": 143.1990031280002,
+   "created_utc": "2026-11-19T21:25:45+00:00"
   },
   "fsis-trained": {
    "part": "fsis-trained",
@@ -108,8 +108,8 @@
     "CMV5AGNF:NAL": 0.8600001335144043,
     "CMV5AGNF:TET": 0.8231964111328125
    },
-   "seconds": 285.5155219839944,
-   "created_utc": "2026-11-19T12:33:41+00:00"
+   "seconds": 286.5815685100024,
+   "created_utc": "2026-11-19T21:30:32+00:00"
   }
  }
 }
