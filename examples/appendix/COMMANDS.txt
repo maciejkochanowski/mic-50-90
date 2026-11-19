@@ -30,6 +30,7 @@ mic-50-90 distribution inputs/penicillin-2018-precision-after.json --population-
 LABORATORY REPORT AND RECIPIENT VERIFICATION
 mic-50-90 reporting-audit inputs/laboratory/counts.csv --panels inputs/laboratory/panels.csv --targets inputs/laboratory/targets.csv --reporting-plan --output-dir output/amikacin
 python ../received_report/verify.py output/amikacin/reporting_certificates.json
+mic-50-90 verify-report output/amikacin/reporting_certificates.json --output-dir output/amikacin-check
 
 COUNT REQUESTS (constructed teaching case)
 mic-50-90 batch inputs/acquisition-teaching/summaries.csv --panels inputs/acquisition-teaching/panels.csv --targets inputs/acquisition-teaching/targets.csv --acquisition-plan --round-cost 0 --output-dir output/request-sequential

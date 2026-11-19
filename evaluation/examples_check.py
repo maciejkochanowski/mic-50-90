@@ -1,8 +1,8 @@
 """Recompute every number that Appendices B and C and the article's examples report.
 
-The commands of examples/appendix/COMMANDS.txt are run on the supplied inputs (the Windows forms
-store the same inputs), and each reported number is read from the program's output files and
-compared with the value printed in the documents, at the printed precision.
+The commands of examples/appendix/COMMANDS.txt are run on the supplied inputs, and each reported
+number is read from the program's output files and compared with the value printed in the
+documents, at the printed precision.
 
 Output: OUTPUT/examples/summary.json and OUTPUT/examples/numbers.csv. The command outputs are kept
 in OUTPUT/examples/runs/.
