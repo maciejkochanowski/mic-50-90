@@ -1,0 +1,86 @@
+%YAML 1.1
+---
+version: https://codecheck.org.uk/spec/config/1.0/
+
+# Recreate the outputs from the repository root with the commands in figures/README.md:
+#   python -m venv fig-env
+#   fig-env/bin/pip install -r figures/requirements-figures.txt
+#   fig-env/bin/pip install --no-deps .
+#   fig-env/bin/python figures/build_main_figures.py --out new-figures/main --check figures/EXPECTED_MAIN_FIGURES.json
+#   fig-env/bin/python figures/build_appendix_figures.py --out new-figures/appendix --check figures/EXPECTED_APPENDIX_FIGURES.json
+# Each command ends with "identical_to_recorded_figures": true when every file matches the recorded figures.
+
+manifest:
+  - file: new-figures/main/Figure1.pdf
+    comment: Figure 1 in the article
+  - file: new-figures/main/Figure2.pdf
+    comment: Figure 2 in the article
+  - file: new-figures/main/Figure3.pdf
+    comment: Figure 3 in the article
+  - file: new-figures/main/Figure4.pdf
+    comment: Figure 4 in the article
+  - file: new-figures/main/Figure5.pdf
+    comment: Figure 5 in the article
+  - file: new-figures/main/Figure6.pdf
+    comment: Figure 6 in the article
+  - file: new-figures/main/SupplementaryFigureS1.pdf
+    comment: Supplementary Figure S1
+  - file: new-figures/main/SupplementaryFigureS2.pdf
+    comment: Supplementary Figure S2
+  - file: new-figures/main/SupplementaryFigureS3.pdf
+    comment: Supplementary Figure S3
+  - file: new-figures/main/SupplementaryFigureS4.pdf
+    comment: Supplementary Figure S4
+  - file: new-figures/main/SupplementaryFigureS5.pdf
+    comment: Supplementary Figure S5
+  - file: new-figures/main/SupplementaryFigureS6.pdf
+    comment: Supplementary Figure S6
+  - file: new-figures/appendix/Figure_A1.pdf
+    comment: Figure A.1, Appendix A
+  - file: new-figures/appendix/Figure_A2.pdf
+    comment: Figure A.2, Appendix A
+  - file: new-figures/appendix/Figure_C1.pdf
+    comment: Figure C.1, Appendix C
+  - file: new-figures/appendix/Figure_C2.pdf
+    comment: Figure C.2, Appendix C
+  - file: new-figures/appendix/Figure_C3.pdf
+    comment: Figure C.3, Appendix C
+  - file: new-figures/appendix/Figure_C4.pdf
+    comment: Figure C.4, Appendix C
+  - file: new-figures/appendix/Figure_C5.pdf
+    comment: Figure C.5, Appendix C
+  - file: new-figures/appendix/Figure_C6.pdf
+    comment: Figure C.6, Appendix C
+  - file: new-figures/appendix/Figure_D1.pdf
+    comment: Figure D.1, Appendix D
+  - file: new-figures/appendix/Figure_D2.pdf
+    comment: Figure D.2, Appendix D
+  - file: new-figures/appendix/Figure_D3.pdf
+    comment: Figure D.3, Appendix D
+  - file: new-figures/appendix/Figure_D4.pdf
+    comment: Figure D.4, Appendix D
+  - file: new-figures/appendix/Figure_D5.pdf
+    comment: Figure D.5, Appendix D
+  - file: new-figures/appendix/Figure_D6.pdf
+    comment: Figure D.6, Appendix D
+  - file: new-figures/appendix/Figure_D7.pdf
+    comment: Figure D.7, Appendix D
+  - file: new-figures/appendix/Figure_D8.pdf
+    comment: Figure D.8, Appendix D
+  - file: new-figures/appendix/Figure_TA1.pdf
+    comment: Figure TA1, Technical Archive
+  - file: new-figures/appendix/Figure_TA2.pdf
+    comment: Figure TA2, Technical Archive
+  - file: new-figures/appendix/Figure_TA3.pdf
+    comment: Figure TA3, Technical Archive
+
+paper:
+  title: "MIC-50-90: A Python package for bounding MIC distributions from incomplete susceptibility reports"
+  authors:
+    - name: Maciej Kochanowski
+      ORCID: 0000-0002-9982-3028
+  reference: Manuscript submitted to SoftwareX
+
+source: >-
+  Software release v2.0.0 (https://doi.org/10.5281/zenodo.24442629) and its reproduction package
+  (https://doi.org/10.5281/zenodo.24452121).
