@@ -62,10 +62,7 @@ jobs:
         if: always()
         with:
           name: reproduction-${{ matrix.os }}-${{ matrix.python-version }}
-          path: |
-            reproduction-output/REPRODUCTION.json
-            reproduction-output/examples/numbers.csv
-            reproduction-output/figures/**/*.pdf
+          path: reproduction-output
           if-no-files-found: error
 
   negative-controls:

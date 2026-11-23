@@ -77,7 +77,8 @@ def save(fig, name, values):
     S.check(fig, name)
     meta_svg = {'Date': None, 'Creator': 'MIC-50-90 figure build'}
     meta_pdf = {'CreationDate': None, 'ModDate': None, 'Creator': 'MIC-50-90 figure build'}
-    fig.savefig(OUT / f'{name}.svg', metadata=meta_svg)
+    with open(OUT / f'{name}.svg', 'w', encoding='utf-8', newline='\n') as handle:
+        fig.savefig(handle, format='svg', metadata=meta_svg)
     fig.savefig(OUT / f'{name}.pdf', metadata=meta_pdf)
     fig.savefig(OUT / f'{name}.png', dpi=300)
     fig.savefig(OUT / f'{name}.tif', dpi=600, pil_kwargs={'compression': 'tiff_lzw'})
@@ -94,7 +95,7 @@ def save(fig, name, values):
 # ---------------------------------------------------------------- data checks
 def load_ampicillin():
     recs = {(r['quantity'], r['state']): r for r in rows(DATA / 'figureS2_ampicillin_category.csv')}
-    rerun = json.loads((DATA / 'ampicillin_rerun.json').read_text())
+    rerun = json.loads((DATA / 'ampicillin_rerun.json').read_text(encoding='utf-8'))
     need(rerun['version'] == PACKAGE_VERSION, f'rerun not from MIC-50-90 {PACKAGE_VERSION}')
     res = rerun['results']
     for st in ['before', 'after']:
@@ -124,10 +125,10 @@ def load_pneumococci():
 
 
 def load_efsa():
-    runtime = json.loads((EFSA / 'EFSA_REPLAY_SUMMARY.json').read_text())
+    runtime = json.loads((EFSA / 'EFSA_REPLAY_SUMMARY.json').read_text(encoding='utf-8'))
     need(runtime['software_version'] == PACKAGE_VERSION and runtime['status'] == 'passed', 'EFSA replay')
-    optimizer = json.loads((EFSA / 'OPTIMIZER_SUMMARY.json').read_text())
-    ext = json.loads((EFSA / 'external_input.json').read_text())
+    optimizer = json.loads((EFSA / 'OPTIMIZER_SUMMARY.json').read_text(encoding='utf-8'))
+    ext = json.loads((EFSA / 'external_input.json').read_text(encoding='utf-8'))
     checks = rows(EFSA / 'ALL_RANGE_CHECKS.csv')
     sel = rows(EFSA / 'selected_113_fields.csv')
     meta = {r['id']: r for r in ext['cohorts']}
@@ -538,10 +539,10 @@ def main():
                'inputs_sha256': {**{str(p.relative_to(HERE)): sha(p) for p in sorted(list(DATA.glob('*')) + list(EFSA.glob('*')))},
                                  **{str(p.relative_to(HERE.parent)): sha(p) for p in EXTRA_INPUTS}},
                'figures': RECORD}
-    (OUT / 'FIGURE_BUILD_RECEIPT.json').write_text(json.dumps(receipt, indent=1, ensure_ascii=False) + '\n')
+    (OUT / 'FIGURE_BUILD_RECEIPT.json').write_text(json.dumps(receipt, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
     result = {'figures': len(RECORD), 'single_graph': True}
     if args.check:
-        expected = {r['figure']: r for r in json.loads(args.check.read_text())['figures']}
+        expected = {r['figure']: r for r in json.loads(args.check.read_text(encoding='utf-8'))['figures']}
         diff = []
         for r in RECORD:
             e = expected[r['figure']]

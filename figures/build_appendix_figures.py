@@ -80,7 +80,8 @@ def save(fig, name, values):
     S.check(fig, name)
     fig.savefig(OUT / f'{name}.png', dpi=300, metadata={'Software': None})
     fig.savefig(OUT / f'{name}.pdf', metadata={'Creator': None, 'Producer': None, 'CreationDate': None})
-    fig.savefig(OUT / f'{name}.svg', metadata={'Date': None, 'Creator': None})
+    with open(OUT / f'{name}.svg', 'w', encoding='utf-8', newline='\n') as handle:
+        fig.savefig(handle, format='svg', metadata={'Date': None, 'Creator': None})
     plt.close(fig)
     RECORD.append(dict(figure=name, values=json.loads(json.dumps(values)),
                        file_sha256={ext: sha(OUT / f'{name}.{ext}') for ext in ('png', 'pdf', 'svg')},
