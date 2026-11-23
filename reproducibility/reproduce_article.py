@@ -13,7 +13,8 @@ Steps:
 
 Every new figure is compared with the recorded figure, and every recomputed number with the value
 printed in the documents. The run passes when all 31 figures are identical to the recorded figures
-and all 122 numbers match. The figures, numbers.csv and REPRODUCTION.json are written to the output
+and all 122 numbers match. figures/README.md states what the figure comparison covers on each
+platform. The figures, numbers.csv and REPRODUCTION.json are written to the output
 folder; REPRODUCTION.json records the result and the environment.
 """
 import argparse
@@ -44,7 +45,7 @@ def figure_step(label, script, expected, folder):
     result, seconds = run(label, [ROOT / 'figures' / script, '--out', folder, '--check', ROOT / 'figures' / expected])
     report = json.loads(result.stdout) if result.returncode == 0 else {'figures': 0, 'identical_to_recorded_figures': False}
     identical = report['figures'] if report['identical_to_recorded_figures'] else 0
-    return dict(step=label, seconds=seconds, figures=report['figures'], identical=identical)
+    return dict(step=label, seconds=seconds, figures=report['figures'], identical=identical, compared=report.get('compared'))
 
 
 def main():
@@ -73,6 +74,7 @@ def main():
                                'machine': platform.machine(),
                                **{name: version(name) for name in ('mic-50-90', 'numpy', 'scipy', 'matplotlib')}})
     (out / 'REPRODUCTION.json').write_text(json.dumps(record, indent=1) + '\n', encoding='utf-8')
+    print(f"Figures compared by: {steps[2]['compared']}")
     print(f"{'REPRODUCED' if passed else 'NOT REPRODUCED'}: {identical} of {FIGURES} figures identical to the recorded "
           f"figures, {match} of {NUMBERS} numbers match")
     sys.exit(0 if passed else 1)

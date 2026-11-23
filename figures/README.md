@@ -58,9 +58,12 @@ fig-env/bin/python figures/build_main_figures.py --out new-figures/main --check 
 fig-env/bin/python figures/build_appendix_figures.py --out new-figures/appendix --check figures/EXPECTED_APPENDIX_FIGURES.json
 ```
 
-Each command ends with `"identical_to_recorded_figures": true` or with a list of differences. PNG
-and TIFF files are compared by their decoded pixels, SVG and PDF files byte for byte, and the
-plotted values one by one. `--only A1,D3` draws selected appendix figures.
+Each command ends with `"identical_to_recorded_figures": true` or with a list of differences. The
+plotted values are compared one by one and the PDF files byte for byte on every platform. On Linux
+x86-64, where the figures were recorded, the SVG files are also compared byte for byte and the PNG
+and TIFF files by their decoded pixels; on other platforms these files show the same figure, but the
+sign of a zero in a marker path or the anti-aliasing of a few pixels depends on the processor and
+the C library. `--only A1,D3` draws selected appendix figures.
 
 `python figures/rerun_ampicillin.py` recomputes `data/ampicillin_rerun.json` with the installed
 package.

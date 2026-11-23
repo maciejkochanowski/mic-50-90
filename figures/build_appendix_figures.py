@@ -13,7 +13,8 @@ Usage, from the repository root after `python -m pip install .`:
     python figures/build_appendix_figures.py --out <empty folder>
            [--check figures/EXPECTED_APPENDIX_FIGURES.json] [--only A1,D3]
 With --check the script compares the new files with the recorded figures and fails on any
-difference: PNG by decoded pixels, SVG and PDF byte for byte, and the plotted values.
+difference: the plotted values and the PDF files on every platform, and on Linux x86-64, where the
+figures were recorded, also the SVG files byte for byte and the PNG files by decoded pixels.
 """
 from __future__ import annotations
 
@@ -23,6 +24,8 @@ import gzip
 import hashlib
 import json
 import math
+import platform
+import sys
 from pathlib import Path
 
 import figstyle as S
@@ -52,6 +55,16 @@ INPUTS: set = set()
 def need(condition, message):
     if not condition:
         raise SystemExit('Value check failed: ' + message)
+
+
+def recorded_here():
+    """True on Linux x86-64, where the figures were recorded.
+
+    SVG and PNG bytes depend on the processor and the C library (the sign of a zero in a
+    marker path, the anti-aliasing of a few pixels), so they are compared on that platform only.
+    Plotted values and PDF files are compared on every platform.
+    """
+    return sys.platform.startswith('linux') and platform.machine() == 'x86_64'
 
 
 def load(relative):
@@ -363,7 +376,9 @@ def figure_C5():
     S.legend(fig, [S.interval_handle(BLACK, 'Count above 0.06 mg/L'),
                    S.interval_handle(BLUE, 'Counts above 0.06 and 2 mg/L')],
              loc='upper left', bbox_to_anchor=(.2, .995), ncol=2)
-    save(fig, 'Figure_C5', dict(one=one, two=two, merged=merged))
+    # Recorded at six decimals: the last digits of the numerical search depend on the processor.
+    save(fig, 'Figure_C5', dict(one=[[round(v, 6) for v in pair] for pair in one],
+                                two=[[round(v, 6) for v in pair] for pair in two], merged=[round(v, 6) for v in merged]))
 
 
 def figure_C6():
@@ -808,18 +823,20 @@ def main():
     if args.check:
         expected = {row['figure']: row for row in json.loads(args.check.read_text(encoding='utf-8'))['figures']}
         differences = []
+        everything = recorded_here()
         for row in RECORD:
             old = expected.get(row['figure'])
             if old is None:
                 differences.append(row['figure'] + ': not recorded')
                 continue
-            for ext in ('pdf', 'svg'):
+            for ext in ('pdf', 'svg') if everything else ('pdf',):
                 if old['file_sha256'][ext] != row['file_sha256'][ext]:
                     differences.append(f"{row['figure']}.{ext}: file differs")
-            if old['png_pixel_sha256'] != row['png_pixel_sha256']:
+            if everything and old['png_pixel_sha256'] != row['png_pixel_sha256']:
                 differences.append(f"{row['figure']}.png: pixels differ")
             if old['values'] != row['values']:
                 differences.append(f"{row['figure']}: plotted values differ")
+        result['compared'] = 'plotted values; PDF, SVG and PNG files' if everything else 'plotted values and PDF files'
         result['identical_to_recorded_figures'] = not differences
         result['differences'] = differences
         print(json.dumps(result, indent=1))

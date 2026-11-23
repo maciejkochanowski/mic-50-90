@@ -15,7 +15,8 @@ and black, greys, blue, red and green as the only colours. The font files are bu
 
 Usage:  python build_main_figures.py --out <empty folder> [--check EXPECTED_MAIN_FIGURES.json]
 With --check the script compares the new files with the recorded figures and fails on any
-difference: PNG and TIFF are compared by decoded pixels, SVG and PDF byte for byte.
+difference: the plotted values and the PDF files on every platform, and on Linux x86-64, where the
+figures were recorded, also the SVG files byte for byte and the PNG and TIFF files by decoded pixels.
 """
 from __future__ import annotations
 
@@ -24,6 +25,8 @@ import csv
 import hashlib
 import json
 import math
+import platform
+import sys
 from collections import defaultdict
 from pathlib import Path
 from statistics import median
@@ -54,6 +57,16 @@ EXTRA_INPUTS: list = []
 def need(cond, msg):
     if not cond:
         raise AssertionError(msg)
+
+
+def recorded_here():
+    """True on Linux x86-64, where the figures were recorded.
+
+    SVG, PNG and TIFF bytes depend on the processor and the C library (the sign of a zero in a
+    marker path, the anti-aliasing of a few pixels), so they are compared on that platform only.
+    Plotted values and PDF files are compared on every platform.
+    """
+    return sys.platform.startswith('linux') and platform.machine() == 'x86_64'
 
 
 def rows(path):
@@ -544,16 +557,18 @@ def main():
     if args.check:
         expected = {r['figure']: r for r in json.loads(args.check.read_text(encoding='utf-8'))['figures']}
         diff = []
+        everything = recorded_here()
         for r in RECORD:
             e = expected[r['figure']]
-            for kind in ('png', 'tif'):
+            for kind in ('png', 'tif') if everything else ():
                 if r['pixel_sha256'][kind] != e['pixel_sha256'][kind]:
                     diff.append(f"{r['figure']}.{kind}: pixels differ")
-            for kind in ('svg', 'pdf'):
+            for kind in ('svg', 'pdf') if everything else ('pdf',):
                 if r['file_sha256'][kind] != e['file_sha256'][kind]:
                     diff.append(f"{r['figure']}.{kind}: file differs")
             if r['plotted_values'] != e['plotted_values']:
                 diff.append(f"{r['figure']}: plotted values differ")
+        result['compared'] = 'plotted values; PDF, SVG, PNG and TIFF files' if everything else 'plotted values and PDF files'
         result['identical_to_recorded_figures'] = not diff
         result['differences'] = diff
         print(json.dumps(result, indent=1))

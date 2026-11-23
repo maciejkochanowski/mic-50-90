@@ -56,7 +56,8 @@ jobs:
           e = r['environment']
           print(f"**{'Reproduced' if r['passed'] else 'Not reproduced'}** on {e['platform']}, Python {e['python']}, "
                 f"MIC-50-90 {e['mic-50-90']}: {r['figures_identical']} of {r['figures_expected']} figures identical to the "
-                f"recorded figures, {r['numbers_match']} of {r['numbers_expected']} numbers match.")
+                f"recorded figures, {r['numbers_match']} of {r['numbers_expected']} numbers match. "
+                f"Figures compared by: {r['steps'][2]['compared']}.")
           EOF
       - uses: actions/upload-artifact@v4
         if: always()
