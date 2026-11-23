@@ -35,6 +35,18 @@ The standalone oracle for joint inference is reproducibility/joint-distribution/
 
 The `evaluation` folder contains the inputs, scripts and results of the comparisons reported in the article. `evaluation/README.md` describes how to run them.
 
+## Figures and example numbers of the article
+
+```text
+python -m pip install -r figures/requirements-figures.txt
+python -m pip install --no-deps --require-hashes -r reproducibility/released-package.txt
+python reproducibility/reproduce_article.py --out reproduction-output
+python reproducibility/negative_controls.py figures
+python reproducibility/negative_controls.py numbers
+```
+
+The second command installs the released 2.0.0 wheel from PyPI, identified by its SHA-256. reproduce_article.py redraws all 31 figures of the article and its supplements, recomputes the 122 numbers of the examples, compares each figure with the recorded figure and each number with the printed value, and ends with the line "REPRODUCED: 31 of 31 figures identical to the recorded figures, 122 of 122 numbers match". Each negative control changes one count in a temporary copy of an input and passes when the comparison reports the change. The reproduce workflow (.github/workflows/reproduce.yml) runs these commands and the Lean check of formal/README.md on every push and once a week.
+
 ## Build and install checks
 
 ```text

@@ -26,3 +26,13 @@ python -m pytest -q
 docs/PUBLIC_FUNCTIONS.md maps scientific and practical tasks to functions, outputs and independent tests. docs/population-row-lift.md and formal/README.md describe the endpoint construction and scoped algebraic checks. Test execution coverage and statistical confidence are different quantities.
 
 The tests workflow runs on Windows and Linux with Python 3.11–3.13. The release workflow builds software packages and records their identities. Use the completed run and checksums as evidence for the downloaded assets.
+
+## Reproduce the figures and numbers of the article
+
+```text
+python -m pip install -r figures/requirements-figures.txt
+python -m pip install --no-deps --require-hashes -r reproducibility/released-package.txt
+python reproducibility/reproduce_article.py --out reproduction-output
+```
+
+The run takes about ten minutes and ends with "REPRODUCED: 31 of 31 figures identical to the recorded figures, 122 of 122 numbers match". docs/REPRODUCING_RESULTS.md describes the negative controls, and the reproduce workflow repeats the run, the controls and the Lean check every week.

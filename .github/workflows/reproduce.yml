@@ -1,0 +1,115 @@
+name: reproduce
+
+# Redraws every figure of the article and its supplements and recomputes the example numbers with
+# the released package, runs the negative controls and compiles the formal algebra.
+# This workflow has no publication token, environment or publishing command.
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 4 * * 1'
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+
+jobs:
+  article:
+    name: figures and numbers (${{ matrix.os }}, Python ${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.13']
+        include:
+          - os: ubuntu-latest
+            python-version: '3.12'
+          - os: ubuntu-latest
+            python-version: '3.14'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install the figure libraries and the released package, identified by its SHA-256
+        run: |
+          python -m pip install -r figures/requirements-figures.txt
+          python -m pip install --no-deps --require-hashes -r reproducibility/released-package.txt
+      - name: Redraw the 31 figures and recompute the 122 numbers
+        run: python reproducibility/reproduce_article.py --out reproduction-output
+      - name: Write the result to the run summary
+        if: always()
+        run: |
+          python - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          r = json.load(open('reproduction-output/REPRODUCTION.json'))
+          e = r['environment']
+          print(f"**{'Reproduced' if r['passed'] else 'Not reproduced'}** on {e['platform']}, Python {e['python']}, "
+                f"MIC-50-90 {e['mic-50-90']}: {r['figures_identical']} of {r['figures_expected']} figures identical to the "
+                f"recorded figures, {r['numbers_match']} of {r['numbers_expected']} numbers match.")
+          EOF
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reproduction-${{ matrix.os }}-${{ matrix.python-version }}
+          path: |
+            reproduction-output/REPRODUCTION.json
+            reproduction-output/examples/numbers.csv
+            reproduction-output/figures/**/*.pdf
+          if-no-files-found: error
+
+  negative-controls:
+    name: negative controls
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: |
+          python -m pip install -r figures/requirements-figures.txt
+          python -m pip install --no-deps --require-hashes -r reproducibility/released-package.txt
+      - name: A changed count must fail the figure comparison
+        run: python reproducibility/negative_controls.py figures | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: A changed count must fail the number comparison
+        run: python reproducibility/negative_controls.py numbers | tee -a "$GITHUB_STEP_SUMMARY"
+
+  formal:
+    name: Lean check of the algebraic core
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install the Lean toolchain manager
+        run: |
+          curl -sSfL https://elan.lean-lang.org/elan-init.sh -o elan-init.sh
+          sh elan-init.sh -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Fetch mathlib at the pinned commit
+        working-directory: formal
+        run: |
+          lake update
+          lake exe cache get Mathlib.Tactic Mathlib.Data.Real.Basic
+      - name: Compile P6Core.lean, audit its axioms and run the five negative controls
+        working-directory: formal
+        run: python check_formal.py --receipt RECEIPT.json | tee -a "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: formal-receipt
+          path: formal/RECEIPT.json
+          if-no-files-found: error
