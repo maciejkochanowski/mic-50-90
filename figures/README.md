@@ -31,11 +31,20 @@ of Figure C.6.
 
 ## Appearance
 
-The main figures use black text, greys and two muted accents: blue `#2F5D7C` (with the light
-background `#E4ECF1` and the darker `#1F3447`) and ochre `#9A5B3E` for criterion lines; the script
-stops if any text is not black. The appendix figures use near-black `#1F1F1F`, greys, orange
-`#CC6A10` and blue `#1F5C99`. No figure text uses middle-dot or bullet separators, and both scripts
-stop if one appears.
+`figstyle.py` fixes the appearance of all 31 figures, and both scripts import it. Every figure has
+a full axes frame with outward ticks, black text in Liberation Sans (symbols such as *n* in its
+italic), a white background, and one small palette:
+
+| Colour | Meaning |
+|---|---|
+| black and greys | what a report states, and reference lines |
+| blue `#2166AC` | the same quantity after counts were added; in the table plots, the selected tables |
+| red `#B2182B` | decision criteria and nominal levels (dashed lines), or the alternative that fails |
+| green `#1B7837` | values known only from the complete data |
+
+Intervals are thin lines with end caps, rows are separated by dotted guides, and methods are told
+apart by filled and open symbols. Both scripts stop if any text is not black, lies outside the
+canvas or contains a middle-dot or bullet separator.
 
 ## Drawing the figures
 
@@ -60,12 +69,12 @@ package.
 
 - The library versions are pinned in `requirements-figures.txt`; the scripts refuse other versions
   unless `--allow-other-versions` is given.
-- Liberation Sans 2.1.5 is bundled in `fonts/` (SIL Open Font License 1.1) and is the only font
-  used, whatever fonts the computer has.
+- Liberation Sans 2.1.5 (regular, bold and italic) is bundled in `fonts/` (SIL Open Font License
+  1.1) and is the only font used, whatever fonts the computer has.
 - matplotlib starts from a bundled pristine copy of its default settings (`style/`), so a local
   `matplotlibrc` cannot change the appearance.
 - The files carry no dates; SVG files use a fixed `hashsalt`, and PDF streams are not compressed,
   so they do not depend on the zlib build.
 
-The recorded files were drawn on Linux with Python 3.12.13 and checked with Python 3.14.6; both
-gave identical pixels and identical SVG and PDF bytes for all 31 figures.
+The recorded files were drawn on Linux with Python 3.13.18 and checked with Python 3.12.3 and
+3.14.6; all three gave identical pixels and identical SVG and PDF bytes for all 31 figures.

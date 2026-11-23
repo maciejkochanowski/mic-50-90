@@ -6,20 +6,24 @@
   "PIL": "12.3.0",
   "fontTools": "4.67.0"
  },
- "rule": "one data graph per figure; black text; palette of black, greys and two muted accents; no middle-dot or bullet separators; all text inside canvas",
+ "rule": "one data graph per figure; full axes frame with outward ticks; black text in Liberation Sans; palette of black, greys, blue, red and green; intervals with end caps; white background; no middle-dot or bullet separators; all text inside the canvas",
  "palette": {
-  "ink": "#000000",
+  "black": "#000000",
   "dark grey": "#4D4D4D",
-  "grey": "#8C8C8C",
-  "grid": "#E0E0E0",
-  "light grey": "#F2F2F2",
-  "blue": "#2F5D7C",
-  "pale blue": "#E4ECF1",
-  "slate": "#1F3447",
-  "ochre": "#9A5B3E"
+  "grey": "#7F7F7F",
+  "light grey": "#BFBFBF",
+  "pale grey": "#EBEBEB",
+  "blue": "#2166AC",
+  "light blue": "#92C5DE",
+  "pale blue": "#D1E5F0",
+  "red": "#B2182B",
+  "green": "#1B7837",
+  "white": "#FFFFFF"
  },
+ "style_sha256": "73a8a16feca79f6c6d194e5af78553f185fecc0e026426c4b6b2eb62435a0d10",
  "fonts_sha256": {
   "LiberationSans-Bold.ttf": "3973aa5054fb467dd5627245d3dc82e37bf16fe075756156a570455871351582",
+  "LiberationSans-Italic.ttf": "830c5fa600505fb4c1a271b4271c53c44bae43f492b2a240d0e98a3a7a380121",
   "LiberationSans-Regular.ttf": "4659bc0c58c5028dd488ec928d41d9265db43d9b669fc14ca8b0832daca7b144"
  },
  "default_style_sha256": "8b76e138ce9dc944a843dc6aa1ef9ee0e88638358b10baf227cd248d271b5f5a",
@@ -42,7 +46,7 @@
    "figure": "Figure1",
    "inches": [
     6.5,
-    3.3
+    3.2
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -63,21 +67,21 @@
     "2021": 29.1925
    },
    "file_sha256": {
-    "svg": "3d4d2382ff9f7ae491ebe47572ea56dfd97f0e8a1c87786d3ae5aa2ea199ead6",
-    "pdf": "775525b4507b0bf80d880060a22cd06ee648a77761e8b6956f346145c53ae2b8",
-    "png": "5f5a84581e448be7389d1f3ce1d0fd4785459cd35ee8a1a6c2782427b0348aa8",
-    "tif": "82748612e2a325c2f9253f1e4e24c96d6506379e732b95e3e8d62aca2d78459a"
+    "svg": "47a4a21ea47101eaec467f51a685fe22b36c447278681bec33257f03c2ca5648",
+    "pdf": "d83af8828ae09ac6a84dfb3b8a28ee4fa56d7e2c35495df9481213835c5caa57",
+    "png": "740b5eaff74b5bdbae37c200d2a6f12772ddfaeb696980e787329c7c6eb8c26e",
+    "tif": "2a29f844969ab3066fd370d3136d80f130acd4efdd91f0b914f3ae80115632c4"
    },
    "pixel_sha256": {
-    "png": "682573806b45f53cf38f1bf8e538d44083718a6173c11516153258b39cb38218",
-    "tif": "db74c4c7730377cd84420f65eedace3360b6798bfdf7c2af206b7b20eb827d00"
+    "png": "c682ce4b34c5f5fc7d0aef207c8ab7a8aec4af3a8fdd78b192b39bf0e5142675",
+    "tif": "3f74453465d187fc3692bd3f81ba5cb7b6bb326b2a57c2302d02b2f2d8156795"
    }
   },
   {
    "figure": "Figure2",
    "inches": [
     7.0,
-    3.35
+    3.3
    ],
    "axes_with_data": 0,
    "plotted_values": {
@@ -85,21 +89,21 @@
     "example_after": "2–7"
    },
    "file_sha256": {
-    "svg": "f389e8a53c3524ec3db65632e7b52bfbb1f0e136d6600d4e6e6e8dfcd09c753c",
-    "pdf": "f5f829c04de7642a449f2e4749a7845b4cb0e96b061275c8b4ae4afd24186d95",
-    "png": "574e8f92a70a12bf4c61e36d47098bd077c86ac0a8c9e44ec79a7b235713da71",
-    "tif": "17cb737b7f484b04afa0d94c40dee6df33a39860f526274d5116a2bcc6a3a2a2"
+    "svg": "9f04bfe20360191f3db8be06f56300411804adc525a4b7fd512bebbf84b58665",
+    "pdf": "cc58bb6086ff4a079b5f78e010369f3f0ace9c466c405570ddafaee59fcce1a2",
+    "png": "4e015ce8134b383f903f36015614d7c092a41f0b78bc187c8dd0ffbaeb0891cd",
+    "tif": "538fab79aaefd46c6fa9f1ff7f80ae9839cb0ecab77ea7280ed33c5673f311e3"
    },
    "pixel_sha256": {
-    "png": "401f26ecef186cc649cfc5dad9a52eb46ade6a48c9140607643d9b3c5b8189df",
-    "tif": "47565d9d00cd402e92d0d69fa366fe76e7c219f2faadd7ef61ebbcfed9b468e6"
+    "png": "ae1c581db958922fe7fe2f329468b20e999036a811afe51c4c1a374f145f7c79",
+    "tif": "5b3fdda9ae8b33c1693aee4af0e186d9e6fa18a7fd1fb887e2c6308d657ce05a"
    }
   },
   {
    "figure": "Figure3",
    "inches": [
     6.5,
-    3.45
+    3.3
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -149,14 +153,14 @@
     ]
    },
    "file_sha256": {
-    "svg": "07f4c9eea1912fbdc349efa7e2ed1e53b28bbce00cc28a7b79046c61a94da91e",
-    "pdf": "1a3481a0960402d502d1060191391deca6833a81f0f47d148eac8cb58202ea71",
-    "png": "16f69f078ba7c0aaffce81c660306d988ca1c8b511a9c3b7100145d8cab4ed41",
-    "tif": "5c0eb5bb25d3722021b0e8da201e78810bb606b38bdceebb7135b0ae23ab3e58"
+    "svg": "942a340b8574ff630499d5cc33e135bb031b4b9d311c3f2341d62365ca3374fb",
+    "pdf": "fbfb36e53aff80be6b7b93edfb253d016e409f8a00e69dfb1d29104c50bd565d",
+    "png": "03d99008ba18ef3a8aaef65add6044eb6782b300403e4ce0012584d23cc21a23",
+    "tif": "623c4b0b46d89ea6f5ca792883b94d45a6d6b150dc57501938dd5dc2ede22d13"
    },
    "pixel_sha256": {
-    "png": "d3416f9aeb07f2486a06e771242effcfd26d638a87697602a023f3b79015de9d",
-    "tif": "8d36a77a49069aef1dacebb278ab437eafc2dde8c117cc017542c15260c3d70c"
+    "png": "d385241675500101ac5d3543e439eaedca62e136e36b7f88485666363f591be4",
+    "tif": "b9ef9e13f72fc99c55627dd4ee6e51e38d6d7ae8da5d3139b379eae24f8f00da"
    }
   },
   {
@@ -207,21 +211,21 @@
     ]
    },
    "file_sha256": {
-    "svg": "7d8477b6a8e0864b5f123f289253a8e1d4036f7e1d85b76ce99f868a14a54062",
-    "pdf": "2415934fc8729da8a1d90e9e882e222d5fbfd3133668cb49eb3e867ddcfab00a",
-    "png": "2d3a88de384f63443282e89fe5a9a49f58bccf5b257f2d59e00031e058b875d5",
-    "tif": "52f2a482e03051d11958a433682186bcf43b01abe2a1fee64d8b5612c57cbeb8"
+    "svg": "4a0f7656df39a43e6b8aa2d450674832a2f49e5f2d95e02ff41e7415d2e45a85",
+    "pdf": "a464b2a5c3c69c17e7204d9765bb9b994c8f7ef23cbc77076b65dd5d061a353c",
+    "png": "7f47efb23d7eefc713993113917374687e178e65f9f5497ab58362fda7538182",
+    "tif": "8af4c72a26eb03cb889b33b6c153460df3a3c04f498b1542b8f6198e9b168419"
    },
    "pixel_sha256": {
-    "png": "ab1e7175278f6a03a895cb23a04ad52f79af03e6494e05b6d018638f1dc16293",
-    "tif": "2cd35c8938c25d9a8557c239a3a2e08be54e5bc265dd969662e318185e4de9d6"
+    "png": "15f3ec05262cbd3f2d0d6cd9439c2cf1bb0a2a3f9a6cd6ac5750b56d70add27c",
+    "tif": "8b0fa102497f94b5f54529215eac4097df1a344d405e55449107f10db7a841b7"
    }
   },
   {
    "figure": "Figure5",
    "inches": [
     6.5,
-    3.0
+    2.85
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -251,21 +255,21 @@
     ]
    },
    "file_sha256": {
-    "svg": "6af258b1f0e797f7053583bf614ba734a6eb03e688241cac5d2c053f931bc691",
-    "pdf": "768d8054e1f4462b4e5a48515dcf0a502662cd658a29421004a406be30ae39ae",
-    "png": "da4b34b59001580088ef89ffed1ed361b2a807ff8205f7619810a6682494b5b5",
-    "tif": "b9e59b9699870a032390c586e871465b0b9673ceaac4458fb1da1b879f694014"
+    "svg": "da6ddc6a847d2d6d20c43aab5baced69d5ec35f1e913e5abac449636df23c74c",
+    "pdf": "d93001cfb9d7bd0f9d5bbecd3a2f5cbacad8f34ffbfb26c330b8325d7077bdda",
+    "png": "6107427996c75a15e4cec1081230a4c5c840406b11cc5693bdc8de122909f032",
+    "tif": "a01051d84761e8b07e824c4d84533e58f8ae9cd2c9c7bcb5194b8acf3e1505d5"
    },
    "pixel_sha256": {
-    "png": "221adcbd2b734d9467d7010df3305689f6946820ba9721b0082d73cabc773a6a",
-    "tif": "495e542781f20d6c596db9bfb86f4b6d098aa345f4b9466cb1782e6d51890c06"
+    "png": "dca0eb6d348f8159eff972f8c2ae6e7d859141311d797ee0712f9341fa72254f",
+    "tif": "5f9c645ae19ec5a53b5e69e3e19d69f32676529f0acaa65ab1f9caacd26e8d36"
    }
   },
   {
    "figure": "Figure6",
    "inches": [
     6.5,
-    3.6
+    3.5
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -281,14 +285,14 @@
     ]
    },
    "file_sha256": {
-    "svg": "00e576e3924ba233300b77c443254a7a59ef37ce1b6d131b3021a0a57ff73558",
-    "pdf": "21b8f54ba7f4284a93d665afda26f69696d4028f47d85a639fc72b32079db7e5",
-    "png": "71ceaa0ce5c3dcbfc75b72f12aa81de6d40840ed96ef716f9a0f41e13036b413",
-    "tif": "8ee4dfd2972eb3d90271c4933f35688f0d6d098cc473bfbf666cd3ba70d111b1"
+    "svg": "f19c12a5065fa77db93046bbcfaea03f1a8b82e8158cf79005b0e8ab6f424243",
+    "pdf": "88124e439e5f8e047e8b9ee1d00edd871c567bfef9e3ed151f551cc00914bf52",
+    "png": "03a2bff2deaa69ce9198904da7c9ad6a0833dbc7a8386cc6cd40c98965f0cef6",
+    "tif": "c1b94799ee7f8abe8aac4b677ad9beee29473b725eb48fa17a754a533b875aec"
    },
    "pixel_sha256": {
-    "png": "2adae0e47df7376a8a8bd592d49b04c0f13357d1da8265773b522311eb279f17",
-    "tif": "adc63fb3ce019bbe4d8d1a4d5c951416902b7e9e17f17bded0dc265e963a77a4"
+    "png": "5ebf0503c1ea7511c4f119c8e147b292a6cdf5dac40cf4024baa4dc6ac2c21c2",
+    "tif": "bf1119431e254b207c84035118bfbfe3141b5a4bf85ebd9fba140839ea359ca4"
    }
   },
   {
@@ -361,21 +365,21 @@
     ]
    },
    "file_sha256": {
-    "svg": "9ca029e7162fa1ce279f17531cf06980e169f7b2b4bae8452d0eeff6e4459401",
-    "pdf": "0cdcb88bab2d0500a6a37a703b6564062eb608019e533e90de53266145634471",
-    "png": "58a017983ee21870d38f429bd6a7f7c84d09f8b842fd8390f6cb553cdcb73190",
-    "tif": "4a5189767315757cead7d4583a2e0acdc410d228f1db0ef63a3114872e299206"
+    "svg": "2a37d56b16f47302f05147d19e338757caa392e5b6d9ae2e173223c9d58dc85b",
+    "pdf": "aef91c608265af14b1d4fe2b89050c146c854c20d2a608b2382e2083fafd3832",
+    "png": "cfec64a3d8a9d329e677b14d3df1f27f74b991a4b1fb4437880b45ace8435471",
+    "tif": "f8cb7f503455f3ac926da772f5e707b957f2ce495951bde8c59ada6a9d462beb"
    },
    "pixel_sha256": {
-    "png": "6b447ddded3c1a54a8bb16c1e02ce25bbda3864363b700f0b8b3e6e6bce1416a",
-    "tif": "94df6c0fc1a5c15097bb4677a69179baaba33de747c68c6d491ba8cfd43df5ab"
+    "png": "10ca225941da2f2744c7a18f225c7c9b52de410adcb92f75d1a96bf37391da0b",
+    "tif": "8f96703fe62b14acaeb66ab13d19af584ca4d69105a64a1cdd3e2224d0a9a32c"
    }
   },
   {
    "figure": "SupplementaryFigureS2",
    "inches": [
     6.5,
-    2.75
+    2.5
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -397,14 +401,14 @@
     ]
    },
    "file_sha256": {
-    "svg": "4347e9f3f7fdf081264294556a2672a38cf896752511823860ae13cbc70dcef3",
-    "pdf": "fa106e0098b4da30245e4aafdb1d819d853ddfdd6eb550cfd616e0ae4877af0d",
-    "png": "a07837e7c79149043f1d4c1368e40a56c7a72ae73c0bdf3b61264c79d1c2dc46",
-    "tif": "7c3810d8825de91f6f395576df419b15ad4fae7329693a774b9bcdd48b85d0bd"
+    "svg": "23bbe1ae638de264ab14769955cb0b63c4a44c10f6c123f7fb1eab2c8091a48c",
+    "pdf": "07ec9b7a27cbd208ec3d45d7d9854b871c57bf7c5423cb97bab14bfd85777dfc",
+    "png": "2866b49da895c7cfa73c024c922e3d952ba5e09b0335f9ee1619c783a4f8cce9",
+    "tif": "f90a8f34f94f4c940f9dc65df62dd63237364888e1ffe6e6184414eae10485e8"
    },
    "pixel_sha256": {
-    "png": "9d503f2d0bb9818a8315b5a2ea8cd90a4b3bc201c90e1bbba8a15d0e958c95c2",
-    "tif": "947cb21aa2867beda9c9b4b2d260a82de7c7bdbbd4208eaf7f8563719794d001"
+    "png": "ca399c10d214edfeabf7686bb7b6257362dae773142cc827a3c10c2ff10a1e13",
+    "tif": "4b35ac9d8d58afe265aafa6696fc778cd4f57ec189bfb6212061316983ebc2ef"
    }
   },
   {
@@ -429,21 +433,21 @@
     ]
    },
    "file_sha256": {
-    "svg": "c8c5094a4583dad35ee99600a1e9cad216b29415de7f2977c7b802e4ef88ab3a",
-    "pdf": "a24be6ebcbc930e6a78db28aedd9bbf5c928eb24e838a056ad31ae5fedfa44f3",
-    "png": "01326c9342c3c31b692853ff359ebb660fd23b562b3fa77eb71d1b3ba1800e99",
-    "tif": "e4baceec75fd0cd7196af64729d5cd461ee62587d121eaae853548d06dc1b1fc"
+    "svg": "db0e8bfc9de90910e7b16c4518f56ef385a71ea47edf28a1c1a2367fbea930e6",
+    "pdf": "4162cc1193863c4fcfb26af3a469dade76a5288d6e326a6299f95992b80ba88b",
+    "png": "3be9089d8b4cc050cba32d73a14795e04e92aa29f2388e9eca78937ff97054ee",
+    "tif": "7ac2079b965a67078b69714abd9474d88503b2347adc8d757d51652cf245c06c"
    },
    "pixel_sha256": {
-    "png": "89322fe9d056a768c57bac8fe8be2aa071c07d12976273a4fe48a06339429ab1",
-    "tif": "708c6d2955548a57761036b090c94eaa96e2ee0cfcdce83e4f7687fbb64b9ee4"
+    "png": "e55139430b680e4d241f7fe5ad52986febd2d23c4c5abbf685aa8bffa31b28c6",
+    "tif": "f5055c393196f246080744ff848e6eb27c05d0f8064d21226a5121d71e03a113"
    }
   },
   {
    "figure": "SupplementaryFigureS4",
    "inches": [
     6.5,
-    1.9
+    1.8
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -451,21 +455,21 @@
     "(4,8]": 34
    },
    "file_sha256": {
-    "svg": "64346fbeabe43a494cf7f09165568d30140f7b04ab36445efe51fe316485e343",
-    "pdf": "2e4c6dfeabf434e9532c0d0a0757060915da199746416f0c9ce5e2daf794ef65",
-    "png": "797601d85a56788767dc66e5897053b91a1d9721531bbc71494492f89a114b9a",
-    "tif": "6bd5675875ba2efe61f4c12290f6383cc5de9fd3e4680fd67c6dd87ac3d38305"
+    "svg": "866974e57af350d4051e3cabce5d7d9b6656433de47fcf3d3d1f596cea3e884e",
+    "pdf": "a407e55ae60a59edd7785c6033fe550cf79657df87d4c132d7c72671f015764c",
+    "png": "98fc23f1ec891d93d22b522087d8307a9975b0dd877149439e0d3b312b8a1e17",
+    "tif": "a938b4f6fb783045eb8c15256ad42153177c912811caddef558ad425c0f20d6c"
    },
    "pixel_sha256": {
-    "png": "7d9b1d2cb234d7411c14fac677f275708ca931f78d090b29aaa3f864e6541985",
-    "tif": "6faa3bd177b1f1b17055bd8cb3c6e2929cb94db06b27280e7caf359cb72caa7e"
+    "png": "1df5100f2c06a36612940e2bf2b8e06db756e6b0267ed1941380e78caabadd87",
+    "tif": "44befe7dbff3fbf6123b59a5fa611cdefc1435ac23563617af9564ce7eb92d98"
    }
   },
   {
    "figure": "SupplementaryFigureS5",
    "inches": [
     6.5,
-    3.3
+    3.2
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -515,21 +519,21 @@
     }
    },
    "file_sha256": {
-    "svg": "db4e1e87bf11cf25ececab05afe0c6640527e6be4826032f69dc940970aa141f",
-    "pdf": "5f929617ac8570697eefb397df4c058cb9d9ae12605694a363e9453182b5c2cd",
-    "png": "42c89b0cca3c771092d4a3bc707294ef431582d833f3908b2ebf0cb9e70461ac",
-    "tif": "53d6eaea00f7d4656ff998e5e28e0812ea5fa588bc99949581cc0dd435f0e5ad"
+    "svg": "bbfc3f27033feea2991241a368239b29001cca78e4ed3be3b5d77c326b24251d",
+    "pdf": "d3bb582efc7004e1eac042c7bc6a657b2b669b7a1cc0961f1d1eada2125c5104",
+    "png": "3d2f7e4af086508ad13c72bbba72e8de2783b261a8eb2826e0fe4d59c25cea65",
+    "tif": "0cd31f8a1e369549bd3eb241802a4d41506f868ae7eb44c3db0efca8c5cd14a0"
    },
    "pixel_sha256": {
-    "png": "f0b3a84efede980e675d761dd48c33d66d51a7a15b53d7170a820bf35f73ba35",
-    "tif": "ebe47b7a591b92d1710e7c137dbb7e70ac022fdab77f73ddc0bc34ee3e8f4dee"
+    "png": "439bd3b0cadc81a7fcbb89a655772771f744af365d4202829e81fa14683903ad",
+    "tif": "c5ed7f2403a641757929a2ead439bc8fab8c85f6da15b595bfdf85fe06e77ddb"
    }
   },
   {
    "figure": "SupplementaryFigureS6",
    "inches": [
     6.5,
-    3.3
+    3.2
    ],
    "axes_with_data": 1,
    "plotted_values": {
@@ -551,14 +555,14 @@
     ]
    },
    "file_sha256": {
-    "svg": "050eaed118dad8f42603df65e7ff4cc91229cf92697479d7e4738a220cfcfec6",
-    "pdf": "884a561528d3e161e60dfbb531363d80f187bac27713b9015b420e3a42f8583e",
-    "png": "8980c93c695fed6d653922aa66e1ae2fd731a9aaaef9c9696999e3a4c0a3a69a",
-    "tif": "fa31071c031b638c90c49414bb3da300201e2294166d4fa7ad45485f7bbfc278"
+    "svg": "b4209aa4610a9bf8a8e7765c1f6258a4b844fccaf878eba5d2d7da2f57a271fe",
+    "pdf": "532df91221d215f12c2493de33aeb3addd82c7d1005ecb35654bf9e87fb96f42",
+    "png": "ba4f86480b9df4a41b2bde0d4409902c0c99a20bb29c1f089c275edb17f00f70",
+    "tif": "a1a988b3e639ed5636392b2d4188bdd6a14afc7f12e0e50de5462525033e1d2a"
    },
    "pixel_sha256": {
-    "png": "7072c844da551c6da45f73cbd62b0a6a040ec21a54fb7e2ea4094b5c22197482",
-    "tif": "f95fb7b4362e21c10d2d0396d06c59111ea0bf72bb4435d4ebf17774ee86ec15"
+    "png": "a1a242f546a77b39e58bb9a53be4a590271202f9fd85046d4cd9033591fc2504",
+    "tif": "0c0cbc59646a00d5976761d96e9b693cbe32aa1542a38df0c6d4ec65df41dbf9"
    }
   }
  ]

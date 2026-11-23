@@ -9,9 +9,9 @@ written by rerun_ampicillin.py); Figure 4 also enumerates the compatible tables 
 its own calculation and compares the selected tables with the rerun. The Figure 6 values
 are checked against the replay of the public EFSA data (efsa/EFSA_REPLAY_SUMMARY.json).
 
-Appearance is fixed by this script: colours are black, greys and two muted accents,
-all text is black, the font files are bundled (fonts/), and the library versions are
-pinned in requirements-figures.txt.
+Appearance is fixed by figstyle.py, which all figures share: a full axes frame, black text,
+and black, greys, blue, red and green as the only colours. The font files are bundled
+(fonts/) and the library versions are pinned in requirements-figures.txt.
 
 Usage:  python build_main_figures.py --out <empty folder> [--check EXPECTED_MAIN_FIGURES.json]
 With --check the script compares the new files with the recorded figures and fails on any
@@ -24,58 +24,27 @@ import csv
 import hashlib
 import json
 import math
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 from statistics import median
 
-import matplotlib
-matplotlib.use('Agg')
+import figstyle as S
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib import font_manager
-from matplotlib.colors import to_hex
+import matplotlib
+from matplotlib.collections import LineCollection
 from matplotlib.lines import Line2D
 from matplotlib.patches import FancyArrowPatch, Rectangle
-from matplotlib.ticker import NullLocator
+from matplotlib.ticker import MultipleLocator, NullLocator
 from PIL import Image
 
 HERE = Path(__file__).resolve().parent
 DATA = HERE / 'data'
 EFSA = HERE / 'efsa'
-# Palette: black, greys and two muted accents. All text is black.
-INK = '#000000'; WHITE = '#FFFFFF'
-MUTED = '#4D4D4D'; GREY = '#8C8C8C'; GRID = '#E0E0E0'; LIGHT = '#F2F2F2'
-BLUE = '#2F5D7C'; PALEBLUE = '#E4ECF1'; SLATE = '#1F3447'; OCHRE = '#9A5B3E'
+BLACK, WHITE, GREY, BLUE, RED, GREEN = S.BLACK, S.WHITE, S.GREY, S.BLUE, S.RED, S.GREEN
 PINNED = {'matplotlib': '3.11.2', 'numpy': '2.5.3', 'PIL': '12.3.0', 'fontTools': '4.67.0'}
 PACKAGE_VERSION = '2.0.0'  # version of MIC-50-90 whose results the figures show
-
-# Use only the bundled font files, whatever is installed on the computer.
-font_manager.fontManager.ttflist = [f for f in font_manager.fontManager.ttflist if f.name != 'Liberation Sans']
-for _font in sorted((HERE / 'fonts').glob('*.ttf')):
-    font_manager.fontManager.addfont(str(_font))
-FORBIDDEN = ['·', '•', '∙', '⋅']  # middle dot, bullet, bullet operator, dot operator
-
-# Start from matplotlib's own defaults (a pristine copy is bundled), so that a matplotlibrc
-# on the computer cannot change the appearance; then apply the figure style.
-_NOT_STYLE = ('backend', 'interactive', 'toolbar', 'webagg.', 'tk.', 'timezone', 'datapath',
-              'docstring.', 'date.epoch', 'savefig.directory', 'figure.raise_window', 'figure.max_open_warning')
-_defaults = matplotlib._rc_params_in_file(
-    str(HERE / 'style' / 'matplotlibrc-3.11.2-default'),
-    transform=lambda line: line[1:] if line.startswith('#') else line, fail_on_error=True)
-matplotlib.rcParams.update({k: v for k, v in _defaults.items() if not k.startswith(_NOT_STYLE)})
-
-plt.rcParams.update({
-    'pdf.compression': 0,  # uncompressed streams: the PDF bytes do not depend on the zlib build
-    'font.family': 'Liberation Sans', 'font.size': 8.5, 'text.color': INK,
-    'axes.labelcolor': INK, 'axes.edgecolor': MUTED, 'axes.linewidth': .6,
-    'axes.spines.top': False, 'axes.spines.right': False,
-    'axes.labelsize': 9, 'xtick.labelsize': 8, 'ytick.labelsize': 8,
-    'xtick.color': MUTED, 'ytick.color': MUTED, 'xtick.labelcolor': INK, 'ytick.labelcolor': INK,
-    'xtick.major.width': .6, 'ytick.major.width': .6,
-    'legend.fontsize': 8, 'legend.frameon': False,
-    'lines.linewidth': 1.1, 'svg.fonttype': 'path', 'svg.hashsalt': 'mic-50-90',
-    'pdf.fonttype': 42, 'mathtext.fontset': 'dejavusans',
-    'figure.facecolor': WHITE, 'savefig.facecolor': WHITE})
+S.setup('mic-50-90')
 
 OUT: Path
 RECORD: list = []
@@ -103,47 +72,9 @@ def pixels(p):
         return hashlib.sha256(repr(rgb.size).encode() + rgb.tobytes()).hexdigest()
 
 
-def forest(ax):
-    ax.spines['left'].set_visible(False)
-    ax.tick_params(axis='y', length=0)
-    ax.grid(axis='x', color=GRID, lw=.5)
-    ax.set_axisbelow(True)
-
-
-def span(ax, lo, hi, y, color=BLUE, lw=2.2, cap=6):
-    ax.plot([lo, hi], [y, y], color=color, lw=lw, solid_capstyle='butt', zorder=3)
-    ax.plot([lo, hi], [y, y], ls='none', marker='|', ms=cap, mew=1.0, color=color, zorder=4)
-
-
 def save(fig, name, values):
-    """Check text placement and forbidden separators, then write four formats."""
-    fig.canvas.draw()
-    r = fig.canvas.get_renderer()
-    texts = list(fig.texts)
-    for ax in fig.axes:
-        texts += list(ax.texts)
-        if ax.axison:
-            texts += [ax.xaxis.label, ax.yaxis.label, ax.title]
-            texts += list(ax.get_xticklabels()) + list(ax.get_yticklabels())
-        leg = ax.get_legend()
-        if leg:
-            texts += list(leg.get_texts())
-    for leg in fig.legends:
-        texts += list(leg.get_texts())
-    outside, bad = [], []
-    for t in texts:
-        s = t.get_text()
-        if not t.get_visible() or not s:
-            continue
-        if any(ch in s for ch in FORBIDDEN):
-            bad.append(s)
-        if to_hex(t.get_color()) != '#000000':
-            bad.append(f'non-black text: {s}')
-        bb = t.get_window_extent(r)
-        if bb.x0 < -1 or bb.x1 > fig.bbox.width + 1 or bb.y0 < -1 or bb.y1 > fig.bbox.height + 1:
-            outside.append(s)
-    need(not outside, f'{name}: text outside canvas {outside}')
-    need(not bad, f'{name}: forbidden separator or coloured text in {bad}')
+    """Check the text of the figure, then write four formats."""
+    S.check(fig, name)
     meta_svg = {'Date': None, 'Creator': 'MIC-50-90 figure build'}
     meta_pdf = {'CreationDate': None, 'ModDate': None, 'Creator': 'MIC-50-90 figure build'}
     fig.savefig(OUT / f'{name}.svg', metadata=meta_svg)
@@ -153,7 +84,7 @@ def save(fig, name, values):
     with Image.open(OUT / f'{name}.tif') as im:
         im.convert('RGB').save(OUT / f'{name}.tif', compression='tiff_lzw', dpi=(600, 600))
     RECORD.append({'figure': name, 'inches': [round(x, 3) for x in fig.get_size_inches()],
-                   'axes_with_data': sum(1 for a in fig.axes if a.axison),
+                   'axes_with_data': sum(1 for a in fig.axes if a.axison and a.get_label() != 'secondary'),
                    'plotted_values': values,
                    'file_sha256': {e: sha(OUT / f'{name}.{e}') for e in ['svg', 'pdf', 'png', 'tif']},
                    'pixel_sha256': {e: pixels(OUT / f'{name}.{e}') for e in ['png', 'tif']}})
@@ -234,150 +165,68 @@ def load_efsa():
 
 
 # ---------------------------------------------------------------- main figures
+def figure1(rr):
+    """Madrid penicillin: share of isolates between 0.06 and 2 mg/L in each annual collection."""
+    years = np.array([int(r['year']) for r in rr])
+    same = np.isin(years, [2016, 2018, 2021])
+    p = np.array([100 * int(r['middle_count']) / int(r['n']) for r in rr])
+    fig = plt.figure(figsize=(6.5, 3.2))
+    ax = fig.add_axes([.085, .245, .895, .725])
+    ax.set_xlim(2006.4, 2021.6); ax.set_ylim(0, 40)
+    ax.set_yticks([0, 10, 20, 30, 40]); ax.yaxis.set_minor_locator(MultipleLocator(5))
+    ax.plot(years, p, color=GREY, lw=.7, zorder=2)
+    ax.plot(years[~same], p[~same], ls='none', marker='o', mfc=BLACK, mec=BLACK, zorder=3)
+    ax.plot(years[same], p[same], ls='none', marker='s', ms=5, mfc=BLUE, mec=BLUE, zorder=4)
+    for y, v, offset, ha in zip(years[same], p[same], [(6, 4), (0, 7), (0, 7)], ['left', 'center', 'center']):
+        ax.annotate(f'{v:.2f}%', (y, v), offset, textcoords='offset points', ha=ha, fontsize=S.SMALL)
+    ax.set_ylabel('Isolates with MIC in (0.06, 2] mg/L (%)')
+    ax.set_xticks(years); ax.set_xticklabels([str(y) for y in years])
+    for y, r in zip(years, rr):
+        ax.text(y, -.2, r['n'], transform=ax.get_xaxis_transform(), ha='center', va='center', fontsize=S.SMALL)
+    ax.text(2006.45, -.2, S.N, transform=ax.get_xaxis_transform(), ha='right', va='center')
+    S.legend(ax, [S.mark_handle('o', 'Other years'),
+                  S.mark_handle('s', 'MIC$_{50}$ = 0.023 mg/L and MIC$_{90}$ = 0.5 mg/L', color=BLUE, ms=5)],
+             loc='upper left')
+    save(fig, 'Figure1', {str(y): round(v, 4) for y, v in zip(years, p)})
+
+
 def figure2(amp):
+    """Architecture: three interfaces, one calculation engine, two users and their results."""
     b = f"{amp[('collection','before')]['count_lower']}–{amp[('collection','before')]['count_upper']}"
     a = f"{amp[('collection','after')]['count_lower']}–{amp[('collection','after')]['count_upper']}"
-    fig = plt.figure(figsize=(7.0, 3.35))
+    fig = plt.figure(figsize=(7.0, 3.3))
     ax = fig.add_axes([0, 0, 1, 1]); ax.set(xlim=(0, 1), ylim=(0, 1)); ax.axis('off')
 
     def text(x, y, s, **kw):
         return ax.text(x, y, s, ha='center', va='center', **kw)
 
     def box(x, y, w, h, head, body, fill=WHITE):
-        ax.add_patch(Rectangle((x, y), w, h, facecolor=fill, edgecolor=GREY, lw=.8))
-        text(x + w / 2, y + h - .05, head, fontweight='bold', fontsize=10.2)
-        text(x + w / 2, y + h / 2 - .025, body, fontsize=9.3, linespacing=1.42)
+        ax.add_patch(Rectangle((x, y), w, h, facecolor=fill, edgecolor=BLACK, lw=.7))
+        text(x + w / 2, y + h - .052, head, fontweight='bold', fontsize=9.4)
+        text(x + w / 2, y + (h - .075) / 2, body, fontsize=8.8, linespacing=1.4)
 
-    for x, s in zip([.255, .5, .745], ['Python API', 'Command line', 'Galaxy']):
-        ax.add_patch(Rectangle((x - .095, .855), .19, .095, facecolor=WHITE, edgecolor=GREY, lw=.7))
-        text(x, .9025, s, fontsize=9.6)
-        ax.add_patch(FancyArrowPatch((x, .852), (.5 + (x - .5) * .25, .745), arrowstyle='-|>',
-                                     mutation_scale=9, lw=.75, color=MUTED))
-    box(.01, .49, .285, .27, 'Reader', 'Incomplete MIC report:\nsample size, categories,\nMIC50, MIC90, range, counts')
-    box(.01, .13, .285, .27, 'Laboratory', 'Complete count table\nand the questions\nreaders will ask')
-    box(.365, .2, .27, .54, 'One calculation engine',
-        'Check the report\nBound every count\nRank counts to request\nSelect counts to publish\nAdd population bounds', fill=PALEBLUE)
-    box(.705, .49, .285, .27, 'What the report proves', f'Exact bounds on every count\nThe count to request:\n{b} → {a} of 67 isolates')
-    box(.705, .13, .285, .27, 'A report readers can check', 'The fewest counts to publish\nand a certificate:\none count, four answers')
-    for y in [.625, .265]:
-        ax.add_patch(FancyArrowPatch((.300, y), (.359, y), arrowstyle='-|>', mutation_scale=11, lw=.9, color=BLUE))
-        ax.add_patch(FancyArrowPatch((.641, y), (.699, y), arrowstyle='-|>', mutation_scale=11, lw=.9, color=BLUE))
-    text(.5, .07, 'Outputs: HTML report, CSV and JSON results, reusable input and certificates', fontsize=9.1)
-    text(.5, .025, 'Population bounds are available for independently sampled isolates', fontsize=8.8)
+    def arrow(start, end):
+        ax.add_patch(FancyArrowPatch(start, end, arrowstyle='-|>', mutation_scale=7, lw=.7, color=BLACK,
+                                     shrinkA=0, shrinkB=0))
+
+    for i, s in enumerate(['Python API', 'Command line', 'Galaxy tools']):
+        ax.add_patch(Rectangle((.275 + i * .15, .865), .15, .09, facecolor=WHITE, edgecolor=BLACK, lw=.7))
+        text(.35 + i * .15, .91, s, fontsize=8.8)
+    arrow((.5, .865), (.5, .765))
+    box(.012, .50, .285, .26, 'Reader', 'Incomplete MIC report:\nsample size, categories,\nMIC50, MIC90, range, counts')
+    box(.012, .15, .285, .26, 'Laboratory', 'Complete count table\nand the questions\nreaders will ask')
+    box(.365, .15, .27, .61, 'One calculation engine',
+        'Check the report\nBound every count\nRank counts to request\nSelect counts to publish\nAdd population bounds',
+        fill=S.GREY_PALE)
+    box(.703, .50, .285, .26, 'What the report establishes',
+        f'Exact bounds on every count\nThe count to request:\n{b} → {a} of 67 isolates')
+    box(.703, .15, .285, .26, 'A report readers can check',
+        'The fewest counts to publish\nand a certificate:\none count, four answers')
+    for y in [.63, .28]:
+        arrow((.297, y), (.365, y)); arrow((.635, y), (.703, y))
+    text(.5, .083, 'Outputs: HTML report, CSV and JSON results, reusable input and certificates', fontsize=8.6)
+    text(.5, .035, 'Population bounds are available for independently sampled isolates', fontsize=8.6)
     save(fig, 'Figure2', {'example_before': b, 'example_after': a})
-
-
-def figure1(rr):
-    years = np.array([int(r['year']) for r in rr])
-    same = np.isin(years, [2016, 2018, 2021])
-    p = np.array([100 * int(r['middle_count']) / int(r['n']) for r in rr])
-    fig = plt.figure(figsize=(6.5, 3.3))
-    ax = fig.add_axes([.12, .23, .85, .63])
-    ax.set_xlim(2006.55, 2021.45); ax.set_ylim(0, 36); ax.set_yticks([0, 10, 20, 30])
-    ax.grid(axis='y', color=GRID, lw=.5); ax.set_axisbelow(True)
-    for y in years[same]:
-        ax.axvspan(y - .35, y + .35, color=LIGHT, zorder=0)
-    ax.vlines(years, 0, p, color=GRID, lw=.7)
-    ax.scatter(years[~same], p[~same], s=22, color=MUTED, zorder=3, label='Other years')
-    ax.scatter(years[same], p[same], s=30, color=BLUE, marker='D', zorder=4,
-               label='MIC$_{50}$/MIC$_{90}$ = 0.023/0.5 mg/L')
-    for y, v in zip(years[same], p[same]):
-        ax.annotate(f'{v:.2f}%', (y, v), (0, 7), textcoords='offset points', ha='center', fontsize=7.6)
-    ax.set_ylabel('Share in (0.06, 2] mg/L (%)', labelpad=8)
-    ax.set_xticks(years); ax.set_xticklabels([str(y) for y in years], rotation=45, ha='right',
-                                             rotation_mode='anchor', fontsize=7.5)
-    for y, r in zip(years, rr):
-        ax.text(y, -.29, r['n'], transform=ax.get_xaxis_transform(), ha='center', va='center', fontsize=7.2)
-    ax.text(2006.1, -.29, 'n', transform=ax.get_xaxis_transform(), ha='right', va='center', fontsize=8)
-    ax.legend(loc='upper left', bbox_to_anchor=(0, 1.16), ncol=2, borderaxespad=0, columnspacing=2.2)
-    save(fig, 'Figure1', {str(y): round(v, 4) for y, v in zip(years, p)})
-
-
-def figureS2(amp):
-    fig = plt.figure(figsize=(6.5, 2.75))
-    ax = fig.add_axes([.27, .2, .58, .66])
-    ax.set_xlim(0, 70); ax.set_ylim(-.6, 4.1); ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 70])
-    ax.set_xlabel('Share in category 0.5 mg/L (%)', labelpad=6); forest(ax)
-    ys = {('collection', 'before'): 3.4, ('collection', 'after'): 2.6,
-          ('population', 'before'): .8, ('population', 'after'): 0}
-    labels, ticks, vals = [], [], {}
-    for (q, st), y in ys.items():
-        r = amp[(q, st)]
-        lo, hi = float(r['lower_percent']), float(r['upper_percent'])
-        c = GREY if st == 'before' else BLUE
-        span(ax, lo, hi, y, c, lw=2.4)
-        if q == 'collection':
-            s = f"{r['count_lower']}–{r['count_upper']} of 67 isolates"
-        else:
-            s = f'{lo:.3f}–{hi:.2f}%'
-        ax.text(hi + 1.2, y, s, ha='left', va='center', fontsize=8)
-        ticks.append(y); labels.append('Summaries' if st == 'before' else '+ count of 59')
-        vals[f'{q}_{st}'] = [round(lo, 4), round(hi, 4)]
-    ax.set_yticks(ticks); ax.set_yticklabels(labels)
-    ax.text(-.395, 3.0, 'Sample', transform=ax.get_yaxis_transform(), ha='left', va='center',
-            fontsize=8.8, fontweight='bold')
-    ax.text(-.395, .4, 'Population\n(95%)', transform=ax.get_yaxis_transform(), ha='left', va='center',
-            fontsize=8.8, fontweight='bold', linespacing=1.2)
-    ax.axhline(1.7, color=GRID, lw=.8)
-    save(fig, 'SupplementaryFigureS2', vals)
-
-
-def figureS3():
-    rr = rows(DATA / 'figureS3_chloramphenicol.csv')
-    at = {r['threshold']: r for r in rr}
-    need(at['2.0']['certainly_above'] == '34' and at['2.0']['possibly_above'] == '67', 'chloramphenicol at 2')
-    need(at['4.0']['certainly_above'] == '34' and at['8.0']['possibly_above'] == '0', 'boundaries')
-    fig = plt.figure(figsize=(6.5, 3.1))
-    b = fig.add_axes([.12, .17, .84, .74])
-    b.set_xscale('log', base=2); b.set_xlim(.5, 16); b.set_xticks([.5, 1, 2, 4, 8, 16])
-    b.set_xticklabels(['0.5', '1', '2', '4', '8', '16']); b.xaxis.set_minor_locator(NullLocator())
-    b.set_ylim(-3, 71); b.set_yticks([0, 17, 34, 50, 67]); b.set_ylabel('Isolates with MIC > t', labelpad=8)
-    b.set_xlabel('Threshold t (mg/L)', labelpad=6); b.grid(axis='y', color=GRID, lw=.5); b.set_axisbelow(True)
-    b.fill_between([.5, 4], [34, 34], [67, 67], color=PALEBLUE, zorder=1)
-    b.fill_between([4, 8], [0, 0], [34, 34], color=PALEBLUE, zorder=1)
-    for x, y, c in [([.5, 4], [67, 67], BLUE), ([4, 8], [34, 34], BLUE), ([.5, 4], [34, 34], INK), ([4, 16], [0, 0], INK)]:
-        b.plot(x, y, color=c, lw=1)
-    b.scatter([4, 8], [34, 0], s=20, color=INK, zorder=5)
-    b.scatter([4, 4, 8], [67, 0, 34], s=22, facecolor=WHITE, edgecolor=BLUE, lw=.9, zorder=6)
-    b.axvline(2, color=OCHRE, lw=.8, ls=(0, (3, 3)))
-    b.plot([2, 2], [34, 67], color=OCHRE, lw=1.7, zorder=7)
-    b.plot([2, 2], [34, 67], ls='none', marker='_', ms=6, color=OCHRE, zorder=8)
-    b.annotate('34–67 at 2 mg/L', xy=(2, 50.5), xytext=(2.48, 50.5), fontsize=8, va='center',
-               arrowprops={'arrowstyle': '-', 'color': OCHRE, 'lw': .6})
-    b.text(.53, 68.8, 'Upper bound', fontsize=7.6, va='bottom')
-    b.text(.53, 35.7, 'Lower bound', fontsize=7.6, va='bottom')
-    save(fig, 'SupplementaryFigureS3', {'t=2': [34, 67], 't=4': [34, 34], 't=8': [0, 0]})
-
-
-def figureS5():
-    rr = rows(DATA / 'figureS5_amikacin.csv')
-    need(len(rr) == 4 and all(r['n'] == '276' and r['before_max'] == '27' for r in rr), 'amikacin rows')
-    need(rr[0]['after_min'] == rr[0]['after_max'] == '8' and all(r['after_max'] == '8' for r in rr), 'after')
-    fig = plt.figure(figsize=(6.5, 3.3)); ax = fig.add_axes([.14, .19, .79, .60])
-    ax.set_xlim(0, 10.5); ax.set_ylim(-.6, 3.65); ax.set_yticks([3, 2, 1, 0]); ax.set_yticklabels(['4', '8', '16', '32'])
-    ax.set_ylabel('Threshold t (mg/L)', labelpad=10); ax.set_xlabel('Share with MIC > t (%)', labelpad=6)
-    ax.set_xticks([0, 2, 4, 6, 8, 10]); forest(ax)
-    ax.axvline(5, color=OCHRE, lw=.8, ls=(0, (3, 3))); ax.text(5.15, 3.52, '5% criterion', fontsize=7.5)
-    vals = {}
-    for i, r in enumerate(rr):
-        y = 3 - i; n = int(r['n'])
-        span(ax, 100 * int(r['before_min']) / n, 100 * int(r['before_max']) / n, y + .14, GREY, 1.8, 5)
-        lo, hi = 100 * int(r['after_min']) / n, 100 * int(r['after_max']) / n
-        if lo == hi:
-            ax.scatter(lo, y - .14, s=24, color=BLUE, zorder=4)
-        else:
-            span(ax, lo, hi, y - .14, BLUE, 2.5, 5)
-        ax.scatter(100 * int(r['laboratory_count']) / n, y - .14 if lo != hi else y - .36, marker='D', s=17,
-                   facecolors=WHITE, edgecolors=INK, lw=.75, zorder=5)
-        vals[r['threshold']] = {'before': [r['before_min'], r['before_max']], 'after': [r['after_min'], r['after_max']],
-                                'laboratory': r['laboratory_count']}
-    ax.annotate('8 of 276', (8 / 276 * 100, 2.86), (9, 0), textcoords='offset points', fontsize=7.6, va='center')
-    ax.annotate('0–8 of 276', (8 / 276 * 100, -.14), (9, 0), textcoords='offset points', fontsize=7.6, va='center')
-    handles = [Line2D([0], [0], color=GREY, lw=1.8, label='Summaries'),
-               Line2D([0], [0], color=BLUE, lw=2.5, label='+ disclosed count'),
-               Line2D([0], [0], color=INK, marker='D', ls='none', mfc=WHITE, ms=4, label='Laboratory count')]
-    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.53, .95), ncol=3, columnspacing=2, handletextpad=.7)
-    save(fig, 'SupplementaryFigureS5', vals)
 
 
 def figure3(amp):
@@ -387,23 +236,23 @@ def figure3(amp):
     need([b[0] for b in before] == [a[0] for a in after] == ['<=0.12', '0.25', '0.5', '1', '>1'], 'ampicillin categories')
     need([b[1:] for b in before] == [[34, 60], [0, 26], [1, 32], [0, 5], [1, 6]], 'bounds from the summaries')
     need([a[1:] for a in after] == [[34, 59], [0, 25], [2, 7], [0, 5], [1, 6]], 'bounds with the count')
-    fig = plt.figure(figsize=(6.5, 3.45)); ax = fig.add_axes([.14, .17, .58, .64])
-    ax.set_xlim(0, 67); ax.set_ylim(-.6, 4.6); ax.set_yticks(range(5))
-    ax.set_yticklabels([b[0].replace('<=', '≤') for b in before[::-1]])
-    ax.set_ylabel('MIC category (mg/L)', labelpad=10); ax.set_xlabel('Possible number of isolates (of 67)', labelpad=6)
-    ax.set_xticks([0, 10, 20, 30, 40, 50, 60, 67]); forest(ax)
-    ax.axhspan(1.55, 2.45, color=LIGHT, zorder=0)
+    n = 67
+    fig = plt.figure(figsize=(6.5, 3.3)); ax = fig.add_axes([.105, .15, .575, .665])
+    ax.set_xlim(0, n); ax.set_ylim(4.5, -.5); ax.set_yticks(range(5))
+    ax.set_yticklabels([b[0].replace('<=', '≤') for b in before])
+    ax.set_ylabel('MIC category (mg/L)'); ax.set_xlabel('Possible number of isolates')
+    ax.set_xticks([0, 10, 20, 30, 40, 50, 60, n]); ax.xaxis.set_minor_locator(MultipleLocator(5))
+    share = ax.secondary_xaxis('top', functions=(lambda x: 100 * x / n, lambda s: s * n / 100))
+    share.set_xticks(range(0, 101, 20)); share.xaxis.set_minor_locator(MultipleLocator(10))
+    share.set_xlabel('Share of the 67 isolates (%)')
+    S.guides(ax, [.5, 1.5, 2.5, 3.5])
     for i, (b, a) in enumerate(zip(before, after)):
-        y = 4 - i
-        span(ax, b[1], b[2], y + .16, GREY, 1.8, 5)
-        span(ax, a[1], a[2], y - .16, BLUE, 2.5, 5)
-        ax.text(70.5, y + .16, f'{b[1]}–{b[2]}', ha='left', va='center', fontsize=8.2, clip_on=False)
-        ax.text(81.5, y - .16, f'{a[1]}–{a[2]}', ha='left', va='center', fontsize=8.2, clip_on=False)
-    ax.text(70.5, 4.82, 'Summaries', fontsize=8, ha='left', clip_on=False)
-    ax.text(81.5, 4.82, '+ count of 59', fontsize=8, ha='left', clip_on=False)
-    handles = [Line2D([0], [0], color=GREY, lw=1.8, label='MIC50, MIC90 and range'),
-               Line2D([0], [0], color=BLUE, lw=2.5, label='+ 59 isolates at or below 0.25 mg/L')]
-    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.43, .97), ncol=2, columnspacing=2, handletextpad=.7)
+        S.hspan(ax, b[1], b[2], i - .17, BLACK)
+        S.hspan(ax, a[1], a[2], i + .17, BLUE)
+    S.column(ax, 1.19, [(i, f'{b[1]}–{b[2]}') for i, b in enumerate(before)], 'Summaries', -.56)
+    S.column(ax, 1.40, [(i, f'{a[1]}–{a[2]}') for i, a in enumerate(after)], 'With count', -.56)
+    S.legend(ax, [S.interval_handle(BLACK, 'MIC$_{50}$, MIC$_{90}$ and range'),
+                  S.interval_handle(BLUE, 'with 59 isolates at ≤0.25 mg/L')], loc='lower right')
     save(fig, 'Figure3', {'before': [b[1:] for b in before], 'after': [a[1:] for a in after]})
 
 
@@ -438,6 +287,14 @@ def compatible_tables():
     return n, tables, selected
 
 
+def cumulative_lines(ax, tables, n, alpha=.06):
+    """Every table as a faint line of its cumulative shares; the shade grows where tables agree."""
+    cumulative = np.unique(100 * np.cumsum(np.array(tables), axis=1) / n, axis=0)
+    x = np.broadcast_to(np.arange(cumulative.shape[1]), cumulative.shape)
+    ax.add_collection(LineCollection(np.stack([x, cumulative], axis=2), colors=[(.42, .42, .42, alpha)], linewidths=.4,
+                                     zorder=2))
+
+
 def figure4(amp):
     """The endpoint theorem on the ampicillin summaries: all compatible tables and the selected ones."""
     n, tables, selected = compatible_tables()
@@ -446,19 +303,17 @@ def figure4(amp):
     need(all(tuple(t) in set(tables) for t in selected), 'selected tables are compatible')
     labels = ['≤0.12', '0.25', '0.5', '1', '>1']
     x = np.arange(5)
-    fig = plt.figure(figsize=(6.5, 3.5)); ax = fig.add_axes([.12, .16, .84, .76])
-    cumulative = np.unique(100 * np.cumsum(np.array(tables), axis=1) / n, axis=0)
-    for row in cumulative:
-        ax.plot(x, row, color='#C9CED3', lw=.45, zorder=2)
+    fig = plt.figure(figsize=(6.5, 3.5)); ax = fig.add_axes([.095, .14, .885, .83])
+    cumulative_lines(ax, tables, n)
     for table in selected:
-        ax.plot(x, 100 * np.cumsum(table) / n, color=BLUE, lw=1.5, marker='o', ms=3.2, zorder=4)
+        ax.plot(x, 100 * np.cumsum(table) / n, color=BLUE, lw=1.2, marker='o', ms=3.6, mfc=BLUE, mec=BLUE,
+                clip_on=False, zorder=4)
     ax.set_xticks(x); ax.set_xticklabels(labels); ax.set_xlim(-.25, 4.25)
-    ax.set_ylim(40, 101.5); ax.set_yticks(range(40, 101, 10))
-    ax.set_xlabel('MIC category (mg/L)', labelpad=6); ax.set_ylabel('Isolates at or below the category (%)', labelpad=8)
-    ax.grid(axis='y', color=GRID, lw=.5); ax.set_axisbelow(True)
-    handles = [Line2D([0], [0], color='#C9CED3', lw=1.2, label='7938 tables compatible with the report'),
-               Line2D([0], [0], color=BLUE, lw=1.5, marker='o', ms=3.2, label='5 tables that give every population bound')]
-    ax.legend(handles=handles, loc='lower right', bbox_to_anchor=(.99, .04), handletextpad=.7)
+    ax.set_ylim(40, 103); ax.set_yticks(range(40, 101, 10)); ax.yaxis.set_minor_locator(MultipleLocator(5))
+    ax.set_xlabel('MIC category (mg/L)'); ax.set_ylabel('Isolates at or below the category (%)')
+    S.legend(ax, [S.line_handle(GREY, '7938 tables compatible with the report', lw=.8),
+                  Line2D([0], [0], color=BLUE, lw=1.2, marker='o', ms=3.6, mfc=BLUE, mec=BLUE,
+                         label='5 tables that give every population bound')], loc='lower right')
     save(fig, 'Figure4', {'compatible': len(tables), 'selected': selected})
 
 
@@ -474,94 +329,185 @@ def figure5():
         groups.append((label, len(chosen), sum(int(t['answers']) for t in chosen),
                        sum(int(t['direct_fields']) for t in chosen), sum(int(t['minimal_fields']) for t in chosen)))
     need(groups[-1][1:] == (180, 1809, 405, 115), 'totals: 180 tasks, 1809 answers, 405 and 115 counts')
-    fig = plt.figure(figsize=(6.5, 3.0)); ax = fig.add_axes([.25, .2, .71, .64])
-    ax.set_xlim(-8, 440); ax.set_ylim(3.6, -.6); ax.set_yticks(range(4))
+    fig = plt.figure(figsize=(6.5, 2.85)); ax = fig.add_axes([.235, .17, .745, .79])
+    ax.set_xlim(-14, 440); ax.set_ylim(3.6, -.6); ax.set_yticks(range(4))
     ax.set_yticklabels([f'{g[0]}\n{g[1]} tasks, {g[2]} answers' for g in groups], linespacing=1.2)
-    ax.set_xticks(range(0, 401, 50)); ax.set_xlabel('Counts the laboratory has to publish', labelpad=6); forest(ax)
-    ax.axhline(2.5, color=GRID, lw=.9)
+    ax.set_xticks(range(0, 401, 50)); ax.xaxis.set_minor_locator(MultipleLocator(10))
+    ax.set_xlabel('Counts the laboratory has to publish')
+    S.guides(ax, range(4)); ax.axhline(2.5, color=BLACK, lw=.5)
     for y, (label, count, answers, direct, minimal) in enumerate(groups):
         if direct == 0:
-            ax.scatter(0, y, s=26, color=BLUE, zorder=4)
-            ax.text(9, y, 'none: the summaries settle every answer', ha='left', va='center', fontsize=8)
+            S.dot(ax, 0, y, color=BLUE, ms=5)
+            ax.text(9, y, '0: the summaries settle every answer', ha='left', va='center', fontsize=S.SMALL,
+                    bbox={'facecolor': WHITE, 'edgecolor': 'none', 'pad': 1})
             continue
-        ax.plot([minimal, direct], [y, y], color=GRID, lw=1.6, zorder=2)
-        ax.scatter(direct, y, s=26, color=GREY, zorder=4)
-        ax.scatter(minimal, y, s=26, color=BLUE, zorder=4)
-        ax.text(direct + 8, y, str(direct), ha='left', va='center', fontsize=8)
-        ax.text(minimal - 8, y, str(minimal), ha='right', va='center', fontsize=8)
-    handles = [Line2D([0], [0], color=GREY, marker='o', ls='none', ms=5, label='Every count left open by the summaries'),
-               Line2D([0], [0], color=BLUE, marker='o', ls='none', ms=5, label='Smallest sufficient set')]
-    fig.legend(handles=handles, loc='upper center', bbox_to_anchor=(.6, .98), ncol=2, columnspacing=2, handletextpad=.4)
+        ax.plot([minimal, direct], [y, y], color=BLACK, lw=.7, zorder=2)
+        S.dot(ax, direct, y, filled=False, ms=5)
+        S.dot(ax, minimal, y, color=BLUE, ms=5)
+        ax.text(direct + 8, y, str(direct), ha='left', va='center', fontsize=S.SMALL,
+                bbox={'facecolor': WHITE, 'edgecolor': 'none', 'pad': 1})
+        ax.text(minimal - 8, y, str(minimal), ha='right', va='center', fontsize=S.SMALL,
+                bbox={'facecolor': WHITE, 'edgecolor': 'none', 'pad': 1})
+    S.legend(ax, [S.mark_handle('o', 'Every count left open by the summaries', filled=False, ms=5),
+                  S.mark_handle('o', 'Smallest sufficient set', color=BLUE, ms=5)],
+             loc='center right', bbox_to_anchor=(1, .47))
     save(fig, 'Figure5', {g[0]: list(g[1:]) for g in groups})
 
 
 def figure6(per, med, ident):
-    fig = plt.figure(figsize=(6.5, 3.6)); a = fig.add_axes([.13, .2, .84, .72])
-    colors = [GREY, BLUE, SLATE]
+    """EFSA data: the widest range of each of 39 distributions at three levels of information."""
+    fig = plt.figure(figsize=(6.5, 3.5)); a = fig.add_axes([.095, .185, .885, .785])
+    colors = [BLACK, BLUE, GREEN]
     offsets = np.linspace(-.13, .13, len(per))
     for off, cid in zip(offsets, sorted(per)):
         x = np.arange(3) + off
-        a.plot(x, per[cid], color=GREY, alpha=.3, lw=.55, zorder=1)
+        a.plot(x, per[cid], color=GREY, alpha=.45, lw=.45, zorder=1)
         for xi, y, c in zip(x, per[cid], colors):
-            a.scatter([xi], [y], s=8, color=c, alpha=.65, edgecolors='none', zorder=2)
-    a.scatter(np.arange(3), med, marker='D', color=INK, s=32, zorder=4, label='Median')
+            a.plot([xi], [y], ls='none', marker='o', ms=2.6, mfc=c, mec='none', zorder=2)
     for x, y, t in zip(range(3), med, ['9.827', '0.578', '0']):
-        a.annotate(t, (x, y), xytext=(0, 9), textcoords='offset points', ha='center', va='bottom', fontsize=8.6,
-                   fontweight='bold', bbox={'facecolor': 'white', 'alpha': .9, 'edgecolor': 'none', 'pad': .5}, zorder=5)
-    a.set_yscale('symlog', linthresh=1, linscale=1, base=10); a.set_ylim(-.16, 125)
-    a.set_yticks([0, 1, 5, 10, 50, 90], labels=['0', '1', '5', '10', '50', '90'])
-    a.set_xlim(-.4, 2.4)
-    a.set_xticks([0, 1, 2], labels=[f'Summaries only\n0 fields; {ident[0]}/39 identified',
-                                    f'+ selected counts\n113 fields; {ident[1]}/39 identified',
-                                    f'Complete counts\n294 fields; {ident[2]}/39 identified'])
-    a.set_ylabel('Maximum sample-range width (pp)')
-    a.grid(axis='y', color=GRID, lw=.55, zorder=0)
-    a.legend(loc='upper right')
+        a.plot([x - .2, x + .2], [y, y], color=BLACK, lw=1.6, zorder=4)
+        a.annotate(t, (x + .2, y), xytext=(4, 0), textcoords='offset points', ha='left', va='center', fontsize=8,
+                   bbox={'facecolor': WHITE, 'edgecolor': 'none', 'pad': 1}, zorder=5)
+    a.set_yscale('symlog', linthresh=1, linscale=1, base=10); a.set_ylim(-.16, 130)
+    a.set_yticks([0, 1, 2, 5, 10, 20, 50, 100], labels=['0', '1', '2', '5', '10', '20', '50', '100'])
+    a.yaxis.set_minor_locator(NullLocator())
+    a.set_xlim(-.4, 2.45)
+    a.set_xticks([0, 1, 2], labels=[f'Summaries only\n0 counts; {ident[0]} of 39 identified',
+                                    f'With selected counts\n113 counts; {ident[1]} of 39 identified',
+                                    f'Complete counts\n294 counts; {ident[2]} of 39 identified'], linespacing=1.25)
+    a.set_ylabel('Widest range of a distribution (pp)')
+    S.legend(a, [S.line_handle(BLACK, 'Median of the 39 distributions', lw=1.6)], loc='upper right')
     save(fig, 'Figure6', {'medians_pp': [round(m, 6) for m in med], 'identified': ident})
 
 
 # ---------------------------------------------------------- supplementary
 def figureS1(rr):
+    """Madrid penicillin: the reported MIC50 and MIC90 of each annual collection."""
     years = np.array([int(r['year']) for r in rr]); same = np.isin(years, [2016, 2018, 2021])
-    fig = plt.figure(figsize=(6.5, 2.9)); a = fig.add_axes([.13, .2, .84, .66])
-    a.set_xlim(2006.55, 2021.45); a.grid(axis='y', color=GRID, lw=.5); a.set_axisbelow(True)
-    for y in years[same]:
-        a.axvspan(y - .35, y + .35, color=LIGHT, zorder=0)
-    a.set_yscale('log', base=2); a.set_ylim(.012, 3.2); a.set_yticks([.016, .032, .125, .5, 2])
-    a.set_yticklabels(['0.016', '0.032', '0.125', '0.5', '2']); a.yaxis.set_minor_locator(NullLocator())
-    a.set_ylabel('Reported MIC (mg/L)', labelpad=8)
-    a.plot(years, [float(r['mic50']) for r in rr], color=MUTED, marker='o', mfc=WHITE, mew=.9, ms=4, lw=.8, label='MIC$_{50}$')
-    a.plot(years, [float(r['mic90']) for r in rr], color=BLUE, marker='s', mfc=BLUE, ms=3.5, lw=.9, label='MIC$_{90}$')
-    a.legend(loc='upper left', ncol=2, bbox_to_anchor=(0, 1.17), borderaxespad=0, columnspacing=2)
-    a.set_xticks(years); a.set_xticklabels([str(y) for y in years], rotation=45, ha='right', rotation_mode='anchor', fontsize=7.5)
+    fig = plt.figure(figsize=(6.5, 2.9)); a = fig.add_axes([.095, .105, .885, .86])
+    a.set_xlim(2006.4, 2021.6)
+    S.guides(a, years[same], axis='x')
+    a.set_yscale('log', base=2); a.set_ylim(.011, 3.2)
+    a.set_yticks([.016, .032, .064, .125, .25, .5, 1, 2])
+    a.set_yticklabels(['0.016', '0.032', '0.064', '0.125', '0.25', '0.5', '1', '2']); a.yaxis.set_minor_locator(NullLocator())
+    a.set_ylabel('Reported MIC (mg/L)')
+    a.plot(years, [float(r['mic90']) for r in rr], color=BLACK, marker='s', ms=4, mfc=BLACK, lw=.8, label='MIC$_{90}$')
+    a.plot(years, [float(r['mic50']) for r in rr], color=BLACK, marker='o', mfc=WHITE, lw=.8, label='MIC$_{50}$')
+    a.legend(loc='center left', bbox_to_anchor=(0, .46))
+    a.set_xticks(years); a.set_xticklabels([str(y) for y in years])
     save(fig, 'SupplementaryFigureS1', {r['year']: [r['mic50'], r['mic90']] for r in rr})
 
 
+def figureS2(amp):
+    """Ampicillin category 0.5 mg/L: sample and population bounds before and after the count."""
+    fig = plt.figure(figsize=(6.5, 2.5))
+    ax = fig.add_axes([.29, .19, .5, .765])
+    ax.set_xlim(0, 70); ax.set_ylim(4.75, -.75); ax.set_xticks(range(0, 71, 10)); ax.xaxis.set_minor_locator(MultipleLocator(5))
+    ax.set_xlabel('Share in category 0.5 mg/L (%)')
+    ys = {('collection', 'before'): 0, ('collection', 'after'): 1, ('population', 'before'): 3, ('population', 'after'): 4}
+    labels, ticks, vals, column = [], [], {}, []
+    for (q, st), y in ys.items():
+        r = amp[(q, st)]
+        lo, hi = float(r['lower_percent']), float(r['upper_percent'])
+        S.hspan(ax, lo, hi, y, BLACK if st == 'before' else BLUE)
+        column.append((y, f"{r['count_lower']}–{r['count_upper']} of 67 isolates" if q == 'collection'
+                       else f'{lo:.3f}–{hi:.2f}%'))
+        ticks.append(y); labels.append('Summaries' if st == 'before' else 'With count of 59')
+        vals[f'{q}_{st}'] = [round(lo, 4), round(hi, 4)]
+    ax.set_yticks(ticks); ax.set_yticklabels(labels)
+    S.column(ax, 1.03, column, ha='left')
+    for y, text in ((.5, 'Tested isolates'), (3.5, 'Population,\n95% bounds')):
+        ax.text(-.56, y, text, transform=ax.get_yaxis_transform(), ha='left', va='center', fontweight='bold',
+                linespacing=1.15, clip_on=False)
+    ax.axhline(2, color=BLACK, lw=.5)
+    save(fig, 'SupplementaryFigureS2', vals)
+
+
+def figureS3():
+    """Chloramphenicol: bounds on the number of isolates above every threshold."""
+    rr = rows(DATA / 'figureS3_chloramphenicol.csv')
+    at = {r['threshold']: r for r in rr}
+    need(at['2.0']['certainly_above'] == '34' and at['2.0']['possibly_above'] == '67', 'chloramphenicol at 2')
+    need(at['4.0']['certainly_above'] == '34' and at['8.0']['possibly_above'] == '0', 'boundaries')
+    fig = plt.figure(figsize=(6.5, 3.1))
+    b = fig.add_axes([.085, .15, .895, .815])
+    b.set_xscale('log', base=2); b.set_xlim(.5, 16); b.set_xticks([.5, 1, 2, 4, 8, 16])
+    b.set_xticklabels(['0.5', '1', '2', '4', '8', '16']); b.xaxis.set_minor_locator(NullLocator())
+    b.set_ylim(-4, 72); b.set_yticks([0, 10, 20, 30, 40, 50, 60, 67]); b.set_ylabel(f'Isolates with MIC > {S.T}')
+    b.set_xlabel(f'Threshold {S.T} (mg/L)')
+    b.fill_between([.5, 4], [34, 34], [67, 67], color=S.GREY_PALE, lw=0, zorder=1)
+    b.fill_between([4, 8], [0, 0], [34, 34], color=S.GREY_PALE, lw=0, zorder=1)
+    for x, y in [([.5, 4], [67, 67]), ([4, 8], [34, 34]), ([.5, 4], [34, 34]), ([4, 16], [0, 0])]:
+        b.plot(x, y, color=BLACK, lw=1, zorder=3)
+    b.plot([4, 8], [34, 0], ls='none', marker='o', ms=4, mfc=BLACK, mec=BLACK, zorder=5, clip_on=False)
+    b.plot([4, 4, 8], [67, 0, 34], ls='none', marker='o', ms=4, mfc=WHITE, mec=BLACK, zorder=6, clip_on=False)
+    S.criterion(b, x=2)
+    S.vspan(b, 2, 34, 67, RED, lw=1.5, zorder=7)
+    b.text(2.12, 50.5, f'34–67 isolates at {S.T} = 2 mg/L', fontsize=S.SMALL, va='center')
+    b.text(.54, 68.3, 'Upper bound', fontsize=S.SMALL, va='bottom')
+    b.text(.54, 35.3, 'Lower bound', fontsize=S.SMALL, va='bottom')
+    save(fig, 'SupplementaryFigureS3', {'t=2': [34, 67], 't=4': [34, 34], 't=8': [0, 0]})
+
+
 def figureS4():
-    fig = plt.figure(figsize=(6.5, 1.9)); a = fig.add_axes([.14, .3, .82, .58])
+    """Chloramphenicol: the two recorded measurement intervals."""
+    fig = plt.figure(figsize=(6.5, 1.8)); a = fig.add_axes([.14, .29, .84, .63])
     a.set_xscale('log', base=2); a.set_xlim(.5, 16); a.set_xticks([.5, 1, 2, 4, 8, 16])
     a.set_xticklabels(['0.5', '1', '2', '4', '8', '16']); a.xaxis.set_minor_locator(NullLocator())
-    a.set_ylim(-.6, 1.6); a.set_yticks([1, 0]); a.set_yticklabels(['33 isolates', '34 isolates'])
-    a.spines['left'].set_visible(False); a.tick_params(axis='y', length=0); a.set_xlabel('MIC (mg/L)', labelpad=5)
-    a.plot([.5, 4], [1, 1], lw=2, color=GREY); a.plot(.5, 1, '<', ms=4, color=GREY); a.plot(4, 1, 'o', ms=4, color=GREY)
-    a.plot([4, 8], [0, 0], lw=2, color=BLUE); a.plot(4, 0, 'o', ms=4, mfc=WHITE, mec=BLUE); a.plot(8, 0, 'o', ms=4, color=BLUE)
-    a.axvline(2, color=OCHRE, lw=.8, ls=(0, (3, 3))); a.text(2.08, 1.45, 't = 2 mg/L', fontsize=7.6)
+    a.set_ylim(1.6, -.6); a.set_yticks([0, 1]); a.set_yticklabels(['33 isolates', '34 isolates'])
+    a.set_xlabel('MIC (mg/L)')
+    S.guides(a, [0, 1])
+    a.plot([.5, 4], [0, 0], lw=1.2, color=BLACK, zorder=3); a.plot(4, 0, 'o', ms=4.5, mfc=BLACK, mec=BLACK, zorder=4)
+    a.plot(.53, 0, '<', ms=4.5, mfc=BLACK, mec=BLACK, zorder=4)
+    a.plot([4, 8], [1, 1], lw=1.2, color=BLACK, zorder=3); a.plot(4, 1, 'o', ms=4.5, mfc=WHITE, mec=BLACK, zorder=4)
+    a.plot(8, 1, 'o', ms=4.5, mfc=BLACK, mec=BLACK, zorder=4)
+    S.criterion(a, x=2); a.text(2.1, -.42, f'{S.T} = 2 mg/L', fontsize=S.SMALL, va='center')
     save(fig, 'SupplementaryFigureS4', {'<=4': 33, '(4,8]': 34})
 
 
+def figureS5():
+    """Amikacin: shares above four thresholds before and after one published count."""
+    rr = rows(DATA / 'figureS5_amikacin.csv')
+    need(len(rr) == 4 and all(r['n'] == '276' and r['before_max'] == '27' for r in rr), 'amikacin rows')
+    need(rr[0]['after_min'] == rr[0]['after_max'] == '8' and all(r['after_max'] == '8' for r in rr), 'after')
+    fig = plt.figure(figsize=(6.5, 3.2)); ax = fig.add_axes([.085, .15, .895, .735])
+    ax.set_xlim(-.25, 10.5); ax.set_ylim(3.6, -.6); ax.set_yticks(range(4)); ax.set_yticklabels(['4', '8', '16', '32'])
+    ax.set_ylabel(f'Threshold {S.T} (mg/L)'); ax.set_xlabel(f'Share with MIC > {S.T} (%)')
+    ax.set_xticks(range(0, 11, 2)); ax.xaxis.set_minor_locator(MultipleLocator(1))
+    S.guides(ax, [.5, 1.5, 2.5])
+    S.criterion(ax, x=5); ax.text(5.12, -.42, '5% criterion', fontsize=S.SMALL, va='center')
+    vals = {}
+    for y, r in enumerate(rr):
+        n = int(r['n'])
+        S.hspan(ax, 100 * int(r['before_min']) / n, 100 * int(r['before_max']) / n, y - .2, BLACK)
+        S.hspan(ax, 100 * int(r['after_min']) / n, 100 * int(r['after_max']) / n, y + .08, BLUE)
+        S.dot(ax, 100 * int(r['laboratory_count']) / n, y + .3, marker='D', color=GREEN, ms=3.8)
+        vals[r['threshold']] = {'before': [r['before_min'], r['before_max']], 'after': [r['after_min'], r['after_max']],
+                                'laboratory': r['laboratory_count']}
+    ax.annotate('8 of 276', (8 / 276 * 100, .08), (7, 0), textcoords='offset points', fontsize=S.SMALL, va='center')
+    ax.annotate('0–8 of 276', (8 / 276 * 100, 3.08), (7, 0), textcoords='offset points', fontsize=S.SMALL, va='center')
+    S.legend(fig, [S.interval_handle(BLACK, 'Summaries'), S.interval_handle(BLUE, 'With the published count'),
+                   S.mark_handle('D', 'Count held by the laboratory', color=GREEN, ms=3.8)],
+             loc='upper center', bbox_to_anchor=(.53, .985), ncol=3)
+    save(fig, 'SupplementaryFigureS5', vals)
+
+
 def figureS6(cost):
-    fig = plt.figure(figsize=(6.5, 3.3)); b = fig.add_axes([.12, .17, .84, .74])
-    b.set_xlim(22, 166); b.set_ylim(-2, 52); b.set_xticks([37, 89, 113, 150]); b.set_yticks([0, 10, 20, 30, 40, 50])
-    b.axhline(2, color=OCHRE, ls=(0, (3, 3)), lw=.8, zorder=1)
-    b.text(26, 2.7, '2 pp tolerance', ha='left', va='bottom', fontsize=7.8)
-    b.set_xlabel('Disclosed count fields'); b.set_ylabel('Maximum outward endpoint loss (pp)')
-    b.grid(axis='y', color=GRID, lw=.55, zorder=0)
-    b.scatter([c[1] for c in cost], [c[2] for c in cost], s=[40, 40, 54, 40],
-              color=[GREY, GREY, BLUE, SLATE], zorder=3)
-    for (lab, f, v), off, ha in zip(cost, [(6, -4), (-6, 14), (6, 26), (0, 12)], ['left', 'right', 'left', 'center']):
-        b.annotate(f'{lab}: {v:.2f} pp' if v else f'{lab}: 0 pp', (f, v), xytext=off, textcoords='offset points',
-                   fontsize=8, ha=ha, va='bottom',
-                   arrowprops={'arrowstyle': '-', 'color': MUTED, 'lw': .6} if off[1] > 12 else None)
+    """EFSA data: counts to publish against the precision that is kept."""
+    fig = plt.figure(figsize=(6.5, 3.2)); b = fig.add_axes([.085, .145, .895, .82])
+    b.set_xlim(20, 170); b.set_ylim(-2.5, 52); b.set_xticks(range(20, 171, 20)); b.set_yticks(range(0, 51, 10))
+    b.xaxis.set_minor_locator(MultipleLocator(10)); b.yaxis.set_minor_locator(MultipleLocator(5))
+    S.criterion(b, y=2)
+    b.text(22, 2.8, '2 pp tolerance', ha='left', va='bottom', fontsize=S.SMALL)
+    b.set_xlabel('Published counts'); b.set_ylabel('Largest loss at an interval end (pp)')
+    b.plot([c[1] for c in cost], [c[2] for c in cost], color=GREY, lw=.7, zorder=2)
+    places = [(44, 46.34), (97, 23), (118, 15.5), (139, 8)]
+    for (lab, f, v), place, colour in zip(cost, places, [BLACK, BLACK, BLUE, BLACK]):
+        S.dot(b, f, v, color=colour, ms=5)
+        b.annotate(f'{lab}\n{f} counts, {v:.2f} pp' if v else f'{lab}\n{f} counts, 0 pp', (f, v), place,
+                   fontsize=S.SMALL, ha='left', va='center', linespacing=1.2,
+                   arrowprops=None if place[1] == v else dict(arrowstyle='-', color=BLACK, linewidth=.5, shrinkA=1,
+                                                               shrinkB=3.5, relpos=(0, .5)))
     save(fig, 'SupplementaryFigureS6', {lab: [f, round(v, 4)] for lab, f, v in cost})
 
 
@@ -580,17 +526,13 @@ def main():
     if have != PINNED and not args.allow_other_versions:
         raise SystemExit(f'library versions {have} differ from the pinned {PINNED}; '
                          'install requirements-figures.txt or pass --allow-other-versions')
-    font = Path(font_manager.findfont('Liberation Sans', fallback_to_default=False)).resolve()
-    need(font.parent == (HERE / 'fonts').resolve(), f'font not taken from the bundled folder: {font}')
     amp = load_ampicillin(); pne = load_pneumococci(); per, med, ident, cost = load_efsa()
     figure1(pne); figure2(amp); figure3(amp); figure4(amp); figure5(); figure6(per, med, ident)
     figureS1(pne); figureS2(amp); figureS3(); figureS4(); figureS5(); figureS6(cost)
     need(all(r['axes_with_data'] <= 1 for r in RECORD), 'a figure has more than one data axis')
     receipt = {'status': 'passed', 'versions': have,
-               'rule': 'one data graph per figure; black text; palette of black, greys and two muted accents; '
-                       'no middle-dot or bullet separators; all text inside canvas',
-               'palette': {'ink': INK, 'dark grey': MUTED, 'grey': GREY, 'grid': GRID, 'light grey': LIGHT,
-                           'blue': BLUE, 'pale blue': PALEBLUE, 'slate': SLATE, 'ochre': OCHRE},
+               'rule': 'one data graph per figure; ' + S.RULE, 'palette': S.PALETTE,
+               'style_sha256': sha(HERE / 'figstyle.py'),
                'fonts_sha256': {f.name: sha(f) for f in sorted((HERE / 'fonts').glob('*.ttf'))},
                'default_style_sha256': sha(HERE / 'style' / 'matplotlibrc-3.11.2-default'),
                'inputs_sha256': {**{str(p.relative_to(HERE)): sha(p) for p in sorted(list(DATA.glob('*')) + list(EFSA.glob('*')))},
