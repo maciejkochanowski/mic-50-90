@@ -1,103 +1,126 @@
-# MIC-50-90 2.0.0
+# MIC-50-90
 
-Changes between versions are listed in `CHANGELOG.md`. The release files and their checksums are attached to the [GitHub release](https://github.com/maciejkochanowski/mic-50-90/releases/tag/v2.0.0) and archived at Zenodo.
+[![PyPI](https://img.shields.io/pypi/v/mic-50-90)](https://pypi.org/project/mic-50-90/)
+[![Bioconda](https://img.shields.io/conda/vn/bioconda/mic-50-90)](https://bioconda.github.io/recipes/mic-50-90/README.html)
+[![Tests](https://github.com/maciejkochanowski/mic-50-90/actions/workflows/tests.yml/badge.svg)](https://github.com/maciejkochanowski/mic-50-90/actions/workflows/tests.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23297915.svg)](https://doi.org/10.5281/zenodo.23297915)
+[![License](https://img.shields.io/pypi/l/mic-50-90)](https://github.com/maciejkochanowski/mic-50-90/blob/main/LICENSE.txt)
 
-MIC-50-90 is a Python package for bounding MIC distributions from incomplete susceptibility reports. Published antimicrobial susceptibility results often give only MIC50, MIC90, a range and a few percentages. From these, and from exact or rounded counts, MIC-50-90 computes the smallest and largest count the report allows in every MIC category and range, names the count that would narrow an open question most, selects counts a laboratory can publish so that readers can check its conclusions, and gives optional population bounds under stated sampling assumptions. The Python interface, the command line and the Galaxy tools use the same calculation engine.
+**Exact bounds on MIC distributions from incomplete susceptibility reports.**
 
-Use it to interpret an unreported concentration range, distinguish missing counts from measurement censoring, determine which additional counts would resolve a question, or prepare a short laboratory report whose conclusions a recipient can verify. Inputs refer to the same original isolates and retain their denominator, panel, units and reporting convention.
+Many antimicrobial susceptibility studies report minimum inhibitory concentrations (MICs) only as MIC50 and MIC90. Such a report does not say how many isolates exceed a breakpoint: when the breakpoint lies between the two values, the answer is anywhere from 10% to 50%. MIC-50-90 computes exactly what a report does establish. It
 
-## Install and start
+- gives the smallest and largest number of isolates the report allows in every MIC category and range,
+- names the one further count that would narrow an open question most,
+- tells a laboratory which few counts to publish so that readers can check its conclusions,
+- adds confidence bounds for the source population when the isolates were sampled independently.
 
-Use Python 3.11–3.13 in a separate environment. The release checksums identify the published files; the release workflow records the operating systems and Python versions on which they were tested.
+The bounds assume no distributional model. They hold for every complete table that agrees with the report. A Python interface, a command line and three Galaxy tools share one calculation engine.
 
-Install from PyPI with the Python interpreter of that environment:
+## Example
 
-```text
-python -m pip install mic-50-90==2.0.0
-mic-50-90 --help
+[Brookshire et al.](https://doi.org/10.3389/fvets.2024.1512582) tested 67 canine staphylococci against ampicillin and report MIC50 ≤0.12 mg/L, MIC90 0.5 mg/L and a highest value above 1 mg/L. How many isolates had each MIC?
+
+| MIC (mg/L) | ≤0.12 | 0.25 | 0.5 | 1 | >1 |
+|---|---|---|---|---|---|
+| Isolates, from the summaries alone | 34–60 | 0–26 | 1–32 | 0–5 | 1–6 |
+| Isolates, with one further count | 34–59 | 0–25 | 2–7 | 0–5 | 1–6 |
+
+Asked about the 0.5 mg/L category, the program names the count to request: the number of isolates at or below 0.25 mg/L. The paper prints it (59), and the category narrows from 1–32 to 2–7 isolates.
+
+Both rows come from the inputs in `examples/`. Each run writes `report.html` with the results as CSV and JSON beside it:
+
+```console
+mic-50-90 distribution examples/biological_cases/ampicillin-67-summaries.json --output-dir out/summaries
+mic-50-90 distribution examples/biological_cases/ampicillin-67-with-count.json --output-dir out/with-count
 ```
 
-To install from a source checkout, run `python -m pip install .` from its root directory.
+The same calculation in Python:
 
-For work in a web browser without installing anything, the MIC-50-90 Galaxy tools describe a distribution, audit a laboratory report and check a received certificate. Their wrappers and tests are in `galaxy/`.
+```python
+from mic_50_90.distribution_workflow import analyse_distribution
 
-Each release is also published as a container image that already contains Python and all dependencies, so only Docker or another container runtime is needed. On Linux or macOS, this runs the program on files in the current folder:
-
-```text
-docker run --rm -u "$(id -u):$(id -g)" -v "$PWD:/data" -w /data ghcr.io/maciejkochanowski/mic-50-90:2.0.0 mic-50-90 --help
+report = {
+    "n": 67, "unit": "mg/L",
+    "panel": {"levels": [0.12, 0.25, 0.5, 1]},
+    "summaries": {
+        "minimum": "<=0.12", "maximum": ">1",
+        # "ceiling": MIC50 is result number ceil(n/2) in increasing order
+        "quantiles": [
+            {"probability": 0.5, "category": "<=0.12", "convention": "ceiling"},
+            {"probability": 0.9, "category": "0.5", "convention": "ceiling"},
+        ],
+    },
+}
+for c in analyse_distribution(report)["sample"]["categories"]:
+    print(c["label"], c["count_lower"], c["count_upper"])
+# <=0.12 34 60
+# 0.25 0 26
+# 0.5 1 32
+# 1 0 5
+# >1 1 6
 ```
 
-Started without a command, the container runs the software checks.
+## Installation
 
-To inspect the command-line interface:
+MIC-50-90 runs on Python 3.11 to 3.13 and needs only NumPy and SciPy.
 
-```text
-mic-50-90 --help
-mic-50-90 distribution --help
-```
-
-Download the source archive for the example inputs, schemas and documentation. From its extracted directory, run:
-
-```text
-mic-50-90 distribution examples/distribution/summaries.json --precision-pp 10 --output-dir output/distribution
-```
-
-Open the generated `report.html`. Reports also provide CSV/JSON results and reusable input settings. The wheel installs the command line and the library; the software source release supplies the tests, formal checks, examples and user documentation.
-
-## Choose the inference you need
-
-| Question | Result | Requirements |
-|---|---|---|
-| What follows about these isolates? | Sharp finite-sample bounds over the distributions compatible with the report | Truthful summaries, ranks, panel geometry and category definitions |
-| What follows about the source population? | Simultaneous confidence bounds accounting for incomplete reporting and sampling uncertainty | Independent observations from the same distribution, a declared population and confidence level |
-| What is covered for a new study unit? | Calibrated bounds for the quantities in the declared protocol | Exchangeable study units and a matching reference, score, unit and calibration contract |
-
-These layers answer different questions. Complete category counts can still leave concentrations uncertain inside measurement intervals. Optional likelihood, Bayesian, entropy and reference-based analyses report their additional assumptions. Incomplete numerical searches retain valid available bounds and their explicit completion status.
-
-## Practical workflows
-
-- Analyse published MIC summaries or counts, including several declared rank interpretations when necessary.
-- Add a count from the original collection and update the analysis while preserving previous truthful information.
-- Select contiguous concentration groups at a requested sample or population precision.
-- Plan one request or successive requests for additional counts, with explicit permitted questions and costs.
-- Select sufficient counts from complete category counts so a recipient can verify the stated sample conclusions.
-- Prepare and assess study-unit calibration with its own reference and sampling requirements.
-
-The main mathematical result gives a checkable P6 endpoint-attainment condition: when it holds, a selected family of compatible count tables attains the same population-range endpoints as considering every compatible table for the fixed confidence construction. The result has a written proof and independent numerical checks, and the algebraic core of the proof is checked in the Lean proof assistant (29 declarations).
-
-## Documentation and checks
-
-### What the repository contains
-
-| Folder | Purpose |
+| Source | Command |
 |---|---|
-| `src` | Calculation engine, command line and report resources |
-| `tests` | Automated checks of calculations, input handling and interfaces |
-| `galaxy` | Galaxy tool wrappers with their test data |
-| `tools` and `.github/workflows` | Build, test and publish the software packages |
-| `docs` and `schemas` | Installation, usage, input formats and output definitions |
-| `examples` and `data` | Small example inputs, source attribution and data terms |
-| `formal` and `reproducibility` | Formal algebra and independent checks of the implemented calculations |
-| `evaluation` | Inputs, scripts and result tables of the comparisons reported in the article |
-| `scripts` | Source manifest, source bundle, archive installation check, command reference and document claim check |
+| PyPI | `python -m pip install mic-50-90` |
+| Bioconda | `conda install -c conda-forge -c bioconda mic-50-90` |
+| Container | `docker run --rm ghcr.io/maciejkochanowski/mic-50-90:2.0.0 mic-50-90 --help` |
 
-The command line, the Python interface and the Galaxy tools use the same calculation engine. Article-production files are maintained outside this repository.
+To use the container on files in the current folder, add `-v "$PWD:/data" -w /data`.
 
-- [Distribution guide](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/distribution-user-guide.md): an end-to-end CLI analysis and interpretation.
-- [CLI reference](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/CLI_REFERENCE.md): every command and option.
-- [Python interface](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/PYTHON_INTERFACE.md): callable analysis functions and update contracts.
-- [Report contents](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/REPORT_CONTENTS.md): results, numerical checks and exports.
-- [Public functions](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/PUBLIC_FUNCTIONS.md): tasks, implementation and independent checks.
-- [Reproducing software checks](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/REPRODUCING_RESULTS.md) and [formal algebra](https://github.com/maciejkochanowski/mic-50-90/blob/main/formal/README.md).
+**Galaxy, with nothing to install.** The tools *MIC-50-90 distribution bounds*, *laboratory report* and *check a received report* run in a web browser on [usegalaxy.eu](https://usegalaxy.eu/?tool_id=mic_50_90_distribution), [usegalaxy.org](https://usegalaxy.org/?tool_id=mic_50_90_distribution) and [usegalaxy.org.au](https://usegalaxy.org.au/?tool_id=mic_50_90_distribution). They are published in the Galaxy Tool Shed by the Intergalactic Utilities Commission as [suite_mic_50_90](https://toolshed.g2.bx.psu.edu/view/iuc/suite_mic_50_90); the wrappers are maintained in [galaxyproject/tools-iuc](https://github.com/galaxyproject/tools-iuc/tree/main/tools/mic_50_90).
 
-The GitHub Actions workflow tests installed packages on Windows and Linux with Python 3.11–3.13. The release workflow builds the Python packages and the container image, checks their contents and attaches only software assets. Consult the completed Actions run and the release checksums for the exact distributed files.
+## Choosing the analysis
 
-Manuscripts, supplementary appendices and editorial figures are maintained separately. They are not included in this repository, its software release assets, or a software deposit generated from this repository. [Distribution policy](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/DISTRIBUTION_POLICY.md).
+| You want to | You provide | Use |
+|---|---|---|
+| know how many isolates lie above a breakpoint or in any MIC category | sample size, MIC categories, MIC50, MIC90, range and any printed counts | [`distribution`](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/distribution-user-guide.md) for one report, [`batch`](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/CSV_WORKFLOWS.md) for a CSV of many |
+| decide what to ask the authors for | the same report and your question | the count named in the report, or [`batch --acquisition-plan`](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/ACQUIRING_COUNTS.md) for several questions |
+| publish a short table that readers can verify | the complete counts and the questions readers will ask | [`reporting-audit --reporting-plan`](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/SUFFICIENT_REPORTING.md) |
+| check a report you received | its certificate | [`verify-report`](https://github.com/maciejkochanowski/mic-50-90/blob/main/examples/received_report/README.md) |
+| describe the population the isolates came from | isolates sampled independently, a confidence level | `"iid": true` in the input of [`distribution`](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/distribution-user-guide.md) |
+| describe a new farm, plant, state or year | complete data from comparable units | [`calibration-prepare`](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/CALIBRATION_PREPARATION.md), then `batch --calibrations` |
 
-## Scientific scope and license
+A count can be exact, a range or a rounded percentage. If a source does not say how it computed MIC50 and MIC90, several rules can be entered side by side and the bounds cover all of them.
 
-MIC-50-90 is a tool for research, surveillance and reporting audits. Its results describe a collection of isolates or the population from which the collection was sampled, and every result states the reporting convention and the sampling assumption on which it rests.
+## Guarantees and evaluation
 
-The software is distributed under **MIT**. Example data, source publications and bundled fonts retain their own attributed terms; some publication examples have noncommercial source terms. Source URLs, hashes and exclusions are documented in `docs/DATA_TERMS.md` and `data/LICENSES.md`. The software license does not relicense third-party material.
+The bounds for the tested isolates are exact: each one is reached by a complete table that agrees with the report. The population bounds hold for all such tables together, so under independent sampling their coverage is at least the stated level.
 
-Author: **Maciej Kochanowski**, Department of Bacteriology and Bacterial Diseases, National Veterinary Research Institute, Puławy, Poland. [ORCID 0000-0002-9982-3028](https://orcid.org/0000-0002-9982-3028). Use `CITATION.cff` for citation metadata. Archived releases: [doi:10.5281/zenodo.23297915](https://doi.org/10.5281/zenodo.23297915). Report issues through the [GitHub issue tracker](https://github.com/maciejkochanowski/mic-50-90/issues).
+An endpoint theorem makes the population bounds for single categories and ranges fast to compute. Under a condition that the program verifies for the sample size at hand, at most one table per MIC category gives exactly the bounds of all compatible tables together. In the example above, five tables replace 7938. The theorem has a written proof and independent numerical checks, and the algebraic core of the proof is checked in the Lean proof assistant.
+
+Every function of version 2.0.0 was evaluated separately. Three of the results:
+
+- All 17,658 intervals for tested isolates agreed with an independent probability-bounds implementation.
+- In 601 public surveillance collections reduced to MIC50, MIC90 and range, one named count narrowed an open category by a median of 84%.
+- In 180 reporting tasks from 60 surveillance collections, 115 published counts instead of 405 kept all 1809 answers checkable.
+
+Protocols, inputs, scripts and results are in [`evaluation/`](https://github.com/maciejkochanowski/mic-50-90/tree/main/evaluation). [`README_REVIEWER.md`](https://github.com/maciejkochanowski/mic-50-90/blob/main/README_REVIEWER.md) and the [reproduction package](https://doi.org/10.5281/zenodo.24455780) recreate every figure and example number of the article and its supplements.
+
+## Documentation
+
+- [Distribution guide](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/distribution-user-guide.md): one analysis from input to interpretation.
+- [CLI reference](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/CLI_REFERENCE.md) and [Python interface](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/PYTHON_INTERFACE.md): every command, option and function.
+- [CSV workflows](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/CSV_WORKFLOWS.md): many collections at once from summary and count tables.
+- [Public functions](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/PUBLIC_FUNCTIONS.md): each task, the function that performs it and the tests that check it.
+- [Report contents](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/REPORT_CONTENTS.md): what the HTML, CSV and JSON outputs hold.
+- [Reproducing the results](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/REPRODUCING_RESULTS.md) and the [formal proof files](https://github.com/maciejkochanowski/mic-50-90/blob/main/formal/README.md).
+
+Changes between versions are listed in [`CHANGELOG.md`](https://github.com/maciejkochanowski/mic-50-90/blob/main/CHANGELOG.md).
+
+## Citation
+
+> Kochanowski M. MIC-50-90: A Python package for bounding MIC distributions from incomplete susceptibility reports. Version 2.0.0 [software]. Zenodo; 2026. https://doi.org/10.5281/zenodo.24442629
+
+[`CITATION.cff`](https://github.com/maciejkochanowski/mic-50-90/blob/main/CITATION.cff) holds the same record for reference managers. All archived versions share [doi:10.5281/zenodo.23297915](https://doi.org/10.5281/zenodo.23297915).
+
+## License and contact
+
+MIC-50-90 is a tool for research, surveillance and reporting audits. It is distributed under the MIT license. Example data and bundled fonts keep the terms of their sources, listed in [`docs/DATA_TERMS.md`](https://github.com/maciejkochanowski/mic-50-90/blob/main/docs/DATA_TERMS.md) and [`data/LICENSES.md`](https://github.com/maciejkochanowski/mic-50-90/blob/main/data/LICENSES.md).
+
+Maciej Kochanowski ([ORCID 0000-0002-9982-3028](https://orcid.org/0000-0002-9982-3028)), Department of Bacteriology and Bacterial Animal Diseases, National Veterinary Research Institute, Puławy, Poland. Questions and problems are welcome in the [issue tracker](https://github.com/maciejkochanowski/mic-50-90/issues).
